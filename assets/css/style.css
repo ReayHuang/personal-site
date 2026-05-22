@@ -338,6 +338,22 @@ img {
   border-top: 3px solid var(--lr-teal);
 }
 
+a.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.card:hover {
+  border-color: var(--lr-teal);
+  box-shadow: 0 8px 24px rgba(7, 13, 25, 0.08);
+}
+
+a.card:hover h3 {
+  color: var(--lr-teal);
+}
+
 .card:hover {
   border-color: var(--lr-teal);
   box-shadow: 0 8px 24px rgba(7, 13, 25, 0.08);
