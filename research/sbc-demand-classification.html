@@ -261,6 +261,27 @@
       padding: 26px;
     }
 
+    .card-intro-label {
+      margin: -26px -26px 18px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #b8d4fb 0%, #93bbf5 100%);
+      border-bottom: 2px solid #5b94e0;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .card-intro-label strong {
+      color: var(--navy);
+    }
+
+    #what .two-col > .card:first-child {
+      overflow: hidden;
+    }
+
     .lead-card {
       display: grid;
       grid-template-columns: 74px 1fr;
@@ -340,6 +361,41 @@
       margin-top: 14px;
     }
 
+    .demand-type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0 16px;
+    }
+
+    .demand-type-unit {
+      padding: 12px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--gray-200);
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    .demand-type-unit strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .demand-type-unit span {
+      display: block;
+      margin-top: 4px;
+      color: var(--gray-700);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .demand-type-unit--smooth { background: #eef6ff; border-color: #bfdcff; }
+    .demand-type-unit--erratic { background: #fff7e7; border-color: #f1d49e; }
+    .demand-type-unit--intermittent { background: #edf8f5; border-color: #b8e6d8; }
+    .demand-type-unit--lumpy { background: #f3f0ff; border-color: #d4c8f5; }
+
     .pill {
       display: inline-flex;
       align-items: center;
@@ -378,9 +434,23 @@
     }
 
     .formula-card h3 {
-      margin: 0 0 10px;
+      margin: -26px -26px 12px;
+      padding: 14px 26px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
       color: var(--navy);
-      font-size: 1.38rem;
+      font-size: 1.15rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .formula-grid .formula-card:nth-child(1) h3 {
+      background: linear-gradient(135deg, #b8d4fb 0%, #93bbf5 100%);
+      border-bottom: 2px solid #5b94e0;
+    }
+
+    .formula-grid .formula-card:nth-child(2) h3 {
+      background: linear-gradient(135deg, #b8e8e3 0%, #7fd4cc 100%);
+      border-bottom: 2px solid var(--teal);
     }
 
     .formula {
@@ -761,6 +831,11 @@
       text-align: center;
     }
 
+    .strategy-table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
     .classification-table thead th {
       text-align: center;
     }
@@ -968,6 +1043,8 @@
     }
 
     .question-card {
+      position: relative;
+      overflow: hidden;
       padding: 22px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--gray-200);
@@ -976,15 +1053,32 @@
     }
 
     .question-card .q {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: var(--blue-2);
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      background: none;
       color: var(--blue);
+      font-size: clamp(3.5rem, 10vw, 5.5rem);
       font-weight: 950;
-      margin-bottom: 12px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      opacity: 0.14;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .question-card h3,
+    .question-card p,
+    .question-card ul {
+      position: relative;
+      z-index: 1;
     }
 
     .question-card h3 {
@@ -1290,15 +1384,35 @@
       <h2 class="section-title"><span class="num">01</span>SBC demand classification 是什麼？</h2>
       <div class="two-col">
         <div class="card">
-          <p><strong>SBC demand classification</strong> 又可稱為：</p>
+          <p class="card-intro-label"><strong>SBC demand classification</strong> 又可稱為：</p>
           <ul class="definition-list">
             <li><span class="dot"></span>Syntetos–Boylan–Croston demand classification</li>
             <li><span class="dot"></span>Syntetos &amp; Boylan intermittent demand classification</li>
           </ul>
+          <p>這套分類的目的，是為了解決備品需求不連續、平均值容易失真的問題。</p>
+          <p>許多備品長時間沒有需求，但一旦需要時可能影響營運。</p>
+          <p>因此研究者改以 <strong>ADI（平均需求間隔）</strong>與 <strong>CV²（需求量變異）</strong>判斷需求型態，協助選擇合適的預測方法、庫存水準與採購策略。</p>
         </div>
         <div class="card">
-          <p>SBC demand classification 是一套針對不規則備品需求的分類方法。</p>
-          <p>它利用 ADI 與 CV² 判斷需求型態，協助將品項分為 Smooth（平滑需求）、Erratic（不穩定需求）、Intermittent（間歇需求）與 Lumpy（零散／塊狀需求）。</p>
+          <p>它利用 ADI 與 CV² 判斷需求型態，協助將品項分為以下四類：</p>
+          <div class="demand-type-grid">
+            <div class="demand-type-unit demand-type-unit--smooth">
+              <strong>Smooth</strong>
+              <span>平滑需求</span>
+            </div>
+            <div class="demand-type-unit demand-type-unit--erratic">
+              <strong>Erratic</strong>
+              <span>不穩定需求</span>
+            </div>
+            <div class="demand-type-unit demand-type-unit--intermittent">
+              <strong>Intermittent</strong>
+              <span>間歇需求</span>
+            </div>
+            <div class="demand-type-unit demand-type-unit--lumpy">
+              <strong>Lumpy</strong>
+              <span>零散／塊狀需求</span>
+            </div>
+          </div>
           <p>這套方法常用於船舶備品、維修料件、低頻耗材與慢速移動庫存。</p>
           <div class="pill-row">
             <span class="pill">船舶備品</span>
