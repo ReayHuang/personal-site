@@ -692,12 +692,18 @@
       border: 1px solid var(--gray-200);
       padding: 24px;
       box-shadow: 0 14px 36px rgba(15, 47, 99, 0.07);
+      overflow: hidden;
     }
 
     .threshold-card h3 {
-      margin: 0 0 14px;
+      margin: -24px -24px 14px;
+      padding: 14px 24px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      background: linear-gradient(135deg, #b8d4fb 0%, #93bbf5 100%);
+      border-bottom: 2px solid #5b94e0;
       color: var(--navy);
-      font-size: 1.45rem;
+      font-size: 1.25rem;
+      text-align: center;
     }
 
     .threshold-list {
@@ -749,6 +755,23 @@
       padding: 16px;
       font-size: .98rem;
       letter-spacing: .03em;
+    }
+
+    .strategy-table thead th {
+      text-align: center;
+    }
+
+    .classification-table thead th {
+      text-align: center;
+    }
+
+    .classification-table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .classification-table .type-name {
+      text-align: center;
     }
 
     td {
@@ -824,9 +847,28 @@
     }
 
     .management-card h3 {
-      margin: 0 0 8px;
+      margin: -24px -24px 12px;
+      padding: 14px 24px 14px 20px;
       color: var(--navy);
       font-size: 1.25rem;
+      line-height: 1.4;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .management-grid .management-card:nth-child(1) h3 {
+      background: var(--green-2);
+    }
+
+    .management-grid .management-card:nth-child(2) h3 {
+      background: var(--orange-2);
+    }
+
+    .management-grid .management-card:nth-child(3) h3 {
+      background: var(--blue-2);
+    }
+
+    .management-grid .management-card:nth-child(4) h3 {
+      background: var(--purple-2);
     }
 
     .management-card p {
@@ -849,8 +891,8 @@
     .management-strategy-table td {
       padding: 10px 12px;
       border-bottom: 1px solid var(--gray-200);
-      text-align: left;
-      vertical-align: top;
+      text-align: center;
+      vertical-align: middle;
     }
 
     .management-strategy-table th {
@@ -999,10 +1041,15 @@
       border: 1px solid #efd8ab;
     }
 
-    .attention-card h3 {
-      margin: 0 0 10px;
+    .attention-section h3 {
+      margin: -20px -20px 12px;
+      padding: 12px 20px;
+      border-radius: 18px 18px 0 0;
+      background: #ffe8b8;
       color: #7a4100;
-      font-size: 1.35rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      text-align: center;
     }
 
     .attention-section p {
@@ -1027,15 +1074,16 @@
       color: #6b4a15;
       font-weight: 800;
       font-size: .92rem;
+      text-align: center;
     }
 
     .key-principle {
       margin-top: 18px;
       padding: 18px 20px;
       border-radius: 18px;
-      background: #fff7e5;
-      border: 1px solid #e7c989;
-      color: #6b3d00;
+      background: linear-gradient(135deg, var(--red), #e53935);
+      border: 1px solid #b71c1c;
+      color: #fff;
       font-size: 1.08rem;
       font-weight: 900;
       text-align: center;
@@ -1220,7 +1268,7 @@
     <header class="hero">
       <div class="hero-badge">🚢 備品供應鏈管理｜Reay's Note</div>
       <h1>
-        SBC需求型態分類
+        物料管理SBC需求型態分類
         <span>Syntetos–Boylan–Croston demand classification</span>
       </h1>
       <p class="hero-summary">
