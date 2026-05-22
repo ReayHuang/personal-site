@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MEPC 83／MEPC 84 修正版視覺化筆記</title>
+  <style>
+    :root{
+      --navy:#0f2742;
+      --blue:#2563eb;
+      --cyan:#0891b2;
+      --green:#16a34a;
+      --amber:#d97706;
+      --red:#dc2626;
+      --slate:#334155;
+      --muted:#64748b;
+      --line:#dbe4ee;
+      --bg:#f4f8fb;
+      --card:#ffffff;
+      --soft-blue:#eaf2ff;
+      --soft-green:#ecfdf3;
+      --soft-amber:#fff7ed;
+      --soft-red:#fef2f2;
+      --soft-cyan:#ecfeff;
+      --shadow:0 18px 45px rgba(15,39,66,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;
+      color:var(--slate);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.16), transparent 35%),
+        radial-gradient(circle at top right, rgba(8,145,178,.13), transparent 32%),
+        var(--bg);
+      line-height:1.72;
+    }
+    header{
+      background:linear-gradient(135deg,#08192f 0%,#12385d 50%,#0b6f86 100%);
+      color:#fff;
+      padding:56px 24px 44px;
+      position:relative;
+      overflow:hidden;
+    }
+    header::after{
+      content:"";
+      position:absolute;
+      right:-90px; top:-90px;
+      width:280px; height:280px;
+      border-radius:50%;
+      background:rgba(255,255,255,.10);
+    }
+    .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+    .eyebrow{letter-spacing:.12em;font-weight:800;font-size:13px;color:#bae6fd;margin-bottom:10px}
+    h1{font-size:clamp(30px,5vw,54px);line-height:1.14;margin:0 0 16px;font-weight:900}
+    .subtitle{font-size:18px;max-width:880px;color:#dbeafe;margin:0}
+    .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(255,255,255,.28);
+      color:#fff;background:rgba(255,255,255,.10);
+      border-radius:999px;padding:8px 13px;font-weight:700;font-size:14px
+    }
+    nav{
+      position:sticky;top:0;z-index:5;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    nav .wrap{display:flex;gap:10px;overflow:auto;padding-top:12px;padding-bottom:12px}
+    nav a{
+      white-space:nowrap;text-decoration:none;color:var(--navy);
+      border:1px solid var(--line);background:#fff;border-radius:999px;
+      padding:8px 12px;font-size:14px;font-weight:800;
+    }
+    main{padding:30px 0 58px}
+    section{scroll-margin-top:86px;margin:26px 0}
+    .section-title{
+      display:flex;align-items:center;gap:12px;margin:0 0 16px;
+      color:var(--navy);font-size:28px;line-height:1.25;font-weight:900;
+    }
+    .section-title .icon{
+      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--soft-blue),#fff);
+      border:1px solid var(--line);
+    }
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}.wrap{padding:0 16px}}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:22px;
+      padding:22px;box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 12px;color:var(--navy);font-size:20px;line-height:1.35}
+    .card h4{margin:20px 0 8px;color:#12385d;font-size:17px}
+    .muted{color:var(--muted)}
+    .badge{
+      display:inline-flex;align-items:center;gap:7px;border-radius:999px;
+      padding:6px 10px;font-size:13px;font-weight:900;margin:0 6px 8px 0;
+      border:1px solid transparent;
+    }
+    .badge.blue{background:var(--soft-blue);color:#1d4ed8;border-color:#bfdbfe}
+    .badge.green{background:var(--soft-green);color:#15803d;border-color:#bbf7d0}
+    .badge.amber{background:var(--soft-amber);color:#b45309;border-color:#fed7aa}
+    .badge.red{background:var(--soft-red);color:#b91c1c;border-color:#fecaca}
+    .badge.cyan{background:var(--soft-cyan);color:#0e7490;border-color:#a5f3fc}
+    .callout{
+      border-radius:20px;padding:18px 20px;border:1px solid;
+      margin:16px 0;background:#fff;
+    }
+    .callout strong{color:var(--navy)}
+    .callout.info{background:var(--soft-blue);border-color:#bfdbfe}
+    .callout.ok{background:var(--soft-green);border-color:#bbf7d0}
+    .callout.warn{background:var(--soft-amber);border-color:#fed7aa}
+    .callout.stop{background:var(--soft-red);border-color:#fecaca}
+    .kpi{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start}
+    .kpi .num{
+      width:56px;height:56px;border-radius:18px;display:grid;place-items:center;
+      color:#fff;font-weight:900;font-size:20px;background:linear-gradient(135deg,var(--blue),var(--cyan));
+    }
+    .kpi p{margin:4px 0 0}.kpi strong{color:var(--navy)}
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:#fff}
+    th,td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{background:#102a45;color:#fff;text-align:left;font-weight:900}
+    tr:last-child td{border-bottom:none}
+    tbody tr:nth-child(even) td{background:#f8fbff}
+    .formula{
+      background:#071b31;color:#e0f2fe;border-radius:18px;padding:18px 20px;
+      font-family:"Segoe UI",Arial,sans-serif;font-weight:800;overflow:auto;border:1px solid rgba(255,255,255,.1)
+    }
+    .formula small{display:block;color:#93c5fd;font-weight:700;margin-top:8px}
+    ul{padding-left:1.2rem;margin:10px 0} li{margin:5px 0}
+    .timeline{position:relative;padding-left:24px}
+    .timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--blue),var(--cyan));border-radius:999px}
+    .titem{position:relative;margin:0 0 16px;padding:0 0 0 18px}
+    .titem::before{content:"";position:absolute;left:-21px;top:7px;width:15px;height:15px;background:#fff;border:4px solid var(--blue);border-radius:50%}
+    .titem h4{margin:0 0 4px;color:var(--navy);font-size:16px}
+    .titem p{margin:0;color:var(--slate)}
+    .compact td,.compact th{padding:10px 12px}
+    .tagline{font-size:14px;color:#475569;margin-top:8px}
+    .divider{height:1px;background:var(--line);margin:18px 0}
+    .print-note{font-size:13px;color:#64748b;text-align:center;margin-top:22px}
+    .chart-wrap{
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:16px;
+      overflow-x:auto;
+      margin-top:14px;
+    }
+    .chart-title{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:8px;
+      color:var(--navy);
+      font-weight:900;
+    }
+    .chart-title span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+    .line-chart{
+      width:100%;
+      min-width:520px;
+      height:auto;
+      display:block;
+    }
+    .chart-axis{stroke:#94a3b8;stroke-width:1.4}
+    .chart-grid{stroke:#e2e8f0;stroke-width:1}
+    .chart-line{fill:none;stroke:var(--blue);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .chart-dot{fill:#ffffff;stroke:var(--blue);stroke-width:4}
+    .chart-label{font-size:13px;fill:#0f2742;font-weight:800}
+    .chart-small{font-size:12px;fill:#64748b;font-weight:700}
+    .chart-note{
+      margin:10px 0 0;
+      color:#475569;
+      font-size:14px;
+    }
+    footer{border-top:1px solid var(--line);background:#fff;padding:26px 0 34px;color:#64748b}
+    footer strong{color:var(--navy)}
+    @media print{
+      .note-site-bar{display:none}
+      nav{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}header{padding:34px 24px}.wrap{max-width:none}section{page-break-inside:avoid}
+    }
+  </style>
+  <style>
+    .note-site-bar {
+      background: #070d19;
+      color: rgba(255,255,255,.85);
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+      font-size: 14px;
+      padding: 10px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      align-items: center;
+      border-bottom: 3px solid #00c5b7;
+    }
+    .note-site-bar a { color: #00c5b7; text-decoration: none; font-weight: 700; }
+    .note-site-bar a:hover { text-decoration: underline; }
+    .note-site-bar span { color: rgba(255,255,255,.55); }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <a href="../index.html">← 專業筆記</a>
+    <span>|</span>
+    <a href="../../index.html">首頁</a>
+    <a href="../../about.html">關於我</a>
+    <a href="../../research/index.html">研究資料</a>
+  </div>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">修正版視覺化筆記｜海事環保法規｜Reay's Note</div>
+      <h1>MEPC 83／MEPC 84 重點成果與修正後資訊</h1>
+      <p class="subtitle">本版已將時程、法律狀態、適用範圍、合規缺口公式與 CII 第二階段工作進度調整為目前正確表述，適合重點複習、內部教育訓練與法規簡報使用。</p>
+      <div class="meta-row">
+        <span class="pill">資料基準：2026 年 5 月</span>
+        <span class="pill">主題：MARPOL 附則 VI</span>
+        <span class="pill">範圍：GHG、GFI、CII、DCS、LCA、OCCS</span>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#status">目前法律狀態</a>
+      <a href="#summary">會議總覽</a>
+      <a href="#gfi">GFI 制度</a>
+      <a href="#deficit">合規與補償</a>
+      <a href="#znz">ZNZ 激勵</a>
+      <a href="#cii">CII 與 SEEMP</a>
+      <a href="#dcs">DCS 與數據</a>
+      <a href="#lca">LCA 與第五次研究</a>
+      <a href="#other">其他環保議題</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="status">
+      <h2 class="section-title"><span class="icon">⚖️</span>目前法律狀態總覽</h2>
+      <div class="grid grid-3">
+        <div class="card kpi">
+          <div class="num">1</div>
+          <div>
+            <h3>MEPC 83 的定位</h3>
+            <p><strong>已批准草案文字</strong>，不是正式採納生效。IMO Net-Zero Framework 被納入 MARPOL 附則 VI 新章節的草案中。</p>
+          </div>
+        </div>
+        <div class="card kpi">
+          <div class="num">2</div>
+          <div>
+            <h3>MEPC/ES.2 的狀態</h3>
+            <p>原定 2025 年 10 月審議採納，但會議已休會並延後，相關談判將於 2026 年續行。</p>
+          </div>
+        </div>
+        <div class="card kpi">
+          <div class="num">3</div>
+          <div>
+            <h3>生效日表述</h3>
+            <p>目前不應寫成固定生效日。正確說法為：<strong>正式採納後，預期依默示接受程序約 16 個月後生效</strong>。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <strong>重點記憶：</strong>IMO Net-Zero Framework 目前仍屬「已批准、待正式採納」階段；所有 2027 年或 2028 年執行時程都應視為取決於後續 IMO 採納結果與生效安排。
+      </div>
+    </section>
+
+    <section id="summary">
+      <h2 class="section-title"><span class="icon">📝</span>MEPC 83 與 MEPC 84 會議重點</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>MEPC 83｜2025 年 4 月 7–11 日</h3>
+          <span class="badge blue">批准草案</span>
+          <span class="badge cyan">MARPOL 附則 VI</span>
+          <ul>
+            <li>批准 <strong>IMO Net-Zero Framework</strong> 草案，作為 MARPOL 附則 VI 新章節的法律文字基礎。</li>
+            <li>中期 GHG 措施包含兩大核心：<strong>全球燃料標準</strong>與<strong>全球 GHG 排放定價機制</strong>。</li>
+            <li>完成短期 GHG 措施第一階段檢討，並設定 <strong>CII 減量係數至 2030 年</strong>。</li>
+            <li>批准擴大 IMO DCS 燃油消耗資料的可用性與透明度。</li>
+            <li>推進 LCA、永續燃料認證、OCCS 與非 CO₂ GHG 測量相關工作。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>MEPC 84｜2026 年 4 月 27 日–5 月 1 日</h3>
+          <span class="badge amber">持續磋商</span>
+          <span class="badge green">技術指引推進</span>
+          <ul>
+            <li>IMO Net-Zero Framework 未達成最終妥協，相關討論將於 MEPC 85 前的兩次 ISWG-GHG 會議中繼續推進。</li>
+            <li>MEPC 85 暫定於 <strong>2026 年 11 月 30 日至 12 月 3 日</strong>舉行；MEPC/ES.2 暫規劃於 <strong>2026 年 12 月 4 日</strong>續開，並須視 MEPC 85 確認。</li>
+            <li>啟動 <strong>SEEMP 與 CII 第二階段檢討</strong>，預計 2028 年完成。</li>
+            <li>郵輪 cgHRS 指標與不利天候 CII 指標尚未定案。</li>
+            <li>第五次 IMO GHG 研究的任務範圍已完成，預計支援 2028 年 GHG 策略檢討。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="gfi">
+      <h2 class="section-title"><span class="icon">🌍</span>IMO Net-Zero Framework 與 GFI 制度</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>適用範圍</h3>
+          <div class="callout info">
+            <strong>適用對象：</strong>總噸位超過 5,000 GT 的遠洋／國際航行船舶。此範圍涵蓋國際航運主要排放來源。
+          </div>
+          <h4>目前不納入或排除之對象</h4>
+          <ul>
+            <li><strong>5,000 GT 以下船舶</strong>目前不納入，但未來可能討論擴大至 400–5,000 GT 船舶。</li>
+            <li><strong>非機械推進船舶</strong>不適用。</li>
+            <li><strong>平台類設施</strong>如 FPSO、FSU、鑽井平台等，無論是否具備推進能力，均不適用。</li>
+            <li><strong>半潛式船舶</strong>暫緩適用，待後續進一步審查。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>GFI 定義</h3>
+          <p><strong>GHG Fuel Intensity，溫室氣體燃料強度</strong>，用來衡量船舶所使用燃料與能源在完整生命週期中的排放強度。</p>
+          <div class="formula">
+            GFI = Σ(EI<sub>j</sub> × Energy<sub>j</sub>) ÷ Energy<sub>total</sub>
+            <small>單位：gCO₂eq/MJ；採用 Well-to-Wake 生命週期方法。</small>
+          </div>
+          <ul>
+            <li><strong>EI<sub>j</sub></strong>：能源來源 j 的 GHG 排放強度。</li>
+            <li><strong>Energy<sub>j</sub></strong>：該能源於報告期間之使用量。</li>
+            <li><strong>Energy<sub>total</sub></strong>：年度總能源使用量。</li>
+            <li>涵蓋 CO₂、CH₄、N₂O，並換算為 CO₂ 當量。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>GFI 目標值與基準</h3>
+        <div class="formula">
+          GFI<sub>T</sub> = (1 − Z<sub>T</sub> ÷ 100) × GFI<sub>2008</sub>
+          <small>GFI<sub>2008</sub> = 93.3 gCO₂eq/MJ；Z<sub>T</sub> 為對應年度減量比例。</small>
+        </div>
+        <div class="grid grid-2" style="margin-top:16px">
+          <div class="callout ok"><strong>Base Target：</strong>基準目標，作為較高層級的合規門檻。</div>
+          <div class="callout info"><strong>Direct Compliance Target：</strong>直接合規目標，較 Base Target 嚴格，低於此門檻可產生盈餘單位。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deficit">
+      <h2 class="section-title"><span class="icon">⚙️</span>合規餘額、盈餘單位與補償機制</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>合規餘額公式</h3>
+          <div class="formula">
+            Compliance Balance = (Direct Compliance Target GFI − Attained Annual GFI) × Energy<sub>total</sub>
+          </div>
+          <ul>
+            <li>結果為<strong>正值</strong>：低於直接合規目標，可產生 <strong>Surplus Units</strong>。</li>
+            <li>結果為<strong>負值</strong>：超過直接合規目標，需補償缺口。</li>
+            <li>盈餘單位以 <strong>噸 CO₂eq</strong> 表示，可保留、移轉或註銷；用途一經選擇後不得重複使用。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>缺口補償邏輯</h3>
+          <table class="compact">
+            <thead><tr><th>Attained GFI 位置</th><th>合規結果</th><th>處理方式</th></tr></thead>
+            <tbody>
+              <tr><td>低於 Direct Compliance Target</td><td>產生盈餘</td><td>可取得 Surplus Units</td></tr>
+              <tr><td>介於 Direct Compliance Target 與 Base Target 之間</td><td>第一級缺口</td><td>需補償 Tier 1 Deficit</td></tr>
+              <tr><td>高於 Base Target</td><td>第二級缺口</td><td>需補償 Tier 1 + Tier 2 Deficit</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>第一級缺口公式</h3>
+          <div class="callout warn"><strong>適用情況：</strong>Attained GFI 高於 Direct Compliance Target，但未超過 Base Target。</div>
+          <div class="formula">
+            Tier 1 Deficit = (Attained GFI − Direct Compliance Target) × Energy<sub>total</sub>
+          </div>
+          <p class="tagline">Tier 1 缺口以正數表達，代表實際需補償的排放差額。</p>
+        </div>
+        <div class="card">
+          <h3>第二級缺口公式</h3>
+          <div class="callout stop"><strong>適用情況：</strong>Attained GFI 高於 Base Target。</div>
+          <div class="formula">
+            Tier 1 Deficit = (Base Target − Direct Compliance Target) × Energy<sub>total</sub>
+            <br><br>
+            Tier 2 Deficit = (Attained GFI − Base Target) × Energy<sub>total</sub>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>補償工具與價格設計</h3>
+        <table>
+          <thead><tr><th>項目</th><th>使用情境</th><th>目前草案設計</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Tier 1 Remedial Units</strong></td>
+              <td>用於補償第一級缺口</td>
+              <td>初始價格為每噸 CO₂eq 100 美元，後續依 IMO 檢討機制調整。</td>
+            </tr>
+            <tr>
+              <td><strong>Surplus Units</strong></td>
+              <td>可用於部分補償或市場移轉</td>
+              <td>可由本船保留或自其他船舶取得；具體交易規則仍依後續 IMO 指引。</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 2 Remedial Units</strong></td>
+              <td>用於補償高於 Base Target 的嚴重缺口</td>
+              <td>初始價格為每噸 CO₂eq 380 美元。</td>
+            </tr>
+            <tr>
+              <td><strong>IMO Net-Zero Fund</strong></td>
+              <td>接收、管理與分配 GHG 定價收入</td>
+              <td>支援 ZNZ 燃料獎勵、技術研發、基礎建設、能力建設與公正轉型。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="znz">
+      <h2 class="section-title"><span class="icon">🌱</span>零或近零碳燃料與技術激勵</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>ZNZ 定義</h3>
+          <p><strong>ZNZ</strong> 指 Zero or Near-Zero GHG emission fuels, technologies and energy sources，即零或近零溫室氣體排放燃料、技術與能源來源。</p>
+          <table class="compact">
+            <thead><tr><th>期間</th><th>GFI 門檻</th></tr></thead>
+            <tbody>
+              <tr><td>至 2034 年 12 月止</td><td><strong>≤ 19.0 gCO₂eq/MJ</strong></td></tr>
+              <tr><td>自 2035 年起</td><td><strong>≤ 14.0 gCO₂eq/MJ</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>激勵重點</h3>
+          <ul>
+            <li>使用 ZNZ 燃料或技術的船舶，可能取得 IMO Net-Zero Fund 的財務獎勵。</li>
+            <li>實際獎勵金額、資格細節與申請程序尚待後續 IMO 指引定案。</li>
+            <li>ZNZ 門檻與適用技術範圍預計可定期檢討。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h2 class="section-title"><span class="icon">📅</span>修正後時程表</h2>
+      <div class="card timeline">
+        <div class="titem">
+          <h4>2025 年 4 月｜MEPC 83</h4>
+          <p>IMO Net-Zero Framework 草案文字獲批准並送交後續採納程序。</p>
+        </div>
+        <div class="titem">
+          <h4>2025 年 10 月｜MEPC/ES.2</h4>
+          <p>未完成正式採納，會議休會並延後至 2026 年續行。</p>
+        </div>
+        <div class="titem">
+          <h4>2026 年 4–5 月｜MEPC 84</h4>
+          <p>持續討論中期 GHG 措施；尚未形成可正式採納的最終妥協方案。</p>
+        </div>
+        <div class="titem">
+          <h4>2026 年 11–12 月｜MEPC 85 與 MEPC/ES.2 續會</h4>
+          <p>預計續行政治與技術討論；MEPC/ES.2 於 2026 年 12 月 4 日續開的安排，仍須視 MEPC 85 確認。</p>
+        </div>
+        <div class="titem">
+          <h4>正式採納後</h4>
+          <p>依 MARPOL 默示接受程序，規定預期於採納後約 16 個月生效。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cii">
+      <h2 class="section-title"><span class="icon">📊</span>CII、SEEMP 與船舶能源效率</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>CII 減量係數</h3>
+          <p>MEPC 83 完成短期 GHG 措施第一階段檢討，並將 CII 減量係數設定至 2030 年。</p>
+          <div class="chart-wrap" role="img" aria-label="CII 減量係數折線圖，2023 年為 5%，2030 年提高至 21.5%。">
+            <div class="chart-title">
+              <div>CII Reduction Factors 趨勢圖</div>
+              <span>基準：2019 年 CII reference line</span>
+            </div>
+            <svg class="line-chart" viewBox="0 0 620 350" aria-hidden="true">
+              <line class="chart-grid" x1="70" y1="30" x2="570" y2="30" />
+              <line class="chart-grid" x1="70" y1="82" x2="570" y2="82" />
+              <line class="chart-grid" x1="70" y1="134" x2="570" y2="134" />
+              <line class="chart-grid" x1="70" y1="186" x2="570" y2="186" />
+              <line class="chart-grid" x1="70" y1="238" x2="570" y2="238" />
+              <line class="chart-grid" x1="70" y1="290" x2="570" y2="290" />
+              <line class="chart-axis" x1="70" y1="30" x2="70" y2="290" />
+              <line class="chart-axis" x1="70" y1="290" x2="570" y2="290" />
+              <text class="chart-small" x="24" y="34">25%</text>
+              <text class="chart-small" x="24" y="86">20%</text>
+              <text class="chart-small" x="24" y="138">15%</text>
+              <text class="chart-small" x="24" y="190">10%</text>
+              <text class="chart-small" x="31" y="242">5%</text>
+              <text class="chart-small" x="31" y="294">0%</text>
+              <polyline class="chart-line" points="70,238 140,217.2 210,196.4 280,175.6 350,148.3 420,121 490,93.7 560,66.4" />
+              <g>
+                <circle class="chart-dot" cx="70" cy="238" r="6" /><text class="chart-label" x="54" y="225">5%</text><text class="chart-small" x="50" y="320">2023</text>
+                <circle class="chart-dot" cx="140" cy="217.2" r="6" /><text class="chart-label" x="124" y="204">7%</text><text class="chart-small" x="120" y="320">2024</text>
+                <circle class="chart-dot" cx="210" cy="196.4" r="6" /><text class="chart-label" x="194" y="183">9%</text><text class="chart-small" x="190" y="320">2025</text>
+                <circle class="chart-dot" cx="280" cy="175.6" r="6" /><text class="chart-label" x="260" y="162">11%</text><text class="chart-small" x="260" y="320">2026</text>
+                <circle class="chart-dot" cx="350" cy="148.3" r="6" /><text class="chart-label" x="322" y="135">13.625%</text><text class="chart-small" x="330" y="320">2027</text>
+                <circle class="chart-dot" cx="420" cy="121" r="6" /><text class="chart-label" x="396" y="108">16.25%</text><text class="chart-small" x="400" y="320">2028</text>
+                <circle class="chart-dot" cx="490" cy="93.7" r="6" /><text class="chart-label" x="465" y="80">18.875%</text><text class="chart-small" x="470" y="320">2029</text>
+                <circle class="chart-dot" cx="560" cy="66.4" r="6" /><text class="chart-label" x="536" y="53">21.5%</text><text class="chart-small" x="540" y="320">2030</text>
+              </g>
+            </svg>
+            <p class="chart-note"><strong>解讀重點：</strong>2023–2026 年每兩個百分點加嚴；2027–2030 年延伸至 21.5%，代表營運碳強度要求將持續提高。</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>CII 第二階段檢討</h3>
+          <span class="badge amber">尚未全部定案</span>
+          <ul>
+            <li>MEPC 84 已啟動 SEEMP 與 CII 第二階段檢討，預計於 2028 年完成。</li>
+            <li>強化 SEEMP 的方向包括：定期內部審查、持續改善、稽核安排強化、能源效率實施紀錄。</li>
+            <li>郵輪 cgHRS 指標尚未達成一致，將於後續會議續審。</li>
+            <li>不利天候 CII 指標、參考線調整、修正因子與新指標仍屬後續工作範圍。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>CII 實施挑戰與目前處理方向</h3>
+        <table>
+          <thead><tr><th>議題</th><th>目前處理方向</th></tr></thead>
+          <tbody>
+            <tr><td>閒置、錨泊、待港與短航程影響</td><td>結合更細化的 DCS 數據，評估是否需要新指標或修正因子。</td></tr>
+            <tr><td>郵輪長時間停港影響</td><td>討論以營運小時為基礎的 cgHRS 指標，但尚未定案。</td></tr>
+            <tr><td>惡劣天候、船型特殊性與輔機負載</td><td>作為第二階段檢討議題，需更多資料與提案支持。</td></tr>
+            <tr><td>CII 與 Net-Zero Framework 可能重疊</td><td>待中期 GHG 措施最終設計明確後，再評估制度銜接。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="dcs">
+      <h2 class="section-title"><span class="icon">🗃️</span>DCS、SEEMP 與數據透明度</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>IMO DCS 資料存取</h3>
+          <ul>
+            <li>代表船旗國行動之 RO，可取得完整資料以執行驗證與管理工作。</li>
+            <li>MARPOL 附則 VI 締約方可取得所有船舶資料供分析用途。</li>
+            <li>公共使用者可取得匿名化資料，避免識別單一船舶。</li>
+          </ul>
+          <div class="callout info">目的在於提升燃油消耗資料透明度、支援政策分析，並強化 GHG 減排措施成效評估。</div>
+        </div>
+        <div class="card">
+          <h3>航行中與非航行中資料</h3>
+          <ul>
+            <li>自 2027 報告年度起，資料報告將更細分為「航行中」與「非航行中」。</li>
+            <li>MEPC 84 已釐清：即使 DCS 資料分列，CII 仍依日曆年度總排放與航行距離計算。</li>
+            <li>航程距離也應區分航行中與非航行中資料，以支援後續分析。</li>
+            <li>自 2027 報告年度起，生質燃料混合燃料的碳因子將依質量加權平均，而非能量加權平均。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="lca">
+      <h2 class="section-title"><span class="icon">🔬</span>LCA、永續性標準與第五次 IMO GHG 研究</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>生命週期評估與燃料認證</h3>
+          <ul>
+            <li>LCA 指引持續擴充燃料途徑、預設排放因子與實際排放因子驗證機制。</li>
+            <li>燃料生命週期標籤 FLL 將用於支援燃料來源、排放強度與永續性資訊的傳遞。</li>
+            <li>GESAMP-LCA 持續審查預設排放因子，並推動更一致的燃料途徑分類。</li>
+            <li>永續性標準涵蓋土地、水資源、在地社會發展、人權勞工與糧食安全等面向。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>第五次 IMO GHG 研究</h3>
+          <ul>
+            <li>研究任務範圍於 MEPC 84 完成。</li>
+            <li>研究將支援 2028 年 IMO GHG 策略檢討。</li>
+            <li>範圍包括國際航運排放資料、碳強度、未來排放情境與生命週期排放分析。</li>
+            <li>預計於 2026 年稍後啟動，並於 2028 年完成。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>預設排放因子提交流程</h3>
+        <table>
+          <thead><tr><th>步驟</th><th>內容</th></tr></thead>
+          <tbody>
+            <tr><td>1. 提案提交</td><td>以 IMO 指定模板提交燃料途徑與排放因子資料。</td></tr>
+            <tr><td>2. 科學審查</td><td>由 GESAMP-LCA 依燃料類型、數據品質與方法一致性審查。</td></tr>
+            <tr><td>3. 推薦數值</td><td>經審查後提出預設排放因子建議。</td></tr>
+            <tr><td>4. 納入指引</td><td>由 MEPC 決定是否納入 LCA 指引供後續使用。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="other">
+      <h2 class="section-title"><span class="icon">♻️</span>其他環保與技術議題</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>OCCS 船上碳捕集與儲存</h3>
+          <ul>
+            <li>MEPC 同意制定 OCCS 法規架構工作計畫。</li>
+            <li>短期優先處理避免 CO₂ 逸散至海洋與大氣環境、碳源追蹤、接收設施與記錄制度。</li>
+            <li>船上捕集 CO₂ 如何計入排放盤查，仍屬後續專門討論項目。</li>
+            <li>工作計畫目標為在 2028 年前推進完成。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>CH₄／N₂O 測量與監控</h3>
+          <ul>
+            <li>MEPC 84 採納與甲烷、氧化亞氮測量相關的技術指引。</li>
+            <li>涵蓋試驗台與船上量測、引擎負載監測、實際 Tank-to-Wake 排放值建立。</li>
+            <li>目前主要支援 LCA 與未來 GFI 實際排放因子的技術基礎。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>NOx 技術規範與引擎操作模式</h3>
+          <ul>
+            <li>MEPC 84 完成並批准 NOx 技術規範相關修正草案與配套修正方向。</li>
+            <li>重點包含多重引擎操作模式、非碳燃料與混合燃料引擎認證，以及測試循環釐清。</li>
+            <li>多重引擎操作模式相關要求將影響 2028 年 1 月 1 日起認證的新引擎族與引擎組。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>船舶拆解與生物污損</h3>
+          <ul>
+            <li>香港公約進入實施經驗建構階段，持續推動安全與環保船舶拆解。</li>
+            <li>生物污損管理將朝具法律約束力架構發展，以降低外來水生物種轉移風險。</li>
+            <li>危險物質清單 IHM 指引已依 MEPC.405(83) 更新。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2 class="section-title"><span class="icon">✅</span>簡報用速記版</h2>
+      <div class="card">
+        <div class="grid grid-2">
+          <div>
+            <h3>必背重點</h3>
+            <ul>
+              <li>MEPC 83：批准 IMO Net-Zero Framework 草案，不等於正式採納。</li>
+              <li>MEPC/ES.2：2025 年 10 月未採納，延後至 2026 年續行。</li>
+              <li>生效日：正式採納後，預期約 16 個月後生效。</li>
+              <li>GFI 單位：gCO₂eq/MJ，採 Well-to-Wake。</li>
+              <li>GFI 基準：GFI<sub>2008</sub> = 93.3 gCO₂eq/MJ。</li>
+            </ul>
+          </div>
+          <div>
+            <h3>容易混淆處</h3>
+            <ul>
+              <li>「批准草案」不同於「採納修正案」。</li>
+              <li>5,000 GT 以上應理解為遠洋／國際航行船舶範圍。</li>
+              <li>缺口公式應以正數表達需補償量。</li>
+              <li>CII Phase 2 已啟動，但 cgHRS 與部分新指標尚未定案。</li>
+              <li>Net-Zero Framework 的最終設計仍可能因 2026 年談判而調整。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="print-note">提示：列印或匯出 PDF 時，版面會自動切換為簡潔列印模式。如果發現錯誤，還請與我聯絡，讓資訊更完整：<a href="mailto:ReayHuang@gmail.com" style="color:#0891b2">ReayHuang@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>資料來源基礎：</strong>使用者原始 MEPC 83 筆記，並依 IMO MEPC 83 摘要、IMO Net-Zero Framework 常見問答、IMO 2025 年 10 月新聞稿、LR MEPC 84 Summary Report、DNV MEPC 84 技術更新、Bureau Veritas MEPC 84 Summary Report 進行校正整理。<br>
+      <span>本頁為學習與法規理解用筆記，實際合規仍應以 IMO 正式通函、決議、船旗國與 RO 要求為準。</span>
+    </div>
+  </footer>
+</body>
+</html>
