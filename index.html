@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yen-Jui Huang（Reay Huang）— Lloyd's Register 驗船師、PMP®。海事檢驗、法規筆記與專業知識分享。">
+  <title>Yen-Jui Huang｜海事驗船師 · PMP®</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__text">
+          Yen-Jui Huang
+          <span class="site-logo__role">Marine Surveyor · PMP®</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="開啟選單" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="主要導覽">
+        <a href="index.html" aria-current="page">首頁</a>
+        <a href="about.html">關於我</a>
+        <a href="notes/index.html">專業筆記</a>
+        <a href="research/index.html">研究資料</a>
+        <a href="https://www.linkedin.com/in/yen-jui-huang-pmp-a74285a2/" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-banner" aria-labelledby="hero-title">
+    <div class="hero-banner__inner">
+      <img
+        class="hero-banner__photo"
+        src="assets/images/reay-huang.png"
+        alt="Yen-Jui Huang（Reay Huang）形象照"
+        width="788"
+        height="1024"
+      >
+      <div>
+        <h1 id="hero-title">海事檢驗與合規的專業知見</h1>
+        <p class="lead">
+          我是 <strong>Yen-Jui Huang</strong>（Reay Huang），現任 Lloyd's Register Surveyor（韓國蔚山），
+          PMP®。曾任長榮海運輪機長與貨櫃船隊機務督導逾 13 年。此網站整理海事檢驗、法規與技術學習筆記。
+        </p>
+        <ul class="hero__tags">
+          <li><span class="tag">LR Surveyor</span></li>
+          <li><span class="tag">PMP®</span></li>
+          <li><span class="tag">Ex-Evergreen</span></li>
+        </ul>
+        <p style="margin-top: 1.75rem;">
+          <a class="btn" href="about.html">認識我</a>
+          <a class="btn btn--outline" href="https://www.linkedin.com/in/yen-jui-huang-pmp-a74285a2/" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="value-strip" aria-label="專業定位">
+    <div class="value-strip__grid">
+      <div class="value-strip__item">
+        <h3>檢驗與合規</h3>
+        <p>船舶檢驗實務、船級要求與現場協調經驗的整理與分享。</p>
+      </div>
+      <div class="value-strip__item">
+        <h3>專案與技術並重</h3>
+        <p>結合 PMP® 專案管理與海事工程背景，系統化紀錄學習成果。</p>
+      </div>
+      <div class="value-strip__item">
+        <h3>持續進修</h3>
+        <p>涵蓋海事法規、檢驗訓練與個人研究，作為長期知識庫。</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main">
+    <h2 class="section-title">最新內容</h2>
+    <p class="section-subtitle">專業筆記、研究摘要與個人簡介</p>
+
+    <div class="card-grid">
+      <article class="card">
+        <p class="meta">專業筆記 · 海事法規</p>
+        <h3><a href="notes/maritime/class-survey-basics.html">船級檢驗與法規入門筆記</a></h3>
+        <p>檢驗類型、主管機關與常見規範架構的整理。</p>
+      </article>
+      <article class="card">
+        <p class="meta">研究筆記 · 備品供應鏈管理</p>
+        <h3><a href="research/sbc-demand-classification.html">SBC需求型態分類</a></h3>
+        <p>以 ADI 與 CV² 分類備品需求，整理預測、採購與庫存管理策略。</p>
+      </article>
+      <article class="card">
+        <p class="meta">關於我</p>
+        <h3><a href="about.html">工作經歷 · 教育背景 · LinkedIn</a></h3>
+        <p>LR、長榮海運資歷，陽明交大與成大碩士學位。</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">Yen-Jui Huang</p>
+      <p>© <span id="year"></span> Yen-Jui Huang（Reay Huang）· 個人專業分享網站</p>
+      <p>
+        <a href="https://www.linkedin.com/in/yen-jui-huang-pmp-a74285a2/" rel="noopener noreferrer">LinkedIn</a>
+        · 任職於 <a href="https://www.lr.org/en/" rel="noopener noreferrer">Lloyd's Register</a>（個人網站不代表公司立場）
+      </p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

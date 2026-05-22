@@ -1,0 +1,746 @@
+/* 個人網站 — 海事／驗船專業風格（配色參考 lr.org） */
+
+:root {
+  --lr-navy: #070d19;
+  --lr-hero: #0d4665;
+  --lr-teal: #00c5b7;
+  --lr-teal-dark: #00a89c;
+  --lr-muted: #727b9d;
+  --lr-light: #eef5fb;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: var(--lr-navy);
+  --text-muted: var(--lr-muted);
+  --text-on-dark: #ffffff;
+  --accent: var(--lr-teal);
+  --accent-soft: var(--lr-light);
+  --border: #d8dee8;
+  --radius: 4px;
+  --font-sans: "Helvetica Neue", "Arial", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --max-width: 720px;
+  --page-width: 1200px;
+  --header-height: 72px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--lr-teal-dark);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 頁首 — 白底、簡潔導覽（類 lr.org） */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgba(7, 13, 25, 0.04);
+}
+
+.site-header__inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-logo {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--lr-navy);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  line-height: 1.2;
+}
+
+.site-logo__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-logo::before {
+  content: "";
+  width: 4px;
+  height: 1.4rem;
+  background: var(--lr-teal);
+  border-radius: 1px;
+}
+
+.site-logo:hover {
+  color: var(--lr-hero);
+  text-decoration: none;
+}
+
+.site-logo__role {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--lr-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--lr-navy);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--lr-teal);
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--lr-navy);
+}
+
+/* 全幅 Hero 帶（深藍底） */
+.hero-banner {
+  background: linear-gradient(135deg, var(--lr-hero) 0%, var(--lr-navy) 100%);
+  color: var(--text-on-dark);
+}
+
+.hero-banner__inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 3.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero-banner__inner {
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    padding: 4rem 1.5rem 4.5rem;
+  }
+}
+
+.hero-banner h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-banner .lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 1.5rem;
+  max-width: 36rem;
+}
+
+.hero-banner__photo {
+  width: 180px;
+  height: auto;
+  border-radius: var(--radius);
+  border: 3px solid rgba(0, 197, 183, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  justify-self: center;
+}
+
+@media (min-width: 768px) {
+  .hero-banner__photo {
+    width: 200px;
+    justify-self: start;
+  }
+}
+
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background: rgba(0, 197, 183, 0.2);
+  color: #fff;
+  border: 1px solid rgba(0, 197, 183, 0.45);
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.35rem;
+  background: var(--lr-teal);
+  color: var(--lr-navy);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #33d4c8;
+  color: var(--lr-navy);
+  text-decoration: none;
+}
+
+.btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  margin-left: 0.75rem;
+}
+
+.btn--outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* 主內容 */
+.site-main {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.site-main--alt {
+  background: var(--lr-light);
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.site-main--alt > * {
+  max-width: var(--page-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* 價值主張列（仿 LR 三欄文案） */
+.value-strip {
+  background: var(--lr-light);
+  padding: 2.5rem 0;
+  margin: 0 0 3rem;
+}
+
+.value-strip__grid {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .value-strip__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.value-strip__item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--lr-navy);
+  margin: 0 0 0.5rem;
+}
+
+.value-strip__item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--lr-muted);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--lr-navy);
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  color: var(--lr-muted);
+  margin: 0 0 1.75rem;
+  font-size: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  border-top: 3px solid var(--lr-teal);
+}
+
+.card:hover {
+  border-color: var(--lr-teal);
+  box-shadow: 0 8px 24px rgba(7, 13, 25, 0.08);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.card h3 a {
+  color: var(--lr-navy);
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  color: var(--lr-teal);
+}
+
+.card .meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--lr-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.75rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--lr-muted);
+}
+
+/* 關於我 */
+.profile {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .profile {
+    grid-template-columns: 200px 1fr;
+    align-items: start;
+  }
+}
+
+.profile__avatar {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.profile__photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(7, 13, 25, 0.1);
+}
+
+.profile dl {
+  margin: 1.5rem 0 0;
+}
+
+.profile dt {
+  font-weight: 700;
+  color: var(--lr-navy);
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.profile dd {
+  margin: 0.35rem 0 0;
+  color: var(--text-muted);
+}
+
+/* 文章 */
+.article-header {
+  max-width: var(--max-width);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-header h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+  color: var(--lr-navy);
+  letter-spacing: -0.02em;
+}
+
+.article-header .meta {
+  color: var(--lr-muted);
+  font-size: 0.9rem;
+}
+
+.article-body {
+  max-width: var(--max-width);
+}
+
+.article-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--lr-navy);
+  margin: 2rem 0 0.75rem;
+}
+
+.article-body h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.article-body p,
+.article-body ul,
+.article-body ol {
+  margin: 0 0 1rem;
+}
+
+.article-body blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--lr-teal);
+  background: var(--lr-light);
+  color: var(--lr-navy);
+}
+
+.article-body pre,
+.article-body code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+}
+
+.article-body pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--lr-light);
+  border-radius: var(--radius);
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: var(--lr-muted);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: var(--lr-muted);
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.category-list li {
+  margin-bottom: 0.65rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--lr-teal);
+}
+
+.category-list a {
+  font-weight: 600;
+  color: var(--lr-navy);
+}
+
+.callout {
+  padding: 1.25rem 1.5rem;
+  background: var(--lr-light);
+  border-left: 4px solid var(--lr-teal);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+  color: var(--lr-muted);
+  margin: 2rem 0;
+}
+
+/* 經歷／學歷時間軸 */
+.timeline {
+  margin: 2.5rem 0 3rem;
+  max-width: 52rem;
+}
+
+.timeline__org {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline__org:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline__logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.timeline__logo--lr {
+  background: var(--lr-teal);
+  color: var(--lr-navy);
+}
+
+.timeline__logo--eg {
+  background: #006341;
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+.timeline__logo--nycu {
+  background: #1e3a8a;
+  color: #fff;
+  font-size: 0.65rem;
+}
+
+.timeline__logo--ncku {
+  background: #b91c1c;
+  color: #fff;
+  font-size: 0.65rem;
+}
+
+.timeline__org-head h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--lr-navy);
+}
+
+.timeline__org-meta {
+  font-size: 0.9rem;
+  color: var(--lr-muted);
+  margin: 0 0 1.25rem;
+}
+
+.timeline__roles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline__role {
+  padding: 0 0 1.5rem 1.25rem;
+  margin-left: 0.25rem;
+  border-left: 2px solid var(--lr-light);
+  position: relative;
+}
+
+.timeline__role::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lr-teal);
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.timeline__role:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__role-title {
+  font-weight: 700;
+  color: var(--lr-navy);
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+}
+
+.timeline__role-dates {
+  font-size: 0.85rem;
+  color: var(--lr-teal);
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.timeline__role-loc {
+  font-size: 0.85rem;
+  color: var(--lr-muted);
+  margin: 0 0 0.5rem;
+}
+
+.timeline__role-desc {
+  font-size: 0.95rem;
+  color: var(--lr-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+.timeline__role-desc ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.timeline__role-desc li {
+  margin-bottom: 0.35rem;
+}
+
+.timeline__gpa {
+  font-size: 0.9rem;
+  color: var(--lr-navy);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skill-tag {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--lr-light);
+  color: var(--lr-hero);
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.about-summary {
+  max-width: 52rem;
+}
+
+/* 頁尾 — 深藍底 */
+.site-footer {
+  background: var(--lr-navy);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 2.5rem 1.5rem 3rem;
+  font-size: 0.9rem;
+}
+
+.site-footer__inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.site-footer a {
+  color: var(--lr-teal);
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.site-footer__brand {
+  color: #fff;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-header__inner {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .btn--outline {
+    margin-left: 0;
+    margin-top: 0.75rem;
+  }
+}

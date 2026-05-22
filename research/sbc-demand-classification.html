@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBC需求型態分類｜Reay's Note</title>
+  <meta name="description" content="以需求發生頻率與需求量穩定度分類備品需求，協助船東建立更有依據的預測、採購與庫存管理策略。" />
+  <meta property="og:title" content="SBC需求型態分類｜Reay's Note" />
+  <meta property="og:description" content="以需求發生頻率與需求量穩定度分類備品需求，協助船東建立更有依據的預測、採購與庫存管理策略。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <!-- LinkedIn 分享預覽圖：發布後建議改成完整 HTTPS 圖片網址，例如 https://your-domain.com/assets/images/sbc/linkedin-preview.png -->
+  <meta property="og:image" content="../assets/images/sbc/linkedin-preview.png" />
+  <meta property="og:image:alt" content="SBC需求型態分類學習筆記預覽圖" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SBC需求型態分類｜Reay's Note" />
+  <meta name="twitter:description" content="以需求發生頻率與需求量穩定度分類備品需求，協助船東建立更有依據的預測、採購與庫存管理策略。" />
+  <meta name="twitter:image" content="../assets/images/sbc/linkedin-preview.png" />
+  <style>
+    :root {
+      --navy: #0f2f63;
+      --blue: #1f5fbf;
+      --blue-2: #eaf3ff;
+      --blue-3: #d7e8ff;
+      --teal: #0f766e;
+      --teal-2: #e7f7f4;
+      --orange: #c76b00;
+      --orange-2: #fff4df;
+      --red: #c62828;
+      --green: #2e7d32;
+      --green-2: #ecf7ec;
+      --purple: #5b3bbf;
+      --purple-2: #f1edff;
+      --gray-900: #172033;
+      --gray-700: #46556b;
+      --gray-500: #748094;
+      --gray-200: #e8edf5;
+      --gray-100: #f5f7fb;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(15, 47, 99, 0.10);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--gray-900);
+      background:
+        radial-gradient(circle at top left, rgba(31, 95, 191, 0.12), transparent 34rem),
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.10), transparent 30rem),
+        linear-gradient(180deg, #fbfdff 0%, #f3f6fb 45%, #ffffff 100%);
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 36px 0 72px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f2f63 0%, #1552aa 58%, #0f766e 100%);
+      color: #fff;
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -150px;
+      top: -130px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.11);
+      box-shadow: -70px 90px 0 rgba(255,255,255,0.06);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.24);
+      font-weight: 800;
+      font-size: 0.92rem;
+      letter-spacing: .04em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: #d8e8ff;
+      font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+      letter-spacing: .02em;
+      margin-top: 14px;
+      font-weight: 700;
+    }
+
+    .hero-summary {
+      position: relative;
+      z-index: 1;
+      margin: 28px 0 0;
+      max-width: 900px;
+      font-size: 1.16rem;
+      color: rgba(255,255,255,.93);
+    }
+
+    .hero-summary strong {
+      color: #fff7c4;
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 8px;
+      margin: 22px 0 34px;
+      padding: 10px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(245,249,255,.92) 100%);
+      border: 1px solid #d6e4f7;
+      box-shadow: 0 12px 32px rgba(15, 47, 99, 0.08);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+    }
+
+    .nav-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-height: 58px;
+      padding: 8px 6px;
+      border-radius: 14px;
+      color: var(--navy);
+      background: rgba(255,255,255,.88);
+      border: 1px solid #e3ecfa;
+      box-shadow: 0 2px 8px rgba(15, 47, 99, 0.04);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      text-align: center;
+    }
+
+    .nav-num {
+      display: inline-grid;
+      place-items: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: var(--blue-2);
+      color: var(--blue);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+      line-height: 1;
+    }
+
+    .nav-label {
+      font-size: .82rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      transform: translateY(-1px);
+      border-color: #b8d3ff;
+      background: #f7fbff;
+      box-shadow: 0 8px 18px rgba(31, 95, 191, 0.12);
+    }
+
+    .nav-link:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+
+    .nav-link.is-active {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-color: transparent;
+      box-shadow: 0 10px 22px rgba(31, 95, 191, 0.24);
+      color: #fff;
+    }
+
+    .nav-link.is-active .nav-num {
+      background: rgba(255,255,255,.18);
+      color: #fff;
+    }
+
+    section {
+      margin-top: 32px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+    }
+
+    .section-title .num {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      font-size: 1.1rem;
+      box-shadow: 0 12px 24px rgba(31, 95, 191, 0.18);
+    }
+
+    .card {
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 14px 36px rgba(15, 47, 99, 0.07);
+      padding: 26px;
+    }
+
+    .lead-card {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 20px;
+      align-items: start;
+      background: linear-gradient(135deg, #ffffff 0%, #eef6ff 100%);
+      border: 1px solid #cfe2ff;
+    }
+
+    .icon-circle {
+      display: grid;
+      place-items: center;
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: var(--blue-2);
+      color: var(--blue);
+      font-size: 2.2rem;
+      border: 1px solid #c8dcff;
+    }
+
+    .lead-card h2 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.45rem;
+      line-height: 1.35;
+    }
+
+    .lead-card p {
+      margin: 0;
+      color: var(--gray-700);
+      font-size: 1.08rem;
+    }
+
+    .lead-card strong {
+      color: var(--navy);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .definition-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .definition-list li {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .definition-list .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--blue);
+      flex: 0 0 auto;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: var(--navy);
+      border: 1px solid #c9ddff;
+      font-weight: 800;
+      font-size: .94rem;
+    }
+
+    .formula-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .formula-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 12px 34px rgba(15, 47, 99, 0.07);
+    }
+
+    .formula-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--blue), var(--teal));
+    }
+
+    .formula-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.38rem;
+    }
+
+    .formula {
+      display: grid;
+      place-items: center;
+      gap: 10px;
+      min-height: 90px;
+      margin: 16px 0;
+      padding: 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f6f9ff, #edf5ff);
+      border: 1px solid #d9e8ff;
+      color: var(--navy);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 900;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .formula-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45em;
+      flex-wrap: wrap;
+    }
+
+    .formula-frac {
+      display: inline-grid;
+      grid-template-rows: auto auto;
+      justify-items: center;
+      vertical-align: middle;
+      font-size: 0.92em;
+      line-height: 1.1;
+    }
+
+    .formula-frac .num {
+      padding: 0 0.35em 0.18em;
+      border-bottom: 2px solid currentColor;
+    }
+
+    .formula-frac .den {
+      padding: 0.18em 0.35em 0;
+    }
+
+    .formula-paren {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.08em;
+    }
+
+    .chart-figure {
+      margin: 0;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .chart-caption {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 1.12rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .figure-explainer {
+      max-width: 900px;
+      margin: 16px auto 0;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7fbff, #eef6ff);
+      border: 1px solid #d7e8ff;
+    }
+
+    .figure-explainer p {
+      margin: 0;
+      color: var(--gray-700);
+      font-weight: 750;
+      line-height: 1.8;
+    }
+
+    .figure-legend {
+      max-width: 900px;
+      margin: 18px auto 0;
+      overflow-x: auto;
+    }
+
+    .figure-legend .classification-table {
+      border: 1px solid #d9e8fb;
+      border-spacing: 0;
+      box-shadow: 0 18px 44px rgba(15, 47, 99, 0.1);
+      table-layout: fixed;
+    }
+
+    .figure-legend .classification-table th {
+      text-align: center;
+      padding: 18px 20px;
+      font-size: 1rem;
+    }
+
+    .figure-legend .classification-table td {
+      text-align: center;
+      vertical-align: middle;
+      padding: 22px 20px;
+      font-weight: 750;
+      line-height: 1.65;
+    }
+
+    .figure-legend .classification-table tbody tr:nth-child(odd) td {
+      background: #fbfdff;
+    }
+
+    .figure-legend .classification-table tbody tr:hover td {
+      background: #eef6ff;
+    }
+
+    .figure-legend .classification-table .type-name {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .figure-legend .classification-table .type-name span {
+      margin-top: 0;
+    }
+
+    .image-slot {
+      margin: 0;
+    }
+
+    .image-slot img,
+    .page-image {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 12px;
+      border: 1px solid var(--gray-200);
+      background: #fff;
+    }
+
+    .image-slot.has-image .image-slot-hint,
+    .image-slot:not(.is-missing) .image-slot-hint {
+      display: none;
+    }
+
+    .image-slot.is-missing img {
+      display: none;
+    }
+
+    .image-slot-hint {
+      margin: 12px 0 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--blue-2);
+      border: 1px dashed #9ec0ff;
+      color: var(--gray-700);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .image-slot-hint code {
+      padding: 0.1em 0.35em;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--navy);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9em;
+    }
+
+    .optional-image {
+      display: none;
+    }
+
+    .formula small {
+      display: block;
+      color: var(--gray-500);
+      font-size: .88rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .example {
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--orange-2);
+      color: #643700;
+      border: 1px solid #f0d19b;
+      font-weight: 750;
+    }
+
+    .matrix-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .quadrant-card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 14px 36px rgba(15, 47, 99, 0.07);
+      padding: 22px;
+    }
+
+    .matrix-axes {
+      position: relative;
+      padding: 42px 24px 34px 56px;
+    }
+
+    .y-label,
+    .x-label {
+      position: absolute;
+      color: var(--navy);
+      font-weight: 900;
+      font-size: .95rem;
+    }
+
+    .y-label {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      transform-origin: center;
+      white-space: nowrap;
+    }
+
+    .x-label {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .axis-hint {
+      position: absolute;
+      color: var(--gray-700);
+      font-weight: 900;
+      font-size: .88rem;
+    }
+
+    .axis-hint.top { top: 8px; left: 62px; }
+    .axis-hint.bottom { bottom: 8px; left: 62px; }
+    .axis-hint.left { left: 56px; bottom: 2px; }
+    .axis-hint.right { right: 18px; bottom: 2px; }
+
+    .quadrant-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 2px solid #24446e;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .quadrant {
+      min-height: 198px;
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(36,68,110,.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quadrant:nth-child(1) { background: #eef6ff; }
+    .quadrant:nth-child(2) { background: #fff7e7; }
+    .quadrant:nth-child(3) { background: #edf8f5; }
+    .quadrant:nth-child(4) { background: #f8f8fb; }
+
+    .quadrant h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.32rem;
+      line-height: 1.2;
+    }
+
+    .quadrant .zh {
+      color: var(--gray-700);
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .tiny-chart {
+      height: 52px;
+      display: flex;
+      align-items: end;
+      gap: 6px;
+      padding: 0 0 2px;
+      border-bottom: 2px solid rgba(15,47,99,.25);
+      border-left: 2px solid rgba(15,47,99,.20);
+      margin-bottom: 12px;
+    }
+
+    .tiny-chart span {
+      width: 10px;
+      background: var(--blue);
+      border-radius: 4px 4px 0 0;
+    }
+
+    .threshold-card {
+      background: linear-gradient(135deg, #fff 0%, #f7faff 100%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(15, 47, 99, 0.07);
+    }
+
+    .threshold-card h3 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: 1.45rem;
+    }
+
+    .threshold-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0 0;
+    }
+
+    .threshold {
+      border-radius: 16px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #d8e7ff;
+    }
+
+    .threshold .label {
+      color: var(--gray-500);
+      font-size: .9rem;
+      font-weight: 800;
+    }
+
+    .threshold .value {
+      display: block;
+      color: var(--red);
+      font-size: 2rem;
+      font-weight: 950;
+      line-height: 1.2;
+      margin-top: 4px;
+    }
+
+    .classification-table,
+    .strategy-table,
+    .glossary-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--gray-200);
+      background: #fff;
+      box-shadow: 0 14px 36px rgba(15, 47, 99, 0.07);
+    }
+
+    th {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      text-align: left;
+      padding: 16px;
+      font-size: .98rem;
+      letter-spacing: .03em;
+    }
+
+    td {
+      vertical-align: top;
+      padding: 16px;
+      border-top: 1px solid var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    tbody tr:hover td {
+      background: #f8fbff;
+    }
+
+    .type-name {
+      color: var(--navy);
+      font-weight: 950;
+      line-height: 1.35;
+    }
+
+    .type-name span {
+      display: block;
+      color: var(--gray-500);
+      font-weight: 800;
+      font-size: .9rem;
+      margin-top: 3px;
+    }
+
+    .tag-low,
+    .tag-high {
+      display: inline-grid;
+      place-items: center;
+      min-width: 42px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: .85rem;
+    }
+
+    .tag-low {
+      background: var(--green-2);
+      color: var(--green);
+    }
+
+    .tag-high {
+      background: #fff0ef;
+      color: var(--red);
+    }
+
+    .management-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .management-card {
+      position: relative;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 12px 32px rgba(15,47,99,.06);
+      overflow: hidden;
+    }
+
+    .management-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8px;
+      height: 100%;
+      background: var(--blue);
+    }
+
+    .management-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.25rem;
+    }
+
+    .management-card p {
+      margin: 0 0 12px;
+      color: var(--gray-700);
+    }
+
+    .management-strategy-table {
+      width: 100%;
+      margin-top: 14px;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: .92rem;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--gray-200);
+    }
+
+    .management-strategy-table th,
+    .management-strategy-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-200);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .management-strategy-table th {
+      color: var(--navy);
+      font-weight: 900;
+      background: #f3f7fd;
+    }
+
+    .management-strategy-table td:first-child {
+      width: 34%;
+      color: var(--navy);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .management-strategy-table td:last-child {
+      color: var(--gray-700);
+    }
+
+    .management-strategy-table tbody tr:nth-child(even) td {
+      background: #fbfdff;
+    }
+
+    .management-strategy-table tr:last-child th,
+    .management-strategy-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .management-card ul,
+    .question-card ul,
+    .attention-card ul {
+      margin: 10px 0 0;
+      padding-left: 1.2rem;
+      color: var(--gray-700);
+    }
+
+    .method-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .method-card {
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 12px 32px rgba(15,47,99,.06);
+    }
+
+    .method-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.3rem;
+    }
+
+    .method-card .method-badge {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: .82rem;
+      font-weight: 900;
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .question-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      background: #fff;
+      box-shadow: 0 12px 32px rgba(15,47,99,.06);
+    }
+
+    .question-card .q {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--blue-2);
+      color: var(--blue);
+      font-weight: 950;
+      margin-bottom: 12px;
+    }
+
+    .question-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.18rem;
+    }
+
+    .strategy-table td:first-child {
+      width: 33%;
+      color: var(--navy);
+      font-weight: 950;
+    }
+
+    .strategy-table td:nth-child(2) {
+      color: var(--gray-900);
+      font-weight: 700;
+    }
+
+    .strategy-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+      border-radius: 10px;
+      background: var(--blue-2);
+      color: var(--blue);
+      font-size: .95rem;
+      vertical-align: middle;
+    }
+
+    .glossary-table td:first-child {
+      color: var(--navy);
+      font-weight: 950;
+      width: 35%;
+    }
+
+    .attention-card {
+      background: linear-gradient(135deg, #fffdf8 0%, #fff8e8 100%);
+      border-color: #f1d49e;
+    }
+
+    .attention-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .attention-section {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid #efd8ab;
+    }
+
+    .attention-card h3 {
+      margin: 0 0 10px;
+      color: #7a4100;
+      font-size: 1.35rem;
+    }
+
+    .attention-section p {
+      margin: 0 0 12px;
+      color: var(--gray-700);
+    }
+
+    .factor-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .factor-list li {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #edd8ad;
+      color: #6b4a15;
+      font-weight: 800;
+      font-size: .92rem;
+    }
+
+    .key-principle {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: #fff7e5;
+      border: 1px solid #e7c989;
+      color: #6b3d00;
+      font-size: 1.08rem;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .quote-final {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-top: 34px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, var(--navy), #164f9e);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-final .check {
+      display: grid;
+      place-items: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      font-size: 2rem;
+    }
+
+    .quote-final h2 {
+      margin: 0 0 8px;
+      font-size: 1.45rem;
+    }
+
+    .quote-final p {
+      margin: 0;
+      color: rgba(255,255,255,.93);
+      font-size: 1.08rem;
+    }
+
+    .quote-final strong {
+      color: #fff7c4;
+    }
+
+    .print-note {
+      margin-top: 20px;
+      text-align: center;
+      color: var(--gray-500);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero { padding: 34px; }
+      .two-col,
+      .formula-grid,
+      .matrix-wrap,
+      .attention-grid,
+      .management-grid,
+      .method-flow,
+      .question-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        position: static;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .matrix-axes {
+        padding-left: 46px;
+      }
+
+      .classification-table,
+      .strategy-table,
+      .glossary-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 24px, 1180px);
+        padding-top: 18px;
+      }
+
+      .hero {
+        padding: 28px 22px;
+        border-radius: 22px;
+      }
+
+      .lead-card,
+      .quote-final {
+        grid-template-columns: 1fr;
+      }
+
+      .quadrant-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quadrant {
+        min-height: 170px;
+      }
+
+      .threshold-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        align-items: flex-start;
+      }
+
+      .section-title .num {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        gap: 8px;
+        padding: 10px 8px;
+      }
+
+      .nav-link {
+        flex: 0 0 auto;
+        min-width: 92px;
+        scroll-snap-align: start;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .card,
+      .formula-card,
+      .quadrant-card,
+      .threshold-card,
+      .management-card,
+      .method-card,
+      .question-card,
+      .classification-table,
+      .strategy-table,
+      .glossary-table {
+        box-shadow: none;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    圖檔使用方式：
+    1. 將 PNG / JPG / WebP 放入 ../assets/images/sbc/
+    2. 修改各區塊 <img src="..."> 的檔名即可
+    3. 預設檔名：
+       - 01-chart-paradigm.png   → 01 與 02 之間的散點圖
+       - 02-formulas.png         → 02 指標（可選）
+       - 03-quadrants.png        → 03 四象限（左側圖檔，取代原 CSS 矩陣）
+  -->
+  <main class="page">
+    <header class="hero">
+      <div class="hero-badge">🚢 備品供應鏈管理｜Reay's Note</div>
+      <h1>
+        SBC需求型態分類
+        <span>Syntetos–Boylan–Croston demand classification</span>
+      </h1>
+      <p class="hero-summary">
+        以<strong>需求發生頻率</strong>與<strong>需求量穩定度</strong>分類備品需求，協助船東建立更有依據的預測、採購與庫存管理策略。
+      </p>
+    </header>
+
+    <nav class="nav" aria-label="頁面導覽">
+      <a href="#what" class="nav-link"><span class="nav-num">01</span><span class="nav-label">是什麼</span></a>
+      <a href="#metrics" class="nav-link"><span class="nav-num">02</span><span class="nav-label">指標</span></a>
+      <a href="#quadrants" class="nav-link"><span class="nav-num">03</span><span class="nav-label">四象限</span></a>
+      <a href="#management" class="nav-link"><span class="nav-num">04</span><span class="nav-label">管理重點</span></a>
+      <a href="#insights" class="nav-link"><span class="nav-num">05</span><span class="nav-label">管理啟發</span></a>
+      <a href="#strategy" class="nav-link"><span class="nav-num">06</span><span class="nav-label">採購策略</span></a>
+      <a href="#notes" class="nav-link"><span class="nav-num">07</span><span class="nav-label">注意事項</span></a>
+    </nav>
+
+    <section id="what">
+      <h2 class="section-title"><span class="num">01</span>SBC demand classification 是什麼？</h2>
+      <div class="two-col">
+        <div class="card">
+          <p><strong>SBC demand classification</strong> 又可稱為：</p>
+          <ul class="definition-list">
+            <li><span class="dot"></span>Syntetos–Boylan–Croston demand classification</li>
+            <li><span class="dot"></span>Syntetos &amp; Boylan intermittent demand classification</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p>SBC demand classification 是一套針對不規則備品需求的分類方法。</p>
+          <p>它利用 ADI 與 CV² 判斷需求型態，協助將品項分為 Smooth（平滑需求）、Erratic（不穩定需求）、Intermittent（間歇需求）與 Lumpy（零散／塊狀需求）。</p>
+          <p>這套方法常用於船舶備品、維修料件、低頻耗材與慢速移動庫存。</p>
+          <div class="pill-row">
+            <span class="pill">船舶備品</span>
+            <span class="pill">維修料件</span>
+            <span class="pill">低頻耗材</span>
+            <span class="pill">慢速移動庫存</span>
+          </div>
+          <p style="margin-top:16px;">其目的在於協助選擇合適的預測方法、庫存水準與採購策略。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="metrics">
+      <h2 class="section-title"><span class="num">02</span>兩個主要指標：ADI 與 CV²</h2>
+      <div class="formula-grid">
+        <article class="formula-card">
+          <h3>ADI：平均需求間隔（Average Demand Interval）</h3>
+          <p>代表平均多久發生一次<strong>非零需求</strong>。</p>
+          <div class="formula">
+            <span class="formula-line" aria-label="ADI 等於 T 除以 N 加">
+              ADI =
+              <span class="formula-frac">
+                <span class="num">T</span>
+                <span class="den">N<sub>+</sub></span>
+              </span>
+            </span>
+            <small>T：觀察期間總數｜N<sub>+</sub>：有需求的期間數</small>
+          </div>
+          <div class="example">例：24 個月中只有 6 個月有需求，ADI = 24 ÷ 6 = 4，表示平均每 4 個月才發生一次需求。</div>
+        </article>
+
+        <article class="formula-card">
+          <h3>CV²：需求量變異係數平方（Squared Coefficient of Variation）</h3>
+          <p>代表「有發生需求時，需求量本身的波動程度」。</p>
+          <div class="formula">
+            <span class="formula-line" aria-label="CV 平方等於 sigma z 除以 mu z 的平方">
+              CV² =
+              <span class="formula-paren">(
+                <span class="formula-frac">
+                  <span class="num">σ<sub>z</sub></span>
+                  <span class="den">μ<sub>z</sub></span>
+                </span>
+              )²</span>
+            </span>
+            <small>σ<sub>z</sub>：非零需求量標準差｜μ<sub>z</sub>：非零需求量平均值</small>
+          </div>
+          <div class="example">需求量每次約 1–2 件時 CV² 較低；有時 1 件、有時 20 件時 CV² 較高。</div>
+        </article>
+      </div>
+
+      <!-- 可選：用圖片取代上方公式卡片時，刪除 figure 的 class="optional-image" -->
+      <figure class="card chart-figure image-slot optional-image" id="image-formulas">
+        <figcaption class="chart-caption">ADI 與 CV² 公式示意（可選圖檔）</figcaption>
+        <img
+          class="page-image"
+          src="../assets/images/sbc/02-formulas.png"
+          alt="ADI 與 CV² 公式示意圖"
+          loading="lazy"
+        />
+        <p class="image-slot-hint">
+          可選圖檔：<code>../assets/images/sbc/02-formulas.png</code>。若要顯示，刪除此 figure 的 <code>optional-image</code> class。
+        </p>
+      </figure>
+    </section>
+
+    <section id="chart-paradigm" aria-labelledby="chart-paradigm-caption">
+      <figure class="card chart-figure image-slot" id="image-chart-paradigm">
+        <figcaption id="chart-paradigm-caption" class="chart-caption">需求分類分析</figcaption>
+        <img
+          class="page-image"
+          src="../assets/images/sbc/01-chart-paradigm.png"
+          alt="SBC 需求分類散點圖：以 ADI 與 CV² 切分 Smooth、Intermittent、Erratic、Lumpy 四象限"
+        />
+        <div class="figure-explainer">
+          <p>
+            本圖以 ADI（平均需求間隔）與 CV²（需求量變異）將備品需求分為四種類型。
+            每個藍點代表一項備品，紅線為常用分類門檻。
+            分類結果可協助船東選擇合適的預測方法、庫存水準與採購策略。
+          </p>
+        </div>
+        <p class="image-slot-hint">
+          請將圖檔放入 <code>../assets/images/sbc/01-chart-paradigm.png</code>，或修改上方 <code>src</code> 指向您的檔案。
+        </p>
+        <div class="figure-legend">
+          <table class="classification-table">
+            <thead>
+              <tr>
+                <th>區域</th>
+                <th>意思</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="type-name">Smooth demand<span>平滑需求</span></div></td>
+                <td>需求常發生，且用量穩定</td>
+              </tr>
+              <tr>
+                <td><div class="type-name">Erratic demand<span>不穩定需求</span></div></td>
+                <td>需求常發生，但每次用量差異大</td>
+              </tr>
+              <tr>
+                <td><div class="type-name">Intermittent demand<span>間歇需求</span></div></td>
+                <td>需求不常發生，但用量相對穩定</td>
+              </tr>
+              <tr>
+                <td><div class="type-name">Lumpy demand<span>零散／塊狀需求</span></div></td>
+                <td>需求不常發生，且用量也不穩定</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </figure>
+    </section>
+
+    <section id="quadrants">
+      <h2 class="section-title"><span class="num">03</span>四個需求象限</h2>
+
+      <div class="matrix-wrap">
+        <figure class="card chart-figure image-slot quadrant-card" id="image-quadrants">
+          <img
+            class="page-image"
+            src="../assets/images/sbc/03-quadrants.png"
+            alt="Smooth、Erratic、Intermittent、Lumpy 四象限需求分類示意圖"
+          />
+          <p class="image-slot-hint">
+            請將四象限圖檔放入 <code>../assets/images/sbc/03-quadrants.png</code>，或修改上方 <code>src</code> 指向您的檔案。
+          </p>
+        </figure>
+
+        <div class="threshold-card">
+          <h3>常見切分值</h3>
+          <p>在實務與研究中，常見使用以下門檻值將需求型態分成四類：</p>
+          <div class="threshold-list">
+            <div class="threshold">
+              <span class="label">需求發生間隔</span>
+              <span class="value">ADI = 1.32</span>
+            </div>
+            <div class="threshold">
+              <span class="label">需求量變異程度</span>
+              <span class="value">CV² = 0.49</span>
+            </div>
+          </div>
+          <p style="margin-top:18px;color:var(--gray-700);">
+            ADI 較高代表需求不常發生；CV² 較高代表每次需求量波動較大。對船舶備品而言，這能幫助判斷是否適合用一般平均需求來管理。
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:22px; overflow-x:auto;">
+        <table class="classification-table">
+          <thead>
+            <tr>
+              <th>需求類型</th>
+              <th>ADI</th>
+              <th>CV²</th>
+              <th>意義</th>
+              <th>船舶備品例子</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="type-name">Smooth demand<span>平滑需求</span></div></td>
+              <td><span class="tag-low">低</span></td>
+              <td><span class="tag-low">低</span></td>
+              <td>需求經常發生，且用量穩定。</td>
+              <td>常用濾芯、O 型環、清潔耗材</td>
+            </tr>
+            <tr>
+              <td><div class="type-name">Erratic demand<span>不穩定需求</span></div></td>
+              <td><span class="tag-low">低</span></td>
+              <td><span class="tag-high">高</span></td>
+              <td>需求經常發生，但每次用量差異大。</td>
+              <td>維修用螺栓、墊片、油封</td>
+            </tr>
+            <tr>
+              <td><div class="type-name">Intermittent demand<span>間歇需求</span></div></td>
+              <td><span class="tag-high">高</span></td>
+              <td><span class="tag-low">低</span></td>
+              <td>需求不常發生，但每次用量相對穩定。</td>
+              <td>特定型號感測器、電磁閥、繼電器</td>
+            </tr>
+            <tr>
+              <td><div class="type-name">Lumpy demand<span>零散／塊狀需求</span></div></td>
+              <td><span class="tag-high">高</span></td>
+              <td><span class="tag-high">高</span></td>
+              <td>需求不常發生，且每次用量也非常不穩定。</td>
+              <td>主機特殊備件、泵浦總成、關鍵備品組</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="management">
+      <h2 class="section-title"><span class="num">04</span>各類型的管理重點</h2>
+      <div class="management-grid">
+        <article class="management-card">
+          <h3>Smooth demand（平滑需求）｜可用一般預測方法</h3>
+          <p>這類需求比較接近一般庫存品，可用移動平均、指數平滑、再訂購點或簡單安全庫存邏輯管理。</p>
+          <p><strong>船舶管理常見品項：</strong>日常消耗品或定期保養品。</p>
+          <table class="management-strategy-table">
+            <thead>
+              <tr>
+                <th scope="col">策略</th>
+                <th scope="col">說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>自動補貨</td>
+                <td>低於最低庫存即自動產生請購建議</td>
+              </tr>
+              <tr>
+                <td>批量採購</td>
+                <td>降低單位採購成本與運費</td>
+              </tr>
+              <tr>
+                <td>標準庫存量</td>
+                <td>為每艘船設定標準最低／最高庫存</td>
+              </tr>
+              <tr>
+                <td>供應商整合</td>
+                <td>減少零散供應商，提高採購效率</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="management-card">
+          <h3>Erratic demand（不穩定需求）｜重點在需求量波動</h3>
+          <p>這類品項經常發生需求，但每次用量差異大。若只看平均需求，容易低估高峰需求。</p>
+          <table class="management-strategy-table">
+            <thead>
+              <tr>
+                <th scope="col">策略</th>
+                <th scope="col">說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>動態安全庫存</td>
+                <td>根據需求波動程度調整安全庫存，不只看平均值</td>
+              </tr>
+              <tr>
+                <td>異常需求標記</td>
+                <td>將大修、事故、專案需求從一般消耗中分離</td>
+              </tr>
+              <tr>
+                <td>供應商快速供貨協議</td>
+                <td>對常用但波動大的品項建立快速報價與交貨機制</td>
+              </tr>
+              <tr>
+                <td>船隊集中採購</td>
+                <td>若多艘船都常用，可集中採購降低成本</td>
+              </tr>
+              <tr>
+                <td>定期檢討消耗原因</td>
+                <td>每季或每半年檢查是否有特定設備老化或重複故障</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="management-card">
+          <h3>Intermittent demand（間歇需求）｜傳統平均值容易失真</h3>
+          <p>如果品項不常用，但缺料會造成停機、延誤、船級／PSC 風險，就應該建立最低策略安全庫存。</p>
+          <table class="management-strategy-table">
+            <thead>
+              <tr>
+                <th scope="col">策略</th>
+                <th scope="col">說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>建立最低策略庫存</td>
+                <td>即使歷史需求低，也應保留最低數量</td>
+              </tr>
+              <tr>
+                <td>納入關鍵備品清單</td>
+                <td>由技術部門確認是否為關鍵備品</td>
+              </tr>
+              <tr>
+                <td>依交期設定庫存</td>
+                <td>交期越長，越需要預先備庫</td>
+              </tr>
+              <tr>
+                <td>與製造商／代理商確認供貨能力</td>
+                <td>避免臨時才發現停產或缺貨</td>
+              </tr>
+              <tr>
+                <td>建立替代料與等效料清單</td>
+                <td>降低單一料號斷供風險</td>
+              </tr>
+              <tr>
+                <td>船隊共享庫存</td>
+                <td>高價品可放岸基倉庫，不一定每艘船都備</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><strong>適合例子：</strong>主機控制感測器、發電機保護繼電器、鍋爐控制元件、分油機特定模組、舵機控制零件、自動化 PCB 控制板。</p>
+        </article>
+
+        <article class="management-card">
+          <h3>Lumpy demand（零散／塊狀需求）｜應偏向風險導向管理</h3>
+          <p>這類品項同時具備「很少發生」與「用量不穩定」兩個特性，單靠統計預測通常效果有限。</p>
+          <p>這是最需要船東重視的一類。</p>
+          <p>雖然需求很少，但如果缺料會造成停船、主機無法運轉、發電機不可用、舵機異常、船級條件或 PSC 風險，就必須用風險導向管理。</p>
+          <table class="management-strategy-table">
+            <thead>
+              <tr>
+                <th scope="col">策略</th>
+                <th scope="col">說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>建立關鍵備品政策</td>
+                <td>明確定義哪些零散／塊狀品項必須保留策略庫存</td>
+              </tr>
+              <tr>
+                <td>最低策略安全庫存</td>
+                <td>即使歷史需求低，也保留最低數量</td>
+              </tr>
+              <tr>
+                <td>岸基集中庫存</td>
+                <td>高價品不一定每艘船都備，可放公司倉庫支援船隊</td>
+              </tr>
+              <tr>
+                <td>船隊共享庫存</td>
+                <td>同型船、同型設備共用高價低頻備品</td>
+              </tr>
+              <tr>
+                <td>寄售庫存</td>
+                <td>要求供應商保留庫存，船東使用後再付款</td>
+              </tr>
+              <tr>
+                <td>維修交換機制</td>
+                <td>使用交換件，縮短停機時間</td>
+              </tr>
+              <tr>
+                <td>框架合約</td>
+                <td>與製造商或代理商約定價格、交期與供貨優先權</td>
+              </tr>
+              <tr>
+                <td>替代料確認</td>
+                <td>預先確認等效／可互換備品</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </section>
+
+    <section id="insights">
+      <h2 class="section-title"><span class="num">05</span>對備品供應鏈管理的啟發</h2>
+      <div class="question-grid">
+        <article class="question-card">
+          <div class="q">Q1</div>
+          <h3>這個備品能不能用一般需求預測？</h3>
+          <ul>
+            <li>Smooth：通常可以</li>
+            <li>Intermittent / Lumpy：通常不適合直接用普通平均值</li>
+          </ul>
+        </article>
+        <article class="question-card">
+          <div class="q">Q2</div>
+          <h3>應該預測導向還是風險導向？</h3>
+          <ul>
+            <li>Smooth / Erratic：可偏預測導向</li>
+            <li>Intermittent / Lumpy：關鍵備品應偏風險導向</li>
+          </ul>
+        </article>
+        <article class="question-card">
+          <div class="q">Q3</div>
+          <h3>安全庫存是否應由歷史需求決定？</h3>
+          <p>對 Lumpy 關鍵備品來說，歷史需求可能不足以代表實際風險，應將重要性、交期、停租風險與供應穩定性納入判斷。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <h2 class="section-title"><span class="num">06</span>船舶備品的建議採購策略</h2>
+      <div style="overflow-x:auto;">
+        <table class="strategy-table">
+          <thead>
+            <tr>
+              <th>分類組合</th>
+              <th>建議採購策略</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="strategy-icon">↻</span>Smooth（平滑需求）+ 低成本</td>
+              <td>採用自動補貨機制，並透過批量採購降低單位採購成本。</td>
+            </tr>
+            <tr>
+              <td><span class="strategy-icon">🛡</span>Smooth（平滑需求）+ 高重要性</td>
+              <td>採用最低－最高庫存管理，並與供應商建立穩定供貨協議。</td>
+            </tr>
+            <tr>
+              <td><span class="strategy-icon">📦</span>Intermittent（間歇需求）+ 低重要性</td>
+              <td>採取按需採購，避免過度備庫造成呆料。</td>
+            </tr>
+            <tr>
+              <td><span class="strategy-icon">⚓</span>Intermittent（間歇需求）+ 高重要性</td>
+              <td>建立最低策略安全庫存，以降低缺料造成的營運風險。</td>
+            </tr>
+            <tr>
+              <td><span class="strategy-icon">↯</span>Lumpy（零散／塊狀需求）+ 低重要性</td>
+              <td>原則上不建議備庫；僅在交期極長或供應不穩時保留少量庫存。</td>
+            </tr>
+            <tr>
+              <td><span class="strategy-icon">★</span>Lumpy（零散／塊狀需求）+ 高重要性</td>
+              <td>建立關鍵備品管理政策，並評估共享庫存、寄售庫存或維修交換機制。</td>
+            </tr>
+            <tr>
+              <td><span class="strategy-icon">⏱</span>高成本 + 長交期</td>
+              <td>與供應商建立框架合約或按需叫料採購合約，以兼顧交期與資金壓力。</td>
+            </tr>
+            <tr>
+              <td><span class="strategy-icon">⚠</span>淘汰或停產風險</td>
+              <td>提前進行最後採購、替代料確認與淘汰退場規劃。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="notes">
+      <h2 class="section-title"><span class="num">07</span>實務注意事項</h2>
+      <div class="card attention-card">
+        <div class="attention-grid">
+          <div class="attention-section">
+            <h3>不要把 ADI = 1.32、CV² = 0.49 視為絕對標準</h3>
+            <p>這兩個數值常被當作固定標準，但本質上更接近「預測方法選擇邊界」，不是所有產業都必然適用的絕對分界。</p>
+            <p>實務上不建議只用 SBC 分類決定庫存策略，還應一起考慮：</p>
+            <ul class="factor-list">
+              <li>服務水準</li>
+              <li>交期</li>
+              <li>重要性</li>
+              <li>缺料成本</li>
+              <li>淘汰或停產風險</li>
+              <li>供應商可靠度</li>
+              <li>船舶停航或停租風險</li>
+            </ul>
+          </div>
+
+          <div class="attention-section">
+            <h3>不要用價格否定關鍵備品的必要性</h3>
+            <p>備品價格不應改變需求型態的判斷，也不應成為否定關鍵備品必要性的理由。</p>
+            <p>對船東而言，真正重要的是先判斷該備品是否具備營運、維修或安全上的必要性；若該買，就必須規劃取得方式。</p>
+            <p>成本應用於後續採購策略優化，例如決定船上備庫、岸基共享庫存、寄售庫存、框架合約或維修交換機制，而不是用來降低對必要備品的重視程度。</p>
+          </div>
+        </div>
+
+        <div class="key-principle">
+          需求分類不看價格，備庫必要性看風險，採購方式才看成本。
+        </div>
+      </div>
+
+      <div class="quote-final">
+        <div class="check">✅</div>
+        <div>
+          <h2>一句話總結</h2>
+          <p><strong>SBC demand classification</strong> 是幫助判斷「這個備品的需求到底能不能被預測」；但真正的備品庫存決策，還需要結合重要性、交期、停船風險與供應商可靠度。</p>
+        </div>
+      </div>
+    </section>
+
+    <p class="print-note">本篇為 Reay 的學習筆記，用於整理 SBC 需求型態分類在備品預測、採購與庫存管理上的應用。</p>
+  </main>
+  <script>
+    document.querySelectorAll(".image-slot img").forEach(function (img) {
+      var slot = img.closest(".image-slot");
+      if (!slot || slot.classList.contains("optional-image")) return;
+
+      function markLoaded() {
+        slot.classList.add("has-image");
+        slot.classList.remove("is-missing");
+      }
+
+      function markMissing() {
+        slot.classList.add("is-missing");
+        slot.classList.remove("has-image");
+      }
+
+      img.addEventListener("load", markLoaded);
+      img.addEventListener("error", markMissing);
+
+      if (img.complete) {
+        if (img.naturalWidth > 0) markLoaded();
+        else markMissing();
+      }
+    });
+
+    (function () {
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
+      if (!navLinks.length || !("IntersectionObserver" in window)) return;
+
+      var sectionIds = navLinks.map(function (link) {
+        return link.getAttribute("href").slice(1);
+      });
+
+      var sections = sectionIds.map(function (id) {
+        return document.getElementById(id);
+      }).filter(Boolean);
+
+      function setActive(id) {
+        navLinks.forEach(function (link) {
+          link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+        });
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        var visible = entries
+          .filter(function (entry) { return entry.isIntersecting; })
+          .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
+
+        if (visible.length) {
+          setActive(visible[0].target.id);
+        }
+      }, {
+        root: null,
+        rootMargin: "-38% 0px -52% 0px",
+        threshold: [0.12, 0.35, 0.6]
+      });
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+
+      if (sections.length) {
+        setActive(sections[0].id);
+      }
+    })();
+  </script>
+</body>
+</html>
