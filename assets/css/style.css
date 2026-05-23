@@ -634,7 +634,7 @@ a.card:focus-visible {
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   letter-spacing: 0.02em;
   flex-shrink: 0;
 }
@@ -647,7 +647,6 @@ a.card:focus-visible {
 .timeline__logo--eg {
   background: #006341;
   color: #fff;
-  font-size: 0.85rem;
   letter-spacing: 0.06em;
 }
 
@@ -768,6 +767,12 @@ a.card:focus-visible {
 
 .about-summary {
   max-width: 52rem;
+}
+
+.about-summary + .section-title {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
 }
 
 /* 頁尾 — 深藍底 */
