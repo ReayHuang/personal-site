@@ -35,6 +35,13 @@
       "en": "research/sbc-demand-classification.en.html"
     },
     {
+      "slug": "lng-fuel-notes",
+      "type": "article",
+      "category": "notes",
+      "zh": "notes/maritime/lng-fuel-notes.html",
+      "en": "notes/maritime/lng-fuel-notes.en.html"
+    },
+    {
       "slug": "methanol-fuel-notes",
       "type": "article",
       "category": "notes",

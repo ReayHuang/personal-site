@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《Fuel for Thought》LNG 報告摘要｜Reay's Note</title>
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <meta name="description" content="以 LR《Fuel for Thought》LNG 報告為主軸，整理 LNG 作為船用燃料的技術成熟度、法規壓力、甲烷逸散、供應鏈與脫碳路徑。" />
+  <link rel="alternate" hreflang="zh-Hant" href="lng-fuel-notes.html" />
+  <link rel="alternate" hreflang="en" href="lng-fuel-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="lng-fuel-notes.html" />
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --paper: #ffffff;
+      --ink: #17324d;
+      --muted: #60758a;
+      --primary: #0067b1;
+      --primary-dark: #003f73;
+      --cyan: #00a6d6;
+      --green: #14a86b;
+      --orange: #f59e0b;
+      --red: #e5484d;
+      --line: #dbe7f0;
+      --shadow: 0 18px 45px rgba(14, 55, 91, .12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(0, 166, 214, .18), transparent 36rem),
+        radial-gradient(circle at top right, rgba(0, 103, 177, .16), transparent 30rem),
+        var(--bg);
+      line-height: 1.75;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 22px;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    aside {
+      position: sticky;
+      top: 24px;
+      height: auto;
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      background: rgba(255, 255, 255, .78);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(219, 231, 240, .9);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #fff;
+      font-size: 19px;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      box-shadow: 0 8px 20px rgba(0, 103, 177, .2);
+      flex: 0 0 auto;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.2;
+      color: var(--primary-dark);
+    }
+
+    .brand span {
+      display: block;
+      margin-top: 2px;
+      font-size: 11px;
+      line-height: 1.2;
+      color: var(--muted);
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    nav a {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 7px 9px;
+      margin: 0;
+      border-radius: 12px;
+      color: var(--ink);
+      font-size: 13.5px;
+      transition: .2s ease;
+    }
+
+    .nav-no {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--primary-dark);
+      background: #e5f4fb;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .2px;
+    }
+
+    nav a span:last-child {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      line-height: 1.25;
+    }
+
+    nav a:hover {
+      background: #eaf5fb;
+      text-decoration: none;
+      transform: translateX(2px);
+    }
+
+    main { min-width: 0; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      padding: 54px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(0, 47, 85, .92), rgba(0, 103, 177, .82)),
+        radial-gradient(circle at 80% 20%, rgba(0, 204, 255, .42), transparent 22rem);
+      box-shadow: var(--shadow);
+      container-type: inline-size;
+      container-name: hero;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -160px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .hero-watermark {
+      position: absolute;
+      right: 28px;
+      bottom: 20px;
+      z-index: 0;
+      margin: 0;
+      font-family: inherit;
+      font-size: clamp(168px, 26cqw, 340px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      color: rgba(255, 255, 255, .11);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-watermark sub {
+      font-size: 0.55em;
+      font-weight: inherit;
+      vertical-align: baseline;
+      position: relative;
+      bottom: -0.06em;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 920px; }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .14);
+      border: 1px solid rgba(255, 255, 255, .2);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 { line-height: 1.25; margin: 0 0 16px; }
+    h1 { font-size: clamp(34px, 5vw, 64px); letter-spacing: -1.2px; }
+    h2 { font-size: clamp(26px, 3vw, 38px); color: var(--primary-dark); }
+    h3 { font-size: 22px; color: var(--primary); }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .section-no {
+      display: inline-grid;
+      place-items: center;
+      min-width: 52px;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 14px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .6px;
+      box-shadow: 0 8px 18px rgba(0, 103, 177, .22);
+    }
+
+    .hero p:not(.hero-watermark) { color: rgba(255, 255, 255, .88); font-size: 18px; max-width: 780px; }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .14);
+      border: 1px solid rgba(255, 255, 255, .16);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    section {
+      margin-top: 28px;
+      background: rgba(255, 255, 255, .88);
+      border: 1px solid rgba(219, 231, 240, .95);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 12px 32px rgba(14, 55, 91, .08);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+    }
+
+    .section-head > div {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .section-head .section-title {
+      margin-bottom: 0;
+    }
+
+    .section-head > div > p {
+      margin: 16px 0 0;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #f5fafe 0%, #fafdff 100%);
+      border: 1px solid #dfeef6;
+      color: #516a7e;
+      font-size: 15px;
+      line-height: 1.82;
+      letter-spacing: 0.01em;
+      max-width: 100%;
+    }
+
+    .grid { display: grid; gap: 18px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .stats-compact {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .stats-2x2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 720px;
+    }
+
+    .stats-compact .stat {
+      min-height: 118px;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 20px;
+    }
+
+    .stats-compact .stat .num {
+      font-size: clamp(30px, 4vw, 50px);
+      margin-bottom: 8px;
+    }
+
+    .stats-compact .stat small {
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(14, 55, 91, .06);
+    }
+
+    .card h3 { margin-bottom: 8px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .stat {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff, #f2f9fd);
+    }
+
+    .stat .num {
+      display: block;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1;
+      color: var(--primary-dark);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+
+    .stat small { color: var(--muted); font-weight: 600; }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 15px;
+      align-items: start;
+      padding: 18px;
+      border-radius: 18px;
+      background: #f1fbff;
+      border: 1px solid #cbeaf6;
+      margin: 18px 0;
+    }
+
+    .callout.warning { background: #fff8eb; border-color: #fde3af; }
+    .callout.danger { background: #fff1f2; border-color: #ffcdd2; }
+    .callout.success { background: #effdf6; border-color: #c6f1dc; }
+
+    .callout-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #fff;
+      font-size: 26px;
+      box-shadow: 0 10px 20px rgba(14, 55, 91, .08);
+    }
+
+    ul, ol { padding-left: 1.4rem; }
+    li { margin: 6px 0; }
+    strong { color: var(--primary-dark); }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      margin-top: 14px;
+    }
+
+    .regulation-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .regulation-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .regulation-card h3 {
+      margin-top: 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .regulation-card ul {
+      margin: 12px 0 0;
+      flex: 1;
+    }
+
+    .regulation-schedule {
+      grid-column: 1 / -1;
+      padding: 22px 24px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #f7fbfe 0%, #fff 100%);
+      box-shadow: 0 8px 24px rgba(14, 55, 91, .05);
+    }
+
+    .regulation-schedule__head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px 16px;
+      margin-bottom: 14px;
+    }
+
+    .regulation-schedule__head h3 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--primary-dark);
+    }
+
+    .regulation-schedule__head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .table-wrap--schedule {
+      margin-top: 0;
+    }
+
+    .table-wrap--schedule table {
+      min-width: 0;
+      table-layout: fixed;
+    }
+
+    .table-wrap--schedule th {
+      white-space: normal;
+      line-height: 1.35;
+      padding: 11px 14px;
+      font-size: 14px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .table-wrap--schedule td {
+      padding: 11px 14px;
+      font-size: 14px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .table-wrap--schedule th:first-child,
+    .table-wrap--schedule td:first-child {
+      width: 11%;
+      white-space: nowrap;
+    }
+
+    .table-wrap--schedule th:nth-child(2),
+    .table-wrap--schedule td:nth-child(2) {
+      width: 24%;
+    }
+
+    .table-wrap--schedule td:nth-child(2) {
+      white-space: nowrap;
+    }
+
+    .table-wrap--schedule th:last-child,
+    .table-wrap--schedule td:last-child {
+      width: 65%;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 15px;
+    }
+
+    th {
+      text-align: left;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: #f7fbfe; }
+    tr:last-child td { border-bottom: none; }
+
+    details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      margin: 14px 0;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e5f4fb;
+      color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    details[open] summary::after { content: "−"; }
+    details .detail-body { padding: 0 20px 20px; color: var(--ink); }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding-left: 20px;
+      margin-top: 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .time-item {
+      position: relative;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .time-item::before {
+      content: "";
+      position: absolute;
+      left: -21px;
+      top: 21px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cyan);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--cyan);
+    }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef6fb;
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 28px 12px 48px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 14px;
+      }
+
+      aside {
+        position: relative;
+        top: auto;
+        max-height: none;
+        padding: 14px;
+        border-radius: 18px;
+      }
+
+      .brand {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+
+      .brand-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        font-size: 18px;
+      }
+
+      .brand strong { font-size: 15px; }
+      .brand span { font-size: 11px; }
+
+      nav {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      nav a {
+        min-height: 40px;
+        padding: 6px 8px;
+        grid-template-columns: 28px 1fr;
+        font-size: 13px;
+      }
+
+      .nav-no {
+        width: 28px;
+        height: 28px;
+        border-radius: 9px;
+        font-size: 11px;
+      }
+
+      .hero { padding: 34px 24px; }
+      .hero-watermark {
+        right: 16px;
+        bottom: 12px;
+        font-size: clamp(128px, 40cqw, 220px);
+        color: rgba(255, 255, 255, .1);
+      }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .regulation-board { grid-template-columns: 1fr; }
+      .stats-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 100%; }
+      .stats-2x2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 720px; }
+      .stats-compact .stat { min-height: 104px; padding: 14px 10px; }
+      .stats-compact .stat .num { font-size: clamp(28px, 9vw, 42px); }
+      .section-head { display: block; }
+      .section-head > div > p {
+        margin-top: 14px;
+        padding: 12px 14px;
+        font-size: 14px;
+        line-height: 1.75;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      nav a { font-size: 12.5px; }
+      .stats-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats-2x2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats-compact .stat small { font-size: 13px; }
+    }
+
+    @media (max-width: 420px) {
+      .stats-2x2 { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .layout { display: block; padding: 0; }
+      aside { display: none; }
+      section, .hero { box-shadow: none; break-inside: avoid; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="lng-fuel-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+      <a href="lng-fuel-notes.en.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        <div class="brand-icon">⚓</div>
+        <div>
+          <strong>LNG 視覺化筆記</strong>
+          <span>Fuel for Thought 摘要版</span>
+        </div>
+      </div>
+      <nav aria-label="章節目錄">
+        <a href="#executive"><span class="nav-no">01</span><span>📘 執行摘要</span></a>
+        <a href="#factfile"><span class="nav-no">02</span><span>📂 LNG 基礎資料</span></a>
+        <a href="#fleet"><span class="nav-no">03</span><span>🚢 船隊與訂單</span></a>
+        <a href="#regulation"><span class="nav-no">04</span><span>⚖️ 法規驅動</span></a>
+        <a href="#methane"><span class="nav-no">05</span><span>🧯 甲烷逸散</span></a>
+        <a href="#economics"><span class="nav-no">06</span><span>💰 經濟分析</span></a>
+        <a href="#pathway"><span class="nav-no">07</span><span>♻️ 燃料路徑</span></a>
+        <a href="#supply"><span class="nav-no">08</span><span>📦 生產與供應</span></a>
+        <a href="#conclusion"><span class="nav-no">09</span><span>🟥 結論</span></a>
+      </nav>
+    </aside>
+
+    <main>
+      <header class="hero" id="overview">
+        <span class="hero-watermark" aria-hidden="true">CH<sub>4</sub></span>
+        <div class="hero-content">
+          <div class="eyebrow">視覺化筆記｜船用 LNG 燃料｜Reay's Note</div>
+          <h1>LNG 作為船舶燃料的角色、挑戰與轉型路徑</h1>
+          <p>
+            本筆記以 LR《Fuel for Thought》LNG 報告為主軸，整理 LNG 作為船用燃料的
+            <strong style="color:#fff">技術成熟度、法規壓力、甲烷逸散、供應鏈改善與長期脫碳路徑</strong>，
+            方便快速查閱與掌握重點。
+          </p>
+          <div class="meta">
+            <span class="pill">🚢 主題：LNG 船用燃料</span>
+            <span class="pill">🧭 更新日期：2026 年 5 月 23 日</span>
+            <span class="pill">⚖️ 涵蓋：IMO / EU / FuelEU</span>
+            <span class="pill">🧪 關鍵風險：Methane Slip</span>
+          </div>
+        </div>
+      </header>
+
+      <section id="executive">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">01</span><span>📘 執行摘要</span></h2>
+            <p>LNG 已是成熟且廣泛部署的替代船用燃料之一；其能否成為長期脫碳方案，取決於甲烷控制、供應鏈排放改善與認證制度是否同步成熟。</p>
+          </div>
+        </div>
+
+        <div class="grid stats-compact stats-2x2">
+          <article class="card stat">
+            <span class="num">20+</span>
+            <small>年產業實務、技術與法規基礎</small>
+          </article>
+          <article class="card stat">
+            <span class="num">4</span>
+            <small>大支柱：甲烷控制、CCS、供應鏈、認證</small>
+          </article>
+          <article class="card stat">
+            <span class="num">28×</span>
+            <small>甲烷相對 CO₂ 的高溫室效應潛勢</small>
+          </article>
+          <article class="card stat">
+            <span class="num">10%</span>
+            <small>供應鏈改善的潛在減排幅度參考</small>
+          </article>
+        </div>
+
+        <div class="callout warning">
+          <div class="callout-icon">⚠️</div>
+          <div>
+            <h3>核心判斷</h3>
+            <p>若僅依賴化石 LNG，長期仍難完全滿足深度脫碳要求；若能結合 <strong>Bio-LNG、E-LNG、甲烷減排技術、碳捕捉與可信認證</strong>，則具備延伸為長期低碳燃料路徑的潛力。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="factfile">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">02</span><span>📂 LNG 基礎資料檔案</span></h2>
+            <p>LNG 主要成分為甲烷，需在極低溫條件下維持液態。因此，船舶設計須特別考量低溫儲存、氣化氣管理與燃料氣供應系統。</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>❓ 什麼是 LNG？</h3>
+            <ul>
+              <li><strong>LNG（液化天然氣）</strong>主要成分為 <strong>甲烷 CH₄</strong>。</li>
+              <li>通常含有少量乙烷、丙烷、丁烷等較高碳數成分。</li>
+              <li>冷卻後轉為液態，適合大量儲存與海上運輸。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🔥 燃燒反應式</h3>
+            <p style="font-size:24px;font-weight:900;color:var(--primary-dark);margin-top:12px;">CH₄ + 2O₂ → CO₂ + 2H₂O</p>
+            <p>以燃燒端而言，LNG 的單位能量 CO₂ 排放通常低於傳統油品燃料，但仍需處理未燃甲烷逸散問題。</p>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>性質項目</th><th>數值／說明</th><th>設計意義</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>🔥 能量密度</td><td><strong>48,000 kJ/kg</strong></td><td>以重量計具有良好燃料價值</td></tr>
+              <tr><td>🧱 體積能量密度</td><td><strong>約 24,750 MJ/m³</strong></td><td>儲艙體積規劃需審慎評估</td></tr>
+              <tr><td>🛢 儲存體積需求</td><td>相同能量輸出下約需 <strong>1.6–1.9 倍</strong> MDO 體積</td><td>影響艙容、航程與貨艙配置</td></tr>
+              <tr><td>🌡 儲存溫度</td><td>約 <strong>-162°C</strong></td><td>需低溫材料、絕熱與 BOG 管理</td></tr>
+              <tr><td>⚡ 閃點</td><td><strong>-188°C</strong></td><td>需特別防火、防爆與通風設計</td></tr>
+              <tr><td>🔥 自燃點</td><td><strong>537°C</strong></td><td>較柴油高，點火特性不同</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="fleet">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">03</span><span>🚢 LNG 雙燃料船隊與訂單趨勢</span></h2>
+            <p>船隊數據顯示，LNG 雙燃料船仍是替代燃料船舶中的主要採用方向，尤其在 LNG 船、貨櫃船、PCTC 與 Ro-Ro 等船型中成長明顯。</p>
+          </div>
+        </div>
+
+        <div class="grid stats-compact">
+          <article class="card stat"><span class="num">1,381</span><small>現役 LNG 雙燃料船舶</small></article>
+          <article class="card stat"><span class="num">849</span><small>訂單中船舶數量</small></article>
+          <article class="card stat"><span class="num">356</span><small>2024 年 LNG 相關新船訂單數</small></article>
+        </div>
+
+        <details open>
+          <summary>📊 不同船型趨勢</summary>
+          <div class="detail-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>船型類別</th><th>現役數量</th><th>訂單數量</th><th>趨勢解讀</th></tr></thead>
+                <tbody>
+                  <tr><td>LNG 船／燃氣船</td><td><strong>697</strong></td><td><strong>346</strong></td><td>佔比最大，且仍持續成長</td></tr>
+                  <tr><td>PCTC 與 Ro-Ro</td><td>78</td><td>146</td><td>訂單數約為現役 1.9 倍</td></tr>
+                  <tr><td>貨櫃船</td><td>152</td><td>195</td><td>可能快速成為主要應用船型</td></tr>
+                  <tr><td>油輪</td><td>150</td><td>88</td><td>仍具需求，但增速較緩</td></tr>
+                  <tr><td>散貨船</td><td>56</td><td>18</td><td>目前規模相對較小</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+        <div class="callout success">
+          <div class="callout-icon">✅</div>
+          <div>
+            <h3>市場訊號</h3>
+            <p>LNG 船舶訂單數量與應用規模持續成長，顯示技術成熟度提高、燃料供應逐漸全球化，航運業正進入低碳轉型的實際落地階段。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="regulation">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">04</span><span>⚖️ 法規驅動：EU ETS 與 FuelEU Maritime</span></h2>
+            <p>IMO 與歐盟法規正使溫室氣體排放逐步轉化為實際營運成本，推動船東重新評估燃料選擇、主機配置與船隊合規策略。</p>
+          </div>
+        </div>
+
+        <div class="regulation-board">
+          <article class="card regulation-card">
+            <h3>🇪🇺 EU ETS</h3>
+            <ul>
+              <li>2024 年起納入 5,000 GT 以上客貨船。</li>
+              <li>需購買配額涵蓋 <strong>CO₂、CH₄、N₂O</strong>。</li>
+              <li>2026 年起配額覆蓋比例提高至 <strong>100%</strong>。</li>
+            </ul>
+          </article>
+          <article class="card regulation-card">
+            <h3>⚓ FuelEU Maritime</h3>
+            <ul>
+              <li>2025 年起逐步降低船上能源使用的 GHG 強度。</li>
+              <li>2030 年起，客船與貨櫃船靠泊時需符合零靠港排放相關要求。</li>
+              <li>允許 <strong>Pooling</strong>，提升低碳燃料船舶經濟誘因。</li>
+            </ul>
+          </article>
+          <div class="regulation-schedule">
+            <div class="regulation-schedule__head">
+              <h3>📅 FuelEU GHG 強度減排路線圖</h3>
+              <p>逐年減排門檻與船舶設計／燃料策略的對應重點</p>
+            </div>
+            <div class="table-wrap table-wrap--schedule">
+              <table>
+                <thead><tr><th>年度</th><th>FuelEU GHG<br>強度減排目標</th><th>重點意義</th></tr></thead>
+                <tbody>
+                  <tr><td>2025</td><td>-2%</td><td>正式進入燃料碳強度管理</td></tr>
+                  <tr><td>2030</td><td>-6%</td><td>零靠港排放要求開始影響設計</td></tr>
+                  <tr><td>2035</td><td>-14.5%</td><td>傳統 LNG 優勢開始受壓</td></tr>
+                  <tr><td>2040</td><td>-31%</td><td>需更高比例低碳／零碳燃料</td></tr>
+                  <tr><td>2045</td><td>-62%</td><td>化石燃料合規壓力顯著增加</td></tr>
+                  <tr><td>2050</td><td>-80%</td><td>深度脫碳成為必要條件</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="methane">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">05</span><span>🧯 甲烷逸散與引擎技術</span></h2>
+            <p>甲烷逸散是影響 LNG 生命周期排放表現的關鍵變數，也會直接影響 EU ETS、FuelEU 與未來 IMO 機制下的合規成本。</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="callout danger" style="margin:0;">
+            <div class="callout-icon">🧪</div>
+            <div>
+              <h3>為何重要？</h3>
+              <p>未燃甲烷逸散即使比例不高，也會削弱 LNG 相對液體燃料的減排優勢；因此主機型式、負載條件與後處理技術都會影響實際碳足跡。</p>
+            </div>
+          </div>
+          <div class="callout success" style="margin:0;">
+            <div class="callout-icon">🔧</div>
+            <div>
+              <h3>技術方向</h3>
+              <p><strong>HP2S</strong> 與 <strong>LP2S + EGR</strong> 被視為目前較具優勢的甲烷控制路徑；在部分運轉情境下，甲烷逸散可降至 1 g/kWh 以下。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>引擎類型</th><th>效能表現</th><th>設計／採購重點</th></tr></thead>
+            <tbody>
+              <tr><td><strong>HP2S</strong> 高壓二衝程</td><td>甲烷散逸表現最佳，常低於 1 g/kWh</td><td>適合重視長期合規與低散逸船型</td></tr>
+              <tr><td><strong>LP2S</strong> 低壓二衝程</td><td>一般表現，搭配 EGR 可優化</td><td>需確認實測散逸與認證方法</td></tr>
+              <tr><td><strong>LP4S</strong> 低壓四衝程</td><td>傳統技術，散逸相對較高</td><td>需注意 FuelEU 與碳成本風險</td></tr>
+              <tr><td><strong>LP2S + EGR</strong></td><td>散逸可降至接近 HP2S 水準</td><td>適合作為技術升級方案</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="economics">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">06</span><span>💰 經濟分析：LNG vs VLSFO</span></h2>
+            <p>在 EU ETS 與 FuelEU Maritime 框架下，LNG 可降低碳配額與罰款壓力，並在法規實施早期透過 Pooling 產生額外經濟效益。</p>
+          </div>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>⚖️ 合規成本</h3>
+            <p>LNG 相較 VLSFO 可降低 EU ETS 與 FuelEU 罰款壓力，尤其在早期法規階段具成本優勢。</p>
+          </article>
+          <article class="card">
+            <h3>🔁 Pooling 收益</h3>
+            <p>單艘 LNG 船的低排放效益可納入船隊整體合規計算，用以抵消其他船舶的超額排放成本。</p>
+          </article>
+          <article class="card">
+            <h3>🧯 引擎差異</h3>
+            <p>高壓引擎因甲烷散逸較低，通常具更佳合規表現與更高 Pooling 價值。</p>
+          </article>
+        </div>
+
+        <details>
+          <summary>📌 Aframax 油輪案例重點</summary>
+          <div class="detail-body">
+            <ul>
+              <li>LNG 相較 VLSFO 可節省 EU ETS 碳配額成本。</li>
+              <li>FuelEU 罰款差距更顯著，早期可能產生盈餘或抵免效益。</li>
+              <li>高壓 LNG 引擎可延長合規盈餘期間，並降低整體碳合規成本。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>📌 ULCS 超大型貨櫃船案例重點</summary>
+          <div class="detail-body">
+            <ul>
+              <li>燃料消耗量越大，合規成本差距越明顯。</li>
+              <li>Pooling 抵免收益在 2025–2039 年間具吸引力。</li>
+              <li>2035 年後若不導入 Bio-LNG 或 E-LNG，傳統 LNG 優勢會快速下降。</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <section id="pathway">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">07</span><span>♻️ 過渡性替代燃料路徑</span></h2>
+            <p>LNG 的長期可行性仰賴 Bio-LNG 與 E-LNG 的逐步導入；與甲醇、氨相比，LNG 路徑在整體成本上具競爭力，但仍須嚴格控制甲烷排放。</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="time-item"><strong>2025–2029</strong><br>以傳統 LNG 為主，並搭配少量 MDO 作為引燃燃料，取得初期合規與成本優勢。</div>
+          <div class="time-item"><strong>2030 起</strong><br>逐年提高 Bio-LNG 比例，以因應 FuelEU GHG 強度門檻。</div>
+          <div class="time-item"><strong>2039 起</strong><br>開始導入 E-LNG，降低化石來源占比，提升長期脫碳能力。</div>
+          <div class="time-item"><strong>2050</strong><br>燃料組成可朝 60% Bio-LNG、30% E-LNG、10% LNG 的示意方向發展。</div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>燃料路徑</th><th>成本表現</th><th>主要挑戰</th><th>適用觀察</th></tr></thead>
+            <tbody>
+              <tr><td><strong>LNG</strong></td><td>整體最低或最具競爭力</td><td>甲烷逸散、非化石 LNG 供應量</td><td>適合現行 LNG 船隊延伸使用</td></tr>
+              <tr><td><strong>Ammonia</strong></td><td>中長期與 LNG 接近</td><td>燃料成本、安全、供應鏈成熟度</td><td>適合深度脫碳承諾船東</td></tr>
+              <tr><td><strong>Methanol</strong></td><td>多數情境成本較高</td><td>E-Methanol 價格與供應</td><td>具低碳潛力但成本壓力較大</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="supply">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">08</span><span>📦 LNG 生產與供應</span></h2>
+            <p>LNG 供應與加注基礎設施相對成熟，是其成為現階段可用替代燃料的重要原因；若要進一步大幅減碳，則需轉向非化石來源並建立可信的認證與追蹤制度。</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>🌍 供應優勢</h3>
+            <ul>
+              <li>全球 LNG 供應量持續成長。</li>
+              <li>加注能力與港口基礎建設相對完善。</li>
+              <li>適合作為船舶近期降低碳強度的方案。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>⚠️ 永續挑戰</h3>
+            <ul>
+              <li>Bio-LNG 與 E-LNG 產能仍需快速擴大。</li>
+              <li>認證與追蹤制度尚需完善。</li>
+              <li>上游甲烷洩漏會影響全生命周期排放表現。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="callout-icon">🏷️</div>
+          <div>
+            <h3>採購建議</h3>
+            <p>船東應優先選用能證明上游低甲烷排放的 LNG 供應商，並關注 MiQ、OGMP、GIIGNL 等認證與報告框架，以提升燃料採購的透明度與可信度。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="conclusion">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title"><span class="section-no">09</span><span>🟥 結論</span></h2>
+            <p>LNG 的吸引力來自成熟基礎設施、相對可預測的成本與立即可用性；其長期價值則取決於低碳燃料替代、甲烷控制，以及法規是否承認相關減排改善。</p>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>🚢 LNG 吸引力持續提升</h3>
+            <p>新造船訂單顯示，LNG 正成為船東偏好的低碳選項之一，具備基礎設施成熟、安全協議明確與成本相對可預測等優勢。</p>
+          </article>
+          <article class="card">
+            <h3>🔧 技術改善是關鍵</h3>
+            <p>更乾淨的生產與供應鏈流程、船上甲烷抑制技術，以及法規逐步承認改進措施，將決定 LNG 的長期角色。</p>
+          </article>
+        </div>
+
+        <div class="callout success">
+          <div class="callout-icon">✅</div>
+          <div>
+            <h3>最終重點</h3>
+            <p><strong>LNG 是現階段具實用性與成本競爭力的過渡燃料。</strong>但若要邁向深度脫碳，必須將傳統 LNG 逐步轉換為 Bio-LNG／E-LNG，並將甲烷逸散控制納入船舶設計、燃料採購與法規合規策略。</p>
+            <div class="tag-row">
+              <span class="tag">Bio-LNG</span>
+              <span class="tag">E-LNG</span>
+              <span class="tag">Methane Abatement</span>
+              <span class="tag">FuelEU</span>
+              <span class="tag">IMO LCA</span>
+              <span class="tag">CCS Ready</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">
+        本視覺化筆記依據 LR《Fuel for Thought》LNG 報告摘要整理，聚焦 LNG 船用燃料的查閱便利性。涉及法規、標準與市場資訊時，仍應以主管機關、標準組織與船級社最新文件為準。
+      </div>
+    </main>
+  </div>
+</body>
+</html>
