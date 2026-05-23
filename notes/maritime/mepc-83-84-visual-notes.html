@@ -4,6 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MEPC 83／MEPC 84 修正版視覺化筆記</title>
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <meta name="description" content="MEPC 83 與 MEPC 84 重點成果：法律狀態、GFI、合規缺口、CII、DCS、LCA 與 OCCS 修正版視覺化筆記。" />
+  <link rel="alternate" hreflang="zh-Hant" href="mepc-83-84-visual-notes.html" />
+  <link rel="alternate" hreflang="en" href="mepc-83-84-visual-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="mepc-83-84-visual-notes.html" />
   <style>
     :root{
       --navy:#0f2742;
@@ -61,14 +66,14 @@
       color:#fff;background:rgba(255,255,255,.10);
       border-radius:999px;padding:8px 13px;font-weight:700;font-size:14px
     }
-    nav{
+    .note-toc{
       position:sticky;top:0;z-index:5;
       background:rgba(255,255,255,.92);
       backdrop-filter:blur(12px);
       border-bottom:1px solid var(--line);
     }
-    nav .wrap{display:flex;gap:10px;overflow:auto;padding-top:12px;padding-bottom:12px}
-    nav a{
+    .note-toc .wrap{display:flex;gap:10px;overflow:auto;padding-top:12px;padding-bottom:12px}
+    .note-toc a{
       white-space:nowrap;text-decoration:none;color:var(--navy);
       border:1px solid var(--line);background:#fff;border-radius:999px;
       padding:8px 12px;font-size:14px;font-weight:800;
@@ -114,11 +119,15 @@
     .callout.ok{background:var(--soft-green);border-color:#bbf7d0}
     .callout.warn{background:var(--soft-amber);border-color:#fed7aa}
     .callout.stop{background:var(--soft-red);border-color:#fecaca}
-    .kpi{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start}
+    .kpi{position:relative;overflow:hidden;display:block}
     .kpi .num{
-      width:56px;height:56px;border-radius:18px;display:grid;place-items:center;
-      color:#fff;font-weight:900;font-size:20px;background:linear-gradient(135deg,var(--blue),var(--cyan));
+      position:absolute;right:14px;bottom:8px;
+      width:auto;height:auto;border-radius:0;
+      font-size:clamp(3.5rem,8vw,5.25rem);line-height:1;font-weight:900;letter-spacing:-0.05em;
+      color:var(--blue);opacity:.09;background:none;
+      pointer-events:none;user-select:none;z-index:0;
     }
+    .kpi > div:not(.num){position:relative;z-index:1}
     .kpi p{margin:4px 0 0}.kpi strong{color:var(--navy)}
     table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:#fff}
     th,td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -183,26 +192,8 @@
     footer{border-top:1px solid var(--line);background:#fff;padding:26px 0 34px;color:#64748b}
     footer strong{color:var(--navy)}
     @media print{
-      .note-site-bar{display:none}
-      nav{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}header{padding:34px 24px}.wrap{max-width:none}section{page-break-inside:avoid}
+      .note-toc{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}header{padding:34px 24px}.wrap{max-width:none}section{page-break-inside:avoid}
     }
-  </style>
-  <style>
-    .note-site-bar {
-      background: #070d19;
-      color: rgba(255,255,255,.85);
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-      font-size: 14px;
-      padding: 10px 22px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 18px;
-      align-items: center;
-      border-bottom: 3px solid #00c5b7;
-    }
-    .note-site-bar a { color: #00c5b7; text-decoration: none; font-weight: 700; }
-    .note-site-bar a:hover { text-decoration: underline; }
-    .note-site-bar span { color: rgba(255,255,255,.55); }
   </style>
 </head>
 <body>
@@ -212,10 +203,14 @@
     <a href="../../index.html">首頁</a>
     <a href="../../about.html">關於我</a>
     <a href="../../research/index.html">管理筆記</a>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="mepc-83-84-visual-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+      <a href="mepc-83-84-visual-notes.en.html" lang="en" hreflang="en">EN</a>
+    </nav>
   </div>
   <header>
     <div class="wrap">
-      <div class="eyebrow">修正版視覺化筆記｜海事環保法規｜Reay's Note</div>
+      <div class="note-eyebrow">修正版視覺化筆記｜海事環保法規｜Reay's Note</div>
       <h1>MEPC 83／MEPC 84 重點成果與修正後資訊</h1>
       <p class="subtitle">本版已將時程、法律狀態、適用範圍、合規缺口公式與 CII 第二階段工作進度調整為目前正確表述，適合重點複習、內部教育訓練與法規簡報使用。</p>
       <div class="meta-row">
@@ -226,7 +221,7 @@
     </div>
   </header>
 
-  <nav>
+  <nav class="note-toc" aria-label="頁面目錄">
     <div class="wrap">
       <a href="#status">目前法律狀態</a>
       <a href="#summary">會議總覽</a>

@@ -70,11 +70,13 @@ img {
   max-width: var(--page-width);
   margin: 0 auto;
   padding: 0 1.5rem;
-  height: var(--header-height);
+  min-height: var(--header-height);
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .site-logo {
@@ -116,10 +118,11 @@ img {
   text-transform: uppercase;
 }
 
-.site-nav {
-  display: flex;
-  gap: 1.75rem;
-  flex-wrap: wrap;
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .site-nav a {
@@ -140,13 +143,16 @@ img {
   align-items: center;
   gap: 1rem;
   margin-left: auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  min-width: 0;
 }
 
-.lang-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
+.site-nav {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .lang-switch a {
@@ -190,7 +196,6 @@ img {
   letter-spacing: 0.06em;
   color: var(--lr-muted);
   vertical-align: middle;
-}
 }
 
 .nav-toggle {
@@ -792,6 +797,12 @@ a.card:focus-visible {
   margin: 0 0 0.5rem;
 }
 
+@media (min-width: 641px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .nav-toggle {
     display: block;
@@ -820,7 +831,14 @@ a.card:focus-visible {
   }
 
   .site-header__end {
-    margin-left: 0;
+    margin-left: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .lang-switch {
+    display: inline-flex;
   }
 
   .btn--outline {

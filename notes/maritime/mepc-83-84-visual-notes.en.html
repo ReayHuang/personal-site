@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MEPC 83 / MEPC 84 Visual Notes (Revised) | Reay's Note</title>
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <meta name="description" content="Revised visual notes on MEPC 83 and MEPC 84 outcomes: legal status, GFI, compliance deficits, CII, DCS, LCA, and OCCS." />
+  <link rel="alternate" hreflang="zh-Hant" href="mepc-83-84-visual-notes.html" />
+  <link rel="alternate" hreflang="en" href="mepc-83-84-visual-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="mepc-83-84-visual-notes.html" />
+  <link rel="canonical" href="https://reayhuang.github.io/personal-site/notes/maritime/mepc-83-84-visual-notes.en.html" />
+  <style>
+    :root{
+      --navy:#0f2742;
+      --blue:#2563eb;
+      --cyan:#0891b2;
+      --green:#16a34a;
+      --amber:#d97706;
+      --red:#dc2626;
+      --slate:#334155;
+      --muted:#64748b;
+      --line:#dbe4ee;
+      --bg:#f4f8fb;
+      --card:#ffffff;
+      --soft-blue:#eaf2ff;
+      --soft-green:#ecfdf3;
+      --soft-amber:#fff7ed;
+      --soft-red:#fef2f2;
+      --soft-cyan:#ecfeff;
+      --shadow:0 18px 45px rgba(15,39,66,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      color:var(--slate);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.16), transparent 35%),
+        radial-gradient(circle at top right, rgba(8,145,178,.13), transparent 32%),
+        var(--bg);
+      line-height:1.72;
+    }
+    header{
+      background:linear-gradient(135deg,#08192f 0%,#12385d 50%,#0b6f86 100%);
+      color:#fff;
+      padding:56px 24px 44px;
+      position:relative;
+      overflow:hidden;
+    }
+    header::after{
+      content:"";
+      position:absolute;
+      right:-90px; top:-90px;
+      width:280px; height:280px;
+      border-radius:50%;
+      background:rgba(255,255,255,.10);
+    }
+    .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+    .eyebrow{letter-spacing:.12em;font-weight:800;font-size:13px;color:#bae6fd;margin-bottom:10px}
+    h1{font-size:clamp(30px,5vw,54px);line-height:1.14;margin:0 0 16px;font-weight:900}
+    .subtitle{font-size:18px;max-width:880px;color:#dbeafe;margin:0}
+    .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(255,255,255,.28);
+      color:#fff;background:rgba(255,255,255,.10);
+      border-radius:999px;padding:8px 13px;font-weight:700;font-size:14px
+    }
+    .note-toc{
+      position:sticky;top:0;z-index:5;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .note-toc .wrap{display:flex;gap:10px;overflow:auto;padding-top:12px;padding-bottom:12px}
+    .note-toc a{
+      white-space:nowrap;text-decoration:none;color:var(--navy);
+      border:1px solid var(--line);background:#fff;border-radius:999px;
+      padding:8px 12px;font-size:14px;font-weight:800;
+    }
+    main{padding:30px 0 58px}
+    section{scroll-margin-top:86px;margin:26px 0}
+    .section-title{
+      display:flex;align-items:center;gap:12px;margin:0 0 16px;
+      color:var(--navy);font-size:28px;line-height:1.25;font-weight:900;
+    }
+    .section-title .icon{
+      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--soft-blue),#fff);
+      border:1px solid var(--line);
+    }
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}.wrap{padding:0 16px}}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:22px;
+      padding:22px;box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 12px;color:var(--navy);font-size:20px;line-height:1.35;background:var(--soft-blue);padding:8px 12px;border-radius:10px;border-left:4px solid var(--blue)}
+    .card h4{margin:20px 0 8px;color:#12385d;font-size:17px;background:var(--soft-cyan);padding:6px 12px;border-radius:8px;border-left:3px solid var(--cyan)}
+    .muted{color:var(--muted)}
+    .badge{
+      display:inline-flex;align-items:center;gap:7px;border-radius:999px;
+      padding:6px 10px;font-size:13px;font-weight:900;margin:0 6px 8px 0;
+      border:1px solid transparent;
+    }
+    .badge.blue{background:var(--soft-blue);color:#1d4ed8;border-color:#bfdbfe}
+    .badge.green{background:var(--soft-green);color:#15803d;border-color:#bbf7d0}
+    .badge.amber{background:var(--soft-amber);color:#b45309;border-color:#fed7aa}
+    .badge.red{background:var(--soft-red);color:#b91c1c;border-color:#fecaca}
+    .badge.cyan{background:var(--soft-cyan);color:#0e7490;border-color:#a5f3fc}
+    .callout{
+      border-radius:20px;padding:18px 20px;border:1px solid;
+      margin:16px 0;background:#fff;
+    }
+    .callout strong{color:var(--navy)}
+    .callout.info{background:var(--soft-blue);border-color:#bfdbfe}
+    .callout.ok{background:var(--soft-green);border-color:#bbf7d0}
+    .callout.warn{background:var(--soft-amber);border-color:#fed7aa}
+    .callout.stop{background:var(--soft-red);border-color:#fecaca}
+    .kpi{position:relative;overflow:hidden;display:block}
+    .kpi .num{
+      position:absolute;right:14px;bottom:8px;
+      width:auto;height:auto;border-radius:0;
+      font-size:clamp(3.5rem,8vw,5.25rem);line-height:1;font-weight:900;letter-spacing:-0.05em;
+      color:var(--blue);opacity:.09;background:none;
+      pointer-events:none;user-select:none;z-index:0;
+    }
+    .kpi > div:not(.num){position:relative;z-index:1}
+    .kpi p{margin:4px 0 0}.kpi strong{color:var(--navy)}
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:#fff}
+    th,td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{background:#102a45;color:#fff;text-align:left;font-weight:900}
+    tr:last-child td{border-bottom:none}
+    tbody tr:nth-child(even) td{background:#f8fbff}
+    .formula{
+      background:#071b31;color:#e0f2fe;border-radius:18px;padding:18px 20px;
+      font-family:"Segoe UI",Arial,sans-serif;font-weight:800;overflow:auto;border:1px solid rgba(255,255,255,.1)
+    }
+    .formula small{display:block;color:#93c5fd;font-weight:700;margin-top:8px}
+    ul{padding-left:1.2rem;margin:10px 0} li{margin:5px 0}
+    .timeline{position:relative;padding-left:24px}
+    .timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--blue),var(--cyan));border-radius:999px}
+    .titem{position:relative;margin:0 0 16px;padding:0 0 0 18px}
+    .titem::before{content:"";position:absolute;left:-21px;top:7px;width:15px;height:15px;background:#fff;border:4px solid var(--blue);border-radius:50%}
+    .titem h4{margin:0 0 4px;color:var(--navy);font-size:16px}
+    .titem p{margin:0;color:var(--slate)}
+    .compact td,.compact th{padding:10px 12px}
+    .tagline{font-size:14px;color:#475569;margin-top:8px}
+    .divider{height:1px;background:var(--line);margin:18px 0}
+    .print-note{font-size:13px;color:#64748b;text-align:center;margin-top:22px}
+    .chart-wrap{
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:16px;
+      overflow-x:auto;
+      margin-top:14px;
+    }
+    .chart-title{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:8px;
+      color:var(--navy);
+      font-weight:900;
+    }
+    .chart-title span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+    .line-chart{
+      width:100%;
+      min-width:520px;
+      height:auto;
+      display:block;
+    }
+    .chart-axis{stroke:#94a3b8;stroke-width:1.4}
+    .chart-grid{stroke:#e2e8f0;stroke-width:1}
+    .chart-line{fill:none;stroke:var(--blue);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .chart-dot{fill:#ffffff;stroke:var(--blue);stroke-width:4}
+    .chart-label{font-size:13px;fill:#0f2742;font-weight:800}
+    .chart-small{font-size:12px;fill:#64748b;font-weight:700}
+    .chart-note{
+      margin:10px 0 0;
+      color:#475569;
+      font-size:14px;
+    }
+    footer{border-top:1px solid var(--line);background:#fff;padding:26px 0 34px;color:#64748b}
+    footer strong{color:var(--navy)}
+    @media print{
+      .note-toc{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}header{padding:34px 24px}.wrap{max-width:none}section{page-break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <a href="../index.en.html">← Maritime Notes</a>
+    <span>|</span>
+    <a href="../../index.en.html">Home</a>
+    <a href="../../about.en.html">About</a>
+    <a href="../../research/index.en.html">Management Notes</a>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="mepc-83-84-visual-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+      <a href="mepc-83-84-visual-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+    </nav>
+  </div>
+  <header>
+    <div class="wrap">
+      <div class="note-eyebrow">Revised Visual Note | Maritime Environmental Regulations | Reay's Note</div>
+      <h1>MEPC 83 / MEPC 84: Key Outcomes and Corrected Information</h1>
+      <p class="subtitle">This revision updates timelines, legal status, scope, compliance deficit formulas, and CII Phase 2 progress to current wording. Suitable for review, internal training, and regulatory briefings.</p>
+      <div class="meta-row">
+        <span class="pill">Data as of: May 2026</span>
+        <span class="pill">Topic: MARPOL Annex VI</span>
+        <span class="pill">Scope: GHG, GFI, CII, DCS, LCA, OCCS</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="note-toc" aria-label="On this page">
+    <div class="wrap">
+      <a href="#status">Legal status</a>
+      <a href="#summary">Session summary</a>
+      <a href="#gfi">GFI framework</a>
+      <a href="#deficit">Compliance &amp; remedies</a>
+      <a href="#znz">ZNZ incentives</a>
+      <a href="#cii">CII &amp; SEEMP</a>
+      <a href="#dcs">DCS &amp; data</a>
+      <a href="#lca">LCA &amp; 5th study</a>
+      <a href="#other">Other topics</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="status">
+      <h2 class="section-title"><span class="icon">⚖️</span>Current legal status overview</h2>
+      <div class="grid grid-3">
+        <div class="card kpi">
+          <div class="num">1</div>
+          <div>
+            <h3>Status of MEPC 83</h3>
+            <p><strong>Draft text approved</strong> — not yet formally adopted or in force. The IMO Net-Zero Framework is included in draft language for a new MARPOL Annex VI chapter.</p>
+          </div>
+        </div>
+        <div class="card kpi">
+          <div class="num">2</div>
+          <div>
+            <h3>Status of MEPC/ES.2</h3>
+            <p>Adoption was scheduled for October 2025, but the session was suspended and postponed; negotiations continue in 2026.</p>
+          </div>
+        </div>
+        <div class="card kpi">
+          <div class="num">3</div>
+          <div>
+            <h3>How to describe entry into force</h3>
+            <p>Do not state a fixed entry-into-force date yet. Correct wording: <strong>after formal adoption, entry into force is expected about 16 months later under tacit acceptance</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <strong>Key takeaway:</strong> The IMO Net-Zero Framework remains at the “draft approved, pending formal adoption” stage. Any 2027 or 2028 implementation timelines depend on subsequent IMO adoption and entry-into-force arrangements.
+      </div>
+    </section>
+
+    <section id="summary">
+      <h2 class="section-title"><span class="icon">📝</span>MEPC 83 and MEPC 84 session highlights</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>MEPC 83 | 7–11 April 2025</h3>
+          <span class="badge blue">Draft approved</span>
+          <span class="badge cyan">MARPOL Annex VI</span>
+          <ul>
+            <li>Approved the <strong>IMO Net-Zero Framework</strong> draft as the legal basis for a new MARPOL Annex VI chapter.</li>
+            <li>Mid-term GHG measures centre on two pillars: a <strong>global fuel standard</strong> and a <strong>global GHG pricing mechanism</strong>.</li>
+            <li>Completed Phase 1 review of short-term GHG measures and set <strong>CII reduction factors through 2030</strong>.</li>
+            <li>Approved expanded availability and transparency of IMO DCS fuel consumption data.</li>
+            <li>Advanced work on LCA, sustainable fuel certification, OCCS, and non-CO₂ GHG measurement.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>MEPC 84 | 27 April – 1 May 2026</h3>
+          <span class="badge amber">Ongoing negotiations</span>
+          <span class="badge green">Guidance advanced</span>
+          <ul>
+            <li>No final compromise on the IMO Net-Zero Framework; discussions continue at two ISWG-GHG meetings before MEPC 85.</li>
+            <li>MEPC 85 is tentatively scheduled for <strong>30 November – 3 December 2026</strong>; MEPC/ES.2 is tentatively planned to resume on <strong>4 December 2026</strong>, subject to MEPC 85 confirmation.</li>
+            <li>Launched the <strong>Phase 2 review of SEEMP and CII</strong>, targeted for completion in 2028.</li>
+            <li>Cruise ship cgHRS and adverse-weather CII metrics remain unsettled.</li>
+            <li>Terms of reference for the fifth IMO GHG study were finalised, expected to support the 2028 GHG strategy review.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="gfi">
+      <h2 class="section-title"><span class="icon">🌍</span>IMO Net-Zero Framework and GFI</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Scope of application</h3>
+          <div class="callout info">
+            <strong>Applies to:</strong> ocean-going / international voyaging ships above 5,000 GT — covering the main emission sources in international shipping.
+          </div>
+          <h4>Currently excluded or deferred</h4>
+          <ul>
+            <li><strong>Ships below 5,000 GT</strong> are not in scope now; expansion to 400–5,000 GT ships may be discussed later.</li>
+            <li><strong>Non-mechanically propelled ships</strong> are not covered.</li>
+            <li><strong>Platform-type units</strong> such as FPSOs, FSUs, and drilling rigs are excluded regardless of propulsion.</li>
+            <li><strong>Semi-submersibles</strong> are deferred pending further review.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>GFI definition</h3>
+          <p><strong>GHG Fuel Intensity (GFI)</strong> measures the lifecycle emission intensity of fuels and energy used by a ship.</p>
+          <div class="formula">
+            GFI = Σ(EI<sub>j</sub> × Energy<sub>j</sub>) ÷ Energy<sub>total</sub>
+            <small>Unit: gCO₂eq/MJ; Well-to-Wake lifecycle methodology.</small>
+          </div>
+          <ul>
+            <li><strong>EI<sub>j</sub></strong>: GHG emission intensity of energy source j.</li>
+            <li><strong>Energy<sub>j</sub></strong>: Energy consumed from source j in the reporting period.</li>
+            <li><strong>Energy<sub>total</sub></strong>: Total annual energy consumption.</li>
+            <li>Covers CO₂, CH₄, and N₂O, expressed as CO₂ equivalent.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>GFI targets and baseline</h3>
+        <div class="formula">
+          GFI<sub>T</sub> = (1 − Z<sub>T</sub> ÷ 100) × GFI<sub>2008</sub>
+          <small>GFI<sub>2008</sub> = 93.3 gCO₂eq/MJ; Z<sub>T</sub> is the reduction percentage for year T.</small>
+        </div>
+        <div class="grid grid-2" style="margin-top:16px">
+          <div class="callout ok"><strong>Base Target:</strong> baseline compliance threshold at a higher GFI level.</div>
+          <div class="callout info"><strong>Direct Compliance Target:</strong> stricter than the Base Target; performance below this level can generate surplus units.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deficit">
+      <h2 class="section-title"><span class="icon">⚙️</span>Compliance balance, surplus units, and remedial mechanisms</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Compliance balance formula</h3>
+          <div class="formula">
+            Compliance Balance = (Direct Compliance Target GFI − Attained Annual GFI) × Energy<sub>total</sub>
+          </div>
+          <ul>
+            <li><strong>Positive</strong> result: below the Direct Compliance Target — can generate <strong>Surplus Units</strong>.</li>
+            <li><strong>Negative</strong> result: above the Direct Compliance Target — deficit must be remedied.</li>
+            <li>Surplus units are expressed in <strong>tonnes CO₂eq</strong> and may be retained, transferred, or cancelled; each unit can only be used once.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Deficit remedy logic</h3>
+          <table class="compact">
+            <thead><tr><th>Attained GFI position</th><th>Compliance outcome</th><th>Remedy</th></tr></thead>
+            <tbody>
+              <tr><td>Below Direct Compliance Target</td><td>Surplus</td><td>Eligible for Surplus Units</td></tr>
+              <tr><td>Between Direct Compliance Target and Base Target</td><td>Tier 1 deficit</td><td>Remedy Tier 1 Deficit</td></tr>
+              <tr><td>Above Base Target</td><td>Tier 2 deficit</td><td>Remedy Tier 1 + Tier 2 Deficit</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Tier 1 deficit formula</h3>
+          <div class="callout warn"><strong>When it applies:</strong> Attained GFI is above the Direct Compliance Target but not above the Base Target.</div>
+          <div class="formula">
+            Tier 1 Deficit = (Attained GFI − Direct Compliance Target) × Energy<sub>total</sub>
+          </div>
+          <p class="tagline">Tier 1 deficit is expressed as a positive value representing emissions to be remedied.</p>
+        </div>
+        <div class="card">
+          <h3>Tier 2 deficit formula</h3>
+          <div class="callout stop"><strong>When it applies:</strong> Attained GFI is above the Base Target.</div>
+          <div class="formula">
+            Tier 1 Deficit = (Base Target − Direct Compliance Target) × Energy<sub>total</sub>
+            <br><br>
+            Tier 2 Deficit = (Attained GFI − Base Target) × Energy<sub>total</sub>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Remedial instruments and pricing</h3>
+        <table>
+          <thead><tr><th>Instrument</th><th>Use case</th><th>Current draft design</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Tier 1 Remedial Units</strong></td>
+              <td>To remedy Tier 1 deficits</td>
+              <td>Initial price USD 100 per tonne CO₂eq; subject to IMO review mechanism.</td>
+            </tr>
+            <tr>
+              <td><strong>Surplus Units</strong></td>
+              <td>Partial remedy or market transfer</td>
+              <td>May be retained onboard or acquired from other ships; trading rules pending IMO guidance.</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 2 Remedial Units</strong></td>
+              <td>To remedy deficits above the Base Target</td>
+              <td>Initial price USD 380 per tonne CO₂eq.</td>
+            </tr>
+            <tr>
+              <td><strong>IMO Net-Zero Fund</strong></td>
+              <td>Receives, manages, and allocates GHG pricing revenue</td>
+              <td>Supports ZNZ fuel rewards, R&amp;D, infrastructure, capacity building, and a just transition.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="znz">
+      <h2 class="section-title"><span class="icon">🌱</span>Zero and near-zero fuels and technology incentives</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>ZNZ definition</h3>
+          <p><strong>ZNZ</strong> stands for Zero or Near-Zero GHG emission fuels, technologies and energy sources.</p>
+          <table class="compact">
+            <thead><tr><th>Period</th><th>GFI threshold</th></tr></thead>
+            <tbody>
+              <tr><td>Through December 2034</td><td><strong>≤ 19.0 gCO₂eq/MJ</strong></td></tr>
+              <tr><td>From 2035 onward</td><td><strong>≤ 14.0 gCO₂eq/MJ</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Incentive highlights</h3>
+          <ul>
+            <li>Ships using ZNZ fuels or technologies may receive financial rewards from the IMO Net-Zero Fund.</li>
+            <li>Reward amounts, eligibility, and application procedures await further IMO guidance.</li>
+            <li>ZNZ thresholds and eligible technologies are expected to be reviewed periodically.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h2 class="section-title"><span class="icon">📅</span>Revised timeline</h2>
+      <div class="card timeline">
+        <div class="titem">
+          <h4>April 2025 | MEPC 83</h4>
+          <p>IMO Net-Zero Framework draft text approved and forwarded for adoption.</p>
+        </div>
+        <div class="titem">
+          <h4>October 2025 | MEPC/ES.2</h4>
+          <p>Formal adoption not completed; session suspended and postponed to 2026.</p>
+        </div>
+        <div class="titem">
+          <h4>April–May 2026 | MEPC 84</h4>
+          <p>Mid-term GHG measures discussed further; no final compromise ready for formal adoption.</p>
+        </div>
+        <div class="titem">
+          <h4>November–December 2026 | MEPC 85 and MEPC/ES.2 resumed</h4>
+          <p>Political and technical discussions expected to continue; MEPC/ES.2 resumption on 4 December 2026 remains subject to MEPC 85 confirmation.</p>
+        </div>
+        <div class="titem">
+          <h4>After formal adoption</h4>
+          <p>Under MARPOL tacit acceptance, entry into force is expected about 16 months after adoption.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cii">
+      <h2 class="section-title"><span class="icon">📊</span>CII, SEEMP, and ship energy efficiency</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>CII reduction factors</h3>
+          <p>MEPC 83 completed Phase 1 review of short-term GHG measures and set CII reduction factors through 2030.</p>
+          <div class="chart-wrap" role="img" aria-label="CII reduction factor line chart: 5% in 2023 rising to 21.5% in 2030.">
+            <div class="chart-title">
+              <div>CII reduction factor trend</div>
+              <span>Baseline: 2019 CII reference line</span>
+            </div>
+            <svg class="line-chart" viewBox="0 0 620 350" aria-hidden="true">
+              <line class="chart-grid" x1="70" y1="30" x2="570" y2="30" />
+              <line class="chart-grid" x1="70" y1="82" x2="570" y2="82" />
+              <line class="chart-grid" x1="70" y1="134" x2="570" y2="134" />
+              <line class="chart-grid" x1="70" y1="186" x2="570" y2="186" />
+              <line class="chart-grid" x1="70" y1="238" x2="570" y2="238" />
+              <line class="chart-grid" x1="70" y1="290" x2="570" y2="290" />
+              <line class="chart-axis" x1="70" y1="30" x2="70" y2="290" />
+              <line class="chart-axis" x1="70" y1="290" x2="570" y2="290" />
+              <text class="chart-small" x="24" y="34">25%</text>
+              <text class="chart-small" x="24" y="86">20%</text>
+              <text class="chart-small" x="24" y="138">15%</text>
+              <text class="chart-small" x="24" y="190">10%</text>
+              <text class="chart-small" x="31" y="242">5%</text>
+              <text class="chart-small" x="31" y="294">0%</text>
+              <polyline class="chart-line" points="70,238 140,217.2 210,196.4 280,175.6 350,148.3 420,121 490,93.7 560,66.4" />
+              <g>
+                <circle class="chart-dot" cx="70" cy="238" r="6" /><text class="chart-label" x="54" y="225">5%</text><text class="chart-small" x="50" y="320">2023</text>
+                <circle class="chart-dot" cx="140" cy="217.2" r="6" /><text class="chart-label" x="124" y="204">7%</text><text class="chart-small" x="120" y="320">2024</text>
+                <circle class="chart-dot" cx="210" cy="196.4" r="6" /><text class="chart-label" x="194" y="183">9%</text><text class="chart-small" x="190" y="320">2025</text>
+                <circle class="chart-dot" cx="280" cy="175.6" r="6" /><text class="chart-label" x="260" y="162">11%</text><text class="chart-small" x="260" y="320">2026</text>
+                <circle class="chart-dot" cx="350" cy="148.3" r="6" /><text class="chart-label" x="322" y="135">13.625%</text><text class="chart-small" x="330" y="320">2027</text>
+                <circle class="chart-dot" cx="420" cy="121" r="6" /><text class="chart-label" x="396" y="108">16.25%</text><text class="chart-small" x="400" y="320">2028</text>
+                <circle class="chart-dot" cx="490" cy="93.7" r="6" /><text class="chart-label" x="465" y="80">18.875%</text><text class="chart-small" x="470" y="320">2029</text>
+                <circle class="chart-dot" cx="560" cy="66.4" r="6" /><text class="chart-label" x="536" y="53">21.5%</text><text class="chart-small" x="540" y="320">2030</text>
+              </g>
+            </svg>
+            <p class="chart-note"><strong>Reading the chart:</strong> 2 percentage points tighter every two years from 2023–2026; 2027–2030 extends to 21.5%, showing steadily rising operational carbon intensity requirements.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>CII Phase 2 review</h3>
+          <span class="badge amber">Not fully settled</span>
+          <ul>
+            <li>MEPC 84 launched the Phase 2 review of SEEMP and CII, targeted for completion in 2028.</li>
+            <li>SEEMP strengthening includes periodic internal review, continual improvement, stronger audit arrangements, and energy efficiency implementation records.</li>
+            <li>Cruise ship cgHRS metric not yet agreed; further sessions planned.</li>
+            <li>Adverse-weather CII metrics, reference line adjustments, correction factors, and new indicators remain under review.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>CII implementation challenges and current direction</h3>
+        <table>
+          <thead><tr><th>Issue</th><th>Current direction</th></tr></thead>
+          <tbody>
+            <tr><td>Idle, anchorage, port waiting, and short voyages</td><td>Use finer DCS data to assess new metrics or correction factors.</td></tr>
+            <tr><td>Extended cruise port stays</td><td>Operational-hour-based cgHRS under discussion; not yet agreed.</td></tr>
+            <tr><td>Severe weather, ship-type specifics, auxiliary loads</td><td>Phase 2 review topics requiring more data and proposals.</td></tr>
+            <tr><td>Possible overlap between CII and the Net-Zero Framework</td><td>Assess alignment once mid-term GHG measure design is final.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="dcs">
+      <h2 class="section-title"><span class="icon">🗃️</span>DCS, SEEMP, and data transparency</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>IMO DCS data access</h3>
+          <ul>
+            <li>ROs acting on behalf of flag States may access full data for verification and administration.</li>
+            <li>MARPOL Annex VI Parties may access all ship data for analysis.</li>
+            <li>Public users may access anonymised data without identifying individual ships.</li>
+          </ul>
+          <div class="callout info">Aims to improve fuel consumption transparency, support policy analysis, and strengthen assessment of GHG reduction measures.</div>
+        </div>
+        <div class="card">
+          <h3>Underway vs. not-underway data</h3>
+          <ul>
+            <li>From the 2027 reporting year, data will be split into “underway” and “not underway”.</li>
+            <li>MEPC 84 clarified: even with split DCS data, CII is still calculated from calendar-year total emissions and distance.</li>
+            <li>Voyage distance should also be split underway / not underway to support analysis.</li>
+            <li>From the 2027 reporting year, biofuel blend carbon factors will use mass-weighted averaging instead of energy-weighted averaging.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="lca">
+      <h2 class="section-title"><span class="icon">🔬</span>LCA, sustainability standards, and the fifth IMO GHG study</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Lifecycle assessment and fuel certification</h3>
+          <ul>
+            <li>LCA guidelines continue expanding fuel pathways, default emission factors, and actual emission factor verification.</li>
+            <li>Fuel Lifecycle Label (FLL) will carry fuel origin, emission intensity, and sustainability information.</li>
+            <li>GESAMP-LCA continues reviewing default emission factors and harmonising fuel pathway classification.</li>
+            <li>Sustainability criteria cover land, water, local development, labour and human rights, and food security.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Fifth IMO GHG study</h3>
+          <ul>
+            <li>Terms of reference finalised at MEPC 84.</li>
+            <li>Will support the 2028 IMO GHG strategy review.</li>
+            <li>Scope includes international shipping emissions, carbon intensity, future scenarios, and lifecycle emissions analysis.</li>
+            <li>Expected to start later in 2026 and complete in 2028.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Default emission factor submission process</h3>
+        <table>
+          <thead><tr><th>Step</th><th>Content</th></tr></thead>
+          <tbody>
+            <tr><td>1. Proposal</td><td>Submit fuel pathway and emission factor data using the IMO template.</td></tr>
+            <tr><td>2. Scientific review</td><td>GESAMP-LCA reviews by fuel type, data quality, and methodological consistency.</td></tr>
+            <tr><td>3. Recommended values</td><td>Reviewed default emission factor recommendations issued.</td></tr>
+            <tr><td>4. Inclusion in guidelines</td><td>MEPC decides whether to include values in LCA guidelines.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="other">
+      <h2 class="section-title"><span class="icon">♻️</span>Other environmental and technical topics</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>OCCS — onboard carbon capture and storage</h3>
+          <ul>
+            <li>MEPC agreed a work plan for an OCCS regulatory framework.</li>
+            <li>Near-term priorities: preventing CO₂ release to sea and air, carbon source tracking, reception facilities, and record-keeping.</li>
+            <li>How captured onboard CO₂ counts in emissions accounting remains a dedicated follow-up topic.</li>
+            <li>Work plan targets progress by 2028.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>CH₄ / N₂O measurement and monitoring</h3>
+          <ul>
+            <li>MEPC 84 adopted technical guidance on methane and nitrous oxide measurement.</li>
+            <li>Covers test-bed and onboard measurement, engine load monitoring, and establishing actual Tank-to-Wake emission values.</li>
+            <li>Provides technical basis for LCA and future GFI actual emission factors.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>NOx Technical Code and engine operating modes</h3>
+          <ul>
+            <li>MEPC 84 completed and approved draft amendments to the NOx Technical Code and related MARPOL amendments.</li>
+            <li>Focus areas: multiple engine operating modes, certification of non-carbon and dual-fuel engines, and test cycle clarification.</li>
+            <li>Multiple operating mode requirements will affect new engine families and engine groups certified from 1 January 2028.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Ship recycling and biofouling</h3>
+          <ul>
+            <li>Hong Kong Convention enters operational experience building; safe and environmentally sound recycling continues.</li>
+            <li>Biofouling management is moving toward a legally binding framework to reduce invasive species transfer.</li>
+            <li>IHM guidance updated under MEPC.405(83).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2 class="section-title"><span class="icon">✅</span>Briefing cheat sheet</h2>
+      <div class="card">
+        <div class="grid grid-2">
+          <div>
+            <h3>Must-know points</h3>
+            <ul>
+              <li>MEPC 83: approved the IMO Net-Zero Framework draft — not the same as formal adoption.</li>
+              <li>MEPC/ES.2: no adoption in October 2025; postponed to 2026.</li>
+              <li>Entry into force: expected ~16 months after formal adoption.</li>
+              <li>GFI unit: gCO₂eq/MJ, Well-to-Wake methodology.</li>
+              <li>GFI baseline: GFI<sub>2008</sub> = 93.3 gCO₂eq/MJ.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Common confusions</h3>
+            <ul>
+              <li>“Draft approved” is not the same as “amendment adopted”.</li>
+              <li>Above 5,000 GT refers to ocean-going / international voyaging ships.</li>
+              <li>Deficit formulas should express the remedial amount as a positive value.</li>
+              <li>CII Phase 2 is underway, but cgHRS and some new metrics are not yet settled.</li>
+              <li>Final Net-Zero Framework design may still change through 2026 negotiations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="print-note">Tip: printing or exporting to PDF switches to a simplified print layout. If you spot errors, please contact me so I can improve the note: <a href="mailto:ReayHuang@gmail.com" style="color:#0891b2">ReayHuang@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>Sources:</strong> Original MEPC 83 notes, cross-checked against the IMO MEPC 83 summary, IMO Net-Zero Framework FAQ, IMO October 2025 press release, LR MEPC 84 Summary Report, DNV MEPC 84 technical update, and Bureau Veritas MEPC 84 Summary Report.<br>
+      <span>This page is for learning and regulatory understanding. For compliance, rely on official IMO circulars and resolutions and flag State and RO requirements.</span>
+    </div>
+  </footer>
+</body>
+</html>
