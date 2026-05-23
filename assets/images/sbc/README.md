@@ -4,9 +4,10 @@ Place the image files for `research/sbc-demand-classification.html` in this fold
 
 Expected filenames:
 
-- `linkedin-preview.png` - LinkedIn and social sharing preview image, recommended size 1200 x 630.
+- `linkedin-preview.png` - Chinese social sharing preview (LinkedIn, Slack, etc.)
+- `linkedin-preview.en.png` - English social sharing preview, 1200 x 630 recommended
 - `01-chart-paradigm.png` - SBC demand classification scatter plot.
 - `02-formulas.png` - Optional ADI and CV2 formula illustration.
 - `03-quadrants.png` - Four-quadrant classification illustration.
 
-After deployment, LinkedIn must be able to access the image publicly. If the preview does not show, update the `og:image` and `twitter:image` values in the HTML to the full HTTPS image URL.
+After deployment, social platforms must fetch images over public HTTPS. The HTML pages use absolute URLs under `https://reayhuang.github.io/personal-site/`. If you use a custom domain, update `og:url`, `og:image`, and `twitter:image` in both HTML files.

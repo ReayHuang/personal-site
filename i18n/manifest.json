@@ -1,0 +1,61 @@
+{
+  "defaultLocale": "zh-Hant",
+  "locales": ["zh-Hant", "en"],
+  "convention": "Chinese pages use {slug}.html; English pages use {slug}.en.html in the same folder.",
+  "pages": [
+    {
+      "slug": "home",
+      "type": "site",
+      "zh": "index.html",
+      "en": "index.en.html"
+    },
+    {
+      "slug": "about",
+      "type": "site",
+      "zh": "about.html",
+      "en": "about.en.html"
+    },
+    {
+      "slug": "notes-index",
+      "type": "site",
+      "zh": "notes/index.html",
+      "en": "notes/index.en.html"
+    },
+    {
+      "slug": "research-index",
+      "type": "site",
+      "zh": "research/index.html",
+      "en": "research/index.en.html"
+    },
+    {
+      "slug": "sbc-demand-classification",
+      "type": "article",
+      "category": "research",
+      "zh": "research/sbc-demand-classification.html",
+      "en": "research/sbc-demand-classification.en.html"
+    },
+    {
+      "slug": "class-survey-basics",
+      "type": "article",
+      "category": "notes",
+      "zh": "notes/maritime/class-survey-basics.html",
+      "en": "notes/maritime/class-survey-basics.en.html"
+    },
+    {
+      "slug": "mepc-83-84-visual-notes",
+      "type": "article",
+      "category": "notes",
+      "zh": "notes/maritime/mepc-83-84-visual-notes.html",
+      "en": null,
+      "enStatus": "planned"
+    },
+    {
+      "slug": "sample-study",
+      "type": "article",
+      "category": "research",
+      "zh": "research/sample-study.html",
+      "en": null,
+      "enStatus": "planned"
+    }
+  ]
+}
