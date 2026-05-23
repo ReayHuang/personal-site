@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SBC需求型態分類｜Reay's Note</title>
-  <meta name="description" content="以需求發生頻率與需求量穩定度分類備品需求，協助船東建立更有依據的預測、採購與庫存管理策略。" />
-  <meta property="og:title" content="SBC需求型態分類｜Reay's Note" />
-  <meta property="og:description" content="以需求發生頻率與需求量穩定度分類備品需求，協助船東建立更有依據的預測、採購與庫存管理策略。" />
-  <meta property="og:type" content="article" />
-  <meta property="og:locale" content="zh_TW" />
+  <title>SBC Demand Classification | Reay's Note</title>
+  <meta name="description" content="Classify spare parts demand by occurrence frequency and volume stability to help shipowners build more informed forecasting, procurement, and inventory strategies." />
   <link rel="alternate" hreflang="zh-Hant" href="sbc-demand-classification.html" />
   <link rel="alternate" hreflang="en" href="sbc-demand-classification.en.html" />
   <link rel="alternate" hreflang="x-default" href="sbc-demand-classification.html" />
+  <meta property="og:title" content="SBC Demand Classification | Reay's Note" />
+  <meta property="og:description" content="Classify spare parts demand by occurrence frequency and volume stability to help shipowners build more informed forecasting, procurement, and inventory strategies." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Reay's Note" />
-  <meta property="og:url" content="https://reayhuang.github.io/personal-site/research/sbc-demand-classification.html" />
-  <link rel="canonical" href="https://reayhuang.github.io/personal-site/research/sbc-demand-classification.html" />
-  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
-  <meta property="og:image" content="https://reayhuang.github.io/personal-site/assets/images/sbc/linkedin-preview.png" />
-  <meta property="og:image:alt" content="SBC需求型態分類學習筆記預覽圖" />
+  <meta property="og:url" content="https://reayhuang.github.io/personal-site/research/sbc-demand-classification.en.html" />
+  <link rel="canonical" href="https://reayhuang.github.io/personal-site/research/sbc-demand-classification.en.html" />
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.github.io/personal-site/assets/images/sbc/linkedin-preview.en.png" />
+  <meta property="og:image:alt" content="SBC demand classification study notes preview" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="2388" />
-  <meta property="og:image:height" content="694" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SBC需求型態分類｜Reay's Note" />
-  <meta name="twitter:description" content="以需求發生頻率與需求量穩定度分類備品需求，協助船東建立更有依據的預測、採購與庫存管理策略。" />
-  <meta name="twitter:image" content="https://reayhuang.github.io/personal-site/assets/images/sbc/linkedin-preview.png" />
+  <meta name="twitter:title" content="SBC Demand Classification | Reay's Note" />
+  <meta name="twitter:description" content="Classify spare parts demand by occurrence frequency and volume stability to help shipowners build more informed forecasting, procurement, and inventory strategies." />
+  <meta name="twitter:image" content="https://reayhuang.github.io/personal-site/assets/images/sbc/linkedin-preview.en.png" />
   <style>
     :root {
       --navy: #0f2f63;
@@ -50,7 +50,7 @@
       --radius-xl: 28px;
       --radius-lg: 20px;
       --radius-md: 14px;
-      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
 
     * {
@@ -153,6 +153,11 @@
       background: rgba(255,255,255,0.22);
       border-color: rgba(255,255,255,0.42);
       color: #fff;
+    }
+
+    .lang-switch a:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
     }
 
     .lang-switch a[aria-current="true"] {
@@ -1398,109 +1403,109 @@
 </head>
 <body>
   <!--
-    圖檔使用方式：
-    1. 將 PNG / JPG / WebP 放入 ../assets/images/sbc/
-    2. 修改各區塊 <img src="..."> 的檔名即可
-    3. 預設檔名：
-       - 01-chart-paradigm.png   → 01 與 02 之間的散點圖
-       - 02-formulas.png         → 02 指標（可選）
-       - 03-quadrants.png        → 03 四象限（左側圖檔，取代原 CSS 矩陣）
+    Image usage:
+    1. Place PNG / JPG / WebP files in ../assets/images/sbc/
+    2. Update each section's <img src="..."> filename as needed
+    3. Default filenames:
+       - 01-chart-paradigm.png   → scatter plot between sections 01 and 02
+       - 02-formulas.png         → section 02 metrics (optional)
+       - 03-quadrants.png        → section 03 quadrants (left-side image, replaces CSS matrix)
   -->
   <main class="page">
     <header class="hero">
-      <div class="hero-badge">🚢 備品供應鏈管理｜Reay's Note</div>
+      <div class="hero-badge">🚢 Spare Parts Supply Chain | Reay's Note</div>
       <nav class="lang-switch lang-switch--hero" aria-label="Language">
-        <a href="sbc-demand-classification.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
-        <a href="sbc-demand-classification.en.html" lang="en" hreflang="en">EN</a>
+        <a href="sbc-demand-classification.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+        <a href="sbc-demand-classification.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
       </nav>
       <h1>
-        物料管理SBC需求型態分類
+        SBC Demand Pattern Classification
         <span>Syntetos–Boylan–Croston demand classification</span>
       </h1>
       <p class="hero-summary">
-        以<strong>需求發生頻率</strong>與<strong>需求量穩定度</strong>分類備品需求，協助船東建立更有依據的預測、採購與庫存管理策略。
+        Classifies spare parts demand by <strong>occurrence frequency</strong> and <strong>volume stability</strong> to help shipowners build more informed forecasting, procurement, and inventory strategies.
       </p>
     </header>
 
-    <nav class="nav" aria-label="頁面導覽">
-      <a href="#what" class="nav-link"><span class="nav-num">01</span><span class="nav-label">是什麼</span></a>
-      <a href="#metrics" class="nav-link"><span class="nav-num">02</span><span class="nav-label">指標</span></a>
-      <a href="#quadrants" class="nav-link"><span class="nav-num">03</span><span class="nav-label">四象限</span></a>
-      <a href="#management" class="nav-link"><span class="nav-num">04</span><span class="nav-label">管理重點</span></a>
-      <a href="#insights" class="nav-link"><span class="nav-num">05</span><span class="nav-label">管理啟發</span></a>
-      <a href="#strategy" class="nav-link"><span class="nav-num">06</span><span class="nav-label">採購策略</span></a>
-      <a href="#notes" class="nav-link"><span class="nav-num">07</span><span class="nav-label">注意事項</span></a>
+    <nav class="nav" aria-label="Page navigation">
+      <a href="#what" class="nav-link"><span class="nav-num">01</span><span class="nav-label">What</span></a>
+      <a href="#metrics" class="nav-link"><span class="nav-num">02</span><span class="nav-label">Metrics</span></a>
+      <a href="#quadrants" class="nav-link"><span class="nav-num">03</span><span class="nav-label">Quadrants</span></a>
+      <a href="#management" class="nav-link"><span class="nav-num">04</span><span class="nav-label">Management</span></a>
+      <a href="#insights" class="nav-link"><span class="nav-num">05</span><span class="nav-label">Insights</span></a>
+      <a href="#strategy" class="nav-link"><span class="nav-num">06</span><span class="nav-label">Strategy</span></a>
+      <a href="#notes" class="nav-link"><span class="nav-num">07</span><span class="nav-label">Notes</span></a>
     </nav>
 
     <section id="what">
-      <h2 class="section-title"><span class="num">01</span>SBC demand classification 是什麼？</h2>
+      <h2 class="section-title"><span class="num">01</span>What is SBC demand classification?</h2>
       <div class="two-col">
         <div class="card">
-          <p class="card-intro-label"><strong>SBC demand classification</strong> 又可稱為：</p>
+          <p class="card-intro-label"><strong>SBC demand classification</strong> is also known as:</p>
           <ul class="definition-list">
             <li><span class="dot"></span>Syntetos–Boylan–Croston demand classification</li>
             <li><span class="dot"></span>Syntetos &amp; Boylan intermittent demand classification</li>
           </ul>
-          <p>這套分類的目的，是為了解決備品需求不連續、平均值容易失真的問題。</p>
-          <p>許多備品長時間沒有需求，但一旦需要時可能影響營運。</p>
-          <p>因此研究者改以 <strong>ADI（平均需求間隔）</strong>與 <strong>CV²（需求量變異）</strong>判斷需求型態，協助選擇合適的預測方法、庫存水準與採購策略。</p>
+          <p>This classification addresses a core problem with spare parts: demand is discontinuous, and simple averages can be misleading.</p>
+          <p>Many spare parts see no demand for long periods, yet when they are needed, the impact on operations can be significant.</p>
+          <p>Researchers therefore use <strong>ADI (Average Demand Interval)</strong> and <strong>CV² (squared coefficient of variation of demand size)</strong> to identify demand patterns and help select appropriate forecasting methods, inventory levels, and procurement strategies.</p>
         </div>
         <div class="card">
-          <p>它利用 ADI 與 CV² 判斷需求型態，協助將品項分為以下四類：</p>
+          <p>Using ADI and CV², items can be grouped into four demand types:</p>
           <div class="demand-type-grid">
             <div class="demand-type-unit demand-type-unit--smooth">
               <strong>Smooth</strong>
-              <span>平滑需求</span>
+              <span>Smooth demand</span>
             </div>
             <div class="demand-type-unit demand-type-unit--erratic">
               <strong>Erratic</strong>
-              <span>不穩定需求</span>
+              <span>Erratic demand</span>
             </div>
             <div class="demand-type-unit demand-type-unit--intermittent">
               <strong>Intermittent</strong>
-              <span>間歇需求</span>
+              <span>Intermittent demand</span>
             </div>
             <div class="demand-type-unit demand-type-unit--lumpy">
               <strong>Lumpy</strong>
-              <span>零散／塊狀需求</span>
+              <span>Lumpy demand</span>
             </div>
           </div>
-          <p>這套方法常用於船舶備品、維修料件、低頻耗材與慢速移動庫存。</p>
+          <p>This method is commonly applied to ship spare parts, maintenance materials, low-frequency consumables, and slow-moving inventory.</p>
           <div class="pill-row">
-            <span class="pill">船舶備品</span>
-            <span class="pill">維修料件</span>
-            <span class="pill">低頻耗材</span>
-            <span class="pill">慢速移動庫存</span>
+            <span class="pill">Ship spare parts</span>
+            <span class="pill">Maintenance materials</span>
+            <span class="pill">Low-frequency consumables</span>
+            <span class="pill">Slow-moving inventory</span>
           </div>
-          <p style="margin-top:16px;">其目的在於協助選擇合適的預測方法、庫存水準與採購策略。</p>
+          <p style="margin-top:16px;">The goal is to support better choices for forecasting methods, inventory levels, and procurement strategies.</p>
         </div>
       </div>
     </section>
 
     <section id="metrics">
-      <h2 class="section-title"><span class="num">02</span>兩個主要指標：ADI 與 CV²</h2>
+      <h2 class="section-title"><span class="num">02</span>Two key metrics: ADI and CV²</h2>
       <div class="formula-grid">
         <article class="formula-card">
-          <h3>ADI：平均需求間隔（Average Demand Interval）</h3>
-          <p>代表平均多久發生一次<strong>非零需求</strong>。</p>
+          <h3>ADI: Average Demand Interval</h3>
+          <p>Represents how often, on average, a <strong>non-zero demand</strong> occurs.</p>
           <div class="formula">
-            <span class="formula-line" aria-label="ADI 等於 T 除以 N 加">
+            <span class="formula-line" aria-label="ADI equals T divided by N plus">
               ADI =
               <span class="formula-frac">
                 <span class="num">T</span>
                 <span class="den">N<sub>+</sub></span>
               </span>
             </span>
-            <small>T：觀察期間總數｜N<sub>+</sub>：有需求的期間數</small>
+            <small>T: total observation periods | N<sub>+</sub>: periods with demand</small>
           </div>
-          <div class="example">例：24 個月中只有 6 個月有需求，ADI = 24 ÷ 6 = 4，表示平均每 4 個月才發生一次需求。</div>
+          <div class="example">Example: if demand occurs in only 6 of 24 months, ADI = 24 ÷ 6 = 4 — on average, one demand event every 4 months.</div>
         </article>
 
         <article class="formula-card">
-          <h3>CV²：需求量變異係數平方（Squared Coefficient of Variation）</h3>
-          <p>代表「有發生需求時，需求量本身的波動程度」。</p>
+          <h3>CV²: Squared Coefficient of Variation</h3>
+          <p>Measures how much demand <em>size</em> fluctuates when demand does occur.</p>
           <div class="formula">
-            <span class="formula-line" aria-label="CV 平方等於 sigma z 除以 mu z 的平方">
+            <span class="formula-line" aria-label="CV squared equals sigma z divided by mu z, squared">
               CV² =
               <span class="formula-paren">(
                 <span class="formula-frac">
@@ -1509,69 +1514,69 @@
                 </span>
               )²</span>
             </span>
-            <small>σ<sub>z</sub>：非零需求量標準差｜μ<sub>z</sub>：非零需求量平均值</small>
+            <small>σ<sub>z</sub>: standard deviation of non-zero demand | μ<sub>z</sub>: mean of non-zero demand</small>
           </div>
-          <div class="example">需求量每次約 1–2 件時 CV² 較低；有時 1 件、有時 20 件時 CV² 較高。</div>
+          <div class="example">CV² is low when quantities are consistently around 1–2 units; it is high when quantities swing between, say, 1 and 20 units.</div>
         </article>
       </div>
 
-      <!-- 可選：用圖片取代上方公式卡片時，刪除 figure 的 class="optional-image" -->
+      <!-- Optional: remove class="optional-image" from the figure below to replace formula cards with an image -->
       <figure class="card chart-figure image-slot optional-image" id="image-formulas">
-        <figcaption class="chart-caption">ADI 與 CV² 公式示意（可選圖檔）</figcaption>
+        <figcaption class="chart-caption">ADI and CV² formula reference (optional image)</figcaption>
         <img
           class="page-image"
           src="../assets/images/sbc/02-formulas.png"
-          alt="ADI 與 CV² 公式示意圖"
+          alt="Diagram showing ADI and CV² formulas"
           loading="lazy"
         />
         <p class="image-slot-hint">
-          可選圖檔：<code>../assets/images/sbc/02-formulas.png</code>。若要顯示，刪除此 figure 的 <code>optional-image</code> class。
+          Optional image: <code>../assets/images/sbc/02-formulas.png</code>. To display it, remove the <code>optional-image</code> class from this figure.
         </p>
       </figure>
     </section>
 
     <section id="chart-paradigm" aria-labelledby="chart-paradigm-caption">
       <figure class="card chart-figure image-slot" id="image-chart-paradigm">
-        <figcaption id="chart-paradigm-caption" class="chart-caption">需求分類分析</figcaption>
+        <figcaption id="chart-paradigm-caption" class="chart-caption">Demand classification analysis</figcaption>
         <img
           class="page-image"
           src="../assets/images/sbc/01-chart-paradigm.png"
-          alt="SBC 需求分類散點圖：以 ADI 與 CV² 切分 Smooth、Intermittent、Erratic、Lumpy 四象限"
+          alt="SBC demand classification scatter plot: ADI and CV² divide demand into Smooth, Intermittent, Erratic, and Lumpy quadrants"
         />
         <div class="figure-explainer">
           <p>
-            本圖以 ADI（平均需求間隔）與 CV²（需求量變異）將備品需求分為四種類型。
-            每個藍點代表一項備品，紅線為常用分類門檻。
-            分類結果可協助船東選擇合適的預測方法、庫存水準與採購策略。
+            This chart classifies spare parts demand into four types using ADI (Average Demand Interval) and CV² (demand size variation).
+            Each blue dot represents one spare part; the red lines mark commonly used classification thresholds.
+            The result helps shipowners choose appropriate forecasting methods, inventory levels, and procurement strategies.
           </p>
         </div>
         <p class="image-slot-hint">
-          請將圖檔放入 <code>../assets/images/sbc/01-chart-paradigm.png</code>，或修改上方 <code>src</code> 指向您的檔案。
+          Place the image at <code>../assets/images/sbc/01-chart-paradigm.png</code>, or update the <code>src</code> above to point to your file.
         </p>
         <div class="figure-legend">
           <table class="classification-table">
             <thead>
               <tr>
-                <th>區域</th>
-                <th>意思</th>
+                <th>Quadrant</th>
+                <th>Meaning</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><div class="type-name">Smooth demand</div></td>
-                <td>需求常發生，且用量穩定</td>
+                <td>Demand occurs frequently with stable quantities</td>
               </tr>
               <tr>
                 <td><div class="type-name">Erratic demand</div></td>
-                <td>需求常發生，但每次用量差異大</td>
+                <td>Demand occurs frequently but quantities vary widely</td>
               </tr>
               <tr>
                 <td><div class="type-name">Intermittent demand</div></td>
-                <td>需求不常發生，但用量相對穩定</td>
+                <td>Demand occurs infrequently but quantities are relatively stable</td>
               </tr>
               <tr>
                 <td><div class="type-name">Lumpy demand</div></td>
-                <td>需求不常發生，且用量也不穩定</td>
+                <td>Demand occurs infrequently and quantities are unstable</td>
               </tr>
             </tbody>
           </table>
@@ -1580,35 +1585,35 @@
     </section>
 
     <section id="quadrants">
-      <h2 class="section-title"><span class="num">03</span>四個需求象限</h2>
+      <h2 class="section-title"><span class="num">03</span>Four demand quadrants</h2>
 
       <div class="matrix-wrap">
         <figure class="card chart-figure image-slot quadrant-card" id="image-quadrants">
           <img
             class="page-image"
             src="../assets/images/sbc/03-quadrants.png"
-            alt="Smooth、Erratic、Intermittent、Lumpy 四象限需求分類示意圖"
+            alt="Quadrant diagram for Smooth, Erratic, Intermittent, and Lumpy demand classification"
           />
           <p class="image-slot-hint">
-            請將四象限圖檔放入 <code>../assets/images/sbc/03-quadrants.png</code>，或修改上方 <code>src</code> 指向您的檔案。
+            Place the quadrant image at <code>../assets/images/sbc/03-quadrants.png</code>, or update the <code>src</code> above to point to your file.
           </p>
         </figure>
 
         <div class="threshold-card">
-          <h3>常見切分值</h3>
-          <p>在實務與研究中，常見使用以下門檻值將需求型態分成四類：</p>
+          <h3>Common cut-off values</h3>
+          <p>In practice and research, the following thresholds are commonly used to split demand into four types:</p>
           <div class="threshold-list">
             <div class="threshold">
-              <span class="label">需求發生間隔</span>
+              <span class="label">Demand occurrence interval</span>
               <span class="value">ADI = 1.32</span>
             </div>
             <div class="threshold">
-              <span class="label">需求量變異程度</span>
+              <span class="label">Demand size variation</span>
               <span class="value">CV² = 0.49</span>
             </div>
           </div>
           <p style="margin-top:18px;color:var(--gray-700);">
-            ADI 較高代表需求不常發生；CV² 較高代表每次需求量波動較大。對船舶備品而言，這能幫助判斷是否適合用一般平均需求來管理。
+            A higher ADI means demand occurs less often; a higher CV² means each demand event varies more in size. For ship spare parts, this helps determine whether conventional average-demand management is appropriate.
           </p>
         </div>
       </div>
@@ -1617,41 +1622,41 @@
         <table class="classification-table">
           <thead>
             <tr>
-              <th>需求類型</th>
+              <th>Demand type</th>
               <th>ADI</th>
               <th>CV²</th>
-              <th>意義</th>
-              <th>船舶備品例子</th>
+              <th>Meaning</th>
+              <th>Ship spare parts examples</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><div class="type-name">Smooth demand<span>平滑需求</span></div></td>
-              <td><span class="tag-low">低</span></td>
-              <td><span class="tag-low">低</span></td>
-              <td>需求經常發生，且用量穩定。</td>
-              <td>常用濾芯、O 型環、清潔耗材</td>
+              <td><div class="type-name">Smooth demand<span>Smooth demand</span></div></td>
+              <td><span class="tag-low">Low</span></td>
+              <td><span class="tag-low">Low</span></td>
+              <td>Demand occurs frequently with stable quantities.</td>
+              <td>Common filters, O-rings, cleaning consumables</td>
             </tr>
             <tr>
-              <td><div class="type-name">Erratic demand<span>不穩定需求</span></div></td>
-              <td><span class="tag-low">低</span></td>
-              <td><span class="tag-high">高</span></td>
-              <td>需求經常發生，但每次用量差異大。</td>
-              <td>維修用螺栓、墊片、油封</td>
+              <td><div class="type-name">Erratic demand<span>Erratic demand</span></div></td>
+              <td><span class="tag-low">Low</span></td>
+              <td><span class="tag-high">High</span></td>
+              <td>Demand occurs frequently but quantities vary widely.</td>
+              <td>Maintenance bolts, gaskets, oil seals</td>
             </tr>
             <tr>
-              <td><div class="type-name">Intermittent demand<span>間歇需求</span></div></td>
-              <td><span class="tag-high">高</span></td>
-              <td><span class="tag-low">低</span></td>
-              <td>需求不常發生，但每次用量相對穩定。</td>
-              <td>特定型號感測器、電磁閥、繼電器</td>
+              <td><div class="type-name">Intermittent demand<span>Intermittent demand</span></div></td>
+              <td><span class="tag-high">High</span></td>
+              <td><span class="tag-low">Low</span></td>
+              <td>Demand occurs infrequently but quantities are relatively stable.</td>
+              <td>Specific sensors, solenoid valves, relays</td>
             </tr>
             <tr>
-              <td><div class="type-name">Lumpy demand<span>零散／塊狀需求</span></div></td>
-              <td><span class="tag-high">高</span></td>
-              <td><span class="tag-high">高</span></td>
-              <td>需求不常發生，且每次用量也非常不穩定。</td>
-              <td>主機特殊備件、泵浦總成、關鍵備品組</td>
+              <td><div class="type-name">Lumpy demand<span>Lumpy demand</span></div></td>
+              <td><span class="tag-high">High</span></td>
+              <td><span class="tag-high">High</span></td>
+              <td>Demand occurs infrequently and quantities are highly unstable.</td>
+              <td>Special main-engine spares, pump assemblies, critical spare kits</td>
             </tr>
           </tbody>
         </table>
@@ -1659,159 +1664,159 @@
     </section>
 
     <section id="management">
-      <h2 class="section-title"><span class="num">04</span>各類型的管理重點</h2>
+      <h2 class="section-title"><span class="num">04</span>Management priorities by type</h2>
       <div class="management-grid">
         <article class="management-card">
-          <h3>Smooth demand（平滑需求）｜可用一般預測方法</h3>
-          <p>這類需求比較接近一般庫存品，可用移動平均、指數平滑、再訂購點或簡單安全庫存邏輯管理。</p>
-          <p><strong>船舶管理常見品項：</strong>日常消耗品或定期保養品。</p>
+          <h3>Smooth demand | Standard forecasting applies</h3>
+          <p>This pattern resembles conventional inventory items. Moving averages, exponential smoothing, reorder points, or simple safety-stock logic often work well.</p>
+          <p><strong>Typical shipboard items:</strong> daily consumables or scheduled maintenance supplies.</p>
           <table class="management-strategy-table">
             <thead>
               <tr>
-                <th scope="col">策略</th>
-                <th scope="col">說明</th>
+                <th scope="col">Strategy</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>自動補貨</td>
-                <td>低於最低庫存即自動產生請購建議</td>
+                <td>Automatic replenishment</td>
+                <td>Generate purchase suggestions when stock falls below minimum</td>
               </tr>
               <tr>
-                <td>批量採購</td>
-                <td>降低單位採購成本與運費</td>
+                <td>Batch procurement</td>
+                <td>Reduce unit cost and freight through bulk orders</td>
               </tr>
               <tr>
-                <td>標準庫存量</td>
-                <td>為每艘船設定標準最低／最高庫存</td>
+                <td>Standard stock levels</td>
+                <td>Set standard min/max inventory per vessel</td>
               </tr>
               <tr>
-                <td>供應商整合</td>
-                <td>減少零散供應商，提高採購效率</td>
+                <td>Supplier consolidation</td>
+                <td>Reduce fragmented suppliers to improve procurement efficiency</td>
               </tr>
             </tbody>
           </table>
         </article>
 
         <article class="management-card">
-          <h3>Erratic demand（不穩定需求）｜重點在需求量波動</h3>
-          <p>這類品項經常發生需求，但每次用量差異大。若只看平均需求，容易低估高峰需求。</p>
+          <h3>Erratic demand | Focus on quantity volatility</h3>
+          <p>These items are requested often, but quantities swing widely. Relying on average demand alone can underestimate peak requirements.</p>
           <table class="management-strategy-table">
             <thead>
               <tr>
-                <th scope="col">策略</th>
-                <th scope="col">說明</th>
+                <th scope="col">Strategy</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>動態安全庫存</td>
-                <td>根據需求波動程度調整安全庫存，不只看平均值</td>
+                <td>Dynamic safety stock</td>
+                <td>Adjust safety stock by volatility, not averages alone</td>
               </tr>
               <tr>
-                <td>異常需求標記</td>
-                <td>將大修、事故、專案需求從一般消耗中分離</td>
+                <td>Flag exceptional demand</td>
+                <td>Separate major overhauls, incidents, and project demand from routine consumption</td>
               </tr>
               <tr>
-                <td>供應商快速供貨協議</td>
-                <td>對常用但波動大的品項建立快速報價與交貨機制</td>
+                <td>Fast-supply agreements</td>
+                <td>Establish quick quote and delivery mechanisms for frequently used but volatile items</td>
               </tr>
               <tr>
-                <td>船隊集中採購</td>
-                <td>若多艘船都常用，可集中採購降低成本</td>
+                <td>Fleet-wide procurement</td>
+                <td>Pool orders across vessels when multiple ships use the same items</td>
               </tr>
               <tr>
-                <td>定期檢討消耗原因</td>
-                <td>每季或每半年檢查是否有特定設備老化或重複故障</td>
+                <td>Periodic consumption review</td>
+                <td>Review quarterly or semi-annually for equipment aging or repeat failures</td>
               </tr>
             </tbody>
           </table>
         </article>
 
         <article class="management-card">
-          <h3>Intermittent demand（間歇需求）｜傳統平均值容易失真</h3>
-          <p>如果品項不常用，但缺料會造成停機、延誤、船級／PSC 風險，就應該建立最低策略安全庫存。</p>
+          <h3>Intermittent demand | Averages can mislead</h3>
+          <p>When an item is rarely used but a stockout would cause downtime, delays, or class/PSC risk, maintain a minimum strategic safety stock.</p>
           <table class="management-strategy-table">
             <thead>
               <tr>
-                <th scope="col">策略</th>
-                <th scope="col">說明</th>
+                <th scope="col">Strategy</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>建立最低策略庫存</td>
-                <td>即使歷史需求低，也應保留最低數量</td>
+                <td>Minimum strategic stock</td>
+                <td>Keep a baseline quantity even when historical demand is low</td>
               </tr>
               <tr>
-                <td>納入關鍵備品清單</td>
-                <td>由技術部門確認是否為關鍵備品</td>
+                <td>Critical spare parts list</td>
+                <td>Have the technical department confirm criticality</td>
               </tr>
               <tr>
-                <td>依交期設定庫存</td>
-                <td>交期越長，越需要預先備庫</td>
+                <td>Lead-time-based stocking</td>
+                <td>Longer lead times require more advance stocking</td>
               </tr>
               <tr>
-                <td>與製造商／代理商確認供貨能力</td>
-                <td>避免臨時才發現停產或缺貨</td>
+                <td>Verify supplier capability</td>
+                <td>Confirm availability with manufacturers/agents before an urgent need arises</td>
               </tr>
               <tr>
-                <td>建立替代料與等效料清單</td>
-                <td>降低單一料號斷供風險</td>
+                <td>Alternates and equivalents list</td>
+                <td>Reduce single-part-number supply risk</td>
               </tr>
               <tr>
-                <td>船隊共享庫存</td>
-                <td>高價品可放岸基倉庫，不一定每艘船都備</td>
+                <td>Fleet shared inventory</td>
+                <td>Hold high-value items at shore bases rather than on every vessel</td>
               </tr>
             </tbody>
           </table>
-          <p><strong>適合例子：</strong>主機控制感測器、發電機保護繼電器、鍋爐控制元件、分油機特定模組、舵機控制零件、自動化 PCB 控制板。</p>
+          <p><strong>Examples:</strong> main-engine control sensors, generator protection relays, boiler control components, separator-specific modules, steering gear control parts, automation PCB boards.</p>
         </article>
 
         <article class="management-card">
-          <h3>Lumpy demand（零散／塊狀需求）｜應偏向風險導向管理</h3>
-          <p>這類品項同時具備「很少發生」與「用量不穩定」兩個特性，單靠統計預測通常效果有限。</p>
-          <p>這是最需要船東重視的一類。</p>
-          <p>雖然需求很少，但如果缺料會造成停船、主機無法運轉、發電機不可用、舵機異常、船級條件或 PSC 風險，就必須用風險導向管理。</p>
+          <h3>Lumpy demand | Favor risk-based management</h3>
+          <p>These items combine infrequent occurrence with unstable quantities; statistical forecasting alone is often insufficient.</p>
+          <p>This is the category shipowners should scrutinize most closely.</p>
+          <p>Even when demand is rare, if a stockout could stop the vessel, disable the main engine or generator, affect steering gear, or create class or PSC exposure, manage by risk rather than forecast alone.</p>
           <table class="management-strategy-table">
             <thead>
               <tr>
-                <th scope="col">策略</th>
-                <th scope="col">說明</th>
+                <th scope="col">Strategy</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>建立關鍵備品政策</td>
-                <td>明確定義哪些零散／塊狀品項必須保留策略庫存</td>
+                <td>Critical spare parts policy</td>
+                <td>Define which lumpy items require strategic stock</td>
               </tr>
               <tr>
-                <td>最低策略安全庫存</td>
-                <td>即使歷史需求低，也保留最低數量</td>
+                <td>Minimum strategic safety stock</td>
+                <td>Retain baseline quantity even when historical demand is low</td>
               </tr>
               <tr>
-                <td>岸基集中庫存</td>
-                <td>高價品不一定每艘船都備，可放公司倉庫支援船隊</td>
+                <td>Shore-based central stock</td>
+                <td>Hold high-value items at company warehouses to support the fleet</td>
               </tr>
               <tr>
-                <td>船隊共享庫存</td>
-                <td>同型船、同型設備共用高價低頻備品</td>
+                <td>Fleet shared inventory</td>
+                <td>Share high-value, low-frequency spares across same-type vessels/equipment</td>
               </tr>
               <tr>
-                <td>寄售庫存</td>
-                <td>要求供應商保留庫存，船東使用後再付款</td>
+                <td>Consignment stock</td>
+                <td>Have suppliers hold inventory; pay only after use</td>
               </tr>
               <tr>
-                <td>維修交換機制</td>
-                <td>使用交換件，縮短停機時間</td>
+                <td>Repair exchange program</td>
+                <td>Use exchange units to shorten downtime</td>
               </tr>
               <tr>
-                <td>框架合約</td>
-                <td>與製造商或代理商約定價格、交期與供貨優先權</td>
+                <td>Framework agreements</td>
+                <td>Agree price, lead time, and supply priority with manufacturers or agents</td>
               </tr>
               <tr>
-                <td>替代料確認</td>
-                <td>預先確認等效／可互換備品</td>
+                <td>Alternate parts confirmation</td>
+                <td>Pre-confirm equivalent or interchangeable spares</td>
               </tr>
             </tbody>
           </table>
@@ -1820,74 +1825,74 @@
     </section>
 
     <section id="insights">
-      <h2 class="section-title"><span class="num">05</span>對備品供應鏈管理的啟發</h2>
+      <h2 class="section-title"><span class="num">05</span>Implications for spare parts supply chain management</h2>
       <div class="question-grid">
         <article class="question-card">
           <div class="q">Q1</div>
-          <h3>這個備品能不能用一般需求預測？</h3>
+          <h3>Can this spare part be forecast with standard demand methods?</h3>
           <ul>
-            <li>Smooth：通常可以</li>
-            <li>Intermittent / Lumpy：通常不適合直接用普通平均值</li>
+            <li>Smooth: usually yes</li>
+            <li>Intermittent / Lumpy: usually not with simple averages alone</li>
           </ul>
         </article>
         <article class="question-card">
           <div class="q">Q2</div>
-          <h3>應該預測導向還是風險導向？</h3>
+          <h3>Forecast-driven or risk-driven?</h3>
           <ul>
-            <li>Smooth / Erratic：可偏預測導向</li>
-            <li>Intermittent / Lumpy：關鍵備品應偏風險導向</li>
+            <li>Smooth / Erratic: can lean forecast-driven</li>
+            <li>Intermittent / Lumpy: critical spares should lean risk-driven</li>
           </ul>
         </article>
         <article class="question-card">
           <div class="q">Q3</div>
-          <h3>安全庫存是否應由歷史需求決定？</h3>
-          <p>對 Lumpy 關鍵備品來說，歷史需求可能不足以代表實際風險，應將重要性、交期、停租風險與供應穩定性納入判斷。</p>
+          <h3>Should safety stock follow historical demand alone?</h3>
+          <p>For lumpy critical spares, history may understate actual risk. Factor in criticality, lead time, off-hire exposure, and supply stability.</p>
         </article>
       </div>
     </section>
 
     <section id="strategy">
-      <h2 class="section-title"><span class="num">06</span>船舶備品的建議採購策略</h2>
+      <h2 class="section-title"><span class="num">06</span>Recommended procurement strategies for ship spares</h2>
       <div style="overflow-x:auto;">
         <table class="strategy-table">
           <thead>
             <tr>
-              <th>分類組合</th>
-              <th>建議採購策略</th>
+              <th>Classification combination</th>
+              <th>Recommended procurement strategy</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><span class="strategy-icon">↻</span>Smooth（平滑需求）+ 低成本</td>
-              <td>採用自動補貨機制，並透過批量採購降低單位採購成本。</td>
+              <td><span class="strategy-icon">↻</span>Smooth + low cost</td>
+              <td>Use automatic replenishment and batch procurement to reduce unit cost.</td>
             </tr>
             <tr>
-              <td><span class="strategy-icon">🛡</span>Smooth（平滑需求）+ 高重要性</td>
-              <td>採用最低－最高庫存管理，並與供應商建立穩定供貨協議。</td>
+              <td><span class="strategy-icon">🛡</span>Smooth + high criticality</td>
+              <td>Use min–max inventory management and stable supply agreements with vendors.</td>
             </tr>
             <tr>
-              <td><span class="strategy-icon">📦</span>Intermittent（間歇需求）+ 低重要性</td>
-              <td>採取按需採購，避免過度備庫造成呆料。</td>
+              <td><span class="strategy-icon">📦</span>Intermittent + low criticality</td>
+              <td>Buy to demand; avoid overstocking and obsolete inventory.</td>
             </tr>
             <tr>
-              <td><span class="strategy-icon">⚓</span>Intermittent（間歇需求）+ 高重要性</td>
-              <td>建立最低策略安全庫存，以降低缺料造成的營運風險。</td>
+              <td><span class="strategy-icon">⚓</span>Intermittent + high criticality</td>
+              <td>Maintain minimum strategic safety stock to reduce operational risk from stockouts.</td>
             </tr>
             <tr>
-              <td><span class="strategy-icon">↯</span>Lumpy（零散／塊狀需求）+ 低重要性</td>
-              <td>原則上不建議備庫；僅在交期極長或供應不穩時保留少量庫存。</td>
+              <td><span class="strategy-icon">↯</span>Lumpy + low criticality</td>
+              <td>Generally do not stock; keep only a small buffer when lead times are very long or supply is unstable.</td>
             </tr>
             <tr>
-              <td><span class="strategy-icon">★</span>Lumpy（零散／塊狀需求）+ 高重要性</td>
-              <td>建立關鍵備品管理政策，並評估共享庫存、寄售庫存或維修交換機制。</td>
+              <td><span class="strategy-icon">★</span>Lumpy + high criticality</td>
+              <td>Establish a critical spare parts policy; evaluate shared inventory, consignment, or repair exchange.</td>
             </tr>
             <tr>
-              <td><span class="strategy-icon">⏱</span>高成本 + 長交期</td>
-              <td>與供應商建立框架合約或按需叫料採購合約，以兼顧交期與資金壓力。</td>
+              <td><span class="strategy-icon">⏱</span>High cost + long lead time</td>
+              <td>Use framework agreements or call-off contracts to balance lead time and cash flow.</td>
             </tr>
             <tr>
-              <td><span class="strategy-icon">⚠</span>淘汰或停產風險</td>
-              <td>提前進行最後採購、替代料確認與淘汰退場規劃。</td>
+              <td><span class="strategy-icon">⚠</span>Obsolescence or discontinuation risk</td>
+              <td>Plan last-time buys, confirm alternates, and manage phase-out.</td>
             </tr>
           </tbody>
         </table>
@@ -1895,47 +1900,47 @@
     </section>
 
     <section id="notes">
-      <h2 class="section-title"><span class="num">07</span>實務注意事項</h2>
+      <h2 class="section-title"><span class="num">07</span>Practical considerations</h2>
       <div class="card attention-card">
         <div class="attention-grid">
           <div class="attention-section">
-            <h3>不要把 ADI = 1.32、CV² = 0.49 視為絕對標準</h3>
-            <p>這兩個數值常被當作固定標準，但本質上更接近「預測方法選擇邊界」，不是所有產業都必然適用的絕對分界。</p>
-            <p>實務上不建議只用 SBC 分類決定庫存策略，還應一起考慮：</p>
+            <h3>Do not treat ADI = 1.32 and CV² = 0.49 as absolute rules</h3>
+            <p>These values are often cited as fixed standards, but they are better understood as boundaries for choosing forecasting methods—not universal cut-offs for every industry.</p>
+            <p>In practice, do not base inventory strategy on SBC classification alone. Also consider:</p>
             <ul class="factor-list">
-              <li>服務水準</li>
-              <li>交期</li>
-              <li>重要性</li>
-              <li>缺料成本</li>
-              <li>淘汰或停產風險</li>
-              <li>供應商可靠度</li>
-              <li>船舶停航或停租風險</li>
+              <li>Service level</li>
+              <li>Lead time</li>
+              <li>Criticality</li>
+              <li>Stockout cost</li>
+              <li>Obsolescence or discontinuation risk</li>
+              <li>Supplier reliability</li>
+              <li>Vessel off-hire or lay-up risk</li>
             </ul>
           </div>
 
           <div class="attention-section">
-            <h3>不要用價格否定關鍵備品的必要性</h3>
-            <p>備品價格不應改變需求型態的判斷，也不應成為否定關鍵備品必要性的理由。</p>
-            <p>對船東而言，真正重要的是先判斷該備品是否具備營運、維修或安全上的必要性；若該買，就必須規劃取得方式。</p>
-            <p>成本應用於後續採購策略優化，例如決定船上備庫、岸基共享庫存、寄售庫存、框架合約或維修交換機制，而不是用來降低對必要備品的重視程度。</p>
+            <h3>Do not use price to dismiss critical spares</h3>
+            <p>Item price should not change how you classify demand, nor should it justify skipping a critical spare.</p>
+            <p>For shipowners, the first question is whether a spare is operationally, maintenance, or safety-critical; if it is required, plan how to obtain it.</p>
+            <p>Cost belongs in procurement optimization—onboard stock vs. shore pooling, consignment, framework agreements, or repair exchange—not in downgrading necessary spares.</p>
           </div>
         </div>
 
         <div class="key-principle">
-          需求分類不看價格，備庫必要性看風險，採購方式才看成本。
+          Classify demand without regard to price; decide stocking by risk; optimize procurement by cost.
         </div>
       </div>
 
       <div class="quote-final">
         <div class="check">✅</div>
         <div>
-          <h2>一句話總結</h2>
-          <p><strong>SBC demand classification</strong> 是幫助判斷「這個備品的需求到底能不能被預測」；但真正的備品庫存決策，還需要結合重要性、交期、停船風險與供應商可靠度。</p>
+          <h2>In one sentence</h2>
+          <p><strong>SBC demand classification</strong> helps answer whether a spare part’s demand can be forecast reliably; the final inventory decision still requires criticality, lead time, off-hire risk, and supplier reliability.</p>
         </div>
       </div>
     </section>
 
-    <p class="print-note">本篇為 Reay 的學習筆記，用於整理 SBC 需求型態分類在備品預測、採購與庫存管理上的應用。如果發現錯誤，還請與我聯絡，讓資訊更完整：<a href="mailto:ReayHuang@gmail.com">ReayHuang@gmail.com</a></p>
+    <p class="print-note">These are Reay’s study notes on applying SBC demand classification to spare parts forecasting, procurement, and inventory management. If you spot an error, please contact me so the material can be improved: <a href="mailto:ReayHuang@gmail.com">ReayHuang@gmail.com</a></p>
   </main>
   <script>
     document.querySelectorAll(".image-slot img").forEach(function (img) {
