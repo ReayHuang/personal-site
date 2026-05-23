@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuel for Thought Methanol Report Summary | Reay's Note</title>
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <meta name="description" content="A visual note based on LR's Fuel for Thought methanol report, covering methanol as marine fuel: characteristics, safety, regulations, supply chain, cost, and technology readiness." />
+  <link rel="alternate" hreflang="zh-Hant" href="methanol-fuel-notes.html" />
+  <link rel="alternate" hreflang="en" href="methanol-fuel-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="methanol-fuel-notes.html" />
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --paper:#ffffff;
+      --ink:#172033;
+      --muted:#5e6b85;
+      --blue:#2563eb;
+      --cyan:#0891b2;
+      --green:#059669;
+      --amber:#d97706;
+      --red:#dc2626;
+      --purple:#7c3aed;
+      --line:#dbe3f0;
+      --soft-blue:#eaf1ff;
+      --soft-green:#eafaf3;
+      --soft-amber:#fff7e6;
+      --soft-red:#fff0f0;
+      --soft-purple:#f3ecff;
+      --shadow:0 16px 40px rgba(15,23,42,.08);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.14), transparent 32rem),
+        radial-gradient(circle at top right, rgba(124,58,237,.12), transparent 28rem),
+        var(--bg);
+      color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      line-height:1.75;
+      letter-spacing:.02em;
+    }
+
+    a{color:inherit;}
+    .layout{
+      display:grid;
+      grid-template-columns:280px minmax(0,1fr);
+      gap:28px;
+      max-width:1480px;
+      margin:0 auto;
+      padding:28px;
+    }
+
+    aside{
+      position:sticky;
+      top:20px;
+      align-self:start;
+      background:rgba(255,255,255,.86);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+      padding:22px;
+      max-height:calc(100vh - 40px);
+      overflow:auto;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .brand-icon{
+      width:44px;height:44px;
+      display:grid;place-items:center;
+      border-radius:15px;
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+      color:#fff;
+      font-size:24px;
+      box-shadow:0 12px 24px rgba(37,99,235,.25);
+    }
+    .brand strong{font-size:17px;display:block;}
+    .brand span{font-size:12px;color:var(--muted);}
+
+    .layout aside nav a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      margin:4px 0;
+      border-radius:14px;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;
+      font-size:14px;
+    }
+    .layout aside nav a:hover{background:var(--soft-blue);color:var(--blue);}
+    .nav-dot{width:9px;height:9px;border-radius:99px;background:var(--blue);opacity:.75;}
+
+    main{min-width:0;}
+    .hero{
+      background:
+        linear-gradient(135deg,rgba(37,99,235,.95),rgba(8,145,178,.9)),
+        linear-gradient(135deg,#12233f,#1d4ed8);
+      color:#fff;
+      border-radius:30px;
+      padding:44px;
+      box-shadow:0 24px 70px rgba(37,99,235,.28);
+      position:relative;
+      overflow:hidden;
+      margin-bottom:26px;
+    }
+    .hero:after{
+      content:"CH₃OH";
+      position:absolute;
+      right:28px;
+      bottom:-34px;
+      font-size:118px;
+      font-weight:900;
+      opacity:.12;
+      letter-spacing:.02em;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.25);
+      font-weight:800;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+    h1{
+      margin:0 0 16px;
+      font-size:clamp(32px,5vw,58px);
+      line-height:1.12;
+      letter-spacing:-.04em;
+    }
+    .hero p{max-width:850px;margin:0;color:rgba(255,255,255,.9);font-size:18px;}
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:24px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.24);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    section{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin:26px 0;
+      padding:30px;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:22px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:18px;
+    }
+    .section-kicker{
+      color:var(--blue);
+      font-size:13px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin-bottom:4px;
+    }
+    h2{
+      margin:0;
+      font-size:30px;
+      line-height:1.28;
+      letter-spacing:-.02em;
+    }
+    h3{
+      font-size:21px;
+      margin:28px 0 12px;
+      color:#0f172a;
+      letter-spacing:-.01em;
+    }
+    h4{
+      font-size:17px;
+      margin:18px 0 8px;
+      color:#1e293b;
+    }
+    p{margin:8px 0 14px;}
+    strong{font-weight:900;color:#0f172a;}
+    .muted{color:var(--muted);}
+
+    .grid{display:grid;gap:18px;}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr));}
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:0 10px 24px rgba(15,23,42,.04);
+    }
+    .card h3,.card h4{margin-top:0;}
+    .card-blue{background:var(--soft-blue);border-color:#c8d9ff;}
+    .card-green{background:var(--soft-green);border-color:#bfead5;}
+    .card-amber{background:var(--soft-amber);border-color:#f7d9a2;}
+    .card-red{background:var(--soft-red);border-color:#ffc9c9;}
+    .card-purple{background:var(--soft-purple);border-color:#d7c4ff;}
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .tag-blue{background:var(--soft-blue);color:var(--blue);}
+    .tag-green{background:var(--soft-green);color:var(--green);}
+    .tag-amber{background:var(--soft-amber);color:var(--amber);}
+    .tag-red{background:var(--soft-red);color:var(--red);}
+    .tag-purple{background:var(--soft-purple);color:var(--purple);}
+    .tag-dark{background:#e2e8f0;color:#334155;}
+
+    .callout{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:14px;
+      align-items:start;
+      border-radius:20px;
+      padding:18px 20px;
+      margin:18px 0;
+      border:1px solid;
+    }
+    .callout .icon{font-size:24px;line-height:1.2;}
+    .callout h4{margin:0 0 4px;}
+    .callout p{margin:0;color:#334155;}
+    .info{background:var(--soft-blue);border-color:#c8d9ff;}
+    .ok{background:var(--soft-green);border-color:#bfead5;}
+    .warn{background:var(--soft-amber);border-color:#f7d9a2;}
+    .danger{background:var(--soft-red);border-color:#ffc9c9;}
+    .purple{background:var(--soft-purple);border-color:#d7c4ff;}
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+      margin:14px 0 24px;
+    }
+    th,td{
+      padding:14px 16px;
+      vertical-align:top;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+    }
+    th{
+      background:#f1f5f9;
+      color:#0f172a;
+      font-size:14px;
+      font-weight:900;
+    }
+    tr:last-child td{border-bottom:none;}
+    td{color:#334155;}
+
+    ul{padding-left:1.2em;margin:8px 0 16px;}
+    li{margin:6px 0;}
+    .formula{
+      font-family:"Cascadia Code","Consolas",monospace;
+      background:#0f172a;
+      color:#e2e8f0;
+      border-radius:18px;
+      padding:18px 20px;
+      margin:16px 0;
+      font-size:18px;
+      overflow:auto;
+    }
+
+    .metric{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      min-height:132px;
+    }
+    .metric .num{
+      font-size:34px;
+      font-weight:1000;
+      letter-spacing:-.04em;
+      color:#0f172a;
+      line-height:1;
+    }
+    .metric .label{font-weight:900;color:#334155;}
+    .metric .desc{color:var(--muted);font-size:13px;}
+
+    .timeline{
+      position:relative;
+      margin:16px 0;
+      padding-left:28px;
+    }
+    .timeline:before{
+      content:"";
+      position:absolute;
+      left:9px;top:6px;bottom:6px;
+      width:3px;border-radius:99px;background:#cbd5e1;
+    }
+    .t-item{position:relative;margin:0 0 18px;}
+    .t-item:before{
+      content:"";
+      position:absolute;
+      left:-25px;top:9px;
+      width:15px;height:15px;border-radius:99px;
+      background:var(--blue);
+      box-shadow:0 0 0 5px var(--soft-blue);
+    }
+    .t-year{font-weight:1000;color:#0f172a;}
+
+    .kbd{
+      font-family:"Cascadia Code","Consolas",monospace;
+      background:#e2e8f0;
+      padding:2px 7px;
+      border-radius:8px;
+      font-weight:800;
+      color:#334155;
+    }
+
+    .checklist li::marker{content:"✅ ";}
+    .risklist li::marker{content:"⚠️ ";}
+    .arrowlist li::marker{content:"➜ ";}
+
+    .footer{
+      color:var(--muted);
+      text-align:center;
+      padding:28px 12px 48px;
+      font-size:13px;
+    }
+
+    .chart-wrap{
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:16px;
+      overflow-x:auto;
+      margin-top:14px;
+    }
+    .chart-title{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:8px;
+      color:#0f172a;
+      font-weight:900;
+    }
+    .chart-title span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+    .line-chart{
+      width:100%;
+      min-width:360px;
+      max-width:420px;
+      height:auto;
+      display:block;
+    }
+    .chart-axis{stroke:#94a3b8;stroke-width:1.4}
+    .chart-grid{stroke:#e2e8f0;stroke-width:1}
+    .chart-line{fill:none;stroke:var(--green);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .chart-dot{fill:#ffffff;stroke:var(--green);stroke-width:4}
+    .chart-label{font-size:13px;fill:#0f172a;font-weight:800}
+    .chart-small{font-size:12px;fill:var(--muted);font-weight:700}
+    .chart-note{
+      margin:10px 0 0;
+      color:#475569;
+      font-size:14px;
+    }
+
+    @media (max-width:1100px){
+      .layout{grid-template-columns:1fr;padding:18px;}
+      aside{position:relative;top:auto;max-height:none;}
+      .layout aside nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;}
+      .grid-4{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+    @media (max-width:780px){
+      .hero{padding:28px;}
+      section{padding:22px;}
+      .section-head{display:block;}
+      .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}
+      .layout aside nav{grid-template-columns:1fr;}
+      th,td{padding:12px;font-size:14px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Note</a>
+      <span>|</span>
+      <a href="../../index.en.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Note</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="methanol-fuel-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+      <a href="methanol-fuel-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+    </nav>
+  </div>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        <div class="brand-icon">⚓</div>
+        <div>
+          <strong>Methanol Marine Fuel Notes</strong>
+          <span>Visual Note</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#overview"><span class="nav-dot"></span>Overview and key takeaways</a>
+        <a href="#ch1"><span class="nav-dot"></span>Chapter 1: Introduction and basics</a>
+        <a href="#readiness"><span class="nav-dot"></span>Chapter 2: Readiness assessment</a>
+        <a href="#ch2"><span class="nav-dot"></span>Chapter 3: Safety and regulations</a>
+        <a href="#ch3"><span class="nav-dot"></span>Chapter 4: Drivers</a>
+        <a href="#ch4"><span class="nav-dot"></span>Chapter 5: Production and supply</a>
+        <a href="#ch5"><span class="nav-dot"></span>Chapter 6: Technology readiness</a>
+        <a href="#conclusion"><span class="nav-dot"></span>Summary and quick notes</a>
+      </nav>
+    </aside>
+
+    <main>
+      <header class="hero">
+        <div class="note-eyebrow">Visual Note | Methanol Marine Fuel | Reay's Note</div>
+        <h1>Key Notes on Methanol as a Marine Fuel</h1>
+        <p>This note is based on LR's Fuel for Thought methanol report and summarizes methanol as a marine fuel, including core characteristics, safety issues, regulatory frameworks, supply chain, cost factors, and technology readiness for quick review.</p>
+        <div class="meta-row">
+          <span class="pill">📌 Topic: Methanol marine fuel</span>
+          <span class="pill">🧭 Updated: 21 May 2026</span>
+          <span class="pill">🟠 Regulation and market highlights</span>
+          <span class="pill">🌱 Lifecycle decarbonization focus</span>
+        </div>
+      </header>
+
+      <section id="overview">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Overview</div>
+            <h2>Overview: methanol positioning and reading points</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card card-blue metric">
+            <span class="tag tag-blue">Core positioning</span>
+            <div class="num">Transition + long-term candidate</div>
+            <div class="label">Not all methanol is low-carbon</div>
+            <div class="desc">Methanol burns relatively cleanly, but lifecycle decarbonization depends on feedstock source and certification.</div>
+          </div>
+          <div class="card card-green metric">
+            <span class="tag tag-green">Engineering advantage</span>
+            <div class="num">Liquid at ambient conditions</div>
+            <div class="label">Lower storage and handling barriers than hydrogen, ammonia, or LNG</div>
+            <div class="desc">No cryogenic or high-pressure storage is required, but toxicity, low flashpoint, and material compatibility still need careful control.</div>
+          </div>
+          <div class="card card-amber metric">
+            <span class="tag tag-amber">Main bottleneck</span>
+            <div class="num">Supply + cost</div>
+            <div class="label">Green methanol still needs major scale-up</div>
+            <div class="desc">At present, low-carbon methanol supply, pricing, and infrastructure remain key constraints for large-scale adoption.</div>
+          </div>
+        </div>
+        <div class="callout info">
+          <div class="icon">📌</div>
+          <div>
+            <h4>Key takeaway</h4>
+            <p>Methanol's value as a marine fuel comes from engineering practicality and low-carbon potential. Its actual emissions benefit must be judged by fuel source, lifecycle carbon intensity, regulatory treatment, and supply-chain maturity.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ch1">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 1</div>
+            <h2>Introduction and methanol basics</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card card-blue">
+            <h3>📘 Maritime energy transition background</h3>
+            <ul class="checklist">
+              <li>Shipping's energy transition is no longer driven only by economics and technical efficiency. It is also shaped by <strong>carbon-neutrality pressure, regulatory requirements, and supply-chain responsibility</strong>.</li>
+              <li>Shipowners, charterers, financiers, insurers, and cargo owners increasingly need to manage their own <strong>shipping carbon footprint</strong>.</li>
+              <li>Methanol is viewed as one of the alternative fuels that can be introduced relatively quickly because it is <strong>liquid at ambient conditions, has a mature industrial supply chain, and has relatively lower retrofit barriers</strong>.</li>
+            </ul>
+          </div>
+          <div class="card card-green">
+            <h3>⚓ What adopting methanol means</h3>
+            <ul class="arrowlist">
+              <li>It can serve as a bridge fuel between <strong>near-term emissions reduction and long-term net-zero pathways</strong>.</li>
+              <li>It can transition from fossil-based methanol toward <strong>blue methanol, biomethanol, and e-methanol</strong>.</li>
+              <li>The real decarbonization effect must be assessed on a <strong>full lifecycle</strong> basis, not just at combustion.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>🔬 What is methanol?</h3>
+        <div class="formula">Methanol formula: CH₃OH<br/>Combustion reaction: 2CH₃OH + 3O₂ → 2CO₂ + 4H₂O + heat</div>
+
+        <div class="grid grid-4">
+          <div class="card metric">
+            <span class="tag tag-blue">State</span>
+            <div class="num">Liquid</div>
+            <div class="label">Ambient temperature and pressure</div>
+            <div class="desc">Easy to store, pump, and bunker; no cryogenic liquefaction required.</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-red">Flashpoint</span>
+            <div class="num">12°C</div>
+            <div class="label">Low-flashpoint fuel</div>
+            <div class="desc">Must be designed under low-flashpoint fuel safety principles.</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-amber">Energy density</span>
+            <div class="num">About 2.4x</div>
+            <div class="label">Volume requirement</div>
+            <div class="desc">For the same energy, methanol requires about 2.4 times the volume of marine diesel.</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-green">Sulphur content</span>
+            <div class="num">Near zero</div>
+            <div class="label">Methanol itself is nearly sulphur-free</div>
+            <div class="desc">However, if a dual-fuel engine uses pilot fuel, the sulphur content of the pilot fuel still matters.</div>
+          </div>
+        </div>
+
+        <h3>✅ Advantages as a marine fuel</h3>
+        <div class="grid grid-3">
+          <div class="card card-green">
+            <h4>Storage and handling convenience</h4>
+            <p>Methanol is liquid at ambient conditions, so onboard tanks, pumps, and bunkering concepts are closer to conventional liquid fuels.</p>
+          </div>
+          <div class="card card-green">
+            <h4>Cleaner combustion</h4>
+            <p>Methanol itself is nearly sulphur-free and produces lower particulate and soot emissions, helping reduce local air pollution.</p>
+          </div>
+          <div class="card card-green">
+            <h4>Retrofit feasibility</h4>
+            <p>Compared with some other low-carbon fuels, methanol dual-fuel engines and storage systems already have more engineering experience.</p>
+          </div>
+        </div>
+
+        <h3>⚠️ Challenges and disadvantages</h3>
+        <div class="grid grid-3">
+          <div class="card card-red">
+            <h4>Toxicity</h4>
+            <p>Methanol can enter the body by inhalation, ingestion, skin contact, or eye exposure and may cause serious health hazards.</p>
+          </div>
+          <div class="card card-amber">
+            <h4>Low energy density</h4>
+            <p>The same range requires larger fuel tank volume, which may affect cargo capacity, ship layout, and operational flexibility.</p>
+          </div>
+          <div class="card card-red">
+            <h4>Fire risk</h4>
+            <p>Methanol has a low flashpoint and burns with a pale blue flame that may be hard to see in daylight, making fire detection and firefighting design important.</p>
+          </div>
+        </div>
+
+        <div class="callout info">
+          <div class="icon">💡</div>
+          <div>
+            <h4>Important reminder: methanol is not automatically low-carbon</h4>
+            <p>A more precise statement is: <strong>methanol burns relatively cleanly, but lifecycle decarbonization depends on feedstock source</strong>. Grey and brown methanol may not provide decarbonization benefits. Biomethanol, e-methanol, or certified low-carbon methanol with credible carbon capture may deliver meaningful lifecycle reductions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="readiness">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 2</div>
+            <h2>Readiness assessment of methanol as a marine fuel</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card card-blue">
+            <h3>🔬 Technology readiness</h3>
+            <p><strong>Marine propulsion, storage, and bunkering technologies are relatively mature</strong>. Methanol dual-fuel engines, fuel tanks, and piping safety designs already have shipboard experience.</p>
+            <span class="tag tag-green">Relatively mature</span>
+          </div>
+          <div class="card card-amber">
+            <h3>💰 Investment readiness</h3>
+            <p><strong>Low-carbon methanol production still requires large-scale investment</strong>. Bottlenecks include green hydrogen, renewable CO₂, biomass feedstock, and long-term supply contracts.</p>
+            <span class="tag tag-amber">Still growing</span>
+          </div>
+          <div class="card card-purple">
+            <h3>🧩 Community readiness</h3>
+            <p><strong>Standards, certification, carbon accounting, and port infrastructure are still forming</strong>. Adoption speed depends on regulatory consistency and cargo owners' willingness to pay.</p>
+            <span class="tag tag-purple">Gradually forming</span>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Assessment factor</th>
+              <th>Meaning</th>
+              <th>Methanol status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Technology readiness</strong></td>
+              <td>How far the technology has moved from concept, validation, and demonstration toward commercialization.</td>
+              <td>Propulsion, storage, and onboard systems are relatively mature.</td>
+            </tr>
+            <tr>
+              <td><strong>Investment readiness</strong></td>
+              <td>Business case, financing appetite, and investment reliability.</td>
+              <td>Low-carbon methanol capacity remains insufficient, with high investment risk and pricing uncertainty.</td>
+            </tr>
+            <tr>
+              <td><strong>Community readiness</strong></td>
+              <td>Regulation, standards, ports, supply chain, and social acceptance.</td>
+              <td>Quality standards and safety guidance are emerging, but global consistency will take time.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="ch2">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 3</div>
+            <h2>Safety, bunkering, and regulatory framework</h2>
+          </div>
+        </div>
+
+        <h3>🔥 General methanol safety risks</h3>
+        <div class="grid grid-2">
+          <div class="card card-red">
+            <h4>Flammability</h4>
+            <ul class="risklist">
+              <li>Flashpoint is about <strong>12°C</strong>, making it a low-flashpoint fuel.</li>
+              <li>Flammable range in air is about <strong>6%–36%</strong>.</li>
+              <li>The flame is pale blue and may be difficult to see in daylight.</li>
+              <li>Heat sources, sparks, static electricity, and open flames must be strictly controlled.</li>
+            </ul>
+          </div>
+          <div class="card card-red">
+            <h4>Toxicity</h4>
+            <ul class="risklist">
+              <li>Can enter the body through inhalation, ingestion, skin contact, or eye exposure.</li>
+              <li>Poisoning symptoms may be delayed, so emergency assessment should not underestimate exposure.</li>
+              <li>Operations require PPE, ventilation, and emergency washing facilities.</li>
+              <li>Seek medical attention immediately after exposure or accidental ingestion.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>⛽ Methanol bunkering points</h3>
+        <div class="grid grid-3">
+          <div class="card card-blue">
+            <h4>No cryogenic or high-pressure system required</h4>
+            <p>Compared with hydrogen, ammonia, and LNG, methanol bunkering equipment is closer to conventional liquid fuels, but still must meet low-flashpoint fuel safety requirements.</p>
+          </div>
+          <div class="card card-amber">
+            <h4>Material compatibility</h4>
+            <p>Methanol may cause swelling, degradation, or corrosion in some materials; tanks, pipes, seals, and coatings must be checked for compatibility.</p>
+          </div>
+          <div class="card card-purple">
+            <h4>Inerting and ventilation</h4>
+            <p>Fuel tank void spaces often require inerting or equivalent safeguards to reduce explosive atmosphere risk.</p>
+          </div>
+        </div>
+
+        <h3>📘 Regulations and standards: separate fuel use from cargo carriage</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Use</th>
+              <th>Main framework</th>
+              <th>Corrected note wording</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>As cargo</strong></td>
+              <td>MARPOL Annex II, IBC Code, IMDG Code</td>
+              <td>When carried as bulk chemical or dangerous goods, methanol must be managed under toxic liquid, pollution prevention, and dangerous goods requirements.</td>
+            </tr>
+            <tr>
+              <td><strong>As fuel</strong></td>
+              <td>IGF Code, interim guidelines for methanol/ethanol fuel, class rules</td>
+              <td>When used as fuel, focus areas include tank arrangement, double-wall piping, ventilation, detection, inerting, emergency shutdown, and equivalent safety.</td>
+            </tr>
+            <tr>
+              <td><strong>Dangerous goods classification</strong></td>
+              <td>UN number and maritime dangerous goods classification</td>
+              <td><strong>UN 1230, Methanol, Class 3 flammable liquid, subsidiary risk 6.1, packing group II</strong>. Do not mix bulk pollution categories into this line.</td>
+            </tr>
+            <tr>
+              <td><strong>Quality standard</strong></td>
+              <td>ISO 6583:2024 and IMPCA specifications</td>
+              <td><strong>ISO 6583:2024 has been published</strong>. It defines methanol fuel quality requirements at the <strong>custody transfer point, before any necessary onboard treatment</strong>, and applies to marine diesel engines, fuel cells, and other maritime uses.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout ok">
+          <div class="icon">✅</div>
+          <div>
+            <h4>Equivalent safety principle</h4>
+            <p>When using low-flashpoint fuels such as methanol or ethanol, the design must demonstrate a safety level no lower than conventional oil-fuelled ships. Risk assessment, FMEA, HAZID, and class review become important parts of design approval.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ch3">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 4</div>
+            <h2>Methanol drivers: regulation, market, and total cost</h2>
+          </div>
+        </div>
+
+        <h3>🇪🇺 EU regional regulations</h3>
+        <div class="grid grid-2">
+          <div class="card card-blue">
+            <h4>EU Emissions Trading System</h4>
+            <ul class="checklist">
+              <li>From <strong>January 2024</strong>, maritime CO₂ emissions are included in the EU ETS.</li>
+              <li>Covers 100% of emissions on intra-EEA voyages and 50% of emissions on voyages into or out of the EEA.</li>
+              <li>Allowance surrender phase-in: in 2025, 40% of 2024 emissions; in 2026, 70% of 2025 emissions; from 2027, 100%.</li>
+              <li><strong>Methane and nitrous oxide are included from 2026</strong>.</li>
+              <li>EU ETS currently mainly applies to <strong>large ships above 5,000 GT entering EU ports</strong>; offshore ships above 5,000 GT will be <strong>included from 2027</strong>.</li>
+            </ul>
+          </div>
+          <div class="card card-green">
+            <h4>FuelEU Maritime Regulation</h4>
+            <p>This regulation controls the annual average GHG intensity of energy used onboard ships, using 2020 average intensity as the baseline.</p>
+            <div class="chart-wrap" role="img" aria-label="FuelEU Maritime GHG intensity reduction line chart: 2% in 2025, 6% in 2030, 14.5% in 2035, 31% in 2040, 62% in 2045, and 80% in 2050.">
+              <div class="chart-title">
+                <div>Intensity reduction requirement trend</div>
+                <span>Baseline: 2020 average GHG intensity</span>
+              </div>
+              <svg class="line-chart" viewBox="0 0 400 350" aria-hidden="true">
+                <line class="chart-grid" x1="58" y1="30" x2="338" y2="30" />
+                <line class="chart-grid" x1="58" y1="86" x2="338" y2="86" />
+                <line class="chart-grid" x1="58" y1="142" x2="338" y2="142" />
+                <line class="chart-grid" x1="58" y1="198" x2="338" y2="198" />
+                <line class="chart-grid" x1="58" y1="254" x2="338" y2="254" />
+                <line class="chart-grid" x1="58" y1="290" x2="338" y2="290" />
+                <line class="chart-axis" x1="58" y1="30" x2="58" y2="290" />
+                <line class="chart-axis" x1="58" y1="290" x2="338" y2="290" />
+                <text class="chart-small" x="18" y="34">80%</text>
+                <text class="chart-small" x="18" y="90">60%</text>
+                <text class="chart-small" x="18" y="146">40%</text>
+                <text class="chart-small" x="18" y="202">20%</text>
+                <text class="chart-small" x="25" y="294">0%</text>
+                <polyline class="chart-line" points="58,284.2 114,272.7 170,248.1 226,200.4 282,110.9 338,58.9" />
+                <g>
+                  <circle class="chart-dot" cx="58" cy="284.2" r="6" /><text class="chart-label" x="46" y="271">2%</text><text class="chart-small" x="38" y="320">2025</text>
+                  <circle class="chart-dot" cx="114" cy="272.7" r="6" /><text class="chart-label" x="104" y="259">6%</text><text class="chart-small" x="96" y="320">2030</text>
+                  <circle class="chart-dot" cx="170" cy="248.1" r="6" /><text class="chart-label" x="148" y="235">14.5%</text><text class="chart-small" x="150" y="320">2035</text>
+                  <circle class="chart-dot" cx="226" cy="200.4" r="6" /><text class="chart-label" x="214" y="187">31%</text><text class="chart-small" x="206" y="320">2040</text>
+                  <circle class="chart-dot" cx="282" cy="110.9" r="6" /><text class="chart-label" x="270" y="98">62%</text><text class="chart-small" x="262" y="320">2045</text>
+                  <circle class="chart-dot" cx="338" cy="58.9" r="6" /><text class="chart-label" x="322" y="46">80%</text><text class="chart-small" x="318" y="320">2050</text>
+                </g>
+              </svg>
+              <p class="chart-note"><strong>Reading the chart:</strong> Requirements increase progressively from 2025: 6% in 2030, 14.5% in 2035, and 80% by 2050.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>🌍 IMO GHG reduction strategy</h3>
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-year">2030</div>
+            <p>Annual GHG emissions from international shipping should be reduced by <strong>at least 20%, striving for 30%</strong>, compared with 2008; uptake of zero or near-zero GHG emission technologies, fuels, and energy sources should strive for at least 5%, aiming toward 10%.</p>
+          </div>
+          <div class="t-item">
+            <div class="t-year">2030 carbon intensity</div>
+            <p>CO₂ carbon intensity of international shipping should be reduced by <strong>at least 40%</strong> compared with 2008. Do not mix this with total-emission checkpoints.</p>
+          </div>
+          <div class="t-item">
+            <div class="t-year">2040</div>
+            <p>Annual GHG emissions from international shipping should be reduced by <strong>at least 70%, striving for 80%</strong>, compared with 2008.</p>
+          </div>
+          <div class="t-item">
+            <div class="t-year">Around 2050</div>
+            <p>International shipping aims to reach <strong>net-zero GHG emissions by or around, i.e. close to, 2050</strong>.</p>
+          </div>
+        </div>
+
+        <div class="callout danger">
+          <div class="icon">🚨</div>
+          <div>
+            <h4>IMO Net-Zero Framework status</h4>
+            <p>The IMO Net-Zero Framework draft was approved at MEPC 83 (April 2025), but after the October 2025 extraordinary session was suspended, formal adoption was postponed for <strong>continued discussion in 2026</strong>. It remains a pending regime. If formally adopted, it will normally still go through MARPOL tacit acceptance, with entry into force expected about 16 months after adoption.</p>
+            <p>The framework is expected to apply to <strong>ocean-going ships above 5,000 GT</strong>. Its core metric is <strong>GHG Fuel Intensity (GFI)</strong>, using a <strong>Well-to-Wake</strong> lifecycle approach covering CO₂, CH₄, and N₂O, expressed in gCO₂e/MJ.</p>
+            <p>The draft <strong>USD 100</strong> and <strong>USD 380</strong> figures are two price levels for Remedial Units, used to remedy compliance deficits when a ship exceeds GFI thresholds. They are <strong>not a single global carbon tax and are not yet in force</strong>. IMO describes the framework as a compliance mechanism built around fuel GHG intensity targets, remedial units, and a net-zero fund.</p>
+          </div>
+        </div>
+
+        <h3>🚢 Shipowner demand and market interest</h3>
+        <div class="grid grid-2">
+          <div class="card card-purple">
+            <h4>2023 report context</h4>
+            <p>The original report noted rapid growth in methanol-fuelled and methanol-ready orders, especially in <strong>container ships and tankers</strong>, reflecting strong market interest in the methanol pathway at the time.</p>
+          </div>
+          <div class="card card-amber">
+            <h4>Market status around 2026</h4>
+            <p>The market later recalibrated. In 2025 alternative-fuel newbuilding orders, LNG remained the leading fuel while methanol orders declined from 2024, showing that although methanol has growth potential, deployment is still shaped by fuel supply, pricing, and owner investment timing.</p>
+            <p><strong>DNV statistics show</strong> that 2025 alternative-fuel ship orders totalled <strong>275 vessels</strong>, down <strong>47%</strong> from 2024. LNG led with <strong>188 vessels</strong>, while methanol orders fell from <strong>149 vessels in 2024</strong> to <strong>61 vessels in 2025</strong>. For container ship newbuildings by gross tonnage, the fuel mix was about <strong>58% LNG, 36% conventional fuels, and 6% methanol</strong>.</p>
+          </div>
+        </div>
+
+        <h3>💰 Total cost of ownership concept</h3>
+        <div class="grid grid-3">
+          <div class="card card-blue">
+            <h4>Fuel price</h4>
+            <p>Green methanol is currently usually more expensive than conventional fuel. Economics depend on feedstock, green hydrogen, CO₂ source, production scale, and long-term contract pricing.</p>
+          </div>
+          <div class="card card-green">
+            <h4>Carbon cost</h4>
+            <p>Carbon pricing does not directly reduce the physical production cost of green methanol; it raises the relative cost of high-carbon fuels, making low-carbon fuels more competitive.</p>
+          </div>
+          <div class="card card-amber">
+            <h4>Retrofit cost</h4>
+            <p>Retrofit may involve engines, fuel systems, tanks, coatings, piping, safety systems, design review, and shipyard time; costs vary widely.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ch4">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 5</div>
+            <h2>Methanol production, supply, and pricing</h2>
+          </div>
+        </div>
+
+        <h3>🏭 Methanol types: same chemistry, different carbon footprint</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Main source</th>
+              <th>Carbon characteristics</th>
+              <th>Meaning for shipping decarbonization</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Brown methanol</strong></td>
+              <td>Coal gasification</td>
+              <td>High carbon intensity</td>
+              <td>Usually offers no decarbonization advantage.</td>
+            </tr>
+            <tr>
+              <td><strong>Grey methanol</strong></td>
+              <td>Natural gas reforming</td>
+              <td>Fossil source without carbon capture</td>
+              <td>Cleaner at combustion, but not necessarily low-carbon over the full lifecycle.</td>
+            </tr>
+            <tr>
+              <td><strong>Blue methanol</strong></td>
+              <td>Fossil source with carbon capture</td>
+              <td>Lower carbon than grey methanol, depending on capture rate and upstream emissions</td>
+              <td>Can serve as a transition option, but requires credible verification.</td>
+            </tr>
+            <tr>
+              <td><strong>Biomethanol</strong></td>
+              <td>Biogenic waste, forestry or agricultural residues, municipal solid waste, etc.</td>
+              <td>High low-carbon potential</td>
+              <td>Limited by sustainable biomass feedstock availability.</td>
+            </tr>
+            <tr>
+              <td><strong>E-methanol</strong></td>
+              <td>Green hydrogen + biogenic CO₂, direct-air-capture CO₂, or other traceable low-carbon CO₂ that meets certification rules</td>
+              <td>High low-carbon potential, but costly</td>
+              <td>An important candidate for long-term net-zero pathways.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🌱 Green methanol supply status</h3>
+        <div class="grid grid-2">
+          <div class="card card-blue">
+            <h4>2023 report context</h4>
+            <p>The original report described rapid growth in global green methanol projects and expected some capacity to be available for shipping. This can be retained, but should be marked as a projection at the time.</p>
+          </div>
+          <div class="card card-green">
+            <h4>Update around 2026</h4>
+            <p>As of <strong>March 2026</strong>, the Methanol Institute tracked <strong>263 renewable methanol projects</strong>, with announced expected capacity through 2031 of <strong>48.5 Mt</strong> (about 23.8 Mt e-methanol and 24.7 Mt biomethanol). Including 18 low-carbon / blue methanol projects, the total pipeline is about <strong>59.6 Mt</strong>. Considering project development barriers, actual renewable methanol capacity in 2030 is more likely to fall around <strong>5–12 Mt</strong>; announced capacity is not the same as available supply.</p>
+          </div>
+        </div>
+
+        <h3>💰 Reading prices and costs</h3>
+        <div class="grid grid-3">
+          <div class="card card-amber">
+            <h4>Grey methanol</h4>
+            <p>Usually cheaper than green methanol, but lifecycle emissions are higher and may not meet future decarbonization requirements.</p>
+          </div>
+          <div class="card card-green">
+            <h4>Biomethanol</h4>
+            <p>Cost depends on biomass feedstock price, supply location, conversion efficiency, and logistics. It is more competitive when feedstock is cheap and close to the plant.</p>
+          </div>
+          <div class="card card-purple">
+            <h4>E-methanol</h4>
+            <p>Cost is mainly driven by green hydrogen, renewable electricity, CO₂ source, and capital expenditure. Direct-air-capture pathways are usually more expensive.</p>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <div class="icon">🧠</div>
+          <div>
+            <h4>Carbon pricing and economics</h4>
+            <p><strong>Carbon pricing and carbon credits can improve green methanol economics relative to high-carbon fuels</strong>. They do not directly reduce the physical production cost of green methanol; instead, they increase the compliance cost of high-carbon fuels and improve low-carbon fuel competitiveness.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ch5">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 6</div>
+            <h2>Technology readiness: engines, retrofits, and onboard systems</h2>
+          </div>
+        </div>
+
+        <h3>⚙️ Marine engines and retrofits</h3>
+        <div class="grid grid-2">
+          <div class="card card-blue">
+            <h4>Two-stroke dual-fuel engines</h4>
+            <p>Large low-speed two-stroke main engines already have methanol dual-fuel models and shipboard experience, commonly for large container ships and ocean-going vessels. A small amount of pilot fuel is usually needed for ignition.</p>
+          </div>
+          <div class="card card-purple">
+            <h4>Four-stroke dual-fuel engines</h4>
+            <p>Four-stroke models can be used for generators, auxiliary engines, ferries, and small or medium-sized ships. Design directions include reducing pilot fuel ratio and improving combustion control.</p>
+          </div>
+        </div>
+
+        <h3>🛳️ Ship example: ferry retrofit experience</h3>
+        <div class="card card-green">
+          <p>Early methanol dual-fuel retrofit cases such as Stena Germanica demonstrate the engineering feasibility of converting existing ships to methanol. Their value lies not only in engine retrofit, but also shore tanks, bunkering facilities, safety assessment, crew training, and long-term operation and maintenance data.</p>
+        </div>
+
+        <h3>🧰 Onboard fuel system design points</h3>
+        <div class="grid grid-4">
+          <div class="card metric">
+            <span class="tag tag-blue">Fuel tank</span>
+            <div class="num">Compatible</div>
+            <div class="label">Coatings and materials</div>
+            <div class="desc">Need to confirm methanol's effect on steel, coatings, seals, and gaskets.</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-red">Piping</span>
+            <div class="num">Double wall</div>
+            <div class="label">Leakage control</div>
+            <div class="desc">Fuel supply piping commonly uses double-wall pipes, ventilation, and leak detection.</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-amber">Tank volume</span>
+            <div class="num">Increased</div>
+            <div class="label">Range and cargo trade-off</div>
+            <div class="desc">The same energy requires larger volume, affecting general arrangement.</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-green">Detection</span>
+            <div class="num">Required</div>
+            <div class="label">Fire and toxic-vapour risk</div>
+            <div class="desc">Requires flammable gas, methanol leak, flame, and ventilation monitoring.</div>
+          </div>
+        </div>
+
+        <h3>🔋 Methanol reforming and fuel cells</h3>
+        <div class="card card-blue">
+          <p>Methanol can also be reformed onboard to produce hydrogen for PEM fuel cells and other systems. This pathway has low-noise and high-efficiency potential, but overall maturity, equipment volume, reliability, fuel purity, and safety design still need further validation.</p>
+        </div>
+      </section>
+
+      <section id="conclusion">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Summary</div>
+            <h2>Summary and quick reference</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card card-green">
+            <h3>✅ One-sentence summary</h3>
+            <p><strong>Methanol is one of the alternative marine fuels that is relatively easy to introduce from an engineering perspective, but whether it truly helps shipping decarbonize depends on low-carbon methanol supply, lifecycle carbon accounting, regulatory incentives, and fuel price.</strong></p>
+          </div>
+          <div class="card card-red">
+            <h3>⚠️ Biggest misconception</h3>
+            <p><strong>Do not treat all methanol as low-carbon fuel</strong>. Grey and brown methanol may still have high lifecycle emissions; source and certification matter.</p>
+          </div>
+        </div>
+
+        <h3>📌 Quick reference list</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Quick answer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Why is methanol easier to introduce?</td>
+              <td>It is liquid at ambient conditions, has a mature industrial supply chain, and onboard storage/handling concepts are closer to conventional liquid fuels.</td>
+            </tr>
+            <tr>
+              <td>Main methanol safety risks?</td>
+              <td>Low flashpoint, toxicity, hard-to-see pale blue flame, vapour accumulation, and material compatibility.</td>
+            </tr>
+            <tr>
+              <td>How much methanol is needed for the same range?</td>
+              <td>About 2.4 times the volume of conventional marine diesel, depending on fuel properties and system efficiency.</td>
+            </tr>
+            <tr>
+              <td>FuelEU Maritime 2030 target?</td>
+              <td>A 6% reduction in fuel GHG intensity, not 14.5%. The 14.5% requirement is for 2035.</td>
+            </tr>
+            <tr>
+              <td>IMO 2050 target?</td>
+              <td>Net-zero GHG emissions from international shipping by or around 2050.</td>
+            </tr>
+            <tr>
+              <td>Status of marine methanol fuel quality standard?</td>
+              <td>ISO 6583:2024 has been published; it specifies methanol fuel quality at the custody transfer point, before onboard treatment, for diesel engines, fuel cells, and other maritime uses.</td>
+            </tr>
+            <tr>
+              <td>Are USD 100 / 380 in force?</td>
+              <td>No. They are two Remedial Unit price levels in the IMO Net-Zero Framework draft, not a global carbon tax. Formal adoption is postponed for discussion in 2026 and the framework is not yet in force.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="footer">
+        This visual note is based on LR's Fuel for Thought methanol report summary and focuses on quick reference for methanol marine fuel. For regulations, standards, and market information, always rely on the latest documents from competent authorities, standards bodies, and classification societies.
+      </div>
+    </main>
+  </div>
+</body>
+</html>
