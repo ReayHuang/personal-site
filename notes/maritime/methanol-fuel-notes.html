@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《Fuel for Thought》甲醇報告摘要｜Reay's Note</title>
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <meta name="description" content="以 LR《Fuel for Thought》甲醇報告為主軸，整理甲醇作為船用燃料的特性、安全、法規、供應鏈、成本與技術成熟度。" />
+  <link rel="alternate" hreflang="zh-Hant" href="methanol-fuel-notes.html" />
+  <link rel="alternate" hreflang="en" href="methanol-fuel-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="methanol-fuel-notes.html" />
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --paper:#ffffff;
+      --ink:#172033;
+      --muted:#5e6b85;
+      --blue:#2563eb;
+      --cyan:#0891b2;
+      --green:#059669;
+      --amber:#d97706;
+      --red:#dc2626;
+      --purple:#7c3aed;
+      --line:#dbe3f0;
+      --soft-blue:#eaf1ff;
+      --soft-green:#eafaf3;
+      --soft-amber:#fff7e6;
+      --soft-red:#fff0f0;
+      --soft-purple:#f3ecff;
+      --shadow:0 16px 40px rgba(15,23,42,.08);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.14), transparent 32rem),
+        radial-gradient(circle at top right, rgba(124,58,237,.12), transparent 28rem),
+        var(--bg);
+      color:var(--ink);
+      font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+      line-height:1.75;
+      letter-spacing:.02em;
+    }
+
+    a{color:inherit;}
+    .layout{
+      display:grid;
+      grid-template-columns:280px minmax(0,1fr);
+      gap:28px;
+      max-width:1480px;
+      margin:0 auto;
+      padding:28px;
+    }
+
+    aside{
+      position:sticky;
+      top:20px;
+      align-self:start;
+      background:rgba(255,255,255,.86);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+      padding:22px;
+      max-height:calc(100vh - 40px);
+      overflow:auto;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .brand-icon{
+      width:44px;height:44px;
+      display:grid;place-items:center;
+      border-radius:15px;
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+      color:#fff;
+      font-size:24px;
+      box-shadow:0 12px 24px rgba(37,99,235,.25);
+    }
+    .brand strong{font-size:17px;display:block;}
+    .brand span{font-size:12px;color:var(--muted);}
+
+    .layout aside nav a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      margin:4px 0;
+      border-radius:14px;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;
+      font-size:14px;
+    }
+    .layout aside nav a:hover{background:var(--soft-blue);color:var(--blue);}
+    .nav-dot{width:9px;height:9px;border-radius:99px;background:var(--blue);opacity:.75;}
+
+    main{min-width:0;}
+    .hero{
+      background:
+        linear-gradient(135deg,rgba(37,99,235,.95),rgba(8,145,178,.9)),
+        linear-gradient(135deg,#12233f,#1d4ed8);
+      color:#fff;
+      border-radius:30px;
+      padding:44px;
+      box-shadow:0 24px 70px rgba(37,99,235,.28);
+      position:relative;
+      overflow:hidden;
+      margin-bottom:26px;
+    }
+    .hero:after{
+      content:"CH₃OH";
+      position:absolute;
+      right:28px;
+      bottom:-34px;
+      font-size:118px;
+      font-weight:900;
+      opacity:.12;
+      letter-spacing:.02em;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.25);
+      font-weight:800;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+    h1{
+      margin:0 0 16px;
+      font-size:clamp(32px,5vw,58px);
+      line-height:1.12;
+      letter-spacing:-.04em;
+    }
+    .hero p{max-width:850px;margin:0;color:rgba(255,255,255,.9);font-size:18px;}
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:24px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.24);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    section{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin:26px 0;
+      padding:30px;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:22px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:18px;
+    }
+    .section-kicker{
+      color:var(--blue);
+      font-size:13px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin-bottom:4px;
+    }
+    h2{
+      margin:0;
+      font-size:30px;
+      line-height:1.28;
+      letter-spacing:-.02em;
+    }
+    h3{
+      font-size:21px;
+      margin:28px 0 12px;
+      color:#0f172a;
+      letter-spacing:-.01em;
+    }
+    h4{
+      font-size:17px;
+      margin:18px 0 8px;
+      color:#1e293b;
+    }
+    p{margin:8px 0 14px;}
+    strong{font-weight:900;color:#0f172a;}
+    .muted{color:var(--muted);}
+
+    .grid{display:grid;gap:18px;}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr));}
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:0 10px 24px rgba(15,23,42,.04);
+    }
+    .card h3,.card h4{margin-top:0;}
+    .card-blue{background:var(--soft-blue);border-color:#c8d9ff;}
+    .card-green{background:var(--soft-green);border-color:#bfead5;}
+    .card-amber{background:var(--soft-amber);border-color:#f7d9a2;}
+    .card-red{background:var(--soft-red);border-color:#ffc9c9;}
+    .card-purple{background:var(--soft-purple);border-color:#d7c4ff;}
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .tag-blue{background:var(--soft-blue);color:var(--blue);}
+    .tag-green{background:var(--soft-green);color:var(--green);}
+    .tag-amber{background:var(--soft-amber);color:var(--amber);}
+    .tag-red{background:var(--soft-red);color:var(--red);}
+    .tag-purple{background:var(--soft-purple);color:var(--purple);}
+    .tag-dark{background:#e2e8f0;color:#334155;}
+
+    .callout{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:14px;
+      align-items:start;
+      border-radius:20px;
+      padding:18px 20px;
+      margin:18px 0;
+      border:1px solid;
+    }
+    .callout .icon{font-size:24px;line-height:1.2;}
+    .callout h4{margin:0 0 4px;}
+    .callout p{margin:0;color:#334155;}
+    .info{background:var(--soft-blue);border-color:#c8d9ff;}
+    .ok{background:var(--soft-green);border-color:#bfead5;}
+    .warn{background:var(--soft-amber);border-color:#f7d9a2;}
+    .danger{background:var(--soft-red);border-color:#ffc9c9;}
+    .purple{background:var(--soft-purple);border-color:#d7c4ff;}
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+      margin:14px 0 24px;
+    }
+    th,td{
+      padding:14px 16px;
+      vertical-align:top;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+    }
+    th{
+      background:#f1f5f9;
+      color:#0f172a;
+      font-size:14px;
+      font-weight:900;
+    }
+    tr:last-child td{border-bottom:none;}
+    td{color:#334155;}
+
+    ul{padding-left:1.2em;margin:8px 0 16px;}
+    li{margin:6px 0;}
+    .formula{
+      font-family:"Cascadia Code","Consolas",monospace;
+      background:#0f172a;
+      color:#e2e8f0;
+      border-radius:18px;
+      padding:18px 20px;
+      margin:16px 0;
+      font-size:18px;
+      overflow:auto;
+    }
+
+    .metric{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      min-height:132px;
+    }
+    .metric .num{
+      font-size:34px;
+      font-weight:1000;
+      letter-spacing:-.04em;
+      color:#0f172a;
+      line-height:1;
+    }
+    .metric .label{font-weight:900;color:#334155;}
+    .metric .desc{color:var(--muted);font-size:13px;}
+
+    .timeline{
+      position:relative;
+      margin:16px 0;
+      padding-left:28px;
+    }
+    .timeline:before{
+      content:"";
+      position:absolute;
+      left:9px;top:6px;bottom:6px;
+      width:3px;border-radius:99px;background:#cbd5e1;
+    }
+    .t-item{position:relative;margin:0 0 18px;}
+    .t-item:before{
+      content:"";
+      position:absolute;
+      left:-25px;top:9px;
+      width:15px;height:15px;border-radius:99px;
+      background:var(--blue);
+      box-shadow:0 0 0 5px var(--soft-blue);
+    }
+    .t-year{font-weight:1000;color:#0f172a;}
+
+    .kbd{
+      font-family:"Cascadia Code","Consolas",monospace;
+      background:#e2e8f0;
+      padding:2px 7px;
+      border-radius:8px;
+      font-weight:800;
+      color:#334155;
+    }
+
+    .checklist li::marker{content:"✅ ";}
+    .risklist li::marker{content:"⚠️ ";}
+    .arrowlist li::marker{content:"➜ ";}
+
+    .footer{
+      color:var(--muted);
+      text-align:center;
+      padding:28px 12px 48px;
+      font-size:13px;
+    }
+
+    .chart-wrap{
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:16px;
+      overflow-x:auto;
+      margin-top:14px;
+    }
+    .chart-title{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:8px;
+      color:#0f172a;
+      font-weight:900;
+    }
+    .chart-title span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+    .line-chart{
+      width:100%;
+      min-width:360px;
+      max-width:420px;
+      height:auto;
+      display:block;
+    }
+    .chart-axis{stroke:#94a3b8;stroke-width:1.4}
+    .chart-grid{stroke:#e2e8f0;stroke-width:1}
+    .chart-line{fill:none;stroke:var(--green);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+    .chart-dot{fill:#ffffff;stroke:var(--green);stroke-width:4}
+    .chart-label{font-size:13px;fill:#0f172a;font-weight:800}
+    .chart-small{font-size:12px;fill:var(--muted);font-weight:700}
+    .chart-note{
+      margin:10px 0 0;
+      color:#475569;
+      font-size:14px;
+    }
+
+    @media (max-width:1100px){
+      .layout{grid-template-columns:1fr;padding:18px;}
+      aside{position:relative;top:auto;max-height:none;}
+      .layout aside nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;}
+      .grid-4{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+    @media (max-width:780px){
+      .hero{padding:28px;}
+      section{padding:22px;}
+      .section-head{display:block;}
+      .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}
+      .layout aside nav{grid-template-columns:1fr;}
+      th,td{padding:12px;font-size:14px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="methanol-fuel-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+      <a href="methanol-fuel-notes.en.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        <div class="brand-icon">⚓</div>
+        <div>
+          <strong>甲醇船用燃料筆記</strong>
+          <span>視覺化筆記</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#overview"><span class="nav-dot"></span>總覽與閱讀重點</a>
+        <a href="#ch1"><span class="nav-dot"></span>第一章：導言與基礎</a>
+        <a href="#readiness"><span class="nav-dot"></span>第二章：成熟度評估</a>
+        <a href="#ch2"><span class="nav-dot"></span>第三章：安全與法規</a>
+        <a href="#ch3"><span class="nav-dot"></span>第四章：推動力</a>
+        <a href="#ch4"><span class="nav-dot"></span>第五章：生產與供應</a>
+        <a href="#ch5"><span class="nav-dot"></span>第六章：技術成熟度</a>
+        <a href="#conclusion"><span class="nav-dot"></span>總結與速記</a>
+      </nav>
+    </aside>
+
+    <main>
+      <header class="hero">
+        <div class="note-eyebrow">視覺化筆記｜船用甲醇燃料｜Reay's Note</div>
+        <h1>甲醇作為船用燃料<br/>重點筆記</h1>
+        <p>本筆記以 LR《Fuel for Thought》甲醇報告為主軸，整理甲醇作為船用燃料的基本特性、安全議題、法規框架、供應鏈、成本因素與技術成熟度，方便快速查閱與掌握重點。</p>
+        <div class="meta-row">
+          <span class="pill">📌 主題：船用甲醇燃料</span>
+          <span class="pill">🧭 更新日期：2026 年 5 月 21 日</span>
+          <span class="pill">🟠 法規與市場重點整理</span>
+          <span class="pill">🌱 聚焦全生命週期減碳</span>
+        </div>
+      </header>
+
+      <section id="overview">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Overview</div>
+            <h2>總覽：甲醇的定位與閱讀重點</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card card-blue metric">
+            <span class="tag tag-blue">核心定位</span>
+            <div class="num">過渡＋長期候選</div>
+            <div class="label">不是所有甲醇都低碳</div>
+            <div class="desc">甲醇燃燒端較乾淨，但全生命週期是否減碳取決於原料來源與認證。</div>
+          </div>
+          <div class="card card-green metric">
+            <span class="tag tag-green">工程優勢</span>
+            <div class="num">常溫液態</div>
+            <div class="label">儲運門檻低於氫、氨、液化天然氣</div>
+            <div class="desc">不需低溫或高壓儲存，但仍須處理毒性、低閃點與材料相容性問題。</div>
+          </div>
+          <div class="card card-amber metric">
+            <span class="tag tag-amber">最大瓶頸</span>
+            <div class="num">供應＋成本</div>
+            <div class="label">綠色甲醇仍需大幅擴產</div>
+            <div class="desc">現階段低碳甲醇供應、價格與基礎建設仍是大規模導入的關鍵限制。</div>
+          </div>
+        </div>
+        <div class="callout info">
+          <div class="icon">📌</div>
+          <div>
+            <h4>閱讀重點</h4>
+            <p>甲醇的船用燃料價值來自工程導入便利性與低碳潛力，但其實際減排效果必須依燃料來源、全生命週期碳強度、法規認定與供應鏈成熟度共同判斷。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ch1">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 1</div>
+            <h2>導言與甲醇基礎資料</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card card-blue">
+            <h3>📘 海事能源轉型背景</h3>
+            <ul class="checklist">
+              <li>航運能源轉型已不再只由經濟性與技術效率推動，而是受到<strong>碳中和壓力、法規要求與供應鏈責任</strong>共同驅動。</li>
+              <li>船東、租家、金融機構、保險與貨主都逐漸需要管理自身的<strong>航運碳足跡</strong>。</li>
+              <li>甲醇被視為可較快導入的替代燃料之一，原因是其<strong>常溫液態、工業供應鏈成熟、改裝門檻相對較低</strong>。</li>
+            </ul>
+          </div>
+          <div class="card card-green">
+            <h3>⚓ 採用甲醇的意涵</h3>
+            <ul class="arrowlist">
+              <li>可作為<strong>近期減排與長期淨零路徑</strong>之間的橋接燃料。</li>
+              <li>可從化石基甲醇逐步過渡至<strong>藍色甲醇、生質甲醇、電子甲醇</strong>。</li>
+              <li>真正的減碳效果必須以<strong>全生命週期</strong>計算，不可只看燃燒端。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>🔬 甲醇是什麼？</h3>
+        <div class="formula">甲醇化學式：CH₃OH<br/>燃燒反應：2CH₃OH + 3O₂ → 2CO₂ + 4H₂O + 熱能</div>
+
+        <div class="grid grid-4">
+          <div class="card metric">
+            <span class="tag tag-blue">狀態</span>
+            <div class="num">液體</div>
+            <div class="label">常溫常壓</div>
+            <div class="desc">便於儲存、泵送與加注，不需低溫液化。</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-red">閃點</span>
+            <div class="num">12°C</div>
+            <div class="label">低閃點燃料</div>
+            <div class="desc">必須依低閃點燃料安全邏輯設計。</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-amber">能量密度</span>
+            <div class="num">約 2.4 倍</div>
+            <div class="label">體積需求</div>
+            <div class="desc">同等能量下，甲醇所需體積約為船用柴油的 2.4 倍。</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-green">硫含量</span>
+            <div class="num">近零</div>
+            <div class="label">甲醇本體幾乎不含硫</div>
+            <div class="desc">但雙燃料引擎若使用引燃燃料，仍需看引燃燃料硫含量。</div>
+          </div>
+        </div>
+
+        <h3>✅ 作為海事燃料的優點</h3>
+        <div class="grid grid-3">
+          <div class="card card-green">
+            <h4>儲運便利</h4>
+            <p>甲醇在常溫常壓下為液體，船上儲槽、泵浦與加注邏輯較接近傳統液態燃料。</p>
+          </div>
+          <div class="card card-green">
+            <h4>燃燒較乾淨</h4>
+            <p>甲醇本身幾乎不含硫，燃燒時微粒與煙灰排放較低，有助於改善局部空污。</p>
+          </div>
+          <div class="card card-green">
+            <h4>改裝可行性</h4>
+            <p>相較於部分低碳燃料，甲醇雙燃料引擎與儲存系統已有較多工程經驗。</p>
+          </div>
+        </div>
+
+        <h3>⚠️ 使用挑戰與缺點</h3>
+        <div class="grid grid-3">
+          <div class="card card-red">
+            <h4>毒性</h4>
+            <p>可經由吸入、攝取、皮膚接觸或眼睛暴露進入人體，暴露後可能造成嚴重健康危害。</p>
+          </div>
+          <div class="card card-amber">
+            <h4>能量密度低</h4>
+            <p>同等航程需要更大燃料艙容積，可能影響貨艙容量、船舶布置與營運彈性。</p>
+          </div>
+          <div class="card card-red">
+            <h4>火災風險</h4>
+            <p>甲醇閃點低，燃燒火焰偏淡藍且白天不易察覺，消防與偵測設計非常重要。</p>
+          </div>
+        </div>
+
+        <div class="callout info">
+          <div class="icon">💡</div>
+          <div>
+            <h4>重點提醒：甲醇不等於一定低碳</h4>
+            <p>更精準的寫法是：<strong>甲醇燃燒端較乾淨，但全生命週期減碳效果取決於原料來源</strong>。灰色與棕色甲醇不一定具備減碳優勢；生質甲醇、電子甲醇或具可信碳捕捉與認證的低碳甲醇，才可能在全生命週期評估中取得明顯減排效果。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="readiness">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 2</div>
+            <h2>甲醇作為海事燃料的成熟度評估</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card card-blue">
+            <h3>🔬 技術成熟度</h3>
+            <p><strong>船用動力、儲存與加注技術成熟度較高</strong>。甲醇雙燃料引擎、燃料艙與管路安全設計已有實船經驗。</p>
+            <span class="tag tag-green">相對成熟</span>
+          </div>
+          <div class="card card-amber">
+            <h3>💰 投資成熟度</h3>
+            <p><strong>低碳甲醇生產端仍需大規模投資</strong>。瓶頸主要在綠氫、可再生二氧化碳、生質原料與長約供應。</p>
+            <span class="tag tag-amber">仍在成長</span>
+          </div>
+          <div class="card card-purple">
+            <h3>🧩 社群成熟度</h3>
+            <p><strong>標準、認證、碳會計與港口基礎設施正在形成</strong>。導入速度取決於全球法規一致性與貨主付費意願。</p>
+            <span class="tag tag-purple">逐步建立</span>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>評估指標</th>
+              <th>意義</th>
+              <th>甲醇現況</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>技術成熟度</strong></td>
+              <td>技術由概念、驗證、示範到商業化的程度。</td>
+              <td>動力、儲存與船上系統成熟度較高。</td>
+            </tr>
+            <tr>
+              <td><strong>投資成熟度</strong></td>
+              <td>商業案例、融資意願與投資可靠度。</td>
+              <td>低碳甲醇產能仍不足，投資風險與價格不確定性高。</td>
+            </tr>
+            <tr>
+              <td><strong>社群成熟度</strong></td>
+              <td>法規、標準、港口、供應鏈與社會接受度。</td>
+              <td>品質標準與安全指引逐步成形，但全球一致性仍需時間。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="ch2">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 3</div>
+            <h2>安全、加注與法規框架</h2>
+          </div>
+        </div>
+
+        <h3>🔥 甲醇的一般安全風險</h3>
+        <div class="grid grid-2">
+          <div class="card card-red">
+            <h4>易燃性</h4>
+            <ul class="risklist">
+              <li>閃點約 <strong>12°C</strong>，屬低閃點燃料。</li>
+              <li>空氣中可燃範圍約 <strong>6%–36%</strong>。</li>
+              <li>燃燒火焰偏淡藍，白天可能不易察覺。</li>
+              <li>需嚴格控制熱源、火花、靜電與明火。</li>
+            </ul>
+          </div>
+          <div class="card card-red">
+            <h4>毒性</h4>
+            <ul class="risklist">
+              <li>可經吸入、攝取、皮膚或眼睛暴露進入人體。</li>
+              <li>中毒症狀可能延遲出現，應急判斷不可低估。</li>
+              <li>操作時需配置個人防護裝備、通風與緊急沖洗設施。</li>
+              <li>暴露或誤食時應立即就醫。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>⛽ 甲醇加注重點</h3>
+        <div class="grid grid-3">
+          <div class="card card-blue">
+            <h4>不需低溫或高壓</h4>
+            <p>與氫、氨、液化天然氣相比，甲醇加注設備較接近一般液體燃料，但仍須符合低閃點燃料安全要求。</p>
+          </div>
+          <div class="card card-amber">
+            <h4>材料相容性</h4>
+            <p>甲醇可能造成部分材料膨潤、劣化或腐蝕，燃料艙、管線、密封件與塗層需確認相容性。</p>
+          </div>
+          <div class="card card-purple">
+            <h4>惰化與通風</h4>
+            <p>燃料艙空艙空間常需惰化或配置等效安全措施，以降低爆炸性氣氛形成風險。</p>
+          </div>
+        </div>
+
+        <h3>📘 法規與標準：燃料與貨物要分開寫</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>用途</th>
+              <th>主要框架</th>
+              <th>修正版筆記寫法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>作為貨物</strong></td>
+              <td>防污染公約附錄二、國際散裝化學品船規則、國際海運危險貨物規則</td>
+              <td>甲醇作為散裝化學品與危險貨物運輸時，需依毒性液體、防污染與危險貨物運輸要求管理。</td>
+            </tr>
+            <tr>
+              <td><strong>作為燃料</strong></td>
+              <td>低閃點燃料船舶安全規則、甲醇與乙醇燃料臨時安全指引、船級社規範</td>
+              <td>甲醇作為燃料時，重點在燃料艙布置、雙壁管路、通風、偵測、惰化、緊急切斷與等效安全。</td>
+            </tr>
+            <tr>
+              <td><strong>危險貨物分類</strong></td>
+              <td>聯合國編號與海運危險貨物分類</td>
+              <td><strong>聯合國編號 1230，甲醇，第三類易燃液體，副危險性 6.1，包裝類別二</strong>。不要把散裝污染類別混在這一行。</td>
+            </tr>
+            <tr>
+              <td><strong>品質標準</strong></td>
+              <td>國際標準化組織 6583:2024、國際甲醇生產與消費者協會規格</td>
+              <td><strong>ISO 6583:2024 已發布</strong>，規範甲醇在<strong>交接點（custody transfer point）、船上處理前</strong>的燃料品質要求，適用於船用柴油機、燃料電池與其他海事用途，可作為船用甲醇燃料品質規格的關鍵依據。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout ok">
+          <div class="icon">✅</div>
+          <div>
+            <h4>等效安全原則</h4>
+            <p>使用甲醇、乙醇等低閃點燃料時，設計必須證明其安全水準不低於傳統燃油船。風險評估、故障模式分析、危害識別與船級社審查會成為設計認證的重要部分。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ch3">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 4</div>
+            <h2>甲醇的推動力：法規、市場與總成本</h2>
+          </div>
+        </div>
+
+        <h3>🇪🇺 歐盟區域性法規</h3>
+        <div class="grid grid-2">
+          <div class="card card-blue">
+            <h4>歐盟排放交易體系</h4>
+            <ul class="checklist">
+              <li><strong>2024 年 1 月起</strong>，海運二氧化碳排放納入歐盟排放交易體系。</li>
+              <li>涵蓋歐洲經濟區內航程 100% 排放，以及進出歐洲經濟區航程 50% 排放。</li>
+              <li>配額繳交比例：2025 年繳交 2024 年排放的 40%、2026 年繳交 2025 年排放的 70%、2027 年起 100%。</li>
+              <li><strong>甲烷與氧化亞氮自 2026 年起納入</strong>。</li>
+              <li>目前 EU ETS 主要適用於 <strong>5,000 GT 以上進入歐盟港口的大型船舶</strong>；離岸船舶 5,000 GT 以上將<strong>自 2027 年起納入</strong>。</li>
+            </ul>
+          </div>
+          <div class="card card-green">
+            <h4>燃料歐盟海運法規</h4>
+            <p>此法規管制船舶使用能源的年度平均溫室氣體強度，基準為 2020 年平均值。</p>
+            <div class="chart-wrap" role="img" aria-label="FuelEU Maritime 溫室氣體強度降低要求折線圖：2025 年 2%，2030 年 6%，2035 年 14.5%，2040 年 31%，2045 年 62%，2050 年 80%。">
+              <div class="chart-title">
+                <div>強度降低要求趨勢</div>
+                <span>基準：2020 年平均 GHG 強度</span>
+              </div>
+              <svg class="line-chart" viewBox="0 0 400 350" aria-hidden="true">
+                <line class="chart-grid" x1="58" y1="30" x2="338" y2="30" />
+                <line class="chart-grid" x1="58" y1="86" x2="338" y2="86" />
+                <line class="chart-grid" x1="58" y1="142" x2="338" y2="142" />
+                <line class="chart-grid" x1="58" y1="198" x2="338" y2="198" />
+                <line class="chart-grid" x1="58" y1="254" x2="338" y2="254" />
+                <line class="chart-grid" x1="58" y1="290" x2="338" y2="290" />
+                <line class="chart-axis" x1="58" y1="30" x2="58" y2="290" />
+                <line class="chart-axis" x1="58" y1="290" x2="338" y2="290" />
+                <text class="chart-small" x="18" y="34">80%</text>
+                <text class="chart-small" x="18" y="90">60%</text>
+                <text class="chart-small" x="18" y="146">40%</text>
+                <text class="chart-small" x="18" y="202">20%</text>
+                <text class="chart-small" x="25" y="294">0%</text>
+                <polyline class="chart-line" points="58,284.2 114,272.7 170,248.1 226,200.4 282,110.9 338,58.9" />
+                <g>
+                  <circle class="chart-dot" cx="58" cy="284.2" r="6" /><text class="chart-label" x="46" y="271">2%</text><text class="chart-small" x="38" y="320">2025</text>
+                  <circle class="chart-dot" cx="114" cy="272.7" r="6" /><text class="chart-label" x="104" y="259">6%</text><text class="chart-small" x="96" y="320">2030</text>
+                  <circle class="chart-dot" cx="170" cy="248.1" r="6" /><text class="chart-label" x="148" y="235">14.5%</text><text class="chart-small" x="150" y="320">2035</text>
+                  <circle class="chart-dot" cx="226" cy="200.4" r="6" /><text class="chart-label" x="214" y="187">31%</text><text class="chart-small" x="206" y="320">2040</text>
+                  <circle class="chart-dot" cx="282" cy="110.9" r="6" /><text class="chart-label" x="270" y="98">62%</text><text class="chart-small" x="262" y="320">2045</text>
+                  <circle class="chart-dot" cx="338" cy="58.9" r="6" /><text class="chart-label" x="322" y="46">80%</text><text class="chart-small" x="318" y="320">2050</text>
+                </g>
+              </svg>
+              <p class="chart-note"><strong>解讀重點：</strong>要求自 2025 年起逐步提高；2030 年為 6%，2035 年為 14.5%，2050 年目標為 80%。</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>🌍 國際海事組織減碳策略</h3>
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-year">2030 年</div>
+            <p>國際航運年度總溫室氣體排放量較 2008 年<strong>至少降低 20%，力求 30%</strong>；零或近零溫室氣體燃料、技術與能源來源使用比例力求至少 5%，並朝 10% 努力。</p>
+          </div>
+          <div class="t-item">
+            <div class="t-year">2030 年碳強度</div>
+            <p>國際航運二氧化碳碳強度較 2008 年<strong>至少降低 40%</strong>。這一項不可與總排放量檢查點混寫。</p>
+          </div>
+          <div class="t-item">
+            <div class="t-year">2040 年</div>
+            <p>國際航運年度總溫室氣體排放量較 2008 年<strong>至少降低 70%，力求 80%</strong>。</p>
+          </div>
+          <div class="t-item">
+            <div class="t-year">2050 年前後</div>
+            <p>國際航運力求於<strong>2050 年前後、接近 2050 年達成淨零溫室氣體排放</strong>。</p>
+          </div>
+        </div>
+
+        <div class="callout danger">
+          <div class="icon">🚨</div>
+          <div>
+            <h4>國際海事組織淨零框架狀態</h4>
+            <p>IMO Net-Zero Framework 草案於 MEPC 83（2025 年 4 月）獲批准，但 2025 年 10 月特別會議休會後，正式採納已延後至 <strong>2026 年繼續討論</strong>，目前仍屬待定制度；若未來正式採納，通常仍須經 MARPOL 默示接受程序，預期採納後約 16 個月生效。</p>
+            <p>框架預計適用於 <strong>5,000 GT 以上遠洋船舶</strong>；計算核心為 <strong>GHG Fuel Intensity（GFI）</strong>，採 <strong>Well-to-Wake</strong> 全生命週期方式，涵蓋 CO₂、CH₄、N₂O，以 gCO₂e/MJ 衡量燃料排放強度。</p>
+            <p>草案中的 <strong>100 美元</strong>與 <strong>380 美元</strong>是 Remedial Units 的兩層價格設計，用於船舶超出 GFI 門檻時補足合規缺口；<strong>不是單一全球碳稅，也尚未正式生效</strong>。IMO 說明這是圍繞燃料溫室氣體強度目標、補救單位與淨零基金設計的合規機制。</p>
+          </div>
+        </div>
+
+        <h3>🚢 船東需求與市場興趣</h3>
+        <div class="grid grid-2">
+          <div class="card card-purple">
+            <h4>2023 年報告脈絡</h4>
+            <p>原報告指出甲醇動力與甲醇預備船訂單快速增加，尤其集中於<strong>貨櫃船與油輪</strong>。這反映當時市場對甲醇路徑的高度興趣。</p>
+          </div>
+          <div class="card card-amber">
+            <h4>2026 年前後市場狀態</h4>
+            <p>後續市場出現重新校準。2025 年替代燃料新造船中，液化天然氣訂單仍居領先，甲醇訂單較 2024 年下降，顯示甲醇雖具成長潛力，但市場部署仍受燃料供應、價格與船東投資節奏影響。</p>
+            <p><strong>DNV 統計顯示</strong>，2025 年替代燃料船訂單共 <strong>275 艘</strong>，較 2024 年下降 <strong>47%</strong>；LNG 以 <strong>188 艘</strong>居首，甲醇訂單則由 2024 年 <strong>149 艘</strong>降至 2025 年 <strong>61 艘</strong>。在貨櫃船新造船中，以總噸計燃料結構約為 <strong>58% LNG、36% 傳統燃料、6% 甲醇</strong>。</p>
+          </div>
+        </div>
+
+        <h3>💰 總擁有成本觀念</h3>
+        <div class="grid grid-3">
+          <div class="card card-blue">
+            <h4>燃料價格</h4>
+            <p>綠色甲醇目前通常高於傳統燃油，經濟性取決於原料、綠氫、二氧化碳來源、產能規模與長約價格。</p>
+          </div>
+          <div class="card card-green">
+            <h4>碳成本</h4>
+            <p>碳價不會直接降低綠甲醇物理生產成本，而是提高高碳燃料相對成本，使低碳燃料更具競爭力。</p>
+          </div>
+          <div class="card card-amber">
+            <h4>改裝成本</h4>
+            <p>改裝可能涉及引擎、燃料系統、艙體、塗層、管路、安全系統、設計審查與船廠工期，成本差異很大。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ch4">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 5</div>
+            <h2>甲醇的生產、供應與價格</h2>
+          </div>
+        </div>
+
+        <h3>🏭 甲醇分類：化學相同，碳足跡不同</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>類型</th>
+              <th>主要來源</th>
+              <th>碳排特性</th>
+              <th>海運減碳意義</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>棕色甲醇</strong></td>
+              <td>煤氣化</td>
+              <td>高碳強度</td>
+              <td>通常不具減碳優勢。</td>
+            </tr>
+            <tr>
+              <td><strong>灰色甲醇</strong></td>
+              <td>天然氣重組</td>
+              <td>化石來源，未捕碳</td>
+              <td>燃燒端較乾淨，但全生命週期未必低碳。</td>
+            </tr>
+            <tr>
+              <td><strong>藍色甲醇</strong></td>
+              <td>化石來源加碳捕捉</td>
+              <td>較灰色甲醇低碳，但取決於捕捉率與上游排放</td>
+              <td>可作為過渡方案，但需可信驗證。</td>
+            </tr>
+            <tr>
+              <td><strong>生質甲醇</strong></td>
+              <td>生質廢棄物、林業或農業副產物、都市固體廢棄物等</td>
+              <td>低碳潛力高</td>
+              <td>受限於永續生質原料供應。</td>
+            </tr>
+            <tr>
+              <td><strong>電子甲醇</strong></td>
+              <td>綠氫 + 生物源 CO₂、直接空氣捕碳 CO₂，或其他符合認證規則的可追溯低碳 CO₂</td>
+              <td>低碳潛力高，但成本高</td>
+              <td>長期淨零路徑的重要候選。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🌱 綠色甲醇供應現況</h3>
+        <div class="grid grid-2">
+          <div class="card card-blue">
+            <h4>2023 年報告脈絡</h4>
+            <p>原報告描述全球綠色甲醇專案正在快速增加，並預期部分產能可供航運使用。這可保留，但應標示為當時預估。</p>
+          </div>
+          <div class="card card-green">
+            <h4>2026 年前後更新</h4>
+            <p>截至 <strong>2026 年 3 月</strong>，Methanol Institute 追蹤 <strong>263 個再生甲醇專案</strong>，公告至 2031 年預期產能為 <strong>48.5 Mt</strong>（其中電子甲醇約 23.8 Mt、生質甲醇約 24.7 Mt）；若加上 18 個低碳／藍色甲醇專案，總管線約 <strong>59.6 Mt</strong>。但考慮專案開發障礙，<strong>2030 年實際再生甲醇產能較可能落在 5–12 Mt</strong>；宣布產能仍不等於實際可供應量。</p>
+          </div>
+        </div>
+
+        <h3>💰 價格與成本判讀</h3>
+        <div class="grid grid-3">
+          <div class="card card-amber">
+            <h4>灰色甲醇</h4>
+            <p>價格通常低於綠色甲醇，但全生命週期碳排較高，未必能滿足未來減碳要求。</p>
+          </div>
+          <div class="card card-green">
+            <h4>生質甲醇</h4>
+            <p>成本取決於生質原料價格、供應地點、轉換效率與物流成本。若原料便宜且接近工廠，成本較具競爭力。</p>
+          </div>
+          <div class="card card-purple">
+            <h4>電子甲醇</h4>
+            <p>成本主要受綠氫、可再生電力、二氧化碳來源與資本支出影響。直接空氣捕碳路徑通常更昂貴。</p>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <div class="icon">🧠</div>
+          <div>
+            <h4>碳價與經濟性</h4>
+            <p><strong>碳價與碳信用可改善綠色甲醇相對於高碳燃料的經濟性</strong>。其作用不是直接降低綠色甲醇的物理生產成本，而是提高高碳燃料的合規成本，使低碳燃料更具競爭力。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ch5">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Chapter 6</div>
+            <h2>技術成熟度：引擎、改裝與船上系統</h2>
+          </div>
+        </div>
+
+        <h3>⚙️ 船用引擎與改裝</h3>
+        <div class="grid grid-2">
+          <div class="card card-blue">
+            <h4>二行程雙燃料引擎</h4>
+            <p>大型低速二行程主機已有甲醇雙燃料機型與實船經驗，常用於大型貨櫃船與遠洋船舶。通常需少量引燃燃料協助點火。</p>
+          </div>
+          <div class="card card-purple">
+            <h4>四行程雙燃料引擎</h4>
+            <p>四行程機型可用於發電機、輔機、渡輪與中小型船舶。設計方向包含降低引燃燃料比例與提升燃燒控制。</p>
+          </div>
+        </div>
+
+        <h3>🛳️ 實船案例：渡輪改裝經驗</h3>
+        <div class="card card-green">
+          <p>以 Stena Germanica 為代表的早期甲醇雙燃料改裝案例，展示了既有船舶改用甲醇的工程可行性。其經驗價值不只在於引擎改裝，也包括岸上儲槽、加注設施、安全評估、船員訓練與長期運轉維護資料。</p>
+        </div>
+
+        <h3>🧰 船上燃料系統設計重點</h3>
+        <div class="grid grid-4">
+          <div class="card metric">
+            <span class="tag tag-blue">燃料艙</span>
+            <div class="num">相容</div>
+            <div class="label">塗層與材料</div>
+            <div class="desc">需確認甲醇對鋼材、塗層、密封件與墊片的影響。</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-red">管路</span>
+            <div class="num">雙壁</div>
+            <div class="label">洩漏控制</div>
+            <div class="desc">燃料供應管路常採雙壁管、通風與洩漏偵測。</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-amber">艙容</span>
+            <div class="num">增加</div>
+            <div class="label">航程與貨量取捨</div>
+            <div class="desc">同等能量需要更大體積，影響船舶總布置。</div>
+          </div>
+          <div class="card metric">
+            <span class="tag tag-green">偵測</span>
+            <div class="num">必要</div>
+            <div class="label">火災與毒氣風險</div>
+            <div class="desc">需配置可燃氣體、甲醇洩漏、火焰與通風監測。</div>
+          </div>
+        </div>
+
+        <h3>🔋 甲醇重整與燃料電池</h3>
+        <div class="card card-blue">
+          <p>甲醇也可透過船上重整產生氫氣，供應質子交換膜燃料電池等系統。此路徑具備低噪音與高效率潛力，但整體成熟度、設備體積、可靠性、燃料純度與安全設計仍需進一步驗證。</p>
+        </div>
+      </section>
+
+      <section id="conclusion">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Summary</div>
+            <h2>總結與快速查閱</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card card-green">
+            <h3>✅ 一句話總結</h3>
+            <p><strong>甲醇是目前較容易工程導入的替代船用燃料之一，但能否真正協助航運脫碳，關鍵在於低碳甲醇供應、全生命週期碳會計、法規誘因與燃料價格。</strong></p>
+          </div>
+          <div class="card card-red">
+            <h3>⚠️ 最大誤區</h3>
+            <p><strong>不要把所有甲醇都視為低碳燃料</strong>。灰色與棕色甲醇仍可能有高全生命週期排放，必須看來源與認證。</p>
+          </div>
+        </div>
+
+        <h3>📌 快速查閱清單</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>問題</th>
+              <th>快速答案</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>甲醇為何容易導入？</td>
+              <td>常溫常壓為液體，工業供應鏈成熟，船上儲運概念較接近傳統液體燃料。</td>
+            </tr>
+            <tr>
+              <td>甲醇最大安全風險？</td>
+              <td>低閃點、毒性、淡藍火焰不易察覺、蒸氣積聚與材料相容性。</td>
+            </tr>
+            <tr>
+              <td>同航程需要多少甲醇？</td>
+              <td>約需傳統船用柴油體積的 2.4 倍，實際依燃料性質與系統效率而定。</td>
+            </tr>
+            <tr>
+              <td>歐盟燃料法規 2030 目標？</td>
+              <td>燃料溫室氣體強度降低 6%，不是 14.5%。14.5% 是 2035 年。</td>
+            </tr>
+            <tr>
+              <td>國際海事組織 2050 目標？</td>
+              <td>國際航運於 2050 年前後達成淨零溫室氣體排放。</td>
+            </tr>
+            <tr>
+              <td>船用甲醇品質標準狀態？</td>
+              <td>ISO 6583:2024 已發布；規範交接點、船上處理前的甲醇燃料品質，適用於柴油機、燃料電池等海事用途。</td>
+            </tr>
+            <tr>
+              <td>100／380 美元是否已生效？</td>
+              <td>否。兩者為 IMO Net-Zero Framework 草案中 Remedial Units 的兩層價格設計，非全球碳稅；框架正式採納仍延後至 2026 年討論，尚未生效。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="footer">
+        本視覺化筆記依據 LR《Fuel for Thought》甲醇報告摘要整理，聚焦甲醇船用燃料的查閱便利性。涉及法規、標準與市場資訊時，仍應以主管機關、標準組織與船級社最新文件為準。
+      </div>
+    </main>
+  </div>
+</body>
+</html>
