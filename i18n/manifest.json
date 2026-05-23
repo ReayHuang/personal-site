@@ -35,25 +35,10 @@
       "en": "research/sbc-demand-classification.en.html"
     },
     {
-      "slug": "class-survey-basics",
-      "type": "article",
-      "category": "notes",
-      "zh": "notes/maritime/class-survey-basics.html",
-      "en": "notes/maritime/class-survey-basics.en.html"
-    },
-    {
       "slug": "mepc-83-84-visual-notes",
       "type": "article",
       "category": "notes",
       "zh": "notes/maritime/mepc-83-84-visual-notes.html",
-      "en": null,
-      "enStatus": "planned"
-    },
-    {
-      "slug": "sample-study",
-      "type": "article",
-      "category": "research",
-      "zh": "research/sample-study.html",
       "en": null,
       "enStatus": "planned"
     }
