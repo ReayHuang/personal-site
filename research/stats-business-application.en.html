@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statistics for Business Study Notes | Reay's Note</title>
+  <link rel="stylesheet" href="../assets/css/note-standalone.css" />
+  <meta name="description" content="A visual study note on applied business statistics: correlation analysis, simple linear regression, R-squared, hypothesis testing, p-values, Type I/II errors, and an integrated business decision case." />
+  <meta property="og:title" content="Statistics for Business Study Notes | Reay's Note" />
+  <meta property="og:description" content="From correlation analysis to regression modeling and hypothesis testing, this visual study note connects core statistical concepts with business decision-making." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Reay's Note" />
+  <meta property="og:url" content="https://reayhuang.github.io/personal-site/research/stats-business-application.en.html" />
+  <link rel="canonical" href="https://reayhuang.github.io/personal-site/research/stats-business-application.en.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="stats-business-application.html" />
+  <link rel="alternate" hreflang="en" href="stats-business-application.en.html" />
+  <link rel="alternate" hreflang="x-default" href="stats-business-application.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Statistics for Business Study Notes | Reay's Note" />
+  <meta name="twitter:description" content="From correlation analysis to regression modeling and hypothesis testing, this visual study note connects core statistical concepts with business decision-making." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --card: #ffffff;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --teal: #11806a;
+      --teal-soft: #e2f5ef;
+      --blue: #1d5ea8;
+      --blue-soft: #e4effb;
+      --amber: #b86b00;
+      --amber-soft: #fff2d9;
+      --purple: #6846c9;
+      --purple-soft: #eee9ff;
+      --coral: #b65035;
+      --coral-soft: #fde8df;
+      --green: #287a3e;
+      --green-soft: #e7f4e9;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(29, 94, 168, .18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(104, 70, 201, .14), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      line-height: 1.78;
+      letter-spacing: .01em;
+    }
+
+    a { color: inherit; }
+    .page { overflow: hidden; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(6, 17, 31, .98), rgba(16, 36, 62, .97)),
+        radial-gradient(circle at 80% 10%, rgba(200, 169, 110, .26), transparent 24rem);
+      color: white;
+      padding: 72px 24px 46px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .10;
+      z-index: -1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.55) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.35) 49%, transparent 51%);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
+    }
+
+    .hero-inner,
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200,169,110,.9);
+      flex: 0 0 8px;
+    }
+
+    .eyebrow-sep {
+      letter-spacing: 0;
+      font-weight: 400;
+      opacity: .88;
+    }
+
+    .eyebrow-note {
+      text-transform: none;
+      letter-spacing: .04em;
+      margin-right: -.04em;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 34px;
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: clamp(34px, 5.4vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      margin: 0 0 20px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,.78);
+      margin: 0;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-panel-title {
+      color: #f0dcae;
+      font-weight: 900;
+      margin-bottom: 12px;
+      font-size: 14px;
+      letter-spacing: .06em;
+    }
+
+    .hero-facts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .fact {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.83);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .fact span {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,169,110,.16);
+      color: #f0dcae;
+      flex: 0 0 26px;
+    }
+
+    /* Sticky nav */
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245,248,252,.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220,230,241,.88);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a {
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200,169,110,.62);
+      background: #fff;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .glass-card,
+    .section,
+    .timeline,
+    .notice,
+    .action-board {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(220,230,241,.95);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .glass-card { padding: 26px; }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    .lead-title {
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.25;
+      margin: 0 0 12px;
+      color: var(--navy-900);
+    }
+
+    .lead-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+    }
+
+    .metric span {
+      font-size: 12px;
+      color: var(--soft-muted);
+      font-weight: 700;
+    }
+
+    /* Notice */
+    .notice {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      padding: 22px;
+      margin: 20px 0 24px;
+      border-left: 6px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,248,235,.94), rgba(255,255,255,.92));
+    }
+
+    .notice-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+
+    .notice h2,
+    .section h2,
+    .timeline h2,
+    .action-board h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      color: var(--navy-900);
+      line-height: 1.28;
+    }
+
+    .notice ul {
+      margin: 10px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .notice li { margin: 5px 0; }
+    .notice strong { color: var(--navy-900); }
+
+    /* Timeline / process rail */
+    .timeline {
+      padding: 26px;
+      margin: 24px 0;
+      overflow: hidden;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .timeline-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rail {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(190px, 1fr));
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+    }
+
+    .rail-item {
+      position: relative;
+      min-height: 156px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+
+    .rail-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .rail-step::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200,169,110,.16);
+    }
+
+    .rail-item p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .rail-item .rail-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #f4f7fb;
+      color: var(--soft-muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* Section */
+    .section {
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .section-no {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Sub-section heading */
+    .sub-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      color: var(--navy-900);
+      line-height: 1.35;
+      margin: 26px 0 14px;
+    }
+    .sub-head::before {
+      content: "";
+      width: 6px;
+      height: 22px;
+      border-radius: 3px;
+      background: var(--gold);
+    }
+    .sub-head:first-of-type { margin-top: 4px; }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+    .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .topic-card {
+      position: relative;
+      padding: 20px 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      overflow: hidden;
+    }
+
+    .topic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--gold);
+    }
+    .topic-card.teal::before { background: var(--teal); }
+    .topic-card.blue::before { background: var(--blue); }
+    .topic-card.amber::before { background: var(--amber); }
+    .topic-card.purple::before { background: var(--purple); }
+    .topic-card.coral::before { background: var(--coral); }
+    .topic-card.green::before { background: var(--green); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: 10px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .badge.teal { color: var(--teal); background: var(--teal-soft); }
+    .badge.blue { color: var(--blue); background: var(--blue-soft); }
+    .badge.amber { color: var(--amber); background: var(--amber-soft); }
+    .badge.purple { color: var(--purple); background: var(--purple-soft); }
+    .badge.coral { color: var(--coral); background: var(--coral-soft); }
+    .badge.green { color: var(--green); background: var(--green-soft); }
+
+    .topic-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy-900);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .topic-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* bullet list inside topic-card */
+    .point-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .point-list li {
+      position: relative;
+      padding-left: 16px;
+      margin: 7px 0;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .point-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .topic-card.teal .point-list li::before { background: var(--teal); }
+    .topic-card.blue .point-list li::before { background: var(--blue); }
+    .topic-card.amber .point-list li::before { background: var(--amber); }
+    .topic-card.purple .point-list li::before { background: var(--purple); }
+    .topic-card.coral .point-list li::before { background: var(--coral); }
+    .topic-card.green .point-list li::before { background: var(--green); }
+
+    /* formula chip */
+    .formula {
+      display: block;
+      margin: 12px 0;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, #fff, #f4f8fc);
+      color: var(--navy-800);
+      border: 1px solid var(--line);
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      letter-spacing: .04em;
+    }
+
+    .topic-card.teal .formula {
+      background: linear-gradient(180deg, #fff, var(--teal-soft));
+      border-color: rgba(17, 128, 106, 0.18);
+    }
+
+    .topic-card.blue .formula {
+      background: linear-gradient(180deg, #fff, var(--blue-soft));
+      border-color: rgba(29, 94, 168, 0.18);
+    }
+
+    .case-step-body .formula {
+      background: linear-gradient(180deg, #fff, var(--teal-soft));
+      border-color: rgba(17, 128, 106, 0.18);
+    }
+
+    /* scenario strip */
+    .scenario {
+      margin-top: 12px;
+      padding: 10px 13px;
+      border-radius: var(--radius-sm);
+      background: #f4f7fb;
+      border: 1px dashed rgba(10,22,40,.14);
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .scenario strong { color: var(--navy-900); }
+
+    /* callout */
+    .callout {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      margin: 20px 0 4px;
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,248,235,.92), rgba(255,255,255,.9));
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .callout.blue { border-color: var(--blue); background: linear-gradient(135deg, var(--blue-soft), rgba(255,255,255,.92)); }
+    .callout.teal { border-color: var(--teal); background: linear-gradient(135deg, var(--teal-soft), rgba(255,255,255,.92)); }
+    .callout strong { color: var(--navy-900); }
+    .callout-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 21px;
+      background: var(--gold-soft);
+    }
+    .callout.blue .callout-icon { background: var(--blue-soft); }
+    .callout.teal .callout-icon { background: var(--teal-soft); }
+
+    /* HTAB process row */
+    .htab-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .htab-tile {
+      padding: 18px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      text-align: center;
+    }
+    .htab-letter {
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .htab-name {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      color: var(--soft-muted);
+      margin-bottom: 8px;
+    }
+    .htab-body { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+    /* integrated case */
+    .case-step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 6px;
+      background: #fff;
+    }
+    .case-step-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+    .case-step-head.blue   { background: var(--blue-soft); }
+    .case-step-head.teal   { background: var(--teal-soft); }
+    .case-step-head.purple { background: var(--purple-soft); }
+    .case-step-head.green  { background: var(--green-soft); }
+    .case-num {
+      width: 46px; height: 46px;
+      flex: 0 0 46px;
+      display: grid; place-items: center;
+      border-radius: 14px;
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .case-num.blue   { background: var(--blue); }
+    .case-num.teal   { background: var(--teal); }
+    .case-num.purple { background: var(--purple); }
+    .case-num.green  { background: var(--green); }
+    .case-step-meta .case-method {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--soft-muted);
+      margin-bottom: 2px;
+    }
+    .case-step-meta .case-q {
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: 18px;
+      color: var(--navy-900);
+      line-height: 1.3;
+    }
+    .case-step-body { padding: 20px; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 4px 0 14px;
+    }
+    .stat-tile {
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+    }
+    .stat-label { font-size: 11px; font-weight: 800; color: var(--soft-muted); margin-bottom: 4px; }
+    .stat-val {
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--navy-900);
+    }
+    .stat-val.sm { font-size: 18px; }
+
+    .connector-arrow {
+      text-align: center;
+      font-size: 22px;
+      color: var(--gold);
+      margin: 8px 0;
+      line-height: 1;
+    }
+
+    .case-banner {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      border-left: 6px solid var(--blue);
+      background: linear-gradient(135deg, var(--blue-soft), rgba(255,255,255,.92));
+      margin-bottom: 18px;
+    }
+    .case-banner .ci {
+      width: 50px; height: 50px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 25px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    .case-banner h3 {
+      margin: 0 0 4px;
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: 19px;
+      color: var(--navy-900);
+    }
+    .case-banner p { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+    /* summary tiles */
+    .summary-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 4px 0 14px;
+    }
+    .sum-tile {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+    }
+    .sum-step { font-size: 11px; font-weight: 900; letter-spacing: .04em; margin-bottom: 4px; }
+    .sum-q { font-size: 12px; color: var(--soft-muted); margin-bottom: 6px; }
+    .sum-a { font-family: Georgia, "Times New Roman", "Noto Serif TC", serif; font-size: 17px; color: var(--navy-900); line-height: 1.3; }
+
+    /* action board */
+    .action-board {
+      padding: 28px;
+      margin-top: 28px;
+      background:
+        linear-gradient(135deg, rgba(10,22,40,.97), rgba(23,55,95,.96)),
+        radial-gradient(circle at top right, rgba(200,169,110,.22), transparent 20rem);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+    .action-board h2 { color: white; margin-bottom: 8px; }
+    .action-board p { color: rgba(255,255,255,.72); margin: 0 0 20px; }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .action {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+    }
+    .action strong {
+      display: block;
+      color: #f0dcae;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .action span {
+      display: block;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer strong { color: var(--navy-900); }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid,
+      .section-top,
+      .notice,
+      .callout,
+      .case-banner,
+      .action-grid,
+      .stat-row,
+      .summary-tiles {
+        grid-template-columns: 1fr;
+      }
+      .hero-panel { max-width: 520px; }
+      .cards.two, .cards.three { grid-template-columns: 1fr; }
+      .section-no { width: 50px; height: 50px; font-size: 22px; }
+      .timeline-header { display: block; }
+      .htab-row { grid-template-columns: repeat(2, 1fr); }
+      .callout { grid-template-columns: 44px 1fr; }
+      .case-banner { grid-template-columns: 56px 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .hero-inner, .wrap, main, .footer {
+        width: min(100% - 28px, var(--max));
+      }
+      .hero { padding: 46px 0 34px; }
+      .hero-grid { gap: 24px; }
+      .hero-panel,
+      .glass-card,
+      .section,
+      .timeline,
+      .notice,
+      .action-board {
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .metric-grid { grid-template-columns: 1fr; }
+      .rail { grid-template-columns: repeat(4, minmax(210px, 82vw)); }
+      .nav { width: calc(100% - 28px); }
+      h1 { letter-spacing: -.03em; }
+    }
+
+    @media print {
+      body { background: white; }
+      .note-site-bar { display: none; }
+      .nav-shell { display: none; }
+      .hero, .action-board {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section, .timeline, .notice, .glass-card { box-shadow: none; }
+      .topic-card, .case-step { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="index.en.html">← Management Note</a>
+      <span>|</span>
+      <a href="../index.en.html">Home</a>
+      <a href="../about.en.html">About</a>
+      <a href="../notes/index.en.html">Maritime Note</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="stats-business-application.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+      <a href="stats-business-application.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+    </nav>
+  </div>
+<div class="page">
+
+  <!-- ════════ HERO ════════ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow"><span>Statistics for Business</span><span class="eyebrow-sep" aria-hidden="true">•</span><span>Business Statistics</span><span class="eyebrow-sep" aria-hidden="true">•</span><span class="eyebrow-note">Reay's Note</span></div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>Statistics Study Notes<br>Correlation · Regression · Hypothesis Testing</h1>
+          <p class="subtitle">
+            From relationships between variables, to predictive modeling, to verifying whether results are credible —
+            a visual study note connecting core statistical concepts with business decision-making.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="Note overview">
+          <div class="hero-panel-title">Note Overview</div>
+          <div class="hero-facts">
+            <div class="fact"><span>📊</span><div>Three themes: correlation analysis, simple linear regression, and hypothesis testing</div></div>
+            <div class="fact"><span>💼</span><div>Each concept is paired with business cases in marketing, finance, retail, and operations</div></div>
+            <div class="fact"><span>🧭</span><div>Suggested path: start with core concepts, then business applications, and finish with the integrated case</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════ NAV ════════ -->
+  <div class="nav-shell">
+    <nav class="nav" aria-label="Page navigation">
+      <a href="#overview">Overview</a>
+      <a href="#flow">Workflow</a>
+      <a href="#correlation">Correlation Analysis</a>
+      <a href="#regression">Regression Analysis</a>
+      <a href="#hypothesis">Hypothesis Testing</a>
+      <a href="#case">Integrated Case</a>
+      <a href="#actions">Decision Reminders</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ════════ OVERVIEW ════════ -->
+    <section id="overview" class="summary-grid" aria-label="Overview">
+      <div class="glass-card">
+        <div class="kicker">Executive Summary</div>
+        <h2 class="lead-title">The Core of Statistical Analysis: From Data Insight to Business Action</h2>
+        <p class="lead-copy">
+          Statistical analysis is not just about calculating numbers. It is a decision path from observing relationships, to quantifying effects, to verifying credibility.
+          Correlation analysis tells us whether variables move together; regression analysis quantifies that relationship into a predictive model; hypothesis testing checks whether the observed effect is unlikely to be random noise.
+          Used together, these tools turn data into business insights worth acting on.
+        </p>
+      </div>
+
+      <div class="glass-card">
+        <div class="metric-grid">
+          <div class="metric"><strong>3</strong><span>Core statistical topics</span></div>
+          <div class="metric"><strong>r</strong><span>Correlation coefficient: -1 to +1</span></div>
+          <div class="metric"><strong>R²</strong><span>Regression model explanatory power</span></div>
+          <div class="metric"><strong>0.05</strong><span>Common significance level α</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ PRACTICAL NOTICE ════════ -->
+    <section class="notice" aria-label="Practical tips">
+      <div class="notice-icon">💡</div>
+      <div>
+        <h2>Learning and Application Tips</h2>
+        <ul>
+          <li><strong>Correlation ≠ Causation:</strong> Correlation only shows that variables move together. It does not prove that one causes the other; additional research is needed to establish causality.</li>
+          <li><strong>Look at the plot before the numbers:</strong> Always inspect residual plots before interpreting R²; relying only on p-values or R² can lead to a misleading model interpretation.</li>
+          <li><strong>Statistical significance ≠ Business importance:</strong> Even when the p-value is significant, the effect size must still be large enough to justify business resources.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ════════ ANALYSIS FLOW ════════ -->
+    <section id="flow" class="timeline" aria-label="Workflow">
+      <div class="timeline-header">
+        <div>
+          <div class="kicker">The Analytical Workflow</div>
+          <h2>A Four-Step Statistical Analysis Workflow</h2>
+          <p>From business question to decision, each step answers one key question.</p>
+        </div>
+      </div>
+
+      <div class="rail">
+        <article class="rail-item">
+          <div class="rail-step">Step 1</div>
+          <p>Use correlation analysis to see whether two variables move together and decide whether further modeling is worthwhile.</p>
+          <span class="rail-tag">Correlation Analysis · Is there a relationship?</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">Step 2</div>
+          <p>Build a simple linear regression model to quantify the relationship as a predictive equation.</p>
+          <span class="rail-tag">Regression Analysis · How large is the effect?</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">Step 3</div>
+          <p>Use hypothesis testing and the p-value to check whether the observed effect is statistically significant.</p>
+          <span class="rail-tag">Hypothesis Testing · Is the result credible?</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">Step 4</div>
+          <p>Apply a substantive hypothesis lens to judge whether the statistical result is worth turning into a business action.</p>
+          <span class="rail-tag">Substantive Assessment · Is it worth acting on?</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════ CH 1 : CORRELATION ════════ -->
+    <section id="correlation" class="section">
+      <div class="section-top">
+        <div class="section-no">01</div>
+        <div>
+          <div class="kicker">Correlation Analysis</div>
+          <h2>Correlation Analysis</h2>
+          <p class="section-sub">Correlation analysis measures the strength and direction of the linear relationship between two quantitative variables. It is often the starting point of analysis.</p>
+        </div>
+      </div>
+
+      <div class="sub-head">Core Concepts</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">Definition</span>
+          <h3>Correlation Coefficient r</h3>
+          <ul class="point-list">
+            <li>Measures the strength of the linear relationship between two quantitative variables</li>
+            <li>Range: -1 to +1</li>
+            <li>r = +1 indicates perfect positive correlation; r = -1 indicates perfect negative correlation; r = 0 indicates no linear relationship</li>
+          </ul>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">Three Types</span>
+          <h3>Direction and Strength</h3>
+          <ul class="point-list">
+            <li>Positive correlation: variables move in the same direction (r close to +1)</li>
+            <li>Negative correlation: variables move in opposite directions (r close to -1)</li>
+            <li>Zero correlation: no clear linear relationship (r close to 0)</li>
+          </ul>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">Variable Roles</span>
+          <h3>Independent vs. Dependent Variable</h3>
+          <ul class="point-list">
+            <li>Independent variable X: the possible driver, usually placed on the x-axis</li>
+            <li>Dependent variable Y: the outcome being predicted, usually placed on the y-axis</li>
+            <li>Causality requires additional research; correlation is only the starting point</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">⚠️</div>
+        <div><strong>Core warning: correlation does not imply causation.</strong>Two variables moving together does not mean one causes the other to change. A third factor may exist, or the relationship may simply be coincidental.</div>
+      </div>
+
+      <div class="sub-head">Business Applications</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">Marketing</span>
+          <h3>Ad Spend and Sales</h3>
+          <ul class="point-list">
+            <li>Analyze the linear relationship between advertising spend and sales revenue</li>
+            <li>r close to +1 suggests a strong positive relationship and supports further investigation of ad effectiveness</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>An e-commerce company finds that Google Ads spend and weekly order volume have r = 0.87, then decides to increase budget allocation.</div>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">Finance</span>
+          <h3>Stocks and Market Index</h3>
+          <ul class="point-list">
+            <li>Analyze how strongly an individual stock moves with the overall market index (the beta concept)</li>
+            <li>Combining negatively correlated assets can reduce overall portfolio risk</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>A fund manager finds that two stocks have r = -0.73 and pairs them to reduce volatility risk.</div>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">Retail</span>
+          <h3>Store Factors and Sales</h3>
+          <ul class="point-list">
+            <li>Analyze correlations between foot traffic, number of competitors, and sales</li>
+            <li>Identify store improvements that deserve investment priority</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>A supermarket chain finds that foot traffic and revenue have r = 0.91 and prioritizes expansion in high-traffic areas.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════ CH 2 : REGRESSION ════════ -->
+    <section id="regression" class="section">
+      <div class="section-top">
+        <div class="section-no">02</div>
+        <div>
+          <div class="kicker">Simple Linear Regression</div>
+          <h2>Simple Linear Regression</h2>
+          <p class="section-sub">Regression analysis quantifies the relationship between variables as an equation, allowing known data to be used to predict unknown values.</p>
+        </div>
+      </div>
+
+      <div class="sub-head">Core Concepts</div>
+      <div class="cards three">
+        <article class="topic-card teal">
+          <span class="badge teal">Regression Equation</span>
+          <h3>Probabilistic Model</h3>
+          <span class="formula">Yᵢ = α + βXᵢ + εᵢ</span>
+          <ul class="point-list">
+            <li>α: y-intercept (true but unobserved)</li>
+            <li>β: slope (the effect of each unit of X on Y)</li>
+            <li>εᵢ: error term (unexplained random factors)</li>
+          </ul>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">Model Evaluation</span>
+          <h3>R-squared (R²)</h3>
+          <span class="formula">R² = r²  Range: 0 → 1</span>
+          <ul class="point-list">
+            <li>Measures how much variation in the dependent variable is explained by the independent variable</li>
+            <li>R² &lt; 0.5 is often treated as limited explanatory power</li>
+            <li>R² close to 1 indicates strong model fit</li>
+          </ul>
+        </article>
+
+        <article class="topic-card amber">
+          <span class="badge amber">Interpretation Rule</span>
+          <h3>Best-Practice Combination</h3>
+          <ul class="point-list">
+            <li>Check residual plots before interpreting R²</li>
+            <li>Low p-value + high R² → strongest explanatory model</li>
+            <li>In complex behavioral domains, a low R² may still have research value</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout blue">
+        <div class="callout-icon">📈</div>
+        <div><strong>Reading residual plots:</strong>An ideal residual plot should be randomly scattered with no visible pattern. Curves, funnel shapes, or systematic bias suggest possible model misspecification, so R² should not be trusted on its own.</div>
+      </div>
+
+      <div class="sub-head">Business Applications</div>
+      <div class="cards three">
+        <article class="topic-card amber">
+          <span class="badge amber">Business Forecasting</span>
+          <h3>Sales Forecasting</h3>
+          <ul class="point-list">
+            <li>Use advertising spend X to predict next-quarter sales Y</li>
+            <li>The β coefficient estimates how much sales revenue changes for each additional dollar of ad spend</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>A brand builds an SLR model showing that each additional NT$10,000 in ad spend predicts roughly NT$42,000 in additional sales.</div>
+        </article>
+
+        <article class="topic-card coral">
+          <span class="badge coral">Real Estate</span>
+          <h3>Asset Valuation</h3>
+          <ul class="point-list">
+            <li>Use floor area and location score to predict market selling price</li>
+            <li>A high R² indicates these variables explain much of the price variation</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>A real estate firm uses floor area as X to fit a regression line and estimate reasonable selling prices, with R² = 0.82.</div>
+        </article>
+
+        <article class="topic-card green">
+          <span class="badge green">Logistics</span>
+          <h3>Transportation Cost Forecasting</h3>
+          <ul class="point-list">
+            <li>Use shipment weight X to predict transportation cost Y</li>
+            <li>Use R² to assess whether weight is a major driver of transportation cost</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>A logistics provider builds a regression equation so its automated quoting system can estimate prices from weight in real time.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════ CH 3 : HYPOTHESIS TESTING ════════ -->
+    <section id="hypothesis" class="section">
+      <div class="section-top">
+        <div class="section-no">03</div>
+        <div>
+          <div class="kicker">Hypothesis Testing</div>
+          <h2>Hypothesis Testing</h2>
+          <p class="section-sub">Hypothesis testing uses sample data to decide whether there is enough evidence to reject the null hypothesis and whether the observed effect is unlikely to be random chance.</p>
+        </div>
+      </div>
+
+      <div class="sub-head">Hypothesis Types and p-Value</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">Three Types</span>
+          <h3>Hypothesis Classification</h3>
+          <ul class="point-list">
+            <li>Research hypothesis: the researcher’s initial expectation about the result</li>
+            <li>Statistical hypothesis: expressed mathematically as H₀ and Hₐ</li>
+            <li>Substantive hypothesis: whether the result has practical value for business decisions</li>
+          </ul>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">H₀ vs. Hₐ</span>
+          <h3>Null and Alternative Hypotheses</h3>
+          <ul class="point-list">
+            <li>H₀ (null hypothesis): no change from the status quo</li>
+            <li>Hₐ (alternative hypothesis): a new effect or the researcher’s proposed claim</li>
+            <li>Testing says “fail to reject H₀,” not “accept H₀”</li>
+          </ul>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">p-Value Decision</span>
+          <h3>Decision Rule</h3>
+          <ul class="point-list">
+            <li>p-value ≤ α → reject H₀ (commonly α = 0.05)</li>
+            <li>p-value &gt; α → fail to reject H₀</li>
+            <li>Mnemonic: P low, null go</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sub-head">Two Types of Error</div>
+      <div class="cards two">
+        <article class="topic-card coral">
+          <span class="badge coral">Type I Error</span>
+          <h3>Type I Error (False Positive)</h3>
+          <ul class="point-list">
+            <li>Incorrectly rejecting a true H₀</li>
+            <li>Probability of occurrence = α (significance level)</li>
+            <li>Analogy: convicting an innocent person</li>
+          </ul>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">Type II Error</span>
+          <h3>Type II Error (False Negative)</h3>
+          <ul class="point-list">
+            <li>Failing to reject a false H₀</li>
+            <li>Probability of occurrence = β; statistical power = 1 − β</li>
+            <li>Analogy: letting a guilty person go free</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sub-head">HTAB Hypothesis Testing Workflow</div>
+      <div class="htab-row">
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--blue);">H</div>
+          <div class="htab-name">Hypothesis</div>
+          <div class="htab-body">Set H₀ and Hₐ and define the claim being tested</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--teal);">T</div>
+          <div class="htab-name">Test</div>
+          <div class="htab-body">Choose the method, set α, collect the sample, and analyze</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--purple);">A</div>
+          <div class="htab-name">Action</div>
+          <div class="htab-body">Use the p-value to decide whether to reject or fail to reject H₀</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--green);">B</div>
+          <div class="htab-name">Business Meaning</div>
+          <div class="htab-body">Translate statistical conclusions into business decisions</div>
+        </div>
+      </div>
+
+      <div class="sub-head">Business Applications</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">Marketing Experiment</span>
+          <h3>A/B Test</h3>
+          <ul class="point-list">
+            <li>H₀: no difference in click-through rate between the new and old homepage</li>
+            <li>p-value &lt; 0.05 → reject H₀; the new version has a significant effect</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>An e-commerce platform tests a new checkout flow, obtains p = 0.03, and decides to roll out the new design.</div>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">Quality Control</span>
+          <h3>Process Quality Inspection</h3>
+          <ul class="point-list">
+            <li>H₀: the product’s average weight meets specification (μ = 500g)</li>
+            <li>Use a two-tailed test; deviations in either direction must be addressed</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>A food manufacturer samples 500g packages and obtains p = 0.01 → reject H₀; the machine must be recalibrated.</div>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">Market Strategy</span>
+          <h3>Market Share Test</h3>
+          <ul class="point-list">
+            <li>H₀: market share ≤ 18% (the campaign has no effective lift)</li>
+            <li>Use a right-tailed one-tailed test, focusing only on whether market share has increased</li>
+          </ul>
+          <div class="scenario"><strong>Scenario:</strong>After a marketing campaign, a medical device company obtains p = 0.02 → reject H₀; market share increased significantly.</div>
+        </article>
+      </div>
+
+      <div class="callout teal">
+        <div class="callout-icon">🎯</div>
+        <div><strong>Statistical significance ≠ Business importance.</strong>Even if the p-value is significant, the effect must still be large enough and valuable enough to justify resources. This is the core question of the substantive hypothesis.</div>
+      </div>
+    </section>
+
+    <!-- ════════ INTEGRATED CASE ════════ -->
+    <section id="case" class="section">
+      <div class="section-top">
+        <div class="section-no">04</div>
+        <div>
+          <div class="kicker">Integrated Case Study</div>
+          <h2>Integrated Case: Connecting the Three Main Steps</h2>
+          <p class="section-sub">Using an e-commerce advertising budget decision, this case walks through the full decision path: correlation analysis, regression analysis, and hypothesis testing.</p>
+        </div>
+      </div>
+
+      <div class="case-banner">
+        <div class="ci">🛒</div>
+        <div>
+          <h3>Business Context: E-Commerce Advertising Budget Decision</h3>
+          <p>An e-commerce marketing team wants to know whether increasing the Google Ads budget can truly raise sales, and wants to build a model to forecast an effective spending level.</p>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="case-step">
+        <div class="case-step-head blue">
+          <div class="case-num blue">1</div>
+          <div class="case-step-meta">
+            <div class="case-method">Correlation Analysis</div>
+            <div class="case-q">Are ad spend and sales related?</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="stat-row">
+            <div class="stat-tile"><div class="stat-label">Correlation Coefficient r</div><div class="stat-val">0.89</div></div>
+            <div class="stat-tile"><div class="stat-label">Correlation Strength</div><div class="stat-val sm">Strong positive correlation</div></div>
+            <div class="stat-tile"><div class="stat-label">Sample Size</div><div class="stat-val sm">24 months</div></div>
+          </div>
+          <ul class="point-list">
+            <li>r = 0.89 → ad spend and sales have a strong positive correlation and move in the same direction</li>
+            <li>The scatter plot shows no obvious nonlinear trend, so a linear model is appropriate</li>
+          </ul>
+          <div class="callout blue" style="margin-top:14px;">
+            <div class="callout-icon">✓</div>
+            <div><strong>Conclusion:</strong>Ad spend and sales show a strong linear relationship (r = 0.89), so it is worth building a regression model to quantify the relationship.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Step 2 -->
+      <div class="case-step">
+        <div class="case-step-head teal">
+          <div class="case-num teal">2</div>
+          <div class="case-step-meta">
+            <div class="case-method">Regression Analysis</div>
+            <div class="case-q">How much does sales increase for each additional NT$10,000 of ad spend?</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <span class="formula">Ŷ = 12.5 + 4.2 × X  (Unit: NT$10,000)</span>
+          <div class="stat-row">
+            <div class="stat-tile"><div class="stat-label">Intercept α</div><div class="stat-val sm">12.5</div></div>
+            <div class="stat-tile"><div class="stat-label">Slope β</div><div class="stat-val">4.2</div></div>
+            <div class="stat-tile"><div class="stat-label">R²</div><div class="stat-val">0.79</div></div>
+          </div>
+          <ul class="point-list">
+            <li>Intercept 12.5: even without advertising, the brand still has a baseline level of organic sales</li>
+            <li>Slope 4.2: each additional NT$10,000 in ad spend predicts roughly NT$42,000 in additional sales</li>
+            <li>R² = 0.79: ad spend explains 79% of the variation in sales, indicating good fit</li>
+            <li>The residual plot is randomly scattered with no systematic bias, supporting model credibility</li>
+          </ul>
+          <div class="scenario"><strong>Forecasting application:</strong>If next month’s ad budget is NT$200,000 → predicted sales = 12.5 + 4.2 × 20 = <strong>NT$965,000</strong>.</div>
+          <div class="callout teal" style="margin-top:14px;">
+            <div class="callout-icon">✓</div>
+            <div><strong>Conclusion:</strong>Each NT$10,000 of ad spend is associated with approximately NT$42,000 in incremental sales, implying an ROI of about 4.2x.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Step 3 -->
+      <div class="case-step">
+        <div class="case-step-head purple">
+          <div class="case-num purple">3</div>
+          <div class="case-step-meta">
+            <div class="case-method">Hypothesis Testing HTAB</div>
+            <div class="case-q">Does this effect truly exist statistically?</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="htab-row" style="margin-bottom:14px;">
+            <div class="htab-tile">
+              <div class="htab-letter" style="color:var(--blue);">H</div>
+              <div class="htab-name">Hypothesis</div>
+              <div class="htab-body">H₀: β = 0 (ads have no effect)<br>Hₐ: β ≠ 0 (ads have an effect)</div>
+            </div>
+            <div class="htab-tile">
+              <div class="htab-letter" style="color:var(--teal);">T</div>
+              <div class="htab-name">Test</div>
+              <div class="htab-body">α = 0.05<br>two-tailed t-test</div>
+            </div>
+            <div class="htab-tile">
+              <div class="htab-letter" style="color:var(--purple);">A</div>
+              <div class="htab-name">Action</div>
+              <div class="htab-body">p = 0.0003<br>p &lt; 0.05 → reject H₀</div>
+            </div>
+            <div class="htab-tile">
+              <div class="htab-letter" style="color:var(--green);">B</div>
+              <div class="htab-name">Business Meaning</div>
+              <div class="htab-body">Advertising has a statistically significant effect on sales; continued investment is recommended</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-tile"><div class="stat-label">p-value</div><div class="stat-val">0.0003</div></div>
+            <div class="stat-tile"><div class="stat-label">Significance Level α</div><div class="stat-val">0.05</div></div>
+            <div class="stat-tile"><div class="stat-label">Test Result</div><div class="stat-val sm">Reject H₀</div></div>
+          </div>
+          <ul class="point-list">
+            <li>p = 0.0003 is far below α = 0.05 → strongly reject H₀</li>
+            <li>The positive effect of ad spend on sales is statistically significant and unlikely to be random chance</li>
+          </ul>
+          <div class="callout" style="margin-top:14px; border-color:var(--purple); background:linear-gradient(135deg,var(--purple-soft),rgba(255,255,255,.9));">
+            <div class="callout-icon" style="background:var(--purple-soft);">✓</div>
+            <div><strong>Conclusion:</strong>β is significantly different from zero (p = 0.0003), statistically establishing the effect of advertising on sales.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Final decision -->
+      <div class="case-step">
+        <div class="case-step-head green">
+          <div class="case-num green">D</div>
+          <div class="case-step-meta">
+            <div class="case-method">Substantive Hypothesis Assessment</div>
+            <div class="case-q">Is this statistical result worth taking business action on?</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="summary-tiles">
+            <div class="sum-tile">
+              <div class="sum-step" style="color:var(--blue);">Step 1 · Correlation Analysis</div>
+              <div class="sum-q">Is there a relationship?</div>
+              <div class="sum-a">r = 0.89, strong positive correlation</div>
+            </div>
+            <div class="sum-tile">
+              <div class="sum-step" style="color:var(--teal);">Step 2 · Regression Analysis</div>
+              <div class="sum-q">How large is the effect?</div>
+              <div class="sum-a">Each NT$10,000 brings NT$42,000 in sales</div>
+            </div>
+            <div class="sum-tile">
+              <div class="sum-step" style="color:var(--purple);">Step 3 · Hypothesis Testing</div>
+              <div class="sum-q">Is the result credible?</div>
+              <div class="sum-a">p = 0.0003, statistically significant</div>
+            </div>
+          </div>
+          <div class="callout teal">
+            <div class="callout-icon">🚀</div>
+            <div><strong>Business decision:</strong>All three statistical results support increasing the advertising budget. With an ROI of about 4.2x and strong statistical significance, the marketing team should increase Google Ads spending and continue updating the model over time.</div>
+          </div>
+          <div class="callout" style="margin-top:10px;">
+            <div class="callout-icon">⚠️</div>
+            <div><strong>Caution:</strong>Statistical significance does not automatically mean the business should act. The final budget decision should still consider ad cost, market saturation, and the opportunity cost of other marketing channels.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ ACTION BOARD ════════ -->
+    <section id="actions" class="action-board">
+      <h2>Three Rules for Analysis</h2>
+      <p>Put these principles into every data analysis and business decision checklist.</p>
+
+      <div class="action-grid">
+        <div class="action">
+          <strong>01 | Correlation ≠ Causation</strong>
+          <span>Correlation analysis only shows that variables move together. Causal claims require experimental design or more rigorous research.</span>
+        </div>
+        <div class="action">
+          <strong>02 | Look at the Plot Before the Numbers</strong>
+          <span>Inspect residual plots and data distributions before interpreting R² and p-values, so a single number does not mislead the model assessment.</span>
+        </div>
+        <div class="action">
+          <strong>03 | Significant ≠ Important</strong>
+          <span>Statistical significance is only a threshold. Use a substantive hypothesis to evaluate effect size, cost-effectiveness, and strategic value.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <strong>Reay's Note | Statistics for Business Study Notes</strong><br>
+    Prepared by Reay Huang · Management Note · Business Statistics Learning Notes<br>
+    Topics covered: correlation analysis, simple linear regression, R-squared, hypothesis testing, p-values, Type I/II errors, and business decision applications.<br>
+    Note: This page is for personal learning and teaching notes. Actual analysis should be adapted to the data context and professional judgment.
+  </footer>
+
+</div>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function resetScrollOnReload() {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!nav || nav.type !== 'reload') return;
+
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('pageshow', resetScrollOnReload);
+    window.addEventListener('load', resetScrollOnReload);
+  </script>
+</body>
+</html>

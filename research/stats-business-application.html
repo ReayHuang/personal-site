@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>統計學商業應用重點筆記｜Reay's Note</title>
+  <link rel="stylesheet" href="../assets/css/note-standalone.css" />
+  <meta name="description" content="統計學重點視覺化筆記：相關分析、簡單線性迴歸、R-squared、假說檢定、p 值、Type I/II 錯誤，以及完整的商業決策應用案例。" />
+  <meta property="og:title" content="統計學商業應用重點筆記｜Reay's Note" />
+  <meta property="og:description" content="從相關分析到迴歸建模，再到假說檢定——一份串連統計概念與商業決策的視覺化學習筆記。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay's Note" />
+  <meta property="og:url" content="https://reayhuang.github.io/personal-site/research/stats-business-application.html" />
+  <link rel="canonical" href="https://reayhuang.github.io/personal-site/research/stats-business-application.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="stats-business-application.html" />
+  <link rel="alternate" hreflang="en" href="stats-business-application.en.html" />
+  <link rel="alternate" hreflang="x-default" href="stats-business-application.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="統計學商業應用重點筆記｜Reay's Note" />
+  <meta name="twitter:description" content="從相關分析到迴歸建模，再到假說檢定——一份串連統計概念與商業決策的視覺化學習筆記。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --card: #ffffff;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --teal: #11806a;
+      --teal-soft: #e2f5ef;
+      --blue: #1d5ea8;
+      --blue-soft: #e4effb;
+      --amber: #b86b00;
+      --amber-soft: #fff2d9;
+      --purple: #6846c9;
+      --purple-soft: #eee9ff;
+      --coral: #b65035;
+      --coral-soft: #fde8df;
+      --green: #287a3e;
+      --green-soft: #e7f4e9;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(29, 94, 168, .18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(104, 70, 201, .14), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      line-height: 1.78;
+      letter-spacing: .01em;
+    }
+
+    a { color: inherit; }
+    .page { overflow: hidden; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(6, 17, 31, .98), rgba(16, 36, 62, .97)),
+        radial-gradient(circle at 80% 10%, rgba(200, 169, 110, .26), transparent 24rem);
+      color: white;
+      padding: 72px 24px 46px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .10;
+      z-index: -1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.55) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.35) 49%, transparent 51%);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
+    }
+
+    .hero-inner,
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200,169,110,.9);
+      flex: 0 0 8px;
+    }
+
+    .eyebrow-sep {
+      letter-spacing: 0;
+      font-weight: 400;
+      opacity: .88;
+    }
+
+    .eyebrow-note {
+      text-transform: none;
+      letter-spacing: .04em;
+      margin-right: -.04em;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 34px;
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    h1 {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(34px, 5.4vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      margin: 0 0 20px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,.78);
+      margin: 0;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-panel-title {
+      color: #f0dcae;
+      font-weight: 900;
+      margin-bottom: 12px;
+      font-size: 14px;
+      letter-spacing: .06em;
+    }
+
+    .hero-facts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .fact {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.83);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .fact span {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,169,110,.16);
+      color: #f0dcae;
+      flex: 0 0 26px;
+    }
+
+    /* Sticky nav */
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245,248,252,.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220,230,241,.88);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a {
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200,169,110,.62);
+      background: #fff;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .glass-card,
+    .section,
+    .timeline,
+    .notice,
+    .action-board {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(220,230,241,.95);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .glass-card { padding: 26px; }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    .lead-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.25;
+      margin: 0 0 12px;
+      color: var(--navy-900);
+    }
+
+    .lead-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: "Noto Serif TC", serif;
+    }
+
+    .metric span {
+      font-size: 12px;
+      color: var(--soft-muted);
+      font-weight: 700;
+    }
+
+    /* Notice */
+    .notice {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      padding: 22px;
+      margin: 20px 0 24px;
+      border-left: 6px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,248,235,.94), rgba(255,255,255,.92));
+    }
+
+    .notice-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+
+    .notice h2,
+    .section h2,
+    .timeline h2,
+    .action-board h2 {
+      margin: 0;
+      font-family: "Noto Serif TC", serif;
+      color: var(--navy-900);
+      line-height: 1.28;
+    }
+
+    .notice ul {
+      margin: 10px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .notice li { margin: 5px 0; }
+    .notice strong { color: var(--navy-900); }
+
+    /* Timeline / process rail */
+    .timeline {
+      padding: 26px;
+      margin: 24px 0;
+      overflow: hidden;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .timeline-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rail {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(190px, 1fr));
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+    }
+
+    .rail-item {
+      position: relative;
+      min-height: 156px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+
+    .rail-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .rail-step::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200,169,110,.16);
+    }
+
+    .rail-item p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .rail-item .rail-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #f4f7fb;
+      color: var(--soft-muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* Section */
+    .section {
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .section-no {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      font-family: "Noto Serif TC", serif;
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Sub-section heading */
+    .sub-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      color: var(--navy-900);
+      line-height: 1.35;
+      margin: 26px 0 14px;
+    }
+    .sub-head::before {
+      content: "";
+      width: 6px;
+      height: 22px;
+      border-radius: 3px;
+      background: var(--gold);
+    }
+    .sub-head:first-of-type { margin-top: 4px; }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+    .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .topic-card {
+      position: relative;
+      padding: 20px 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      overflow: hidden;
+    }
+
+    .topic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--gold);
+    }
+    .topic-card.teal::before { background: var(--teal); }
+    .topic-card.blue::before { background: var(--blue); }
+    .topic-card.amber::before { background: var(--amber); }
+    .topic-card.purple::before { background: var(--purple); }
+    .topic-card.coral::before { background: var(--coral); }
+    .topic-card.green::before { background: var(--green); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: 10px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .badge.teal { color: var(--teal); background: var(--teal-soft); }
+    .badge.blue { color: var(--blue); background: var(--blue-soft); }
+    .badge.amber { color: var(--amber); background: var(--amber-soft); }
+    .badge.purple { color: var(--purple); background: var(--purple-soft); }
+    .badge.coral { color: var(--coral); background: var(--coral-soft); }
+    .badge.green { color: var(--green); background: var(--green-soft); }
+
+    .topic-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy-900);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .topic-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* bullet list inside topic-card */
+    .point-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .point-list li {
+      position: relative;
+      padding-left: 16px;
+      margin: 7px 0;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .point-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .topic-card.teal .point-list li::before { background: var(--teal); }
+    .topic-card.blue .point-list li::before { background: var(--blue); }
+    .topic-card.amber .point-list li::before { background: var(--amber); }
+    .topic-card.purple .point-list li::before { background: var(--purple); }
+    .topic-card.coral .point-list li::before { background: var(--coral); }
+    .topic-card.green .point-list li::before { background: var(--green); }
+
+    /* formula chip */
+    .formula {
+      display: block;
+      margin: 12px 0;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, #fff, #f4f8fc);
+      color: var(--navy-800);
+      border: 1px solid var(--line);
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      letter-spacing: .04em;
+    }
+
+    .topic-card.teal .formula {
+      background: linear-gradient(180deg, #fff, var(--teal-soft));
+      border-color: rgba(17, 128, 106, 0.18);
+    }
+
+    .topic-card.blue .formula {
+      background: linear-gradient(180deg, #fff, var(--blue-soft));
+      border-color: rgba(29, 94, 168, 0.18);
+    }
+
+    .case-step-body .formula {
+      background: linear-gradient(180deg, #fff, var(--teal-soft));
+      border-color: rgba(17, 128, 106, 0.18);
+    }
+
+    /* scenario strip */
+    .scenario {
+      margin-top: 12px;
+      padding: 10px 13px;
+      border-radius: var(--radius-sm);
+      background: #f4f7fb;
+      border: 1px dashed rgba(10,22,40,.14);
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .scenario strong { color: var(--navy-900); }
+
+    /* callout */
+    .callout {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      margin: 20px 0 4px;
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,248,235,.92), rgba(255,255,255,.9));
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .callout.blue { border-color: var(--blue); background: linear-gradient(135deg, var(--blue-soft), rgba(255,255,255,.92)); }
+    .callout.teal { border-color: var(--teal); background: linear-gradient(135deg, var(--teal-soft), rgba(255,255,255,.92)); }
+    .callout strong { color: var(--navy-900); }
+    .callout-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 21px;
+      background: var(--gold-soft);
+    }
+    .callout.blue .callout-icon { background: var(--blue-soft); }
+    .callout.teal .callout-icon { background: var(--teal-soft); }
+
+    /* HTAB process row */
+    .htab-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .htab-tile {
+      padding: 18px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      text-align: center;
+    }
+    .htab-letter {
+      font-family: "Noto Serif TC", serif;
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .htab-name {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      color: var(--soft-muted);
+      margin-bottom: 8px;
+    }
+    .htab-body { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+    /* integrated case */
+    .case-step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 6px;
+      background: #fff;
+    }
+    .case-step-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+    .case-step-head.blue   { background: var(--blue-soft); }
+    .case-step-head.teal   { background: var(--teal-soft); }
+    .case-step-head.purple { background: var(--purple-soft); }
+    .case-step-head.green  { background: var(--green-soft); }
+    .case-num {
+      width: 46px; height: 46px;
+      flex: 0 0 46px;
+      display: grid; place-items: center;
+      border-radius: 14px;
+      font-family: "Noto Serif TC", serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .case-num.blue   { background: var(--blue); }
+    .case-num.teal   { background: var(--teal); }
+    .case-num.purple { background: var(--purple); }
+    .case-num.green  { background: var(--green); }
+    .case-step-meta .case-method {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--soft-muted);
+      margin-bottom: 2px;
+    }
+    .case-step-meta .case-q {
+      font-family: "Noto Serif TC", serif;
+      font-size: 18px;
+      color: var(--navy-900);
+      line-height: 1.3;
+    }
+    .case-step-body { padding: 20px; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 4px 0 14px;
+    }
+    .stat-tile {
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+    }
+    .stat-label { font-size: 11px; font-weight: 800; color: var(--soft-muted); margin-bottom: 4px; }
+    .stat-val {
+      font-family: "Noto Serif TC", serif;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--navy-900);
+    }
+    .stat-val.sm { font-size: 18px; }
+
+    .connector-arrow {
+      text-align: center;
+      font-size: 22px;
+      color: var(--gold);
+      margin: 8px 0;
+      line-height: 1;
+    }
+
+    .case-banner {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      border-left: 6px solid var(--blue);
+      background: linear-gradient(135deg, var(--blue-soft), rgba(255,255,255,.92));
+      margin-bottom: 18px;
+    }
+    .case-banner .ci {
+      width: 50px; height: 50px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 25px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    .case-banner h3 {
+      margin: 0 0 4px;
+      font-family: "Noto Serif TC", serif;
+      font-size: 19px;
+      color: var(--navy-900);
+    }
+    .case-banner p { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+    /* summary tiles */
+    .summary-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 4px 0 14px;
+    }
+    .sum-tile {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+    }
+    .sum-step { font-size: 11px; font-weight: 900; letter-spacing: .04em; margin-bottom: 4px; }
+    .sum-q { font-size: 12px; color: var(--soft-muted); margin-bottom: 6px; }
+    .sum-a { font-family: "Noto Serif TC", serif; font-size: 17px; color: var(--navy-900); line-height: 1.3; }
+
+    /* action board */
+    .action-board {
+      padding: 28px;
+      margin-top: 28px;
+      background:
+        linear-gradient(135deg, rgba(10,22,40,.97), rgba(23,55,95,.96)),
+        radial-gradient(circle at top right, rgba(200,169,110,.22), transparent 20rem);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+    .action-board h2 { color: white; margin-bottom: 8px; }
+    .action-board p { color: rgba(255,255,255,.72); margin: 0 0 20px; }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .action {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+    }
+    .action strong {
+      display: block;
+      color: #f0dcae;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .action span {
+      display: block;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer strong { color: var(--navy-900); }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid,
+      .section-top,
+      .notice,
+      .callout,
+      .case-banner,
+      .action-grid,
+      .stat-row,
+      .summary-tiles {
+        grid-template-columns: 1fr;
+      }
+      .hero-panel { max-width: 520px; }
+      .cards.two, .cards.three { grid-template-columns: 1fr; }
+      .section-no { width: 50px; height: 50px; font-size: 22px; }
+      .timeline-header { display: block; }
+      .htab-row { grid-template-columns: repeat(2, 1fr); }
+      .callout { grid-template-columns: 44px 1fr; }
+      .case-banner { grid-template-columns: 56px 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .hero-inner, .wrap, main, .footer {
+        width: min(100% - 28px, var(--max));
+      }
+      .hero { padding: 46px 0 34px; }
+      .hero-grid { gap: 24px; }
+      .hero-panel,
+      .glass-card,
+      .section,
+      .timeline,
+      .notice,
+      .action-board {
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .metric-grid { grid-template-columns: 1fr; }
+      .rail { grid-template-columns: repeat(4, minmax(210px, 82vw)); }
+      .nav { width: calc(100% - 28px); }
+      h1 { letter-spacing: -.03em; }
+    }
+
+    @media print {
+      body { background: white; }
+      .note-site-bar { display: none; }
+      .nav-shell { display: none; }
+      .hero, .action-board {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section, .timeline, .notice, .glass-card { box-shadow: none; }
+      .topic-card, .case-step { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="index.html">← 管理筆記</a>
+      <span>|</span>
+      <a href="../index.html">首頁</a>
+      <a href="../about.html">關於我</a>
+      <a href="../notes/index.html">海事筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="stats-business-application.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+      <a href="stats-business-application.en.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+<div class="page">
+
+  <!-- ════════ HERO ════════ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow"><span>Statistics for Business</span><span class="eyebrow-sep" aria-hidden="true">•</span><span>商業統計學</span><span class="eyebrow-sep" aria-hidden="true">•</span><span class="eyebrow-note">Reay's Note</span></div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>統計學重點筆記<br>相關 · 迴歸 · 假說檢定</h1>
+          <p class="subtitle">
+            從變數之間的關聯，到建立預測模型，再到驗證結果是否可信——
+            一份串連統計核心概念與商業決策應用的視覺化學習筆記。
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="筆記概覽">
+          <div class="hero-panel-title">筆記概覽</div>
+          <div class="hero-facts">
+            <div class="fact"><span>📊</span><div>三大主題：相關分析、簡單線性迴歸、假說檢定</div></div>
+            <div class="fact"><span>💼</span><div>每個概念皆搭配行銷、金融、零售等商業應用案例</div></div>
+            <div class="fact"><span>🧭</span><div>閱讀方式：先讀核心概念，再看商業應用，最後看綜合案例</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════ NAV ════════ -->
+  <div class="nav-shell">
+    <nav class="nav" aria-label="頁面導覽">
+      <a href="#overview">重點概覽</a>
+      <a href="#flow">分析流程</a>
+      <a href="#correlation">相關分析</a>
+      <a href="#regression">迴歸分析</a>
+      <a href="#hypothesis">假說檢定</a>
+      <a href="#case">綜合案例</a>
+      <a href="#actions">決策提醒</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ════════ OVERVIEW ════════ -->
+    <section id="overview" class="summary-grid" aria-label="概覽">
+      <div class="glass-card">
+        <div class="kicker">Executive Summary</div>
+        <h2 class="lead-title">統計分析的核心：從資料洞察到商業行動</h2>
+        <p class="lead-copy">
+          統計分析不只是計算數字，而是一條從「觀察關聯」到「量化影響」再到「驗證可信度」的決策路徑。
+          相關分析告訴我們變數之間有沒有關係；迴歸分析把關係量化成可預測的模型；假說檢定則確認結果並非隨機偶然。
+          三者結合，才能將資料轉化為值得行動的商業洞察。
+        </p>
+      </div>
+
+      <div class="glass-card">
+        <div class="metric-grid">
+          <div class="metric"><strong>3</strong><span>核心統計主題</span></div>
+          <div class="metric"><strong>r</strong><span>相關係數 −1 到 +1</span></div>
+          <div class="metric"><strong>R²</strong><span>迴歸模型解釋力</span></div>
+          <div class="metric"><strong>0.05</strong><span>常用顯著水準 α</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ PRACTICAL NOTICE ════════ -->
+    <section class="notice" aria-label="實務提示">
+      <div class="notice-icon">💡</div>
+      <div>
+        <h2>學習與應用提示</h2>
+        <ul>
+          <li><strong>相關 ≠ 因果：</strong>相關分析只說明變數一起變動，不代表其中一個造成另一個，需額外研究確認因果。</li>
+          <li><strong>先看圖、再看數字：</strong>解讀 R² 前務必檢查殘差圖；只看 p 值或 R² 數字容易誤判模型。</li>
+          <li><strong>統計顯著 ≠ 商業重要：</strong>即使 p 值顯著，仍需評估差異是否夠大、是否值得投入資源。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ════════ ANALYSIS FLOW ════════ -->
+    <section id="flow" class="timeline" aria-label="分析流程">
+      <div class="timeline-header">
+        <div>
+          <div class="kicker">The Analytical Workflow</div>
+          <h2>統計分析的四步流程</h2>
+          <p>從提出問題到形成決策，每個步驟回答一個關鍵問題。</p>
+        </div>
+      </div>
+
+      <div class="rail">
+        <article class="rail-item">
+          <div class="rail-step">步驟一</div>
+          <p>用相關分析觀察兩個變數是否一起變動，判斷是否值得進一步建模。</p>
+          <span class="rail-tag">相關分析 · 有關聯嗎？</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">步驟二</div>
+          <p>建立簡單線性迴歸模型，把關聯量化成可預測的方程式。</p>
+          <span class="rail-tag">迴歸分析 · 影響多大？</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">步驟三</div>
+          <p>透過假說檢定與 p 值，確認觀察到的效果具有統計顯著性。</p>
+          <span class="rail-tag">假說檢定 · 結果可信嗎？</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">步驟四</div>
+          <p>結合實質假說，評估統計結果是否真正值得轉化為商業行動。</p>
+          <span class="rail-tag">實質評估 · 值得行動嗎？</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════ CH 1 : CORRELATION ════════ -->
+    <section id="correlation" class="section">
+      <div class="section-top">
+        <div class="section-no">01</div>
+        <div>
+          <div class="kicker">Correlation Analysis</div>
+          <h2>相關分析</h2>
+          <p class="section-sub">相關分析用統計方法衡量兩個定量變數之間的線性關聯程度與方向，是所有分析的起點。</p>
+        </div>
+      </div>
+
+      <div class="sub-head">核心概念</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">定義</span>
+          <h3>相關係數 r</h3>
+          <ul class="point-list">
+            <li>衡量兩個定量變數之間的線性關聯程度</li>
+            <li>範圍：−1 到 +1</li>
+            <li>r = +1 完全正相關、r = −1 完全負相關、r = 0 無線性關係</li>
+          </ul>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">三種類型</span>
+          <h3>方向與強度</h3>
+          <ul class="point-list">
+            <li>正相關：兩變數同方向變化（r 接近 +1）</li>
+            <li>負相關：兩變數反方向變化（r 接近 −1）</li>
+            <li>零相關：沒有明顯線性關係（r 接近 0）</li>
+          </ul>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">變數角色</span>
+          <h3>自變數 vs. 依變數</h3>
+          <ul class="point-list">
+            <li>自變數 X：可能的原因，通常放在 x 軸</li>
+            <li>依變數 Y：被預測的結果，通常放在 y 軸</li>
+            <li>因果關係需額外研究確認，相關只是起點</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">⚠️</div>
+        <div><strong>核心警示：相關不等於因果關係。</strong>兩個變數共同變化，不代表其中一個造成另一個改變——可能存在第三方因素，或純屬巧合。</div>
+      </div>
+
+      <div class="sub-head">商業應用</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">行銷</span>
+          <h3>廣告投放與銷售</h3>
+          <ul class="point-list">
+            <li>分析廣告支出與銷售收入之間的線性相關</li>
+            <li>r 接近 +1 → 廣告效益顯著，值得持續投入</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>電商公司發現 Google Ads 支出與當週訂單量 r = 0.87，決定提高預算配置。</div>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">金融</span>
+          <h3>股票與市場指數</h3>
+          <ul class="point-list">
+            <li>分析個股與大盤指數的相關程度（Beta 概念）</li>
+            <li>負相關資產組合可降低整體投資組合風險</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>基金經理人發現兩支股票 r = −0.73，將其配對以降低波動風險。</div>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">零售</span>
+          <h3>店面因素與銷售額</h3>
+          <ul class="point-list">
+            <li>分析人流量、競爭者數量與銷售額的相關</li>
+            <li>找出最值得投資的門市改善項目</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>連鎖超市發現人流量與營業額 r = 0.91，優先在人流密集區展店。</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════ CH 2 : REGRESSION ════════ -->
+    <section id="regression" class="section">
+      <div class="section-top">
+        <div class="section-no">02</div>
+        <div>
+          <div class="kicker">Simple Linear Regression</div>
+          <h2>簡單線性迴歸</h2>
+          <p class="section-sub">迴歸分析把變數之間的關係量化成一條方程式，讓我們能用已知資料預測未知數值。</p>
+        </div>
+      </div>
+
+      <div class="sub-head">核心概念</div>
+      <div class="cards three">
+        <article class="topic-card teal">
+          <span class="badge teal">迴歸方程式</span>
+          <h3>機率性模型</h3>
+          <span class="formula">Yᵢ = α + βXᵢ + εᵢ</span>
+          <ul class="point-list">
+            <li>α：y 截距（真實但未觀察到）</li>
+            <li>β：斜率（每單位 X 對 Y 的影響）</li>
+            <li>εᵢ：誤差項（無法解釋的隨機因素）</li>
+          </ul>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">模型評估</span>
+          <h3>R-squared（R²）</h3>
+          <span class="formula">R² = r²　範圍：0 → 1</span>
+          <ul class="point-list">
+            <li>衡量自變數能解釋多少依變數的變異</li>
+            <li>R² &lt; 0.5 通常被視為解釋力不足</li>
+            <li>R² 接近 1 表示模型配適良好</li>
+          </ul>
+        </article>
+
+        <article class="topic-card amber">
+          <span class="badge amber">解讀法則</span>
+          <h3>黃金組合</h3>
+          <ul class="point-list">
+            <li>先檢查殘差圖，再解讀 R²</li>
+            <li>低 p 值 + 高 R² → 模型最具解釋力</li>
+            <li>複雜行為領域，低 R² 仍可能有研究價值</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout blue">
+        <div class="callout-icon">📈</div>
+        <div><strong>殘差圖判讀：</strong>理想殘差圖應隨機散布、無規律；若出現曲線、漏斗形或系統性偏向，代表模型可能有偏誤，此時 R² 數值不可直接信任。</div>
+      </div>
+
+      <div class="sub-head">商業應用</div>
+      <div class="cards three">
+        <article class="topic-card amber">
+          <span class="badge amber">業務預測</span>
+          <h3>銷售量預測</h3>
+          <ul class="point-list">
+            <li>以廣告費用 X 預測下季銷售量 Y</li>
+            <li>β 係數顯示每增加 1 元廣告費帶來多少銷售額</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>品牌商建立 SLR 模型，每投入 1 萬元廣告費可預測增加約 4.2 萬元銷售額。</div>
+        </article>
+
+        <article class="topic-card coral">
+          <span class="badge coral">房產</span>
+          <h3>資產估值</h3>
+          <ul class="point-list">
+            <li>以房屋坪數、地點評分預測市場售價</li>
+            <li>R² 高表示這些變數能解釋大部分價格差異</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>不動產公司用坪數作為 X 建立迴歸線，估算合理售價，R² = 0.82。</div>
+        </article>
+
+        <article class="topic-card green">
+          <span class="badge green">物流</span>
+          <h3>運輸成本預測</h3>
+          <ul class="point-list">
+            <li>以貨物重量 X 預測運輸費用 Y</li>
+            <li>搭配 R² 評估重量是否為費用的主要決定因素</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>物流業者建立迴歸方程式，自動報價系統依重量即時計算估價。</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════ CH 3 : HYPOTHESIS TESTING ════════ -->
+    <section id="hypothesis" class="section">
+      <div class="section-top">
+        <div class="section-no">03</div>
+        <div>
+          <div class="kicker">Hypothesis Testing</div>
+          <h2>假說檢定</h2>
+          <p class="section-sub">假說檢定用樣本資料判斷是否有足夠證據拒絕虛無假說，確認觀察到的效果並非隨機偶然。</p>
+        </div>
+      </div>
+
+      <div class="sub-head">假說類型與 p 值</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">三種類型</span>
+          <h3>假說分類</h3>
+          <ul class="point-list">
+            <li>研究假說：研究者對結果的初步預測</li>
+            <li>統計假說：以數學形式（H₀ / Hₐ）表達</li>
+            <li>實質假說：結果是否對商業決策有實際價值</li>
+          </ul>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">H₀ vs. Hₐ</span>
+          <h3>虛無與對立假說</h3>
+          <ul class="point-list">
+            <li>H₀（虛無假說）：現狀不變，沒有新變化</li>
+            <li>Hₐ（對立假說）：有新變化或研究者的新主張</li>
+            <li>檢定只說「不拒絕 H₀」，不說「接受 H₀」</li>
+          </ul>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">p 值判斷</span>
+          <h3>決策規則</h3>
+          <ul class="point-list">
+            <li>p 值 ≤ α → 拒絕 H₀（通常 α = 0.05）</li>
+            <li>p 值 &gt; α → 不拒絕 H₀</li>
+            <li>記憶口訣：P low, null go</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sub-head">兩種錯誤</div>
+      <div class="cards two">
+        <article class="topic-card coral">
+          <span class="badge coral">Type I Error</span>
+          <h3>第一型錯誤（偽陽性）</h3>
+          <ul class="point-list">
+            <li>錯誤地拒絕了真實的 H₀</li>
+            <li>發生機率 = α（顯著水準）</li>
+            <li>比喻：把無辜的人誤判為有罪</li>
+          </ul>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">Type II Error</span>
+          <h3>第二型錯誤（偽陰性）</h3>
+          <ul class="point-list">
+            <li>未能拒絕一個錯誤的 H₀</li>
+            <li>發生機率 = β；檢定力 Power = 1 − β</li>
+            <li>比喻：讓真正有罪的人逃過判決</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sub-head">HTAB 假說檢定流程</div>
+      <div class="htab-row">
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--blue);">H</div>
+          <div class="htab-name">建立假說</div>
+          <div class="htab-body">設定 H₀ 與 Hₐ，明確定義要檢定的主張</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--teal);">T</div>
+          <div class="htab-name">進行檢定</div>
+          <div class="htab-body">選擇方法、設定 α、蒐集樣本並分析</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--purple);">A</div>
+          <div class="htab-name">統計行動</div>
+          <div class="htab-body">依 p 值決定拒絕或不拒絕 H₀</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--green);">B</div>
+          <div class="htab-name">商業意涵</div>
+          <div class="htab-body">將統計結論轉換為商業決策行動</div>
+        </div>
+      </div>
+
+      <div class="sub-head">商業應用</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">行銷實驗</span>
+          <h3>A/B 測試</h3>
+          <ul class="point-list">
+            <li>H₀：新版首頁與舊版點擊率無差異</li>
+            <li>p 值 &lt; 0.05 → 拒絕 H₀，新版效果顯著</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>電商平台測試新版結帳流程，p = 0.03，決定全面上線新設計。</div>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">品質管理</span>
+          <h3>製程品質檢驗</h3>
+          <ul class="point-list">
+            <li>H₀：產品平均重量符合規格（μ = 500g）</li>
+            <li>雙尾檢定，任一方向偏差皆需處理</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>食品廠抽樣檢測 500g 包裝，p = 0.01 → 拒絕 H₀，機器需重新校正。</div>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">市場策略</span>
+          <h3>市場占有率檢驗</h3>
+          <ul class="point-list">
+            <li>H₀：市場占有率 ≤ 18%（行銷活動無效）</li>
+            <li>右尾單尾檢定，只關心是否「增加」</li>
+          </ul>
+          <div class="scenario"><strong>情境：</strong>醫療設備公司投入行銷後，p = 0.02 → 拒絕 H₀，市場份額顯著提升。</div>
+        </article>
+      </div>
+
+      <div class="callout teal">
+        <div class="callout-icon">🎯</div>
+        <div><strong>統計顯著 ≠ 商業重要。</strong>即使 p 值顯著，仍需評估差異是否夠大、是否值得投入資源——這才是實質假說（Substantive Hypothesis）的核心問題。</div>
+      </div>
+    </section>
+
+    <!-- ════════ INTEGRATED CASE ════════ -->
+    <section id="case" class="section">
+      <div class="section-top">
+        <div class="section-no">04</div>
+        <div>
+          <div class="kicker">Integrated Case Study</div>
+          <h2>綜合案例：串連三大步驟</h2>
+          <p class="section-sub">以一個電商廣告預算決策案例，完整走過相關分析、迴歸分析與假說檢定的決策路徑。</p>
+        </div>
+      </div>
+
+      <div class="case-banner">
+        <div class="ci">🛒</div>
+        <div>
+          <h3>商業情境：電商平台廣告預算決策</h3>
+          <p>某電商平台行銷團隊想知道：增加 Google Ads 廣告預算，是否真的能有效提升銷售額？並想建立模型來預測最佳投放金額。</p>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="case-step">
+        <div class="case-step-head blue">
+          <div class="case-num blue">1</div>
+          <div class="case-step-meta">
+            <div class="case-method">相關分析 Correlation</div>
+            <div class="case-q">廣告支出與銷售額，有關聯嗎？</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="stat-row">
+            <div class="stat-tile"><div class="stat-label">相關係數 r</div><div class="stat-val">0.89</div></div>
+            <div class="stat-tile"><div class="stat-label">相關強度</div><div class="stat-val sm">強正相關</div></div>
+            <div class="stat-tile"><div class="stat-label">樣本數</div><div class="stat-val sm">24 個月</div></div>
+          </div>
+          <ul class="point-list">
+            <li>r = 0.89 → 廣告支出與銷售額呈強正相關，兩者同方向變動</li>
+            <li>散佈圖確認無明顯非線性趨勢，線性模型適用</li>
+          </ul>
+          <div class="callout blue" style="margin-top:14px;">
+            <div class="callout-icon">✓</div>
+            <div><strong>結論：</strong>廣告支出與銷售額存在強線性關聯（r = 0.89），值得進一步建立迴歸模型量化關係。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Step 2 -->
+      <div class="case-step">
+        <div class="case-step-head teal">
+          <div class="case-num teal">2</div>
+          <div class="case-step-meta">
+            <div class="case-method">迴歸分析 Regression</div>
+            <div class="case-q">廣告每多 1 萬元，銷售額增加多少？</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <span class="formula">Ŷ = 12.5 + 4.2 × X　（單位：萬元）</span>
+          <div class="stat-row">
+            <div class="stat-tile"><div class="stat-label">截距 α</div><div class="stat-val sm">12.5 萬</div></div>
+            <div class="stat-tile"><div class="stat-label">斜率 β</div><div class="stat-val">4.2</div></div>
+            <div class="stat-tile"><div class="stat-label">R²</div><div class="stat-val">0.79</div></div>
+          </div>
+          <ul class="point-list">
+            <li>截距 12.5 萬：即使不投廣告，仍有品牌基礎自然銷售額</li>
+            <li>斜率 4.2：每增加 1 萬元廣告費，預測銷售額增加約 4.2 萬元</li>
+            <li>R² = 0.79：廣告支出能解釋 79% 的銷售額變異，配適良好</li>
+            <li>殘差圖呈隨機散布，無系統性偏誤，模型可信</li>
+          </ul>
+          <div class="scenario"><strong>預測應用：</strong>若下個月廣告預算為 20 萬 → 預測銷售額 = 12.5 + 4.2 × 20 = <strong>96.5 萬元</strong>。</div>
+          <div class="callout teal" style="margin-top:14px;">
+            <div class="callout-icon">✓</div>
+            <div><strong>結論：</strong>每投入 1 萬元廣告費可帶來約 4.2 萬元銷售額增長，ROI 約 4.2 倍。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Step 3 -->
+      <div class="case-step">
+        <div class="case-step-head purple">
+          <div class="case-num purple">3</div>
+          <div class="case-step-meta">
+            <div class="case-method">假說檢定 HTAB</div>
+            <div class="case-q">這個效果，統計上真的存在嗎？</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="htab-row" style="margin-bottom:14px;">
+            <div class="htab-tile">
+              <div class="htab-letter" style="color:var(--blue);">H</div>
+              <div class="htab-name">建立假說</div>
+              <div class="htab-body">H₀：β = 0（廣告無效）<br>Hₐ：β ≠ 0（廣告有效）</div>
+            </div>
+            <div class="htab-tile">
+              <div class="htab-letter" style="color:var(--teal);">T</div>
+              <div class="htab-name">進行檢定</div>
+              <div class="htab-body">α = 0.05<br>雙尾 t 檢定</div>
+            </div>
+            <div class="htab-tile">
+              <div class="htab-letter" style="color:var(--purple);">A</div>
+              <div class="htab-name">統計行動</div>
+              <div class="htab-body">p = 0.0003<br>p &lt; 0.05 → 拒絕 H₀</div>
+            </div>
+            <div class="htab-tile">
+              <div class="htab-letter" style="color:var(--green);">B</div>
+              <div class="htab-name">商業意涵</div>
+              <div class="htab-body">廣告確實顯著影響銷售，建議持續投入</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-tile"><div class="stat-label">p 值</div><div class="stat-val">0.0003</div></div>
+            <div class="stat-tile"><div class="stat-label">顯著水準 α</div><div class="stat-val">0.05</div></div>
+            <div class="stat-tile"><div class="stat-label">檢定結果</div><div class="stat-val sm">拒絕 H₀</div></div>
+          </div>
+          <ul class="point-list">
+            <li>p = 0.0003 遠小於 α = 0.05 → 強烈拒絕 H₀</li>
+            <li>廣告支出對銷售額的正向影響具有統計顯著性，非隨機偶然</li>
+          </ul>
+          <div class="callout" style="margin-top:14px; border-color:var(--purple); background:linear-gradient(135deg,var(--purple-soft),rgba(255,255,255,.9));">
+            <div class="callout-icon" style="background:var(--purple-soft);">✓</div>
+            <div><strong>結論：</strong>β 顯著不為零（p = 0.0003），廣告對銷售的影響在統計上確立。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Final decision -->
+      <div class="case-step">
+        <div class="case-step-head green">
+          <div class="case-num green">決</div>
+          <div class="case-step-meta">
+            <div class="case-method">實質假說評估 Substantive Hypothesis</div>
+            <div class="case-q">這個統計結果，值得採取商業行動嗎？</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="summary-tiles">
+            <div class="sum-tile">
+              <div class="sum-step" style="color:var(--blue);">步驟一 · 相關分析</div>
+              <div class="sum-q">有關聯嗎？</div>
+              <div class="sum-a">r = 0.89，強正相關</div>
+            </div>
+            <div class="sum-tile">
+              <div class="sum-step" style="color:var(--teal);">步驟二 · 迴歸分析</div>
+              <div class="sum-q">影響多大？</div>
+              <div class="sum-a">每 1 萬帶來 4.2 萬銷售</div>
+            </div>
+            <div class="sum-tile">
+              <div class="sum-step" style="color:var(--purple);">步驟三 · 假說檢定</div>
+              <div class="sum-q">結果可信嗎？</div>
+              <div class="sum-a">p = 0.0003，統計顯著</div>
+            </div>
+          </div>
+          <div class="callout teal">
+            <div class="callout-icon">🚀</div>
+            <div><strong>商業決策：</strong>三項統計結果一致支持增加廣告預算。ROI 約 4.2 倍、顯著性強，建議行銷團隊提高 Google Ads 投放，並持續追蹤更新模型。</div>
+          </div>
+          <div class="callout" style="margin-top:10px;">
+            <div class="callout-icon">⚠️</div>
+            <div><strong>注意事項：</strong>統計顯著不等於商業上一定要行動。仍需評估廣告成本是否合理、市場是否飽和、其他行銷管道的機會成本，再做最終預算配置。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ ACTION BOARD ════════ -->
+    <section id="actions" class="action-board">
+      <h2>分析三大鐵則</h2>
+      <p>把下列原則放進每一次資料分析與商業決策的檢查清單中。</p>
+
+      <div class="action-grid">
+        <div class="action">
+          <strong>01｜相關 ≠ 因果</strong>
+          <span>相關分析只說明變數一起變動，建立因果結論前需要實驗設計或更嚴謹的研究。</span>
+        </div>
+        <div class="action">
+          <strong>02｜先看圖、再看數字</strong>
+          <span>解讀 R² 與 p 值前先檢查殘差圖與資料分布，避免被單一數字誤導模型品質。</span>
+        </div>
+        <div class="action">
+          <strong>03｜顯著 ≠ 重要</strong>
+          <span>統計顯著只是門檻，仍需用實質假說評估效果規模、成本效益與策略價值。</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <strong>Reay's Note｜統計學商業應用重點筆記</strong><br>
+    整理：Reay Huang · 管理筆記 · 商業統計學學習整理<br>
+    內容整理：相關分析、簡單線性迴歸、R-squared、假說檢定、p 值、Type I／II 錯誤與商業決策應用。<br>
+    備註：本頁為個人學習與教學整理用途，實際分析仍應依資料情境與專業判斷調整。
+  </footer>
+
+</div>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function resetScrollOnReload() {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!nav || nav.type !== 'reload') return;
+
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('pageshow', resetScrollOnReload);
+    window.addEventListener('load', resetScrollOnReload);
+  </script>
+</body>
+</html>
