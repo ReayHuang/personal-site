@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maritime Radiocommunications and GMDSS Guide | Reay's Note</title>
+  <meta name="description" content="A practical guide to GMDSS and maritime radiocommunications, covering DSC, EPIRB, SART, AIS, SSAS, LRIT, VDR, regulatory logic, survey focus, and common deficiencies." />
+  <meta name="author" content="Reay Huang" />
+  <meta name="keywords" content="GMDSS, SOLAS, maritime radiocommunications, DSC, EPIRB, SART, AIS, SSAS, LRIT, VDR, maritime safety, ship survey" />
+
+  <!-- Open Graph / LinkedIn Preview -->
+  <meta property="og:title" content="Maritime Radiocommunications and GMDSS Guide | Reay's Note" />
+  <meta property="og:description" content="A readable guide to maritime radiocommunications and GMDSS, written for general readers while retaining practical survey points." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Reay's Maritime Notes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh-Hant" href="gmdss-radiocommunications-notes.html" />
+  <link rel="alternate" hreflang="en" href="gmdss-radiocommunications-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="gmdss-radiocommunications-notes.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --bg-soft: #eef5fb;
+      --card: #ffffff;
+      --card-strong: #ffffff;
+      --text: #0f2742;
+      --navy: #0f2742;
+      --slate: #334155;
+      --muted: #64748b;
+      --line: #dbe4ee;
+      --blue: #2563eb;
+      --cyan: #0891b2;
+      --green: #16a34a;
+      --yellow: #d97706;
+      --orange: #ea580c;
+      --red: #dc2626;
+      --purple: #7c3aed;
+      --soft-blue: #eaf2ff;
+      --soft-cyan: #ecfeff;
+      --soft-amber: #fff7ed;
+      --soft-red: #fef2f2;
+      --soft-green: #ecfdf3;
+      --shadow: 0 18px 45px rgba(15, 39, 66, 0.10);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.14), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(8, 145, 178, 0.12), transparent 30%),
+        radial-gradient(circle at 40% 100%, rgba(124, 58, 237, 0.06), transparent 35%),
+        var(--bg);
+      color: var(--slate);
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      padding: 78px 0 46px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 -80px 0;
+      height: 160px;
+      background: linear-gradient(180deg, rgba(244, 248, 251, 0), var(--bg));
+      pointer-events: none;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 18px;
+      margin-bottom: 54px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .nav a {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--navy);
+      transform: translateY(-1px);
+      background: var(--soft-blue);
+      border-color: #bfdbfe;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      font-weight: 800;
+      font-size: 0.92rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid #a5f3fc;
+      background: var(--soft-cyan);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      font-size: clamp(2.35rem, 6vw, 5.3rem);
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+      color: var(--navy);
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--navy));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .lead {
+      max-width: 770px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-weight: 800;
+      color: var(--navy);
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #00c5b7, var(--blue));
+      color: #fff;
+      border: 0;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+
+    .hero-card {
+      position: relative;
+      align-self: end;
+      width: 100%;
+      max-width: 380px;
+      margin-left: auto;
+      padding: 20px 22px 22px;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 18px 45px rgba(15, 39, 66, 0.08);
+      overflow: hidden;
+    }
+
+    .hero-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .radar {
+      position: relative;
+      width: min(220px, 100%);
+      aspect-ratio: 1 / 1;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      border: 1px solid #cbd5e1;
+      background:
+        radial-gradient(circle at center, #ffffff 0%, #eef2ff 100%),
+        repeating-radial-gradient(circle, rgba(15, 39, 66, 0.07) 0 1px, transparent 1px 52px),
+        conic-gradient(from 90deg, rgba(8, 145, 178, 0.18), rgba(37, 99, 235, 0.04), transparent 42%, rgba(8, 145, 178, 0.18));
+      box-shadow:
+        inset 0 0 0 6px #ffffff,
+        inset 0 0 28px rgba(8, 145, 178, 0.06),
+        0 10px 28px rgba(15, 39, 66, 0.08);
+    }
+
+    .radar::before,
+    .radar::after {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .radar::before {
+      width: 14px;
+      height: 14px;
+      background: var(--cyan);
+      box-shadow: 0 0 22px var(--cyan);
+    }
+
+    .radar::after {
+      width: 74%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      transform-origin: left center;
+      animation: sweep 7s linear infinite;
+    }
+
+    @keyframes sweep {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .signal-dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 0 0 20px var(--yellow);
+    }
+
+    .d1 { left: 32%; top: 23%; }
+    .d2 { left: 62%; top: 38%; background: var(--green); box-shadow: 0 0 20px var(--green); }
+    .d3 { left: 42%; top: 72%; background: var(--blue); box-shadow: 0 0 20px var(--blue); }
+
+    .note-box {
+      border: 1px solid #fed7aa;
+      background: var(--soft-amber);
+      padding: 16px;
+      border-radius: 18px;
+      color: #92400e;
+      font-size: 0.95rem;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .hero-highlights__label {
+      grid-column: 1 / -1;
+      margin: 0 0 2px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .highlight {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.98rem;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .highlight span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    main {
+      position: relative;
+      padding: 18px 0 80px;
+      z-index: 2;
+    }
+
+    section {
+      padding: 56px 0;
+      scroll-margin-top: 18px;
+    }
+
+    .section-head {
+      max-width: 790px;
+      margin-bottom: 28px;
+    }
+
+    .kicker {
+      color: var(--cyan);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      color: var(--navy);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: var(--navy);
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(234, 242, 255, 0.5), transparent 40%);
+      pointer-events: none;
+    }
+
+    .card > * {
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #bfdbfe;
+      box-shadow: 0 22px 50px rgba(15, 39, 66, 0.12);
+    }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--soft-blue);
+      border: 1px solid #bfdbfe;
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--soft-blue);
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .quote {
+      margin: 24px 0;
+      border-radius: var(--radius);
+      border: 1px solid #a5f3fc;
+      background: linear-gradient(135deg, var(--soft-cyan), var(--soft-blue));
+      padding: 24px;
+      color: var(--navy);
+      font-weight: 750;
+      font-size: 1.08rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td {
+      padding: 16px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: #102a45;
+    }
+
+    td {
+      color: var(--slate);
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fbff;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td strong {
+      color: var(--navy);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .flow-step {
+      position: relative;
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      min-height: 150px;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cyan);
+      font-weight: 900;
+      z-index: 4;
+    }
+
+    .step-no {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: var(--soft-cyan);
+      color: var(--cyan);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .time-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .time-label {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 18px;
+      background: var(--soft-cyan);
+      border: 1px solid #a5f3fc;
+      color: var(--cyan);
+      font-weight: 900;
+      min-height: 72px;
+    }
+
+    .time-content {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .equipment-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      min-height: 265px;
+      transition: .22s ease;
+    }
+
+    .equipment-card:hover {
+      transform: translateY(-4px);
+      background: #fff;
+      border-color: #a5f3fc;
+      box-shadow: 0 22px 50px rgba(15, 39, 66, 0.12);
+    }
+
+    .equipment-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .equipment-code {
+      font-weight: 950;
+      font-size: 1.6rem;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: .78rem;
+      font-weight: 900;
+      color: #fff;
+      background: var(--cyan);
+      white-space: nowrap;
+    }
+
+    .pill.green { background: var(--green); }
+    .pill.blue { background: var(--blue); }
+    .pill.yellow { background: var(--yellow); }
+    .pill.orange { background: var(--orange); }
+    .pill.purple { background: var(--purple); }
+
+    .mini-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .mini-list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .mini-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.74em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid #bfdbfe;
+      background: var(--soft-blue);
+      color: var(--slate);
+    }
+
+    .callout .mark {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #bfdbfe;
+      font-size: 1.5rem;
+    }
+
+    .callout h3 {
+      color: var(--navy);
+    }
+
+    .callout--warn {
+      border-color: #fed7aa;
+      background: var(--soft-amber);
+    }
+
+    .callout--warn .mark {
+      border-color: #fed7aa;
+    }
+
+    .callout--ok {
+      border-color: #bbf7d0;
+      background: var(--soft-green);
+    }
+
+    .callout--ok .mark {
+      border-color: #bbf7d0;
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .check-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 13px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .check-item:hover {
+      transform: translateY(-2px);
+      border-color: #bfdbfe;
+      box-shadow: 0 18px 42px rgba(15, 39, 66, 0.11);
+    }
+
+    .check {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-green);
+      color: var(--green);
+      font-weight: 950;
+      border: 1px solid #bbf7d0;
+    }
+
+    .footer {
+      padding: 36px 0 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner strong {
+      color: var(--navy);
+    }
+
+    .small {
+      font-size: .92rem;
+    }
+
+    .disclaimer {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+
+
+    /* ===== Chapter Separation: added for clearer online reading ===== */
+    .chapter-divider {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 86px auto 32px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .chapter-divider::before,
+    .chapter-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(8, 145, 178, 0.28), rgba(37, 99, 235, 0.18), transparent);
+    }
+
+    .chapter-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #a5f3fc;
+      background: linear-gradient(135deg, var(--soft-cyan), var(--soft-blue));
+      color: #0e7490;
+      font-weight: 900;
+      font-size: 0.84rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: var(--shadow);
+    }
+
+    section.chapter-section {
+      padding: 0 0 18px;
+      scroll-margin-top: 28px;
+    }
+
+    section.chapter-section > .container {
+      position: relative;
+      padding: 42px 36px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    section.chapter-section > .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
+      opacity: 0.92;
+    }
+
+    section.chapter-section > .container::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      right: -180px;
+      top: -180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(8, 145, 178, 0.08), transparent 68%);
+      pointer-events: none;
+    }
+
+    section.chapter-section > .container > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    section.chapter-section .section-head {
+      padding-bottom: 22px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section.chapter-section .section-head:has(+ .chapter-note) {
+      margin-bottom: 20px;
+    }
+
+    section.chapter-section .section-head .kicker {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid #a5f3fc;
+      background: var(--soft-cyan);
+      margin-bottom: 14px;
+    }
+
+    .chapter-note {
+      margin: 0 0 32px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      border-left: 5px solid var(--blue);
+      background: var(--soft-blue);
+      color: var(--slate);
+    }
+
+    section.chapter-section > .container > .grid-3,
+    section.chapter-section > .container > .grid-2,
+    section.chapter-section > .container > .equipment-grid,
+    section.chapter-section > .container > .check-grid,
+    section.chapter-section > .container > .table-wrap,
+    section.chapter-section > .container > .note-figure,
+    section.chapter-section > .container > .flow,
+    section.chapter-section > .container > .timeline,
+    section.chapter-section > .container > .quote,
+    section.chapter-section > .container > .callout {
+      margin-bottom: 28px;
+    }
+
+    .note-figure {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      padding: 16px 18px 14px;
+      overflow: hidden;
+    }
+
+    .note-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .note-figure figcaption {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    section.chapter-section > .container > *:last-child {
+      margin-bottom: 0;
+    }
+
+    .chapter-note strong {
+      color: var(--navy);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2,
+      .equipment-grid,
+      .check-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-step:not(:last-child)::after {
+        content: "↓";
+        right: 50%;
+        top: auto;
+        bottom: -19px;
+        transform: translateX(50%);
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero-card {
+        align-self: auto;
+        max-width: none;
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .hero-card,
+      .card,
+      .equipment-card {
+        padding: 20px;
+      }
+
+      .stats,
+      .hero-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .time-item {
+        grid-template-columns: 1fr;
+      }
+
+
+
+      .chapter-divider {
+        width: min(100% - 24px, var(--max));
+        margin: 58px auto 24px;
+        gap: 10px;
+      }
+
+      .chapter-label {
+        font-size: .76rem;
+        padding: 7px 11px;
+        letter-spacing: .04em;
+      }
+
+      section.chapter-section > .container {
+        padding: 32px 20px;
+        border-radius: 24px;
+      }
+
+
+      h1 {
+        font-size: 2.55rem;
+      }
+
+      .nav a {
+        font-size: .85rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: #102033;
+      }
+
+      .nav,
+      .hero-actions,
+      .radar {
+        display: none;
+      }
+
+      .card,
+      .equipment-card,
+      .table-wrap,
+      .callout,
+      .quote,
+      .hero-card {
+        box-shadow: none;
+        background: #fff;
+        border-color: #d7dee8;
+      }
+
+      .muted,
+      td {
+        color: #435061;
+      }
+
+      a {
+        color: #102033;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Note</a>
+      <span>|</span>
+      <a href="../../index.en.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Note</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="gmdss-radiocommunications-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+      <a href="gmdss-radiocommunications-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+    </nav>
+  </div>
+  <div class="page">
+    <header class="hero">
+      <div class="container">
+        <div class="topbar">
+          <nav class="nav" aria-label="Page navigation">
+            <a href="#overview">Quick View</a>
+            <a href="#equipment">Equipment Map</a>
+            <a href="#non-gmdss">Non-GMDSS</a>
+            <a href="#requirements">Regulatory Logic</a>
+            <a href="#inspection">Survey Focus</a>
+          </nav>
+        </div>
+
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">🚢 Maritime Radiocommunications · GMDSS Guide</div>
+            <h1>Maritime Radiocommunications and <span>GMDSS Guide</span></h1>
+            <p class="lead">
+              Ship radiocommunication equipment is more than a way to talk. Its real value is making sure distress alerts, safety information, search-and-rescue coordination, positioning, and bridge-to-bridge communication still work when a ship is in trouble.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#overview">Read the 3-minute summary</a>
+              <a class="btn" href="#equipment">View equipment functions</a>
+              <a class="btn" href="#inspection">Common survey deficiencies</a>
+            </div>
+
+            <div class="hero-highlights" aria-label="Topics covered in this note">
+              <p class="hero-highlights__label">Topics covered in this note</p>
+              <div class="highlight">
+                <strong>GMDSS Sea Areas</strong>
+                <span>A1 · A2 · A3 · A4</span>
+              </div>
+              <div class="highlight">
+                <strong>Main Equipment Groups</strong>
+                <span>Alerting · Satellite · MSI · EPIRB · SART</span>
+              </div>
+              <div class="highlight">
+                <strong>SOLAS Functional Requirements</strong>
+                <span>Nine radiocommunication functions and survey logic</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="radar" aria-hidden="true">
+              <span class="signal-dot d1"></span>
+              <span class="signal-dot d2"></span>
+              <span class="signal-dot d3"></span>
+            </div>
+            <div class="note-box">
+              <strong>One-line takeaway:</strong><br>
+              GMDSS is not a single device. It is a maritime safety communication network built from ships, coast stations, satellites, rescue coordination centres, and locating equipment.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 01 | Quick View</span></div>
+      <section id="overview" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">01 · Big Picture</div>
+            <h2>Start with three questions: why do ships need this equipment?</h2>
+            <p class="muted">
+              For readers who are not familiar with maritime operations, GMDSS, DSC, EPIRB, and SART can quickly become a wall of acronyms. A better starting point is to understand the safety problem each device is meant to solve.
+            </p>
+          </div>
+            <div class="chapter-note"><strong>Chapter guide:</strong> This section builds the big picture first: instead of memorising acronyms, understand which safety problem each type of equipment solves.</div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">🆘</div>
+              <h3>1. When a ship is in distress, who will know?</h3>
+              <p class="muted">
+                DSC, satellite ship earth stations, and EPIRB mainly handle distress alerting. They help shore-based rescue centres and nearby ships quickly identify which ship is in distress, where it is, and what help may be needed.
+              </p>
+              <div class="tag-row">
+                <span class="tag">DSC</span>
+                <span class="tag">Satellite</span>
+                <span class="tag">EPIRB</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="icon">🌐</div>
+              <h3>2. How does a ship receive safety information at sea?</h3>
+              <p class="muted">
+                MSI systems receive navigational warnings, weather forecasts, and safety messages. NAVTEX is common near coasts, EGC is used offshore via satellite, and HF NBDP may be needed for long-range or A4-area coverage.
+              </p>
+              <div class="tag-row">
+                <span class="tag">MSI</span>
+                <span class="tag">NAVTEX</span>
+                <span class="tag">EGC</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="icon">📍</div>
+              <h3>3. How do rescuers find people?</h3>
+              <p class="muted">
+                EPIRB provides distress position information, while SART or AIS-SART helps rescuers locate survival craft or people once they are near the scene. The former sends the distress position; the latter supports final on-scene locating.
+              </p>
+              <div class="tag-row">
+                <span class="tag">COSPAS-SARSAT</span>
+                <span class="tag">Radar SART</span>
+                <span class="tag">AIS-SART</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="quote">
+            The purpose of ship radiocommunication equipment is not to add more machines on board. It is to ensure that a ship can alert, be located, receive safety information, and coordinate search and rescue with shore authorities and nearby vessels during an emergency.
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Equipment category</th>
+                  <th>Plain-language function</th>
+                  <th>Typical equipment</th>
+                  <th>What to remember</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Distress alerting</strong></td>
+                  <td>Send the distress signal out</td>
+                  <td>DSC, satellite ship station, EPIRB</td>
+                  <td>The point is to quickly notify shore rescue units and nearby ships.</td>
+                </tr>
+                <tr>
+                  <td><strong>Safety information reception</strong></td>
+                  <td>Receive navigational and weather warnings</td>
+                  <td>NAVTEX, EGC, HF NBDP</td>
+                  <td>The farther a ship sails from shore, the less it can rely only on coastal systems.</td>
+                </tr>
+                <tr>
+                  <td><strong>Search-and-rescue locating</strong></td>
+                  <td>Help rescuers find the scene</td>
+                  <td>Radar SART, AIS-SART</td>
+                  <td>SART is used for more precise locating once rescuers are near the scene.</td>
+                </tr>
+                <tr>
+                  <td><strong>Navigation and security monitoring</strong></td>
+                  <td>Identify, track, record, and report security alerts</td>
+                  <td>AIS, SSAS, LRIT, VDR</td>
+                  <td>They are usually not GMDSS equipment, but they are still important SOLAS equipment.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 02 | GMDSS Sea Areas</span></div>
+      <section id="sea-areas" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">02 · Sea Areas</div>
+            <h2>GMDSS sea areas: not geographic labels, but communication coverage</h2>
+            <p class="muted">
+              The difference between A1 and A4 is not simply a line on a chart. It is about which coast stations, satellites, and radio bands a ship can rely on for distress communication.
+            </p>
+          </div>
+            <div class="chapter-note"><strong>Chapter guide:</strong> Sea areas are not just geographic zones. They are defined by coast-station and satellite communication coverage, which then drives the equipment needed on board.</div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sea area</th>
+                  <th>Simple explanation</th>
+                  <th>Main communication capability</th>
+                  <th>Equipment logic</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>A1</strong></td>
+                  <td>Near coast stations, covered by continuous VHF DSC watchkeeping</td>
+                  <td>VHF</td>
+                  <td>Nearshore area, but still requires distress alerting, MSI, EPIRB, and search-and-rescue locating equipment.</td>
+                </tr>
+                <tr>
+                  <td><strong>A2</strong></td>
+                  <td>Beyond A1, but still within MF DSC coast-station coverage</td>
+                  <td>MF + VHF</td>
+                  <td>Farther than A1, so MF communication capability is added.</td>
+                </tr>
+                <tr>
+                  <td><strong>A3</strong></td>
+                  <td>Beyond A1/A2, but within recognised satellite service coverage</td>
+                  <td>Satellite + MF + VHF</td>
+                  <td>For ocean passages, the key is satellite ship station capability and long-range safety information reception.</td>
+                </tr>
+                <tr>
+                  <td><strong>A4</strong></td>
+                  <td>Outside A1, A2, and A3, often related to polar regions or satellite coverage limits</td>
+                  <td>HF + MF + VHF</td>
+                  <td>Traditional satellite coverage alone may not be enough; HF communication becomes important.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-2" style="margin-top:18px;">
+            <article class="card">
+              <div class="icon">🧭</div>
+              <h3>Memory aid</h3>
+              <p class="muted">
+                A1 relies on VHF, A2 adds MF, A3 relies on satellite service, and A4 requires attention to HF. The farther from coast-station coverage, the more complete the equipment requirements usually become; high-latitude or special areas require particular attention to satellite coverage and HF communication.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">🛰️</div>
+              <h3>Concept to note after 2024</h3>
+              <p class="muted">
+                Actual A3 coverage depends on the recognised satellite service installed on board. For example, traditional Inmarsat and Iridium have different coverage characteristics; Iridium can provide global coverage including polar regions.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 03 | Equipment Map</span></div>
+      <section id="equipment" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">03 · Equipment Atlas</div>
+            <h2>Main GMDSS Equipment Map: What does each device do?</h2>
+            <p class="muted">
+              This is not a complete regulatory checklist. It is a function-based way to understand the equipment quickly. This reading order works well for public sharing because readers can first grasp each device's role, then return to carriage requirements.
+            </p>
+          </div>
+            <div class="chapter-note"><strong>Chapter guide:</strong> This chapter groups GMDSS equipment by function: distress alerting, safety information reception, long-range communication, distress position reporting, and search-and-rescue locating.</div>
+
+          <div class="equipment-grid">
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">DSC</div>
+                <span class="pill">Distress Alert</span>
+              </div>
+              <h3>Digital Selective Calling</h3>
+              <p class="muted">
+                DSC allows ships to receive or send distress alerts automatically, rather than relying only on a person continuously listening to a voice channel.
+              </p>
+              <ul class="mini-list">
+                <li>Can send ship-to-shore and ship-to-ship alerts</li>
+                <li>Distress alerts may include position, identity, and nature of distress</li>
+                <li>Used with VHF, MF, and HF for different ranges</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">VHF / MF / HF</div>
+                <span class="pill blue">Radio</span>
+              </div>
+              <h3>Radio communication on different bands</h3>
+              <p class="muted">
+                VHF suits short-range communication, MF covers farther sea areas, and HF is used for long-range or A4-type areas.
+              </p>
+              <ul class="mini-list">
+                <li>VHF: common for nearshore and ship-to-ship communication</li>
+                <li>MF: important capability for A2 sea areas</li>
+                <li>HF: important backup for long-range and polar-area communication</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">Satellite</div>
+                <span class="pill purple">Ocean Area</span>
+              </div>
+              <h3>Recognised mobile satellite services</h3>
+              <p class="muted">
+                Used for ocean-area communication and distress alerting. Common systems include Inmarsat, Iridium, and BeiDou.
+              </p>
+              <ul class="mini-list">
+                <li>Inmarsat: traditional maritime satellite communication system</li>
+                <li>Iridium: covers polar regions and suits high-latitude operations</li>
+                <li>BeiDou: a recognised system, but coverage area must be checked</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">MSI</div>
+                <span class="pill green">Safety Info</span>
+              </div>
+              <h3>Maritime Safety Information</h3>
+              <p class="muted">
+                MSI includes navigational warnings, weather forecasts, safety messages, and related updates. It keeps ships informed of risks while underway.
+              </p>
+              <ul class="mini-list">
+                <li>NAVTEX: common in coastal areas, 518 kHz</li>
+                <li>EGC: received via satellite for ocean areas</li>
+                <li>HF NBDP: used for A4 or specific areas</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">EPIRB</div>
+                <span class="pill orange">Beacon</span>
+              </div>
+              <h3>Emergency Position-Indicating Radio Beacon</h3>
+              <p class="muted">
+                When a ship is in distress or sinks, EPIRB can be activated automatically or manually and transmit ship identity and position through satellite systems.
+              </p>
+              <ul class="mini-list">
+                <li>Usually routed through the COSPAS-SARSAT system</li>
+                <li>Ship name, identity codes, and flag information must be correctly registered</li>
+                <li>Must not be tied to the ship; it must be able to float free</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">SART</div>
+                <span class="pill yellow">Locate</span>
+              </div>
+              <h3>Search-and-rescue locating equipment</h3>
+              <p class="muted">
+                SART is used to locate survival craft or the distress scene after rescuers are nearby. It may be Radar SART or AIS-SART.
+              </p>
+              <ul class="mini-list">
+                <li>Radar SART: produces a distinctive response on radar</li>
+                <li>AIS-SART: lets nearby AIS equipment see the locating signal</li>
+                <li>Its role is final on-scene locating, not replacing distress alerting</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="callout callout--warn" style="margin-top:20px;">
+            <div class="mark">⚠️</div>
+            <div>
+              <h3>Especially important: EPIRB must not be tied down</h3>
+              <p>
+                EPIRB is designed to send a distress beacon automatically or manually when a ship sinks or is in distress. If it is secured to the ship by a lanyard, tie, or other restraint, it may not float free when the vessel sinks, defeating one of its most important lifesaving functions.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-head" style="margin-top:42px;">
+            <div class="kicker">How EPIRB Works</div>
+            <h2>How does an EPIRB distress signal reach the rescue centre?</h2>
+          </div>
+
+          <div class="flow" aria-label="EPIRB signal flow">
+            <div class="flow-step">
+              <span class="step-no">1</span>
+              <h3>Activation</h3>
+              <p class="muted">The EPIRB is activated manually or automatically and starts transmitting a distress signal.</p>
+            </div>
+            <div class="flow-step">
+              <span class="step-no">2</span>
+              <h3>Satellite reception</h3>
+              <p class="muted">COSPAS-SARSAT satellites receive the 406 MHz beacon.</p>
+            </div>
+            <div class="flow-step">
+              <span class="step-no">3</span>
+              <h3>Data forwarding</h3>
+              <p class="muted">The system forwards ship identity and position data.</p>
+            </div>
+            <div class="flow-step">
+              <span class="step-no">4</span>
+              <h3>Rescue coordination centre</h3>
+              <p class="muted">The MRCC decodes the message and assesses the position.</p>
+            </div>
+            <div class="flow-step">
+              <span class="step-no">5</span>
+              <h3>Search and rescue starts</h3>
+              <p class="muted">Nearby ships, coast stations, aircraft, and maritime rescue units are coordinated.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 04 | Non-GMDSS Equipment</span></div>
+      <section id="non-gmdss" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">04 · Non-GMDSS Equipment</div>
+            <h2>Not GMDSS, but still key equipment for ship safety and security</h2>
+            <p class="muted">
+              AIS, SSAS, LRIT, and VDR are often discussed alongside radio or navigation equipment, but they are not core GMDSS equipment under SOLAS Chapter IV. Understanding this helps avoid mixing up distress communication, navigational safety, security alerting, and accident data recording.
+            </p>
+          </div>
+            <div class="chapter-note"><strong>Chapter guide:</strong> These systems are not core GMDSS equipment under SOLAS Chapter IV, but they remain highly relevant to navigational safety, security, and accident investigation.</div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Equipment</th>
+                  <th>Name</th>
+                  <th>Main purpose</th>
+                  <th>Difference from GMDSS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>AIS</strong></td>
+                  <td>Automatic Identification System</td>
+                  <td>Exchange ship identity, position, course, speed, and collision-avoidance information</td>
+                  <td>Focused on navigational safety, not a distress alerting system.</td>
+                </tr>
+                <tr>
+                  <td><strong>SSAS</strong></td>
+                  <td>Ship Security Alert System</td>
+                  <td>Covertly notify shore authorities during a security threat</td>
+                  <td>Does not broadcast a public distress call to nearby ships and should not create audible or visual alarms on board.</td>
+                </tr>
+                <tr>
+                  <td><strong>LRIT</strong></td>
+                  <td>Long-Range Identification and Tracking</td>
+                  <td>Allows governments or authorised authorities to track ships at long range</td>
+                  <td>Not a broadcast system and not used by nearby ships for real-time collision avoidance.</td>
+                </tr>
+                <tr>
+                  <td><strong>VDR / S-VDR</strong></td>
+                  <td>Voyage Data Recorder</td>
+                  <td>Records navigation, operation, and accident-investigation data</td>
+                  <td>Functions like a ship's black box; its focus is post-accident reconstruction, not distress communication.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="quote">
+            AIS is visible nearby; LRIT is long-range government tracking; SSAS is a covert security alert; VDR preserves data for accident investigation.
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 05 | Regulations and Functional Requirements</span></div>
+      <section id="requirements" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">05 · Regulatory Logic</div>
+            <h2>Regulations do not only ask whether equipment is installed; they ask whether it will really work in distress</h2>
+            <p class="muted">
+              The core of GMDSS is not a list of equipment. It is functional requirements, independent backup, maintenance arrangements, operator qualifications, and test records. This is the mindset to keep during surveys.
+            </p>
+          </div>
+            <div class="chapter-note"><strong>Chapter guide:</strong> Regulations are concerned not only with whether equipment is installed, but whether the nine communication functions can be reliably fulfilled during distress.</div>
+
+          <div class="grid-2">
+            <article class="card">
+              <div class="icon">📜</div>
+              <h3>Main regulatory sources</h3>
+              <p class="muted">
+                Maritime radiocommunications are mainly governed by two systems: the ITU Radio Regulations cover frequencies, ship stations, operator qualifications, and documents; SOLAS Chapter IV covers GMDSS and ship radio equipment requirements.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">🧑‍✈️</div>
+              <h3>Ships covered</h3>
+              <p class="muted">
+                Passenger ships on international voyages are covered regardless of tonnage; cargo ships on international voyages are generally covered from 300 GT upward. Domestic or smaller ships depend on flag-state requirements.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head" style="margin-top:42px;">
+            <h2>Nine functional requirements: what GMDSS must achieve</h2>
+            <p class="muted">
+              The nine functions can be understood as a complete safety communication chain: alerting, receiving, coordination, on-scene communication, locating, safety information, and general communication.
+            </p>
+          </div>
+
+          <div class="check-grid">
+            <div class="check-item">
+              <div class="check">1</div>
+              <div><h3>Ship-to-shore distress alerting</h3><p class="muted">A ship in distress can notify shore-based rescue units.</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">2</div>
+              <div><h3>Shore-to-ship distress alerting</h3><p class="muted">The ship can receive distress-related alerts from shore.</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">3</div>
+              <div><h3>Ship-to-ship distress alerting</h3><p class="muted">Nearby ships can become aware of a distress situation.</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">4</div>
+              <div><h3>Search-and-rescue coordinating communication</h3><p class="muted">Supports coordination among rescue centres, coast stations, and ships.</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">5</div>
+              <div><h3>On-scene communication</h3><p class="muted">Keeps communication at the scene between the distressed ship and rescue units.</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">6</div>
+              <div><h3>Locating signals</h3><p class="muted">Helps rescue units find the distressed ship or survival craft.</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">7</div>
+              <div><h3>Receiving MSI</h3><p class="muted">Receives navigational warnings, weather information, and safety messages.</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">8</div>
+              <div><h3>General radiocommunications</h3><p class="muted">Allows general communication with shore radio systems or networks.</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">9</div>
+              <div><h3>Bridge-to-bridge communication</h3><p class="muted">Ships can communicate directly for navigational safety.</p></div>
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top:22px;">
+            <div class="mark">🔁</div>
+            <div>
+              <h3>Key survey logic: at least two separate and independent means of distress alerting</h3>
+              <p>
+                A ship should not leave port unless it can transmit ship-to-shore distress alerts by at least two separate and independent radiocommunication systems. This is not about buying two identical units; it is about avoiding single-technology or single-system failure.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-head" style="margin-top:42px;">
+            <h2>Three ways to maintain equipment availability</h2>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">🏢</div>
+              <h3>Shore-based maintenance</h3>
+              <p class="muted">Supported by qualified shore-based service providers and common in merchant shipping. The focus is service coverage, repair arrangements, and documentary evidence.</p>
+            </article>
+            <article class="card">
+              <div class="icon">🧰</div>
+              <h3>At-sea electronic maintenance</h3>
+              <p class="muted">The ship must have qualified personnel, tools, test equipment, technical documents, and spares. This is not just a crew member restarting equipment.</p>
+            </article>
+            <article class="card">
+              <div class="icon">📡</div>
+              <h3>Duplication of equipment</h3>
+              <p class="muted">Necessary duplicate equipment is fitted according to sea area, with independent antennas and immediate availability as applicable.</p>
+            </article>
+          </div>
+
+          <div class="table-wrap" style="margin-top:20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sea area</th>
+                  <th>Equipment availability concept</th>
+                  <th>Practical reading</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>A1 / A2</strong></td>
+                  <td>At least one of the three methods</td>
+                  <td>The operating range is closer to shore, but the ship still needs to show that equipment can remain available.</td>
+                </tr>
+                <tr>
+                  <td><strong>A3 / A4</strong></td>
+                  <td>At least two of the three methods</td>
+                  <td>Ocean or special-area operations carry higher risk, so maintenance and backup requirements are stricter.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 06 | Carriage Requirements</span></div>
+      <section id="carriage" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">06 · Carriage Logic</div>
+            <h2>A quick way to read carriage requirements: the farther the ship goes, the more complete its communication capability must be</h2>
+            <p class="muted">
+              The complete carriage requirements for a ship must still be checked against SOLAS, flag-state, and class requirements. As a quick reading, however, the following progression explains the logic.
+            </p>
+          </div>
+            <div class="chapter-note"><strong>Chapter guide:</strong> Carriage requirements can be understood in one sentence: the farther a ship sails, the more complete its communication and backup capability must be.</div>
+
+          <figure class="note-figure" id="gmdss-sea-areas-diagram">
+            <img
+              src="../../assets/images/maritime/gmdss-sea-areas-overview.png"
+              alt="Illustration of GMDSS sea areas A1 to A4, expanding from nearshore VHF coverage to MF, satellite, and HF communication ranges"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              GMDSS sea areas are defined by coast-station and satellite communication coverage, not simply by geographic lines. A1 relies on VHF, A2 adds MF, A3 relies on satellite service, and A4 requires HF and attention to polar or other special coverage limits.
+            </figcaption>
+          </figure>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sea area</th>
+                  <th>Main added capability</th>
+                  <th>Quick View</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>A1</strong></td>
+                  <td>VHF radio + VHF DSC + MSI + EPIRB + survival craft equipment</td>
+                  <td>Nearshore does not mean low risk; distress alerting, MSI, and search-and-rescue locating capability are still required.</td>
+                </tr>
+                <tr>
+                  <td><strong>A1 + A2</strong></td>
+                  <td>Add MF radio / MF DSC</td>
+                  <td>Once beyond nearshore VHF range, MF becomes the main added communication capability.</td>
+                </tr>
+                <tr>
+                  <td><strong>A1 + A2 + A3</strong></td>
+                  <td>Add satellite ship station</td>
+                  <td>For ocean passages, reliable satellite communication and EGC reception are key.</td>
+                </tr>
+                <tr>
+                  <td><strong>A1 + A2 + A3 + A4</strong></td>
+                  <td>Add MF/HF radio + MF/HF DSC</td>
+                  <td>In A4 or areas outside satellite coverage, HF is an important communication method.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-2" style="margin-top:20px;">
+            <article class="card">
+              <div class="icon">📻</div>
+              <h3>Number of two-way VHF radios for survival craft</h3>
+              <p class="muted">
+                Cargo ships of 300-499 GT usually need 2 units; cargo ships of 500 GT and above and all passenger ships usually need 3 units. These are used for communication between survival craft and rescue units after abandonment.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">📍</div>
+              <h3>Number of search-and-rescue locating devices</h3>
+              <p class="muted">
+                Cargo ships of 300-499 GT usually need 1 unit; cargo ships of 500 GT and above and all passenger ships usually need 2 units. These may be Radar SART or AIS-SART.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 07 | Survey and Testing</span></div>
+      <section id="inspection" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">07 · Survey & Deficiencies</div>
+            <h2>Survey focus: the most common problem is often not missing equipment, but unreliable equipment</h2>
+            <p class="muted">
+              Common radio survey deficiencies often involve power supply, antennas, position data, identity settings, records, and crew familiarity. These may look minor, but they can directly affect the success of distress communication.
+            </p>
+          </div>
+            <div class="chapter-note"><strong>Chapter guide:</strong> In survey practice, the problem is often not a total absence of equipment, but unreliable settings, power supply, certificates, records, or maintenance condition.</div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">🔋</div>
+              <h3>Power supply and batteries</h3>
+              <p class="muted">
+                Expired batteries, insufficient capacity, charger faults, or backup power that does not supply displays or printers are common deficiencies. GMDSS equipment must still work when main power fails.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">📡</div>
+              <h3>Antennas and connectors</h3>
+              <p class="muted">
+                Many communication problems are not caused by failed main units, but by broken antennas, corroded connectors, poor insulation, blocked satellite antennas, or outdated antenna layout drawings.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">🛰️</div>
+              <h3>Position and time data</h3>
+              <p class="muted">
+                If a distress alert does not include correct GNSS position and time data, the rescue centre may not be able to assess the distress location accurately. Automatic position input must update reliably.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">🪪</div>
+              <h3>Identity data</h3>
+              <p class="muted">
+                Incorrect MMSI, call sign, ship name, flag code, or EPIRB registration data can make distress information inconsistent with the actual ship.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">📘</div>
+              <h3>Documents and records</h3>
+              <p class="muted">
+                Radio logs, annual tests, five-year shore-based maintenance, battery capacity tests, and service certificates are important evidence that equipment remains available.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">🧑‍✈️</div>
+              <h3>Crew familiarity</h3>
+              <p class="muted">
+                Equipment being on board does not mean it can be operated correctly. Crew should be familiar with test calls, distress procedures, cancelling false alerts, and basic fault recognition.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head" style="margin-top:42px;">
+            <h2>Testing and records: making availability evidence-based</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="time-item">
+              <div class="time-label">Daily</div>
+              <div class="time-content">
+                <h3>Basic condition checks</h3>
+                <p class="muted">Printer condition, DSC internal tests, radio battery status, and similar checks.</p>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="time-label">Weekly</div>
+              <div class="time-content">
+                <h3>Communication capability tests</h3>
+                <p class="muted">MF/HF DSC test calls, main and backup VHF equipment tests, reserve energy tests, and similar checks.</p>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="time-label">Monthly</div>
+              <div class="time-content">
+                <h3>Survival craft and locating equipment checks</h3>
+                <p class="muted">EPIRB self-tests, SART checks, survival craft two-way VHF, battery and antenna checks, and similar items.</p>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="time-label">Annual</div>
+              <div class="time-content">
+                <h3>EPIRB annual test</h3>
+                <p class="muted">406 MHz EPIRB annual test and related certificates.</p>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="time-label">Every five years</div>
+              <div class="time-content">
+                <h3>EPIRB Shore-based maintenance</h3>
+                <p class="muted">Usually aligned with battery replacement and shore-based maintenance certification.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout--ok" style="margin-top:22px;">
+            <div class="mark">✅</div>
+            <div>
+              <h3>A useful survey summary sentence</h3>
+              <p>
+                The point of a radio survey is not only to confirm that equipment exists on board. It is to confirm that it is in the right place, powered correctly, configured with correct identity and position data, understood by the crew, and supported by test and maintenance records showing that it can actually work in distress.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">FINAL | Key Takeaway</span></div>
+      <section id="summary" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">08 · Final Takeaway</div>
+            <h2>Final takeaway in one sentence</h2>
+          </div>
+            <div class="chapter-note"><strong>Chapter guide:</strong> The final section condenses the note into a few points that are easy to share, review, and use for further discussion.</div>
+
+          <div class="quote">
+            The value of GMDSS is not in the equipment names themselves, but in building a reliable communication architecture that can still provide distress alerting, safety information reception, search-and-rescue coordination, and locating across different sea areas and failure scenarios.
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">🆘</div>
+              <h3>For general readers</h3>
+              <p class="muted">Remember this: the purpose of this equipment is to make a ship visible, audible, and findable when something goes wrong.</p>
+            </article>
+            <article class="card">
+              <div class="icon">⚙️</div>
+              <h3>For readers with some maritime background</h3>
+              <p class="muted">Remember this: the regulatory focus is on functions, redundancy, maintenance, operator qualifications, and records, not just an equipment list.</p>
+            </article>
+            <article class="card">
+              <div class="icon">🔍</div>
+              <h3>For survey practice</h3>
+              <p class="muted">Remember this: the most common weak points are often batteries, antennas, positioning, identity data, service certificates, and crew familiarity.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Maritime Radiocommunications and GMDSS | Reay's Note</strong><br>
+          <span class="small">Compiled by Reay Huang · Maritime Survey / Ship Safety Learning Note</span>
+        </div>
+        <p class="disclaimer small">
+          This article is for learning and knowledge sharing. It helps readers understand maritime radiocommunication equipment, GMDSS, and survey focus areas. Actual requirements should always be checked against the latest SOLAS, ITU Radio Regulations, flag-state, competent-authority, and classification-society requirements.
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function resetScrollOnReload() {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!nav || nav.type !== 'reload') return;
+
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('pageshow', resetScrollOnReload);
+    window.addEventListener('load', resetScrollOnReload);
+  </script>
+</body>
+</html>

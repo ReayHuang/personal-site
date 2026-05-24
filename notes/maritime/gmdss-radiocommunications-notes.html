@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>海上無線電通信設備與 GMDSS｜Reay's Note</title>
+  <meta name="description" content="以船級社與船旗國檢驗視角整理 GMDSS、DSC、EPIRB、SART、AIS、SSAS、LRIT、VDR 與常見檢驗缺失，讓非專業讀者快速理解海上無線電通信設備的作用。" />
+  <meta name="author" content="Reay Huang" />
+  <meta name="keywords" content="GMDSS, SOLAS, maritime radiocommunications, DSC, EPIRB, SART, AIS, SSAS, LRIT, VDR, maritime safety, ship survey" />
+
+  <!-- Open Graph / LinkedIn Preview -->
+  <meta property="og:title" content="海上無線電通信設備與 GMDSS｜Reay's Note" />
+  <meta property="og:description" content="一篇給非專業讀者也能看懂、同時保留檢驗實務重點的海上無線電通信設備導讀。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay's Maritime Notes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh-Hant" href="gmdss-radiocommunications-notes.html" />
+  <link rel="alternate" hreflang="en" href="gmdss-radiocommunications-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="gmdss-radiocommunications-notes.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --bg-soft: #eef5fb;
+      --card: #ffffff;
+      --card-strong: #ffffff;
+      --text: #0f2742;
+      --navy: #0f2742;
+      --slate: #334155;
+      --muted: #64748b;
+      --line: #dbe4ee;
+      --blue: #2563eb;
+      --cyan: #0891b2;
+      --green: #16a34a;
+      --yellow: #d97706;
+      --orange: #ea580c;
+      --red: #dc2626;
+      --purple: #7c3aed;
+      --soft-blue: #eaf2ff;
+      --soft-cyan: #ecfeff;
+      --soft-amber: #fff7ed;
+      --soft-red: #fef2f2;
+      --soft-green: #ecfdf3;
+      --shadow: 0 18px 45px rgba(15, 39, 66, 0.10);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.14), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(8, 145, 178, 0.12), transparent 30%),
+        radial-gradient(circle at 40% 100%, rgba(124, 58, 237, 0.06), transparent 35%),
+        var(--bg);
+      color: var(--slate);
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      padding: 78px 0 46px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 -80px 0;
+      height: 160px;
+      background: linear-gradient(180deg, rgba(244, 248, 251, 0), var(--bg));
+      pointer-events: none;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 18px;
+      margin-bottom: 54px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .nav a {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--navy);
+      transform: translateY(-1px);
+      background: var(--soft-blue);
+      border-color: #bfdbfe;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      font-weight: 800;
+      font-size: 0.92rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid #a5f3fc;
+      background: var(--soft-cyan);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      font-size: clamp(2.35rem, 6vw, 5.3rem);
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+      color: var(--navy);
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--navy));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .lead {
+      max-width: 770px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-weight: 800;
+      color: var(--navy);
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #00c5b7, var(--blue));
+      color: #fff;
+      border: 0;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+
+    .hero-card {
+      position: relative;
+      align-self: end;
+      width: 100%;
+      max-width: 380px;
+      margin-left: auto;
+      padding: 20px 22px 22px;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 18px 45px rgba(15, 39, 66, 0.08);
+      overflow: hidden;
+    }
+
+    .hero-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .radar {
+      position: relative;
+      width: min(220px, 100%);
+      aspect-ratio: 1 / 1;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      border: 1px solid #cbd5e1;
+      background:
+        radial-gradient(circle at center, #ffffff 0%, #eef2ff 100%),
+        repeating-radial-gradient(circle, rgba(15, 39, 66, 0.07) 0 1px, transparent 1px 52px),
+        conic-gradient(from 90deg, rgba(8, 145, 178, 0.18), rgba(37, 99, 235, 0.04), transparent 42%, rgba(8, 145, 178, 0.18));
+      box-shadow:
+        inset 0 0 0 6px #ffffff,
+        inset 0 0 28px rgba(8, 145, 178, 0.06),
+        0 10px 28px rgba(15, 39, 66, 0.08);
+    }
+
+    .radar::before,
+    .radar::after {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .radar::before {
+      width: 14px;
+      height: 14px;
+      background: var(--cyan);
+      box-shadow: 0 0 22px var(--cyan);
+    }
+
+    .radar::after {
+      width: 74%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      transform-origin: left center;
+      animation: sweep 7s linear infinite;
+    }
+
+    @keyframes sweep {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .signal-dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 0 0 20px var(--yellow);
+    }
+
+    .d1 { left: 32%; top: 23%; }
+    .d2 { left: 62%; top: 38%; background: var(--green); box-shadow: 0 0 20px var(--green); }
+    .d3 { left: 42%; top: 72%; background: var(--blue); box-shadow: 0 0 20px var(--blue); }
+
+    .note-box {
+      border: 1px solid #fed7aa;
+      background: var(--soft-amber);
+      padding: 16px;
+      border-radius: 18px;
+      color: #92400e;
+      font-size: 0.95rem;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .hero-highlights__label {
+      grid-column: 1 / -1;
+      margin: 0 0 2px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .highlight {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.98rem;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .highlight span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    main {
+      position: relative;
+      padding: 18px 0 80px;
+      z-index: 2;
+    }
+
+    section {
+      padding: 56px 0;
+      scroll-margin-top: 18px;
+    }
+
+    .section-head {
+      max-width: 790px;
+      margin-bottom: 28px;
+    }
+
+    .kicker {
+      color: var(--cyan);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      color: var(--navy);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: var(--navy);
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(234, 242, 255, 0.5), transparent 40%);
+      pointer-events: none;
+    }
+
+    .card > * {
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #bfdbfe;
+      box-shadow: 0 22px 50px rgba(15, 39, 66, 0.12);
+    }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--soft-blue);
+      border: 1px solid #bfdbfe;
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--soft-blue);
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .quote {
+      margin: 24px 0;
+      border-radius: var(--radius);
+      border: 1px solid #a5f3fc;
+      background: linear-gradient(135deg, var(--soft-cyan), var(--soft-blue));
+      padding: 24px;
+      color: var(--navy);
+      font-weight: 750;
+      font-size: 1.08rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td {
+      padding: 16px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: #102a45;
+    }
+
+    td {
+      color: var(--slate);
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fbff;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td strong {
+      color: var(--navy);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .flow-step {
+      position: relative;
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      min-height: 150px;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cyan);
+      font-weight: 900;
+      z-index: 4;
+    }
+
+    .step-no {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: var(--soft-cyan);
+      color: var(--cyan);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .time-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .time-label {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 18px;
+      background: var(--soft-cyan);
+      border: 1px solid #a5f3fc;
+      color: var(--cyan);
+      font-weight: 900;
+      min-height: 72px;
+    }
+
+    .time-content {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .equipment-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      min-height: 265px;
+      transition: .22s ease;
+    }
+
+    .equipment-card:hover {
+      transform: translateY(-4px);
+      background: #fff;
+      border-color: #a5f3fc;
+      box-shadow: 0 22px 50px rgba(15, 39, 66, 0.12);
+    }
+
+    .equipment-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .equipment-code {
+      font-weight: 950;
+      font-size: 1.6rem;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: .78rem;
+      font-weight: 900;
+      color: #fff;
+      background: var(--cyan);
+      white-space: nowrap;
+    }
+
+    .pill.green { background: var(--green); }
+    .pill.blue { background: var(--blue); }
+    .pill.yellow { background: var(--yellow); }
+    .pill.orange { background: var(--orange); }
+    .pill.purple { background: var(--purple); }
+
+    .mini-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .mini-list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .mini-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.74em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid #bfdbfe;
+      background: var(--soft-blue);
+      color: var(--slate);
+    }
+
+    .callout .mark {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #bfdbfe;
+      font-size: 1.5rem;
+    }
+
+    .callout h3 {
+      color: var(--navy);
+    }
+
+    .callout--warn {
+      border-color: #fed7aa;
+      background: var(--soft-amber);
+    }
+
+    .callout--warn .mark {
+      border-color: #fed7aa;
+    }
+
+    .callout--ok {
+      border-color: #bbf7d0;
+      background: var(--soft-green);
+    }
+
+    .callout--ok .mark {
+      border-color: #bbf7d0;
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .check-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 13px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .check-item:hover {
+      transform: translateY(-2px);
+      border-color: #bfdbfe;
+      box-shadow: 0 18px 42px rgba(15, 39, 66, 0.11);
+    }
+
+    .check {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-green);
+      color: var(--green);
+      font-weight: 950;
+      border: 1px solid #bbf7d0;
+    }
+
+    .footer {
+      padding: 36px 0 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner strong {
+      color: var(--navy);
+    }
+
+    .small {
+      font-size: .92rem;
+    }
+
+    .disclaimer {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+
+
+    /* ===== Chapter Separation: added for clearer online reading ===== */
+    .chapter-divider {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 86px auto 32px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .chapter-divider::before,
+    .chapter-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(8, 145, 178, 0.28), rgba(37, 99, 235, 0.18), transparent);
+    }
+
+    .chapter-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #a5f3fc;
+      background: linear-gradient(135deg, var(--soft-cyan), var(--soft-blue));
+      color: #0e7490;
+      font-weight: 900;
+      font-size: 0.84rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: var(--shadow);
+    }
+
+    section.chapter-section {
+      padding: 0 0 18px;
+      scroll-margin-top: 28px;
+    }
+
+    section.chapter-section > .container {
+      position: relative;
+      padding: 42px 36px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    section.chapter-section > .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
+      opacity: 0.92;
+    }
+
+    section.chapter-section > .container::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      right: -180px;
+      top: -180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(8, 145, 178, 0.08), transparent 68%);
+      pointer-events: none;
+    }
+
+    section.chapter-section > .container > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    section.chapter-section .section-head {
+      padding-bottom: 22px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section.chapter-section .section-head:has(+ .chapter-note) {
+      margin-bottom: 20px;
+    }
+
+    section.chapter-section .section-head .kicker {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid #a5f3fc;
+      background: var(--soft-cyan);
+      margin-bottom: 14px;
+    }
+
+    .chapter-note {
+      margin: 0 0 32px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      border-left: 5px solid var(--blue);
+      background: var(--soft-blue);
+      color: var(--slate);
+    }
+
+    section.chapter-section > .container > .grid-3,
+    section.chapter-section > .container > .grid-2,
+    section.chapter-section > .container > .equipment-grid,
+    section.chapter-section > .container > .check-grid,
+    section.chapter-section > .container > .table-wrap,
+    section.chapter-section > .container > .note-figure,
+    section.chapter-section > .container > .flow,
+    section.chapter-section > .container > .timeline,
+    section.chapter-section > .container > .quote,
+    section.chapter-section > .container > .callout {
+      margin-bottom: 28px;
+    }
+
+    .note-figure {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      padding: 16px 18px 14px;
+      overflow: hidden;
+    }
+
+    .note-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .note-figure figcaption {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    section.chapter-section > .container > *:last-child {
+      margin-bottom: 0;
+    }
+
+    .chapter-note strong {
+      color: var(--navy);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2,
+      .equipment-grid,
+      .check-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-step:not(:last-child)::after {
+        content: "↓";
+        right: 50%;
+        top: auto;
+        bottom: -19px;
+        transform: translateX(50%);
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero-card {
+        align-self: auto;
+        max-width: none;
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .hero-card,
+      .card,
+      .equipment-card {
+        padding: 20px;
+      }
+
+      .stats,
+      .hero-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .time-item {
+        grid-template-columns: 1fr;
+      }
+
+
+
+      .chapter-divider {
+        width: min(100% - 24px, var(--max));
+        margin: 58px auto 24px;
+        gap: 10px;
+      }
+
+      .chapter-label {
+        font-size: .76rem;
+        padding: 7px 11px;
+        letter-spacing: .04em;
+      }
+
+      section.chapter-section > .container {
+        padding: 32px 20px;
+        border-radius: 24px;
+      }
+
+
+      h1 {
+        font-size: 2.55rem;
+      }
+
+      .nav a {
+        font-size: .85rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: #102033;
+      }
+
+      .nav,
+      .hero-actions,
+      .radar {
+        display: none;
+      }
+
+      .card,
+      .equipment-card,
+      .table-wrap,
+      .callout,
+      .quote,
+      .hero-card {
+        box-shadow: none;
+        background: #fff;
+        border-color: #d7dee8;
+      }
+
+      .muted,
+      td {
+        color: #435061;
+      }
+
+      a {
+        color: #102033;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="gmdss-radiocommunications-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+      <a href="gmdss-radiocommunications-notes.en.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+  <div class="page">
+    <header class="hero">
+      <div class="container">
+        <div class="topbar">
+          <nav class="nav" aria-label="Page navigation">
+            <a href="#overview">快速理解</a>
+            <a href="#equipment">設備地圖</a>
+            <a href="#non-gmdss">非 GMDSS</a>
+            <a href="#requirements">法規邏輯</a>
+            <a href="#inspection">檢驗重點</a>
+          </nav>
+        </div>
+
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">🚢 Maritime Radiocommunications · GMDSS Guide</div>
+            <h1>海上無線電通信設備與 <span>GMDSS 重點導讀</span></h1>
+            <p class="lead">
+              船上的無線電通信設備，不只是「可以通話」的工具。它真正的價值，是在船舶遇險、需要搜救、必須接收安全資訊或進行船對船避碰溝通時，確保訊息能被正確送出、收到、定位與追蹤。
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#overview">先看 3 分鐘摘要</a>
+              <a class="btn" href="#equipment">查看設備功能</a>
+              <a class="btn" href="#inspection">檢驗常見缺失</a>
+            </div>
+
+            <div class="hero-highlights" aria-label="本筆記涵蓋主題">
+              <p class="hero-highlights__label">本筆記涵蓋主題</p>
+              <div class="highlight">
+                <strong>GMDSS 海區分類</strong>
+                <span>A1 · A2 · A3 · A4</span>
+              </div>
+              <div class="highlight">
+                <strong>主要設備群</strong>
+                <span>告警 · 衛星 · MSI · EPIRB · SART</span>
+              </div>
+              <div class="highlight">
+                <strong>SOLAS 功能要求</strong>
+                <span>九項無線電通信功能與檢驗邏輯</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="radar" aria-hidden="true">
+              <span class="signal-dot d1"></span>
+              <span class="signal-dot d2"></span>
+              <span class="signal-dot d3"></span>
+            </div>
+            <div class="note-box">
+              <strong>一句話理解：</strong><br>
+              GMDSS 不是單一設備，而是一套由船舶、岸台、衛星、搜救中心與定位設備共同組成的海上安全通信網。
+            </div>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 01｜快速理解</span></div>
+      <section id="overview" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">01 · Big Picture</div>
+            <h2>先用三個問題理解：船上為什麼需要這些設備？</h2>
+            <p class="muted">
+              對不熟悉海事的人來說，GMDSS、DSC、EPIRB、SART 很容易變成一串縮寫。比較好的讀法，是先理解它們各自解決什麼安全問題。
+            </p>
+          </div>
+            <div class="chapter-note"><strong>本章導讀：</strong>這一段先建立全貌：不用先背縮寫，而是先理解每種設備解決哪一種安全問題。</div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">🆘</div>
+              <h3>1. 船遇險時，誰會知道？</h3>
+              <p class="muted">
+                DSC、衛星船站與 EPIRB 主要負責遇險告警。它們讓岸上搜救中心與附近船舶能快速知道「哪艘船遇險、位置在哪裡、需要協助」。
+              </p>
+              <div class="tag-row">
+                <span class="tag">DSC</span>
+                <span class="tag">Satellite</span>
+                <span class="tag">EPIRB</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="icon">🌐</div>
+              <h3>2. 船在海上如何收到安全資訊？</h3>
+              <p class="muted">
+                MSI 系統用來接收航行警告、氣象預報與安全訊息。沿岸常見 NAVTEX，遠洋多依靠 EGC，特定長距離或 A4 區域可能需要 HF 直印電報。
+              </p>
+              <div class="tag-row">
+                <span class="tag">MSI</span>
+                <span class="tag">NAVTEX</span>
+                <span class="tag">EGC</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="icon">📍</div>
+              <h3>3. 救援單位如何找到人？</h3>
+              <p class="muted">
+                EPIRB 提供遇險位置，SART 或 AIS-SART 則在救援單位接近現場時協助精確定位。前者偏「發出遇險位置」，後者偏「現場最後定位」。
+              </p>
+              <div class="tag-row">
+                <span class="tag">COSPAS-SARSAT</span>
+                <span class="tag">Radar SART</span>
+                <span class="tag">AIS-SART</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="quote">
+            船舶無線電設備的核心目的，不是讓船上多幾台機器，而是確保船舶在遇險時能告警、定位、接收安全資訊，並與岸上與附近船舶協調搜救。
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>設備類別</th>
+                  <th>白話功能</th>
+                  <th>代表設備</th>
+                  <th>讀者應該記住的重點</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>遇險告警</strong></td>
+                  <td>把求救訊號送出去</td>
+                  <td>DSC、衛星船站、EPIRB</td>
+                  <td>重點是快速通知岸上搜救單位與附近船舶。</td>
+                </tr>
+                <tr>
+                  <td><strong>安全資訊接收</strong></td>
+                  <td>接收航行與氣象警告</td>
+                  <td>NAVTEX、EGC、HF NBDP</td>
+                  <td>船舶離岸越遠，越不能只依靠沿岸系統。</td>
+                </tr>
+                <tr>
+                  <td><strong>搜救定位</strong></td>
+                  <td>讓救援單位找到現場</td>
+                  <td>Radar SART、AIS-SART</td>
+                  <td>SART 是靠近現場後用來精確定位的設備。</td>
+                </tr>
+                <tr>
+                  <td><strong>航行與保全監控</strong></td>
+                  <td>識別、追蹤、記錄與保全通報</td>
+                  <td>AIS、SSAS、LRIT、VDR</td>
+                  <td>它們通常不屬於 GMDSS，但仍是 SOLAS 重要設備。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 02｜GMDSS 海區</span></div>
+      <section id="sea-areas" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">02 · Sea Areas</div>
+            <h2>GMDSS 海區：不是地理名稱，而是通信涵蓋能力</h2>
+            <p class="muted">
+              A1 到 A4 的差異，核心不是「海圖上畫線」，而是船舶可依靠哪些岸台、衛星與頻段來完成遇險通信。
+            </p>
+          </div>
+            <div class="chapter-note"><strong>本章導讀：</strong>海區不是單純的地理分區，而是依照岸台與衛星通信涵蓋能力來決定船上需要哪些設備。</div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>海區</th>
+                  <th>簡單理解</th>
+                  <th>主要通信能力</th>
+                  <th>設備邏輯</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>A1</strong></td>
+                  <td>靠近岸台，有 VHF DSC 連續守聽涵蓋</td>
+                  <td>VHF</td>
+                  <td>近岸區域，但仍需要遇險告警、MSI、EPIRB 與搜救定位設備。</td>
+                </tr>
+                <tr>
+                  <td><strong>A2</strong></td>
+                  <td>超出 A1，但仍在 MF DSC 岸台涵蓋內</td>
+                  <td>MF + VHF</td>
+                  <td>比 A1 更遠，因此要增加中頻通信能力。</td>
+                </tr>
+                <tr>
+                  <td><strong>A3</strong></td>
+                  <td>超出 A1/A2，但在認可衛星服務涵蓋內</td>
+                  <td>Satellite + MF + VHF</td>
+                  <td>遠洋航行的關鍵是衛星船站與遠距安全資訊接收。</td>
+                </tr>
+                <tr>
+                  <td><strong>A4</strong></td>
+                  <td>A1、A2、A3 以外，多與極區或衛星涵蓋限制有關</td>
+                  <td>HF + MF + VHF</td>
+                  <td>不能只依靠傳統衛星，HF 通信變得重要。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-2" style="margin-top:18px;">
+            <article class="card">
+              <div class="icon">🧭</div>
+              <h3>記憶方式</h3>
+              <p class="muted">
+                A1 靠 VHF，A2 加 MF，A3 靠衛星，A4 要考慮 HF。越遠離岸台，設備要求通常越完整；越接近高緯度或特殊航區，越要注意衛星涵蓋與 HF 通信。
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">🛰️</div>
+              <h3>2024 後應注意的概念</h3>
+              <p class="muted">
+                A3 的實際涵蓋會依船上所裝的認可衛星服務而定。例如傳統 Inmarsat 與 Iridium 的涵蓋能力不同，Iridium 可提供包含極區在內的全球涵蓋。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 03｜設備地圖</span></div>
+      <section id="equipment" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">03 · Equipment Atlas</div>
+            <h2>主要 GMDSS 設備地圖：每一台設備各自負責什麼？</h2>
+            <p class="muted">
+              以下不是完整法規清單，而是用「設備功能」的方式建立快速理解。這種讀法特別適合公開分享，因為讀者可以先抓住設備角色，再回頭理解配備要求。
+            </p>
+          </div>
+            <div class="chapter-note"><strong>本章導讀：</strong>這一章把 GMDSS 設備依功能分類：遇險告警、安全資訊接收、遠距通信、遇險定位與搜救定位。</div>
+
+          <div class="equipment-grid">
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">DSC</div>
+                <span class="pill">Distress Alert</span>
+              </div>
+              <h3>數位選擇呼叫</h3>
+              <p class="muted">
+                DSC 讓船舶不完全依賴人員守聽語音頻道，也能自動接收或發送遇險告警。
+              </p>
+              <ul class="mini-list">
+                <li>可發送船對岸、船對船告警</li>
+                <li>遇險警報可包含船位、識別與遇險性質</li>
+                <li>搭配 VHF、MF、HF 用於不同距離</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">VHF / MF / HF</div>
+                <span class="pill blue">Radio</span>
+              </div>
+              <h3>不同頻段的無線電通信</h3>
+              <p class="muted">
+                VHF 適合近距離，MF 可涵蓋較遠海域，HF 則用於遠距離或 A4 類型航區。
+              </p>
+              <ul class="mini-list">
+                <li>VHF：常見於近岸與船對船通信</li>
+                <li>MF：A2 海區的重要能力</li>
+                <li>HF：遠距離與極區通信的重要備援</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">Satellite</div>
+                <span class="pill purple">Ocean Area</span>
+              </div>
+              <h3>認可行動衛星服務</h3>
+              <p class="muted">
+                用於遠洋通信與遇險告警。常見系統包括 Inmarsat、Iridium 與 BeiDou。
+              </p>
+              <ul class="mini-list">
+                <li>Inmarsat：傳統海事衛星通信系統</li>
+                <li>Iridium：可涵蓋極區，適合高緯度航行</li>
+                <li>BeiDou：屬認可系統，但涵蓋區域需留意</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">MSI</div>
+                <span class="pill green">Safety Info</span>
+              </div>
+              <h3>海上安全資訊</h3>
+              <p class="muted">
+                MSI 包含航行警告、氣象預報、安全訊息與相關更新，是航行中持續接收風險資訊的系統。
+              </p>
+              <ul class="mini-list">
+                <li>NAVTEX：沿岸常用，518 kHz</li>
+                <li>EGC：遠洋透過衛星接收</li>
+                <li>HF NBDP：A4 或特定區域使用</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">EPIRB</div>
+                <span class="pill orange">Beacon</span>
+              </div>
+              <h3>衛星緊急無線電示位標</h3>
+              <p class="muted">
+                船舶遇險或沉沒時，EPIRB 可自動或手動啟動，透過衛星系統傳送船舶識別與位置。
+              </p>
+              <ul class="mini-list">
+                <li>通常透過 COSPAS-SARSAT 系統轉送</li>
+                <li>需正確登記船名、識別碼與船旗資料</li>
+                <li>不可被繫死在船體，必須能自由浮出</li>
+              </ul>
+            </article>
+
+            <article class="equipment-card">
+              <div class="equipment-top">
+                <div class="equipment-code">SART</div>
+                <span class="pill yellow">Locate</span>
+              </div>
+              <h3>搜救定位設備</h3>
+              <p class="muted">
+                SART 用於救援單位靠近事故現場後定位救生艇筏或遇險位置，可分為 Radar SART 與 AIS-SART。
+              </p>
+              <ul class="mini-list">
+                <li>Radar SART：在雷達上產生明顯回波</li>
+                <li>AIS-SART：讓附近 AIS 設備看到定位訊號</li>
+                <li>重點是現場最後定位，不是取代遇險告警</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="callout callout--warn" style="margin-top:20px;">
+            <div class="mark">⚠️</div>
+            <div>
+              <h3>特別重要：EPIRB 不可被綁死</h3>
+              <p>
+                EPIRB 的設計目的，是在船舶沉沒或遇險時能自動或手動發出遇險信標。如果用繫索、束帶或其他方式固定在船體上，船舶沉沒時可能無法浮出水面，這會讓它失去最重要的求救功能。
+              </p>
+            </div>
+          </div>
+
+          <div class="section-head" style="margin-top:42px;">
+            <div class="kicker">How EPIRB Works</div>
+            <h2>EPIRB 的遇險訊號如何送到搜救中心？</h2>
+          </div>
+
+          <div class="flow" aria-label="EPIRB signal flow">
+            <div class="flow-step">
+              <span class="step-no">1</span>
+              <h3>啟動</h3>
+              <p class="muted">EPIRB 手動或自動啟動，開始發出遇險信號。</p>
+            </div>
+            <div class="flow-step">
+              <span class="step-no">2</span>
+              <h3>衛星接收</h3>
+              <p class="muted">COSPAS-SARSAT 衛星接收 406 MHz 信標。</p>
+            </div>
+            <div class="flow-step">
+              <span class="step-no">3</span>
+              <h3>資料轉送</h3>
+              <p class="muted">系統轉送船舶識別與位置資料。</p>
+            </div>
+            <div class="flow-step">
+              <span class="step-no">4</span>
+              <h3>搜救中心</h3>
+              <p class="muted">MRCC 解碼訊息並判斷位置。</p>
+            </div>
+            <div class="flow-step">
+              <span class="step-no">5</span>
+              <h3>展開搜救</h3>
+              <p class="muted">協調附近船舶、岸台、航空或海上救援單位。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 04｜非 GMDSS 設備</span></div>
+      <section id="non-gmdss" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">04 · Non-GMDSS Equipment</div>
+            <h2>不是 GMDSS，但仍是船舶安全與保全的關鍵設備</h2>
+            <p class="muted">
+              AIS、SSAS、LRIT、VDR 常被放在同一份無線電或航行設備資料中討論，但它們不是 SOLAS 第四章 GMDSS 核心設備。理解這點，可以避免把「遇險通信」、「航行安全」、「保全警報」與「事故資料記錄」混在一起。
+            </p>
+          </div>
+            <div class="chapter-note"><strong>本章導讀：</strong>這些設備不屬於 SOLAS 第四章 GMDSS 核心設備，但仍與航行安全、保全與事故調查高度相關。</div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>設備</th>
+                  <th>中文名稱</th>
+                  <th>主要目的</th>
+                  <th>與 GMDSS 的差異</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>AIS</strong></td>
+                  <td>自動識別系統</td>
+                  <td>船舶識別、位置、航向、航速與避碰資訊交換</td>
+                  <td>偏航行安全，不是遇險告警系統。</td>
+                </tr>
+                <tr>
+                  <td><strong>SSAS</strong></td>
+                  <td>船舶保全警報系統</td>
+                  <td>在保全威脅下秘密通知岸上主管機關</td>
+                  <td>不向附近船舶公開求救，也不應在船上發出聲光警報。</td>
+                </tr>
+                <tr>
+                  <td><strong>LRIT</strong></td>
+                  <td>遠距識別與追蹤系統</td>
+                  <td>提供政府或有權限機關遠距追蹤船舶</td>
+                  <td>非廣播式；不是給附近船舶即時避碰使用。</td>
+                </tr>
+                <tr>
+                  <td><strong>VDR / S-VDR</strong></td>
+                  <td>航行資料記錄儀</td>
+                  <td>記錄航行、操作與事故調查資料</td>
+                  <td>像船舶黑盒子，重點在事故後還原，不是求救通信。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="quote">
+            AIS 是附近看得到；LRIT 是政府遠距追蹤；SSAS 是秘密保全警報；VDR 是事故後的資料保存。
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 05｜法規與功能要求</span></div>
+      <section id="requirements" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">05 · Regulatory Logic</div>
+            <h2>法規不是只問「有沒有裝」，而是問「遇險時能不能真的用」</h2>
+            <p class="muted">
+              GMDSS 的核心不是設備清單，而是功能要求、分離備援、維修保障、操作資格與測試紀錄。這也是檢驗時最需要抓住的思路。
+            </p>
+          </div>
+            <div class="chapter-note"><strong>本章導讀：</strong>法規真正關心的不只是船上有沒有設備，而是遇險時能不能可靠完成九項通信功能。</div>
+
+          <div class="grid-2">
+            <article class="card">
+              <div class="icon">📜</div>
+              <h3>主要法規來源</h3>
+              <p class="muted">
+                海上無線電通信主要由兩大系統規範：國際電信聯盟無線電規則負責頻率、船舶電台、操作資格與文件；SOLAS 第四章負責 GMDSS 與船舶無線電設備要求。
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">🧑‍✈️</div>
+              <h3>適用船舶</h3>
+              <p class="muted">
+                國際航行客船不論噸位皆適用；國際航行貨船通常從 300 總噸以上開始適用。非國際航行或較小船舶，則需看船旗國要求。
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head" style="margin-top:42px;">
+            <h2>九項功能要求：GMDSS 要完成的事</h2>
+            <p class="muted">
+              可以把九項功能要求理解成一條完整的安全通信鏈：告警、接收、協調、現場通信、定位、安全資訊與日常通信。
+            </p>
+          </div>
+
+          <div class="check-grid">
+            <div class="check-item">
+              <div class="check">1</div>
+              <div><h3>船對岸遇險警報</h3><p class="muted">船舶遇險時能通知岸上搜救單位。</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">2</div>
+              <div><h3>岸對船遇險警報</h3><p class="muted">船舶能收到岸上發出的遇險相關警報。</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">3</div>
+              <div><h3>船對船遇險警報</h3><p class="muted">附近船舶之間能互相得知遇險狀況。</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">4</div>
+              <div><h3>搜救協調通信</h3><p class="muted">支援搜救中心、岸台與船舶間的協調。</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">5</div>
+              <div><h3>現場通信</h3><p class="muted">事故現場與救援單位保持通信。</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">6</div>
+              <div><h3>定位信號</h3><p class="muted">協助救援單位找到遇險船舶或救生艇筏。</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">7</div>
+              <div><h3>接收 MSI</h3><p class="muted">接收航行警告、氣象資訊與安全訊息。</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">8</div>
+              <div><h3>一般無線電通信</h3><p class="muted">可與岸上無線電系統或網路進行一般通信。</p></div>
+            </div>
+            <div class="check-item">
+              <div class="check">9</div>
+              <div><h3>駕駛台對駕駛台通信</h3><p class="muted">船與船之間可直接進行航行安全通信。</p></div>
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top:22px;">
+            <div class="mark">🔁</div>
+            <div>
+              <h3>最重要的檢驗邏輯：至少兩套分離且獨立的遇險告警方式</h3>
+              <p>
+                船舶不應在無法透過至少兩套分離且獨立的無線電通信系統發送船對岸遇險警報的情況下離港。這不是「買兩台一樣設備」的概念，而是要避免單一技術或單一系統失效。
+              </p>
+            </div>
+          </div>
+
+          <div class="section-head" style="margin-top:42px;">
+            <h2>維持設備可用性的三種方式</h2>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">🏢</div>
+              <h3>岸基維修</h3>
+              <p class="muted">由岸上合格維修單位支援，常見於商船營運。重點是支援範圍、維修安排與文件證明。</p>
+            </article>
+            <article class="card">
+              <div class="icon">🧰</div>
+              <h3>海上電子維修</h3>
+              <p class="muted">船上需有合格人員、工具、測試設備、技術文件與備品。這不是一般船員簡單重啟設備。</p>
+            </article>
+            <article class="card">
+              <div class="icon">📡</div>
+              <h3>設備重複配置</h3>
+              <p class="muted">依航行海區配置必要重複設備，並應具備獨立天線與立即可用性。</p>
+            </article>
+          </div>
+
+          <div class="table-wrap" style="margin-top:20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>航行海區</th>
+                  <th>設備可用性要求概念</th>
+                  <th>實務理解</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>A1 / A2</strong></td>
+                  <td>三種方法中至少採用一種</td>
+                  <td>航行範圍較近，但仍要證明設備能維持可用。</td>
+                </tr>
+                <tr>
+                  <td><strong>A3 / A4</strong></td>
+                  <td>三種方法中至少採用兩種</td>
+                  <td>遠洋或特殊航區風險更高，因此維修與備援要求更嚴格。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 06｜配備要求</span></div>
+      <section id="carriage" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">06 · Carriage Logic</div>
+            <h2>配備要求的快速讀法：船跑得越遠，通信能力越完整</h2>
+            <p class="muted">
+              不同船舶的完整配備仍需回到 SOLAS、船旗國與船級要求判斷。不過作為快速理解，可以先掌握下面的設備增加邏輯。
+            </p>
+          </div>
+            <div class="chapter-note"><strong>本章導讀：</strong>配備要求可以用一句話理解：船跑得越遠，通信能力與備援要求越完整。</div>
+
+          <figure class="note-figure" id="gmdss-sea-areas-diagram">
+            <img
+              src="../../assets/images/maritime/gmdss-sea-areas-overview.png"
+              alt="GMDSS 海區 A1 至 A4 示意圖：由近岸 VHF 涵蓋區向外擴展至 MF、衛星與 HF 通信範圍"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              GMDSS 海區由岸台與衛星通信涵蓋能力定義，而非單純地理劃線；A1 靠 VHF，A2 加 MF，A3 靠衛星，A4 需考慮 HF 與極區等特殊涵蓋限制。
+            </figcaption>
+          </figure>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>航行海區</th>
+                  <th>主要新增能力</th>
+                  <th>快速理解</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>A1</strong></td>
+                  <td>VHF radio + VHF DSC + MSI + EPIRB + survival craft equipment</td>
+                  <td>近岸不是低風險；仍需完整遇險、MSI 與搜救定位能力。</td>
+                </tr>
+                <tr>
+                  <td><strong>A1 + A2</strong></td>
+                  <td>增加 MF radio / MF DSC</td>
+                  <td>超出 VHF 近岸範圍後，需要中頻作為主要通信能力。</td>
+                </tr>
+                <tr>
+                  <td><strong>A1 + A2 + A3</strong></td>
+                  <td>增加衛星船站</td>
+                  <td>遠洋航行的關鍵是可靠的衛星通信與 EGC 接收能力。</td>
+                </tr>
+                <tr>
+                  <td><strong>A1 + A2 + A3 + A4</strong></td>
+                  <td>增加 MF/HF radio + MF/HF DSC</td>
+                  <td>進入 A4 或衛星涵蓋外區域時，HF 是重要通信方式。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-2" style="margin-top:20px;">
+            <article class="card">
+              <div class="icon">📻</div>
+              <h3>救生艇筏雙向 VHF 數量</h3>
+              <p class="muted">
+                300–499 GT 貨船通常需 2 具；500 GT 以上貨船與所有客船通常需 3 具。這些設備用於棄船後救生艇筏與救援單位通信。
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">📍</div>
+              <h3>搜救定位設備數量</h3>
+              <p class="muted">
+                300–499 GT 貨船通常需 1 具；500 GT 以上貨船與所有客船通常需 2 具。可為 Radar SART 或 AIS-SART。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">CHAPTER 07｜檢驗與測試</span></div>
+      <section id="inspection" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">07 · Survey & Deficiencies</div>
+            <h2>檢驗重點：最常見的問題往往不是「沒有設備」，而是「設備不能可靠使用」</h2>
+            <p class="muted">
+              無線電設備檢驗常見缺失，主要集中在電源、天線、定位資料、識別設定、文件紀錄與船員熟悉度。這些看似小問題，遇險時可能直接影響求救成功率。
+            </p>
+          </div>
+            <div class="chapter-note"><strong>本章導讀：</strong>實務檢驗最常看到的問題，往往不是完全沒有設備，而是設定、電源、證書、紀錄或維護狀態不可靠。</div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">🔋</div>
+              <h3>電源與電池</h3>
+              <p class="muted">
+                電池過期、容量不足、充電器異常、備用電源無法供應顯示器或印表機，都是常見缺失。GMDSS 設備必須在主電源失效時仍能工作。
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">📡</div>
+              <h3>天線與接頭</h3>
+              <p class="muted">
+                很多通信問題不是主機壞掉，而是天線斷裂、接頭腐蝕、絕緣不良、衛星天線被遮蔽或天線配置圖未更新。
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">🛰️</div>
+              <h3>位置與時間資料</h3>
+              <p class="muted">
+                遇險警報若無正確 GNSS 船位與時間資料，搜救中心可能無法準確判斷遇險位置。自動定位輸入要能可靠更新。
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">🪪</div>
+              <h3>識別資料</h3>
+              <p class="muted">
+                MMSI、呼號、船名、船旗國代碼、EPIRB 登記資料若錯誤，會造成遇險訊息與實船資料不一致。
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">📘</div>
+              <h3>文件與紀錄</h3>
+              <p class="muted">
+                無線電日誌、年度測試、五年岸基維修、電池容量測試與維修證明，都是判斷設備持續可用的重要依據。
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon">🧑‍✈️</div>
+              <h3>船員熟悉度</h3>
+              <p class="muted">
+                設備存在不代表能正確操作。船員需要熟悉測試呼叫、遇險程序、取消誤發警報與基本故障識別。
+              </p>
+            </article>
+          </div>
+
+          <div class="section-head" style="margin-top:42px;">
+            <h2>測試與紀錄：讓設備「有證據地可用」</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="time-item">
+              <div class="time-label">每日</div>
+              <div class="time-content">
+                <h3>基本狀態確認</h3>
+                <p class="muted">印表機、DSC 內部測試、無線電電池狀態等。</p>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="time-label">每週</div>
+              <div class="time-content">
+                <h3>通信能力測試</h3>
+                <p class="muted">MF/HF DSC 測試呼叫、主備 VHF 設備測試、備用能源測試等。</p>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="time-label">每月</div>
+              <div class="time-content">
+                <h3>救生與定位設備檢查</h3>
+                <p class="muted">EPIRB 自測、SART 檢查、救生艇筏雙向 VHF、電池與天線檢查等。</p>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="time-label">每年</div>
+              <div class="time-content">
+                <h3>EPIRB 年度測試</h3>
+                <p class="muted">406 MHz EPIRB 年度測試與相關證明。</p>
+              </div>
+            </div>
+            <div class="time-item">
+              <div class="time-label">每五年</div>
+              <div class="time-content">
+                <h3>EPIRB 岸基維修</h3>
+                <p class="muted">通常配合電池更換與岸基維修證明。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout--ok" style="margin-top:22px;">
+            <div class="mark">✅</div>
+            <div>
+              <h3>檢驗時可以用這句話做總結</h3>
+              <p>
+                無線電檢驗的重點，不只是確認船上「有」設備，而是確認設備在正確位置、使用正確電源、具有正確識別與定位資料、船員懂得操作，並且有測試與維修紀錄證明它能在遇險時真正發揮作用。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-divider" aria-hidden="true"><span class="chapter-label">FINAL｜重點收斂</span></div>
+      <section id="summary" class="chapter-section">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">08 · Final Takeaway</div>
+            <h2>最後，用一句話收斂整篇筆記</h2>
+          </div>
+            <div class="chapter-note"><strong>本章導讀：</strong>最後用幾個重點，把整份筆記收斂成可分享、可複習、可延伸討論的版本。</div>
+
+          <div class="quote">
+            GMDSS 的價值不在於設備名稱，而在於建立一套能在不同海區、不同失效情境下，仍能完成遇險告警、安全資訊接收、搜救協調與定位的可靠通信架構。
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="icon">🆘</div>
+              <h3>對一般讀者</h3>
+              <p class="muted">請記住：這些設備都是為了讓船在出事時能被看見、被聽見、被找到。</p>
+            </article>
+            <article class="card">
+              <div class="icon">⚙️</div>
+              <h3>對稍懂海事的人</h3>
+              <p class="muted">請記住：法規重點是功能、冗餘、維修、操作資格與紀錄，而不是只看設備清單。</p>
+            </article>
+            <article class="card">
+              <div class="icon">🔍</div>
+              <h3>對檢驗實務</h3>
+              <p class="muted">請記住：最容易出問題的往往是電池、天線、定位、識別資料、維修證明與船員熟悉度。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>海上無線電通信設備與 GMDSS｜Reay's Note</strong><br>
+          <span class="small">整理：Reay Huang · Maritime Survey / Ship Safety Learning Note</span>
+        </div>
+        <p class="disclaimer small">
+          本文為學習與知識分享用途，協助讀者理解海上無線電通信設備、GMDSS 與檢驗重點。實際適用要求仍應以最新 SOLAS、ITU Radio Regulations、船旗國、主管機關及船級要求為準。
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function resetScrollOnReload() {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!nav || nav.type !== 'reload') return;
+
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('pageshow', resetScrollOnReload);
+    window.addEventListener('load', resetScrollOnReload);
+  </script>
+</body>
+</html>
