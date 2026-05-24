@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>以驗船師角色解釋 6S 精實管理｜Reay's Note</title>
+  <meta name="description" content="從驗船師角度解釋 6S 精實管理如何應用於船舶檢驗、機艙巡檢、甲板作業、維修保養與安全管理。" />
+  <meta name="author" content="Reay Huang" />
+  <meta name="keywords" content="6S, 精實管理, lean management, marine surveyor, ship survey, engine room inspection, safety management, 驗船師" />
+  <meta property="og:title" content="以驗船師角色解釋 6S 精實管理｜Reay's Note" />
+  <meta property="og:description" content="從驗船師角度解釋 6S 精實管理如何應用於船舶檢驗、機艙巡檢、甲板作業、維修保養與安全管理。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay's Maritime Notes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh-Hant" href="surveyor-6s-lean-management-notes.html" />
+  <link rel="alternate" hreflang="en" href="surveyor-6s-lean-management-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="surveyor-6s-lean-management-notes.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --line: #dbe4f0;
+      --primary: #0f4c81;
+      --primary-dark: #08345c;
+      --accent: #f59e0b;
+      --accent-soft: #fff7e6;
+      --blue-soft: #eaf4ff;
+      --green-soft: #ecfdf5;
+      --red-soft: #fff1f2;
+      --shadow: 0 12px 30px rgba(15, 76, 129, 0.10);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15, 76, 129, 0.16), transparent 34%),
+        linear-gradient(180deg, #f7fbff 0%, var(--bg) 42%, #eef4fb 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      padding: 56px 42px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(8, 52, 92, 0.98), rgba(15, 76, 129, 0.92)),
+        url("data:image/svg+xml,%3Csvg width='900' height='500' viewBox='0 0 900 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.14' stroke-width='2'%3E%3Cpath d='M70 350 C190 280 280 280 390 340 S610 410 790 300'/%3E%3Cpath d='M120 210 H780'/%3E%3Cpath d='M190 150 H710'/%3E%3Cpath d='M260 90 H640'/%3E%3C/g%3E%3C/svg%3E");
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -110px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(245, 158, 11, 0.22);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin: 24px 0 14px;
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    .hero .subtitle {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1rem, 2.2vw, 1.26rem);
+    }
+
+    .hero-highlight {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .hero-stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 1.55rem;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .hero-stat span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .section-lead {
+      max-width: 720px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(219, 228, 240, 0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+    }
+
+    .intro-card {
+      padding: 28px;
+    }
+
+    .intro-card h3,
+    .risk-card h3,
+    .summary-card h3 {
+      margin: 0 0 14px;
+      color: var(--primary-dark);
+      font-size: 1.32rem;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding: 11px 14px 11px 42px;
+      border-radius: 14px;
+      background: #f8fbff;
+      border: 1px solid #e7eef7;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 14px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .risk-card {
+      padding: 28px;
+      background: linear-gradient(180deg, #ffffff, var(--red-soft));
+    }
+
+    .risk-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .risk-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(15, 76, 129, 0.18);
+    }
+
+    .risk-list li:last-child {
+      border-bottom: none;
+    }
+
+    .risk-icon {
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(15, 76, 129, 0.08);
+    }
+
+    .six-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .s-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px;
+      min-height: 420px;
+      border-radius: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 26px rgba(15, 76, 129, 0.08);
+    }
+
+    .s-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .s-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .s-badge {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), #1d75b8);
+      font-weight: 900;
+      font-size: 1.18rem;
+      box-shadow: 0 10px 18px rgba(15, 76, 129, 0.18);
+    }
+
+    .s-card:nth-child(6) .s-badge {
+      background: linear-gradient(135deg, #b91c1c, #f59e0b);
+    }
+
+    .s-label {
+      text-align: right;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .s-label strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1.18rem;
+    }
+
+    .s-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+    }
+
+    .s-card .meaning {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .mini-title {
+      margin: 18px 0 8px;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .bullet-list li {
+      margin: 6px 0;
+    }
+
+    .surveyor-note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--blue-soft);
+      border-left: 5px solid var(--primary);
+      color: #16456f;
+      font-weight: 650;
+    }
+
+    .inspection-table-wrap {
+      overflow-x: auto;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: #fff;
+    }
+
+    thead th {
+      background: var(--primary-dark);
+      color: #fff;
+      text-align: left;
+      padding: 17px 18px;
+      font-size: 0.96rem;
+      letter-spacing: 0.02em;
+    }
+
+    tbody td {
+      padding: 17px 18px;
+      border-bottom: 1px solid #edf2f7;
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #f8fbff;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #9a5b00;
+      font-weight: 800;
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+
+    .hierarchy {
+      display: grid;
+      gap: 14px;
+    }
+
+    .control-row {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 18px;
+      align-items: stretch;
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(15, 76, 129, 0.06);
+    }
+
+    .control-level {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), #1d75b8);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .control-number {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .control-content strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+      font-size: 1.08rem;
+    }
+
+    .control-content p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+    }
+
+    .quote-card {
+      padding: 30px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-card .quote-mark {
+      font-size: 4.5rem;
+      line-height: 0.75;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .quote-card p {
+      margin: 8px 0 0;
+      font-size: clamp(1.32rem, 3vw, 2rem);
+      line-height: 1.45;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+    }
+
+    .summary-card {
+      padding: 28px;
+      background: #fff;
+    }
+
+    .summary-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-point {
+      padding: 16px;
+      border-radius: 16px;
+      background: #f8fbff;
+      border: 1px solid #e7eef7;
+    }
+
+    .summary-point strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      margin-top: 42px;
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 0;
+    }
+
+    .nav-pills a {
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 940px) {
+      .hero {
+        padding: 42px 26px;
+      }
+
+      .hero-highlight,
+      .intro-grid,
+      .six-grid,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .s-card {
+        min-height: auto;
+      }
+
+      .control-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        padding: 20px 14px 60px;
+      }
+
+      .hero {
+        border-radius: 24px;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .intro-card,
+      .risk-card,
+      .summary-card,
+      .quote-card,
+      .s-card {
+        padding: 22px;
+      }
+
+      .summary-points {
+        grid-template-columns: 1fr;
+      }
+
+      .s-top {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="surveyor-6s-lean-management-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+      <a href="surveyor-6s-lean-management-notes.en.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">Marine Surveyor Perspective · Lean Management</div>
+      <h1>以驗船師角色解釋<br />6S 精實管理</h1>
+      <p class="subtitle">
+        6S 是從管理學與精實管理常用的 5S 概念延伸而來，也就是在 Sort（整理）、Set in Order（整頓）、Shine（清掃）、Standardize（標準化）、Sustain（維持）之外，進一步加入 Safety（安全）。因此，6S 不只是工廠或倉庫的現場管理方法，也可以應用於船舶檢驗、機艙巡檢、甲板作業、維修保養與安全管理。從驗船師角度來看，6S 的重點不是「看起來乾淨」，而是確認船舶是否能安全、穩定、有效率地持續運作。
+      </p>
+
+      <nav class="nav-pills" aria-label="Page navigation">
+        <a href="#why">為什麼重要</a>
+        <a href="#sixs">6S 實際意義</a>
+        <a href="#engine-room">機艙檢查</a>
+        <a href="#controls">控制層級</a>
+        <a href="#summary">驗船師總結</a>
+      </nav>
+
+      <div class="hero-highlight">
+        <div class="hero-stat">
+          <strong>5S + Safety</strong>
+          <span>將安全風險控制獨立拉出來管理</span>
+        </div>
+        <div class="hero-stat">
+          <strong>現場管理</strong>
+          <span>觀察整理、整頓、清掃與標準化是否落實</span>
+        </div>
+        <div class="hero-stat">
+          <strong>安全文化</strong>
+          <span>判斷船舶是否具備長期維持良好狀態的能力</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="why" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Why 6S matters onboard</span>
+          <h2>一、驗船師為什麼需要重視 6S？</h2>
+          <p class="section-lead">驗船師在船上看到的「現場狀態」，往往直接反映船舶的保養紀律、應急準備與安全管理能力。</p>
+        </div>
+      </div>
+
+      <div class="intro-grid">
+        <article class="intro-card card">
+          <h3>船上常見的 6S 觀察點</h3>
+          <ul class="check-list">
+            <li>機艙油污、漏油或地板濕滑</li>
+            <li>工具、備品或舊零件任意放置</li>
+            <li>消防設備、救生設備或逃生通道被遮擋</li>
+            <li>電纜、管線、閥件與開關標示不清</li>
+            <li>危險物品、化學品或油漆存放不當</li>
+            <li>PPE 未正確使用，或高風險作業缺乏防護</li>
+          </ul>
+        </article>
+
+        <aside class="risk-card card">
+          <h3>看似小問題，可能造成大風險</h3>
+          <ul class="risk-list">
+            <li><span class="risk-icon">🔥</span><span>火災風險上升，尤其是油污、可燃物與熱源並存時。</span></li>
+            <li><span class="risk-icon">⚠️</span><span>人員滑倒、絆倒、夾傷、燙傷或墜落風險增加。</span></li>
+            <li><span class="risk-icon">🛠️</span><span>設備故障不易被早期發現，導致停航或延誤。</span></li>
+            <li><span class="risk-icon">📋</span><span>港口國管制、船級檢驗或內部稽核時可能形成缺失。</span></li>
+            <li><span class="risk-icon">🚨</span><span>緊急情況下找不到設備，影響事故控制能力。</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sixs" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">6S in Ship Survey</span>
+          <h2>二、6S 在船舶檢驗中的實際意義</h2>
+          <p class="section-lead">從驗船師角度來看，每一個 S 都不是抽象口號，而是可以在現場觀察、詢問、查證與追蹤的管理要素。</p>
+        </div>
+      </div>
+
+      <div class="six-grid">
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">1S</div>
+            <div class="s-label"><strong>Sort</strong>整理</div>
+          </div>
+          <h3>移除不必要物品</h3>
+          <p class="meaning">確認船上工作區域是否只保留必要物品，避免雜物形成事故源。</p>
+          <div class="mini-title">檢查重點</div>
+          <ul class="bullet-list">
+            <li>機艙是否堆放廢料、舊零件或不必要備品</li>
+            <li>甲板是否有不用的纜繩、鐵件、木板或雜物</li>
+            <li>消防站、救生設備附近是否有阻礙物</li>
+            <li>油漆間、化學品櫃是否存放過期或未標示物品</li>
+          </ul>
+          <div class="surveyor-note">整理不是為了讓船看起來整齊，而是降低絆倒、火災、污染與逃生受阻的風險。</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">2S</div>
+            <div class="s-label"><strong>Set in Order</strong>整頓</div>
+          </div>
+          <h3>每項物品都有固定位置</h3>
+          <p class="meaning">工具、備品與安全設備應有明確位置，並能在需要時快速取得。</p>
+          <div class="mini-title">檢查重點</div>
+          <ul class="bullet-list">
+            <li>工具是否定位管理</li>
+            <li>消防器材是否容易取得</li>
+            <li>救生衣、呼吸器、擔架是否放在指定位置</li>
+            <li>閥件、管線、電氣開關是否清楚標示</li>
+            <li>備品是否分類存放並有庫存紀錄</li>
+          </ul>
+          <div class="surveyor-note">緊急情況下，船員沒有時間「找東西」。良好整頓能提升應急反應速度。</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">3S</div>
+            <div class="s-label"><strong>Shine</strong>清掃</div>
+          </div>
+          <h3>清潔也是檢查</h3>
+          <p class="meaning">在船上，清掃不是單純打掃，而是預防性檢查的一部分。</p>
+          <div class="mini-title">檢查重點</div>
+          <ul class="bullet-list">
+            <li>機艙地板是否有油污</li>
+            <li>主機、輔機、泵浦是否有漏油、漏水、漏氣</li>
+            <li>電盤與控制箱是否有灰塵、潮氣或腐蝕</li>
+            <li>甲板排水孔是否堵塞</li>
+            <li>艙底水與油水分離器區域是否清潔</li>
+          </ul>
+          <div class="surveyor-note">油漬、水痕、銹蝕與異常粉塵，可能都是設備缺陷或保養不足的早期訊號。</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">4S</div>
+            <div class="s-label"><strong>Standardize</strong>標準化</div>
+          </div>
+          <h3>建立一致的檢查與作業方式</h3>
+          <p class="meaning">船上管理不能只靠個人經驗，而要有一致的程序、表單與標準。</p>
+          <div class="mini-title">檢查重點</div>
+          <ul class="bullet-list">
+            <li>是否有機艙巡檢表</li>
+            <li>是否有消防與救生設備維護紀錄</li>
+            <li>是否有封閉空間進入程序</li>
+            <li>是否有熱工作許可程序</li>
+            <li>是否有危險化學品管理程序</li>
+            <li>是否有缺失追蹤與改善紀錄</li>
+          </ul>
+          <div class="surveyor-note">標準化能讓船舶管理從「靠記憶」轉為「靠制度」，但文件必須與現場一致。</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">5S</div>
+            <div class="s-label"><strong>Sustain</strong>維持</div>
+          </div>
+          <h3>讓良好狀態成為日常</h3>
+          <p class="meaning">6S 不是檢查前才做，而是平時就要落實的船舶管理習慣。</p>
+          <div class="mini-title">檢查重點</div>
+          <ul class="bullet-list">
+            <li>船員是否持續執行巡檢</li>
+            <li>缺失是否有追蹤改善</li>
+            <li>是否定期演練與訓練</li>
+            <li>船長、輪機長是否有監督機制</li>
+            <li>內部稽核是否有效</li>
+            <li>同樣缺失是否重複發生</li>
+          </ul>
+          <div class="surveyor-note">若只有驗船前才整理，代表管理系統不成熟。維持反映的是船上的安全文化。</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">6S</div>
+            <div class="s-label"><strong>Safety</strong>安全</div>
+          </div>
+          <h3>6S 的核心</h3>
+          <p class="meaning">船舶是高風險環境，安全不能只是假設已包含在 5S 裡，而應被獨立檢查與管理。</p>
+          <div class="mini-title">檢查重點</div>
+          <ul class="bullet-list">
+            <li>逃生通道是否暢通</li>
+            <li>消防與救生設備是否完整可用</li>
+            <li>是否有滑倒、燙傷、夾傷與高處墜落風險</li>
+            <li>封閉空間進入是否有氣體檢測</li>
+            <li>熱工作是否有許可與防火監控</li>
+            <li>PPE 是否正確使用</li>
+          </ul>
+          <div class="surveyor-note">一個乾淨整齊的船舶不一定安全；但真正安全的船舶，通常會有良好的 6S 管理。</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="engine-room" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Engine Room Example</span>
+          <h2>三、以機艙為例：6S 檢查方式</h2>
+          <p class="section-lead">機艙是船上最能反映 6S 成熟度的區域之一，因為這裡同時存在高溫、旋轉機械、燃油、滑倒風險、電氣風險與緊急應變需求。</p>
+        </div>
+      </div>
+
+      <div class="inspection-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>6S 項目</th>
+              <th>驗船師會看什麼</th>
+              <th>可能風險</th>
+              <th>現場判斷重點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag">Sort 整理</span></td>
+              <td>是否有廢棄零件、油桶、雜物堆放。</td>
+              <td>火災、絆倒、污染。</td>
+              <td>不必要物品是否被移除，工作區是否保持可通行。</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Set in Order 整頓</span></td>
+              <td>工具、備品、消防器材是否定位。</td>
+              <td>緊急時找不到設備。</td>
+              <td>標示是否清楚，船員是否知道設備位置。</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Shine 清掃</span></td>
+              <td>是否有油污、洩漏、積水。</td>
+              <td>滑倒、火災、設備故障。</td>
+              <td>清潔狀態是否能幫助早期發現異常。</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Standardize 標準化</span></td>
+              <td>是否有巡檢表、保養紀錄與作業程序。</td>
+              <td>作業不一致、缺失重複。</td>
+              <td>文件紀錄是否與現場實際狀況一致。</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Sustain 維持</span></td>
+              <td>是否長期保持良好狀態。</td>
+              <td>檢查前整理、平時失控。</td>
+              <td>同類缺失是否反覆出現，主管監督是否有效。</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Safety 安全</span></td>
+              <td>是否有 PPE、警示、隔離與應急措施。</td>
+              <td>人員傷害、重大事故。</td>
+              <td>高風險作業是否有許可、隔離、監控與應變準備。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="controls" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Hierarchy of Controls</span>
+          <h2>四、6S 與控制層級的關係</h2>
+          <p class="section-lead">驗船師在評估安全改善措施時，不只看有沒有改善，也會思考改善措施是否真正有效。控制層級可以用來判斷風險控制的成熟度。</p>
+        </div>
+      </div>
+
+      <div class="hierarchy">
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">1</span>Elimination<br />消除</div>
+          <div class="control-content">
+            <strong>直接移除危害</strong>
+            <p>例如移除甲板上不必要的障礙物，避免船員絆倒。這通常是最有效的控制方式。</p>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">2</span>Substitution<br />替代</div>
+          <div class="control-content">
+            <strong>用較安全的方法或材料取代危害</strong>
+            <p>例如用較低危害性的清潔劑取代高揮發性化學品，降低人員暴露與火災風險。</p>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">3</span>Engineering Controls<br />工程控制</div>
+          <div class="control-content">
+            <strong>透過設備或設計隔離危害</strong>
+            <p>例如加裝防護罩、防滑地板、通風設備、隔離欄杆，讓危害不易直接接觸人員。</p>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">4</span>Administrative Controls<br />行政控制</div>
+          <div class="control-content">
+            <strong>透過程序與管理改變作業方式</strong>
+            <p>例如建立封閉空間進入程序、熱工作許可、巡檢表、教育訓練與缺失追蹤。</p>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">5</span>PPE<br />個人防護裝備</div>
+          <div class="control-content">
+            <strong>以裝備保護人員</strong>
+            <p>例如安全帽、護目鏡、防滑鞋、手套、防護衣與呼吸器。PPE 很重要，但通常是最後一道防線。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Surveyor's Conclusion</span>
+          <h2>五、驗船師式總結</h2>
+          <p class="section-lead">6S 對船舶而言，是一套結合現場安全、品質管理與風險預防的實用工具。</p>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <aside class="quote-card">
+          <div class="quote-mark">“</div>
+          <p>驗船師看 6S，不只是看船乾不乾淨，而是看這艘船是否能安全、穩定、有效率地持續運作。</p>
+        </aside>
+
+        <article class="summary-card card">
+          <h3>6S 可以幫助驗船師判斷船舶是否具備：</h3>
+          <div class="summary-points">
+            <div class="summary-point"><strong>現場管理</strong><span>工作區域是否有序、可通行、可檢查。</span></div>
+            <div class="summary-point"><strong>保養紀律</strong><span>設備異常是否能早期發現並追蹤。</span></div>
+            <div class="summary-point"><strong>安全文化</strong><span>船員是否平時就落實安全行為。</span></div>
+            <div class="summary-point"><strong>應急準備</strong><span>消防、救生與應急設備是否可立即使用。</span></div>
+            <div class="summary-point"><strong>缺失預防</strong><span>是否避免同類問題重複發生。</span></div>
+            <div class="summary-point"><strong>營運可靠度</strong><span>降低事故、停航與檢查缺失風險。</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Reay's Note｜6S Lean Management from a Marine Surveyor Perspective</p>
+    </footer>
+  </main>
+</body>
+</html>
