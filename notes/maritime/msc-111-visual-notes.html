@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMO MSC 111 重點筆記｜Reay's Note</title>
+  <meta name="description" content="IMO MSC 111 會議重點視覺化筆記：MASS、自主船舶、替代燃料、IGC/IGF、SDC、NCSR、SSE、網路安全與遠端檢查。" />
+  <meta name="author" content="Reay Huang" />
+  <meta property="og:title" content="IMO MSC 111 重點筆記｜Reay's Note" />
+  <meta property="og:description" content="快速掌握 IMO MSC 111 對 MASS、自主船舶、替代燃料、船舶設計、航行通訊與救生設備的主要影響。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay's Maritime Notes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh-Hant" href="msc-111-visual-notes.html" />
+  <link rel="alternate" hreflang="en" href="msc-111-visual-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="msc-111-visual-notes.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --card: #ffffff;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --teal: #11806a;
+      --teal-soft: #e2f5ef;
+      --blue: #1d5ea8;
+      --blue-soft: #e4effb;
+      --amber: #b86b00;
+      --amber-soft: #fff2d9;
+      --purple: #6846c9;
+      --purple-soft: #eee9ff;
+      --coral: #b65035;
+      --coral-soft: #fde8df;
+      --green: #287a3e;
+      --green-soft: #e7f4e9;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(200, 169, 110, .20), transparent 32rem),
+        radial-gradient(circle at top right, rgba(29, 94, 168, .15), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      line-height: 1.78;
+      letter-spacing: .01em;
+    }
+
+    a { color: inherit; }
+    .page { overflow: hidden; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(6, 17, 31, .98), rgba(16, 36, 62, .97)),
+        radial-gradient(circle at 80% 10%, rgba(200, 169, 110, .28), transparent 24rem);
+      color: white;
+      padding: 72px 24px 46px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .12;
+      z-index: -1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.55) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.35) 49%, transparent 51%);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
+    }
+
+    .hero-inner,
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200,169,110,.9);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 34px;
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    h1 {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(34px, 5.4vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      margin: 0 0 20px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,.78);
+      margin: 0;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-panel-title {
+      color: #f0dcae;
+      font-weight: 900;
+      margin-bottom: 12px;
+      font-size: 14px;
+      letter-spacing: .06em;
+    }
+
+    .hero-facts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .fact {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.83);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .fact span {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,169,110,.16);
+      color: #f0dcae;
+      flex: 0 0 26px;
+    }
+
+    /* Sticky nav */
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245,248,252,.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220,230,241,.88);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a {
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200,169,110,.62);
+      background: #fff;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .glass-card,
+    .section,
+    .timeline,
+    .notice,
+    .action-board {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(220,230,241,.95);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .glass-card {
+      padding: 26px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    .lead-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.25;
+      margin: 0 0 12px;
+      color: var(--navy-900);
+    }
+
+    .lead-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: "Noto Serif TC", serif;
+    }
+
+    .metric span {
+      font-size: 12px;
+      color: var(--soft-muted);
+      font-weight: 700;
+    }
+
+    .notice {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      padding: 22px;
+      margin: 20px 0 24px;
+      border-left: 6px solid var(--gold);
+      background:
+        linear-gradient(135deg, rgba(255,248,235,.94), rgba(255,255,255,.92));
+    }
+
+    .notice-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+
+    .notice h2,
+    .section h2,
+    .timeline h2,
+    .action-board h2 {
+      margin: 0;
+      font-family: "Noto Serif TC", serif;
+      color: var(--navy-900);
+      line-height: 1.28;
+    }
+
+    .notice ul {
+      margin: 10px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .notice li { margin: 4px 0; }
+
+    .timeline {
+      padding: 26px;
+      margin: 24px 0;
+      overflow: hidden;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .timeline-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rail {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(190px, 1fr));
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+    }
+
+    .rail-item {
+      position: relative;
+      min-height: 170px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+
+    .rail-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .rail-date::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200,169,110,.16);
+    }
+
+    .rail-item p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .section {
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .section-no {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      font-family: "Noto Serif TC", serif;
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cards.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .topic-card {
+      position: relative;
+      padding: 20px 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      overflow: hidden;
+    }
+
+    .topic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--gold);
+    }
+
+    .topic-card.teal::before { background: var(--teal); }
+    .topic-card.blue::before { background: var(--blue); }
+    .topic-card.amber::before { background: var(--amber); }
+    .topic-card.purple::before { background: var(--purple); }
+    .topic-card.coral::before { background: var(--coral); }
+    .topic-card.green::before { background: var(--green); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: 10px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .badge.teal { color: var(--teal); background: var(--teal-soft); }
+    .badge.blue { color: var(--blue); background: var(--blue-soft); }
+    .badge.amber { color: var(--amber); background: var(--amber-soft); }
+    .badge.purple { color: var(--purple); background: var(--purple-soft); }
+    .badge.coral { color: var(--coral); background: var(--coral-soft); }
+    .badge.green { color: var(--green); background: var(--green-soft); }
+
+    .topic-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy-900);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .topic-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .date-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: #f4f7fb;
+      color: var(--soft-muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .date-chip::before { content: "📅"; }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .mini-note {
+      border-radius: var(--radius-sm);
+      padding: 13px;
+      border: 1px dashed rgba(10,22,40,.16);
+      background: #fbfdff;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .mini-note strong {
+      display: block;
+      color: var(--navy-900);
+      margin-bottom: 3px;
+    }
+
+    .action-board {
+      padding: 28px;
+      margin-top: 28px;
+      background:
+        linear-gradient(135deg, rgba(10,22,40,.97), rgba(23,55,95,.96)),
+        radial-gradient(circle at top right, rgba(200,169,110,.22), transparent 20rem);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .action-board h2 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .action-board p {
+      color: rgba(255,255,255,.72);
+      margin: 0 0 20px;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .action {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+    }
+
+    .action strong {
+      display: block;
+      color: #f0dcae;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .action span {
+      display: block;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: var(--navy-900);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid,
+      .section-top,
+      .notice,
+      .action-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel { max-width: 520px; }
+      .cards.two { grid-template-columns: 1fr; }
+      .section-no { width: 50px; height: 50px; font-size: 22px; }
+      .timeline-header { display: block; }
+    }
+
+    @media (max-width: 620px) {
+      .hero-inner,
+      .wrap,
+      main,
+      .footer {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .hero {
+        padding: 46px 0 34px;
+      }
+
+      .hero-grid { gap: 24px; }
+      .hero-panel,
+      .glass-card,
+      .section,
+      .timeline,
+      .notice,
+      .action-board {
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .metric-grid,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rail {
+        grid-template-columns: repeat(5, minmax(210px, 82vw));
+      }
+
+      .nav {
+        width: calc(100% - 28px);
+      }
+
+      h1 { letter-spacing: -.03em; }
+    }
+
+    @media print {
+      body { background: white; }
+      .nav-shell { display: none; }
+      .hero,
+      .action-board {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section, .timeline, .notice, .glass-card { box-shadow: none; }
+      .topic-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="msc-111-visual-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+      <a href="msc-111-visual-notes.en.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">IMO MSC 111 · Maritime Safety Committee</div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>IMO MSC 111<br>重點筆記｜Reay's Note</h1>
+          <p class="subtitle">
+            以實務角度整理 MSC 111 對自主水面船舶、替代燃料安全、船舶設計建造、
+            航行通訊、救生設備與網路安全的主要決議與後續影響。
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="MSC 111 quick facts">
+          <div class="hero-panel-title">會議概覽</div>
+          <div class="hero-facts">
+            <div class="fact"><span>📍</span><div>IMO 倫敦總部｜2026 年 5 月 13–22 日</div></div>
+            <div class="fact"><span>⚓</span><div>核心主題：MASS、替代燃料、SDC、NCSR、SSE、Cyber Risk</div></div>
+            <div class="fact"><span>🧭</span><div>閱讀方式：先看時程，再依船型、燃料與專案階段追蹤影響</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-shell">
+    <nav class="nav" aria-label="page navigation">
+      <a href="#overview">重點概覽</a>
+      <a href="#timeline">生效時程</a>
+      <a href="#mass">MASS</a>
+      <a href="#fuel">替代燃料</a>
+      <a href="#sdc">設計建造</a>
+      <a href="#ncsr">航行通訊</a>
+      <a href="#sse">SSE / 其他</a>
+      <a href="#actions">實務追蹤</a>
+    </nav>
+  </div>
+
+  <main>
+    <section id="overview" class="summary-grid" aria-label="summary">
+      <div class="glass-card">
+        <div class="kicker">Executive Summary</div>
+        <h2 class="lead-title">MSC 111 的核心意義：從「技術可行」走向「法規落地」</h2>
+        <p class="lead-copy">
+          本次會議可視為海事安全規範面對新燃料、新通訊、新檢查技術與自主船舶的一次重要更新。
+          對船東、船廠、船級社與設備廠而言，重點不只是「何時生效」，更重要的是在新造船設計、
+          船員訓練、設備選型與管理系統中提前建立可驗證的合規路徑。
+        </p>
+      </div>
+
+      <div class="glass-card">
+        <div class="metric-grid">
+          <div class="metric"><strong>5</strong><span>主要議題群</span></div>
+          <div class="metric"><strong>2028</strong><span>多項修正集中生效</span></div>
+          <div class="metric"><strong>2032</strong><span>MASS 強制法規目標</span></div>
+          <div class="metric"><strong>Now</strong><span>多項指南即時適用</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice" aria-label="practical notes">
+      <div class="notice-icon">💡</div>
+      <div>
+        <h2>航運業實務提示</h2>
+        <ul>
+          <li><strong>立即行動：</strong>氫氣、氨氣及甲醇燃料相關船員培訓指南已即時生效，建議儘早檢視訓練矩陣與 SMS 文件。</li>
+          <li><strong>新造船專案：</strong>IP Code、Load Line、SRtP、IGC/IGF 等更新涉及合約日、龍骨日與交船日，設計初期應先確認適用基準。</li>
+          <li><strong>長期追蹤：</strong>MASS 強制法規雖以 2032 年為目標，但實務上仍可能延後，建議持續追蹤 MSC 112 與後續 EBP 討論。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="timeline" class="timeline" aria-label="effective timeline">
+      <div class="timeline-header">
+        <div>
+          <div class="kicker">Key Effective Dates</div>
+          <h2>重要生效時程一覽</h2>
+          <p>以專案管理角度，建議將下列日期放入新造船規格、設計審查與合規追蹤表。</p>
+        </div>
+      </div>
+
+      <div class="rail">
+        <article class="rail-item">
+          <div class="rail-date">即時生效</div>
+          <p>氫燃料船舶安全指南、電子航海出版品（ENP）指南、導航通訊軟體維護指南、甲醇／乙醇與氨燃料船員培訓指南。</p>
+        </article>
+        <article class="rail-item">
+          <div class="rail-date">2026.07.01</div>
+          <p>非強制性 MASS 法規生效；氨氣貨物作燃料指南生效。</p>
+        </article>
+        <article class="rail-item">
+          <div class="rail-date">2028.01.01</div>
+          <p>VDES 導入、2011 ESP Code 修訂、GMDSS 相關 SOLAS 修訂等多項規範開始適用。</p>
+        </article>
+        <article class="rail-item">
+          <div class="rail-date">2028.07.01</div>
+          <p>IGC Code 修訂、IGF Code 與 SOLAS II-1 修訂預計生效。</p>
+        </article>
+        <article class="rail-item">
+          <div class="rail-date">2031–2032</div>
+          <p>自由落下救生艇修訂自 2031 年起適用；IP Code 交船適用與強制性 MASS 法規目標落在 2032 年。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="mass" class="section">
+      <div class="section-top">
+        <div class="section-no">01</div>
+        <div>
+          <div class="kicker">Maritime Autonomous Surface Ships</div>
+          <h2>自主水面船舶（MASS）</h2>
+          <p class="section-sub">MSC 111 讓 MASS 從概念討論進一步走向全球監管框架，並將 ROC、船長責任與 ISPS 適用性納入討論重點。</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="topic-card teal">
+          <span class="badge teal">已採納</span>
+          <h3>非強制性 MASS 法規正式採納</h3>
+          <p>
+            建立自主船舶監管基礎框架，補足現行 SOLAS 等公約對 MASS 的適用空白。
+            會議確認遠端操控中心（ROC）可視為與航行駕駛台直接相關的地點；當船上有船員時，船長須親自在場。
+            ROC 亦應適用 ISPS Code。
+          </p>
+          <div class="date-chip">生效日：2026 年 7 月 1 日</div>
+        </article>
+
+        <article class="topic-card amber">
+          <span class="badge amber">持續推進</span>
+          <h3>強制性 MASS 法規開發啟動</h3>
+          <p>
+            經驗積累階段（Experience-Building Phase, EBP）框架草案將於 MSC 112 繼續討論。
+            目標生效日維持 2032 年 1 月 1 日，但委員會已承認 2036 年可能更具實務可行性。
+            MASS 與 ROC 證書模板僅作為範例，各主管機關仍需自行制定格式。
+          </p>
+          <div class="date-chip">目標生效：2032 年 1 月 1 日</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="fuel" class="section">
+      <div class="section-top">
+        <div class="section-no">02</div>
+        <div>
+          <div class="kicker">Alternative Fuels & New Technologies</div>
+          <h2>替代燃料與新技術安全規範</h2>
+          <p class="section-sub">本次會議對氫、氨、LPG、乙烷、CO₂ 貨物與低閃點燃料的規範邊界做出更清楚的安排。</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="topic-card teal">
+          <span class="badge teal">已批准</span>
+          <h3>IGC Code 修訂：液化氣體運輸船</h3>
+          <p>
+            修訂涵蓋氨氣、LPG、乙烷燃料使用與 CO₂ 貨物運輸等議題。
+            為回應業界對溯及適用的疑慮，採用合約日、龍骨安放日與交船日三日期制度。
+            同時明確 IGC Code 不適用於非氣體運輸船，落實「一船一規範」原則。
+          </p>
+          <div class="date-chip">預計生效：2028 年 7 月 1 日（MSC 112 採納後）</div>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">已批准</span>
+          <h3>IGF Code 與 SOLAS II-1 修訂</h3>
+          <p>
+            修訂確認 IGF Code 不適用於氣體運輸船，並統一 SOLAS 與 IGF Code 中「氣體燃料」與「低閃點燃料」的定義，
+            以消除過往法規語意不一致所造成的設計與審查疑義。
+          </p>
+          <div class="date-chip">預計生效：2028 年 7 月 1 日</div>
+        </article>
+
+        <article class="topic-card green">
+          <span class="badge green">已批准 / 即時生效</span>
+          <h3>氫氣、氨氣與甲醇／乙醇燃料相關指南</h3>
+          <p>
+            船用氫燃料安全臨時指南即時生效，涵蓋液態與壓縮氫，並採目標導向架構。
+            氨氣貨物作燃料臨時指南通過，支援 IGC Code 第 16.9 條應用。
+            甲醇／乙醇與氨燃料船員培訓指南也同步批准，並以 LNG 訓練標準作為發展基礎。
+          </p>
+          <div class="date-chip">氫氣與培訓指南：即時生效</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sdc" class="section">
+      <div class="section-top">
+        <div class="section-no">03</div>
+        <div>
+          <div class="kicker">Ship Design & Construction</div>
+          <h2>船舶設計與建造（SDC）</h2>
+          <p class="section-sub">這一組更新對新造船設計、穩性計算、結構檢查與客船安全返港分析具有實務影響。</p>
+        </div>
+      </div>
+
+      <div class="cards two">
+        <article class="topic-card blue">
+          <span class="badge blue">已採納</span>
+          <h3>IP Code：工業人員重量標準上調</h3>
+          <p>穩性計算基準由 75 kg 提高至 90 kg，適用於 2028 年 1 月 1 日後簽訂合約的新造船。</p>
+          <div class="date-chip">合約日 2028.01.01 後適用</div>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">已採納</span>
+          <h3>1988 Load Line Protocol 修訂</h3>
+          <p>開放甲板護欄最低高度須達 1 m，以降低惡劣天候下船員落海風險。適用於 2028 年 1 月 1 日後安放龍骨之 24 m 以上新造船。</p>
+          <div class="date-chip">龍骨安放 2028.01.01 後適用</div>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">已採納</span>
+          <h3>2011 ESP Code：遠端檢查技術（RIT）</h3>
+          <p>允許以遠端檢查技術替代近距離結構檢查。RIT 業者認證有效期為 3 年，且需符合 Annex 4 性能要求。</p>
+          <div class="date-chip">生效日：2028 年 1 月 1 日</div>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">已批准</span>
+          <h3>客船安全返港（SRtP）說明文件修訂</h3>
+          <p>擴大適用範圍，納入替代燃料與完整生命週期。新增系統分類 1A、1B、2、3 類，並建議主管機關於設計初期即介入。</p>
+          <div class="date-chip">適用：120 m 以上或 3 個以上主垂直分區之客船</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="ncsr" class="section">
+      <div class="section-top">
+        <div class="section-no">04</div>
+        <div>
+          <div class="kicker">Navigation, Communications, Search & Rescue</div>
+          <h2>航行與通訊（NCSR）</h2>
+          <p class="section-sub">NCSR 相關決議反映航海通訊數位化、衛星定位多元化與軟體維護治理的重要性。</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="topic-card purple">
+          <span class="badge purple">已採納</span>
+          <h3>VDES（VHF Data Exchange System）正式導入</h3>
+          <p>修訂 SOLAS V/18、V/19 以及 1994／2000 HSC Code，允許船舶搭載 VDES 設備，進一步提升船舶通訊與數據交換能力。</p>
+          <div class="date-chip">生效日：2028 年 1 月 1 日</div>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">已採納</span>
+          <h3>北斗衛星（BDS）性能標準修訂與 GNSS 增強系統認可</h3>
+          <p>BDS 性能標準更新支援雙頻並提升定位精度；同時建立 SBAS、RAIM 等 GNSS 增強系統的正式 IMO 認可程序。</p>
+          <div class="date-chip">適用：2028 年 7 月 31 日後安裝之設備</div>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">已批准</span>
+          <h3>電子航海出版品（ENP）與軟體維護指南</h3>
+          <p>ENP 使用指南即時生效，針對非 ECDIS 的數位化出版品提供統一方向。導航通訊設備軟體維護指南則涵蓋網路安全、遠端維護與電子服務報告等要求。</p>
+          <div class="date-chip">即時生效</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sse" class="section">
+      <div class="section-top">
+        <div class="section-no">05</div>
+        <div>
+          <div class="kicker">Ship Systems, Equipment & Other Matters</div>
+          <h2>救生設備（SSE）與其他重要事項</h2>
+          <p class="section-sub">除救生設備外，本次會議也推進網路風險管理、FRP 火災安全與遠端審核／檢查的制度化。</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="topic-card coral">
+          <span class="badge coral">已採納</span>
+          <h3>自由落下救生艇 LSA Code 修訂</h3>
+          <p>新增無需下水即可測試脫離系統的裝置設計要求；安全係數最低 6 倍，且需採用耐腐蝕材料，不需塗裝或鍍鋅。</p>
+          <div class="date-chip">適用：2031 年 1 月 1 日後安裝之救生艇</div>
+        </article>
+
+        <article class="topic-card coral">
+          <span class="badge coral">已批准</span>
+          <h3>網路安全與 ISPS Code</h3>
+          <p>海事網路風險管理指南修訂 Rev.4 獲批准，納入 IAPH 新興技術網路韌性指引。非強制性海事網路規範路線圖通過，目標 2028 年完成，並預計於 2027 年召開跨期工作組會議。</p>
+        </article>
+
+        <article class="topic-card coral">
+          <span class="badge coral">已批准</span>
+          <h3>FRP 結構指南修訂與遠端檢查指南</h3>
+          <p>FRP 火災安全臨時指南修訂通過，新增荷載與非荷載構件測試方法，包括溫度法與撓度法兩種選項。遠端檢查、ISM 審核與 ISPS 驗證指南也正式確立，讓疫情後發展出的遠端作業模式取得更明確的法規支持。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="actions" class="action-board">
+      <h2>建議後續追蹤清單</h2>
+      <p>可將下列項目放入專案例會、法規追蹤表或新造船規格審查清單中。</p>
+
+      <div class="action-grid">
+        <div class="action">
+          <strong>01｜設計階段</strong>
+          <span>確認合約日、龍骨日與交船日對 IP Code、Load Line、IGC/IGF、SRtP 與 ESP Code 的適用性。</span>
+        </div>
+        <div class="action">
+          <strong>02｜營運管理</strong>
+          <span>更新 SMS、船員訓練矩陣與替代燃料操作程序，特別是氫、氨、甲醇／乙醇相關要求。</span>
+        </div>
+        <div class="action">
+          <strong>03｜設備與供應商</strong>
+          <span>追蹤 VDES、BDS、ENP、軟體維護、遠端檢查技術與救生艇脫離系統的設備認證要求。</span>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-note">
+          <strong>對船東：</strong>
+          重點是把生效日轉換成船隊管理與新造船專案的實際檢查點。
+        </div>
+        <div class="mini-note">
+          <strong>對船級社／檢驗端：</strong>
+          重點是提前釐清審查依據、證書格式、遠端檢查邊界與主管機關接受度。
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Reay's Note｜IMO MSC 111 重點筆記</strong><br>
+    整理來源：Lloyd's Register Briefing Note – MSC 111 Summary Report Rev.1，2026 年 5 月。<br>
+    備註：本頁為個人學習與專業整理用途，正式適用要求仍應以 IMO 文件、主管機關與船級社正式通函為準。
+  </footer>
+
+</div>
+</body>
+</html>

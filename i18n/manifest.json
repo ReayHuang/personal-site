@@ -54,6 +54,13 @@
       "category": "notes",
       "zh": "notes/maritime/mepc-83-84-visual-notes.html",
       "en": "notes/maritime/mepc-83-84-visual-notes.en.html"
+    },
+    {
+      "slug": "msc-111-visual-notes",
+      "type": "article",
+      "category": "notes",
+      "zh": "notes/maritime/msc-111-visual-notes.html",
+      "en": "notes/maritime/msc-111-visual-notes.en.html"
     }
   ]
 }
