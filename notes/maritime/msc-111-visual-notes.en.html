@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMO MSC 111 Key Notes | Reay's Note</title>
+  <meta name="description" content="Visual briefing notes on IMO MSC 111: MASS, autonomous ships, alternative fuels, IGC/IGF, SDC, NCSR, SSE, cyber security and remote survey." />
+  <meta name="author" content="Reay Huang" />
+  <meta property="og:title" content="IMO MSC 111 Key Notes | Reay's Note" />
+  <meta property="og:description" content="A practical briefing on MSC 111 outcomes for MASS, alternative fuels, ship design, navigation and communications, lifesaving equipment, and cyber security." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Reay's Maritime Notes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh-Hant" href="msc-111-visual-notes.html" />
+  <link rel="alternate" hreflang="en" href="msc-111-visual-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="msc-111-visual-notes.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --card: #ffffff;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --teal: #11806a;
+      --teal-soft: #e2f5ef;
+      --blue: #1d5ea8;
+      --blue-soft: #e4effb;
+      --amber: #b86b00;
+      --amber-soft: #fff2d9;
+      --purple: #6846c9;
+      --purple-soft: #eee9ff;
+      --coral: #b65035;
+      --coral-soft: #fde8df;
+      --green: #287a3e;
+      --green-soft: #e7f4e9;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(200, 169, 110, .20), transparent 32rem),
+        radial-gradient(circle at top right, rgba(29, 94, 168, .15), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      line-height: 1.78;
+      letter-spacing: .01em;
+    }
+
+    a { color: inherit; }
+    .page { overflow: hidden; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(6, 17, 31, .98), rgba(16, 36, 62, .97)),
+        radial-gradient(circle at 80% 10%, rgba(200, 169, 110, .28), transparent 24rem);
+      color: white;
+      padding: 72px 24px 46px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .12;
+      z-index: -1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.55) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.35) 49%, transparent 51%);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
+    }
+
+    .hero-inner,
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200,169,110,.9);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 34px;
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(34px, 5.4vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      margin: 0 0 20px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,.78);
+      margin: 0;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-panel-title {
+      color: #f0dcae;
+      font-weight: 900;
+      margin-bottom: 12px;
+      font-size: 14px;
+      letter-spacing: .06em;
+    }
+
+    .hero-facts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .fact {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.83);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .fact span {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,169,110,.16);
+      color: #f0dcae;
+      flex: 0 0 26px;
+    }
+
+    /* Sticky nav */
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245,248,252,.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220,230,241,.88);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a {
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200,169,110,.62);
+      background: #fff;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .glass-card,
+    .section,
+    .timeline,
+    .notice,
+    .action-board {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(220,230,241,.95);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .glass-card {
+      padding: 26px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    .lead-title {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.25;
+      margin: 0 0 12px;
+      color: var(--navy-900);
+    }
+
+    .lead-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .metric span {
+      font-size: 12px;
+      color: var(--soft-muted);
+      font-weight: 700;
+    }
+
+    .notice {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      padding: 22px;
+      margin: 20px 0 24px;
+      border-left: 6px solid var(--gold);
+      background:
+        linear-gradient(135deg, rgba(255,248,235,.94), rgba(255,255,255,.92));
+    }
+
+    .notice-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+
+    .notice h2,
+    .section h2,
+    .timeline h2,
+    .action-board h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: var(--navy-900);
+      line-height: 1.28;
+    }
+
+    .notice ul {
+      margin: 10px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .notice li { margin: 4px 0; }
+
+    .timeline {
+      padding: 26px;
+      margin: 24px 0;
+      overflow: hidden;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .timeline-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rail {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(190px, 1fr));
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+    }
+
+    .rail-item {
+      position: relative;
+      min-height: 170px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+
+    .rail-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .rail-date::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200,169,110,.16);
+    }
+
+    .rail-item p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .section {
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .section-no {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cards.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .topic-card {
+      position: relative;
+      padding: 20px 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      overflow: hidden;
+    }
+
+    .topic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--gold);
+    }
+
+    .topic-card.teal::before { background: var(--teal); }
+    .topic-card.blue::before { background: var(--blue); }
+    .topic-card.amber::before { background: var(--amber); }
+    .topic-card.purple::before { background: var(--purple); }
+    .topic-card.coral::before { background: var(--coral); }
+    .topic-card.green::before { background: var(--green); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: 10px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .badge.teal { color: var(--teal); background: var(--teal-soft); }
+    .badge.blue { color: var(--blue); background: var(--blue-soft); }
+    .badge.amber { color: var(--amber); background: var(--amber-soft); }
+    .badge.purple { color: var(--purple); background: var(--purple-soft); }
+    .badge.coral { color: var(--coral); background: var(--coral-soft); }
+    .badge.green { color: var(--green); background: var(--green-soft); }
+
+    .topic-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy-900);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .topic-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .date-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: #f4f7fb;
+      color: var(--soft-muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .date-chip::before { content: "📅"; }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .mini-note {
+      border-radius: var(--radius-sm);
+      padding: 13px;
+      border: 1px dashed rgba(10,22,40,.16);
+      background: #fbfdff;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .mini-note strong {
+      display: block;
+      color: var(--navy-900);
+      margin-bottom: 3px;
+    }
+
+    .action-board {
+      padding: 28px;
+      margin-top: 28px;
+      background:
+        linear-gradient(135deg, rgba(10,22,40,.97), rgba(23,55,95,.96)),
+        radial-gradient(circle at top right, rgba(200,169,110,.22), transparent 20rem);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .action-board h2 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .action-board p {
+      color: rgba(255,255,255,.72);
+      margin: 0 0 20px;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .action {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+    }
+
+    .action strong {
+      display: block;
+      color: #f0dcae;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .action span {
+      display: block;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: var(--navy-900);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid,
+      .section-top,
+      .notice,
+      .action-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel { max-width: 520px; }
+      .cards.two { grid-template-columns: 1fr; }
+      .section-no { width: 50px; height: 50px; font-size: 22px; }
+      .timeline-header { display: block; }
+    }
+
+    @media (max-width: 620px) {
+      .hero-inner,
+      .wrap,
+      main,
+      .footer {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .hero {
+        padding: 46px 0 34px;
+      }
+
+      .hero-grid { gap: 24px; }
+      .hero-panel,
+      .glass-card,
+      .section,
+      .timeline,
+      .notice,
+      .action-board {
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .metric-grid,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rail {
+        grid-template-columns: repeat(5, minmax(210px, 82vw));
+      }
+
+      .nav {
+        width: calc(100% - 28px);
+      }
+
+      h1 { letter-spacing: -.03em; }
+    }
+
+    @media print {
+      body { background: white; }
+      .nav-shell { display: none; }
+      .hero,
+      .action-board {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section, .timeline, .notice, .glass-card { box-shadow: none; }
+      .topic-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Note</a>
+      <span>|</span>
+      <a href="../../index.en.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Note</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="msc-111-visual-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+      <a href="msc-111-visual-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">IMO MSC 111 · Maritime Safety Committee</div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>IMO MSC 111<br>Key Notes | Reay's Note</h1>
+          <p class="subtitle">
+            A practical briefing on MSC 111 outcomes for autonomous surface ships, alternative fuel safety,
+            ship design and construction, navigation and communications, lifesaving equipment, and cyber security.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="MSC 111 quick facts">
+          <div class="hero-panel-title">Session overview</div>
+          <div class="hero-facts">
+            <div class="fact"><span>📍</span><div>IMO Headquarters, London | 13–22 May 2026</div></div>
+            <div class="fact"><span>⚓</span><div>Core topics: MASS, alternative fuels, SDC, NCSR, SSE, cyber risk</div></div>
+            <div class="fact"><span>🧭</span><div>How to read: start with the timeline, then track impacts by ship type, fuel and project stage</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-shell">
+    <nav class="nav" aria-label="page navigation">
+      <a href="#overview">Overview</a>
+      <a href="#timeline">Effective dates</a>
+      <a href="#mass">MASS</a>
+      <a href="#fuel">Alternative fuels</a>
+      <a href="#sdc">Design &amp; construction</a>
+      <a href="#ncsr">Navigation &amp; comms</a>
+      <a href="#sse">SSE / Other</a>
+      <a href="#actions">Practical follow-up</a>
+    </nav>
+  </div>
+
+  <main>
+    <section id="overview" class="summary-grid" aria-label="summary">
+      <div class="glass-card">
+        <div class="kicker">Executive Summary</div>
+        <h2 class="lead-title">MSC 111 at a glance: from technical feasibility to regulatory implementation</h2>
+        <p class="lead-copy">
+          This session marks a significant update to maritime safety regulation in response to new fuels, new communications,
+          new survey technologies and autonomous ships. For owners, yards, class societies and equipment makers, the key is not
+          only when requirements enter into force, but building a verifiable compliance pathway early in newbuild design,
+          crew training, equipment selection and management systems.
+        </p>
+      </div>
+
+      <div class="glass-card">
+        <div class="metric-grid">
+          <div class="metric"><strong>5</strong><span>Major topic groups</span></div>
+          <div class="metric"><strong>2028</strong><span>Cluster of amendments</span></div>
+          <div class="metric"><strong>2032</strong><span>Mandatory MASS code target</span></div>
+          <div class="metric"><strong>Now</strong><span>Guidelines already apply</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice" aria-label="practical notes">
+      <div class="notice-icon">💡</div>
+      <div>
+        <h2>Practical notes for industry</h2>
+        <ul>
+          <li><strong>Immediate action:</strong> Crew training guidelines for hydrogen, ammonia and methanol are already in effect. Review training matrices and SMS documentation early.</li>
+          <li><strong>Newbuild projects:</strong> IP Code, Load Line, SRtP, IGC/IGF and related updates hinge on contract, keel and delivery dates. Confirm applicability at the design stage.</li>
+          <li><strong>Long-term watchlist:</strong> Mandatory MASS regulation targets 2032 but may slip in practice. Keep tracking MSC 112 and subsequent EBP discussions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="timeline" class="timeline" aria-label="effective timeline">
+      <div class="timeline-header">
+        <div>
+          <div class="kicker">Key Effective Dates</div>
+          <h2>Important effective dates at a glance</h2>
+          <p>From a project-management perspective, map these dates into newbuild specifications, design review and compliance tracking sheets.</p>
+        </div>
+      </div>
+
+      <div class="rail">
+        <article class="rail-item">
+          <div class="rail-date">Immediate effect</div>
+          <p>Hydrogen fuel ship safety guidelines, Electronic Navigational Publications (ENP) guidelines, navigation and communication software maintenance guidelines, and methanol/ethanol and ammonia crew training guidelines.</p>
+        </article>
+        <article class="rail-item">
+          <div class="rail-date">2026.07.01</div>
+          <p>Non-mandatory MASS code enters into force; ammonia cargo as fuel guidelines take effect.</p>
+        </article>
+        <article class="rail-item">
+          <div class="rail-date">2028.01.01</div>
+          <p>VDES introduction, 2011 ESP Code amendments, GMDSS-related SOLAS amendments and other requirements begin to apply.</p>
+        </article>
+        <article class="rail-item">
+          <div class="rail-date">2028.07.01</div>
+          <p>IGC Code amendments, IGF Code and SOLAS II-1 amendments expected to enter into force.</p>
+        </article>
+        <article class="rail-item">
+          <div class="rail-date">2031–2032</div>
+          <p>Free-fall lifeboat amendments apply from 2031; IP Code delivery applicability and mandatory MASS code target fall in 2032.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="mass" class="section">
+      <div class="section-top">
+        <div class="section-no">01</div>
+        <div>
+          <div class="kicker">Maritime Autonomous Surface Ships</div>
+          <h2>Maritime Autonomous Surface Ships (MASS)</h2>
+          <p class="section-sub">MSC 111 moves MASS from conceptual debate toward a global regulatory framework, with ROC, master responsibility and ISPS applicability among the key discussion points.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="topic-card teal">
+          <span class="badge teal">Adopted</span>
+          <h3>Non-mandatory MASS code formally adopted</h3>
+          <p>
+            Establishes a foundational regulatory framework for autonomous ships, filling gaps in how SOLAS and related conventions apply to MASS.
+            The session confirmed that a Remote Operation Centre (ROC) may be treated as a location directly associated with the navigation bridge;
+            when crew are on board, the master must be physically present. ROCs should also fall under the ISPS Code.
+          </p>
+          <div class="date-chip">Effective: 1 July 2026</div>
+        </article>
+
+        <article class="topic-card amber">
+          <span class="badge amber">Ongoing</span>
+          <h3>Mandatory MASS code development launched</h3>
+          <p>
+            The Experience-Building Phase (EBP) framework draft will continue at MSC 112.
+            The target entry-into-force date remains 1 January 2032, but the Committee acknowledged that 2036 may be more practicable.
+            MASS and ROC certificate templates are examples only; each Administration must develop its own formats.
+          </p>
+          <div class="date-chip">Target effective date: 1 January 2032</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="fuel" class="section">
+      <div class="section-top">
+        <div class="section-no">02</div>
+        <div>
+          <div class="kicker">Alternative Fuels &amp; New Technologies</div>
+          <h2>Alternative fuels and new technology safety requirements</h2>
+          <p class="section-sub">This session clarified regulatory boundaries for hydrogen, ammonia, LPG, ethane, CO₂ cargo and low-flashpoint fuels.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="topic-card teal">
+          <span class="badge teal">Approved</span>
+          <h3>IGC Code amendments: gas carriers</h3>
+          <p>
+            Amendments cover ammonia, LPG and ethane as fuel, CO₂ cargo transport and related topics.
+            To address industry concerns on retroactive application, a three-date system applies: contract date, keel-laying date and delivery date.
+            The IGC Code is also confirmed not to apply to non-gas carriers, reinforcing a one-ship-one-code approach.
+          </p>
+          <div class="date-chip">Expected effective: 1 July 2028 (after adoption at MSC 112)</div>
+        </article>
+
+        <article class="topic-card teal">
+          <span class="badge teal">Approved</span>
+          <h3>IGF Code and SOLAS II-1 amendments</h3>
+          <p>
+            Amendments confirm that the IGF Code does not apply to gas carriers, and harmonise definitions of "gaseous fuel" and "low-flashpoint fuel"
+            across SOLAS and the IGF Code, removing past inconsistencies that created design and approval uncertainty.
+          </p>
+          <div class="date-chip">Expected effective: 1 July 2028</div>
+        </article>
+
+        <article class="topic-card green">
+          <span class="badge green">Approved / Immediate effect</span>
+          <h3>Hydrogen, ammonia and methanol/ethanol fuel guidelines</h3>
+          <p>
+            Interim guidelines on hydrogen as marine fuel take immediate effect, covering liquid and compressed hydrogen under a goal-based framework.
+            Interim guidelines on ammonia cargo as fuel were approved, supporting IGC Code regulation 16.9.
+            Crew training guidelines for methanol/ethanol and ammonia fuels were also approved, using LNG training standards as a development baseline.
+          </p>
+          <div class="date-chip">Hydrogen and training guidelines: immediate effect</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sdc" class="section">
+      <div class="section-top">
+        <div class="section-no">03</div>
+        <div>
+          <div class="kicker">Ship Design &amp; Construction</div>
+          <h2>Ship design and construction (SDC)</h2>
+          <p class="section-sub">These updates have practical impact on newbuild design, stability calculations, structural survey and passenger-ship safe return to port analysis.</p>
+        </div>
+      </div>
+
+      <div class="cards two">
+        <article class="topic-card blue">
+          <span class="badge blue">Adopted</span>
+          <h3>IP Code: industrial personnel weight standard raised</h3>
+          <p>The stability calculation basis increases from 75 kg to 90 kg for new ships contracted on or after 1 January 2028.</p>
+          <div class="date-chip">Applies to contracts from 2028.01.01</div>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">Adopted</span>
+          <h3>1988 Load Line Protocol amendment</h3>
+          <p>Open-deck guardrails must be at least 1 m high to reduce crew fall-overboard risk in heavy weather. Applies to new ships of 24 m or more with keels laid on or after 1 January 2028.</p>
+          <div class="date-chip">Applies to keels laid from 2028.01.01</div>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">Adopted</span>
+          <h3>2011 ESP Code: Remote Inspection Techniques (RIT)</h3>
+          <p>Allows remote inspection techniques as an alternative to close-up structural survey. RIT service-provider certification is valid for three years and must meet Annex 4 performance requirements.</p>
+          <div class="date-chip">Effective: 1 January 2028</div>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">Approved</span>
+          <h3>Passenger ship SRtP explanatory notes revision</h3>
+          <p>Expands scope to include alternative fuels and the full lifecycle. Adds system categories 1A, 1B, 2 and 3, and recommends early Administration involvement at the design stage.</p>
+          <div class="date-chip">Applies to passenger ships of 120 m or more, or with three or more main vertical zones</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="ncsr" class="section">
+      <div class="section-top">
+        <div class="section-no">04</div>
+        <div>
+          <div class="kicker">Navigation, Communications, Search &amp; Rescue</div>
+          <h2>Navigation and communications (NCSR)</h2>
+          <p class="section-sub">NCSR-related outcomes reflect the growing importance of digital navigation communications, diversified satellite positioning and software maintenance governance.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="topic-card purple">
+          <span class="badge purple">Adopted</span>
+          <h3>VDES (VHF Data Exchange System) formally introduced</h3>
+          <p>Amends SOLAS V/18, V/19 and the 1994/2000 HSC Code to allow ships to carry VDES equipment, enhancing ship communications and data exchange capability.</p>
+          <div class="date-chip">Effective: 1 January 2028</div>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">Adopted</span>
+          <h3>BeiDou (BDS) performance standards and GNSS augmentation recognition</h3>
+          <p>BDS performance standards are updated to support dual-frequency operation and improved positioning accuracy. Formal IMO recognition procedures are established for GNSS augmentation systems such as SBAS and RAIM.</p>
+          <div class="date-chip">Applies to equipment installed on or after 31 July 2028</div>
+        </article>
+
+        <article class="topic-card purple">
+          <span class="badge purple">Approved</span>
+          <h3>Electronic Navigational Publications (ENP) and software maintenance guidelines</h3>
+          <p>ENP usage guidelines take immediate effect, providing a unified direction for digital publications outside ECDIS. Navigation and communication equipment software maintenance guidelines cover cyber security, remote maintenance and electronic service reporting.</p>
+          <div class="date-chip">Immediate effect</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sse" class="section">
+      <div class="section-top">
+        <div class="section-no">05</div>
+        <div>
+          <div class="kicker">Ship Systems, Equipment &amp; Other Matters</div>
+          <h2>Lifesaving equipment (SSE) and other key matters</h2>
+          <p class="section-sub">Beyond lifesaving equipment, the session also advanced cyber risk management, FRP fire safety and the institutionalisation of remote audit and survey.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="topic-card coral">
+          <span class="badge coral">Adopted</span>
+          <h3>Free-fall lifeboat LSA Code amendment</h3>
+          <p>Adds design requirements for release-system test arrangements that do not require launching the boat. Minimum safety factor is 6, with corrosion-resistant materials that do not require coating or galvanising.</p>
+          <div class="date-chip">Applies to lifeboats installed on or after 1 January 2031</div>
+        </article>
+
+        <article class="topic-card coral">
+          <span class="badge coral">Approved</span>
+          <h3>Cyber security and the ISPS Code</h3>
+          <p>Revision 4 of the Guidelines on maritime cyber risk management was approved, incorporating IAPH guidance on cyber resilience for emerging technologies. A non-mandatory maritime cyber regulation roadmap was approved, targeting completion in 2028, with an intersessional working group expected in 2027.</p>
+        </article>
+
+        <article class="topic-card coral">
+          <span class="badge coral">Approved</span>
+          <h3>FRP structure guidelines and remote survey guidelines</h3>
+          <p>Revised interim guidelines on FRP fire safety were approved, adding test methods for load-bearing and non-load-bearing components, including temperature-based and deflection-based options. Guidelines on remote survey, ISM audit and ISPS verification were also finalised, giving clearer regulatory support to remote practices developed after the pandemic.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="actions" class="action-board">
+      <h2>Recommended follow-up checklist</h2>
+      <p>Use these items in project meetings, regulatory tracking sheets or newbuild specification review checklists.</p>
+
+      <div class="action-grid">
+        <div class="action">
+          <strong>01 | Design phase</strong>
+          <span>Confirm how contract, keel and delivery dates affect applicability of IP Code, Load Line, IGC/IGF, SRtP and ESP Code requirements.</span>
+        </div>
+        <div class="action">
+          <strong>02 | Operations</strong>
+          <span>Update SMS, crew training matrices and alternative-fuel operating procedures, especially for hydrogen, ammonia and methanol/ethanol requirements.</span>
+        </div>
+        <div class="action">
+          <strong>03 | Equipment &amp; suppliers</strong>
+          <span>Track certification requirements for VDES, BDS, ENP, software maintenance, remote inspection techniques and lifeboat release systems.</span>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-note">
+          <strong>For shipowners:</strong>
+          The priority is turning effective dates into practical checkpoints for fleet management and newbuild projects.
+        </div>
+        <div class="mini-note">
+          <strong>For class societies and surveyors:</strong>
+          The priority is clarifying review bases, certificate formats, remote survey boundaries and Administration acceptance early.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Reay's Note | IMO MSC 111 Key Notes</strong><br>
+    Source: Lloyd's Register Briefing Note – MSC 111 Summary Report Rev.1, May 2026.<br>
+    Note: This page is for personal learning and professional reference only. For formal compliance, refer to IMO documents, flag Administrations and official class circulars.
+  </footer>
+
+</div>
+</body>
+</html>
