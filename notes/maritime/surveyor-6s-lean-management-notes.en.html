@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6S Lean Management from a Marine Surveyor's Perspective | Reay's Note</title>
+  <meta name="description" content="A marine surveyor's practical guide to applying 6S lean management to ship surveys, engine-room rounds, deck operations, maintenance, and onboard safety management." />
+  <meta name="author" content="Reay Huang" />
+  <meta name="keywords" content="6S, lean management, marine surveyor, ship survey, engine room inspection, safety management, hierarchy of controls, PPE" />
+  <meta property="og:title" content="6S Lean Management from a Marine Surveyor's Perspective | Reay's Note" />
+  <meta property="og:description" content="A practical surveyor-focused guide to applying 6S lean management onboard ships." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Reay's Maritime Notes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh-Hant" href="surveyor-6s-lean-management-notes.html" />
+  <link rel="alternate" hreflang="en" href="surveyor-6s-lean-management-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="surveyor-6s-lean-management-notes.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --line: #dbe4f0;
+      --primary: #0f4c81;
+      --primary-dark: #08345c;
+      --accent: #f59e0b;
+      --accent-soft: #fff7e6;
+      --blue-soft: #eaf4ff;
+      --green-soft: #ecfdf5;
+      --red-soft: #fff1f2;
+      --shadow: 0 12px 30px rgba(15, 76, 129, 0.10);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15, 76, 129, 0.16), transparent 34%),
+        linear-gradient(180deg, #f7fbff 0%, var(--bg) 42%, #eef4fb 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      padding: 56px 42px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(8, 52, 92, 0.98), rgba(15, 76, 129, 0.92)),
+        url("data:image/svg+xml,%3Csvg width='900' height='500' viewBox='0 0 900 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.14' stroke-width='2'%3E%3Cpath d='M70 350 C190 280 280 280 390 340 S610 410 790 300'/%3E%3Cpath d='M120 210 H780'/%3E%3Cpath d='M190 150 H710'/%3E%3Cpath d='M260 90 H640'/%3E%3C/g%3E%3C/svg%3E");
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -110px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(245, 158, 11, 0.22);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin: 24px 0 14px;
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    .hero .subtitle {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1rem, 2.2vw, 1.26rem);
+    }
+
+    .hero-highlight {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .hero-stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 1.55rem;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .hero-stat span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.95rem;
+    }
+
+    .section { margin-top: 42px; }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .section-lead {
+      max-width: 720px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(219, 228, 240, 0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+    }
+
+    .intro-card,
+    .risk-card,
+    .summary-card {
+      padding: 28px;
+    }
+
+    .intro-card h3,
+    .risk-card h3,
+    .summary-card h3 {
+      margin: 0 0 14px;
+      color: var(--primary-dark);
+      font-size: 1.32rem;
+    }
+
+    .check-list,
+    .risk-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding: 11px 14px 11px 42px;
+      border-radius: 14px;
+      background: #f8fbff;
+      border: 1px solid #e7eef7;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 14px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .risk-card { background: linear-gradient(180deg, #ffffff, var(--red-soft)); }
+
+    .risk-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(15, 76, 129, 0.18);
+    }
+
+    .risk-list li:last-child { border-bottom: none; }
+
+    .risk-icon {
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(15, 76, 129, 0.08);
+    }
+
+    .six-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .s-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px;
+      min-height: 430px;
+      border-radius: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 26px rgba(15, 76, 129, 0.08);
+    }
+
+    .s-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .s-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .s-badge {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), #1d75b8);
+      font-weight: 900;
+      font-size: 1.18rem;
+      box-shadow: 0 10px 18px rgba(15, 76, 129, 0.18);
+    }
+
+    .s-card:nth-child(6) .s-badge { background: linear-gradient(135deg, #b91c1c, #f59e0b); }
+
+    .s-label {
+      text-align: right;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .s-label strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1.18rem;
+    }
+
+    .s-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+    }
+
+    .s-card .meaning {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .mini-title {
+      margin: 18px 0 8px;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .bullet-list li { margin: 6px 0; }
+
+    .surveyor-note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--blue-soft);
+      border-left: 5px solid var(--primary);
+      color: #16456f;
+      font-weight: 650;
+    }
+
+    .inspection-table-wrap {
+      overflow-x: auto;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: #fff;
+    }
+
+    thead th {
+      background: var(--primary-dark);
+      color: #fff;
+      text-align: left;
+      padding: 17px 18px;
+      font-size: 0.96rem;
+      letter-spacing: 0.02em;
+    }
+
+    tbody td {
+      padding: 17px 18px;
+      border-bottom: 1px solid #edf2f7;
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) td { background: #f8fbff; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #9a5b00;
+      font-weight: 800;
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+
+    .hierarchy {
+      display: grid;
+      gap: 14px;
+    }
+
+    .control-row {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 18px;
+      align-items: stretch;
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(15, 76, 129, 0.06);
+    }
+
+    .control-level {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), #1d75b8);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .control-number {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .control-content strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+      font-size: 1.08rem;
+    }
+
+    .control-content p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+    }
+
+    .quote-card {
+      padding: 30px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-card .quote-mark {
+      font-size: 4.5rem;
+      line-height: 0.75;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .quote-card p {
+      margin: 8px 0 0;
+      font-size: clamp(1.32rem, 3vw, 2rem);
+      line-height: 1.45;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+    }
+
+    .summary-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .summary-point {
+      padding: 16px;
+      border-radius: 16px;
+      background: #f8fbff;
+      border: 1px solid #e7eef7;
+    }
+
+    .summary-point strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      margin-top: 42px;
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 0;
+    }
+
+    .nav-pills a {
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 940px) {
+      .hero { padding: 42px 26px; }
+      .hero-highlight,
+      .intro-grid,
+      .six-grid,
+      .summary-grid { grid-template-columns: 1fr; }
+      .s-card { min-height: auto; }
+      .control-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .page { padding: 20px 14px 60px; }
+      .hero { border-radius: 24px; }
+      .section-header { display: block; }
+      .intro-card,
+      .risk-card,
+      .summary-card,
+      .quote-card,
+      .s-card { padding: 22px; }
+      .summary-points { grid-template-columns: 1fr; }
+      .s-top { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Note</a>
+      <span>|</span>
+      <a href="../../index.en.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Note</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="surveyor-6s-lean-management-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+      <a href="surveyor-6s-lean-management-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+    </nav>
+  </div>
+
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">Marine Surveyor Perspective · Lean Management</div>
+      <h1>Explaining 6S Lean Management<br />from a Marine Surveyor's Perspective</h1>
+      <p class="subtitle">
+        6S extends the familiar 5S approach used in lean management: Sort, Set in Order, Shine, Standardize, and Sustain, with Safety added as the sixth element. For ships, 6S is not only a factory or warehouse housekeeping method. It can also support ship surveys, engine-room rounds, deck operations, maintenance, and onboard safety management. From a marine surveyor's perspective, the point is not whether a ship merely looks clean, but whether it can continue to operate safely, reliably, and efficiently.
+      </p>
+
+      <nav class="nav-pills" aria-label="Page navigation">
+        <a href="#why">Why it matters</a>
+        <a href="#sixs">6S in practice</a>
+        <a href="#engine-room">Engine-room checks</a>
+        <a href="#controls">Controls</a>
+        <a href="#summary">Surveyor's conclusion</a>
+      </nav>
+
+      <div class="hero-highlight">
+        <div class="hero-stat">
+          <strong>5S + Safety</strong>
+          <span>Make safety risk control explicit instead of assuming it is implicit.</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Onboard condition</strong>
+          <span>Observe whether sorting, ordering, cleaning, and standardization are actually maintained.</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Safety culture</strong>
+          <span>Assess whether the ship can sustain good condition over time.</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="why" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Why 6S matters onboard</span>
+          <h2>1. Why should marine surveyors care about 6S?</h2>
+          <p class="section-lead">The condition seen onboard often reflects the vessel's maintenance discipline, emergency readiness, and safety management capability.</p>
+        </div>
+      </div>
+
+      <div class="intro-grid">
+        <article class="intro-card card">
+          <h3>Common 6S observations onboard</h3>
+          <ul class="check-list">
+            <li>Oil stains, leaks, or wet deck plates in the engine room.</li>
+            <li>Tools, spare parts, or removed components left in working areas.</li>
+            <li>Fire-fighting appliances, life-saving appliances, or escape routes blocked.</li>
+            <li>Cables, pipelines, valves, and switches with unclear markings.</li>
+            <li>Dangerous goods, chemicals, or paint stored improperly.</li>
+            <li>PPE not used correctly, or high-risk jobs carried out without proper safeguards.</li>
+          </ul>
+        </article>
+
+        <aside class="risk-card card">
+          <h3>Small issues can create major risks</h3>
+          <ul class="risk-list">
+            <li><span class="risk-icon">🔥</span><span>Fire risk increases, especially when oil residue, combustible material, and heat sources are present together.</span></li>
+            <li><span class="risk-icon">⚠️</span><span>Personnel face higher risks of slips, trips, crushing injuries, burns, or falls.</span></li>
+            <li><span class="risk-icon">🛠️</span><span>Equipment defects are harder to detect early, increasing the risk of delay or off-hire.</span></li>
+            <li><span class="risk-icon">📋</span><span>Port State Control, class surveys, or internal audits may record deficiencies.</span></li>
+            <li><span class="risk-icon">🚨</span><span>Emergency equipment may not be found quickly enough during an incident.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sixs" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">6S in Ship Survey</span>
+          <h2>2. What 6S means in ship survey practice</h2>
+          <p class="section-lead">For a marine surveyor, each S is not an abstract slogan. It is a management element that can be observed, questioned, verified, and followed up onboard.</p>
+        </div>
+      </div>
+
+      <div class="six-grid">
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">1S</div>
+            <div class="s-label"><strong>Sort</strong>Remove unnecessary items</div>
+          </div>
+          <h3>Keep only what is needed</h3>
+          <p class="meaning">Confirm that working areas contain only necessary items, so unnecessary material does not become an accident source.</p>
+          <div class="mini-title">Survey focus</div>
+          <ul class="bullet-list">
+            <li>Waste material, old parts, or unnecessary spares in the engine room.</li>
+            <li>Unused ropes, steel pieces, timber, or other loose items on deck.</li>
+            <li>Obstructions around fire stations or life-saving appliances.</li>
+            <li>Expired or unidentified items in the paint locker or chemical locker.</li>
+          </ul>
+          <div class="surveyor-note">Sort is not just about making the ship look tidy. It reduces tripping, fire, pollution, and blocked-escape-route risks.</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">2S</div>
+            <div class="s-label"><strong>Set in Order</strong>A place for everything</div>
+          </div>
+          <h3>Every item has a fixed location</h3>
+          <p class="meaning">Tools, spares, and safety equipment should have clear locations and be quickly available when needed.</p>
+          <div class="mini-title">Survey focus</div>
+          <ul class="bullet-list">
+            <li>Whether tools are stored in designated locations.</li>
+            <li>Whether fire-fighting equipment is readily accessible.</li>
+            <li>Whether lifejackets, breathing apparatus, and stretchers are in assigned places.</li>
+            <li>Whether valves, pipelines, and electrical switches are clearly marked.</li>
+            <li>Whether spare parts are categorized and supported by inventory records.</li>
+          </ul>
+          <div class="surveyor-note">In an emergency, crew members do not have time to search for equipment. Good ordering improves response speed.</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">3S</div>
+            <div class="s-label"><strong>Shine</strong>Cleaning as inspection</div>
+          </div>
+          <h3>Cleaning is also inspection</h3>
+          <p class="meaning">Onboard, cleaning is not merely housekeeping. It is part of preventive inspection.</p>
+          <div class="mini-title">Survey focus</div>
+          <ul class="bullet-list">
+            <li>Oil contamination on engine-room floor plates.</li>
+            <li>Oil, water, or air leaks from the main engine, auxiliary engines, or pumps.</li>
+            <li>Dust, moisture, or corrosion inside switchboards and control boxes.</li>
+            <li>Blocked deck scuppers or drains.</li>
+            <li>Cleanliness around bilges and oily water separator areas.</li>
+          </ul>
+          <div class="surveyor-note">Oil marks, water traces, corrosion, and abnormal dust can be early signs of defects or inadequate maintenance.</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">4S</div>
+            <div class="s-label"><strong>Standardize</strong>Consistent methods</div>
+          </div>
+          <h3>Make checks and work practices consistent</h3>
+          <p class="meaning">Shipboard management should not rely only on individual experience. It needs consistent procedures, checklists, and standards.</p>
+          <div class="mini-title">Survey focus</div>
+          <ul class="bullet-list">
+            <li>Engine-room round checklists.</li>
+            <li>Maintenance records for fire-fighting and life-saving appliances.</li>
+            <li>Enclosed space entry procedures.</li>
+            <li>Hot work permit procedures.</li>
+            <li>Hazardous chemical management procedures.</li>
+            <li>Deficiency follow-up and corrective action records.</li>
+          </ul>
+          <div class="surveyor-note">Standardization moves ship management from memory-based practice to system-based practice, but records must match the actual onboard condition.</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">5S</div>
+            <div class="s-label"><strong>Sustain</strong>Daily discipline</div>
+          </div>
+          <h3>Make good condition routine</h3>
+          <p class="meaning">6S should not be performed only before a survey. It should be part of normal shipboard management.</p>
+          <div class="mini-title">Survey focus</div>
+          <ul class="bullet-list">
+            <li>Whether crew members continue routine rounds.</li>
+            <li>Whether deficiencies are tracked and corrected.</li>
+            <li>Whether drills and training are conducted regularly.</li>
+            <li>Whether the master and chief engineer have effective supervision in place.</li>
+            <li>Whether internal audits are effective.</li>
+            <li>Whether similar deficiencies recur.</li>
+          </ul>
+          <div class="surveyor-note">If the ship is only tidied up before survey, the management system is not mature. Sustain reflects the ship's safety culture.</div>
+        </article>
+
+        <article class="s-card">
+          <div class="s-top">
+            <div class="s-badge">6S</div>
+            <div class="s-label"><strong>Safety</strong>The core element</div>
+          </div>
+          <h3>The core of 6S</h3>
+          <p class="meaning">A ship is a high-risk workplace. Safety should not be assumed to be covered by 5S. It should be checked and managed explicitly.</p>
+          <div class="mini-title">Survey focus</div>
+          <ul class="bullet-list">
+            <li>Whether escape routes are clear.</li>
+            <li>Whether fire-fighting and life-saving appliances are complete and ready for use.</li>
+            <li>Whether slip, burn, pinch, and fall-from-height hazards are controlled.</li>
+            <li>Whether enclosed space entry includes atmosphere testing.</li>
+            <li>Whether hot work is supported by permits and fire watch arrangements.</li>
+            <li>Whether PPE is used correctly.</li>
+          </ul>
+          <div class="surveyor-note">A clean and tidy ship is not automatically safe, but a genuinely safe ship usually shows good 6S management.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="engine-room" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Engine Room Example</span>
+          <h2>3. Example: applying 6S during an engine-room inspection</h2>
+          <p class="section-lead">The engine room is one of the clearest areas for assessing 6S maturity because it combines high temperature, rotating machinery, fuel oil, slip hazards, electrical hazards, and emergency response needs.</p>
+        </div>
+      </div>
+
+      <div class="inspection-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>6S item</th>
+              <th>What the surveyor checks</th>
+              <th>Possible risk</th>
+              <th>On-site judgement point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag">Sort</span></td>
+              <td>Waste parts, oil drums, or miscellaneous items left in the area.</td>
+              <td>Fire, tripping, pollution.</td>
+              <td>Unnecessary items are removed and working areas remain passable.</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Set in Order</span></td>
+              <td>Tools, spare parts, and fire-fighting equipment are stored in designated places.</td>
+              <td>Equipment cannot be found during an emergency.</td>
+              <td>Markings are clear and crew members know where equipment is located.</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Shine</span></td>
+              <td>Oil residue, leakage, or accumulated water.</td>
+              <td>Slips, fire, equipment failure.</td>
+              <td>Cleanliness helps abnormal conditions be detected early.</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Standardize</span></td>
+              <td>Round checklists, maintenance records, and work procedures.</td>
+              <td>Inconsistent work and recurring deficiencies.</td>
+              <td>Records match the actual condition observed onboard.</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Sustain</span></td>
+              <td>Whether the area is kept in good condition over time.</td>
+              <td>Last-minute clean-up before survey and weak daily control.</td>
+              <td>Similar deficiencies do not repeatedly appear and supervision is effective.</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Safety</span></td>
+              <td>PPE, warning signs, isolation, and emergency measures.</td>
+              <td>Personal injury or major casualty.</td>
+              <td>High-risk work is supported by permits, isolation, monitoring, and emergency readiness.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="controls" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Hierarchy of Controls</span>
+          <h2>4. How 6S relates to the hierarchy of controls</h2>
+          <p class="section-lead">When assessing safety improvements, a surveyor should consider not only whether action was taken, but also whether the control is genuinely effective. The hierarchy of controls helps judge the maturity of risk control.</p>
+        </div>
+      </div>
+
+      <div class="hierarchy">
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">1</span>Elimination</div>
+          <div class="control-content">
+            <strong>Remove the hazard directly</strong>
+            <p>For example, remove unnecessary obstructions on deck to prevent crew members from tripping. This is usually the most effective control.</p>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">2</span>Substitution</div>
+          <div class="control-content">
+            <strong>Replace the hazard with a safer method or material</strong>
+            <p>For example, use a lower-hazard cleaning agent instead of a highly volatile chemical to reduce exposure and fire risk.</p>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">3</span>Engineering Controls</div>
+          <div class="control-content">
+            <strong>Isolate the hazard through equipment or design</strong>
+            <p>For example, install guards, non-slip flooring, ventilation, or barriers so that personnel are less likely to contact the hazard directly.</p>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">4</span>Administrative Controls</div>
+          <div class="control-content">
+            <strong>Change the way work is carried out through procedures and management</strong>
+            <p>For example, establish enclosed space entry procedures, hot work permits, round checklists, training, and deficiency follow-up.</p>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-level"><span class="control-number">5</span>PPE</div>
+          <div class="control-content">
+            <strong>Protect personnel with equipment</strong>
+            <p>Examples include safety helmets, goggles, safety shoes, gloves, protective clothing, and respirators. PPE is important, but it is usually the last line of defence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Surveyor's Conclusion</span>
+          <h2>5. A surveyor's conclusion</h2>
+          <p class="section-lead">For ships, 6S is a practical tool that connects onboard safety, quality management, and risk prevention.</p>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <aside class="quote-card">
+          <div class="quote-mark">“</div>
+          <p>A surveyor does not look at 6S merely to see whether a ship is clean, but to judge whether the ship can continue to operate safely, reliably, and efficiently.</p>
+        </aside>
+
+        <article class="summary-card card">
+          <h3>6S helps a surveyor assess whether the vessel has:</h3>
+          <div class="summary-points">
+            <div class="summary-point"><strong>Onboard condition control</strong><span>Working areas are orderly, passable, and inspectable.</span></div>
+            <div class="summary-point"><strong>Maintenance discipline</strong><span>Equipment abnormalities can be detected and followed up early.</span></div>
+            <div class="summary-point"><strong>Safety culture</strong><span>Crew members maintain safe behaviours during normal operations.</span></div>
+            <div class="summary-point"><strong>Emergency readiness</strong><span>Fire-fighting, life-saving, and emergency equipment can be used immediately.</span></div>
+            <div class="summary-point"><strong>Deficiency prevention</strong><span>Similar issues are prevented from recurring.</span></div>
+            <div class="summary-point"><strong>Operational reliability</strong><span>The risks of accidents, delays, and survey deficiencies are reduced.</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Reay's Note | 6S Lean Management from a Marine Surveyor's Perspective</p>
+    </footer>
+  </main>
+</body>
+</html>
