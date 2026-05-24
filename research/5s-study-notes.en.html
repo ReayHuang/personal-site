@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5S Overview Study Notes | Reay's Note</title>
+  <link rel="stylesheet" href="../assets/css/note-standalone.css" />
+  <meta name="description" content="Visual study notes on the 5S workplace management method: Sort, Set in Order, Shine, Standardize, and Sustain." />
+  <meta property="og:title" content="5S Overview Study Notes | Reay's Note" />
+  <meta property="og:description" content="A visual guide to the five 5S pillars, implementation roles, benefits, and practical audit methods." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Reay's Note" />
+  <meta property="og:url" content="https://reayhuang.github.io/personal-site/research/5s-study-notes.en.html" />
+  <link rel="canonical" href="https://reayhuang.github.io/personal-site/research/5s-study-notes.en.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="5s-study-notes.html" />
+  <link rel="alternate" hreflang="en" href="5s-study-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="5s-study-notes.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="5S Overview Study Notes | Reay's Note" />
+  <meta name="twitter:description" content="A visual guide to the five 5S pillars, implementation roles, benefits, and practical audit methods." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700;900&family=Noto+Serif:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --card: #ffffff;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --teal: #11806a;
+      --teal-soft: #e2f5ef;
+      --blue: #1d5ea8;
+      --blue-soft: #e4effb;
+      --amber: #b86b00;
+      --amber-soft: #fff2d9;
+      --purple: #6846c9;
+      --purple-soft: #eee9ff;
+      --coral: #b65035;
+      --coral-soft: #fde8df;
+      --green: #287a3e;
+      --green-soft: #e7f4e9;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(29, 94, 168, .18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(104, 70, 201, .14), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      line-height: 1.72;
+      letter-spacing: .01em;
+    }
+
+    a { color: inherit; }
+    .page { overflow: hidden; }
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(6, 17, 31, .98), rgba(16, 36, 62, .97)),
+        radial-gradient(circle at 80% 10%, rgba(200, 169, 110, .26), transparent 24rem);
+      color: white;
+      padding: 72px 24px 46px;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .10;
+      z-index: -1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.55) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.35) 49%, transparent 51%);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
+    }
+    .hero-inner,
+    main,
+    .footer,
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200,169,110,.9);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 34px;
+      align-items: end;
+      margin-top: 26px;
+    }
+    h1 {
+      font-family: "Noto Serif", serif;
+      font-size: clamp(34px, 5.4vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      margin: 0 0 20px;
+    }
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,.78);
+      margin: 0;
+    }
+    .hero-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter: blur(18px);
+    }
+    .hero-panel-title {
+      color: #f0dcae;
+      font-weight: 900;
+      margin-bottom: 12px;
+      font-size: 14px;
+      letter-spacing: .06em;
+    }
+    .hero-facts { display: grid; gap: 12px; }
+    .fact {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.83);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .fact span {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,169,110,.16);
+      color: #f0dcae;
+      flex: 0 0 26px;
+    }
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245,248,252,.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220,230,241,.88);
+    }
+    .nav {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a {
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200,169,110,.62);
+      background: #fff;
+    }
+    main { padding: 34px 0 72px; }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+    .glass-card,
+    .section,
+    .timeline,
+    .notice,
+    .action-board {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(220,230,241,.95);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+    .glass-card,
+    .section,
+    .timeline,
+    .notice,
+    .action-board { padding: 26px; }
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+    .lead-title {
+      font-family: "Noto Serif", serif;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.25;
+      margin: 0 0 12px;
+      color: var(--navy-900);
+    }
+    .lead-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      padding: 16px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+    .metric strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: "Noto Serif", serif;
+    }
+    .metric span {
+      font-size: 12px;
+      color: var(--soft-muted);
+      font-weight: 800;
+    }
+    .notice {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      margin: 20px 0 24px;
+      border-left: 6px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,248,235,.94), rgba(255,255,255,.92));
+    }
+    .notice-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+    .notice h2,
+    .section h2,
+    .timeline h2,
+    .action-board h2 {
+      margin: 0;
+      font-family: "Noto Serif", serif;
+      color: var(--navy-900);
+      line-height: 1.28;
+    }
+    .notice ul {
+      margin: 10px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .notice li { margin: 5px 0; }
+    .notice strong { color: var(--navy-900); }
+    .timeline { margin: 24px 0; overflow: hidden; }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+    .timeline-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .rail {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(170px, 1fr));
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+    }
+    .rail-item {
+      min-height: 168px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+    .rail-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    .rail-step::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200,169,110,.16);
+    }
+    .rail-item p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .rail-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #f4f7fb;
+      color: var(--soft-muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .section { margin: 24px 0; }
+    .section-top {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+    .section-no {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      font-family: "Noto Serif", serif;
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+    .section-sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .sub-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      color: var(--navy-800);
+      margin: 26px 0 14px;
+    }
+    .sub-head::before {
+      content: "";
+      width: 6px;
+      height: 18px;
+      border-radius: 3px;
+      background: var(--gold);
+    }
+    .cards { display: grid; gap: 14px; }
+    .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .topic-card,
+    .benefit-tile,
+    .sum-tile {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff, #fbfdff);
+    }
+    .topic-card {
+      position: relative;
+      padding: 20px 20px 18px;
+      overflow: hidden;
+    }
+    .topic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--gold);
+    }
+    .topic-card.teal::before { background: var(--teal); }
+    .topic-card.blue::before { background: var(--blue); }
+    .topic-card.amber::before { background: var(--amber); }
+    .topic-card.purple::before { background: var(--purple); }
+    .topic-card.coral::before { background: var(--coral); }
+    .topic-card.green::before { background: var(--green); }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: 10px;
+    }
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+    .badge.teal { color: var(--teal); background: var(--teal-soft); }
+    .badge.blue { color: var(--blue); background: var(--blue-soft); }
+    .badge.amber { color: var(--amber); background: var(--amber-soft); }
+    .badge.purple { color: var(--purple); background: var(--purple-soft); }
+    .badge.coral { color: var(--coral); background: var(--coral-soft); }
+    .badge.green { color: var(--green); background: var(--green-soft); }
+    .badge.gold { color: var(--amber); background: var(--gold-soft); }
+    .topic-card h3,
+    .benefit-tile h3 {
+      margin: 0 0 10px;
+      color: var(--navy-900);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .topic-card p,
+    .benefit-tile p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .point-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .point-list li {
+      position: relative;
+      padding-left: 16px;
+      margin: 7px 0;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .point-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .topic-card.teal .point-list li::before { background: var(--teal); }
+    .topic-card.blue .point-list li::before { background: var(--blue); }
+    .topic-card.amber .point-list li::before { background: var(--amber); }
+    .topic-card.purple .point-list li::before { background: var(--purple); }
+    .topic-card.coral .point-list li::before { background: var(--coral); }
+    .topic-card.green .point-list li::before { background: var(--green); }
+    .callout {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      margin: 20px 0 4px;
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,248,235,.92), rgba(255,255,255,.9));
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .callout.blue { border-color: var(--blue); background: linear-gradient(135deg, var(--blue-soft), rgba(255,255,255,.92)); }
+    .callout.teal { border-color: var(--teal); background: linear-gradient(135deg, var(--teal-soft), rgba(255,255,255,.92)); }
+    .callout.purple { border-color: var(--purple); background: linear-gradient(135deg, var(--purple-soft), rgba(255,255,255,.92)); }
+    .callout strong { color: var(--navy-900); }
+    .callout-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      background: var(--gold-soft);
+    }
+    .callout.blue .callout-icon { background: var(--blue-soft); }
+    .callout.teal .callout-icon { background: var(--teal-soft); }
+    .callout.purple .callout-icon { background: var(--purple-soft); }
+    .pillar-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .pillar-tile {
+      padding: 18px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      text-align: center;
+    }
+    .pillar-letter {
+      font-family: "Noto Serif", serif;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pillar-name {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      color: var(--soft-muted);
+      margin-bottom: 8px;
+    }
+    .pillar-body {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      min-width: 560px;
+    }
+    thead th {
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      color: #f0dcae;
+      font-weight: 800;
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 12.5px;
+      letter-spacing: .04em;
+    }
+    tbody td {
+      padding: 12px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+    tbody tr:nth-child(even) { background: #f8fbff; }
+    tbody td strong,
+    .tcell-step { color: var(--navy-900); font-weight: 900; }
+    .case-step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 14px;
+      background: #fff;
+    }
+    .case-step-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+    .case-step-head.blue { background: var(--blue-soft); }
+    .case-step-head.teal { background: var(--teal-soft); }
+    .case-step-head.amber { background: var(--amber-soft); }
+    .case-step-head.purple { background: var(--purple-soft); }
+    .case-step-head.green { background: var(--green-soft); }
+    .case-num {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      font-family: "Noto Serif", serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .case-num.blue { background: var(--blue); }
+    .case-num.teal { background: var(--teal); }
+    .case-num.amber { background: var(--amber); }
+    .case-num.purple { background: var(--purple); }
+    .case-num.green { background: var(--green); }
+    .case-method {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--soft-muted);
+      margin-bottom: 2px;
+    }
+    .case-q {
+      font-family: "Noto Serif", serif;
+      font-size: 18px;
+      color: var(--navy-900);
+      line-height: 1.3;
+    }
+    .case-step-body { padding: 20px; }
+    .purpose-strip {
+      margin: 0 0 12px;
+      padding: 10px 13px;
+      border-radius: var(--radius-sm);
+      background: #f4f7fb;
+      border: 1px dashed rgba(10,22,40,.14);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .purpose-strip strong { color: var(--navy-900); }
+    .connector-arrow {
+      text-align: center;
+      font-size: 22px;
+      color: var(--gold);
+      margin: 4px 0 14px;
+      line-height: 1;
+    }
+    .case-banner {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      border-left: 6px solid var(--teal);
+      background: linear-gradient(135deg, var(--teal-soft), rgba(255,255,255,.92));
+      margin-bottom: 18px;
+    }
+    .case-banner .ci {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    .case-banner h3 {
+      margin: 0 0 4px;
+      font-family: "Noto Serif", serif;
+      font-size: 19px;
+      color: var(--navy-900);
+    }
+    .case-banner p {
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .benefit-tile {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      padding: 18px;
+    }
+    .benefit-emoji {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      background: var(--gold-soft);
+    }
+    .summary-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 4px 0 14px;
+    }
+    .sum-tile { padding: 16px; }
+    .sum-step {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: 4px;
+    }
+    .sum-q {
+      font-size: 12px;
+      color: var(--soft-muted);
+      margin-bottom: 6px;
+    }
+    .sum-a {
+      font-family: "Noto Serif", serif;
+      font-size: 17px;
+      color: var(--navy-900);
+      line-height: 1.3;
+    }
+    .quote {
+      margin: 0;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      color: rgba(255,255,255,.86);
+      position: relative;
+      overflow: hidden;
+    }
+    .quote::before {
+      content: "\201C";
+      position: absolute;
+      top: -18px;
+      right: 10px;
+      font-family: "Noto Serif", serif;
+      font-size: 130px;
+      color: rgba(240,220,174,.16);
+      line-height: 1;
+    }
+    .quote strong {
+      display: block;
+      color: #f0dcae;
+      font-family: "Noto Serif", serif;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .quote p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .action-board {
+      margin-top: 28px;
+      background:
+        linear-gradient(135deg, rgba(10,22,40,.97), rgba(23,55,95,.96)),
+        radial-gradient(circle at top right, rgba(200,169,110,.22), transparent 20rem);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+    .action-board h2 { color: white; margin-bottom: 8px; }
+    .action-board p { color: rgba(255,255,255,.72); margin: 0 0 20px; }
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .action {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+    }
+    .action strong {
+      display: block;
+      color: #f0dcae;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .action span {
+      display: block;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .footer {
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer strong { color: var(--navy-900); }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid,
+      .section-top,
+      .notice,
+      .callout,
+      .case-banner,
+      .action-grid,
+      .summary-tiles { grid-template-columns: 1fr; }
+      .cards.two,
+      .cards.three { grid-template-columns: 1fr; }
+      .pillar-row { grid-template-columns: repeat(2, 1fr); }
+      .callout { grid-template-columns: 44px 1fr; }
+      .case-banner { grid-template-columns: 56px 1fr; }
+    }
+    @media (max-width: 620px) {
+      .hero-inner,
+      main,
+      .footer,
+      .nav { width: min(100% - 28px, var(--max)); }
+      .hero { padding: 46px 0 34px; }
+      .hero-grid { gap: 24px; }
+      .hero-panel,
+      .glass-card,
+      .section,
+      .timeline,
+      .notice,
+      .action-board {
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .metric-grid { grid-template-columns: 1fr; }
+      .rail { grid-template-columns: repeat(5, minmax(200px, 78vw)); }
+      h1 { letter-spacing: -.03em; }
+    }
+    @media print {
+      body { background: white; }
+      .nav-shell { display: none; }
+      .hero,
+      .action-board {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section,
+      .timeline,
+      .notice,
+      .glass-card { box-shadow: none; }
+      .topic-card,
+      .case-step { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="index.en.html">← Management Note</a>
+      <span>|</span>
+      <a href="../index.en.html">Home</a>
+      <a href="../about.en.html">About</a>
+      <a href="../notes/index.en.html">Maritime Note</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="5s-study-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+      <a href="5s-study-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+    </nav>
+  </div>
+
+<div class="page">
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Workplace Management · 5S</div>
+      <div class="hero-grid">
+        <div>
+          <h1>5S Overview<br>Sort · Set in Order · Shine · Standardize · Sustain</h1>
+          <p class="subtitle">
+            From removing clutter to building a culture of continuous improvement, this visual note connects the five 5S pillars, implementation roles, key benefits, and practical audit methods.
+          </p>
+        </div>
+        <aside class="hero-panel" aria-label="Note overview">
+          <div class="hero-panel-title">Note Overview</div>
+          <div class="hero-facts">
+            <div class="fact"><span>1</span><div>Five pillars: Sort, Set in Order, Shine, Standardize, and Sustain.</div></div>
+            <div class="fact"><span>2</span><div>Roles: employees execute the routines; managers support, train, and standardize.</div></div>
+            <div class="fact"><span>3</span><div>Reading path: start with the concept, review benefits, then use the practical checklist.</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-shell">
+    <nav class="nav" aria-label="Page navigation">
+      <a href="#overview">Overview</a>
+      <a href="#pillars">Five Pillars</a>
+      <a href="#table">Reference Table</a>
+      <a href="#roles">Origin & Roles</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#practice">Practice</a>
+      <a href="#summary">Key Takeaways</a>
+      <a href="#actions">Rules</a>
+    </nav>
+  </div>
+
+  <main>
+    <section id="overview" class="summary-grid" aria-label="Overview">
+      <div class="glass-card">
+        <div class="kicker">Executive Summary</div>
+        <h2 class="lead-title">The core of 5S: turning organization into a sustainable work culture</h2>
+        <p class="lead-copy">
+          5S is not just a clean-up campaign. It is a workplace management method that moves from removing what is unnecessary, to arranging what is needed, to cleaning as inspection, to standardizing the best way of working, and finally to sustaining the habit. The five steps work together to turn a one-time improvement activity into a long-term lean culture.
+        </p>
+      </div>
+      <div class="glass-card">
+        <div class="metric-grid">
+          <div class="metric"><strong>5</strong><span>Core pillar steps</span></div>
+          <div class="metric"><strong>S</strong><span>Each step starts with S</span></div>
+          <div class="metric"><strong>Low</strong><span>Low cost and easy to start</span></div>
+          <div class="metric"><strong>All</strong><span>Requires employees and managers</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice" aria-label="Learning tips">
+      <div class="notice-icon">!</div>
+      <div>
+        <h2>Learning and Application Tips</h2>
+        <ul>
+          <li><strong>5S is not just housekeeping:</strong> the goal is to build a repeatable and sustainable management system.</li>
+          <li><strong>The sequence matters:</strong> Sort must come before Set in Order. Otherwise, the team may only arrange the clutter more neatly.</li>
+          <li><strong>Sustain is the hard part:</strong> many 5S programs fail at the fifth step because the routine does not become a daily habit.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="flow" class="timeline" aria-label="5S workflow">
+      <div class="timeline-header">
+        <div>
+          <div class="kicker">The 5S Workflow</div>
+          <h2>The Five-Step 5S Cycle</h2>
+          <p>From removing clutter to building a culture, each step answers one practical question.</p>
+        </div>
+      </div>
+      <div class="rail">
+        <article class="rail-item">
+          <div class="rail-step">Step 1</div>
+          <p>Remove unnecessary items from the work area and keep only what is truly needed.</p>
+          <span class="rail-tag">Sort · What should stay?</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">Step 2</div>
+          <p>Arrange items systematically so they are easy to find, use, and return.</p>
+          <span class="rail-tag">Set in Order · Where should it go?</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">Step 3</div>
+          <p>Clean while inspecting the workplace and equipment to detect abnormalities early.</p>
+          <span class="rail-tag">Shine · Is there a problem?</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">Step 4</div>
+          <p>Document the first three steps as repeatable standards and checklists.</p>
+          <span class="rail-tag">Standardize · How do we lock it in?</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">Step 5</div>
+          <p>Keep executing, reviewing, and improving until 5S becomes a normal work habit.</p>
+          <span class="rail-tag">Sustain · How do we keep it going?</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="pillars" class="section">
+      <div class="section-top">
+        <div class="section-no">01</div>
+        <div>
+          <div class="kicker">The Five Pillars</div>
+          <h2>5S Five Pillars</h2>
+          <p class="section-sub">The five steps should be applied in order to create the full effect.</p>
+        </div>
+      </div>
+
+      <div class="pillar-row">
+        <div class="pillar-tile">
+          <div class="pillar-letter" style="color:var(--blue);">1</div>
+          <div class="pillar-name">SORT</div>
+          <div class="pillar-body">Remove clutter and separate necessary from unnecessary items.</div>
+        </div>
+        <div class="pillar-tile">
+          <div class="pillar-letter" style="color:var(--teal);">2</div>
+          <div class="pillar-name">SET IN ORDER</div>
+          <div class="pillar-body">Place every item so it is easy to find, use, and return.</div>
+        </div>
+        <div class="pillar-tile">
+          <div class="pillar-letter" style="color:var(--amber);">3</div>
+          <div class="pillar-name">SHINE</div>
+          <div class="pillar-body">Clean and inspect to find problems before they grow.</div>
+        </div>
+        <div class="pillar-tile">
+          <div class="pillar-letter" style="color:var(--purple);">4</div>
+          <div class="pillar-name">STANDARDIZE</div>
+          <div class="pillar-body">Create repeatable routines, standards, and checklists.</div>
+        </div>
+        <div class="pillar-tile">
+          <div class="pillar-letter" style="color:var(--green);">5</div>
+          <div class="pillar-name">SUSTAIN</div>
+          <div class="pillar-body">Keep the routine alive until it becomes a daily habit.</div>
+        </div>
+      </div>
+
+      <div class="sub-head">Step-by-Step Notes</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">Step 1</span>
+          <h3>Sort</h3>
+          <ul class="point-list">
+            <li>Remove unnecessary items from the work area.</li>
+            <li>Separate necessary and unnecessary items.</li>
+            <li>Create a cleaner and more efficient workspace.</li>
+          </ul>
+        </article>
+        <article class="topic-card teal">
+          <span class="badge teal">Step 2</span>
+          <h3>Set in Order</h3>
+          <ul class="point-list">
+            <li>Arrange every item systematically.</li>
+            <li>Make items easy to find, use, and return.</li>
+            <li>Use visual labels and fixed locations.</li>
+          </ul>
+        </article>
+        <article class="topic-card amber">
+          <span class="badge amber">Step 3</span>
+          <h3>Shine</h3>
+          <ul class="point-list">
+            <li>Clean the workplace while inspecting it.</li>
+            <li>Find leaks, defects, and equipment issues early.</li>
+            <li>Strengthen ownership and responsibility.</li>
+          </ul>
+        </article>
+        <article class="topic-card purple">
+          <span class="badge purple">Step 4</span>
+          <h3>Standardize</h3>
+          <ul class="point-list">
+            <li>Turn the first three steps into repeatable routines.</li>
+            <li>Create short and clear checklists.</li>
+            <li>Move 5S from an activity to a system.</li>
+          </ul>
+        </article>
+        <article class="topic-card green">
+          <span class="badge green">Step 5</span>
+          <h3>Sustain</h3>
+          <ul class="point-list">
+            <li>Keep executing the standardized process.</li>
+            <li>Assign schedules, roles, and frequencies.</li>
+            <li>Use feedback to keep improving the routine.</li>
+          </ul>
+        </article>
+        <article class="topic-card coral">
+          <span class="badge coral">Key Idea</span>
+          <h3>Do not skip the sequence</h3>
+          <ul class="point-list">
+            <li>Set in Order without Sort only organizes clutter.</li>
+            <li>Without Standardize, improvements cannot be repeated.</li>
+            <li>Without Sustain, the workplace returns to the old state.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="callout teal">
+        <div class="callout-icon">5S</div>
+        <div><strong>The final goal of 5S</strong> is a clean, safe, efficient, and continuously improving workplace. All five steps matter, and Sustain often determines whether the program succeeds.</div>
+      </div>
+    </section>
+
+    <section id="table" class="section">
+      <div class="section-top">
+        <div class="section-no">02</div>
+        <div>
+          <div class="kicker">Quick Reference</div>
+          <h2>5S Reference Table</h2>
+          <p class="section-sub">A compact view of each step and its management meaning.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>English</th>
+              <th>Core Concept</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tcell-step">Step 1</td>
+              <td><strong>Sort</strong></td>
+              <td>Remove clutter and separate necessary from unnecessary items.</td>
+            </tr>
+            <tr>
+              <td class="tcell-step">Step 2</td>
+              <td><strong>Set in Order</strong></td>
+              <td>Arrange items so they are easy to find, use, and return.</td>
+            </tr>
+            <tr>
+              <td class="tcell-step">Step 3</td>
+              <td><strong>Shine</strong></td>
+              <td>Clean and inspect to detect abnormalities and sources of problems.</td>
+            </tr>
+            <tr>
+              <td class="tcell-step">Step 4</td>
+              <td><strong>Standardize</strong></td>
+              <td>Build repeatable standards, routines, and checklists.</td>
+            </tr>
+            <tr>
+              <td class="tcell-step">Step 5</td>
+              <td><strong>Sustain</strong></td>
+              <td>Keep executing until the routine becomes a habit and culture.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="roles" class="section">
+      <div class="section-top">
+        <div class="section-no">03</div>
+        <div>
+          <div class="kicker">Origin & Roles</div>
+          <h2>Origin and Implementation Roles</h2>
+          <p class="section-sub">5S succeeds when employees participate directly and managers provide sustained support.</p>
+        </div>
+      </div>
+      <div class="case-banner">
+        <div class="ci">5S</div>
+        <div>
+          <h3>Origin: rooted in lean management culture</h3>
+          <p>5S is closely associated with Toyota's lean management and continuous improvement culture. It is often used as a foundation for building a lean workplace.</p>
+        </div>
+      </div>
+      <div class="cards two">
+        <article class="topic-card teal">
+          <span class="badge teal">Executors</span>
+          <h3>Employee Role</h3>
+          <p style="margin-bottom:8px;">Employees are the people who perform 5S in daily work.</p>
+          <ul class="point-list">
+            <li>Sort items and organize the work area.</li>
+            <li>Clean the workplace.</li>
+            <li>Maintain daily order.</li>
+          </ul>
+        </article>
+        <article class="topic-card purple">
+          <span class="badge purple">Supporters</span>
+          <h3>Manager Role</h3>
+          <p style="margin-bottom:8px;">Managers make sure 5S can continue over time.</p>
+          <ul class="point-list">
+            <li>Define best practices and standards.</li>
+            <li>Encourage employees to integrate 5S into daily work.</li>
+            <li>Provide training, feedback, and support.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="callout blue">
+        <div class="callout-icon">+</div>
+        <div><strong>Shared participation is essential:</strong> employees do the work; managers sustain the system. Without either side, 5S is unlikely to become a culture.</div>
+      </div>
+    </section>
+
+    <section id="benefits" class="section">
+      <div class="section-top">
+        <div class="section-no">04</div>
+        <div>
+          <div class="kicker">Key Benefits</div>
+          <h2>Main Benefits of 5S</h2>
+          <p class="section-sub">5S is a practical starting point for process improvement because it is low cost, visible, and easy for teams to participate in.</p>
+        </div>
+      </div>
+      <div class="cards three">
+        <div class="benefit-tile">
+          <div class="benefit-emoji">$</div>
+          <div>
+            <h3>Low cost</h3>
+            <p>It does not require special equipment or extensive training, making it a useful foundation for improvement.</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">↗</div>
+          <div>
+            <h3>Better efficiency</h3>
+            <p>It reduces time spent searching for items and makes work flow more smoothly.</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">%</div>
+          <div>
+            <h3>Higher productivity</h3>
+            <p>It improves performance by reducing waste and simplifying daily routines.</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">!</div>
+          <div>
+            <h3>Improved safety</h3>
+            <p>It lowers risks created by clutter, misplaced items, and equipment problems.</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">+</div>
+          <div>
+            <h3>Higher morale</h3>
+            <p>Participation, training, and feedback help employees feel more engaged.</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">L</div>
+          <div>
+            <h3>Lean culture</h3>
+            <p>It encourages everyone to build a workplace that is easier to use and easier to maintain.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="practice" class="section">
+      <div class="section-top">
+        <div class="section-no">05</div>
+        <div>
+          <div class="kicker">In Practice</div>
+          <h2>Practical Execution Checklist</h2>
+          <p class="section-sub">The following checklist converts the five 5S steps into practical actions and audit points.</p>
+        </div>
+      </div>
+
+      <div class="case-step">
+        <div class="case-step-head blue">
+          <div class="case-num blue">1</div>
+          <div>
+            <div class="case-method">Sort</div>
+            <div class="case-q">Remove clutter and keep what is truly needed</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>Purpose:</strong> separate necessary from unnecessary items and create a more efficient workspace.</div>
+          <ul class="point-list">
+            <li>Review all items in the work area.</li>
+            <li>Return misplaced items to the correct location.</li>
+            <li>Identify items that are no longer needed.</li>
+            <li>Use red tags for unnecessary items or items that need relocation.</li>
+            <li>Place necessary items where they can be reached easily.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+      <div class="case-step">
+        <div class="case-step-head teal">
+          <div class="case-num teal">2</div>
+          <div>
+            <div class="case-method">Set in Order</div>
+            <div class="case-q">Make items easy to find, use, and return</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>Purpose:</strong> optimize the workspace to improve efficiency and productivity.</div>
+          <ul class="point-list">
+            <li>Place frequently used items in easy-to-reach locations.</li>
+            <li>Group similar items logically.</li>
+            <li>Decide the best storage method for each category.</li>
+            <li>Use visual labels to identify item locations.</li>
+            <li>Use containers for small items.</li>
+            <li>Use outlines and labels to mark fixed positions for larger items.</li>
+          </ul>
+          <div class="callout teal" style="margin-top:14px;">
+            <div class="callout-icon">?</div>
+            <div><strong>Audit check:</strong> ask a colleague to find a specific item. If it can be found quickly, the arrangement is working. If not, the layout needs adjustment.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+      <div class="case-step">
+        <div class="case-step-head amber">
+          <div class="case-num amber">3</div>
+          <div>
+            <div class="case-method">Shine</div>
+            <div class="case-q">Cleaning is also inspection and prevention</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>Purpose:</strong> identify problems early and prevent defects or unexpected failures.</div>
+          <ul class="point-list">
+            <li>Use suitable cleaning tools and cleaning agents.</li>
+            <li>Clean the work area thoroughly.</li>
+            <li>Check for leaks, spills, debris, or contamination sources.</li>
+            <li>Identify the source of problems.</li>
+            <li>Inspect the condition of each item after cleaning.</li>
+            <li>Decide whether repair or maintenance is needed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+      <div class="case-step">
+        <div class="case-step-head purple">
+          <div class="case-num purple">4</div>
+          <div>
+            <div class="case-method">Standardize</div>
+            <div class="case-q">Turn the first three steps into repeatable routines</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>Purpose:</strong> make 5S a continuous system instead of a one-time event.</div>
+          <ul class="point-list">
+            <li>Document the process in pairs: one person performs the task and the other records the steps.</li>
+            <li>Convert the process into simple documentation.</li>
+            <li>Use formats that are easy to understand.</li>
+            <li>Create short checklists.</li>
+            <li>Classify checklists by role, shift, or execution frequency where helpful.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+      <div class="case-step">
+        <div class="case-step-head green">
+          <div class="case-num green">5</div>
+          <div>
+            <div class="case-method">Sustain</div>
+            <div class="case-q">Make 5S a daily work habit</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>Purpose:</strong> make sure standardized 5S routines continue and keep improving.</div>
+          <ul class="point-list">
+            <li>Create an execution schedule.</li>
+            <li>Assign roles, shifts, and frequencies.</li>
+            <li>Use demonstrations so employees understand how to perform tasks.</li>
+            <li>Provide supervision while employees practice.</li>
+            <li>Use feedback to improve the process continuously.</li>
+          </ul>
+          <div class="callout purple" style="margin-top:14px;">
+            <div class="callout-icon">!</div>
+            <div><strong>Success factor:</strong> Sustain is often the most neglected step, but it determines whether the first four steps last.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="section">
+      <div class="section-top">
+        <div class="section-no">06</div>
+        <div>
+          <div class="kicker">Key Takeaways</div>
+          <h2>Key Takeaways</h2>
+          <p class="section-sub">The final aim of 5S is to build a clean, safe, efficient, and continuously improving workplace.</p>
+        </div>
+      </div>
+      <div class="summary-tiles">
+        <div class="sum-tile">
+          <div class="sum-step" style="color:var(--blue);">Nature</div>
+          <div class="sum-q">What is 5S?</div>
+          <div class="sum-a">A low-cost, high-impact management method</div>
+        </div>
+        <div class="sum-tile">
+          <div class="sum-step" style="color:var(--teal);">Goal</div>
+          <div class="sum-q">What does it achieve?</div>
+          <div class="sum-a">Less waste and higher productivity</div>
+        </div>
+        <div class="sum-tile">
+          <div class="sum-step" style="color:var(--purple);">Success</div>
+          <div class="sum-q">What makes it work?</div>
+          <div class="sum-a">Shared ownership by employees and managers</div>
+        </div>
+      </div>
+      <div class="cards two">
+        <article class="topic-card">
+          <span class="badge gold">Core Summary</span>
+          <h3>Five points to remember</h3>
+          <ul class="point-list">
+            <li>5S is a low-cost and high-impact workplace management method.</li>
+            <li>Its goal is to reduce waste and improve productivity through organization and standardization.</li>
+            <li>Successful 5S requires both employees and managers to participate.</li>
+            <li>The five pillars are Sort, Set in Order, Shine, Standardize, and Sustain.</li>
+            <li>5S should move from a one-time improvement event to a sustainable lean culture.</li>
+          </ul>
+        </article>
+        <blockquote class="quote">
+          <strong>One-sentence memory aid</strong>
+          <p>Remove what is unnecessary, put what is necessary in the right place, clean to reveal problems, standardize the best way, and sustain the routine until it becomes culture.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="actions" class="action-board">
+      <h2>Three Rules for Implementing 5S</h2>
+      <p>Use these rules in every 5S implementation and audit checklist.</p>
+      <div class="action-grid">
+        <div class="action">
+          <strong>01 | Do not skip the order</strong>
+          <span>Sort before Set in Order. Without removing clutter first, the team is only arranging disorder.</span>
+        </div>
+        <div class="action">
+          <strong>02 | Standardization makes it repeatable</strong>
+          <span>Document the method and turn it into checklists so improvements do not disappear when people change.</span>
+        </div>
+        <div class="action">
+          <strong>03 | Sustain determines success</strong>
+          <span>5S is not an event but a culture, supported by schedules, roles, feedback, and repeated practice.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Reay's Note | 5S Overview Study Notes</strong><br>
+    Prepared by Reay Huang · Management Note · Workplace management and lean improvement study notes<br>
+    Content: the five 5S pillars, origin and roles, key benefits, and practical implementation and audit methods.<br>
+    Note: this page is for personal learning and teaching purposes. Actual implementation should be adjusted based on site conditions and professional judgment.
+  </footer>
+</div>
+
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function resetScrollOnReload() {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!nav || nav.type !== 'reload') return;
+
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('pageshow', resetScrollOnReload);
+    window.addEventListener('load', resetScrollOnReload);
+  </script>
+</body>
+</html>

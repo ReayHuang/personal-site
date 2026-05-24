@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5S 概覽重點筆記｜Reay's Note</title>
+  <link rel="stylesheet" href="../assets/css/note-standalone.css" />
+  <meta name="description" content="5S 工作場所管理方法重點視覺化筆記：Sort、Set in Order、Shine、Standardize、Sustain，協助建立乾淨、安全、高效率且能持續改善的工作環境。" />
+  <meta property="og:title" content="5S 概覽重點筆記｜Reay's Note" />
+  <meta property="og:description" content="從整理到維持——一份串連 5S 五大支柱、推動角色、主要效益與實務稽核方式的視覺化學習筆記。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay's Note" />
+  <meta property="og:url" content="https://reayhuang.github.io/personal-site/research/5s-study-notes.html" />
+  <link rel="canonical" href="https://reayhuang.github.io/personal-site/research/5s-study-notes.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="5s-study-notes.html" />
+  <link rel="alternate" hreflang="en" href="5s-study-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="5s-study-notes.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="5S 概覽重點筆記｜Reay's Note" />
+  <meta name="twitter:description" content="從整理到維持——一份串連 5S 五大支柱、推動角色、主要效益與實務稽核方式的視覺化學習筆記。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --card: #ffffff;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --teal: #11806a;
+      --teal-soft: #e2f5ef;
+      --blue: #1d5ea8;
+      --blue-soft: #e4effb;
+      --amber: #b86b00;
+      --amber-soft: #fff2d9;
+      --purple: #6846c9;
+      --purple-soft: #eee9ff;
+      --coral: #b65035;
+      --coral-soft: #fde8df;
+      --green: #287a3e;
+      --green-soft: #e7f4e9;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(29, 94, 168, .18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(104, 70, 201, .14), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      line-height: 1.78;
+      letter-spacing: .01em;
+    }
+
+    a { color: inherit; }
+    .page { overflow: hidden; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(6, 17, 31, .98), rgba(16, 36, 62, .97)),
+        radial-gradient(circle at 80% 10%, rgba(200, 169, 110, .26), transparent 24rem);
+      color: white;
+      padding: 72px 24px 46px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .10;
+      z-index: -1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.55) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.35) 49%, transparent 51%);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
+    }
+
+    .hero-inner,
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200,169,110,.9);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 34px;
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    h1 {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(34px, 5.4vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      margin: 0 0 20px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,.78);
+      margin: 0;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-panel-title {
+      color: #f0dcae;
+      font-weight: 900;
+      margin-bottom: 12px;
+      font-size: 14px;
+      letter-spacing: .06em;
+    }
+
+    .hero-facts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .fact {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.83);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .fact span {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,169,110,.16);
+      color: #f0dcae;
+      flex: 0 0 26px;
+    }
+
+    /* Sticky nav */
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245,248,252,.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220,230,241,.88);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a {
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200,169,110,.62);
+      background: #fff;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .glass-card,
+    .section,
+    .timeline,
+    .notice,
+    .action-board {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(220,230,241,.95);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .glass-card { padding: 26px; }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    .lead-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.25;
+      margin: 0 0 12px;
+      color: var(--navy-900);
+    }
+
+    .lead-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: "Noto Serif TC", serif;
+    }
+
+    .metric span {
+      font-size: 12px;
+      color: var(--soft-muted);
+      font-weight: 700;
+    }
+
+    /* Notice */
+    .notice {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      padding: 22px;
+      margin: 20px 0 24px;
+      border-left: 6px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,248,235,.94), rgba(255,255,255,.92));
+    }
+
+    .notice-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+
+    .notice h2,
+    .section h2,
+    .timeline h2,
+    .action-board h2 {
+      margin: 0;
+      font-family: "Noto Serif TC", serif;
+      color: var(--navy-900);
+      line-height: 1.28;
+    }
+
+    .notice ul {
+      margin: 10px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .notice li { margin: 5px 0; }
+    .notice strong { color: var(--navy-900); }
+
+    /* Timeline / process rail */
+    .timeline {
+      padding: 26px;
+      margin: 24px 0;
+      overflow: hidden;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .timeline-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rail {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(170px, 1fr));
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+    }
+
+    .rail-item {
+      position: relative;
+      min-height: 168px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+
+    .rail-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .rail-step::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200,169,110,.16);
+    }
+
+    .rail-item p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .rail-item .rail-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #f4f7fb;
+      color: var(--soft-muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* Section */
+    .section {
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .section-no {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      font-family: "Noto Serif TC", serif;
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Sub-section heading */
+    .sub-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      color: var(--navy-800);
+      margin: 26px 0 14px;
+    }
+    .sub-head::before {
+      content: "";
+      width: 6px;
+      height: 18px;
+      border-radius: 3px;
+      background: var(--gold);
+    }
+    .sub-head:first-of-type { margin-top: 4px; }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+    .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .topic-card {
+      position: relative;
+      padding: 20px 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      overflow: hidden;
+    }
+
+    .topic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--gold);
+    }
+    .topic-card.teal::before { background: var(--teal); }
+    .topic-card.blue::before { background: var(--blue); }
+    .topic-card.amber::before { background: var(--amber); }
+    .topic-card.purple::before { background: var(--purple); }
+    .topic-card.coral::before { background: var(--coral); }
+    .topic-card.green::before { background: var(--green); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: 10px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .badge.teal { color: var(--teal); background: var(--teal-soft); }
+    .badge.blue { color: var(--blue); background: var(--blue-soft); }
+    .badge.amber { color: var(--amber); background: var(--amber-soft); }
+    .badge.purple { color: var(--purple); background: var(--purple-soft); }
+    .badge.coral { color: var(--coral); background: var(--coral-soft); }
+    .badge.green { color: var(--green); background: var(--green-soft); }
+    .badge.gold { color: var(--amber); background: var(--gold-soft); }
+
+    .topic-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy-900);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .topic-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* bullet list inside topic-card */
+    .point-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .point-list li {
+      position: relative;
+      padding-left: 16px;
+      margin: 7px 0;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .point-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .topic-card.teal .point-list li::before { background: var(--teal); }
+    .topic-card.blue .point-list li::before { background: var(--blue); }
+    .topic-card.amber .point-list li::before { background: var(--amber); }
+    .topic-card.purple .point-list li::before { background: var(--purple); }
+    .topic-card.coral .point-list li::before { background: var(--coral); }
+    .topic-card.green .point-list li::before { background: var(--green); }
+
+    /* scenario strip */
+    .scenario {
+      margin-top: 12px;
+      padding: 10px 13px;
+      border-radius: var(--radius-sm);
+      background: #f4f7fb;
+      border: 1px dashed rgba(10,22,40,.14);
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .scenario strong { color: var(--navy-900); }
+
+    /* callout */
+    .callout {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      margin: 20px 0 4px;
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,248,235,.92), rgba(255,255,255,.9));
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .callout.blue { border-color: var(--blue); background: linear-gradient(135deg, var(--blue-soft), rgba(255,255,255,.92)); }
+    .callout.teal { border-color: var(--teal); background: linear-gradient(135deg, var(--teal-soft), rgba(255,255,255,.92)); }
+    .callout.purple { border-color: var(--purple); background: linear-gradient(135deg, var(--purple-soft), rgba(255,255,255,.92)); }
+    .callout strong { color: var(--navy-900); }
+    .callout-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 21px;
+      background: var(--gold-soft);
+    }
+    .callout.blue .callout-icon { background: var(--blue-soft); }
+    .callout.teal .callout-icon { background: var(--teal-soft); }
+    .callout.purple .callout-icon { background: var(--purple-soft); }
+
+    /* 5S pillar row (like HTAB) */
+    .htab-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .htab-tile {
+      padding: 18px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      text-align: center;
+    }
+    .htab-letter {
+      font-family: "Noto Serif TC", serif;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .htab-name {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      color: var(--soft-muted);
+      margin-bottom: 8px;
+    }
+    .htab-body { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+    /* table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      min-width: 560px;
+    }
+    thead th {
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      color: #f0dcae;
+      font-weight: 800;
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 12.5px;
+      letter-spacing: .04em;
+    }
+    tbody td {
+      padding: 12px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+    tbody tr:nth-child(even) { background: #f8fbff; }
+    tbody td strong { color: var(--navy-900); }
+    .tcell-step {
+      font-weight: 900;
+      color: var(--navy-900);
+    }
+
+    /* detail step (case-step style) */
+    .case-step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 14px;
+      background: #fff;
+    }
+    .case-step-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+    .case-step-head.blue   { background: var(--blue-soft); }
+    .case-step-head.teal   { background: var(--teal-soft); }
+    .case-step-head.purple { background: var(--purple-soft); }
+    .case-step-head.amber  { background: var(--amber-soft); }
+    .case-step-head.green  { background: var(--green-soft); }
+    .case-num {
+      width: 46px; height: 46px;
+      flex: 0 0 46px;
+      display: grid; place-items: center;
+      border-radius: 14px;
+      font-family: "Noto Serif TC", serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .case-num.blue   { background: var(--blue); }
+    .case-num.teal   { background: var(--teal); }
+    .case-num.purple { background: var(--purple); }
+    .case-num.amber  { background: var(--amber); }
+    .case-num.green  { background: var(--green); }
+    .case-step-meta .case-method {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--soft-muted);
+      margin-bottom: 2px;
+    }
+    .case-step-meta .case-q {
+      font-family: "Noto Serif TC", serif;
+      font-size: 18px;
+      color: var(--navy-900);
+      line-height: 1.3;
+    }
+    .case-step-body { padding: 20px; }
+    .purpose-strip {
+      margin: 0 0 12px;
+      padding: 10px 13px;
+      border-radius: var(--radius-sm);
+      background: #f4f7fb;
+      border: 1px dashed rgba(10,22,40,.14);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .purpose-strip strong { color: var(--navy-900); }
+
+    /* connector arrow */
+    .connector-arrow {
+      text-align: center;
+      font-size: 22px;
+      color: var(--gold);
+      margin: 4px 0 14px;
+      line-height: 1;
+    }
+
+    /* role / benefit grids */
+    .case-banner {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      border-left: 6px solid var(--teal);
+      background: linear-gradient(135deg, var(--teal-soft), rgba(255,255,255,.92));
+      margin-bottom: 18px;
+    }
+    .case-banner .ci {
+      width: 50px; height: 50px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 25px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    .case-banner h3 {
+      margin: 0 0 4px;
+      font-family: "Noto Serif TC", serif;
+      font-size: 19px;
+      color: var(--navy-900);
+    }
+    .case-banner p { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+    /* benefit tile */
+    .benefit-tile {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+    }
+    .benefit-emoji {
+      width: 46px; height: 46px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      background: var(--gold-soft);
+    }
+    .benefit-tile h3 {
+      margin: 0 0 4px;
+      color: var(--navy-900);
+      font-size: 15.5px;
+    }
+    .benefit-tile p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* summary tiles */
+    .summary-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 4px 0 14px;
+    }
+    .sum-tile {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+    }
+    .sum-step { font-size: 11px; font-weight: 900; letter-spacing: .04em; margin-bottom: 4px; }
+    .sum-q { font-size: 12px; color: var(--soft-muted); margin-bottom: 6px; }
+    .sum-a { font-family: "Noto Serif TC", serif; font-size: 17px; color: var(--navy-900); line-height: 1.3; }
+
+    /* quote */
+    .quote {
+      margin: 0;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      color: rgba(255,255,255,.86);
+      position: relative;
+      overflow: hidden;
+    }
+    .quote::before {
+      content: "“";
+      position: absolute;
+      top: -18px; right: 10px;
+      font-family: "Noto Serif TC", serif;
+      font-size: 130px;
+      color: rgba(240,220,174,.16);
+      line-height: 1;
+    }
+    .quote strong {
+      display: block;
+      color: #f0dcae;
+      font-family: "Noto Serif TC", serif;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .quote p { margin: 0; font-size: 14px; line-height: 1.7; position: relative; }
+
+    /* action board */
+    .action-board {
+      padding: 28px;
+      margin-top: 28px;
+      background:
+        linear-gradient(135deg, rgba(10,22,40,.97), rgba(23,55,95,.96)),
+        radial-gradient(circle at top right, rgba(200,169,110,.22), transparent 20rem);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+    .action-board h2 { color: white; margin-bottom: 8px; }
+    .action-board p { color: rgba(255,255,255,.72); margin: 0 0 20px; }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .action {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+    }
+    .action strong {
+      display: block;
+      color: #f0dcae;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .action span {
+      display: block;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer strong { color: var(--navy-900); }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid,
+      .section-top,
+      .notice,
+      .callout,
+      .case-banner,
+      .action-grid,
+      .summary-tiles {
+        grid-template-columns: 1fr;
+      }
+      .hero-panel { max-width: 520px; }
+      .cards.two, .cards.three { grid-template-columns: 1fr; }
+      .section-no { width: 50px; height: 50px; font-size: 22px; }
+      .timeline-header { display: block; }
+      .htab-row { grid-template-columns: repeat(2, 1fr); }
+      .callout { grid-template-columns: 44px 1fr; }
+      .case-banner { grid-template-columns: 56px 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .hero-inner, .wrap, main, .footer {
+        width: min(100% - 28px, var(--max));
+      }
+      .hero { padding: 46px 0 34px; }
+      .hero-grid { gap: 24px; }
+      .hero-panel,
+      .glass-card,
+      .section,
+      .timeline,
+      .notice,
+      .action-board {
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .metric-grid { grid-template-columns: 1fr; }
+      .rail { grid-template-columns: repeat(5, minmax(200px, 78vw)); }
+      .nav { width: calc(100% - 28px); }
+      h1 { letter-spacing: -.03em; }
+    }
+
+    @media print {
+      body { background: white; }
+      .nav-shell { display: none; }
+      .hero, .action-board {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section, .timeline, .notice, .glass-card { box-shadow: none; }
+      .topic-card, .case-step { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="index.html">← 管理筆記</a>
+      <span>|</span>
+      <a href="../index.html">首頁</a>
+      <a href="../about.html">關於我</a>
+      <a href="../notes/index.html">海事筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="5s-study-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+      <a href="5s-study-notes.en.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+<div class="page">
+
+  <!-- ════════ HERO ════════ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Workplace Management · 5S 工作場所管理</div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>5S 概覽重點筆記<br>整理 · 整頓 · 清掃 · 標準化 · 維持</h1>
+          <p class="subtitle">
+            從清除雜物到建立持續改善的文化——
+            一份串連 5S 五大支柱、推動角色、主要效益與實務稽核方式的視覺化學習筆記。
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="筆記概覽">
+          <div class="hero-panel-title">筆記概覽</div>
+          <div class="hero-facts">
+            <div class="fact"><span>🧹</span><div>五大支柱：Sort、Set in Order、Shine、Standardize、Sustain</div></div>
+            <div class="fact"><span>👥</span><div>推動角色：員工負責執行、管理者負責支持與標準化</div></div>
+            <div class="fact"><span>🧭</span><div>閱讀方式：先讀概念與原則，再看效益，最後看實務執行清單</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════ NAV ════════ -->
+  <div class="nav-shell">
+    <nav class="nav" aria-label="頁面導覽">
+      <a href="#overview">重點概覽</a>
+      <a href="#pillars">五大支柱</a>
+      <a href="#table">原則對照表</a>
+      <a href="#roles">起源與角色</a>
+      <a href="#benefits">主要效益</a>
+      <a href="#practice">實務執行</a>
+      <a href="#summary">重點總結</a>
+      <a href="#actions">推動鐵則</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ════════ OVERVIEW ════════ -->
+    <section id="overview" class="summary-grid" aria-label="概覽">
+      <div class="glass-card">
+        <div class="kicker">Executive Summary</div>
+        <h2 class="lead-title">5S 的核心：把整理變成可持續的工作文化</h2>
+        <p class="lead-copy">
+          5S 不只是大掃除，而是一套從「清除不必要」到「建立標準」再到「持續維持」的工作場所管理方法。
+          它先透過整理與整頓打造高效率的空間，再以清掃提早發現問題，
+          接著用標準化把做法固定下來，最後靠維持讓 5S 成為日常習慣。
+          五個步驟環環相扣，才能將一次性的改善活動，轉化為長期的精實文化。
+        </p>
+      </div>
+
+      <div class="glass-card">
+        <div class="metric-grid">
+          <div class="metric"><strong>5</strong><span>核心支柱步驟</span></div>
+          <div class="metric"><strong>S</strong><span>五步皆以 S 開頭</span></div>
+          <div class="metric"><strong>低</strong><span>導入成本低、易上手</span></div>
+          <div class="metric"><strong>全員</strong><span>需員工與管理者共同參與</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ PRACTICAL NOTICE ════════ -->
+    <section class="notice" aria-label="學習提示">
+      <div class="notice-icon">💡</div>
+      <div>
+        <h2>學習與應用提示</h2>
+        <ul>
+          <li><strong>5S ≠ 大掃除：</strong>5S 的重點不在「掃乾淨」，而在建立可重複、可維持的管理制度。</li>
+          <li><strong>順序很重要：</strong>必須先 Sort 再 Set in Order，沒有清除雜物就整頓，只是把混亂排整齊。</li>
+          <li><strong>維持才是關鍵：</strong>許多 5S 失敗在第五步——做了一次就停，沒有變成日常習慣與文化。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ════════ ANALYSIS FLOW ════════ -->
+    <section id="flow" class="timeline" aria-label="5S 流程">
+      <div class="timeline-header">
+        <div>
+          <div class="kicker">The 5S Workflow</div>
+          <h2>5S 的五步循環</h2>
+          <p>從清除雜物到形成文化，每個步驟回答一個關鍵問題。</p>
+        </div>
+      </div>
+
+      <div class="rail">
+        <article class="rail-item">
+          <div class="rail-step">步驟一</div>
+          <p>清除工作區內不必要的物品，只留下真正需要的東西。</p>
+          <span class="rail-tag">Sort · 該留什麼？</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">步驟二</div>
+          <p>有系統地配置物品，讓每樣東西都容易找到與歸位。</p>
+          <span class="rail-tag">Set in Order · 放哪裡？</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">步驟三</div>
+          <p>清潔的同時檢查設備與環境，提早發現異常。</p>
+          <span class="rail-tag">Shine · 有問題嗎？</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">步驟四</div>
+          <p>把前三步寫成可重複執行的標準流程與檢查清單。</p>
+          <span class="rail-tag">Standardize · 怎麼固定？</span>
+        </article>
+        <article class="rail-item">
+          <div class="rail-step">步驟五</div>
+          <p>持續執行並回饋改善，讓 5S 成為日常工作習慣。</p>
+          <span class="rail-tag">Sustain · 如何持續？</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════ SECTION 01 — PILLARS ════════ -->
+    <section id="pillars" class="section">
+      <div class="section-top">
+        <div class="section-no">01</div>
+        <div>
+          <div class="kicker">The Five Pillars</div>
+          <h2>5S 五大支柱</h2>
+          <p class="section-sub">5S 由五個英文皆以 S 開頭的步驟組成，依序執行才能發揮完整效果。</p>
+        </div>
+      </div>
+
+      <div class="htab-row">
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--blue);">1</div>
+          <div class="htab-name">SORT · 整理</div>
+          <div class="htab-body">清除雜物，區分必要與不必要的物品</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--teal);">2</div>
+          <div class="htab-name">SET IN ORDER · 整頓</div>
+          <div class="htab-body">有系統配置物品，讓它容易找到與歸位</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--amber);">3</div>
+          <div class="htab-name">SHINE · 清掃</div>
+          <div class="htab-body">清潔同時檢查，提早發現設備與流程問題</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--purple);">4</div>
+          <div class="htab-name">STANDARDIZE · 標準化</div>
+          <div class="htab-body">建立可重複執行的標準流程與檢查清單</div>
+        </div>
+        <div class="htab-tile">
+          <div class="htab-letter" style="color:var(--green);">5</div>
+          <div class="htab-name">SUSTAIN · 維持</div>
+          <div class="htab-body">持續執行，讓 5S 成為日常工作習慣</div>
+        </div>
+      </div>
+
+      <div class="sub-head">逐項說明</div>
+      <div class="cards three">
+        <article class="topic-card blue">
+          <span class="badge blue">Step 1</span>
+          <h3>Sort 整理</h3>
+          <ul class="point-list">
+            <li>清除工作區內不必要的物品</li>
+            <li>區分「必要」與「不必要」</li>
+            <li>建立更有效率、更清爽的工作空間</li>
+          </ul>
+        </article>
+        <article class="topic-card teal">
+          <span class="badge teal">Step 2</span>
+          <h3>Set in Order 整頓</h3>
+          <ul class="point-list">
+            <li>有系統地配置每樣物品</li>
+            <li>讓物品容易找到、取用與歸位</li>
+            <li>用視覺化標示固定位置</li>
+          </ul>
+        </article>
+        <article class="topic-card amber">
+          <span class="badge amber">Step 3</span>
+          <h3>Shine 清掃</h3>
+          <ul class="point-list">
+            <li>清潔工作環境的同時進行檢查</li>
+            <li>提早發現滲漏、缺陷與設備問題</li>
+            <li>強化員工的責任感與自主性</li>
+          </ul>
+        </article>
+        <article class="topic-card purple">
+          <span class="badge purple">Step 4</span>
+          <h3>Standardize 標準化</h3>
+          <ul class="point-list">
+            <li>把前三步變成固定、可重複的流程</li>
+            <li>建立簡單易懂的檢查清單</li>
+            <li>讓 5S 從一次性活動變成制度</li>
+          </ul>
+        </article>
+        <article class="topic-card green">
+          <span class="badge green">Step 5</span>
+          <h3>Sustain 維持</h3>
+          <ul class="point-list">
+            <li>持續執行標準化後的流程</li>
+            <li>排定時程、分配角色與頻率</li>
+            <li>透過回饋持續改善，形成文化</li>
+          </ul>
+        </article>
+        <article class="topic-card coral">
+          <span class="badge coral">關鍵觀念</span>
+          <h3>順序不能跳</h3>
+          <ul class="point-list">
+            <li>沒有 Sort 就 Set in Order，只是排整齊混亂</li>
+            <li>沒有 Standardize，改善無法被複製</li>
+            <li>沒有 Sustain，一切努力會回到原點</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout teal">
+        <div class="callout-icon">🎯</div>
+        <div><strong>5S 的最終目標</strong>是建立一個乾淨、安全、高效率且能持續改善的工作場所——五步缺一不可，尤其第五步「維持」決定成敗。</div>
+      </div>
+    </section>
+
+    <!-- ════════ SECTION 02 — TABLE ════════ -->
+    <section id="table" class="section">
+      <div class="section-top">
+        <div class="section-no">02</div>
+        <div>
+          <div class="kicker">Quick Reference</div>
+          <h2>5S 原則對照表</h2>
+          <p class="section-sub">用一張表快速掌握每個步驟的英文、中文與核心概念。</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>步驟</th>
+              <th>英文</th>
+              <th>中文</th>
+              <th>核心概念</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tcell-step">Step 1</td>
+              <td><strong>Sort</strong></td>
+              <td>整理</td>
+              <td>清除雜物，區分必要與不必要。</td>
+            </tr>
+            <tr>
+              <td class="tcell-step">Step 2</td>
+              <td><strong>Set in Order</strong></td>
+              <td>整頓</td>
+              <td>有系統配置，容易找到、取用與歸位。</td>
+            </tr>
+            <tr>
+              <td class="tcell-step">Step 3</td>
+              <td><strong>Shine</strong></td>
+              <td>清掃</td>
+              <td>清潔檢查，提早發現異常與問題來源。</td>
+            </tr>
+            <tr>
+              <td class="tcell-step">Step 4</td>
+              <td><strong>Standardize</strong></td>
+              <td>標準化</td>
+              <td>建立可重複執行的標準流程。</td>
+            </tr>
+            <tr>
+              <td class="tcell-step">Step 5</td>
+              <td><strong>Sustain</strong></td>
+              <td>維持</td>
+              <td>持續執行，成為日常習慣與文化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ════════ SECTION 03 — ROLES ════════ -->
+    <section id="roles" class="section">
+      <div class="section-top">
+        <div class="section-no">03</div>
+        <div>
+          <div class="kicker">Origin & Roles</div>
+          <h2>起源與推動角色</h2>
+          <p class="section-sub">5S 的成功不是只靠制度，而是需要員工實際參與與管理者持續支持。</p>
+        </div>
+      </div>
+
+      <div class="case-banner">
+        <div class="ci">🏭</div>
+        <div>
+          <h3>起源：源自精實管理文化</h3>
+          <p>5S 與 Toyota 的精實管理、現場改善文化有密切關係，常被視為建立精實工作環境的重要基礎。</p>
+        </div>
+      </div>
+
+      <div class="cards two">
+        <article class="topic-card teal">
+          <span class="badge teal">執行者</span>
+          <h3>👷 員工角色</h3>
+          <p style="margin-bottom:8px;">員工是 5S 的實際執行者。</p>
+          <ul class="point-list">
+            <li>整理物品與組織工作區</li>
+            <li>清潔工作環境</li>
+            <li>維持日常秩序</li>
+          </ul>
+        </article>
+        <article class="topic-card purple">
+          <span class="badge purple">支持者</span>
+          <h3>👔 管理者角色</h3>
+          <p style="margin-bottom:8px;">管理者負責讓 5S 能夠持續推動。</p>
+          <ul class="point-list">
+            <li>建立最佳實務與標準</li>
+            <li>鼓勵員工融入日常工作</li>
+            <li>提供訓練、回饋與支持</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout blue">
+        <div class="callout-icon">🤝</div>
+        <div><strong>共同參與是關鍵：</strong>員工負責「做」、管理者負責「撐」。缺少任何一方，5S 都難以從活動變成文化。</div>
+      </div>
+    </section>
+
+    <!-- ════════ SECTION 04 — BENEFITS ════════ -->
+    <section id="benefits" class="section">
+      <div class="section-top">
+        <div class="section-no">04</div>
+        <div>
+          <div class="kicker">Key Benefits</div>
+          <h2>5S 的主要效益</h2>
+          <p class="section-sub">5S 通常適合作為流程改善的起點，因為它成本低、可視化強，而且容易讓團隊共同參與。</p>
+        </div>
+      </div>
+
+      <div class="cards three">
+        <div class="benefit-tile">
+          <div class="benefit-emoji">💰</div>
+          <div>
+            <h3>低成本</h3>
+            <p>不需特殊設備或大量訓練，適合作為流程改善的基礎工具。</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">⚡</div>
+          <div>
+            <h3>提升效率</h3>
+            <p>減少尋找物品的時間，讓工作流程更順暢。</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">📈</div>
+          <div>
+            <h3>提升生產力</h3>
+            <p>透過減少浪費與簡化流程，提高整體績效。</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">🛡️</div>
+          <div>
+            <h3>改善安全</h3>
+            <p>降低雜亂、錯置與設備問題造成的安全風險。</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">😊</div>
+          <div>
+            <h3>提升士氣</h3>
+            <p>透過參與、訓練與回饋，提高員工投入感。</p>
+          </div>
+        </div>
+        <div class="benefit-tile">
+          <div class="benefit-emoji">🏗️</div>
+          <div>
+            <h3>建立精實文化</h3>
+            <p>鼓勵全員共同打造更有效率、更容易維持的工作場所。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ SECTION 05 — PRACTICE ════════ -->
+    <section id="practice" class="section">
+      <div class="section-top">
+        <div class="section-no">05</div>
+        <div>
+          <div class="kicker">In Practice</div>
+          <h2>五個步驟的實務執行方式</h2>
+          <p class="section-sub">以下將 5S 轉換成實際可以執行與稽核的行動清單。</p>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="case-step">
+        <div class="case-step-head blue">
+          <div class="case-num blue">1</div>
+          <div class="case-step-meta">
+            <div class="case-method">Sort · 整理</div>
+            <div class="case-q">清除雜物，留下真正需要的物品</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>目的：</strong>區分必要與不必要，建立更有效率的工作空間。</div>
+          <ul class="point-list">
+            <li>整理工作區內所有物品</li>
+            <li>將放錯位置的物品歸位</li>
+            <li>找出工作中不再需要的物品</li>
+            <li>使用紅牌標籤（Red Tags）標示不必要或需要移動位置的物品</li>
+            <li>將必要物品安排在容易取得的位置</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Step 2 -->
+      <div class="case-step">
+        <div class="case-step-head teal">
+          <div class="case-num teal">2</div>
+          <div class="case-step-meta">
+            <div class="case-method">Set in Order · 整頓</div>
+            <div class="case-q">讓物品容易找到、容易取用、容易歸位</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>目的：</strong>最佳化工作空間，提高工作效率與生產力。</div>
+          <ul class="point-list">
+            <li>將常用物品放在容易取得的位置</li>
+            <li>將相似物品依邏輯分類</li>
+            <li>決定每類物品的最佳存放方式</li>
+            <li>使用視覺化標示協助辨識物品位置</li>
+            <li>使用容器收納小型物品</li>
+            <li>對大型物品設置框線與標籤，標示固定位置</li>
+          </ul>
+          <div class="callout teal" style="margin-top:14px;">
+            <div class="callout-icon">🔍</div>
+            <div><strong>5S 稽核檢查：</strong>請同事尋找特定物品。若能快速找到，代表整頓有效；若無法快速找到，則需要重新調整配置。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Step 3 -->
+      <div class="case-step">
+        <div class="case-step-head amber">
+          <div class="case-num amber">3</div>
+          <div class="case-step-meta">
+            <div class="case-method">Shine · 清掃</div>
+            <div class="case-q">清潔不只是打掃，而是檢查與預防</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>目的：</strong>透過清掃提早發現問題，避免故障與缺陷。</div>
+          <ul class="point-list">
+            <li>使用正確的清潔工具與清潔劑</li>
+            <li>徹底清理工作區</li>
+            <li>檢查是否有滲漏、灑漏、碎屑或污染源</li>
+            <li>找出問題來源</li>
+            <li>清潔後檢查每項物品的狀況</li>
+            <li>判斷是否需要維修或保養</li>
+          </ul>
+          <div class="callout" style="margin-top:14px;">
+            <div class="callout-icon">⭐</div>
+            <div><strong>重要價值：</strong>支援缺陷預防、避免設備意外故障，並強化員工的責任感與自主性。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Step 4 -->
+      <div class="case-step">
+        <div class="case-step-head purple">
+          <div class="case-num purple">4</div>
+          <div class="case-step-meta">
+            <div class="case-method">Standardize · 標準化</div>
+            <div class="case-q">把前三步變成固定、可重複的標準流程</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>目的：</strong>讓 5S 從一次性活動變成持續循環的制度。</div>
+          <ul class="point-list">
+            <li>以兩人一組記錄流程：一人執行任務，一人記錄步驟</li>
+            <li>將流程文件化</li>
+            <li>使用簡單、容易理解的格式</li>
+            <li>建立短版檢查清單</li>
+            <li>可依角色、班別或執行頻率分類清單</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="connector-arrow">↓</div>
+
+      <!-- Step 5 -->
+      <div class="case-step">
+        <div class="case-step-head green">
+          <div class="case-num green">5</div>
+          <div class="case-step-meta">
+            <div class="case-method">Sustain · 維持</div>
+            <div class="case-q">讓 5S 成為日常工作習慣</div>
+          </div>
+        </div>
+        <div class="case-step-body">
+          <div class="purpose-strip"><strong>目的：</strong>確保標準化後的 5S 流程能持續執行，並持續改善。</div>
+          <ul class="point-list">
+            <li>建立執行時程表</li>
+            <li>分配角色、班別與執行頻率</li>
+            <li>透過示範教學，讓員工理解如何執行任務</li>
+            <li>在員工練習時給予適度監督</li>
+            <li>透過回饋持續改善流程</li>
+          </ul>
+          <div class="callout purple" style="margin-top:14px;">
+            <div class="callout-icon">🚀</div>
+            <div><strong>成敗關鍵：</strong>維持是最容易被忽略、卻最決定成果的一步。沒有持續執行與回饋，前四步的努力都會逐漸回到原點。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ SECTION 06 — SUMMARY ════════ -->
+    <section id="summary" class="section">
+      <div class="section-top">
+        <div class="section-no">06</div>
+        <div>
+          <div class="kicker">Key Takeaways</div>
+          <h2>重點總結</h2>
+          <p class="section-sub">5S 的最終目標，是建立一個乾淨、安全、高效率且能持續改善的工作場所。</p>
+        </div>
+      </div>
+
+      <div class="summary-tiles">
+        <div class="sum-tile">
+          <div class="sum-step" style="color:var(--blue);">本質</div>
+          <div class="sum-q">5S 是什麼？</div>
+          <div class="sum-a">低成本、高效益的管理方法</div>
+        </div>
+        <div class="sum-tile">
+          <div class="sum-step" style="color:var(--teal);">目標</div>
+          <div class="sum-q">想達成什麼？</div>
+          <div class="sum-a">減少浪費、提升生產力</div>
+        </div>
+        <div class="sum-tile">
+          <div class="sum-step" style="color:var(--purple);">關鍵</div>
+          <div class="sum-q">成功靠什麼？</div>
+          <div class="sum-a">員工與管理者共同參與</div>
+        </div>
+      </div>
+
+      <div class="cards two">
+        <article class="topic-card gold" style="--x:0;">
+          <span class="badge gold">核心摘要</span>
+          <h3>⭐ 五個必記重點</h3>
+          <ul class="point-list">
+            <li>5S 是一種低成本、高效益的工作場所管理方法</li>
+            <li>核心目標是透過整理與標準化，減少浪費並提升生產力</li>
+            <li>成功推動 5S 需要員工與管理者共同參與</li>
+            <li>五大支柱為 Sort、Set in Order、Shine、Standardize、Sustain</li>
+            <li>5S 應從一次性改善活動，轉化為可持續維持的精實文化</li>
+          </ul>
+        </article>
+
+        <blockquote class="quote">
+          <strong>一句話記憶 5S</strong>
+          <p>先清掉不需要的東西，再把需要的東西放在正確位置；透過清掃發現問題，用標準化固定做法，最後靠持續執行變成文化。</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ════════ ACTION BOARD ════════ -->
+    <section id="actions" class="action-board">
+      <h2>推動 5S 三大鐵則</h2>
+      <p>把下列原則放進每一次 5S 導入與稽核的檢查清單中。</p>
+
+      <div class="action-grid">
+        <div class="action">
+          <strong>01｜順序不能跳</strong>
+          <span>先 Sort 再 Set in Order。沒有清除雜物就整頓，只是把混亂排得整齊而已。</span>
+        </div>
+        <div class="action">
+          <strong>02｜標準化才能複製</strong>
+          <span>把做法文件化、做成檢查清單，改善才不會隨人員異動而消失。</span>
+        </div>
+        <div class="action">
+          <strong>03｜維持決定成敗</strong>
+          <span>5S 不是活動而是文化，需要時程、角色、回饋讓它持續運作下去。</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <strong>Reay's Note｜5S 概覽重點筆記</strong><br>
+    整理：Reay Huang · 管理筆記 · 工作場所管理／精實改善學習整理<br>
+    內容整理：5S 五大支柱（Sort、Set in Order、Shine、Standardize、Sustain）、起源與推動角色、主要效益與實務執行稽核方式。<br>
+    備註：本頁為個人學習與教學整理用途，實際導入仍應依現場情境與專業判斷調整。
+  </footer>
+
+</div>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function resetScrollOnReload() {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!nav || nav.type !== 'reload') return;
+
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('pageshow', resetScrollOnReload);
+    window.addEventListener('load', resetScrollOnReload);
+  </script>
+</body>
+</html>
