@@ -16,13 +16,25 @@ All HTML files are served as-is from the repository root. No build step is requi
 
 | Path | Description |
 |------|-------------|
-| `index.html` | Homepage with hero banner |
-| `about.html` | About / CV page |
-| `notes/index.html` | Professional notes listing |
+| `index.html` | English homepage (default) with hero banner |
+| `index.zh.html` | Traditional Chinese homepage |
+| `index.en.html` | Redirect to `index.html` (legacy URL) |
+| `about.html` | About / CV page (Traditional Chinese) |
+| `about.en.html` | About / CV page (English) |
+| `notes/index.html` | Maritime notes listing (Traditional Chinese) |
+| `notes/index.en.html` | Maritime notes listing (English) |
 | `notes/maritime/class-survey-basics.html` | Ship classification & regulations note |
-| `research/index.html` | Research listing |
+| `research/index.html` | Management notes listing (Traditional Chinese) |
+| `research/index.en.html` | Management notes listing (English) |
 | `research/sbc-demand-classification.html` | SBC demand classification research |
 | `research/sample-study.html` | Sample study template |
+
+### Internationalization
+
+- **Default language**: English (`index.html` at site root).
+- **Traditional Chinese**: `index.zh.html` for homepage; other pages use the base filename (e.g. `about.html`, `notes/index.html`).
+- **English content pages**: use the `.en.html` suffix (e.g. `about.en.html`, `notes/index.en.html`).
+- Language switch links appear in the site header on each page.
 
 ### Lint / Test / Build
 
