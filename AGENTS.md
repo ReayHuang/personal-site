@@ -31,10 +31,16 @@ All HTML files are served as-is from the repository root. No build step is requi
 
 ### Internationalization
 
+**English-primary site** — English is the default language; Traditional Chinese is secondary.
+
 - **Default language**: English (`index.html` at site root).
 - **Traditional Chinese**: `index.zh.html` for homepage; other pages use the base filename (e.g. `about.html`, `notes/index.html`).
 - **English content pages**: use the `.en.html` suffix (e.g. `about.en.html`, `notes/index.en.html`).
-- Language switch links appear in the site header on each page.
+- **`x-default` hreflang**: always points to the English version of each page pair.
+- **Language switch**: EN link appears before 繁中 in the header on every page.
+- **Adding content**: create the English page first, add it to the `*.en.html` listing, then add Traditional Chinese if needed.
+
+See `README.md` for file naming and listing conventions.
 
 ### Lint / Test / Build
 
@@ -44,4 +50,4 @@ All HTML files are served as-is from the repository root. No build step is requi
 
 ### Adding content
 
-Copy an existing HTML file as a template, then add a card link on the relevant listing page (`notes/index.html` or `research/index.html`). See `README.md` for details.
+Copy an existing English HTML file as a template, add a card link on the relevant English listing page (`notes/index.en.html` or `research/index.en.html`), then add a Traditional Chinese version and listing link if needed. See `README.md` for details.
