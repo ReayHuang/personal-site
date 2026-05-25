@@ -5,7 +5,8 @@ Yen-Jui Huang（Reay Huang）的個人網站 — **LR 驗船師 · PMP®**，配
 ## 本機預覽
 
 ```bash
-open index.html
+open index.html          # 英文首頁（預設）
+open index.zh.html       # 繁中首頁
 # 或
 python3 -m http.server 8080
 ```
@@ -14,13 +15,29 @@ python3 -m http.server 8080
 
 ```
 personal-site/
-├── index.html              # 首頁（全幅 Hero 帶）
-├── about.html              # 關於我
+├── index.html              # 英文首頁（預設，全幅 Hero 帶）
+├── index.zh.html           # 繁中首頁
+├── index.en.html           # 轉址至 index.html（保留舊連結相容）
+├── about.html              # 關於我（繁中）
+├── about.en.html           # About（英文）
 ├── assets/css/style.css    # LR 風格配色
 ├── notes/                  # 專業筆記
+│   ├── index.html          # 海事筆記列表（繁中）
+│   ├── index.en.html       # Maritime Note listing（英文）
 │   └── maritime/           # 海事法規與檢驗
 └── research/               # 研究資料
+    ├── index.html          # 管理筆記列表（繁中）
+    └── index.en.html       # Management Note listing（英文）
 ```
+
+## 雙語版本
+
+| 語言 | 首頁 | 關於我 | 列表頁命名 |
+|------|------|--------|------------|
+| 英文（預設） | `index.html` | `about.en.html` | `*.en.html` |
+| 繁中 | `index.zh.html` | `about.html` | `*.html` |
+
+訪客進入 `/` 或 `index.html` 即為英文首頁；語言切換連結位於各頁頂部導覽列。
 
 ## 品牌色（參考 lr.org）
 
