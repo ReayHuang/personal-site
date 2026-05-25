@@ -32,12 +32,16 @@ personal-site/
 
 ## 雙語版本
 
+**網站以英文為主、繁中為輔。** 新內容請優先撰寫英文版，再視需要補繁中版。
+
 | 語言 | 首頁 | 關於我 | 列表頁命名 |
 |------|------|--------|------------|
 | 英文（預設） | `index.html` | `about.en.html` | `*.en.html` |
 | 繁中 | `index.zh.html` | `about.html` | `*.html` |
 
-訪客進入 `/` 或 `index.html` 即為英文首頁；語言切換連結位於各頁頂部導覽列。
+- 訪客進入 `/` 或 `index.html` 即為英文首頁
+- 各頁 `hreflang` 的 `x-default` 指向英文版
+- 語言切換連結位於各頁頂部導覽列（EN 在前）
 
 ## 品牌色（參考 lr.org）
 
@@ -50,7 +54,9 @@ personal-site/
 
 ## 新增筆記
 
-複製 `notes/maritime/class-survey-basics.html`，修改後在 `notes/index.html` 加入卡片連結。
+1. 複製同類型的英文範本（例如 `notes/maritime/*.en.html`）
+2. 修改內容後，在 `notes/index.en.html`（或 `research/index.en.html`）加入卡片連結
+3. 若有繁中版本，再建立對應的 `*.html` 並加入繁中列表頁
 
 ## 聲明
 
