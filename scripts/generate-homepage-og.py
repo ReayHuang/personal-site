@@ -10,8 +10,8 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 ROOT = Path(__file__).resolve().parents[1]
 PORTRAIT = ROOT / "assets/images/reay-huang.png"
 SHIP_SOURCE = ROOT / "assets/images/source/container-ship-bow.png"
-OUT_EN = ROOT / "assets/images/homepage-linkedin-preview.en-1200.jpg"
-OUT_ZH = ROOT / "assets/images/homepage-linkedin-preview-1200.jpg"
+OUT_EN = ROOT / "assets/images/homepage-linkedin-preview-reay-huang.en-1200.jpg"
+OUT_ZH = ROOT / "assets/images/homepage-linkedin-preview-reay-huang-1200.jpg"
 
 W, H = 1200, 630
 
