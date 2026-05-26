@@ -10,8 +10,8 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 ROOT = Path(__file__).resolve().parents[1]
 PORTRAIT = ROOT / "assets/images/reay-huang.png"
 SHIP_SOURCE = ROOT / "assets/images/source/container-ship-bow.png"
-OUT_EN = ROOT / "assets/images/homepage-linkedin-preview.en-1200.jpg"
-OUT_ZH = ROOT / "assets/images/homepage-linkedin-preview-1200.jpg"
+OUT_EN = ROOT / "assets/images/homepage-linkedin-preview-reay-huang.en-1200.jpg"
+OUT_ZH = ROOT / "assets/images/homepage-linkedin-preview-reay-huang-1200.jpg"
 
 W, H = 1200, 630
 
@@ -177,10 +177,8 @@ def draw_text_block(base: Image.Image, *, locale: str) -> None:
     draw.text((TEXT_X + 16, y + 6), pill_text, font=font_brand, fill=COLORS["teal"])
     y += 56
 
-    draw.text((TEXT_X, y), "Yen-Jui Huang", font=font_name, fill=COLORS["white"])
+    draw.text((TEXT_X, y), "Reay Huang", font=font_name, fill=COLORS["white"])
     y += 58
-    draw.text((TEXT_X, y), "(Reay Huang)", font=font_alias, fill=COLORS["light"])
-    y += 44
     draw.text((TEXT_X, y), "Marine Surveyor · PMP®", font=font_role, fill=COLORS["teal"])
     y += 48
 
