@@ -1,0 +1,31 @@
+---
+description: Add Google Analytics (gtag.js) to every new or edited HTML page
+globs: **/*.html
+alwaysApply: false
+---
+
+# Google Analytics on HTML pages
+
+When creating or publishing a new HTML page, add Google Analytics at the **start of `<head>`** (before meta charset is fine).
+
+## Snippet (adjust `gtag-config.js` path by directory depth)
+
+```html
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="PATH_TO/assets/js/gtag-config.js"></script>
+```
+
+| Page location | `gtag-config.js` path |
+|---------------|------------------------|
+| Site root (`index.html`, `about.html`, …) | `assets/js/gtag-config.js` |
+| One level down (`notes/`, `research/`) | `../assets/js/gtag-config.js` |
+| Two levels down (`notes/maritime/`) | `../../assets/js/gtag-config.js` |
+
+Measurement ID is configured in `assets/js/gtag-config.js` (`G-YJDKH6WYT1`). Do not duplicate `gtag("config", …)` inline unless intentionally changing that file.
+
+## Checklist
+
+- New English page + Traditional Chinese pair: add GA to **both** files.
+- Redirect-only pages (e.g. `index.en.html`): include GA as well.
+- Copy from an existing page in the **same folder** to get the correct relative path.

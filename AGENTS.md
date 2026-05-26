@@ -51,3 +51,7 @@ See `README.md` for file naming and listing conventions.
 ### Adding content
 
 Copy an existing English HTML file as a template, add a card link on the relevant English listing page (`notes/index.en.html` or `research/index.en.html`), then add a Traditional Chinese version and listing link if needed. See `README.md` for details.
+
+### Google Analytics
+
+Every HTML page must include **Google tag (gtag.js)** at the start of `<head>`: async loader for `G-YJDKH6WYT1` plus `gtag-config.js` (path: `assets/js/` at root, `../assets/js/` under `notes/` or `research/`, `../../assets/js/` under `notes/maritime/`). Copy the snippet from a sibling page in the same directory when adding new pages.
