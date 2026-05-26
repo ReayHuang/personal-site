@@ -177,10 +177,8 @@ def draw_text_block(base: Image.Image, *, locale: str) -> None:
     draw.text((TEXT_X + 16, y + 6), pill_text, font=font_brand, fill=COLORS["teal"])
     y += 56
 
-    draw.text((TEXT_X, y), "Yen-Jui Huang", font=font_name, fill=COLORS["white"])
+    draw.text((TEXT_X, y), "Reay Huang", font=font_name, fill=COLORS["white"])
     y += 58
-    draw.text((TEXT_X, y), "(Reay Huang)", font=font_alias, fill=COLORS["light"])
-    y += 44
     draw.text((TEXT_X, y), "Marine Surveyor · PMP®", font=font_role, fill=COLORS["teal"])
     y += 48
 
