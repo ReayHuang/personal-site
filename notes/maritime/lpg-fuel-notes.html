@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《Fuel for Thought》LPG 報告摘要｜Reay's Note</title>
+  <meta name="description" content="從海事驗船與新造船觀點，整理 LPG 作為船用替代燃料的基本特性、安全風險、法規架構、加注作業與未來低碳燃料路徑。" />
+  <meta name="author" content="Reay Huang" />
+  <meta property="og:title" content="《Fuel for Thought》LPG 報告摘要｜Reay's Note" />
+  <meta property="og:description" content="從海事驗船與新造船觀點，整理 LPG 作為船用替代燃料的基本特性、安全風險、法規架構、加注作業與未來低碳燃料路徑。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay's Maritime Notes" />
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/lpg-fuel-notes.html" />
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/lpg-fuel-notes.html" />
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/lpg-fuel-linkedin-preview-1200.jpg" />
+  <meta property="og:image:alt" content="《Fuel for Thought》LPG 報告摘要｜Reay's Note" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="《Fuel for Thought》LPG 報告摘要｜Reay's Note" />
+  <meta name="twitter:description" content="從海事驗船與新造船觀點，整理 LPG 作為船用替代燃料的基本特性、安全風險、法規架構、加注作業與未來低碳燃料路徑。" />
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/lpg-fuel-linkedin-preview-1200.jpg" />
+  <link rel="alternate" hreflang="zh-Hant" href="lpg-fuel-notes.html" />
+  <link rel="alternate" hreflang="en" href="lpg-fuel-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="lpg-fuel-notes.en.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --card: #ffffff;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --teal: #11806a;
+      --teal-soft: #e2f5ef;
+      --blue: #1d5ea8;
+      --blue-soft: #e4effb;
+      --amber: #b86b00;
+      --amber-soft: #fff2d9;
+      --purple: #6846c9;
+      --purple-soft: #eee9ff;
+      --coral: #b65035;
+      --coral-soft: #fde8df;
+      --green: #287a3e;
+      --green-soft: #e7f4e9;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(200, 169, 110, .20), transparent 32rem),
+        radial-gradient(circle at top right, rgba(29, 94, 168, .15), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      line-height: 1.78;
+      letter-spacing: .01em;
+    }
+
+    a { color: inherit; }
+    .page { overflow: hidden; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(6, 17, 31, .98), rgba(16, 36, 62, .97)),
+        radial-gradient(circle at 80% 10%, rgba(200, 169, 110, .28), transparent 24rem);
+      color: white;
+      padding: 72px 24px 46px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .12;
+      z-index: -1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.55) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.35) 49%, transparent 51%);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
+    }
+
+    .hero-inner,
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200,169,110,.9);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 34px;
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    h1 {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(34px, 5.4vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      margin: 0 0 14px;
+      text-wrap: balance;
+    }
+
+    .hero-title__keep {
+      white-space: nowrap;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title__lead {
+        white-space: nowrap;
+      }
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(14px, 1.5vw, 17px);
+      line-height: 1.72;
+      color: rgba(255,255,255,.78);
+      margin: 0;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-panel-title {
+      color: #f0dcae;
+      font-weight: 900;
+      margin-bottom: 12px;
+      font-size: 14px;
+      letter-spacing: .06em;
+    }
+
+    .hero-facts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .fact {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.83);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .fact span {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,169,110,.16);
+      color: #f0dcae;
+      flex: 0 0 26px;
+    }
+
+    /* Sticky nav */
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245,248,252,.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220,230,241,.88);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 16px 12px 0;
+      scroll-padding-inline: 12px;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200,169,110,.62);
+      background: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .nav {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        row-gap: 8px;
+        padding-right: 0;
+      }
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .glass-card,
+    .section,
+    .timeline,
+    .notice,
+    .action-board {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(220,230,241,.95);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .glass-card {
+      padding: 26px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    .lead-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.25;
+      margin: 0 0 12px;
+      color: var(--navy-900);
+    }
+
+    .lead-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: "Noto Serif TC", serif;
+      font-weight: 900;
+    }
+
+    .metric strong:not([class*="metric__value--"]) {
+      color: var(--navy-900);
+    }
+
+    .metric strong.metric__value--high { color: var(--teal); }
+    .metric strong.metric__value--medium { color: var(--blue); }
+    .metric strong.metric__value--modest { color: var(--amber); }
+    .metric strong.metric__value--purple { color: var(--purple); }
+
+    .metric span {
+      font-size: 12px;
+      color: var(--soft-muted);
+      font-weight: 700;
+    }
+
+    .notice {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      padding: 22px;
+      margin: 20px 0 24px;
+      border-left: 6px solid var(--gold);
+      background:
+        linear-gradient(135deg, rgba(255,248,235,.94), rgba(255,255,255,.92));
+    }
+
+    .notice-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+    }
+
+    .notice h2,
+    .section h2,
+    .timeline h2,
+    .action-board h2 {
+      margin: 0;
+      font-family: "Noto Serif TC", serif;
+      color: var(--navy-900);
+      line-height: 1.28;
+    }
+
+    .notice ul {
+      margin: 10px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .notice-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .notice-points li {
+      margin: 0;
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(200, 169, 110, .32);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, .78);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .notice-points li strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy-900);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .notice li { margin: 4px 0; }
+
+    .timeline {
+      padding: 26px;
+      margin: 24px 0;
+      overflow: hidden;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .timeline-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rail {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(190px, 1fr));
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+    }
+
+    .rail-item {
+      position: relative;
+      min-height: 170px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+
+    .rail-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .rail-date::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200,169,110,.16);
+    }
+
+    .rail-item p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .section {
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .glass-card .section-top {
+      margin-bottom: 0;
+    }
+
+    .section-no {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      font-family: "Noto Serif TC", serif;
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cards.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .topic-card {
+      position: relative;
+      padding: 20px 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .topic-card:hover,
+      .property:hover,
+      .metric:hover,
+      .notice-points li:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .notice-points li:hover {
+        border-color: rgba(200, 169, 110, .55);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .topic-card,
+      .property,
+      .metric,
+      .notice-points li {
+        transition: none;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .topic-card:hover,
+        .property:hover,
+        .metric:hover,
+        .notice-points li:hover {
+          transform: none;
+        }
+      }
+    }
+
+    .topic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--gold);
+    }
+
+    .topic-card.teal::before { background: var(--teal); }
+    .topic-card.blue::before { background: var(--blue); }
+    .topic-card.amber::before { background: var(--amber); }
+    .topic-card.purple::before { background: var(--purple); }
+    .topic-card.coral::before { background: var(--coral); }
+    .topic-card.green::before { background: var(--green); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: 10px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .badge.teal { color: var(--teal); background: var(--teal-soft); }
+    .badge.blue { color: var(--blue); background: var(--blue-soft); }
+    .badge.amber { color: var(--amber); background: var(--amber-soft); }
+    .badge.purple { color: var(--purple); background: var(--purple-soft); }
+    .badge.coral { color: var(--coral); background: var(--coral-soft); }
+    .badge.green { color: var(--green); background: var(--green-soft); }
+
+    .topic-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy-900);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .topic-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .date-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: #f4f7fb;
+      color: var(--soft-muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .date-chip::before { content: "📅"; }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .mini-note {
+      border-radius: var(--radius-sm);
+      padding: 13px;
+      border: 1px dashed rgba(10,22,40,.16);
+      background: #fbfdff;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .mini-note strong {
+      display: block;
+      color: var(--navy-900);
+      margin-bottom: 3px;
+    }
+
+    .emission-stats {
+      margin-top: 12px;
+    }
+
+    .stat-chip {
+      position: relative;
+      min-height: 92px;
+      padding: 13px 14px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px dashed rgba(10,22,40,.16);
+      background: linear-gradient(180deg, #fbfdff, #fff);
+      overflow: hidden;
+    }
+
+    .stat-chip__label {
+      display: block;
+      color: var(--navy-900);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .stat-chip__value {
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .stat-chip__value--high {
+      color: var(--teal);
+    }
+
+    .stat-chip__value--medium {
+      color: var(--blue);
+    }
+
+    .stat-chip__value--modest {
+      color: var(--amber);
+    }
+
+    .action-board {
+      padding: 28px;
+      margin-top: 28px;
+      background:
+        linear-gradient(135deg, rgba(10,22,40,.97), rgba(23,55,95,.96)),
+        radial-gradient(circle at top right, rgba(200,169,110,.22), transparent 20rem);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .action-board h2 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .action-board p {
+      color: rgba(255,255,255,.72);
+      margin: 0 0 20px;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .action {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+    }
+
+    .action > strong {
+      display: block;
+      color: #f0dcae;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .action-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .action-list li {
+      margin: 6px 0;
+    }
+
+    .action-list strong {
+      display: inline;
+      color: rgba(255,255,255,.92);
+      font-weight: 700;
+    }
+
+    .action-callout {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .action-callout__label {
+      display: block;
+      margin-bottom: 8px;
+      color: #f0dcae;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .action-callout strong {
+      display: inline;
+      color: rgba(255,255,255,.92);
+      font-weight: 700;
+    }
+
+    .action-callout p {
+      margin: 0;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: var(--navy-900);
+    }
+
+    .footer__brand {
+      margin: 0 0 10px;
+      color: var(--navy-900);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .cards.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cards.four {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cards.safety-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cards.safety-grid .topic-card:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f4f7fb;
+      color: var(--navy-900);
+      font-size: 13px;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .checklist li::marker { content: ""; }
+
+    .checklist li::before {
+      content: "✓";
+      flex: 0 0 22px;
+      height: 22px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--teal-soft);
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .definition-panel {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .definition-label {
+      container-type: inline-size;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+      color: white;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 206px;
+    }
+
+    .definition-label strong {
+      position: absolute;
+      inset: 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      color: rgba(255, 255, 255, .13);
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(3.25rem, 46cqw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.06em;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    @container (min-width: 360px) {
+      .definition-label strong {
+        inset: 0 clamp(18px, 4.5cqw, 44px);
+        font-size: clamp(4.5rem, 24cqw, 7.5rem);
+      }
+    }
+
+    .definition-label span {
+      position: relative;
+      z-index: 1;
+      opacity: .95;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .definition-label span:first-of-type {
+      white-space: nowrap;
+      font-size: clamp(11px, 2.4vw, 14px);
+    }
+
+    .definition-label span:last-of-type {
+      align-self: flex-end;
+      text-align: right;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .property {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 112px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .property small {
+      display: block;
+      align-self: flex-start;
+      color: var(--soft-muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .property strong {
+      align-self: flex-end;
+      margin-top: auto;
+      padding-top: 12px;
+      color: var(--blue);
+      font-size: clamp(0.98rem, 1.15vw, 1.12rem);
+      font-weight: 700;
+      line-height: 1.55;
+      text-align: right;
+      letter-spacing: -.01em;
+    }
+
+    @media (max-width: 900px) and (min-width: 621px) {
+      .cards.safety-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cards.safety-grid .topic-card:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid,
+      .section-top,
+      .notice,
+      .action-grid,
+      .definition-panel,
+      .cards.three,
+      .cards.four,
+      .property-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel { max-width: 520px; }
+      .cards.two { grid-template-columns: 1fr; }
+      .notice-points { grid-template-columns: 1fr; }
+      .section-no { width: 50px; height: 50px; font-size: 22px; }
+      .timeline-header { display: block; }
+    }
+
+    @media (max-width: 620px) {
+      .hero-inner,
+      .wrap,
+      main,
+      .footer {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .hero {
+        padding: 46px 0 34px;
+      }
+
+      .hero-grid { gap: 24px; }
+      .hero-panel,
+      .glass-card,
+      .section,
+      .timeline,
+      .notice,
+      .action-board {
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .metric-grid,
+      .mini-grid,
+      .cards.safety-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards.safety-grid .topic-card:last-child {
+        grid-column: auto;
+      }
+
+      .rail {
+        grid-template-columns: repeat(5, minmax(210px, 82vw));
+      }
+
+      .nav {
+        width: calc(100% - 28px);
+      }
+
+      h1 { letter-spacing: -.03em; }
+    }
+
+    @media print {
+      body { background: white; }
+      .nav-shell { display: none; }
+      .hero,
+      .action-board {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section, .timeline, .notice, .glass-card { box-shadow: none; }
+      .topic-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="lpg-fuel-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="lpg-fuel-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Alternative Fuel · LPG · Reay's Note</div>
+
+      <div class="hero-grid">
+        <div>
+          <h1><span class="hero-title__lead">LPG 作為船用替代<span class="hero-title__keep">燃料</span>：</span><br>安全、法規與新造船觀點</h1>
+          <p class="article-meta">
+            <span>📅 更新：2026-05-29</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 閱讀約 12 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 LPG / 船用燃料 / 海事</span>
+          </p>
+          <p class="subtitle">
+            液化石油氣（Liquefied Petroleum Gas, LPG）在目前階段並不是零碳燃料，但它具有成熟的全球供應鏈、較低的空氣污染物排放，以及相對容易液化與儲存的特性。若未來可再生 LPG（rLPG）、生質 LPG（bio-LPG）、可再生二甲醚（rDME）與船上碳捕捉技術逐步成熟，LPG 也可能成為航運能源轉型中的重要過渡選項。
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="LPG quick facts">
+          <div class="hero-panel-title">技術概覽</div>
+          <div class="hero-facts">
+            <div class="fact"><span>⚓</span><div>Alternative Fuel｜LPG 作為船用過渡燃料選項</div></div>
+            <div class="fact"><span>📊</span><div>相較重燃油，SOx 排放可大幅降低（≈97%）</div></div>
+            <div class="fact"><span>🧭</span><div>閱讀方式：先看安全重點，再看法規架構與驗船師觀點</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-shell">
+    <nav class="nav" aria-label="page navigation">
+      <a href="#takeaway">技術定位</a>
+      <a href="#basics">LPG 基礎</a>
+      <a href="#emission">減排價值</a>
+      <a href="#safety">安全重點</a>
+      <a href="#regulation">法規架構</a>
+      <a href="#bunkering">加注作業</a>
+      <a href="#technology">技術成熟度</a>
+      <a href="#future-fuels">未來燃料</a>
+      <a href="#surveyor">驗船師觀點</a>
+      <a href="#conclusion">結論</a>
+    </nav>
+  </div>
+
+  <main>
+    <section id="takeaway" class="summary-grid" aria-label="summary">
+      <div class="glass-card">
+        <div class="section-top">
+          <div class="section-no">01</div>
+          <div>
+            <div class="kicker">Executive Takeaway</div>
+            <h2 class="lead-title">先用一頁掌握 LPG 的技術定位</h2>
+            <p class="lead-copy">LPG 的重點不是「完全零碳」，而是「現階段可用、供應鏈成熟、並具備未來低碳延伸潛力」。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="metric-grid">
+          <div class="metric"><strong class="metric__value--high">≈97%</strong><span>SOx 排放可大幅降低</span></div>
+          <div class="metric"><strong class="metric__value--medium">≈90%</strong><span>粒狀物（PM）排放可明顯下降</span></div>
+          <div class="metric"><strong class="metric__value--modest">1.5×</strong><span>燃料艙容積約為 MDO 的 1.5 倍</span></div>
+          <div class="metric"><strong class="metric__value--purple">WtW</strong><span>減碳效益應以全生命週期評估</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice" aria-label="positioning">
+      <div class="notice-icon">💡</div>
+      <div>
+        <h2>技術定位三個關鍵</h2>
+        <ul class="notice-points">
+          <li><strong>可立即降低部分排放：</strong>LPG 幾乎不含硫，作為船用燃料時可明顯降低硫氧化物（SOx）與粒狀物（PM）排放，對排放管制區與港口空氣品質具有實際意義。</li>
+          <li><strong>供應鏈基礎較成熟：</strong>LPG 已長期作為全球能源商品進行海上運輸。既有的 LPG carrier、接收站、儲槽與裝卸經驗，可作為發展船用燃料供應鏈的基礎。</li>
+          <li><strong>具備過渡燃料價值：</strong>若未來 rLPG、bio-LPG 或 rDME 供應規模擴大，現有 LPG 燃料系統有機會進一步銜接低碳燃料，降低能源轉型中的技術與投資風險。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="basics" class="section">
+      <div class="section-top">
+        <div class="section-no">02</div>
+        <div>
+          <div class="kicker">Fuel Basics</div>
+          <h2>LPG 是什麼？先理解丙烷（Propane）與丁烷（Butane）</h2>
+          <p class="section-sub">LPG 在常溫常壓下為氣體，但在適度壓力下可液化，因此不需要像 LNG 一樣依賴極低溫儲存。</p>
+        </div>
+      </div>
+
+      <div class="definition-panel">
+        <div class="definition-label">
+          <span>Liquefied Petroleum Gas</span>
+          <strong>LPG</strong>
+          <span>Propane C₃H₈<br>Butane C₄H₁₀</span>
+        </div>
+        <div class="property-grid">
+          <div class="property">
+            <small>Boiling Point</small>
+            <strong>丙烷約 -42°C<br>丁烷約 -0.5°C</strong>
+          </div>
+          <div class="property">
+            <small>Vapour Pressure</small>
+            <strong>混合比例會影響儲槽設計壓力</strong>
+          </div>
+          <div class="property">
+            <small>Flammable Range</small>
+            <strong>約 1.4%–10.8% in air</strong>
+          </div>
+          <div class="property">
+            <small>Volumetric Energy Density</small>
+            <strong>約 26.5 MJ/L</strong>
+          </div>
+          <div class="property">
+            <small>Minimum Ignition Energy</small>
+            <strong>約 0.25 mJ，點燃能量低</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="emission" class="section">
+      <div class="section-top">
+        <div class="section-no">03</div>
+        <div>
+          <div class="kicker">Emission Profile</div>
+          <h2>減排價值：空氣污染改善明顯，但仍須規劃長期減碳路徑</h2>
+          <p class="section-sub">LPG 的短期優勢主要來自低硫、較低碳氫比與成熟燃燒技術；但它本質上仍是碳氫燃料。</p>
+        </div>
+      </div>
+
+      <div class="cards two">
+        <article class="topic-card teal">
+          <span class="badge teal">Air Quality</span>
+          <h3>與傳統燃油相比，LPG 的主要優勢</h3>
+          <p>LPG 作為化石來源燃料時，仍可立即降低 SOx、PM 與部分 NOx 排放，並減少一定比例的 CO₂ 排放。不過，若要因應 IMO 中長期溫室氣體減量目標與區域性法規要求，仍需要進一步搭配 rLPG、rDME 或船上碳捕捉等方案。</p>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">Comparison</span>
+          <h3>排放改善幅度（相較傳統燃油）</h3>
+          <div class="mini-grid emission-stats">
+            <div class="stat-chip">
+              <span class="stat-chip__label">SOx</span>
+              <span class="stat-chip__value stat-chip__value--high">≈97%</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-chip__label">PM</span>
+              <span class="stat-chip__value stat-chip__value--high">≈90%</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-chip__label">NOx</span>
+              <span class="stat-chip__value stat-chip__value--medium">≈20%</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-chip__label">CO₂</span>
+              <span class="stat-chip__value stat-chip__value--modest">≈13–20%</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="safety" class="section">
+      <div class="section-top">
+        <div class="section-no">04</div>
+        <div>
+          <div class="kicker">Safety Lens</div>
+          <h2>LPG 安全設計的核心：洩漏後會往哪裡流動與累積？</h2>
+          <p class="section-sub">LPG 蒸氣比空氣重，這是它與甲烷類燃料在安全設計上最重要的差異之一。</p>
+        </div>
+      </div>
+
+      <div class="cards safety-grid">
+        <article class="topic-card coral">
+          <span class="badge coral">High focus</span>
+          <h3>⬇️ 蒸氣比空氣重</h3>
+          <p>LPG 蒸氣會往低處流動，並可能在 bilge、duct、pipe tunnel 或其他低位封閉空間累積。因此，氣體偵測器配置與通風設計必須特別重視低位區域。</p>
+        </article>
+        <article class="topic-card coral">
+          <span class="badge coral">High focus</span>
+          <h3>🔥 可燃雲團與回火風險</h3>
+          <p>洩漏後形成的可燃雲團，可能在距離洩漏點一段距離處遇到火源而點燃，火焰再沿著可燃混合氣回燒至洩漏源。</p>
+        </article>
+        <article class="topic-card amber">
+          <span class="badge amber">Medium</span>
+          <h3>🧊 冷灼傷與材料低溫損傷</h3>
+          <p>液態 LPG 快速氣化時會吸收大量熱能，可能造成皮膚冷灼傷；若直接滴落至甲板或船體結構，也可能引發局部低溫脆化風險。</p>
+        </article>
+        <article class="topic-card coral">
+          <span class="badge coral">High focus</span>
+          <h3>🌊 水面池火風險</h3>
+          <p>LPG 洩漏至水面後可能形成液池並持續氣化。一旦被點燃，火勢熱輻射強、燃燒速度快，通常需等洩漏燃料消耗後火勢才會停止。</p>
+        </article>
+        <article class="topic-card amber">
+          <span class="badge amber">Medium</span>
+          <h3>😵 缺氧與麻醉效應</h3>
+          <p>高濃度 LPG 會稀釋空氣中的氧氣，也可能產生麻醉效應。因此，進入封閉空間前必須確認通風、測氧與可燃氣體濃度。</p>
+        </article>
+        <article class="topic-card green">
+          <span class="badge green">Controls</span>
+          <h3>🧯 主要風險控制措施</h3>
+          <p>雙層管路、二次圍蔽、碳氫氣體偵測、通風、緊急切斷系統與安全區域管理，是 LPG 燃料系統設計與操作中的主要防線。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="regulation" class="section">
+      <div class="section-top">
+        <div class="section-no">05</div>
+        <div>
+          <div class="kicker">Regulatory Map</div>
+          <h2>法規架構：先判斷船型、燃料來源與使用情境</h2>
+          <p class="section-sub">Gas carrier 使用自身貨物作為燃料，與 non-gas carrier 使用 LPG 作為燃料，適用邏輯並不完全相同。</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>使用情境</th>
+              <th>主要法規邏輯</th>
+              <th>驗船師閱讀重點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>液化氣體船載運 LPG 貨物，並使用貨物作為燃料</td>
+              <td>通常以 IGC Code 的架構處理液化氣體散裝運輸船的構造、設備與貨物作為燃料的使用安排。</td>
+              <td>確認 cargo containment system、fuel supply system、machinery safety 與船級 notation 的設計邊界是否一致。</td>
+            </tr>
+            <tr>
+              <td>非液化氣體船使用 LPG 作為燃料</td>
+              <td>通常以 IGF Code 的低閃點燃料安全框架為基礎，並搭配 IMO LPG interim guidelines 進行評估。</td>
+              <td>重點在 fuel tank、fuel piping、bunkering station、hazardous area、ventilation、ESD 與操作手冊。</td>
+            </tr>
+            <tr>
+              <td>船級 notation 與核准條件</td>
+              <td>船級 notation 需與船型、燃料種類、燃料來源與燃料系統設計一致。</td>
+              <td>不要只看 notation 名稱，應回到 approved drawings、設計基準、風險評估與實際安裝條件確認。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="bunkering" class="section">
+      <div class="section-top">
+        <div class="section-no">06</div>
+        <div>
+          <div class="kicker">Bunkering Assurance</div>
+          <h2>LPG 加注作業：安全來自設備、程序與人員訓練的整合</h2>
+          <p class="section-sub">LPG 加注可參考 LNG bunkering 的成熟流程，但仍須針對 LPG 自身危害重新確認安全措施。</p>
+        </div>
+      </div>
+
+      <div class="cards three">
+        <article class="topic-card teal">
+          <span class="badge teal">Before</span>
+          <h3>加注前｜Before Bunkering</h3>
+          <ul class="checklist">
+            <li>風險評估中的改善措施已完成並確認有效</li>
+            <li>接收船與加注設施之間的相容性已確認</li>
+            <li>緊急應變計畫、港口許可與人員分工已確認</li>
+            <li>加注速率、裝載限制、ESD / ERS 條件已完成確認</li>
+          </ul>
+        </article>
+        <article class="topic-card blue">
+          <span class="badge blue">During</span>
+          <h3>加注中｜During Bunkering</h3>
+          <ul class="checklist">
+            <li>持續監控燃料艙液位、壓力與溫度</li>
+            <li>確認泵浦輸送速率與流量維持在核准範圍內</li>
+            <li>持續檢查 mooring lines、hoses 與 manifold 狀態</li>
+            <li>維持安全區域，並嚴格管制火源與未授權人員</li>
+          </ul>
+        </article>
+        <article class="topic-card purple">
+          <span class="badge purple">After</span>
+          <h3>加注後｜After Bunkering</h3>
+          <ul class="checklist">
+            <li>完成管路氣化、排空或惰化程序</li>
+            <li>確認作業過程未造成 LPG 氣體不當釋放</li>
+            <li>安全拆離加注接頭，並完成安全解纜</li>
+            <li>依程序通知港口主管機關或相關單位作業完成</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="technology" class="section">
+      <div class="section-top">
+        <div class="section-no">07</div>
+        <div>
+          <div class="kicker">Technology Readiness</div>
+          <h2>技術成熟度：主機、燃料艙與碳捕捉的整合路徑</h2>
+          <p class="section-sub">LPG 在 VLGC 與 LPG carrier 上已有較成熟應用；若要推廣至其他船型，仍需主機型號、加注基礎設施與法規框架進一步擴展。</p>
+        </div>
+      </div>
+
+      <div class="cards two">
+        <article class="topic-card teal">
+          <span class="badge teal">Engine</span>
+          <h3>主機技術｜ME-LGIP</h3>
+          <p>在二行程主機領域，ME-LGIP 是目前最具代表性的 LPG dual-fuel 解決方案之一。若由既有 ME-C engine 改裝，通常不只是更換噴射元件，還會涉及 gas control block、燃料管路、sealing oil system、控制系統升級，以及後續的 gas trial 驗證。</p>
+          <div class="mini-grid">
+            <div class="mini-note"><strong>Step 1｜工程評估</strong>確認主機型號、燃料模式、hazardous area、系統介面與核准圖面。</div>
+            <div class="mini-note"><strong>Step 2｜改裝與整合</strong>更換 cylinder cover、LPG injection valves，並整合 gas piping、control system 與安全連鎖。</div>
+            <div class="mini-note"><strong>Step 3｜試驗與驗證</strong>執行燃料切換、alarm / shutdown、gas mode operation，以及 sea trial / gas trial。</div>
+          </div>
+        </article>
+
+        <article class="topic-card blue">
+          <span class="badge blue">Fuel Tank</span>
+          <h3>燃料艙｜三種主要型式</h3>
+          <div class="table-wrap" style="margin-top: 12px;">
+            <table style="min-width: 520px;">
+              <thead>
+                <tr>
+                  <th>Fuel Tank Type</th>
+                  <th>典型條件</th>
+                  <th>應用觀點</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Refrigerated</td>
+                  <td>約 -50°C、接近常壓</td>
+                  <td>適合較大容量需求，但低溫材料、絕熱與操作控制要求較高。</td>
+                </tr>
+                <tr>
+                  <td>Semi-refrigerated</td>
+                  <td>約 -10°C、4–8 bar</td>
+                  <td>在容量與操作彈性之間取得平衡，常見於可作為加注船的 LPG carrier。</td>
+                </tr>
+                <tr>
+                  <td>Pressurised</td>
+                  <td>約 17 bar</td>
+                  <td>對接收船而言通常較簡單，也較容易與不同型式的加注船搭配。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="future-fuels" class="section">
+      <div class="section-top">
+        <div class="section-no">08</div>
+        <div>
+          <div class="kicker">Future Fuel Pathway</div>
+          <h2>從化石 LPG 走向 rLPG、bio-LPG 與 rDME</h2>
+          <p class="section-sub">LPG 的長期價值，不只在於目前的減排效果，更在於能否順利銜接未來的低碳或近零碳燃料路徑。</p>
+        </div>
+      </div>
+
+      <div class="cards four">
+        <article class="topic-card teal">
+          <span class="badge teal">Drop-in</span>
+          <h3>Renewable LPG</h3>
+          <p>可由再生電力或其他低碳製程生產。由於性質接近傳統 LPG，理論上可較容易導入既有燃料系統。</p>
+        </article>
+        <article class="topic-card green">
+          <span class="badge green">Biogenic</span>
+          <h3>Bio-LPG</h3>
+          <p>可由生質原料、廢棄物、油脂或相關製程副產物取得，具備降低全生命週期碳足跡的潛力。</p>
+        </article>
+        <article class="topic-card purple">
+          <span class="badge purple">Blend</span>
+          <h3>Renewable DME</h3>
+          <p>DME 與 LPG 具有相似的儲存與處理特性，可在一定比例下混合使用，並利用部分既有 LPG 供應鏈。</p>
+        </article>
+        <article class="topic-card blue">
+          <span class="badge blue">Integration</span>
+          <h3>Onboard Carbon Capture</h3>
+          <p>由於 LPG 燃燒產生的 CO₂ 低於傳統燃油，搭配船上碳捕捉時，所需 CO₂ 儲存容量與相關成本可能相對較低。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="surveyor" class="action-board">
+      <h2>驗船師觀點：不要只看設備，要看完整的安全論證</h2>
+      <p>這一段聚焦於 design review、arrangement check 與 operational verification 三個面向，適合作為技術文章的收束重點。</p>
+
+      <div class="action-grid">
+        <div class="action">
+          <strong>01｜設計審查</strong>
+          <ul class="action-list">
+            <li><strong>IGC / IGF</strong> 的適用邊界是否明確</li>
+            <li><strong>IMO interim guidelines</strong> 的適用情境是否正確</li>
+            <li><strong>LR notation</strong> 與 <strong>approved drawings</strong> 是否一致</li>
+            <li><strong>HAZID / HAZOP / FMEA</strong> 的風險控制措施是否形成閉環</li>
+          </ul>
+        </div>
+        <div class="action">
+          <strong>02｜布置檢查</strong>
+          <ul class="action-list">
+            <li><strong>Tank pressure</strong>、<strong>temperature</strong> 與 <strong>pressure relief arrangement</strong> 是否合理</li>
+            <li><strong>Double-wall piping</strong> 與 <strong>secondary containment</strong> 是否符合要求</li>
+            <li><strong>Vent outlet</strong>、<strong>drain</strong> 與 <strong>gas detector</strong> 的配置位置是否恰當</li>
+            <li><strong>Hazardous area</strong> 與 <strong>electrical equipment suitability</strong> 是否匹配</li>
+          </ul>
+        </div>
+        <div class="action">
+          <strong>03｜操作驗證</strong>
+          <ul class="action-list">
+            <li><strong>Bunkering procedure</strong> 與 <strong>checklist</strong> 是否完整</li>
+            <li><strong>ESD / ERS logic test</strong> 是否符合設計意圖</li>
+            <li><strong>Fuel changeover</strong> 與 <strong>gas trial</strong> 是否完成充分驗證</li>
+            <li><strong>Crew training</strong>、<strong>PPE</strong> 與 <strong>emergency response</strong> 是否落實</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="action-callout">
+        <span class="action-callout__label">核心判斷句</span>
+        <p><strong>LPG 最大的安全挑戰，不只是它是否可燃，而是洩漏後會往哪裡流動、在哪裡累積，以及何時可能遇到火源。</strong> 因此，驗船師在閱讀圖面或進行現場檢查時，應將低位累積風險、通風有效性、氣體偵測涵蓋範圍與緊急切斷邏輯，放在同一個 safety case 中一起檢視。</p>
+      </div>
+    </section>
+
+    <section id="conclusion" class="notice" aria-label="conclusion">
+      <div class="notice-icon">✅</div>
+      <div>
+        <h2>結論：LPG 是具實務可行性的過渡燃料選項</h2>
+        <p class="lead-copy" style="margin-top: 10px;">
+          LPG 作為船用燃料的主要價值，在於它能於現階段提供一條比傳統燃油更低空氣污染物排放、供應鏈基礎較成熟，且技術風險相對可控的替代路徑。它不應被視為最終零碳解方，但若未來 rLPG、bio-LPG、rDME 與船上碳捕捉技術能夠成熟並規模化，LPG 燃料系統可能成為船東在能源轉型期間兼顧合規、成本與實務可行性的過渡平台。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__brand">Reay Huang Maritime Notes</p>
+    <p><strong>資料來源與免責聲明：</strong>本筆記依 LR《Fuel for Thought》LPG 報告作個人理解整理，目的為知識分享與技術討論，不代表 Lloyd's Register 官方立場，亦不構成船級、法規、工程設計或商業決策建議。涉及法規、標準與市場資訊時，仍應以主管機關、標準組織、船級社最新文件、核准圖面及相關合約為準。</p>
+  </footer>
+
+</div>
+</body>
+</html>
