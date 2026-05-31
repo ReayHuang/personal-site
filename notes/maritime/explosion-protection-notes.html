@@ -617,7 +617,8 @@
     }
 
     #groups .table-wrap {
-      overflow-x: visible;
+      overflow: hidden;
+      border-radius: 22px;
     }
 
     #groups table {
@@ -648,8 +649,25 @@
       width: 48%;
     }
 
+    #groups thead tr:first-child th:first-child {
+      border-top-left-radius: 22px;
+    }
+
+    #groups thead tr:first-child th:last-child {
+      border-top-right-radius: 22px;
+    }
+
+    #groups tbody tr:last-child td:first-child {
+      border-bottom-left-radius: 22px;
+    }
+
+    #groups tbody tr:last-child td:last-child {
+      border-bottom-right-radius: 22px;
+    }
+
     #why .table-wrap {
-      overflow-x: visible;
+      overflow: hidden;
+      border-radius: 22px;
     }
 
     #why table {
@@ -678,6 +696,22 @@
 
     #why th {
       white-space: normal;
+    }
+
+    #why thead tr:first-child th:first-child {
+      border-top-left-radius: 22px;
+    }
+
+    #why thead tr:first-child th:last-child {
+      border-top-right-radius: 22px;
+    }
+
+    #why tbody tr:last-child td:first-child {
+      border-bottom-left-radius: 22px;
+    }
+
+    #why tbody tr:last-child td:last-child {
+      border-bottom-right-radius: 22px;
     }
 
     .zone-label {
