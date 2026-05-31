@@ -80,31 +80,69 @@
       padding: 34px 22px 84px;
     }
 
-    .hero {
-      padding: 46px 0 24px;
+    .page-hero {
+      margin-bottom: 8px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 30px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(21, 94, 147, 0.18), transparent 32%),
+        radial-gradient(circle at 90% 20%, rgba(11, 58, 91, 0.14), transparent 28%),
+        linear-gradient(135deg, #ffffff, #f3f8fc);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card > :not(.hero-watermark) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-watermark {
+      position: absolute;
+      right: 12px;
+      bottom: -6px;
+      font-size: clamp(4.5rem, 13vw, 8.5rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: rgba(21, 94, 147, 0.09);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
     }
 
     .eyebrow {
-      color: var(--brand-2);
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      font-size: 0.8125rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
-    h1 {
-      font-size: clamp(2.25rem, 6vw, 4.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
+    .hero-card h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
       color: #0f2537;
-      margin: 0;
+      margin: 0 0 8px;
     }
 
     .subtitle {
-      margin-top: 10px;
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      margin: 0 0 14px;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
       font-weight: 750;
       color: var(--brand);
+      line-height: 1.35;
+    }
+
+    .hero-card .article-meta {
+      margin: 0 0 16px;
     }
 
     .meta {
@@ -114,15 +152,16 @@
     }
 
     .lead {
-      margin-top: 24px;
-      max-width: 880px;
-      font-size: 1.08rem;
+      margin: 0;
+      max-width: none;
+      font-size: 1.05rem;
       color: #334155;
+      line-height: 1.75;
     }
 
     details.lead-supplement {
       margin-top: 14px;
-      max-width: 880px;
+      max-width: none;
       border: 1px solid #c9deef;
       border-radius: 14px;
       background: rgba(255, 255, 255, 0.82);
@@ -182,7 +221,7 @@
     }
 
     .hero-panel {
-      margin-top: 34px;
+      margin-top: 28px;
       background: linear-gradient(135deg, #0b3a5b 0%, #155e93 100%);
       color: white;
       border-radius: 28px;
@@ -1012,7 +1051,18 @@
       font-weight: 700;
       color: var(--brand);
     }
-@media (max-width: 960px) {
+@media (max-width: 620px) {
+      .hero-card {
+        padding: 22px;
+      }
+
+      .hero-watermark {
+        right: 4px;
+        bottom: -12px;
+      }
+    }
+
+    @media (max-width: 960px) {
       .hero-panel,
       .split {
         grid-template-columns: 1fr;
@@ -1092,35 +1142,38 @@
     </nav>
   </div>
 
-  <main class="page" id="hero">
-    <header class="hero">
-      <div class="eyebrow">Hazardous Area Explosion Protection · Reay Huang Maritime Notes</div>
-      <h1>Hazardous Area Explosion Protection</h1>
-      <div class="subtitle">Ex ratings, protection types, and practical selection notes</div>
-      <p class="article-meta article-meta--light">
-        <span>📅 Updated: 2026-06-01</span>
-        <span class="article-meta__sep" aria-hidden="true">·</span>
-        <span>⏱ 12 min read</span>
-        <span class="article-meta__sep" aria-hidden="true">·</span>
-        <span>🏷 Explosion Protection / IEC 60079 / Hazardous Area</span>
-      </p>
+  <main class="page" id="top">
+    <header class="page-hero">
+      <div class="hero-card">
+        <div class="eyebrow">Hazardous Area Explosion Protection · Reay Huang Maritime Notes</div>
+        <h1>Hazardous Area Explosion Protection</h1>
+        <div class="subtitle">Ex ratings, protection types, and practical selection notes</div>
+        <p class="article-meta article-meta--light">
+          <span>📅 Updated: 2026-06-01</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 12 min read</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 Explosion Protection / IEC 60079 / Hazardous Area</span>
+        </p>
 
-      <p class="lead">
-        In shipboard, oil and gas, chemical, and dust-handling environments, flammable gases, vapours, or dusts may form explosive atmospheres with air. If electrical equipment produces sparks, arcs, or hot surfaces, it can become an ignition source. Explosion-protection classification provides a common language for explaining
-        <strong>how hazardous an area is, how easily the material can be ignited, and how equipment prevents ignition</strong>,
-        helping engineers select, install, inspect, and maintain equipment correctly.
-      </p>
-      <details class="lead-supplement">
-        <summary>Supplementary note (IEC / IECEx / ATEX and scope of this page)</summary>
-        <div class="lead-supplement__body">
-          <p>
-            The classification and definitions for Ex electrical equipment are mainly developed by IEC TC 31 of the International Electrotechnical Commission, with the core standards concentrated in the IEC 60079 series. IECEx is a common international certification system, while the European Union also applies the ATEX directives and harmonised standards.
-          </p>
-          <p>
-            In practice, the standards include many detailed requirements and special cases for hazardous area classification, equipment protection types, gas and dust groups, temperature classes, equipment protection levels (EPL), installation methods, and verification dossiers. This page focuses on the marking interpretation and selection logic that engineers and surveyors encounter most often, giving readers an initial working understanding. Detailed design, procurement, and compliance work must still refer to formal standards, equipment certificates, and project technical documents.
-          </p>
-        </div>
-      </details>
+        <p class="lead">
+          In shipboard, oil and gas, chemical, and dust-handling environments, flammable gases, vapours, or dusts may form explosive atmospheres with air. If electrical equipment produces sparks, arcs, or hot surfaces, it can become an ignition source. Explosion-protection classification provides a common language for explaining
+          <strong>how hazardous an area is, how easily the material can be ignited, and how equipment prevents ignition</strong>,
+          helping engineers select, install, inspect, and maintain equipment correctly.
+        </p>
+        <details class="lead-supplement">
+          <summary>Supplementary note (IEC / IECEx / ATEX and scope of this page)</summary>
+          <div class="lead-supplement__body">
+            <p>
+              The classification and definitions for Ex electrical equipment are mainly developed by IEC TC 31 of the International Electrotechnical Commission, with the core standards concentrated in the IEC 60079 series. IECEx is a common international certification system, while the European Union also applies the ATEX directives and harmonised standards.
+            </p>
+            <p>
+              In practice, the standards include many detailed requirements and special cases for hazardous area classification, equipment protection types, gas and dust groups, temperature classes, equipment protection levels (EPL), installation methods, and verification dossiers. This page focuses on the marking interpretation and selection logic that engineers and surveyors encounter most often, giving readers an initial working understanding. Detailed design, procurement, and compliance work must still refer to formal standards, equipment certificates, and project technical documents.
+            </p>
+          </div>
+        </details>
+        <span class="hero-watermark" aria-hidden="true">Ex</span>
+      </div>
 
       <section class="hero-panel" aria-label="Page summary">
         <div class="hero-marking">

@@ -80,31 +80,69 @@
       padding: 34px 22px 84px;
     }
 
-    .hero {
-      padding: 46px 0 24px;
+    .page-hero {
+      margin-bottom: 8px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 30px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(21, 94, 147, 0.18), transparent 32%),
+        radial-gradient(circle at 90% 20%, rgba(11, 58, 91, 0.14), transparent 28%),
+        linear-gradient(135deg, #ffffff, #f3f8fc);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card > :not(.hero-watermark) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-watermark {
+      position: absolute;
+      right: 12px;
+      bottom: -6px;
+      font-size: clamp(4.5rem, 13vw, 8.5rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: rgba(21, 94, 147, 0.09);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
     }
 
     .eyebrow {
-      color: var(--brand-2);
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      font-size: 0.8125rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
-    h1 {
-      font-size: clamp(2.25rem, 6vw, 4.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
+    .hero-card h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
       color: #0f2537;
-      margin: 0;
+      margin: 0 0 8px;
     }
 
     .subtitle {
-      margin-top: 10px;
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      margin: 0 0 14px;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
       font-weight: 750;
       color: var(--brand);
+      line-height: 1.35;
+    }
+
+    .hero-card .article-meta {
+      margin: 0 0 16px;
     }
 
     .meta {
@@ -114,15 +152,16 @@
     }
 
     .lead {
-      margin-top: 24px;
-      max-width: 880px;
-      font-size: 1.08rem;
+      margin: 0;
+      max-width: none;
+      font-size: 1.05rem;
       color: #334155;
+      line-height: 1.75;
     }
 
     details.lead-supplement {
       margin-top: 14px;
-      max-width: 880px;
+      max-width: none;
       border: 1px solid #c9deef;
       border-radius: 14px;
       background: rgba(255, 255, 255, 0.82);
@@ -182,7 +221,7 @@
     }
 
     .hero-panel {
-      margin-top: 34px;
+      margin-top: 28px;
       background: linear-gradient(135deg, #0b3a5b 0%, #155e93 100%);
       color: white;
       border-radius: 28px;
@@ -1012,7 +1051,18 @@
       font-weight: 700;
       color: var(--brand);
     }
-@media (max-width: 960px) {
+@media (max-width: 620px) {
+      .hero-card {
+        padding: 22px;
+      }
+
+      .hero-watermark {
+        right: 4px;
+        bottom: -12px;
+      }
+    }
+
+    @media (max-width: 960px) {
       .hero-panel,
       .split {
         grid-template-columns: 1fr;
@@ -1090,35 +1140,38 @@
     </nav>
   </div>
 
-  <main class="page" id="hero">
-    <header class="hero">
-      <div class="eyebrow">危險區域防爆設備分類 · Reay Huang Maritime Notes</div>
-      <h1>危險區域防爆設備分類</h1>
-      <div class="subtitle">Ex 防爆等級、保護型式與實務選用筆記</div>
-      <p class="article-meta article-meta--light">
-        <span>📅 更新：2026-06-01</span>
-        <span class="article-meta__sep" aria-hidden="true">·</span>
-        <span>⏱ 閱讀約 12 分鐘</span>
-        <span class="article-meta__sep" aria-hidden="true">·</span>
-        <span>🏷 防爆 / IEC 60079 / 危險區域</span>
-      </p>
+  <main class="page" id="top">
+    <header class="page-hero">
+      <div class="hero-card">
+        <div class="eyebrow">危險區域防爆設備分類 · Reay Huang Maritime Notes</div>
+        <h1>危險區域防爆設備分類</h1>
+        <div class="subtitle">Ex 防爆等級、保護型式與實務選用筆記</div>
+        <p class="article-meta article-meta--light">
+          <span>📅 更新：2026-06-01</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 閱讀約 12 分鐘</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 防爆 / IEC 60079 / 危險區域</span>
+        </p>
 
-      <p class="lead">
-        在船舶、油氣、化工與粉塵作業環境中，可燃氣體、蒸氣或粉塵可能與空氣形成爆炸性氣氛。若電氣設備產生火花、電弧或高溫表面，就可能成為點火源。防爆設備分類的目的，是用一套共同標準說明
-        <strong>危險區域有多危險、可燃物有多容易被引燃、設備能用什麼方式避免引爆</strong>，
-        讓工程師能正確選型、安裝、檢查與維護。
-      </p>
-      <details class="lead-supplement">
-        <summary>補充說明（IEC / IECEx / ATEX 與本頁範圍）</summary>
-        <div class="lead-supplement__body">
-          <p>
-            防爆電氣設備 Ex 分類與定義，主要由 IEC 國際電工委員會的 IEC TC 31 制定，標準集中在 IEC 60079 系列；國際上常見 IECEx 認證體系，歐盟則另有 ATEX 指令與協調標準的要求。
-          </p>
-          <p>
-            實務上，相關規範對危險區域分類、設備保護型式、氣體／粉塵群組、溫度等級、設備保護等級（EPL）、安裝方式與查證文件等，仍有許多細部規定與特殊情境。本頁以工程師與檢驗人員<strong>日常最常接觸</strong>的標示判讀與選型邏輯為主，整理常見分類與重點，協助讀者建立初步認識；深入設計、採購與合規仍須回到正式標準、設備證書與專案技術文件。
-          </p>
-        </div>
-      </details>
+        <p class="lead">
+          在船舶、油氣、化工與粉塵作業環境中，可燃氣體、蒸氣或粉塵可能與空氣形成爆炸性氣氛。若電氣設備產生火花、電弧或高溫表面，就可能成為點火源。防爆設備分類的目的，是用一套共同標準說明
+          <strong>危險區域有多危險、可燃物有多容易被引燃、設備能用什麼方式避免引爆</strong>，
+          讓工程師能正確選型、安裝、檢查與維護。
+        </p>
+        <details class="lead-supplement">
+          <summary>補充說明（IEC / IECEx / ATEX 與本頁範圍）</summary>
+          <div class="lead-supplement__body">
+            <p>
+              防爆電氣設備 Ex 分類與定義，主要由 IEC 國際電工委員會的 IEC TC 31 制定，標準集中在 IEC 60079 系列；國際上常見 IECEx 認證體系，歐盟則另有 ATEX 指令與協調標準的要求。
+            </p>
+            <p>
+              實務上，相關規範對危險區域分類、設備保護型式、氣體／粉塵群組、溫度等級、設備保護等級（EPL）、安裝方式與查證文件等，仍有許多細部規定與特殊情境。本頁以工程師與檢驗人員<strong>日常最常接觸</strong>的標示判讀與選型邏輯為主，整理常見分類與重點，協助讀者建立初步認識；深入設計、採購與合規仍須回到正式標準、設備證書與專案技術文件。
+            </p>
+          </div>
+        </details>
+        <span class="hero-watermark" aria-hidden="true">Ex</span>
+      </div>
 
       <section class="hero-panel" aria-label="頁面摘要">
         <div class="hero-marking">
