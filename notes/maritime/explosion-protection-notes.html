@@ -120,52 +120,65 @@
       color: #334155;
     }
 
-    .lead-supplement {
+    details.lead-supplement {
       margin-top: 14px;
       max-width: 880px;
-      font-size: 0.98rem;
-      line-height: 1.75;
-      color: var(--muted);
-      padding: 14px 16px 14px 18px;
-      border-left: 3px solid #c9deef;
-      border-radius: 0 14px 14px 0;
+      border: 1px solid #c9deef;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.82);
+      padding: 0;
+      box-shadow: none;
+    }
+
+    details.lead-supplement[open] {
       background: rgba(232, 243, 251, 0.55);
     }
 
-    .lead-supplement p {
+    .lead-supplement summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      color: var(--brand-2);
+      font-weight: 750;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .lead-supplement summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .lead-supplement summary::after {
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brand);
+      content: "+";
+    }
+
+    .lead-supplement[open] summary::after {
+      content: "−";
+    }
+
+    .lead-supplement__body {
+      padding: 2px 16px 14px 18px;
+      margin: 0 12px 12px;
+      border-left: 3px solid #c9deef;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .lead-supplement__body p {
       margin: 0 0 10px;
     }
 
-    .lead-supplement p:last-child {
+    .lead-supplement__body p:last-child {
       margin-bottom: 0;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border: 1px solid #c9deef;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.75);
-      color: var(--brand);
-      font-weight: 750;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    a.chip:hover {
-      background: var(--brand-soft);
-      border-color: #9ecae8;
-      box-shadow: 0 4px 14px rgba(21, 94, 147, 0.12);
     }
 
     .hero-panel {
@@ -594,6 +607,45 @@
     #groups th:nth-child(3),
     #groups td:nth-child(3) {
       width: 48%;
+    }
+
+    #why .table-wrap {
+      overflow-x: visible;
+    }
+
+    #why table {
+      min-width: 0;
+      table-layout: fixed;
+      font-size: 0.95rem;
+    }
+
+    #why th,
+    #why td {
+      padding: 12px 14px;
+      white-space: normal;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    #why th:nth-child(1),
+    #why td:nth-child(1) {
+      width: 26%;
+    }
+
+    #why th:nth-child(2),
+    #why td:nth-child(2) {
+      width: 74%;
+    }
+
+    #why th {
+      white-space: normal;
+    }
+
+    .zone-label {
+      font-family: inherit;
+      font-weight: 800;
+      color: var(--brand);
+      white-space: normal;
     }
 
     th,
@@ -1056,23 +1108,17 @@
         <strong>危險區域有多危險、可燃物有多容易被引燃、設備能用什麼方式避免引爆</strong>，
         讓工程師能正確選型、安裝、檢查與維護。
       </p>
-      <div class="lead-supplement" role="note">
-        <p>
-          防爆電氣設備 Ex 分類與定義，主要由 IEC 國際電工委員會的 IEC TC 31 制定，標準集中在 IEC 60079 系列；國際上常見 IECEx 認證體系，歐盟則另有 ATEX 指令與協調標準的要求。
-        </p>
-        <p>
-          實務上，相關規範對危險區域分類、設備保護型式、氣體／粉塵群組、溫度等級、設備保護等級（EPL）、安裝方式與查證文件等，仍有許多細部規定與特殊情境。本頁以工程師與檢驗人員<strong>日常最常接觸</strong>的標示判讀與選型邏輯為主，整理常見分類與重點，協助讀者建立初步認識；深入設計、採購與合規仍須回到正式標準、設備證書與專案技術文件。
-        </p>
-      </div>
-
-      <div class="chips" aria-label="主題標籤">
-        <a class="chip" href="#marking">Ex Marking</a>
-        <a class="chip" href="#groups">Gas Group</a>
-        <a class="chip" href="#groups">Temperature Class</a>
-        <a class="chip" href="#why">Zone Classification</a>
-        <a class="chip" href="#dossier">Verification Dossier</a>
-        <a class="chip" href="#roles">Shipbuilding Reference</a>
-      </div>
+      <details class="lead-supplement">
+        <summary>補充說明（IEC / IECEx / ATEX 與本頁範圍）</summary>
+        <div class="lead-supplement__body">
+          <p>
+            防爆電氣設備 Ex 分類與定義，主要由 IEC 國際電工委員會的 IEC TC 31 制定，標準集中在 IEC 60079 系列；國際上常見 IECEx 認證體系，歐盟則另有 ATEX 指令與協調標準的要求。
+          </p>
+          <p>
+            實務上，相關規範對危險區域分類、設備保護型式、氣體／粉塵群組、溫度等級、設備保護等級（EPL）、安裝方式與查證文件等，仍有許多細部規定與特殊情境。本頁以工程師與檢驗人員<strong>日常最常接觸</strong>的標示判讀與選型邏輯為主，整理常見分類與重點，協助讀者建立初步認識；深入設計、採購與合規仍須回到正式標準、設備證書與專案技術文件。
+          </p>
+        </div>
+      </details>
 
       <section class="hero-panel" aria-label="頁面摘要">
         <div class="hero-marking">
@@ -1208,15 +1254,15 @@
           </thead>
           <tbody>
             <tr>
-              <td class="code">Zone 0</td>
+              <td class="zone-label">Zone 0</td>
               <td>爆炸性氣體環境<strong>連續存在或長時間存在</strong></td>
             </tr>
             <tr>
-              <td class="code">Zone 1</td>
+              <td class="zone-label">Zone 1</td>
               <td>正常操作中<strong>可能偶爾發生</strong>爆炸性氣體環境</td>
             </tr>
             <tr>
-              <td class="code">Zone 2</td>
+              <td class="zone-label">Zone 2</td>
               <td>正常操作中<strong>不太可能發生</strong>，若發生也只會<strong>短時間存在</strong></td>
             </tr>
           </tbody>
