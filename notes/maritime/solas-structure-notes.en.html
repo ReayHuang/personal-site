@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLAS Regulatory Framework Summary | Reay's Note</title>
+  <meta name="description" content="A SOLAS Chapter I-XV regulatory framework summary covering the convention structure, chapter highlights, retrofit implications, mandatory codes, and submission checklist." />
+  <meta name="author" content="Reay Huang" />
+  <meta name="keywords" content="SOLAS, Safety of Life at Sea, ship retrofit, survey, certificates, IP Code, Polar Code, marine survey" />
+  <meta property="og:title" content="SOLAS Regulatory Framework Summary | Reay's Note" />
+  <meta property="og:description" content="A summary note on SOLAS chapter requirements, mandatory codes, survey and certification logic, and practical considerations for ship retrofit projects." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Reay Huang Maritime Notes" />
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/solas-structure-notes.en.html" />
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/solas-structure-notes.en.html" />
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/solas-structure-linkedin-preview-1200.jpg" />
+  <meta property="og:image:alt" content="SOLAS Regulatory Framework — convention chapters, mandatory codes, and survey logic in one practical map" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="629" />
+  <link rel="alternate" hreflang="zh-Hant" href="solas-structure-notes.html" />
+  <link rel="alternate" hreflang="en" href="solas-structure-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="solas-structure-notes.en.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SOLAS Regulatory Framework Summary | Reay's Note" />
+  <meta name="twitter:description" content="A summary note on SOLAS chapter requirements, mandatory codes, survey and certification logic, and practical considerations for ship retrofit projects." />
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/solas-structure-linkedin-preview-1200.jpg" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --max: 1180px;
+      --navy:#07304f;
+      --blue:#0b6fa4;
+      --cyan:#2bb3c0;
+      --orange:#f5a623;
+      --red:#e55353;
+      --green:#28a66a;
+      --purple:#6b5dd3;
+      --ink:#183247;
+      --muted:#60758a;
+      --bg:#f4f8fb;
+      --card:#ffffff;
+      --line:#dce8f1;
+      --soft-blue:#e8f4fb;
+      --soft-red:#fff0ef;
+      --soft-orange:#fff6e4;
+      --soft-green:#eaf8f0;
+      --shadow:0 14px 32px rgba(7,48,79,.12);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;
+      background:linear-gradient(180deg,#f4f8fb 0%,#eef5f9 100%);
+      color:var(--ink);
+      line-height:1.72;
+    }
+
+    a{color:#0b6fa4;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .page { overflow: hidden; }
+
+    .hero{
+      position:relative;
+      background:
+        radial-gradient(circle at 85% 18%,rgba(43,179,192,.30),transparent 32%),
+        linear-gradient(135deg,#062843 0%,#07507a 55%,#0b83a5 100%);
+      color:#fff;
+      padding:72px 24px 46px;
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.10;
+      z-index:-1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.45) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.28) 49%, transparent 51%);
+      background-size:68px 68px;
+      mask-image:linear-gradient(to bottom, black, transparent 84%);
+    }
+    .hero-inner{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:7px 13px;
+      border:1px solid rgba(43,179,192,.42);
+      border-radius:999px;
+      color:#c8f0f4;
+      background:rgba(43,179,192,.12);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .eyebrow::before{
+      content:"";
+      width:8px;height:8px;border-radius:999px;
+      background:var(--cyan);
+      box-shadow:0 0 18px rgba(43,179,192,.9);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+      gap:34px;
+      align-items:end;
+    }
+    h1{
+      font-family:"Noto Serif TC",serif;
+      margin:0 0 14px;
+      font-size:clamp(34px,5.4vw,58px);
+      letter-spacing:-.03em;
+      line-height:1.12;
+      font-weight:900;
+    }
+    .subtitle{
+      max-width:760px;
+      font-size:clamp(16px,2vw,18px);
+      color:rgba(255,255,255,.82);
+      margin:0;
+    }
+    .hero-panel{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter:blur(18px);
+    }
+    .hero-panel-title{
+      color:#c8f0f4;
+      font-weight:900;
+      margin-bottom:12px;
+      font-size:14px;
+      letter-spacing:.06em;
+    }
+    .hero-facts{display:grid;gap:10px}
+    .fact{
+      display:grid;
+      grid-template-columns:58px minmax(0,1fr);
+      gap:10px;
+      align-items:start;
+      color:rgba(255,255,255,.83);
+      font-size:13px;line-height:1.55;
+    }
+    .fact-tag{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:28px;
+      padding:4px 6px;
+      border-radius:8px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.20);
+      color:#e8f8fa;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.10em;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      line-height:1;
+    }
+    .fact-tag--ch{border-color:rgba(43,179,192,.45);color:#b8eef3}
+    .fact-tag--sys{border-color:rgba(120,180,255,.40);color:#cfe4ff}
+    .fact-tag--cat{border-color:rgba(180,220,255,.35);color:#dcecff}
+    .fact-tag--refit{border-color:rgba(245,166,35,.45);color:#ffe2a8}
+
+    .nav-shell{
+      position:sticky;top:0;z-index:10;
+      background:rgba(244,248,251,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(220,232,241,.88);
+    }
+    .nav{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      display:flex;gap:10px;overflow-x:auto;
+      padding:12px 0;scrollbar-width:none;
+    }
+    .nav::-webkit-scrollbar{display:none}
+    .nav a{
+      text-decoration:none;white-space:nowrap;
+      padding:8px 13px;border:1px solid var(--line);
+      background:rgba(255,255,255,.72);border-radius:999px;
+      color:var(--muted);font-size:13px;font-weight:700;
+    }
+    .nav a:hover{
+      color:var(--navy);border-color:rgba(43,179,192,.62);background:#fff;
+    }
+
+    .note-main{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      padding:28px 0 48px;
+    }
+
+    .content{min-width:0}
+
+    .section{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+      margin-bottom:24px;
+    }
+    .section h2{
+      margin:0 0 18px;
+      color:var(--navy);
+      font-size:28px;
+      line-height:1.25;
+      letter-spacing:.02em;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .section h3{
+      color:#10415f;
+      margin:22px 0 10px;
+      font-size:20px;
+    }
+    .lead{
+      font-size:17px;
+      color:#334f65;
+      margin-top:0;
+    }
+    .highlight{
+      font-weight:900;
+      color:#06314f;
+      background:linear-gradient(transparent 62%,rgba(43,179,192,.24) 62%);
+      padding:0 2px;
+    }
+
+    .cards-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .info-card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      background:linear-gradient(180deg,#fff,#f8fbfd);
+    }
+    .info-card .icon{
+      width:42px;height:42px;
+      display:grid;place-items:center;
+      border-radius:14px;
+      color:#fff;
+      font-weight:900;
+      margin-bottom:10px;
+      background:linear-gradient(135deg,var(--blue),var(--cyan));
+    }
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+    .info-card p{
+      margin:0;
+      color:#516a7e;
+      font-size:14.5px;
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:1fr 42px 1fr 42px 1fr;
+      align-items:center;
+      gap:10px;
+      margin-top:14px;
+    }
+    .flow-box{
+      padding:18px;
+      border-radius:16px;
+      background:var(--soft-blue);
+      border:1px solid #cfe7f5;
+      min-height:132px;
+    }
+    .flow-box b{
+      display:block;
+      color:var(--navy);
+      font-size:18px;
+      margin-bottom:8px;
+    }
+    .arrow{
+      text-align:center;
+      font-size:28px;
+      color:var(--blue);
+      font-weight:900;
+    }
+
+    .legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:10px;
+    }
+    .map-hint{
+      margin:0 0 16px;
+      padding:10px 14px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#f8fbfd,#eef6fb);
+      border:1px dashed rgba(11,111,164,.28);
+      color:#516a7e;
+      font-size:14px;
+      font-weight:700;
+      line-height:1.55;
+    }
+    .map-hint::before{
+      content:"👇 ";
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:12.5px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .tag.design{background:#e8f4fb;color:#0b6fa4}
+    .tag.fire{background:#fff0ef;color:#d13d3d}
+    .tag.ops{background:#eaf8f0;color:#1e8a55}
+    .tag.cargo{background:#fff6e4;color:#9a6500}
+    .tag.special{background:#f0efff;color:#5746c7}
+    .tag.project{background:#102f49;color:#fff}
+
+    .chapter-map{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:12px;
+    }
+    .tile{
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#fff;
+      padding:14px;
+      min-height:126px;
+      position:relative;
+      overflow:hidden;
+      transition:.18s ease;
+    }
+    .tile:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 24px rgba(7,48,79,.12);
+      text-decoration:none;
+    }
+    .tile::before{
+      content:"";
+      position:absolute;
+      left:0;top:0;bottom:0;
+      width:6px;
+      background:var(--blue);
+    }
+    .tile.fire::before{background:var(--red)}
+    .tile.ops::before{background:var(--green)}
+    .tile.cargo::before{background:var(--orange)}
+    .tile.special::before{background:var(--purple)}
+    .tile .num{
+      font-weight:900;
+      color:var(--navy);
+      font-size:20px;
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .tile .name{
+      font-weight:900;
+      color:#233f55;
+      line-height:1.35;
+      font-size:14px;
+    }
+    .tile .memo{
+      margin-top:8px;
+      color:#688094;
+      font-size:12.5px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+    th,td{
+      padding:13px 14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      text-align:left;
+    }
+    th{
+      background:#07304f;
+      color:#fff;
+      font-size:14px;
+      letter-spacing:.03em;
+    }
+    tr:last-child td{border-bottom:none}
+    td{
+      color:#334f65;
+      font-size:14.5px;
+    }
+    #updates table .date-cell{
+      white-space:nowrap;
+      width:1%;
+      font-variant-numeric:tabular-nums;
+      letter-spacing:.01em;
+    }
+    .risk-high{
+      color:#fff;
+      background:var(--red);
+      border-radius:999px;
+      padding:3px 8px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .risk-mid{
+      color:#fff;
+      background:var(--orange);
+      border-radius:999px;
+      padding:3px 8px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .risk-low{
+      color:#fff;
+      background:var(--green);
+      border-radius:999px;
+      padding:3px 8px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .chapter-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 10px 22px rgba(7,48,79,.08);
+      margin:18px 0;
+      overflow:hidden;
+    }
+    .chapter-head{
+      display:flex;
+      gap:16px;
+      align-items:stretch;
+      background:linear-gradient(135deg,#f8fbfd,#eef6fb);
+      border-bottom:1px solid var(--line);
+    }
+    .chapter-no{
+      width:96px;
+      min-width:96px;
+      background:linear-gradient(135deg,var(--navy),var(--blue));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:26px;
+      font-weight:900;
+      letter-spacing:.02em;
+      text-align:center;
+      padding:12px;
+    }
+    .chapter-title{
+      padding:18px 18px 16px 0;
+      flex:1;
+    }
+    .chapter-title h3{
+      margin:0 0 8px;
+      color:#103751;
+      font-size:22px;
+      line-height:1.3;
+    }
+    .chapter-title p{
+      margin:0;
+      color:#60758a;
+      font-size:14.5px;
+    }
+
+    /* Chapter card headings mirror the theme colors used in the chapter map */
+    .chapter-card.design .chapter-head{background:linear-gradient(135deg,#f8fcff,#e8f4fb)}
+    .chapter-card.design .chapter-no{background:linear-gradient(135deg,#0b6fa4,#2bb3c0)}
+    .chapter-card.design .chapter-title h3{color:#0b6fa4}
+
+    .chapter-card.fire .chapter-head{background:linear-gradient(135deg,#fffafa,#fff0ef)}
+    .chapter-card.fire .chapter-no{background:linear-gradient(135deg,#c93b3b,#e55353)}
+    .chapter-card.fire .chapter-title h3{color:#c93b3b}
+
+    .chapter-card.ops .chapter-head{background:linear-gradient(135deg,#f6fcf8,#eaf8f0)}
+    .chapter-card.ops .chapter-no{background:linear-gradient(135deg,#1a7a4a,#28a66a)}
+    .chapter-card.ops .chapter-title h3{color:#1e8a55}
+
+    .chapter-card.cargo .chapter-head{background:linear-gradient(135deg,#fffbf3,#fff6e4)}
+    .chapter-card.cargo .chapter-no{background:linear-gradient(135deg,#c47d00,#f5a623)}
+    .chapter-card.cargo .chapter-title h3{color:#9a6500}
+
+    .chapter-card.special .chapter-head{background:linear-gradient(135deg,#f8f7ff,#f0efff)}
+    .chapter-card.special .chapter-no{background:linear-gradient(135deg,#5746c7,#6b5dd3)}
+    .chapter-card.special .chapter-title h3{color:#5746c7}
+
+    .chapter-card.design{border-left:5px solid var(--blue)}
+    .chapter-card.fire{border-left:5px solid var(--red)}
+    .chapter-card.ops{border-left:5px solid var(--green)}
+    .chapter-card.cargo{border-left:5px solid var(--orange)}
+    .chapter-card.special{border-left:5px solid var(--purple)}
+
+    .chapter-body{
+      padding:20px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+    }
+    .note-block{
+      border-radius:16px;
+      padding:16px;
+      background:#f8fbfd;
+      border:1px solid var(--line);
+    }
+    .note-block h4{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:16px;
+    }
+    .note-block ul{
+      margin:0;
+      padding-left:20px;
+    }
+    .note-block li{
+      margin:6px 0;
+      color:#3e596d;
+      font-size:14.5px;
+    }
+    .project-note{
+      border-radius:16px;
+      padding:16px;
+      background:linear-gradient(180deg,#fff6e4,#fffaf0);
+      border:1px solid #f4d18a;
+    }
+    .project-note h4{
+      margin:0 0 10px;
+      color:#8b5a00;
+      font-size:16px;
+    }
+    .project-note p{
+      margin:0;
+      color:#60440c;
+      font-size:14.5px;
+    }
+    .memory{
+      margin-top:12px;
+      padding:10px 14px;
+      border-radius:12px;
+      background:#f4f9fc;
+      border:1px solid #d4e8f3;
+      border-left:4px solid var(--blue);
+      color:#29465d;
+      font-weight:800;
+      font-size:14px;
+      line-height:1.5;
+      display:inline-block;
+    }
+    .chapter-card.design .memory{
+      background:#e8f4fb;
+      border-color:#c5dff0;
+      border-left-color:var(--blue);
+      color:#0b5f8f;
+    }
+    .chapter-card.fire .memory{
+      background:#fff5f4;
+      border-color:#f5d0cd;
+      border-left-color:var(--red);
+      color:#a83838;
+    }
+    .chapter-card.ops .memory{
+      background:#eaf8f0;
+      border-color:#c6ead6;
+      border-left-color:var(--green);
+      color:#1e6640;
+    }
+    .chapter-card.cargo .memory{
+      background:#fff8eb;
+      border-color:#f2ddb0;
+      border-left-color:var(--orange);
+      color:#8b5a00;
+    }
+    .chapter-card.special .memory{
+      background:#f3f1ff;
+      border-color:#ddd6ff;
+      border-left-color:var(--purple);
+      color:#4f3fb8;
+    }
+
+    .code-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+    .code-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+    .code-item b{
+      min-width:92px;
+      color:#fff;
+      background:var(--navy);
+      border-radius:10px;
+      text-align:center;
+      padding:6px 8px;
+      font-size:13px;
+    }
+    .code-item span{
+      font-size:14px;
+      color:#445f73;
+    }
+
+    .checklist{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+    .check{
+      padding:14px 14px 14px 42px;
+      border-radius:16px;
+      background:#fff;
+      border:1px solid var(--line);
+      position:relative;
+      font-size:14.5px;
+      color:#38556a;
+    }
+    .check::before{
+      content:"✓";
+      position:absolute;
+      left:14px;
+      top:14px;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .warning{
+      border-left:6px solid var(--red);
+      background:var(--soft-red);
+      border-radius:16px;
+      padding:16px 18px;
+      color:#713232;
+      margin-top:16px;
+    }
+    .source{
+      color:#60758a;
+      font-size:13px;
+    }
+    .source li{margin:6px 0}
+
+    .top-btn{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      border:none;
+      border-radius:999px;
+      background:var(--navy);
+      color:#fff;
+      padding:12px 16px;
+      font-weight:900;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer strong { color: var(--navy); }
+
+    @media(max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero-panel{max-width:520px}
+      .chapter-map{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .cards-3,.chapter-body,.code-grid,.checklist{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr}
+      .arrow{transform:rotate(90deg)}
+    }
+    @media(max-width:640px){
+      .hero{padding:40px 18px 34px}
+      .note-main,.hero-inner,.nav,.footer{width:min(100% - 28px, var(--max))}
+      .section{padding:20px}
+      .chapter-map{grid-template-columns:1fr}
+      .chapter-head{display:block}
+      .chapter-no{width:100%;min-width:0;height:72px}
+      .chapter-title{padding:16px}
+      table{font-size:13px}
+      th,td{padding:10px}
+    }
+
+    @media print{
+      body{background:#fff}
+      .note-site-bar,.nav-shell,.top-btn{display:none}
+      .note-main{max-width:100%;padding:0}
+      .hero{padding:28px;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .section,.chapter-card{box-shadow:none;break-inside:avoid}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Notes</a>
+      <span>|</span>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="solas-structure-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="solas-structure-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">SOLAS · International Convention for the Safety of Life at Sea · Reay's Note</div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>SOLAS Regulatory Framework<br>Summary Note</h1>
+          <p class="article-meta">
+            <span>📅 Updated: 2026-06-02</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 15 min read</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 SOLAS / Retrofit / Survey</span>
+          </p>
+          <p class="subtitle">
+            After the sinking of the Titanic in 1912, the international community began to reassess the importance of safety of life at sea, leading to the creation of the SOLAS Convention. Today, SOLAS has become the common global safety standard for merchant ships, establishing minimum safety requirements for ship design, construction, equipment, operation, and survey. It remains a core reference for protecting life at sea, maintaining ship compliance, and supporting safe international navigation.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="SOLAS quick overview">
+          <div class="hero-panel-title">Framework Overview</div>
+          <div class="hero-facts">
+            <div class="fact">
+              <span class="fact-tag fact-tag--ch" title="Chapters">CH</span>
+              <div>Chapter scope I-XV, including Chapter XV on industrial personnel safety</div>
+            </div>
+            <div class="fact">
+              <span class="fact-tag fact-tag--sys" title="System">SYS</span>
+              <div>Three-layer structure: convention text, annex chapters, and mandatory codes</div>
+            </div>
+            <div class="fact">
+              <span class="fact-tag fact-tag--cat" title="Categories">CAT</span>
+              <div>Five focus areas: construction, equipment, operations, cargo, and special risks</div>
+            </div>
+            <div class="fact">
+              <span class="fact-tag fact-tag--refit" title="Retrofit">REFIT</span>
+              <div>Retrofits often trigger stability, fire safety, life-saving, and certification review</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-shell">
+    <nav class="nav" aria-label="page navigation">
+      <a href="#structure">Framework</a>
+      <a href="#map">Chapter Map</a>
+      <a href="#project">Retrofit Impact</a>
+      <a href="#chapters">Chapter Notes</a>
+      <a href="#codes">Code Mapping</a>
+      <a href="#documents">Submission Checklist</a>
+      <a href="#updates">Recent Updates</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </div>
+
+  <main class="note-main">
+    <div class="content">
+
+      <section class="section" id="structure">
+        <h2>1. SOLAS Regulatory Framework</h2>
+        <p class="lead">
+          The purpose of <span class="highlight">SOLAS</span> is to set minimum safety standards for merchant ships in relation to <span class="highlight">construction, equipment, and operation</span>. In practice, it can be understood through three layers: convention text, annex chapters, and mandatory codes and certificates.
+        </p>
+
+        <div class="cards-3">
+          <div class="info-card">
+            <div class="icon">1</div>
+            <h3>Convention Text</h3>
+            <p>Sets out contracting government obligations, amendment procedures, entry-into-force mechanisms, tacit acceptance, and the general legal framework.</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">2</div>
+            <h3>Annex Chapters</h3>
+            <p>Contain the practical technical requirements covering construction, fire safety, life-saving appliances, communications, navigation, cargo, safety management, and security.</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">3</div>
+            <h3>Mandatory Codes</h3>
+            <p>Examples include the LSA, IMDG, IMSBC, IBC, IGC, ISM, HSC, ISPS, Polar, and IP Codes.</p>
+          </div>
+        </div>
+
+        <div class="flow">
+          <div class="flow-box">
+            <b>Convention Core</b>
+            Establishes minimum international safety standards and requires flag States to verify compliance through certificates.
+          </div>
+          <div class="arrow">→</div>
+          <div class="flow-box">
+            <b>Technical Chapters</b>
+            Each chapter addresses construction, equipment, operations, cargo, special ship types, and special operating areas.
+          </div>
+          <div class="arrow">→</div>
+          <div class="flow-box">
+            <b>Project Application</b>
+            Retrofits, certificate renewal, PSC, RO review, and flag State requirements all ultimately return to chapter and certificate compliance.
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="map">
+        <h2>2. SOLAS Chapter Map</h2>
+
+        <div class="legend">
+          <span class="tag design">Construction & Equipment</span>
+          <span class="tag fire">Fire & Life-Saving</span>
+          <span class="tag ops">Operations & Management</span>
+          <span class="tag cargo">Cargo & Dangerous Goods</span>
+          <span class="tag special">Special Ships / Areas / Personnel</span>
+          <span class="tag project">High Retrofit Relevance</span>
+        </div>
+
+        <p class="map-hint">Select a chapter tile below to jump directly to its explanation section.</p>
+
+        <div class="chapter-map">
+          <a class="tile ops" href="#ch-i"><div class="num">I</div><div class="name">General Provisions</div><div class="memo">Survey, certification, PSC</div></a>
+          <a class="tile design" href="#ch-ii-1"><div class="num">II-1</div><div class="name">Subdivision, stability, machinery & electrical</div><div class="memo">Survivability and system continuity</div></a>
+          <a class="tile fire" href="#ch-ii-2"><div class="num">II-2</div><div class="name">Fire protection, detection & extinction</div><div class="memo">Fire zones and escape</div></a>
+          <a class="tile fire" href="#ch-iii"><div class="num">III</div><div class="name">Life-Saving Appliances & Arrangements</div><div class="memo">Abandon ship, muster, launching</div></a>
+          <a class="tile design" href="#ch-iv"><div class="num">IV</div><div class="name">Radiocommunications</div><div class="memo">GMDSS and SAR communications</div></a>
+
+          <a class="tile ops" href="#ch-v"><div class="num">V</div><div class="name">Safety of Navigation</div><div class="memo">Navigation equipment, routing, SAR</div></a>
+          <a class="tile cargo" href="#ch-vi"><div class="num">VI</div><div class="name">Cargoes and Oil Fuel</div><div class="memo">Stowage, securing, grain</div></a>
+          <a class="tile cargo" href="#ch-vii"><div class="num">VII</div><div class="name">Dangerous Goods</div><div class="memo">IMDG, IBC, IGC</div></a>
+          <a class="tile special" href="#ch-viii"><div class="num">VIII</div><div class="name">Nuclear Ships</div><div class="memo">Nuclear power and radiation safety</div></a>
+          <a class="tile ops" href="#ch-ix"><div class="num">IX</div><div class="name">Safe Operation Management</div><div class="memo">ISM and SMS</div></a>
+
+          <a class="tile special" href="#ch-x"><div class="num">X</div><div class="name">High-Speed Craft</div><div class="memo">HSC Code</div></a>
+          <a class="tile ops" href="#ch-xi-1"><div class="num">XI-1</div><div class="name">Enhanced Maritime Safety</div><div class="memo">RO, ESP, IMO number</div></a>
+          <a class="tile ops" href="#ch-xi-2"><div class="num">XI-2</div><div class="name">Enhanced Maritime Security</div><div class="memo">ISPS, SSP, SSAS</div></a>
+          <a class="tile special" href="#ch-xii"><div class="num">XII</div><div class="name">Additional Safety for Bulk Carriers</div><div class="memo">Structure and flooding safety</div></a>
+          <a class="tile ops" href="#ch-xiii"><div class="num">XIII</div><div class="name">Verification of Compliance</div><div class="memo">Member State audit</div></a>
+
+          <a class="tile special" href="#ch-xiv"><div class="num">XIV</div><div class="name">Ships Operating in Polar Waters</div><div class="memo">Polar Code</div></a>
+          <a class="tile special" href="#ch-xv"><div class="num">XV</div><div class="name">Carriage of Industrial Personnel</div><div class="memo">IP Code and transfer safety</div></a>
+        </div>
+      </section>
+
+      <section class="section" id="project">
+        <h2>3. Key SOLAS Impacts in Ship Retrofit Projects</h2>
+        <p class="lead">
+          In response to increasingly stringent international regulations and shipowners' technical upgrade needs, every ship retrofit project should be assessed for SOLAS compliance. A retrofit is often not merely a single equipment change; it can become an integrated compliance exercise involving <span class="highlight">certificates, stability, fire integrity, life-saving capacity, navigation equipment configuration, and operational procedures</span>.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Relevance</th>
+              <th>Chapter</th>
+              <th>Common Triggers</th>
+              <th>Retrofit Project Checkpoints</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="risk-high">High</span></td>
+              <td><b>Chapter I</b></td>
+              <td>Major modification, change of service, or change in certificate particulars</td>
+              <td>Confirm whether the work constitutes a major modification, whether an initial-survey level of verification is required, and whether certificates need reissue or endorsement.</td>
+            </tr>
+            <tr>
+              <td><span class="risk-high">High</span></td>
+              <td><b>Chapter II-1</b></td>
+              <td>Compartment rearrangement, addition/removal of bulkheads, added weight, or changes to draft or center of gravity</td>
+              <td>Intact/damage stability, subdivision index, bilge drainage, steering gear, emergency power, and machinery/electrical redundancy.</td>
+            </tr>
+            <tr>
+              <td><span class="risk-high">High</span></td>
+              <td><b>Chapter II-2</b></td>
+              <td>New openings, pipe/cable penetrations, fire door changes, or change of space use</td>
+              <td>A/B class divisions, fire-rated penetrations, smoke detection coverage, fixed fire-extinguishing systems, ventilation dampers, and escape routes.</td>
+            </tr>
+            <tr>
+              <td><span class="risk-high">High</span></td>
+              <td><b>Chapter III</b></td>
+              <td>Change in persons on board, deck arrangement changes, or relocation of lifeboats/liferafts</td>
+              <td>Life-saving capacity, port/starboard arrangements, muster stations, embarkation routes, launching appliances, and rescue boat arrangement.</td>
+            </tr>
+            <tr>
+              <td><span class="risk-mid">Medium-High</span></td>
+              <td><b>Chapter V</b></td>
+              <td>Bridge modification, change in tonnage or ship type, or change in operating area</td>
+              <td>AIS, VDR, ECDIS, radar, compass, echo sounder, voyage planning, and safe manning.</td>
+            </tr>
+            <tr>
+              <td><span class="risk-mid">Medium-High</span></td>
+              <td><b>Chapters VI/VII</b></td>
+              <td>New cargo types, change of cargo space use, carriage of dangerous goods, or special bulk cargoes</td>
+              <td>Cargo Securing Manual, applicability of IMSBC/IMDG/IBC/IGC, dangerous goods segregation, and documentation.</td>
+            </tr>
+            <tr>
+              <td><span class="risk-mid">Medium</span></td>
+              <td><b>Chapters IX/XI-2</b></td>
+              <td>Changes to operating procedures, security areas, personnel movement, or port operation mode</td>
+              <td>SMS, SSP, emergency procedures, drills, security levels, SSAS, and ship-shore coordination.</td>
+            </tr>
+            <tr>
+              <td><span class="risk-mid">Medium</span></td>
+              <td><b>Chapters XIV/XV</b></td>
+              <td>Addition of polar operations or carriage of industrial personnel</td>
+              <td>Polar Ship Certificate, Polar Water Operational Manual, IP Code, industrial personnel transfer, and life-saving arrangements.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warning">
+          <b>Retrofit Assessment Reminder:</b>If a retrofit affects principal dimensions, ship type or service, persons on board, stability, fire divisions, life-saving arrangements, navigation equipment, or certificate particulars, it should not be treated merely as a routine annual survey item. Confirm the submission scope with the flag State and recognized organization first.
+        </div>
+      </section>
+
+      <section class="section" id="chapters">
+        <h2>4. Chapter Details and Key Notes</h2>
+
+        <article class="chapter-card ops" id="ch-i" data-keywords="general provisions survey certification port state control PSC casualty major modification">
+          <div class="chapter-head">
+            <div class="chapter-no">I</div>
+            <div class="chapter-title">
+              <h3>Chapter I | General Provisions</h3>
+              <p>Core: application, surveys, certification, certificate validity, casualty reporting, and port State control.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Chapter Details</h4>
+              <ul>
+                <li><b>Part A: </b>application and definitions, including force majeure exceptions, carriage of persons in emergencies, and other basic rules.</li>
+                <li><b>Part B: </b>surveys and certificates, the core of this chapter, including initial, annual, intermediate, periodical, and renewal surveys.</li>
+                <li><b>Part C: </b>casualties and port State control, including PSC inspection and casualty reporting.</li>
+                <li><b>Common certificates: </b>Passenger Ship Safety Certificate, Cargo Ship Safety Construction Certificate, Cargo Ship Safety Equipment Certificate, Cargo Ship Safety Radio Certificate, and Cargo Ship Safety Certificate.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter I = survey, certification, and control.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>A major modification may trigger comprehensive verification close to initial survey level. After modification, reconfirm certificate scope, equipment records, survey windows, and flag State requirements.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card design" id="ch-ii-1" data-keywords="subdivision stability damage stability watertight machinery electrical steering gear emergency power">
+          <div class="chapter-head">
+            <div class="chapter-no">II-1</div>
+            <div class="chapter-title">
+              <h3>Chapter II-1 | Construction: subdivision and stability, machinery and electrical installations</h3>
+              <p>Core: keep the ship afloat and maintain stability and essential machinery/electrical functions after damage.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li><b>Subdivision and damage stability: </b>uses a probabilistic damage stability concept; the key is that attained subdivision index A is not less than required subdivision index R.</li>
+                <li><b>Watertight integrity: </b>watertight bulkheads, watertight doors, hatches, side scuttles, sea valves, collision bulkhead, double bottom, and related items.</li>
+                <li><b>Machinery installations: </b>main engines, auxiliary engines, steering gear, bilge systems, starting air, and essential auxiliary systems.</li>
+                <li><b>Electrical installations: </b>main source of power, emergency source of power, emergency switchboard, emergency lighting, and supply to essential loads.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter II-1 = keep the ship afloat and essential systems running.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>Compartment rearrangement, bulkhead changes, added equipment weight, or changes in draft/center of gravity can affect stability data and damage stability calculations, usually requiring revised stability calculations and drawings.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card fire" id="ch-ii-2" data-keywords="fire protection fire detection fire extinction A class B class C class fire zone penetration escape CO2 water mist foam">
+          <div class="chapter-head">
+            <div class="chapter-no">II-2</div>
+            <div class="chapter-title">
+              <h3>Chapter II-2 | Fire Protection, Fire Detection and Fire Extinction</h3>
+              <p>Core: prevent ignition, limit fire and smoke spread, detect early, extinguish quickly, and maintain safe escape.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li><b>Fire zoning: </b>uses main vertical zones, thermal barriers, and structural boundaries to limit fire spread.</li>
+                <li><b>A/B/C class divisions: </b>A class divisions are generally steel or equivalent material, with common ratings such as A-60 and A-30.</li>
+                <li><b>System requirements: </b>fixed fire-extinguishing systems, fire detection and alarm, firefighter outfits, ventilation fire dampers, and protection of flammable liquid spaces.</li>
+                <li><b>Special ship types: </b>tankers, passenger ships, vehicle carriers, and ro-ro spaces have additional requirements.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter II-2 = prevention, detection, extinction, and escape.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>When new openings or pipe/cable penetrations pass through fire divisions, verify the fire rating of penetration seals and review smoke detection coverage, escape distances, fire control plans, and fixed fire-extinguishing coverage.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card fire" id="ch-iii" data-keywords="life-saving appliances lifeboat liferaft rescue boat davit lifejacket immersion suit muster station LSA">
+          <div class="chapter-head">
+            <div class="chapter-no">III</div>
+            <div class="chapter-title">
+              <h3>Chapter III | Life-Saving Appliances & Arrangements</h3>
+              <p>Core: govern abandonment, survival, search-and-rescue location, muster, and embarkation arrangements; technical details are supplemented by the LSA Code.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li><b>Lifeboats and liferafts: </b>totally enclosed, partially enclosed, and free-fall lifeboats, as well as liferafts and rescue boats.</li>
+                <li><b>Launching appliances: </b>davits, release gear, embarkation arrangements, and recovery arrangements.</li>
+                <li><b>Personal equipment: </b>lifejackets, lifebuoys, immersion suits, thermal protective aids, and related equipment.</li>
+                <li><b>Organization: </b>muster stations, muster lists, alarms, training, drills, operating instructions, and maintenance checks.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter III = abandonment and life-saving.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>Any increase in persons on board, deck arrangement changes, or relocation/obstruction of survival craft requires recalculation of life-saving capacity, embarkation routes, muster station area, and launching clearance.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card design" id="ch-iv" data-keywords="Radiocommunications GMDSS A1 A2 A3 A4 DSC Inmarsat NAVTEX EPIRB SART">
+          <div class="chapter-head">
+            <div class="chapter-no">IV</div>
+            <div class="chapter-title">
+              <h3>Chapter IV | Radiocommunications</h3>
+              <p>Core: use GMDSS to ensure distress alerting, positioning, search-and-rescue coordination, and receipt of maritime safety information.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li><b>Sea areas: </b>A1, A2, A3, and A4 determine equipment carriage based on shore station and satellite coverage.</li>
+                <li><b>Main equipment: </b>VHF DSC, MF/HF DSC, satellite communications, NAVTEX, EPIRB, SART, and related equipment.</li>
+                <li><b>Availability: </b>can be maintained through shore-based maintenance, reserve equipment, or duplication of equipment.</li>
+                <li><b>Management requirements: </b>radio watchkeeping, records, personnel qualifications, and distress communication procedures.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter IV = distress alerting and search-and-rescue communications.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>If the operating sea area, tonnage, or radio equipment configuration changes, recheck the GMDSS equipment list, availability method, antenna arrangement, and radio certificate.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-v" data-keywords="safety of navigation AIS VDR ECDIS radar magnetic compass gyrocompass VTS SAR safe manning voyage planning">
+          <div class="chapter-head">
+            <div class="chapter-no">V</div>
+            <div class="chapter-title">
+              <h3>Chapter V | Safety of Navigation</h3>
+              <p>Core: most requirements apply broadly and cover navigation equipment, routing, meteorological services, SAR, assistance obligations, and safe manning.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li><b>Navigation equipment: </b>magnetic compass, gyrocompass, radar, AIS, VDR, ECDIS, speed log, echo sounder, rate-of-turn indicator, and other equipment.</li>
+                <li><b>Navigation services: </b>meteorological services, ice information, ships' routeing, ship reporting systems, VTS, and SAR services.</li>
+                <li><b>Operational requirements: </b>voyage planning, danger messages, obligation to assist persons in distress, and pilot transfer arrangements.</li>
+                <li><b>Manning requirements: </b>adequate and efficient safe manning.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter V = voyage planning, safe navigation, and assistance in distress.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>For bridge modifications, changes in ship type or gross tonnage, upgraded operating areas, or new navigation equipment, check applicable tonnage thresholds, redundancy, visibility, power supply, and recording requirements.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card cargo" id="ch-vi" data-keywords="cargo oil fuel stowage securing cargo securing manual IMSBC grain VGM flashpoint">
+          <div class="chapter-head">
+            <div class="chapter-no">VI</div>
+            <div class="chapter-title">
+              <h3>Chapter VI | Carriage of Cargoes and Oil Fuel</h3>
+              <p>Core: general cargo, solid bulk cargoes, grain, verified gross mass of containers, and oil fuel safety information.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Chapter Details</h4>
+              <ul>
+                <li><b>Part A: </b>general cargo stowage and securing, including cargo information from the shipper and a Cargo Securing Manual on board.</li>
+                <li><b>Part B: </b>solid bulk cargoes, referring to the IMSBC Code for liquefaction, chemical hazards, and stowage limitations.</li>
+                <li><b>Part C: </b>carriage of grain, addressing stability risks from grain shift and free-surface effects.</li>
+                <li><b>Oil fuel note: </b>oil fuel safety information and flashpoint requirements often connect with Chapter II-2 fire risk requirements.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter VI = safe loading and securing of general cargo.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>When cargo space use changes, deck cargo is added, securing points are changed, or liquefiable bulk cargo is carried, update the Cargo Securing Manual, loading manual, stability information, and operational procedures.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card cargo" id="ch-vii" data-keywords="dangerous goods IMDG IBC IGC INF packaged dangerous goods bulk chemicals liquefied gas radioactive">
+          <div class="chapter-head">
+            <div class="chapter-no">VII</div>
+            <div class="chapter-title">
+              <h3>Chapter VII | Carriage of Dangerous Goods</h3>
+              <p>Core: classification, packing, marking, documentation, stowage, segregation, and ship-specific requirements for dangerous bulk liquids and gases.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Chapter Details</h4>
+              <ul>
+                <li><b>Part A: </b>packaged dangerous goods, referring to the IMDG Code.</li>
+                <li><b>Part A-1: </b>solid dangerous goods in bulk, with focus on documentation, stowage, segregation, and incident reporting.</li>
+                <li><b>Part B: </b>dangerous liquid chemicals in bulk, referring to the IBC Code.</li>
+                <li><b>Part C: </b>liquefied gases in bulk, referring to the IGC Code.</li>
+                <li><b>Part D: </b>packaged irradiated nuclear fuel, plutonium, and high-level radioactive waste, referring to the INF Code.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter VII = dangerous goods classification, segregation, documentation, and ship-specific requirements.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>If a retrofit adds dangerous goods carriage capability, check space fire protection, ventilation, drainage, detection, explosion-protected electrical equipment, cargo segregation, and emergency documentation.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-viii" data-keywords="nuclear ships nuclear power radiation protection safety assessment">
+          <div class="chapter-head">
+            <div class="chapter-no">VIII</div>
+            <div class="chapter-title">
+              <h3>Chapter VIII | Nuclear Ships</h3>
+              <p>Core: safety assessment, radiation protection, operating documentation, and special controls for nuclear-powered merchant ships.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li>addresses radiation, reactor safety, and operational risks from nuclear propulsion installations.</li>
+                <li>requires reference to safety standards for nuclear merchant ships.</li>
+                <li>It rarely applies to ordinary merchant ships, but conceptually belongs to a high-risk special ship category.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter VIII = Nuclear power and radiation safety.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>Ordinary merchant ship retrofits rarely involve this chapter. If nuclear propulsion or nuclear-related equipment is involved, special competent authority, flag State, and specialist rule review is required.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-ix" data-keywords="ISM SMS safety management DOC SMC DPA master responsibility accident non-conformity internal audit">
+          <div class="chapter-head">
+            <div class="chapter-no">IX</div>
+            <div class="chapter-title">
+              <h3>Chapter IX | Management for the Safe Operation of Ships</h3>
+              <p>Core: mandates the ISM Code and requires the company to establish a safety management system.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Management Notes</h4>
+              <ul>
+                <li><b>SMS: </b>safety and environmental protection policy, responsibilities and authority, shipboard operating procedures, and emergency preparedness.</li>
+                <li><b>DPA: </b>designated person ashore, responsible for ship-shore safety management liaison.</li>
+                <li><b>Incident management: </b>non-conformities, accidents, hazardous occurrences, reporting, and corrective actions.</li>
+                <li><b>Certification: </b>the company holds a DOC and the ship holds an SMC.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter IX = prevent accidents through management systems.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>If a retrofit changes operating processes, equipment maintenance, cargo operations, or manning, update SMS procedures, risk assessments, maintenance plans, and drill content.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-x" data-keywords="high-speed craft HSC Code high-speed craft safety certificate permit to operate">
+          <div class="chapter-head">
+            <div class="chapter-no">X</div>
+            <div class="chapter-title">
+              <h3>Chapter X | Safety Measures for High-Speed Craft</h3>
+              <p>Core: makes the HSC Code mandatory and establishes an alternative safety framework for high-speed passenger craft and high-speed cargo craft.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li>High-speed craft cannot fully follow conventional ship rules because of high speed, light structure, and special handling characteristics.</li>
+                <li>Key areas include structure, buoyancy, stability, evacuation, fire safety, navigational control, and operating limitations.</li>
+                <li>Associated documents usually include a High-Speed Craft Safety Certificate and Permit to Operate.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter X = dedicated safety framework for high-speed craft.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>High-speed craft retrofits require special attention to weight control, center of gravity, evacuation time, handling performance, structural materials, and permit-to-operate conditions.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-xi-1" data-keywords="enhanced maritime safety RO recognized organization ESP IMO number CSR port state control operational requirements">
+          <div class="chapter-head">
+            <div class="chapter-no">XI-1</div>
+            <div class="chapter-title">
+              <h3>Chapter XI-1 | Special Measures to Enhance Maritime Safety</h3>
+              <p>Core: strengthens administrative oversight, ship identification, recognized organization authorization, and special ship-type survey requirements.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Management Notes</h4>
+              <ul>
+                <li><b>RO: </b>recognized organization authorized by the flag State to conduct surveys and issue certificates.</li>
+                <li><b>ESP: </b>Enhanced Survey Programme for bulk carriers and oil tankers.</li>
+                <li><b>IMO ship identification number: </b>permanently marked on the hull, machinery space, or other required locations.</li>
+                <li><b>CSR: </b>Continuous Synopsis Record documenting ship history and management information.</li>
+                <li><b>PSC: </b>port States may exercise control over operational requirements.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter XI-1 = identification, survey, and oversight.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>When ship name, flag, management company, service, or structural survey scope changes, check CSR, IMO markings, ESP, and RO authorization scope.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-xi-2" data-keywords="maritime security ISPS SSP SSO CSO SSAS security level port facility">
+          <div class="chapter-head">
+            <div class="chapter-no">XI-2</div>
+            <div class="chapter-title">
+              <h3>Chapter XI-2 | Special Measures to Enhance Maritime Security</h3>
+              <p>Core: makes the ISPS Code mandatory and establishes security systems for ships and port facilities.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Security Notes</h4>
+              <ul>
+                <li><b>Security levels: </b>Levels 1, 2, and 3, with measures adjusted according to threat level.</li>
+                <li><b>Ship documents: </b>Ship Security Plan (SSP) and International Ship Security Certificate (ISSC).</li>
+                <li><b>Roles: </b>Ship Security Officer (SSO) and Company Security Officer (CSO).</li>
+                <li><b>Equipment: </b>Ship Security Alert System (SSAS).</li>
+                <li><b>Port measures: </b>Port facility security assessment and port facility security plan.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter XI-2 = counter-terrorism, security, and ship-port coordination.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>When access points, restricted areas, monitoring equipment, cargo flow, or port operation mode changes, update the SSP, security drawings, and drill procedures.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-xii" data-keywords="bulk carrier 150 metres bulkhead double bottom strength flooding stability structural inspection">
+          <div class="chapter-head">
+            <div class="chapter-no">XII</div>
+            <div class="chapter-title">
+              <h3>Chapter XII | Additional Safety Measures for Bulk Carriers</h3>
+              <p>Core: sets additional requirements for large bulk carrier structure, safety after flooding, and loading limitations.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li>The focus is bulk carriers of 150 m in length and above.</li>
+                <li>It regulates cargo hold bulkhead strength, double bottom strength, and ship safety after flooding.</li>
+                <li>It reflects casualty experience involving bulk carrier losses from structural failure, hatch cover water ingress, or cargo risks.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter XII = bulk carrier structural safety.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>Bulk carrier retrofits should pay particular attention to cargo hold structure, loading manual, hatch cover weathertightness, corrosion margins, ESP surveys, and cargo shift/liquefaction risks.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-xiii" data-keywords="verification of compliance IMO member state audit IMSAS flag state port state coastal state">
+          <div class="chapter-head">
+            <div class="chapter-no">XIII</div>
+            <div class="chapter-title">
+              <h3>Chapter XIII | Verification of Compliance</h3>
+              <p>Core: makes the IMO Member State Audit Scheme mandatory to verify States' implementation capability.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Management Notes</h4>
+              <ul>
+                <li>It applies to national implementation systems, not individual ship equipment.</li>
+                <li>It audits flag, port, and coastal States' ability to fulfil obligations under IMO instruments.</li>
+                <li>It helps improve consistency and effectiveness in SOLAS implementation.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter XIII = verify whether States implement the requirements.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>This chapter does not directly regulate retrofit design, but it influences the rigor of flag State and RO implementation.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-xiv" data-keywords="polar Polar Code Polar Ship Certificate PWOM low temperature icing SAR communication crew training">
+          <div class="chapter-head">
+            <div class="chapter-no">XIV</div>
+            <div class="chapter-title">
+              <h3>Chapter XIV | Safety Measures for Ships Operating in Polar Waters</h3>
+              <p>Core: makes the safety part of the Polar Code mandatory, addressing low temperature, icing, remoteness, and SAR challenges.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li><b>Construction: </b>ice class, stability, watertight integrity, and low-temperature materials.</li>
+                <li><b>Equipment: </b>navigation, communication, life-saving, fire safety, and cold-weather equipment.</li>
+                <li><b>Operation: </b>Polar Water Operational Manual, voyage planning, operating limitations, and risk assessment.</li>
+                <li><b>Personnel: </b>training and competency requirements for polar water operations.</li>
+                <li><b>Certificate: </b>Polar Ship Certificate.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter XIV = special safety for polar navigation.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>If polar routes are added, check ice-strengthened structure, low-temperature equipment performance, life-saving insulation, communication coverage, the polar manual, and crew training.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-xv" data-keywords="industrial personnel IP Code industrial personnel safety certificate transfer offshore wind oil gas aquaculture seabed mining">
+          <div class="chapter-head">
+            <div class="chapter-no">XV</div>
+            <div class="chapter-title">
+              <h3>Chapter XV | Safety Measures for Ships Carrying Industrial Personnel</h3>
+              <p>Core: regulates ship and personnel safety for the carriage of industrial personnel, especially offshore operations and personnel transfer risks.</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>Technical Notes</h4>
+              <ul>
+                <li><b>Application context: </b>offshore wind farms, oil and gas facilities, aquaculture, seabed mining, maintenance, construction, decommissioning, and service operations.</li>
+                <li><b>Key risks: </b>personnel transfer, risks from non-traditional passengers, medical fitness, training, muster, and life-saving capacity.</li>
+                <li><b>Mandatory code: </b>IP Code.</li>
+                <li><b>Certificate: </b>applicable ships should obtain an Industrial Personnel Safety Certificate and Record of Equipment in accordance with the IP Code.</li>
+                <li><b>Design interfaces: </b>subdivision stability, machinery/electrical systems, fire safety, life-saving appliances, dangerous goods, and personnel transfer equipment may all be linked.</li>
+              </ul>
+              <div class="memory">Memory cue: Chapter XV = offshore industrial personnel carriage and transfer safety.</div>
+            </div>
+            <div class="project-note">
+              <h4>Retrofit Project Notes</h4>
+              <p>If an existing cargo ship is retrofitted to carry industrial personnel, verify total persons, accommodation, life-saving arrangements, transfer equipment, emergency power, muster stations, medical/training evidence, and whether re-certification under the IP Code is required.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="codes">
+        <h2>5. SOLAS Mandatory Code Mapping</h2>
+        <div class="code-grid">
+          <div class="code-item"><b>LSA Code</b><span>Chapter III: technical details for life-saving appliances and arrangements.</span></div>
+          <div class="code-item"><b>FSS Code</b><span>Chapter II-2: technical requirements for fixed fire-extinguishing, detection, and fire safety systems.</span></div>
+          <div class="code-item"><b>IMSBC Code</b><span>Chapter VI: safe carriage of solid bulk cargoes.</span></div>
+          <div class="code-item"><b>Grain Code</b><span>Chapter VI: grain loading and stability requirements.</span></div>
+          <div class="code-item"><b>IMDG Code</b><span>Chapter VII Part A: packaged dangerous goods.</span></div>
+          <div class="code-item"><b>IBC Code</b><span>Chapter VII Part B: ships carrying dangerous liquid chemicals in bulk.</span></div>
+          <div class="code-item"><b>IGC Code</b><span>Chapter VII Part C: ships carrying liquefied gases in bulk.</span></div>
+          <div class="code-item"><b>INF Code</b><span>Chapter VII Part D: packaged irradiated nuclear fuel and other special cargoes.</span></div>
+          <div class="code-item"><b>ISM Code</b><span>Chapter IX: company and ship safety management systems.</span></div>
+          <div class="code-item"><b>HSC Code</b><span>Chapter X: high-speed craft design, equipment, and operation.</span></div>
+          <div class="code-item"><b>ISPS Code</b><span>Chapter XI-2: ship and port facility security.</span></div>
+          <div class="code-item"><b>Polar Code</b><span>Chapter XIV: polar water design, equipment, operation, and training.</span></div>
+          <div class="code-item"><b>IP Code</b><span>Chapter XV: carriage of industrial personnel and transfer safety.</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="documents">
+        <h2>6. Quick Retrofit Submission Checklist</h2>
+        <p class="lead">This checklist can support early retrofit project screening, but does not replace formal flag State or recognized organization requirements.</p>
+        <div class="checklist">
+          <div class="check">General arrangement plan, description of space-use changes, and list of affected areas.</div>
+          <div class="check">Weight estimate, center of gravity change, draft change, and intact/damage stability calculations.</div>
+          <div class="check">Arrangement of watertight bulkheads, doors, hatches, sea valves, and penetrations.</div>
+          <div class="check">Fire control plan, A/B class division plan, fire-rated penetrations, and escape route plan.</div>
+          <div class="check">Fire detection, alarms, fixed fire-extinguishing systems, ventilation fire dampers, and fire-fighting equipment arrangement.</div>
+          <div class="check">Lifeboats/liferafts, rescue boats, muster stations, embarkation arrangements, and life-saving capacity calculation.</div>
+          <div class="check">Main source of power, emergency source of power, emergency switchboard, and list of essential loads.</div>
+          <div class="check">Bridge navigation equipment, GMDSS equipment, antennas, and certificate record updates.</div>
+          <div class="check">Cargo Securing Manual, loading manual, dangerous goods segregation, and cargo space suitability analysis.</div>
+          <div class="check">Updates to SMS, SSP, emergency procedures, drill plans, maintenance, and crew training.</div>
+        </div>
+      </section>
+
+      <section class="section" id="updates">
+        <h2>7. Recent Update Reminders</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Key Point</th>
+              <th>Project Reminder</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="date-cell"><b>2024/07/01</b></td>
+              <td>Chapter XV, Safety Measures for Ships Carrying Industrial Personnel, entered into force and is linked with the IP Code.</td>
+              <td>For offshore wind, oil and gas, and other offshore project vessel retrofits, confirm whether IP Code certification is triggered.</td>
+            </tr>
+            <tr>
+              <td class="date-cell"><b>2026/01/01</b></td>
+              <td>Chapter II-2 amendments on oil fuel flashpoint require measures to prevent supply of oil fuel that does not meet SOLAS flashpoint requirements.</td>
+              <td>Where fuel systems, bunkering procedures, or fuel documentation are involved, check supplier declarations and flashpoint test method records.</td>
+            </tr>
+            <tr>
+              <td class="date-cell"><b>2026/01/01</b></td>
+              <td>Recent amendments also affect Chapters II-2 and V, the LSA Code, FSS Code, Polar Code, and related instruments.</td>
+              <td>For fire safety, navigation equipment, life-saving appliances, polar operations, and related equipment retrofits, check the latest requirements item by item.</td>
+            </tr>
+            <tr>
+              <td class="date-cell"><b>2028/01/01</b></td>
+              <td>Additional Chapter II-1 amendments are scheduled to enter into force.</td>
+              <td>For medium- to long-term newbuilding or major retrofit projects, allow margin for regulatory change during early design.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="warning">
+          <b>Practical note:</b>SOLAS continues to evolve through amendments. The applicable version should be confirmed based on the ship construction date, retrofit commencement date, flag State implementation requirements, recognized organization circulars, and the latest convention text.
+        </div>
+      </section>
+
+      <section class="section" id="sources">
+        <h2>Sources</h2>
+        <ul class="source">
+          <li>IMO: International Convention for the Safety of Life at Sea, 1974.</li>
+          <li>IMO: Amendments to IMO instruments.</li>
+          <li>IMO: Summary of SOLAS chapter II-2.</li>
+          <li>IMO: Summary of SOLAS chapter III.</li>
+          <li>IMO: Polar Code.</li>
+          <li>IMO: Resolution MSC.527(106), IP Code.</li>
+        </ul>
+        <p class="source">
+          This page is intended for learning and preliminary project screening only. It does not replace official convention text, flag State regulations, recognized organization rules, or formal submission comments.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <strong>Reay Huang Maritime Notes | SOLAS Regulatory Framework Summary</strong><br>
+    Prepared on 2026-06-02. Source: IMO SOLAS 1974 Convention and related amendment summaries.<br>
+    Note: This page is for personal learning and preliminary project screening only. It does not replace official convention text, flag State regulations, recognized organization rules, or formal submission comments.
+  </footer>
+
+  <button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" type="button">Back to top</button>
+
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function resetScrollOnReload() {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!nav || nav.type !== 'reload') return;
+
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('pageshow', resetScrollOnReload);
+    window.addEventListener('load', resetScrollOnReload);
+  </script>
+
+</div>
+</body>
+</html>

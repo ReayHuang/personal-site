@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLAS 法規架構摘要｜Reay's Note</title>
+  <meta name="description" content="SOLAS 第 I 至 XV 章法規架構摘要：公約三層結構、各章節重點、改裝關聯章節、強制性章程對照與送審文件清單。" />
+  <meta name="author" content="Reay Huang" />
+  <meta name="keywords" content="SOLAS, 海上人命安全公約, 改裝, 檢驗, 證書, IP Code, Polar Code, 驗船" />
+  <meta property="og:title" content="SOLAS 法規架構摘要｜Reay's Note" />
+  <meta property="og:description" content="整合 SOLAS 各章節核心規範、強制性章程、檢驗發證邏輯與船舶改裝專案注意事項的摘要筆記。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay Huang Maritime Notes" />
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/solas-structure-notes.html" />
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/solas-structure-notes.html" />
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/solas-structure-linkedin-preview-1200.jpg" />
+  <meta property="og:image:alt" content="SOLAS 法規架構摘要 — 公約章節、強制性章程與檢驗邏輯實務地圖" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="629" />
+  <link rel="alternate" hreflang="zh-Hant" href="solas-structure-notes.html" />
+  <link rel="alternate" hreflang="en" href="solas-structure-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="solas-structure-notes.en.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SOLAS 法規架構摘要｜Reay's Note" />
+  <meta name="twitter:description" content="整合 SOLAS 各章節核心規範、強制性章程、檢驗發證邏輯與船舶改裝專案注意事項的摘要筆記。" />
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/solas-structure-linkedin-preview-1200.jpg" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --max: 1180px;
+      --navy:#07304f;
+      --blue:#0b6fa4;
+      --cyan:#2bb3c0;
+      --orange:#f5a623;
+      --red:#e55353;
+      --green:#28a66a;
+      --purple:#6b5dd3;
+      --ink:#183247;
+      --muted:#60758a;
+      --bg:#f4f8fb;
+      --card:#ffffff;
+      --line:#dce8f1;
+      --soft-blue:#e8f4fb;
+      --soft-red:#fff0ef;
+      --soft-orange:#fff6e4;
+      --soft-green:#eaf8f0;
+      --shadow:0 14px 32px rgba(7,48,79,.12);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;
+      background:linear-gradient(180deg,#f4f8fb 0%,#eef5f9 100%);
+      color:var(--ink);
+      line-height:1.72;
+    }
+
+    a{color:#0b6fa4;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .page { overflow: hidden; }
+
+    .hero{
+      position:relative;
+      background:
+        radial-gradient(circle at 85% 18%,rgba(43,179,192,.30),transparent 32%),
+        linear-gradient(135deg,#062843 0%,#07507a 55%,#0b83a5 100%);
+      color:#fff;
+      padding:72px 24px 46px;
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.10;
+      z-index:-1;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.45) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.28) 49%, transparent 51%);
+      background-size:68px 68px;
+      mask-image:linear-gradient(to bottom, black, transparent 84%);
+    }
+    .hero-inner{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:7px 13px;
+      border:1px solid rgba(43,179,192,.42);
+      border-radius:999px;
+      color:#c8f0f4;
+      background:rgba(43,179,192,.12);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .eyebrow::before{
+      content:"";
+      width:8px;height:8px;border-radius:999px;
+      background:var(--cyan);
+      box-shadow:0 0 18px rgba(43,179,192,.9);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+      gap:34px;
+      align-items:end;
+    }
+    h1{
+      font-family:"Noto Serif TC",serif;
+      margin:0 0 14px;
+      font-size:clamp(34px,5.4vw,58px);
+      letter-spacing:-.03em;
+      line-height:1.12;
+      font-weight:900;
+    }
+    .subtitle{
+      max-width:760px;
+      font-size:clamp(16px,2vw,18px);
+      color:rgba(255,255,255,.82);
+      margin:0;
+    }
+    .hero-panel{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 20px 60px rgba(0,0,0,.16);
+      backdrop-filter:blur(18px);
+    }
+    .hero-panel-title{
+      color:#c8f0f4;
+      font-weight:900;
+      margin-bottom:12px;
+      font-size:14px;
+      letter-spacing:.06em;
+    }
+    .hero-facts{display:grid;gap:10px}
+    .fact{
+      display:grid;
+      grid-template-columns:58px minmax(0,1fr);
+      gap:10px;
+      align-items:start;
+      color:rgba(255,255,255,.83);
+      font-size:13px;line-height:1.55;
+    }
+    .fact-tag{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:28px;
+      padding:4px 6px;
+      border-radius:8px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.20);
+      color:#e8f8fa;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.10em;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      line-height:1;
+    }
+    .fact-tag--ch{border-color:rgba(43,179,192,.45);color:#b8eef3}
+    .fact-tag--sys{border-color:rgba(120,180,255,.40);color:#cfe4ff}
+    .fact-tag--cat{border-color:rgba(180,220,255,.35);color:#dcecff}
+    .fact-tag--refit{border-color:rgba(245,166,35,.45);color:#ffe2a8}
+
+    .nav-shell{
+      position:sticky;top:0;z-index:10;
+      background:rgba(244,248,251,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(220,232,241,.88);
+    }
+    .nav{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      display:flex;gap:10px;overflow-x:auto;
+      padding:12px 0;scrollbar-width:none;
+    }
+    .nav::-webkit-scrollbar{display:none}
+    .nav a{
+      text-decoration:none;white-space:nowrap;
+      padding:8px 13px;border:1px solid var(--line);
+      background:rgba(255,255,255,.72);border-radius:999px;
+      color:var(--muted);font-size:13px;font-weight:700;
+    }
+    .nav a:hover{
+      color:var(--navy);border-color:rgba(43,179,192,.62);background:#fff;
+    }
+
+    .note-main{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      padding:28px 0 48px;
+    }
+
+    .content{min-width:0}
+
+    .section{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+      margin-bottom:24px;
+    }
+    .section h2{
+      margin:0 0 18px;
+      color:var(--navy);
+      font-size:28px;
+      line-height:1.25;
+      letter-spacing:.02em;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .section h3{
+      color:#10415f;
+      margin:22px 0 10px;
+      font-size:20px;
+    }
+    .lead{
+      font-size:17px;
+      color:#334f65;
+      margin-top:0;
+    }
+    .highlight{
+      font-weight:900;
+      color:#06314f;
+      background:linear-gradient(transparent 62%,rgba(43,179,192,.24) 62%);
+      padding:0 2px;
+    }
+
+    .cards-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .info-card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      background:linear-gradient(180deg,#fff,#f8fbfd);
+    }
+    .info-card .icon{
+      width:42px;height:42px;
+      display:grid;place-items:center;
+      border-radius:14px;
+      color:#fff;
+      font-weight:900;
+      margin-bottom:10px;
+      background:linear-gradient(135deg,var(--blue),var(--cyan));
+    }
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+    .info-card p{
+      margin:0;
+      color:#516a7e;
+      font-size:14.5px;
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:1fr 42px 1fr 42px 1fr;
+      align-items:center;
+      gap:10px;
+      margin-top:14px;
+    }
+    .flow-box{
+      padding:18px;
+      border-radius:16px;
+      background:var(--soft-blue);
+      border:1px solid #cfe7f5;
+      min-height:132px;
+    }
+    .flow-box b{
+      display:block;
+      color:var(--navy);
+      font-size:18px;
+      margin-bottom:8px;
+    }
+    .arrow{
+      text-align:center;
+      font-size:28px;
+      color:var(--blue);
+      font-weight:900;
+    }
+
+    .legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:10px;
+    }
+    .map-hint{
+      margin:0 0 16px;
+      padding:10px 14px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#f8fbfd,#eef6fb);
+      border:1px dashed rgba(11,111,164,.28);
+      color:#516a7e;
+      font-size:14px;
+      font-weight:700;
+      line-height:1.55;
+    }
+    .map-hint::before{
+      content:"👇 ";
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:12.5px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .tag.design{background:#e8f4fb;color:#0b6fa4}
+    .tag.fire{background:#fff0ef;color:#d13d3d}
+    .tag.ops{background:#eaf8f0;color:#1e8a55}
+    .tag.cargo{background:#fff6e4;color:#9a6500}
+    .tag.special{background:#f0efff;color:#5746c7}
+    .tag.project{background:#102f49;color:#fff}
+
+    .chapter-map{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:12px;
+    }
+    .tile{
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#fff;
+      padding:14px;
+      min-height:126px;
+      position:relative;
+      overflow:hidden;
+      transition:.18s ease;
+    }
+    .tile:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 24px rgba(7,48,79,.12);
+      text-decoration:none;
+    }
+    .tile::before{
+      content:"";
+      position:absolute;
+      left:0;top:0;bottom:0;
+      width:6px;
+      background:var(--blue);
+    }
+    .tile.fire::before{background:var(--red)}
+    .tile.ops::before{background:var(--green)}
+    .tile.cargo::before{background:var(--orange)}
+    .tile.special::before{background:var(--purple)}
+    .tile .num{
+      font-weight:900;
+      color:var(--navy);
+      font-size:20px;
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .tile .name{
+      font-weight:900;
+      color:#233f55;
+      line-height:1.35;
+      font-size:14px;
+    }
+    .tile .memo{
+      margin-top:8px;
+      color:#688094;
+      font-size:12.5px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+    th,td{
+      padding:13px 14px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      text-align:left;
+    }
+    th{
+      background:#07304f;
+      color:#fff;
+      font-size:14px;
+      letter-spacing:.03em;
+    }
+    tr:last-child td{border-bottom:none}
+    td{
+      color:#334f65;
+      font-size:14.5px;
+    }
+    #updates table .date-cell{
+      white-space:nowrap;
+      width:1%;
+      font-variant-numeric:tabular-nums;
+      letter-spacing:.01em;
+    }
+    .risk-high{
+      color:#fff;
+      background:var(--red);
+      border-radius:999px;
+      padding:3px 8px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .risk-mid{
+      color:#fff;
+      background:var(--orange);
+      border-radius:999px;
+      padding:3px 8px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .risk-low{
+      color:#fff;
+      background:var(--green);
+      border-radius:999px;
+      padding:3px 8px;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .chapter-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 10px 22px rgba(7,48,79,.08);
+      margin:18px 0;
+      overflow:hidden;
+    }
+    .chapter-head{
+      display:flex;
+      gap:16px;
+      align-items:stretch;
+      background:linear-gradient(135deg,#f8fbfd,#eef6fb);
+      border-bottom:1px solid var(--line);
+    }
+    .chapter-no{
+      width:96px;
+      min-width:96px;
+      background:linear-gradient(135deg,var(--navy),var(--blue));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:26px;
+      font-weight:900;
+      letter-spacing:.02em;
+      text-align:center;
+      padding:12px;
+    }
+    .chapter-title{
+      padding:18px 18px 16px 0;
+      flex:1;
+    }
+    .chapter-title h3{
+      margin:0 0 8px;
+      color:#103751;
+      font-size:22px;
+      line-height:1.3;
+    }
+    .chapter-title p{
+      margin:0;
+      color:#60758a;
+      font-size:14.5px;
+    }
+
+    /* 第四章章節標題 — 呼應第二章主題色 */
+    .chapter-card.design .chapter-head{background:linear-gradient(135deg,#f8fcff,#e8f4fb)}
+    .chapter-card.design .chapter-no{background:linear-gradient(135deg,#0b6fa4,#2bb3c0)}
+    .chapter-card.design .chapter-title h3{color:#0b6fa4}
+
+    .chapter-card.fire .chapter-head{background:linear-gradient(135deg,#fffafa,#fff0ef)}
+    .chapter-card.fire .chapter-no{background:linear-gradient(135deg,#c93b3b,#e55353)}
+    .chapter-card.fire .chapter-title h3{color:#c93b3b}
+
+    .chapter-card.ops .chapter-head{background:linear-gradient(135deg,#f6fcf8,#eaf8f0)}
+    .chapter-card.ops .chapter-no{background:linear-gradient(135deg,#1a7a4a,#28a66a)}
+    .chapter-card.ops .chapter-title h3{color:#1e8a55}
+
+    .chapter-card.cargo .chapter-head{background:linear-gradient(135deg,#fffbf3,#fff6e4)}
+    .chapter-card.cargo .chapter-no{background:linear-gradient(135deg,#c47d00,#f5a623)}
+    .chapter-card.cargo .chapter-title h3{color:#9a6500}
+
+    .chapter-card.special .chapter-head{background:linear-gradient(135deg,#f8f7ff,#f0efff)}
+    .chapter-card.special .chapter-no{background:linear-gradient(135deg,#5746c7,#6b5dd3)}
+    .chapter-card.special .chapter-title h3{color:#5746c7}
+
+    .chapter-card.design{border-left:5px solid var(--blue)}
+    .chapter-card.fire{border-left:5px solid var(--red)}
+    .chapter-card.ops{border-left:5px solid var(--green)}
+    .chapter-card.cargo{border-left:5px solid var(--orange)}
+    .chapter-card.special{border-left:5px solid var(--purple)}
+
+    .chapter-body{
+      padding:20px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+    }
+    .note-block{
+      border-radius:16px;
+      padding:16px;
+      background:#f8fbfd;
+      border:1px solid var(--line);
+    }
+    .note-block h4{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:16px;
+    }
+    .note-block ul{
+      margin:0;
+      padding-left:20px;
+    }
+    .note-block li{
+      margin:6px 0;
+      color:#3e596d;
+      font-size:14.5px;
+    }
+    .project-note{
+      border-radius:16px;
+      padding:16px;
+      background:linear-gradient(180deg,#fff6e4,#fffaf0);
+      border:1px solid #f4d18a;
+    }
+    .project-note h4{
+      margin:0 0 10px;
+      color:#8b5a00;
+      font-size:16px;
+    }
+    .project-note p{
+      margin:0;
+      color:#60440c;
+      font-size:14.5px;
+    }
+    .memory{
+      margin-top:12px;
+      padding:10px 14px;
+      border-radius:12px;
+      background:#f4f9fc;
+      border:1px solid #d4e8f3;
+      border-left:4px solid var(--blue);
+      color:#29465d;
+      font-weight:800;
+      font-size:14px;
+      line-height:1.5;
+      display:inline-block;
+    }
+    .chapter-card.design .memory{
+      background:#e8f4fb;
+      border-color:#c5dff0;
+      border-left-color:var(--blue);
+      color:#0b5f8f;
+    }
+    .chapter-card.fire .memory{
+      background:#fff5f4;
+      border-color:#f5d0cd;
+      border-left-color:var(--red);
+      color:#a83838;
+    }
+    .chapter-card.ops .memory{
+      background:#eaf8f0;
+      border-color:#c6ead6;
+      border-left-color:var(--green);
+      color:#1e6640;
+    }
+    .chapter-card.cargo .memory{
+      background:#fff8eb;
+      border-color:#f2ddb0;
+      border-left-color:var(--orange);
+      color:#8b5a00;
+    }
+    .chapter-card.special .memory{
+      background:#f3f1ff;
+      border-color:#ddd6ff;
+      border-left-color:var(--purple);
+      color:#4f3fb8;
+    }
+
+    .code-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+    .code-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+    .code-item b{
+      min-width:92px;
+      color:#fff;
+      background:var(--navy);
+      border-radius:10px;
+      text-align:center;
+      padding:6px 8px;
+      font-size:13px;
+    }
+    .code-item span{
+      font-size:14px;
+      color:#445f73;
+    }
+
+    .checklist{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+    .check{
+      padding:14px 14px 14px 42px;
+      border-radius:16px;
+      background:#fff;
+      border:1px solid var(--line);
+      position:relative;
+      font-size:14.5px;
+      color:#38556a;
+    }
+    .check::before{
+      content:"✓";
+      position:absolute;
+      left:14px;
+      top:14px;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .warning{
+      border-left:6px solid var(--red);
+      background:var(--soft-red);
+      border-radius:16px;
+      padding:16px 18px;
+      color:#713232;
+      margin-top:16px;
+    }
+    .source{
+      color:#60758a;
+      font-size:13px;
+    }
+    .source li{margin:6px 0}
+
+    .top-btn{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      border:none;
+      border-radius:999px;
+      background:var(--navy);
+      color:#fff;
+      padding:12px 16px;
+      font-weight:900;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer strong { color: var(--navy); }
+
+    @media(max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero-panel{max-width:520px}
+      .chapter-map{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .cards-3,.chapter-body,.code-grid,.checklist{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr}
+      .arrow{transform:rotate(90deg)}
+    }
+    @media(max-width:640px){
+      .hero{padding:40px 18px 34px}
+      .note-main,.hero-inner,.nav,.footer{width:min(100% - 28px, var(--max))}
+      .section{padding:20px}
+      .chapter-map{grid-template-columns:1fr}
+      .chapter-head{display:block}
+      .chapter-no{width:100%;min-width:0;height:72px}
+      .chapter-title{padding:16px}
+      table{font-size:13px}
+      th,td{padding:10px}
+    }
+
+    @media print{
+      body{background:#fff}
+      .note-site-bar,.nav-shell,.top-btn{display:none}
+      .note-main{max-width:100%;padding:0}
+      .hero{padding:28px;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .section,.chapter-card{box-shadow:none;break-inside:avoid}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="solas-structure-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="solas-structure-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">SOLAS · 海上人命安全國際公約 · Reay's Note</div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>SOLAS 法規架構<br>摘要筆記</h1>
+          <p class="article-meta">
+            <span>📅 更新：2026-06-02</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 閱讀約 15 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 SOLAS / 改裝 / 檢驗</span>
+          </p>
+          <p class="subtitle">
+            自1912年鐵達尼號沉沒事故後，國際社會開始重新審視海上人命安全的重要性，並促成 SOLAS 公約的誕生。今日 SOLAS 已成為全球商船安全的共同標準，建立了船舶設計、建造、設備、營運與檢驗的最低安全要求，是保障海上人命安全、船舶合規與國際航行安全的核心依據。
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="SOLAS 快速概覽">
+          <div class="hero-panel-title">架構概覽</div>
+          <div class="hero-facts">
+            <div class="fact">
+              <span class="fact-tag fact-tag--ch" title="Chapters">CH</span>
+              <div>章節範圍 I–XV，含第 XV 章工業人員載運安全</div>
+            </div>
+            <div class="fact">
+              <span class="fact-tag fact-tag--sys" title="System">SYS</span>
+              <div>三層結構：公約本文、附則章節、強制性章程</div>
+            </div>
+            <div class="fact">
+              <span class="fact-tag fact-tag--cat" title="Categories">CAT</span>
+              <div>五類主軸：構造、設備、營運、貨物、特殊風險</div>
+            </div>
+            <div class="fact">
+              <span class="fact-tag fact-tag--refit" title="Retrofit">REFIT</span>
+              <div>改裝常觸發穩度、防火、救生與證書重審</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-shell">
+    <nav class="nav" aria-label="page navigation">
+      <a href="#structure">法規架構</a>
+      <a href="#map">章節全景</a>
+      <a href="#project">改裝關聯</a>
+      <a href="#chapters">各章摘要</a>
+      <a href="#codes">章程對照</a>
+      <a href="#documents">送審清單</a>
+      <a href="#updates">近年更新</a>
+      <a href="#sources">資料來源</a>
+    </nav>
+  </div>
+
+  <main class="note-main">
+    <div class="content">
+
+      <section class="section" id="structure">
+        <h2>一、SOLAS 的法規架構</h2>
+        <p class="lead">
+          <span class="highlight">SOLAS</span> 的目的，是規範商船在
+          <span class="highlight">建造、設備與操作</span>方面的最低安全標準。實務上可用「公約本文 → 附則章節 → 強制性章程與證書」三層理解。
+        </p>
+
+        <div class="cards-3">
+          <div class="info-card">
+            <div class="icon">１</div>
+            <h3>公約本文</h3>
+            <p>規定締約國義務、修正程序、生效方式、默示接受程序與一般法律框架。</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">２</div>
+            <h3>附則章節</h3>
+            <p>實際技術要求所在地，涵蓋構造、防火、救生、通信、航行、貨物、安全管理與保安。</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">３</div>
+            <h3>強制性章程</h3>
+            <p>例如 LSA、IMDG、IMSBC、IBC、IGC、ISM、HSC、ISPS、Polar、IP Code。</p>
+          </div>
+        </div>
+
+        <div class="flow">
+          <div class="flow-box">
+            <b>公約核心</b>
+            建立國際最低安全標準，要求船旗國確認船舶符合規範，並以證書證明。
+          </div>
+          <div class="arrow">→</div>
+          <div class="flow-box">
+            <b>技術章節</b>
+            各章分別處理構造、設備、營運、貨物、特殊船型與特殊航區。
+          </div>
+          <div class="arrow">→</div>
+          <div class="flow-box">
+            <b>專案落地</b>
+            改裝、換證、PSC、RO 審查與船旗國要求，均回到章節與證書符合性。
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="map">
+        <h2>二、SOLAS 章節全景圖</h2>
+
+        <div class="legend">
+          <span class="tag design">構造與設備</span>
+          <span class="tag fire">防火與救生</span>
+          <span class="tag ops">營運與管理</span>
+          <span class="tag cargo">貨物與危貨</span>
+          <span class="tag special">特殊船型／區域／人員</span>
+          <span class="tag project">改裝高關聯</span>
+        </div>
+
+        <p class="map-hint">點選下方方塊按鈕，快速導覽到說明章節。</p>
+
+        <div class="chapter-map">
+          <a class="tile ops" href="#ch-i"><div class="num">I</div><div class="name">一般規定</div><div class="memo">檢驗、發證、PSC</div></a>
+          <a class="tile design" href="#ch-ii-1"><div class="num">II-1</div><div class="name">分艙、穩度、機電</div><div class="memo">船不沉、系統不中斷</div></a>
+          <a class="tile fire" href="#ch-ii-2"><div class="num">II-2</div><div class="name">防火、偵測、滅火</div><div class="memo">防火分區與逃生</div></a>
+          <a class="tile fire" href="#ch-iii"><div class="num">III</div><div class="name">救生設備與佈置</div><div class="memo">棄船、集合、降落</div></a>
+          <a class="tile design" href="#ch-iv"><div class="num">IV</div><div class="name">無線電通信</div><div class="memo">GMDSS 與搜救通信</div></a>
+
+          <a class="tile ops" href="#ch-v"><div class="num">V</div><div class="name">航行安全</div><div class="memo">航儀、航線、搜救</div></a>
+          <a class="tile cargo" href="#ch-vi"><div class="num">VI</div><div class="name">貨物與油燃料</div><div class="memo">積載、繫固、穀物</div></a>
+          <a class="tile cargo" href="#ch-vii"><div class="num">VII</div><div class="name">危險貨物</div><div class="memo">IMDG、IBC、IGC</div></a>
+          <a class="tile special" href="#ch-viii"><div class="num">VIII</div><div class="name">核能船舶</div><div class="memo">核動力與輻射安全</div></a>
+          <a class="tile ops" href="#ch-ix"><div class="num">IX</div><div class="name">安全營運管理</div><div class="memo">ISM 與 SMS</div></a>
+
+          <a class="tile special" href="#ch-x"><div class="num">X</div><div class="name">高速船</div><div class="memo">HSC Code</div></a>
+          <a class="tile ops" href="#ch-xi-1"><div class="num">XI-1</div><div class="name">加強海上安全</div><div class="memo">RO、ESP、IMO 編號</div></a>
+          <a class="tile ops" href="#ch-xi-2"><div class="num">XI-2</div><div class="name">加強海事保安</div><div class="memo">ISPS、SSP、SSAS</div></a>
+          <a class="tile special" href="#ch-xii"><div class="num">XII</div><div class="name">散裝貨船附加安全</div><div class="memo">結構與進水後安全</div></a>
+          <a class="tile ops" href="#ch-xiii"><div class="num">XIII</div><div class="name">符合驗證</div><div class="memo">會員國稽核</div></a>
+
+          <a class="tile special" href="#ch-xiv"><div class="num">XIV</div><div class="name">極地水域船舶</div><div class="memo">Polar Code</div></a>
+          <a class="tile special" href="#ch-xv"><div class="num">XV</div><div class="name">工業人員載運</div><div class="memo">IP Code 與轉乘安全</div></a>
+        </div>
+      </section>
+
+      <section class="section" id="project">
+        <h2>三、船舶改裝專案中的 SOLAS 關鍵影響</h2>
+        <p class="lead">
+          因應日益嚴格的國際法規與船東技術升級需求，各項船舶改裝案皆須檢視是否符合 SOLAS 要求；改裝往往不只是單一設備變更，而是牽動
+          <span class="highlight">證書、穩度、防火完整性、救生容量、航儀配置與營運程序</span>的整體合規工程。
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>關聯度</th>
+              <th>章節</th>
+              <th>常見觸發條件</th>
+              <th>改裝專案應檢核重點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="risk-high">高</span></td>
+              <td><b>第 I 章</b></td>
+              <td>重大改裝、用途改變、證書項目改變</td>
+              <td>是否構成重大改裝；是否需初次檢驗等級查驗；證書是否換發或重新簽註。</td>
+            </tr>
+            <tr>
+              <td><span class="risk-high">高</span></td>
+              <td><b>第 II-1 章</b></td>
+              <td>艙室重布置、艙壁增減、新增重量、吃水或重心改變</td>
+              <td>完整／破損穩度、分艙指數、艙底排水、舵機、緊急電源、機電冗餘。</td>
+            </tr>
+            <tr>
+              <td><span class="risk-high">高</span></td>
+              <td><b>第 II-2 章</b></td>
+              <td>新開孔、管電貫穿、防火門調整、艙室用途改變</td>
+              <td>A／B 級分隔、防火貫穿件、偵煙覆蓋、固定滅火、通風擋板、逃生路線。</td>
+            </tr>
+            <tr>
+              <td><span class="risk-high">高</span></td>
+              <td><b>第 III 章</b></td>
+              <td>船上總人數改變、甲板配置改變、救生艇筏移位</td>
+              <td>救生容量、兩舷配置、集合站、登乘路線、降落設備與救助艇配置。</td>
+            </tr>
+            <tr>
+              <td><span class="risk-mid">中高</span></td>
+              <td><b>第 V 章</b></td>
+              <td>橋樓改裝、噸位或船型改變、航區調整</td>
+              <td>AIS、VDR、ECDIS、雷達、羅經、測深儀、航次計畫與安全配員。</td>
+            </tr>
+            <tr>
+              <td><span class="risk-mid">中高</span></td>
+              <td><b>第 VI／VII 章</b></td>
+              <td>新增貨類、改變貨艙用途、載運危險貨物或特殊散貨</td>
+              <td>貨物固定手冊、IMSBC／IMDG／IBC／IGC 適用性、危貨隔離與文件。</td>
+            </tr>
+            <tr>
+              <td><span class="risk-mid">中</span></td>
+              <td><b>第 IX／XI-2 章</b></td>
+              <td>作業流程、保安區域、人員動線或港口作業模式改變</td>
+              <td>SMS、SSP、應變程序、演習、保安等級、SSAS 與船岸協調。</td>
+            </tr>
+            <tr>
+              <td><span class="risk-mid">中</span></td>
+              <td><b>第 XIV／XV 章</b></td>
+              <td>增加極地營運或載運工業人員</td>
+              <td>極地船舶證書、極地水域操作手冊、IP Code、工業人員轉乘與救生配置。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warning">
+          <b>改裝判斷提醒：</b>只要改裝影響船舶主要尺度、船型用途、載員、穩度、防火分隔、救生配置、航行設備或證書項目，就不應只當作一般年度檢驗處理，應先與船旗國及認可組織確認送審範圍。
+        </div>
+      </section>
+
+      <section class="section" id="chapters">
+        <h2>四、各章節細項與重點摘要</h2>
+
+        <article class="chapter-card ops" id="ch-i" data-keywords="一般規定 檢驗 證書 港口國管制 PSC 事故 重大改裝">
+          <div class="chapter-head">
+            <div class="chapter-no">I</div>
+            <div class="chapter-title">
+              <h3>第 I 章｜一般規定</h3>
+              <p>核心：適用範圍、檢驗、發證、證書效期、事故報告與港口國管制。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>章節細項</h4>
+              <ul>
+                <li><b>A 部：</b>適用與定義，包括不可抗力例外、緊急載客等基本規則。</li>
+                <li><b>B 部：</b>檢驗與證書，是本章核心；包括初次、年度、期中、定期與更新檢驗。</li>
+                <li><b>C 部：</b>事故與港口國管制，規範 PSC 查驗與事故通報。</li>
+                <li><b>常見證書：</b>客船安全證書、貨船安全構造證書、貨船安全設備證書、貨船安全無線電證書、貨船安全證書。</li>
+              </ul>
+              <div class="memory">記憶：第 I 章＝檢驗、發證、管制。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>重大改裝可能觸發接近初次檢驗等級的全面查驗。改裝後應重新確認證書範圍、附件設備紀錄、檢驗窗口與船旗國要求。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card design" id="ch-ii-1" data-keywords="分艙 穩度 破艙穩度 A R 水密 機械 電氣 舵機 緊急電源">
+          <div class="chapter-head">
+            <div class="chapter-no">II-1</div>
+            <div class="chapter-title">
+              <h3>第 II-1 章｜構造：分艙與穩度、機械與電氣設備</h3>
+              <p>核心：讓船在受損後仍能保持浮力、穩度與必要機電功能。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li><b>分艙與破艙穩度：</b>採用機率式破艙穩度概念，重點為所獲分艙指數 A 不低於所需分艙指數 R。</li>
+                <li><b>水密完整性：</b>水密艙壁、水密門、艙口、舷窗、通海閥、防撞艙壁、雙層底等。</li>
+                <li><b>機械裝置：</b>主機、輔機、舵機、舭水系統、起動空氣與關鍵輔助系統。</li>
+                <li><b>電氣裝置：</b>主電源、緊急電源、緊急配電板、緊急照明與關鍵負載供電。</li>
+              </ul>
+              <div class="memory">記憶：第 II-1 章＝船不沉、機電不中斷。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>艙室重布置、艙壁增減、新增設備重量、吃水或重心改變，均可能影響穩度資料與破艙計算，通常需重新提交穩度計算書及相關圖面。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card fire" id="ch-ii-2" data-keywords="防火 火災偵測 滅火 A級 B級 C級 防火分區 貫穿件 逃生 CO2 水霧 泡沫">
+          <div class="chapter-head">
+            <div class="chapter-no">II-2</div>
+            <div class="chapter-title">
+              <h3>第 II-2 章｜防火、火災偵測與滅火</h3>
+              <p>核心：防止起火、限制火勢與煙霧、及早偵測、快速滅火並保障逃生。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li><b>防火分區：</b>以主垂直區、熱障壁與結構邊界限制火災擴散。</li>
+                <li><b>A／B／C 級分隔：</b>A 級以鋼質或等效材料為主，常見 A-60、A-30 等耐火等級。</li>
+                <li><b>系統要求：</b>固定式滅火系統、火災偵測與警報、消防員裝備、通風防火擋板、易燃液體區域保護。</li>
+                <li><b>特殊船舶：</b>油輪、客船、載車船、滾裝空間等有額外要求。</li>
+              </ul>
+              <div class="memory">記憶：第 II-2 章＝防火、偵火、滅火、逃生。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>新開孔、管路或電纜貫穿防火分隔時，必須確認防火貫穿件等級；同時重新檢視偵煙涵蓋、逃生距離、消防控制圖與固定滅火區域。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card fire" id="ch-iii" data-keywords="救生設備 救生艇 救生筏 救助艇 吊艇架 救生衣 浸水保暖服 集合站 LSA">
+          <div class="chapter-head">
+            <div class="chapter-no">III</div>
+            <div class="chapter-title">
+              <h3>第 III 章｜救生設備與佈置</h3>
+              <p>核心：規範棄船、生存、搜救定位、集合與登乘安排；技術細節由 LSA Code 補充。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li><b>救生艇筏：</b>全封閉、部分封閉、自由降落式救生艇，以及救生筏與救助艇。</li>
+                <li><b>降落設備：</b>吊艇架、釋放裝置、登乘設備與回收安排。</li>
+                <li><b>個人設備：</b>救生衣、救生圈、浸水保暖服、防寒輔具等。</li>
+                <li><b>組織安排：</b>集合站、部署表、警報、訓練、操演、操作說明與維護檢查。</li>
+              </ul>
+              <div class="memory">記憶：第 III 章＝棄船與救生。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>船上總人數增加、甲板配置改變、救生艇筏移位或遮蔽，均須重新核算救生容量、登乘動線、集合站面積與降落安全距離。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card design" id="ch-iv" data-keywords="無線電通信 GMDSS A1 A2 A3 A4 DSC Inmarsat NAVTEX EPIRB SART">
+          <div class="chapter-head">
+            <div class="chapter-no">IV</div>
+            <div class="chapter-title">
+              <h3>第 IV 章｜無線電通信</h3>
+              <p>核心：以 GMDSS 確保遇險警報、定位、搜救協調與安全資訊接收。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li><b>海區分級：</b>A1、A2、A3、A4 依岸台與衛星涵蓋能力決定設備組合。</li>
+                <li><b>主要設備：</b>VHF DSC、MF／HF DSC、衛星通信、NAVTEX、EPIRB、SART 等。</li>
+                <li><b>維持可用性：</b>可透過岸上維修、備用設備或雙套設備等方式維持。</li>
+                <li><b>管理要求：</b>無線電值班、紀錄、人員資格與遇險通信程序。</li>
+              </ul>
+              <div class="memory">記憶：第 IV 章＝遇險通報與搜救通信。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>若改變航行海區、船舶噸位或通信設備配置，應重新核對 GMDSS 設備清單、備援方式、天線位置與無線電證書。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-v" data-keywords="航行安全 AIS VDR ECDIS 雷達 磁羅經 電羅經 VTS 搜救 安全配員 航次計畫">
+          <div class="chapter-head">
+            <div class="chapter-no">V</div>
+            <div class="chapter-title">
+              <h3>第 V 章｜航行安全</h3>
+              <p>核心：多數規定原則上廣泛適用，涵蓋航儀、航線、氣象、搜救、救助義務與安全配員。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li><b>航行設備：</b>磁羅經、電羅經、雷達、AIS、VDR、ECDIS、測速儀、迴聲測深儀、迴轉率指示器等。</li>
+                <li><b>航行服務：</b>氣象服務、冰區情報、船舶定線、船舶報告系統、VTS、搜救服務。</li>
+                <li><b>操作要求：</b>航次計畫、危險通報、遇險救助義務、領航員登船設備。</li>
+                <li><b>人員要求：</b>足額且有效率的安全配員。</li>
+              </ul>
+              <div class="memory">記憶：第 V 章＝規劃航次、避險航行、遇險救助。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>橋樓改裝、船型或總噸位改變、航區提升、加裝新航儀時，須核對適用噸位門檻、設備備援、視線、電源與記錄要求。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card cargo" id="ch-vi" data-keywords="貨物 油燃料 積載 繫固 Cargo Securing Manual IMSBC 穀物 VGM 閃點">
+          <div class="chapter-head">
+            <div class="chapter-no">VI</div>
+            <div class="chapter-title">
+              <h3>第 VI 章｜貨物與油燃料載運</h3>
+              <p>核心：一般貨物、散裝固體貨物、穀物、貨櫃重量驗證與油燃料安全資料。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>章節細項</h4>
+              <ul>
+                <li><b>A 部：</b>一般貨物積載與固定，要求貨方提供貨物資訊，船上備有貨物固定手冊。</li>
+                <li><b>B 部：</b>散裝固體貨物，參照 IMSBC Code，處理液化、化學危害與積載限制。</li>
+                <li><b>C 部：</b>穀物載運，涉及穀物移動造成自由液面與穩度風險。</li>
+                <li><b>油燃料注意：</b>油燃料安全資料與閃點要求常與第 II-2 章燃油起火風險規定連動。</li>
+              </ul>
+              <div class="memory">記憶：第 VI 章＝一般貨物安全裝載與繫固。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>貨艙用途改變、新增甲板貨、改變繫固點或運送易液化散貨時，須更新貨物固定手冊、裝載手冊、穩度資料與營運程序。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card cargo" id="ch-vii" data-keywords="危險貨物 IMDG IBC IGC INF 包裝危險品 散裝化學品 液化氣 放射性">
+          <div class="chapter-head">
+            <div class="chapter-no">VII</div>
+            <div class="chapter-title">
+              <h3>第 VII 章｜危險貨物載運</h3>
+              <p>核心：分類、包裝、標誌、文件、積載、隔離，以及危險散裝液體與氣體專船要求。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>章節細項</h4>
+              <ul>
+                <li><b>A 部：</b>包裝危險品，參照 IMDG Code。</li>
+                <li><b>A-1 部：</b>散裝固體危險貨物，重點為文件、積載、隔離與事故報告。</li>
+                <li><b>B 部：</b>散裝危險液體化學品，參照 IBC Code。</li>
+                <li><b>C 部：</b>散裝液化氣體，參照 IGC Code。</li>
+                <li><b>D 部：</b>包裝輻射性核燃料、鈽與高放射性廢料，參照 INF Code。</li>
+              </ul>
+              <div class="memory">記憶：第 VII 章＝危貨分類、隔離、文件與專船要求。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>若改裝後新增危險品載運能力，須同步檢查艙室防火、通風、排水、偵測、電氣防爆、貨物隔離與應急文件。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-viii" data-keywords="核能船舶 核動力 輻射 防護 安全評估">
+          <div class="chapter-head">
+            <div class="chapter-no">VIII</div>
+            <div class="chapter-title">
+              <h3>第 VIII 章｜核能船舶</h3>
+              <p>核心：核動力商船的安全評估、輻射防護、操作文件與特殊管制。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li>處理核動力裝置帶來的輻射、反應爐安全與操作風險。</li>
+                <li>須參照核能商船安全相關規範。</li>
+                <li>實務適用船舶極少，但概念上屬於高風險特殊船舶章節。</li>
+              </ul>
+              <div class="memory">記憶：第 VIII 章＝核動力與輻射安全。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>一般商船改裝極少涉及本章；若涉及核能動力或核相關設備，需進入特殊主管機關、船旗國與專門規範審查。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-ix" data-keywords="ISM SMS 安全管理 DOC SMC DPA 船長職責 事故 不符合 內部稽核">
+          <div class="chapter-head">
+            <div class="chapter-no">IX</div>
+            <div class="chapter-title">
+              <h3>第 IX 章｜船舶安全營運管理</h3>
+              <p>核心：強制實施 ISM Code，要求公司建立安全管理系統。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>管理重點</h4>
+              <ul>
+                <li><b>SMS：</b>安全與環境保護政策、職責權限、船上作業程序、緊急應變。</li>
+                <li><b>DPA：</b>指定岸上人員，負責船岸安全管理聯繫。</li>
+                <li><b>事故管理：</b>不符合事項、事故、危險情況報告與矯正措施。</li>
+                <li><b>發證：</b>公司為 DOC，船舶為 SMC。</li>
+              </ul>
+              <div class="memory">記憶：第 IX 章＝用管理制度防止事故。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>改裝若改變作業流程、設備維護、貨物操作或人員配置，應更新 SMS 程序、風險評估、維護計畫與演習內容。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-x" data-keywords="高速船 HSC Code 高速船安全證書 操作許可">
+          <div class="chapter-head">
+            <div class="chapter-no">X</div>
+            <div class="chapter-title">
+              <h3>第 X 章｜高速船舶安全措施</h3>
+              <p>核心：強制適用 HSC Code，針對高速客船與高速貨船建立替代安全框架。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li>高速船因速度高、結構輕、操縱特性特殊，不能完全套用傳統船舶規則。</li>
+                <li>重點包括結構、浮性、穩度、撤離、消防、航行控制與操作限制。</li>
+                <li>對應證書通常包括高速船安全證書與操作許可。</li>
+              </ul>
+              <div class="memory">記憶：第 X 章＝高速船專用安全規範。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>高速船改裝需特別注意重量控制、重心、撤離時間、操縱性能、結構材料與操作許可條件。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-xi-1" data-keywords="加強海上安全 RO 驗船協會 ESP IMO識別號 CSR 港口國管制 操作要求">
+          <div class="chapter-head">
+            <div class="chapter-no">XI-1</div>
+            <div class="chapter-title">
+              <h3>第 XI-1 章｜加強海上安全的特別措施</h3>
+              <p>核心：加強行政監督、船舶識別、認可組織授權與特殊船型檢驗。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>管理重點</h4>
+              <ul>
+                <li><b>RO：</b>認可組織，即受船旗國授權執行檢驗與發證的驗船機構。</li>
+                <li><b>ESP：</b>散裝貨船與油輪加強檢驗計畫。</li>
+                <li><b>IMO 船舶識別號：</b>永久標記於船體或機艙等位置。</li>
+                <li><b>CSR：</b>連續概要紀錄，記錄船舶歷史與管理資訊。</li>
+                <li><b>PSC：</b>港口國可就操作性要求進行管制。</li>
+              </ul>
+              <div class="memory">記憶：第 XI-1 章＝識別、檢驗、監督。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>改變船名、船籍、管理公司、船型用途或結構檢驗範圍時，須同步檢查 CSR、IMO 標記、ESP 與 RO 授權範圍。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-xi-2" data-keywords="海事保安 ISPS SSP SSO CSO SSAS 保安等級 港口設施">
+          <div class="chapter-head">
+            <div class="chapter-no">XI-2</div>
+            <div class="chapter-title">
+              <h3>第 XI-2 章｜加強海事保安的特別措施</h3>
+              <p>核心：強制納入 ISPS Code，建立船舶與港口設施的保安制度。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>保安重點</h4>
+              <ul>
+                <li><b>保安等級：</b>第 1、2、3 級，依威脅程度調整措施。</li>
+                <li><b>船舶文件：</b>船舶保安計畫 SSP、國際船舶保安證書 ISSC。</li>
+                <li><b>人員角色：</b>船舶保安員 SSO、公司保安員 CSO。</li>
+                <li><b>設備：</b>船舶保安警報系統 SSAS。</li>
+                <li><b>港口措施：</b>港口設施保安評估與港口設施保安計畫。</li>
+              </ul>
+              <div class="memory">記憶：第 XI-2 章＝反恐、保安、船港聯防。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>改變人員出入口、限制區、監控設備、貨物動線或港口操作模式時，應更新 SSP、保安圖面與演習程序。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-xii" data-keywords="散裝貨船 150公尺 艙壁 雙層底 強度 進水 穩度 結構檢查">
+          <div class="chapter-head">
+            <div class="chapter-no">XII</div>
+            <div class="chapter-title">
+              <h3>第 XII 章｜散裝貨船附加安全措施</h3>
+              <p>核心：針對大型散裝貨船結構、進水後安全與裝載限制提出額外要求。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li>重點船型為長度 150 公尺以上散裝貨船。</li>
+                <li>規範貨艙艙壁、雙層底強度與進水後船舶安全。</li>
+                <li>源於多起散裝貨船因結構失效、艙口進水或貨物風險造成沉沒的事故經驗。</li>
+              </ul>
+              <div class="memory">記憶：第 XII 章＝散裝貨船結構安全。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>散裝貨船改裝應特別注意貨艙結構、裝載手冊、艙口蓋水密性、腐蝕餘裕、ESP 檢驗與貨物流動風險。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card ops" id="ch-xiii" data-keywords="符合驗證 IMO 會員國稽核 IMSAS 船旗國 港口國 沿岸國">
+          <div class="chapter-head">
+            <div class="chapter-no">XIII</div>
+            <div class="chapter-title">
+              <h3>第 XIII 章｜符合驗證</h3>
+              <p>核心：強制實施 IMO 會員國稽核機制，確認國家履約能力。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>管理重點</h4>
+              <ul>
+                <li>適用對象是國家履約制度，而非單一船舶設備。</li>
+                <li>稽核船旗國、港口國與沿岸國履行 IMO 文書義務的能力。</li>
+                <li>有助於提升各國執行 SOLAS 的一致性與有效性。</li>
+              </ul>
+              <div class="memory">記憶：第 XIII 章＝查國家是否落實規範。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>此章不直接規範改裝設計，但會影響船旗國與 RO 對法規執行的嚴謹程度。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-xiv" data-keywords="極地 Polar Code 極地船舶證書 PWOM 低溫 結冰 搜救 通信 船員訓練">
+          <div class="chapter-head">
+            <div class="chapter-no">XIV</div>
+            <div class="chapter-title">
+              <h3>第 XIV 章｜極地水域營運船舶安全措施</h3>
+              <p>核心：強制適用 Polar Code 安全部分，處理低溫、結冰、偏遠與搜救困難等風險。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li><b>構造：</b>船體冰級、穩度、水密與耐低溫材料。</li>
+                <li><b>設備：</b>航行、通信、救生、消防與防寒設備。</li>
+                <li><b>操作：</b>極地水域操作手冊、航次計畫、操作限制與風險評估。</li>
+                <li><b>人員：</b>極地水域航行相關訓練與適任要求。</li>
+                <li><b>證書：</b>極地船舶證書。</li>
+              </ul>
+              <div class="memory">記憶：第 XIV 章＝極地航行特別安全。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>若船舶新增極地航線，需檢核冰區結構、低溫設備性能、救生保溫、通信覆蓋、極地手冊與船員訓練。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter-card special" id="ch-xv" data-keywords="工業人員 IP Code 工業人員安全證書 轉乘 離岸風電 油氣 養殖 海底採礦">
+          <div class="chapter-head">
+            <div class="chapter-no">XV</div>
+            <div class="chapter-title">
+              <h3>第 XV 章｜載運工業人員船舶安全措施</h3>
+              <p>核心：規範載運工業人員之船舶與人員安全，特別是離岸作業與人員轉乘風險。</p>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="note-block">
+              <h4>技術重點</h4>
+              <ul>
+                <li><b>適用背景：</b>離岸風場、油氣設施、養殖、海底採礦、維修、建造、拆除與服務作業。</li>
+                <li><b>核心風險：</b>人員轉乘、非傳統乘客風險、醫療適任、訓練、集合與救生容量。</li>
+                <li><b>強制性章程：</b>IP Code。</li>
+                <li><b>證書：</b>適用船舶應依 IP Code 取得工業人員安全證書及設備紀錄。</li>
+                <li><b>設計連動：</b>分艙穩度、機電、消防、救生、危險品與人員轉乘設備均可能連動。</li>
+              </ul>
+              <div class="memory">記憶：第 XV 章＝離岸工業人員載運與轉乘安全。</div>
+            </div>
+            <div class="project-note">
+              <h4>改裝專案重點</h4>
+              <p>既有貨船若改裝為可載運工業人員，須檢核總人數、住艙、救生、轉乘設備、緊急電源、集合站、醫療與訓練證明，並確認是否需依 IP Code 重新發證。</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="codes">
+        <h2>五、SOLAS 強制性章程對照表</h2>
+        <div class="code-grid">
+          <div class="code-item"><b>LSA Code</b><span>第 III 章：救生設備與佈置的技術細節。</span></div>
+          <div class="code-item"><b>FSS Code</b><span>第 II-2 章：固定滅火、偵測、消防系統等技術要求。</span></div>
+          <div class="code-item"><b>IMSBC Code</b><span>第 VI 章：散裝固體貨物安全載運。</span></div>
+          <div class="code-item"><b>Grain Code</b><span>第 VI 章：穀物裝載與穩度要求。</span></div>
+          <div class="code-item"><b>IMDG Code</b><span>第 VII 章 A 部：包裝危險貨物。</span></div>
+          <div class="code-item"><b>IBC Code</b><span>第 VII 章 B 部：散裝危險液體化學品船。</span></div>
+          <div class="code-item"><b>IGC Code</b><span>第 VII 章 C 部：散裝液化氣體船。</span></div>
+          <div class="code-item"><b>INF Code</b><span>第 VII 章 D 部：包裝輻射性核燃料等特殊貨物。</span></div>
+          <div class="code-item"><b>ISM Code</b><span>第 IX 章：公司與船舶安全管理系統。</span></div>
+          <div class="code-item"><b>HSC Code</b><span>第 X 章：高速船設計、設備與操作。</span></div>
+          <div class="code-item"><b>ISPS Code</b><span>第 XI-2 章：船舶與港口設施保安。</span></div>
+          <div class="code-item"><b>Polar Code</b><span>第 XIV 章：極地水域設計、設備、操作與訓練。</span></div>
+          <div class="code-item"><b>IP Code</b><span>第 XV 章：載運工業人員與人員轉乘安全。</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="documents">
+        <h2>六、改裝送審文件快速清單</h2>
+        <p class="lead">以下清單可作為改裝專案初期盤點，不取代船旗國或認可組織正式要求。</p>
+        <div class="checklist">
+          <div class="check">總布置圖、艙室用途變更說明與受影響區域清單。</div>
+          <div class="check">重量估算、重心變化、吃水變化與完整／破損穩度計算書。</div>
+          <div class="check">水密艙壁、門、艙口、通海閥與貫穿件配置圖。</div>
+          <div class="check">防火控制圖、A／B 級分隔圖、防火貫穿件與逃生路線圖。</div>
+          <div class="check">火災偵測、警報、固定滅火、通風防火擋板與消防設備配置。</div>
+          <div class="check">救生艇筏、救助艇、集合站、登乘設備與救生容量核算。</div>
+          <div class="check">主電源、緊急電源、緊急配電板與關鍵負載清單。</div>
+          <div class="check">橋樓航行設備、GMDSS 設備、天線與證書附件更新。</div>
+          <div class="check">貨物固定手冊、裝載手冊、危險貨物隔離與貨艙適用性分析。</div>
+          <div class="check">SMS、SSP、應變程序、操演計畫、維護保養與船員訓練更新。</div>
+        </div>
+      </section>
+
+      <section class="section" id="updates">
+        <h2>七、近年更新提醒</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>時間</th>
+              <th>重點</th>
+              <th>對專案的提醒</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="date-cell"><b>2024/07/01</b></td>
+              <td>第 XV 章「載運工業人員船舶安全措施」生效，並與 IP Code 連動。</td>
+              <td>離岸風電、油氣與其他離岸工程船改裝，應確認是否進入 IP Code 發證範圍。</td>
+            </tr>
+            <tr>
+              <td class="date-cell"><b>2026/01/01</b></td>
+              <td>第 II-2 章燃油閃點相關修正，要求防止供應不符合 SOLAS 閃點要求的燃油。</td>
+              <td>涉及燃油系統、加油程序或燃油文件者，應檢查供應商聲明與閃點測試方法紀錄。</td>
+            </tr>
+            <tr>
+              <td class="date-cell"><b>2026/01/01</b></td>
+              <td>第 II-2 與第 V 章相關修正、LSA Code、FSS Code、Polar Code 等也有近期修正項目。</td>
+              <td>消防、航儀、救生、極地營運與相關設備改裝，應逐項核對最新版要求。</td>
+            </tr>
+            <tr>
+              <td class="date-cell"><b>2028/01/01</b></td>
+              <td>第 II-1 章另有修正預定生效。</td>
+              <td>中長期新造或大型改裝案，應在設計初期預留法規變更裕度。</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="warning">
+          <b>實務提醒：</b>SOLAS 持續透過修正案更新，實際適用版本須以船舶建造日期、改裝開工日期、船旗國實施規定、認可組織通告與最新版公約文本為準。
+        </div>
+      </section>
+
+      <section class="section" id="sources">
+        <h2>資料來源</h2>
+        <ul class="source">
+          <li>IMO：International Convention for the Safety of Life at Sea, 1974。</li>
+          <li>IMO：Amendments to IMO instruments。</li>
+          <li>IMO：Summary of SOLAS chapter II-2。</li>
+          <li>IMO：Summary of SOLAS chapter III。</li>
+          <li>IMO：Polar Code。</li>
+          <li>IMO：Resolution MSC.527(106), IP Code。</li>
+        </ul>
+        <p class="source">
+          本頁為學習與專案初步盤點用途，不取代官方公約文本、船旗國法規、認可組織規則或正式送審意見。
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <strong>Reay Huang Maritime Notes｜SOLAS 法規架構摘要</strong><br>
+    整理日期：2026 年 6 月 2 日。資料來源：IMO SOLAS 1974 公約及相關修正案摘要。<br>
+    備註：本頁為個人學習與專案初步盤點用途，不取代官方公約文本、船旗國法規、認可組織規則或正式送審意見。
+  </footer>
+
+  <button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" type="button">回頂部</button>
+
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function resetScrollOnReload() {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!nav || nav.type !== 'reload') return;
+
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('pageshow', resetScrollOnReload);
+    window.addEventListener('load', resetScrollOnReload);
+  </script>
+
+</div>
+</body>
+</html>
