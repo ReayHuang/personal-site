@@ -689,20 +689,6 @@
     }
     .source li{margin:6px 0}
 
-    .top-btn{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      border:none;
-      border-radius:999px;
-      background:var(--navy);
-      color:#fff;
-      padding:12px 16px;
-      font-weight:900;
-      box-shadow:var(--shadow);
-      cursor:pointer;
-    }
-
     .footer {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
@@ -736,7 +722,7 @@
 
     @media print{
       body{background:#fff}
-      .note-site-bar,.nav-shell,.top-btn{display:none}
+      .note-site-bar,.nav-shell{display:none}
       .note-main{max-width:100%;padding:0}
       .hero{padding:28px;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
       .section,.chapter-card{box-shadow:none;break-inside:avoid}
@@ -1548,8 +1534,7 @@
     Note: This page is for personal learning and preliminary project screening only. It does not replace official convention text, flag State regulations, recognized organization rules, or formal submission comments.
   </footer>
 
-  <button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" type="button">Back to top</button>
-
+  <script src="../../assets/js/back-to-top.js"></script>
   <script src="../../assets/js/article-share.js"></script>
   <script>
     if ('scrollRestoration' in history) {
