@@ -329,7 +329,7 @@ img {
   gap: 0.5rem;
   padding: 0.75rem 1.35rem;
   background: var(--lr-teal);
-  color: var(--lr-navy);
+  color: #fff;
   font-weight: 700;
   font-size: 0.9rem;
   border-radius: var(--radius);
@@ -359,7 +359,7 @@ img {
 
 .btn:hover {
   background: #33d4c8;
-  color: var(--lr-navy);
+  color: #fff;
   text-decoration: none;
 }
 
