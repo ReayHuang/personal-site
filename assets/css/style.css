@@ -619,16 +619,18 @@ html[lang="zh-Hant"] .featured-card__badge {
 }
 
 .featured-card__badge {
-  align-self: flex-start;
   background: rgba(0, 197, 183, 0.12);
   border-radius: 999px;
   color: var(--lr-hero);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  margin-bottom: 0.85rem;
   padding: 0.2rem 0.55rem;
+  position: absolute;
+  right: 1.5rem;
   text-transform: uppercase;
+  top: 1.35rem;
+  z-index: 1;
 }
 
 .featured-card .meta {
@@ -637,6 +639,7 @@ html[lang="zh-Hant"] .featured-card__badge {
   font-weight: 600;
   letter-spacing: 0.04em;
   margin: 0 0 0.6rem;
+  padding-right: 5.75rem;
   text-transform: uppercase;
 }
 
