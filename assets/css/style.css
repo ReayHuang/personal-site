@@ -458,6 +458,195 @@ a.card:focus-visible {
   color: var(--lr-muted);
 }
 
+/* 首頁精選文章（index.html / index.zh.html） */
+.home-with-featured .value-strip {
+  margin-bottom: 0;
+}
+
+.home-with-featured .site-main {
+  padding-top: 1.25rem;
+}
+
+.featured-section {
+  background: var(--lr-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  padding: 2rem 1.75rem 1.75rem;
+}
+
+.featured-section .section-title {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.featured-pick-label {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--lr-hero);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.65rem;
+  text-transform: uppercase;
+}
+
+html[lang="zh-Hant"] .featured-card .meta,
+html[lang="zh-Hant"] .featured-card__badge {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.featured-section .section-subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.featured-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1.15fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .featured-card--lead {
+    grid-row: 1 / -1;
+  }
+}
+
+.featured-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem 1.5rem 1.5rem;
+  position: relative;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.featured-card::before {
+  background: linear-gradient(90deg, var(--lr-teal), var(--lr-hero));
+  border-radius: var(--radius) var(--radius) 0 0;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.featured-card:hover,
+.featured-card:focus-visible {
+  border-color: var(--lr-teal);
+  box-shadow: 0 10px 28px rgba(7, 13, 25, 0.08);
+  outline: none;
+}
+
+.featured-card:focus-visible {
+  outline: 2px solid var(--lr-teal);
+  outline-offset: 2px;
+}
+
+.featured-card:hover h3,
+.featured-card:focus-visible h3 {
+  color: var(--lr-teal);
+}
+
+.featured-card__badge {
+  align-self: flex-start;
+  background: rgba(0, 197, 183, 0.12);
+  border-radius: 999px;
+  color: var(--lr-hero);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+  padding: 0.2rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.featured-card .meta {
+  color: var(--lr-teal);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+}
+
+.featured-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 0.5rem;
+}
+
+.featured-card--lead h3 {
+  font-size: 1.35rem;
+}
+
+.featured-card--lead {
+  min-height: 100%;
+}
+
+.featured-card__preview {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.featured-card__preview img {
+  aspect-ratio: 1200 / 629;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.featured-card--lead .featured-card__cta {
+  margin-top: 1rem;
+}
+
+.featured-card p {
+  color: var(--lr-muted);
+  flex: 1;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.featured-card__cta {
+  color: var(--lr-teal);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.featured-card:hover .featured-card__cta,
+.featured-card:focus-visible .featured-card__cta {
+  text-decoration: underline;
+}
+
+.latest-divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0 0 1.25rem;
+}
+
+.home-with-featured .latest-section-title {
+  margin-top: 0;
+}
+
 /* 關於我 */
 .profile {
   display: grid;

@@ -29,9 +29,9 @@
   <link rel="alternate" hreflang="en" href="index.html" />
   <link rel="alternate" hreflang="zh-Hant" href="index.zh.html" />
   <link rel="alternate" hreflang="x-default" href="index.html" />
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260602">
 </head>
-<body>
+<body class="home-with-featured">
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-logo" href="index.html">
@@ -105,7 +105,48 @@
   </section>
 
   <main class="site-main">
-    <h2 class="section-title">Latest content</h2>
+    <section class="featured-section" aria-labelledby="featured-title">
+      <h2 id="featured-title" class="section-title">Featured <span class="featured-pick-label">Editor's pick</span></h2>
+      <p class="section-subtitle">Hand-picked articles — survey essentials and recent regulatory updates</p>
+
+      <div class="featured-grid">
+        <a class="featured-card featured-card--lead" href="notes/maritime/solas-structure-notes.en.html">
+          <span class="featured-card__badge">Featured</span>
+          <p class="meta">2026-06 · Maritime Note · SOLAS</p>
+          <h3>SOLAS Regulatory Framework Summary</h3>
+          <p>A practical guide to the SOLAS convention structure, chapter map, retrofit implications, mandatory codes, and submission checklist.</p>
+          <div class="featured-card__preview">
+            <img
+              src="assets/images/maritime/solas-structure-linkedin-preview.en-1200.jpg"
+              alt="SOLAS regulatory framework — chapters, mandatory codes, and survey logic"
+              width="1200"
+              height="629"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <span class="featured-card__cta">Read article →</span>
+        </a>
+        <a class="featured-card" href="notes/maritime/explosion-protection-notes.en.html">
+          <span class="featured-card__badge">Featured</span>
+          <p class="meta">2026-06 · Maritime Note</p>
+          <h3>Hazardous Area Explosion Protection</h3>
+          <p>Ex markings, zone classification, verification dossiers, and common field risks.</p>
+          <span class="featured-card__cta">Read article →</span>
+        </a>
+        <a class="featured-card" href="notes/maritime/new-construction-pm-notes.en.html">
+          <span class="featured-card__badge">Featured</span>
+          <p class="meta">2026-05 · Maritime Note · NCPM</p>
+          <h3>New Construction Project Management Six-Step</h3>
+          <p>A six-step guide from project initiation to delivery close-out — PM and surveyor roles, key documents, and checklists.</p>
+          <span class="featured-card__cta">Read article →</span>
+        </a>
+      </div>
+    </section>
+
+    <hr class="latest-divider" aria-hidden="true">
+
+    <h2 class="section-title latest-section-title">Latest content</h2>
     <p class="section-subtitle">Maritime notes, management notes, and profile</p>
 
     <div class="card-grid">
@@ -177,7 +218,7 @@
       <a class="card" href="about.en.html">
         <p class="meta">About</p>
         <h3>Experience · Education · LinkedIn</h3>
-        <p>LR and Evergreen background; master's degrees from NYCU and NCKU.</p>
+        <p>LR and Evergreen background; two Master's degrees from NYCU and NCKU, with research in hull structural strength analysis and supply chain logistics, grounded in sea service, headquarters shore-side roles, and regulatory ship survey experience.</p>
       </a>
     </div>
   </main>

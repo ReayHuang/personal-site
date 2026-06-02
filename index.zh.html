@@ -29,9 +29,9 @@
   <link rel="alternate" hreflang="en" href="index.html" />
   <link rel="alternate" hreflang="zh-Hant" href="index.zh.html" />
   <link rel="alternate" hreflang="x-default" href="index.html" />
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260602">
 </head>
-<body>
+<body class="home-with-featured">
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-logo" href="index.zh.html">
@@ -103,7 +103,48 @@
   </section>
 
   <main class="site-main">
-    <h2 class="section-title">最新內容</h2>
+    <section class="featured-section" aria-labelledby="featured-title">
+      <h2 id="featured-title" class="section-title">精選文章 <span class="featured-pick-label">編輯精選</span></h2>
+      <p class="section-subtitle">檢驗必讀與近期法規更新 — 優先推薦閱讀</p>
+
+      <div class="featured-grid">
+        <a class="featured-card featured-card--lead" href="notes/maritime/solas-structure-notes.html">
+          <span class="featured-card__badge">精選</span>
+          <p class="meta">2026-06 · 海事筆記 · SOLAS</p>
+          <h3>SOLAS 法規架構摘要筆記</h3>
+          <p>整理 SOLAS 公約架構、章節全景、船舶改裝關聯、強制性章程與送審文件清單，作為檢驗與專案初步盤點參考。</p>
+          <div class="featured-card__preview">
+            <img
+              src="assets/images/maritime/solas-structure-linkedin-preview-1200.jpg"
+              alt="SOLAS 法規架構總覽 — 公約本文、章節、強制性規則、檢驗與證書的實務地圖"
+              width="1200"
+              height="629"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <span class="featured-card__cta">閱讀文章 →</span>
+        </a>
+        <a class="featured-card" href="notes/maritime/explosion-protection-notes.html">
+          <span class="featured-card__badge">精選</span>
+          <p class="meta">2026-06 · 海事筆記</p>
+          <h3>危險區域防爆設備分類</h3>
+          <p>Ex 防爆標示、Zone 分區、查證文件與常見現場風險重點整理。</p>
+          <span class="featured-card__cta">閱讀文章 →</span>
+        </a>
+        <a class="featured-card" href="notes/maritime/new-construction-pm-notes.html">
+          <span class="featured-card__badge">精選</span>
+          <p class="meta">2026-05 · 海事筆記 · 新造船專案管理</p>
+          <h3>新造船專案管理六大階段筆記</h3>
+          <p>從專案啟動到交付結案六大步驟 — PM 與驗船師分工、文件清單與表單速查。</p>
+          <span class="featured-card__cta">閱讀文章 →</span>
+        </a>
+      </div>
+    </section>
+
+    <hr class="latest-divider" aria-hidden="true">
+
+    <h2 class="section-title latest-section-title">最新內容</h2>
     <p class="section-subtitle">海事筆記、管理筆記與個人簡介</p>
 
     <div class="card-grid">
@@ -175,7 +216,7 @@
       <a class="card" href="about.html">
         <p class="meta">關於我</p>
         <h3>工作經歷 · 教育背景 · LinkedIn</h3>
-        <p>LR、長榮海運資歷，陽明交大與成大碩士學位。</p>
+        <p>LR、長榮海運資歷；陽明交大與成大雙碩士，研究項目涵蓋船體結構強度分析與供應鏈物流管理，並結合實務船上與總部岸端服務與船舶法規檢驗經驗。</p>
       </a>
     </div>
   </main>
