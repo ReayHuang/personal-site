@@ -14,20 +14,44 @@ All HTML files are served as-is from the repository root. No build step is requi
 
 ### Pages
 
+Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defaultLocale`: `en`).
+
+**Site**
+
 | Path | Description |
 |------|-------------|
 | `index.html` | English homepage (default) with hero banner |
 | `index.zh.html` | Traditional Chinese homepage |
 | `index.en.html` | Redirect to `index.html` (legacy URL) |
-| `about.html` | About / CV page (Traditional Chinese) |
-| `about.en.html` | About / CV page (English) |
-| `notes/index.html` | Maritime notes listing (Traditional Chinese) |
+| `about.en.html` | About / CV (English) |
+| `about.html` | About / CV (Traditional Chinese) |
 | `notes/index.en.html` | Maritime notes listing (English) |
-| `notes/maritime/class-survey-basics.html` | Ship classification & regulations note |
-| `research/index.html` | Management notes listing (Traditional Chinese) |
+| `notes/index.html` | Maritime notes listing (Traditional Chinese) |
 | `research/index.en.html` | Management notes listing (English) |
-| `research/sbc-demand-classification.html` | SBC demand classification research |
-| `research/sample-study.html` | Sample study template |
+| `research/index.html` | Management notes listing (Traditional Chinese) |
+
+**Maritime notes** (`notes/maritime/`)
+
+| Slug | English | Traditional Chinese |
+|------|---------|---------------------|
+| SOLAS framework | `solas-structure-notes.en.html` | `solas-structure-notes.html` |
+| Explosion protection | `explosion-protection-notes.en.html` | `explosion-protection-notes.html` |
+| LPG fuel | `lpg-fuel-notes.en.html` | `lpg-fuel-notes.html` |
+| New construction PM | `new-construction-pm-notes.en.html` | `new-construction-pm-notes.html` |
+| Surveyor 6S / lean | `surveyor-6s-lean-management-notes.en.html` | `surveyor-6s-lean-management-notes.html` |
+| IMO MSC 111 | `msc-111-visual-notes.en.html` | `msc-111-visual-notes.html` |
+| GMDSS | `gmdss-radiocommunications-notes.en.html` | `gmdss-radiocommunications-notes.html` |
+| LNG fuel | `lng-fuel-notes.en.html` | `lng-fuel-notes.html` |
+| Methanol fuel | `methanol-fuel-notes.en.html` | `methanol-fuel-notes.html` |
+| MEPC 83 / 84 | `mepc-83-84-visual-notes.en.html` | `mepc-83-84-visual-notes.html` |
+
+**Management notes** (`research/`)
+
+| Slug | English | Traditional Chinese |
+|------|---------|---------------------|
+| 5S study | `5s-study-notes.en.html` | `5s-study-notes.html` |
+| Business statistics | `stats-business-application.en.html` | `stats-business-application.html` |
+| SBC demand classification | `sbc-demand-classification.en.html` | `sbc-demand-classification.html` |
 
 ### Internationalization
 
@@ -40,7 +64,7 @@ All HTML files are served as-is from the repository root. No build step is requi
 - **Language switch**: EN link appears before 繁中 in the header on every page.
 - **Adding content**: create the English page first, add it to the `*.en.html` listing, then add Traditional Chinese if needed.
 
-See `README.md` for file naming and listing conventions.
+See `README.md` for file naming and listing conventions. For machine-readable locale pairs, see `i18n/manifest.json`.
 
 ### Lint / Test / Build
 

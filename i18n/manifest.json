@@ -1,66 +1,123 @@
 {
-  "defaultLocale": "zh-Hant",
-  "locales": ["zh-Hant", "en"],
-  "convention": "Chinese pages use {slug}.html; English pages use {slug}.en.html in the same folder.",
+  "defaultLocale": "en",
+  "locales": ["en", "zh-Hant"],
+  "convention": "English-primary site: English pages use {slug}.en.html or index.html at root; Traditional Chinese uses {slug}.html or index.zh.html for homepage. x-default hreflang points to English.",
   "pages": [
     {
       "slug": "home",
       "type": "site",
-      "zh": "index.html",
-      "en": "index.en.html"
+      "en": "index.html",
+      "zh": "index.zh.html",
+      "redirect": "index.en.html"
     },
     {
       "slug": "about",
       "type": "site",
-      "zh": "about.html",
-      "en": "about.en.html"
+      "en": "about.en.html",
+      "zh": "about.html"
     },
     {
       "slug": "notes-index",
       "type": "site",
-      "zh": "notes/index.html",
-      "en": "notes/index.en.html"
+      "en": "notes/index.en.html",
+      "zh": "notes/index.html"
     },
     {
       "slug": "research-index",
       "type": "site",
-      "zh": "research/index.html",
-      "en": "research/index.en.html"
+      "en": "research/index.en.html",
+      "zh": "research/index.html"
     },
     {
-      "slug": "sbc-demand-classification",
-      "type": "article",
-      "category": "research",
-      "zh": "research/sbc-demand-classification.html",
-      "en": "research/sbc-demand-classification.en.html"
-    },
-    {
-      "slug": "lng-fuel-notes",
+      "slug": "solas-structure-notes",
       "type": "article",
       "category": "notes",
-      "zh": "notes/maritime/lng-fuel-notes.html",
-      "en": "notes/maritime/lng-fuel-notes.en.html"
+      "en": "notes/maritime/solas-structure-notes.en.html",
+      "zh": "notes/maritime/solas-structure-notes.html"
     },
     {
-      "slug": "methanol-fuel-notes",
+      "slug": "explosion-protection-notes",
       "type": "article",
       "category": "notes",
-      "zh": "notes/maritime/methanol-fuel-notes.html",
-      "en": "notes/maritime/methanol-fuel-notes.en.html"
+      "en": "notes/maritime/explosion-protection-notes.en.html",
+      "zh": "notes/maritime/explosion-protection-notes.html"
     },
     {
-      "slug": "mepc-83-84-visual-notes",
+      "slug": "lpg-fuel-notes",
       "type": "article",
       "category": "notes",
-      "zh": "notes/maritime/mepc-83-84-visual-notes.html",
-      "en": "notes/maritime/mepc-83-84-visual-notes.en.html"
+      "en": "notes/maritime/lpg-fuel-notes.en.html",
+      "zh": "notes/maritime/lpg-fuel-notes.html"
+    },
+    {
+      "slug": "new-construction-pm-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/new-construction-pm-notes.en.html",
+      "zh": "notes/maritime/new-construction-pm-notes.html"
+    },
+    {
+      "slug": "surveyor-6s-lean-management-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/surveyor-6s-lean-management-notes.en.html",
+      "zh": "notes/maritime/surveyor-6s-lean-management-notes.html"
     },
     {
       "slug": "msc-111-visual-notes",
       "type": "article",
       "category": "notes",
-      "zh": "notes/maritime/msc-111-visual-notes.html",
-      "en": "notes/maritime/msc-111-visual-notes.en.html"
+      "en": "notes/maritime/msc-111-visual-notes.en.html",
+      "zh": "notes/maritime/msc-111-visual-notes.html"
+    },
+    {
+      "slug": "gmdss-radiocommunications-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/gmdss-radiocommunications-notes.en.html",
+      "zh": "notes/maritime/gmdss-radiocommunications-notes.html"
+    },
+    {
+      "slug": "lng-fuel-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/lng-fuel-notes.en.html",
+      "zh": "notes/maritime/lng-fuel-notes.html"
+    },
+    {
+      "slug": "methanol-fuel-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/methanol-fuel-notes.en.html",
+      "zh": "notes/maritime/methanol-fuel-notes.html"
+    },
+    {
+      "slug": "mepc-83-84-visual-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/mepc-83-84-visual-notes.en.html",
+      "zh": "notes/maritime/mepc-83-84-visual-notes.html"
+    },
+    {
+      "slug": "5s-study-notes",
+      "type": "article",
+      "category": "research",
+      "en": "research/5s-study-notes.en.html",
+      "zh": "research/5s-study-notes.html"
+    },
+    {
+      "slug": "stats-business-application",
+      "type": "article",
+      "category": "research",
+      "en": "research/stats-business-application.en.html",
+      "zh": "research/stats-business-application.html"
+    },
+    {
+      "slug": "sbc-demand-classification",
+      "type": "article",
+      "category": "research",
+      "en": "research/sbc-demand-classification.en.html",
+      "zh": "research/sbc-demand-classification.html"
     }
   ]
 }
