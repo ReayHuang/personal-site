@@ -277,6 +277,11 @@ img {
   max-width: 36rem;
 }
 
+.hero-banner .lead__follow {
+  display: block;
+  margin-top: 0.65rem;
+}
+
 .hero-banner__photo {
   width: 180px;
   height: auto;
