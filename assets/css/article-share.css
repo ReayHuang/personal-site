@@ -9,13 +9,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 14px;
+  gap: 8px 10px;
 }
 
 .article-share__label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: inherit;
   opacity: 0.85;
   margin: 0;
@@ -24,7 +24,7 @@
 .article-share__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
 }
 
@@ -32,13 +32,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 40px;
-  padding: 0 14px;
+  gap: 5px;
+  min-height: 32px;
+  padding: 0 10px;
   border-radius: 999px;
   border: 1px solid transparent;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
@@ -57,15 +57,15 @@
 }
 
 .share-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
 }
 
 .share-btn--linkedin {
   background: var(--share-linkedin);
   color: #fff;
-  box-shadow: 0 6px 16px rgba(10, 102, 194, 0.28);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.22);
 }
 
 .share-btn--linkedin:hover {
@@ -76,7 +76,7 @@
 .share-btn--facebook {
   background: var(--share-facebook);
   color: #fff;
-  box-shadow: 0 6px 16px rgba(24, 119, 242, 0.26);
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.2);
 }
 
 .share-btn--facebook:hover {
@@ -181,8 +181,9 @@
   }
 
   .share-btn {
-    padding: 0 12px;
-    min-width: 44px;
+    padding: 0 9px;
+    min-width: 36px;
+    min-height: 32px;
   }
 
   .article-share__label {
