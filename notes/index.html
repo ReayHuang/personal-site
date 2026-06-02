@@ -115,9 +115,19 @@
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p><a href="../index.zh.html">← 返回首頁</a></p>
+      <p class="site-footer__brand">Reay Huang Maritime Notes</p>
+      <p class="site-footer__tagline">海事檢驗、船級與航運技術的實務筆記。</p>
+      <p class="site-footer__copy">© <span id="year"></span> Reay Huang. 個人專業分享網站。</p>
+      <div class="site-footer__meta-row">
+        <p class="site-footer__meta">
+          <a href="https://www.linkedin.com/in/yen-jui-huang-pmp%C2%AE-a74285a2/" rel="noopener noreferrer">LinkedIn</a>
+          · 現任 <a href="https://www.lr.org/en/" rel="noopener noreferrer">Lloyd's Register</a>。
+        </p>
+        <p class="site-footer__disclaimer">本網站所有觀點、筆記與意見均為個人立場，不代表 Lloyd's Register 或任何客戶。</p>
+      </div>
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

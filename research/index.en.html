@@ -79,9 +79,19 @@
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p><a href="../index.html">← Back to home</a></p>
+      <p class="site-footer__brand">Reay Huang Maritime Notes</p>
+      <p class="site-footer__tagline">Practical notes on maritime assurance, classification, and shipping technology.</p>
+      <p class="site-footer__copy">© <span id="year"></span> Reay Huang. Personal professional site.</p>
+      <div class="site-footer__meta-row">
+        <p class="site-footer__meta">
+          <a href="https://www.linkedin.com/in/yen-jui-huang-pmp%C2%AE-a74285a2/" rel="noopener noreferrer">LinkedIn</a>
+          · Currently with <a href="https://www.lr.org/en/" rel="noopener noreferrer">Lloyd's Register</a>.
+        </p>
+        <p class="site-footer__disclaimer">All views, notes, and opinions are personal and do not represent Lloyd's Register or any client.</p>
+      </div>
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
