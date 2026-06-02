@@ -512,12 +512,7 @@ html[lang="zh-Hant"] .featured-card__badge {
 
 @media (min-width: 768px) {
   .featured-grid {
-    grid-template-columns: 1.15fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .featured-card--lead {
-    grid-row: 1 / -1;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -591,14 +586,6 @@ html[lang="zh-Hant"] .featured-card__badge {
   margin: 0 0 0.5rem;
 }
 
-.featured-card--lead h3 {
-  font-size: 1.35rem;
-}
-
-.featured-card--lead {
-  min-height: 100%;
-}
-
 .featured-card__preview {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -612,25 +599,6 @@ html[lang="zh-Hant"] .featured-card__badge {
   height: auto;
   object-fit: cover;
   width: 100%;
-}
-
-.featured-card__preview--wide img {
-  aspect-ratio: 16 / 9;
-}
-
-/* 桌面右欄小卡不加預覽圖，避免擠壓；手機單欄堆疊時顯示 */
-.featured-card:not(.featured-card--lead) .featured-card__preview {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .featured-card:not(.featured-card--lead) .featured-card__preview {
-    display: block;
-  }
-}
-
-.featured-card--lead .featured-card__cta {
-  margin-top: 1rem;
 }
 
 .featured-card p {
