@@ -635,6 +635,7 @@ html[lang="zh-Hant"] .featured-card__badge {
 
 .featured-card .meta {
   color: var(--lr-teal);
+  flex: none;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -665,7 +666,7 @@ html[lang="zh-Hant"] .featured-card__badge {
   width: 100%;
 }
 
-.featured-card p {
+.featured-card > p:not(.meta) {
   color: var(--lr-muted);
   flex: 1;
   font-size: 0.95rem;
