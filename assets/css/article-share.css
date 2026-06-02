@@ -121,6 +121,60 @@
   color: #d4ffe8;
 }
 
+/* Hero share inside light hero areas */
+.hero-card .article-share--hero,
+.pm-hero .article-share--hero,
+.hero--light .article-share--hero {
+  margin-top: 16px;
+}
+
+.hero-card .article-share--hero {
+  margin-bottom: 14px;
+}
+
+.hero-card .article-share--hero .article-share__label,
+.pm-hero .article-share--hero .article-share__label,
+.hero--light .article-share--hero .article-share__label {
+  color: #60758a;
+}
+
+.hero-card .article-share--hero .share-btn--copy,
+.pm-hero .article-share--hero .share-btn--copy,
+.hero--light .article-share--hero .share-btn--copy {
+  background: #f0f7fc;
+  border-color: #c5dff0;
+  color: #07304f;
+}
+
+.hero-card .article-share--hero .share-btn--copy:hover,
+.pm-hero .article-share--hero .share-btn--copy:hover,
+.hero--light .article-share--hero .share-btn--copy:hover {
+  background: #e3f2fa;
+  color: #07304f;
+}
+
+.hero-card .article-share--hero .share-btn--email,
+.pm-hero .article-share--hero .share-btn--email,
+.hero--light .article-share--hero .share-btn--email {
+  border-color: #dce8f1;
+  color: #0b6fa4;
+}
+
+.hero-card .article-share--hero .share-btn--email:hover,
+.pm-hero .article-share--hero .share-btn--email:hover,
+.hero--light .article-share--hero .share-btn--email:hover {
+  background: #f0f7fc;
+  color: #0b6fa4;
+}
+
+.hero-card .article-share--hero .share-btn--copy.is-copied,
+.pm-hero .article-share--hero .share-btn--copy.is-copied,
+.hero--light .article-share--hero .share-btn--copy.is-copied {
+  border-color: rgba(40, 166, 106, 0.45);
+  background: #eaf8f0;
+  color: #1a6b42;
+}
+
 /* End of article (scheme C) — light background */
 .article-share--end .article-share__label {
   font-size: 13px;
