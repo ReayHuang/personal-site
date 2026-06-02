@@ -614,6 +614,21 @@ html[lang="zh-Hant"] .featured-card__badge {
   width: 100%;
 }
 
+.featured-card__preview--wide img {
+  aspect-ratio: 16 / 9;
+}
+
+/* 桌面右欄小卡不加預覽圖，避免擠壓；手機單欄堆疊時顯示 */
+.featured-card:not(.featured-card--lead) .featured-card__preview {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .featured-card:not(.featured-card--lead) .featured-card__preview {
+    display: block;
+  }
+}
+
 .featured-card--lead .featured-card__cta {
   margin-top: 1rem;
 }
