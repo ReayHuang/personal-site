@@ -1,0 +1,2299 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../assets/js/gtag-config.js"></script>
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    (function () {
+      var nav =
+        performance.getEntriesByType &&
+        performance.getEntriesByType("navigation")[0];
+      if (!nav || nav.type !== "reload") return;
+      if (location.hash) {
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+      scrollTo(0, 0);
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+
+  <title>從經驗採購到資料化船隊備品管理｜Reay's Note</title>
+  <meta name="description" content="碩士論文研究摘要：以 6,944 TEU 貨櫃船船隊燃油閥備品為案例，結合 PDCA、MRP 與 MPDC，建立船隊維修備品需求預測與採購規劃模型。" />
+  <meta name="author" content="Reay Huang" />
+  <meta property="og:title" content="從經驗採購到資料化船隊備品管理｜Reay's Note" />
+  <meta property="og:description" content="碩士論文研究摘要：以貨櫃船船隊燃油閥備品為案例，結合 PDCA、MRP 與 MPDC，建立船隊維修備品需求預測與採購規劃模型。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay Huang Maritime Notes" />
+  <meta property="og:url" content="https://reayhuang.com/research/fleet-spares-thesis-notes.html" />
+  <link rel="canonical" href="https://reayhuang.com/research/fleet-spares-thesis-notes.html" />
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/research/fleet-spares-thesis-linkedin-preview-1200.png" />
+  <meta property="og:image:alt" content="從經驗採購到資料化船隊備品管理｜Reay's Note" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="537" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="從經驗採購到資料化船隊備品管理｜Reay's Note" />
+  <meta name="twitter:description" content="碩士論文研究摘要：以貨櫃船船隊燃油閥備品為案例，結合 PDCA、MRP 與 MPDC，建立船隊維修備品需求預測與採購規劃模型。" />
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/research/fleet-spares-thesis-linkedin-preview-1200.png" />
+  <link rel="alternate" hreflang="zh-Hant" href="fleet-spares-thesis-notes.html" />
+  <link rel="alternate" hreflang="en" href="fleet-spares-thesis-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="fleet-spares-thesis-notes.en.html" />
+  <link rel="stylesheet" href="../assets/css/note-standalone.css" />
+  <link rel="stylesheet" href="../assets/css/article-share.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --panel: #ffffff;
+      --teal: #11806a;
+      --teal-dark: #0d5f4f;
+      --teal-soft: #e2f5ef;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --rust: #b65035;
+      --steel: #1d5ea8;
+      --soft-teal: #e2f5ef;
+      --soft-gold: #fff2d9;
+      --soft-rust: #fde8df;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(200, 169, 110, .18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(29, 94, 168, .12), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.78;
+      letter-spacing: .01em;
+    }
+
+    .page { overflow: hidden; }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 248, 252, .82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220, 230, 241, .88);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 16px 12px 0;
+      scroll-padding-inline: 12px;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200, 169, 110, .62);
+      background: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .nav {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        row-gap: 8px;
+        padding-right: 0;
+      }
+    }
+
+    .hero {
+      position: relative;
+      min-height: auto;
+      display: grid;
+      align-items: stretch;
+      overflow: hidden;
+      background: #17202a;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(11, 21, 29, 0.9) 0%, rgba(11, 21, 29, 0.68) 42%, rgba(11, 21, 29, 0.18) 78%),
+        url("../assets/images/research/fleet-spares-hero.png");
+      background-size: cover;
+      background-position: 52% 58%;
+      z-index: -2;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 38px 0 32px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      width: fit-content;
+      max-width: 100%;
+      gap: 10px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200, 169, 110, .9);
+    }
+
+    .hero-body {
+      margin-top: 0;
+      padding-top: 20px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin-bottom: 16px;
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(34px, 4.4vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -.03em;
+      font-weight: 900;
+      text-wrap: balance;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.18;
+      letter-spacing: -.02em;
+      color: var(--navy-900);
+    }
+
+    h3 {
+      font-family: "Noto Serif TC", serif;
+    }
+
+    .title-phrase {
+      display: inline-block;
+    }
+
+    .hero-provenance {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 0;
+      max-width: 820px;
+      margin: 0 0 6px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .hero-provenance--sub {
+      margin-bottom: 18px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.54);
+    }
+
+    .hero-provenance__badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      margin-right: 2px;
+      padding: 2px 9px;
+      border: 1px solid rgba(200, 169, 110, 0.38);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, 0.12);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-lede {
+      max-width: 740px;
+      margin-bottom: 24px;
+      color: #edf6f3;
+      font-size: clamp(16px, 1.55vw, 18px);
+      line-height: 1.85;
+    }
+
+    .hero-focus {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+      gap: 12px;
+      width: min(820px, 100%);
+      padding: 12px 14px;
+      border: 1px solid rgba(247, 241, 223, 0.22);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius-sm);
+      background: rgba(13, 28, 38, 0.62);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 52px rgba(0, 0, 0, 0.16);
+    }
+
+    .hero-focus-main {
+      padding: 2px 6px 2px 0;
+    }
+
+    .hero-focus-kicker {
+      display: block;
+      margin-bottom: 6px;
+      color: #d8ad43;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-focus-main strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fffaf0;
+      font-size: clamp(16px, 1.85vw, 21px);
+      line-height: 1.35;
+      font-weight: 850;
+    }
+
+    .hero-focus-main p {
+      margin-bottom: 0;
+      color: #c8d4df;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .hero-focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .hero-focus-card {
+      min-height: 108px;
+      padding: 11px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-focus-card span {
+      display: block;
+      margin-bottom: 6px;
+      color: #d8ad43;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .hero-focus-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #f7f1df;
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .hero-focus-card p {
+      margin-bottom: 0;
+      color: #c8d4df;
+      font-size: 11px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .section {
+      padding: 58px 0;
+    }
+
+    .section.alt {
+      background: #ffffff;
+    }
+
+    .section-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    #share {
+      padding: 36px 0 56px;
+    }
+
+    #share .share-panel {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    #share .article-share {
+      justify-content: flex-start;
+      align-items: center;
+      gap: 12px 16px;
+    }
+
+    #share .article-share__label {
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.75fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    .section-heading > p {
+      margin: 0;
+      padding: 16px 18px 16px 16px;
+      border: 1px solid rgba(200, 169, 110, .24);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(255, 252, 245, .96), rgba(255, 255, 255, .88));
+      box-shadow: var(--shadow-soft);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .thesis-frame {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.8fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .statement {
+      padding: 26px;
+      border-left: 6px solid var(--teal);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .statement h3 {
+      margin-bottom: 12px;
+      font-size: 23px;
+      line-height: 1.28;
+    }
+
+    .statement p {
+      margin-bottom: 0;
+      color: #35404b;
+      font-size: 16px;
+    }
+
+    .statement-em {
+      color: var(--teal-dark);
+      font-weight: 700;
+      background: var(--teal-soft);
+      padding: 0 .28em;
+      border-radius: 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .question {
+      display: grid;
+      place-items: center;
+      padding: 26px;
+      border: 1px solid var(--line);
+      background: #eef5f2;
+    }
+
+    .question blockquote {
+      margin: 0;
+      color: var(--teal-dark);
+      font-size: 19px;
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    .research-brief {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .research-panel {
+      min-height: 260px;
+      padding: clamp(20px, 2.2vw, 24px);
+      border: 1px solid #d5e2e6;
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 18px 48px rgba(26, 38, 50, 0.07);
+    }
+
+    .research-panel h3 {
+      margin-bottom: 14px;
+      color: #16435a;
+      font-size: clamp(19px, 1.75vw, 22px);
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .research-questions {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .research-questions li {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px dashed #cadbe1;
+      color: #23313b;
+      font-size: clamp(14px, 1.15vw, 15px);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .research-questions li:first-child {
+      padding-top: 0;
+    }
+
+    .research-questions li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .check-badge {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      margin-top: 1px;
+      border-radius: 50%;
+      color: var(--teal);
+      background: #e4f6f0;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .case-copy {
+      margin-bottom: 0;
+      color: #26333d;
+      font-size: clamp(14px, 1.15vw, 15px);
+      line-height: 1.72;
+      font-weight: 500;
+    }
+
+    .detail-band {
+      margin-top: 28px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-band h3 {
+      margin-bottom: 14px;
+      color: #183543;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .detail-copy {
+      max-width: 880px;
+      margin-bottom: 18px;
+      color: #34424d;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .detail-grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .detail-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .detail-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #183543;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .detail-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .detail-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .detail-list li {
+      padding-left: 18px;
+      border-left: 3px solid #c9dedb;
+      color: #3a4852;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .detail-note {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--teal);
+      background: #eef7f4;
+      color: #2f4b50;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .extension-section {
+      background: #eaf6fb;
+    }
+
+    .extension-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .extension-card {
+      min-height: 260px;
+      padding: 28px;
+      border: 1px solid #cfe0e8;
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 14px 36px rgba(26, 38, 50, 0.06);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .extension-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .extension-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      margin-bottom: 24px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      color: #0a7894;
+      background: #ddf3ff;
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+    }
+
+    .extension-card h3 {
+      margin-bottom: 12px;
+      color: #14345a;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .extension-card p {
+      margin-bottom: 0;
+      color: #4c5d73;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .pdca-band {
+      background: #ffffff;
+    }
+
+    .pdca-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .pdca-intro {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 100%;
+    }
+
+    .pdca-diagram {
+      flex: 1 1 auto;
+      min-height: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pdca-diagram img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 120px;
+      object-fit: cover;
+      object-position: center 42%;
+    }
+
+    .pdca-core {
+      position: relative;
+      min-height: 340px;
+      padding: 28px;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background:
+        linear-gradient(150deg, rgba(15, 118, 110, 0.96), rgba(22, 37, 42, 0.96)),
+        url("../assets/images/research/fleet-spares-hero.png");
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .pdca-core::after {
+      content: "";
+      position: absolute;
+      inset: auto 28px 28px auto;
+      width: 140px;
+      height: 140px;
+      border: 2px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+    }
+
+    .pdca-core strong {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #ffe7aa;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .pdca-core h3 {
+      max-width: 420px;
+      margin-bottom: 12px;
+      font-size: clamp(25px, 2.6vw, 34px);
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .pdca-core p {
+      position: relative;
+      z-index: 1;
+      max-width: 460px;
+      margin-bottom: 0;
+      color: #d9ebe7;
+      font-size: 16px;
+    }
+
+    .pdca-loop {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .pdca-item {
+      min-height: 190px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 16px 40px rgba(26, 38, 50, 0.07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .pdca-item:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pdca-item,
+      .pain-card,
+      .value-card,
+      .method-step,
+      .effect-card,
+      .extension-card {
+        transition: none;
+      }
+    }
+
+    .pdca-item:nth-child(1) {
+      border-top: 4px solid var(--teal);
+    }
+
+    .pdca-item:nth-child(2) {
+      border-top: 4px solid var(--gold);
+    }
+
+    .pdca-item:nth-child(3) {
+      border-top: 4px solid var(--steel);
+    }
+
+    .pdca-item:nth-child(4) {
+      border-top: 4px solid var(--rust);
+    }
+
+    .pdca-phase {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .pdca-item h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .pdca-item p {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .pdca-result {
+      display: block;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: #2e4a51;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .pain-grid,
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pain-card,
+    .value-card,
+    .metric-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 16px 40px rgba(26, 38, 50, 0.07);
+    }
+
+    .pain-card,
+    .value-card {
+      padding: 22px;
+    }
+
+    .pain-card:nth-child(1) {
+      border-top: 4px solid var(--rust);
+    }
+
+    .pain-card:nth-child(2) {
+      border-top: 4px solid var(--gold);
+    }
+
+    .pain-card:nth-child(3) {
+      border-top: 4px solid var(--teal);
+    }
+
+    .pain-card,
+    .value-card {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .pain-card:hover,
+      .value-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .card-index {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .pain-card h3,
+    .value-card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .pain-card p,
+    .value-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .method-band {
+      background: #f1f5f4;
+    }
+
+    .method-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: method;
+    }
+
+    .method-step {
+      position: relative;
+      min-height: 260px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 16px 40px rgba(26, 38, 50, 0.07);
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .method-step:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .method-step::before {
+      counter-increment: method;
+      content: "0" counter(method);
+      display: block;
+      margin-bottom: 20px;
+      color: rgba(15, 118, 110, 0.16);
+      font-size: 54px;
+      line-height: 0.9;
+      font-weight: 900;
+    }
+
+    .method-step::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(183, 121, 31, 0.12);
+    }
+
+    .method-step h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .method-step p {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .method-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .method-tags span,
+    .keyword {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #26424a;
+      background: #e9f0ee;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.3;
+    }
+
+    .architecture {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .architecture-intro {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .mpdc-panel {
+      padding: 28px;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: #183337;
+      box-shadow: var(--shadow);
+    }
+
+    .mpdc-panel h3 {
+      margin-bottom: 12px;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+
+    .mpdc-panel p {
+      margin-bottom: 0;
+      color: #d5e5e1;
+      font-size: 16px;
+    }
+
+    .mpdc-diagram {
+      margin: 0;
+    }
+
+    .mpdc-diagram img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+    }
+
+    .architecture-map {
+      display: grid;
+      gap: 14px;
+    }
+
+    .map-row {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .map-label,
+    .map-content {
+      min-height: 84px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .map-label {
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: var(--teal-dark);
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .map-content strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+
+    .map-content span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .effect-summary {
+      margin-bottom: 26px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: #fffaf0;
+      border: 1px solid #eadfca;
+    }
+
+    .effect-summary h3 {
+      margin-bottom: 8px;
+      color: #14345a;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.25;
+    }
+
+    .effect-summary > p {
+      margin-bottom: 24px;
+      color: #526072;
+      font-size: 17px;
+      line-height: 1.85;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 960px) {
+      .effect-summary > p {
+        white-space: normal;
+      }
+    }
+
+    .effect-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .effect-card {
+      min-height: 170px;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      padding: 22px 18px;
+      border-radius: var(--radius);
+      color: #e9eef3;
+      background: #12335e;
+      box-shadow: 0 16px 40px rgba(26, 38, 50, 0.07);
+      text-align: center;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .effect-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .effect-card strong {
+      display: block;
+      color: #f7f1df;
+      font-size: clamp(42px, 5.2vw, 66px);
+      line-height: 0.95;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .effect-card strong span {
+      color: #d8ad43;
+      font-size: 0.42em;
+      font-weight: 850;
+      margin-left: 2px;
+    }
+
+    .effect-card p {
+      margin: 16px 0 0;
+      color: #c8d4df;
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .metric-card {
+      padding: 18px;
+    }
+
+    .metric-card .label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .metric-card .number {
+      display: block;
+      margin-top: 8px;
+      color: var(--ink);
+      font-size: clamp(20px, 2.1vw, 27px);
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .metric-card .note {
+      display: block;
+      margin-top: 10px;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .comparison {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      color: #3c4a54;
+      background: #eef3f1;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    td.num {
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .bar {
+      display: grid;
+      gap: 7px;
+      min-width: 170px;
+    }
+
+    .track {
+      height: 9px;
+      border-radius: 99px;
+      background: #e5eaec;
+      overflow: hidden;
+    }
+
+    .fill {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--teal);
+    }
+
+    .fill.actual {
+      background: var(--rust);
+    }
+
+    .insight {
+      margin-top: 24px;
+      padding: 24px 28px;
+      border-left: 5px solid var(--gold);
+      background: var(--soft-gold);
+      color: #4c3920;
+      font-weight: 750;
+    }
+
+    .value-card:nth-child(1) .card-index,
+    .value-card:nth-child(4) .card-index {
+      background: var(--teal);
+    }
+
+    .value-card:nth-child(2) .card-index,
+    .value-card:nth-child(5) .card-index {
+      background: var(--gold);
+    }
+
+    .value-card:nth-child(3) .card-index {
+      background: var(--rust);
+    }
+
+    .value-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .keyword {
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .closing {
+      padding: 72px 0 84px;
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(10, 22, 40, .97), rgba(23, 55, 95, .96));
+    }
+
+    .closing h2 {
+      max-width: 820px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .closing .section-kicker {
+      color: #f0dcae;
+    }
+
+    .closing .section-kicker::before {
+      background: #f0dcae;
+    }
+
+    .closing .section-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.65fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .closing p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 19px;
+    }
+
+    .closing-quote {
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff4d8;
+      font-size: 22px;
+      line-height: 1.55;
+      font-weight: 850;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: var(--navy-900);
+    }
+
+    .footer__brand {
+      margin: 0 0 10px;
+      color: var(--navy-900);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    @media print {
+      .nav-shell { display: none; }
+      .note-site-bar { display: none; }
+      .hero,
+      .closing,
+      .pdca-core {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 58px 0 42px;
+      }
+
+      .hero-body {
+        margin-top: 0;
+        padding-top: 34px;
+      }
+
+      .hero-focus,
+      .hero-focus-grid,
+      .section-heading,
+      .thesis-frame,
+      .research-brief,
+      .detail-grid,
+      .detail-grid.three,
+      .extension-grid,
+      .pdca-layout,
+      .architecture,
+      .closing .section-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .pdca-intro {
+        min-height: auto;
+      }
+
+      .pdca-diagram {
+        flex: none;
+        aspect-ratio: 16 / 9;
+      }
+
+      .pdca-diagram img {
+        min-height: 0;
+      }
+
+      .pain-grid,
+      .pdca-loop,
+      .method-flow,
+      .metrics,
+      .value-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        width: calc(100% - 28px);
+      }
+
+      .hero::before {
+        background-image:
+          linear-gradient(0deg, rgba(11, 21, 29, 0.9) 0%, rgba(11, 21, 29, 0.72) 62%, rgba(11, 21, 29, 0.54) 100%),
+          url("../assets/images/research/fleet-spares-hero.png");
+        background-position: 52% 58%;
+      }
+
+      .hero-body {
+        padding-top: 24px;
+      }
+
+      .hero-focus,
+      .hero-focus-grid,
+      .pain-grid,
+      .pdca-loop,
+      .method-flow,
+      .effect-grid,
+      .metrics,
+      .value-grid,
+      .extension-grid,
+      .map-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-focus-card {
+        min-height: auto;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .statement,
+      .question,
+      .research-panel,
+      .pdca-core,
+      .mpdc-panel,
+      .closing-quote {
+        padding: 24px;
+      }
+
+      .pdca-diagram {
+        aspect-ratio: 16 / 10;
+      }
+
+      .research-panel {
+        min-height: auto;
+      }
+
+      .research-panel h3 {
+        margin-bottom: 16px;
+      }
+
+      .research-questions li {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 12px;
+        font-size: 15px;
+      }
+
+      .check-badge {
+        width: 26px;
+        height: 26px;
+        font-size: 15px;
+      }
+
+      .case-copy {
+        font-size: 15px;
+        line-height: 1.68;
+      }
+
+      .pdca-core {
+        min-height: 360px;
+      }
+
+      .question blockquote {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="index.html">← 管理筆記</a>
+      <span>|</span>
+      <a href="../index.zh.html">首頁</a>
+      <a href="../about.html">關於我</a>
+      <a href="../notes/index.html">海事筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="fleet-spares-thesis-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="fleet-spares-thesis-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">Master Thesis · Fleet Spare Management · Reay's Note</div>
+      <div class="hero-body">
+        <h1><span class="title-phrase">從經驗採購到</span><span class="title-phrase">資料化船隊備品管理</span></h1>
+        <p class="article-meta">
+          <span>📅 更新：2026-06-03</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 閱讀約 15 分鐘</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 船隊備品 / 供應鏈 / PMP</span>
+        </p>
+        <p class="hero-provenance" aria-label="論文來源">
+          <span class="hero-provenance__badge">碩士論文</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>國立陽明交通大學</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>2023 年 3 月</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>國家圖書館存檔</span>
+        </p>
+        <p class="hero-provenance hero-provenance--sub">
+          <span>原題：《定期航線船隊維修備品整合需求預測及採購規劃》</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>作者：Yen-Jui Huang (Reay Huang)</span>
+        </p>
+        <p class="hero-lede">本文以「定期航線船隊維修備品整合需求預測及採購規劃」為研究主題，並以個案公司 6,944 TEU × 10 艘貨櫃船船隊的實際採購數據為分析基礎，針對單一品項備品提出研究。<br>以 PDCA 管理循環為切入，結合船舶運轉、保養紀錄、航線週期、母港補給與再生零件報廢率，建立從需求預測、採購執行、消耗監控到持續修正的船隊備品管理模型。</p>
+        <div class="hero-focus" aria-label="文章重點導讀">
+          <div class="hero-focus-main">
+            <span class="hero-focus-kicker">ARTICLE FOCUS</span>
+            <strong>把船隊備品管理從經驗申請，轉成可預測、可查核、可持續修正的決策系統。</strong>
+            <p>這篇研究最值得讀的地方，是把船舶主機燃油閥的維修、再生與採購資料，轉成船隊層級的補給規劃模型。</p>
+          </div>
+          <div class="hero-focus-grid">
+            <article class="hero-focus-card">
+              <span>資料基礎</span>
+              <strong>6,944 TEU × 10</strong>
+              <p>以 6,944 TEU × 10 艘貨櫃船船隊三年實際運轉、保養與採購紀錄驗證。</p>
+            </article>
+            <article class="hero-focus-card">
+              <span>方法骨架</span>
+              <strong>PDCA + MRP</strong>
+              <p>把需求預測、週需求整合與採購批量規劃串成循環。</p>
+            </article>
+            <article class="hero-focus-card">
+              <span>實證亮點</span>
+              <strong>-43% / -50%</strong>
+              <p>採購數量有效減少，整體總成本最高可節省。</p>
+            </article>
+          </div>
+        </div>
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/research/fleet-spares-thesis-notes.html"
+          data-share-title="從經驗採購到資料化船隊備品管理｜Reay's Note"
+          data-share-email-body="我在 Reay 的管理筆記看到這篇，覺得可能對你有幫助：&#10;&#10;從經驗採購到資料化船隊備品管理｜Reay's Note&#10;https://reayhuang.com/research/fleet-spares-thesis-notes.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-hero-label">分享此篇</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-shell" aria-label="首頁快速段落連結">
+    <div class="nav">
+      <a href="#topic">論題</a>
+      <a href="#pdca">PDCA</a>
+      <a href="#pain">痛點</a>
+      <a href="#method">方法</a>
+      <a href="#mpdc">MPDC</a>
+      <a href="#results">實證</a>
+      <a href="#value">價值</a>
+      <a href="#extension">延伸</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section" id="topic">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">01 | 研究定位</div>
+            <h2>從單船經驗採購，轉向船隊層級的資料化決策。</h2>
+          </div>
+          <p>這項研究處理的不是單一零件買多或買少，而是船隊可靠度、維修效率、母港補給與採購成本之間的整合管理問題。</p>
+        </div>
+
+        <div class="thesis-frame">
+          <article class="statement">
+            <h3>論文主題概述</h3>
+            <p>航運公司若只依靠各船或個別維修工程師提出備品需求，總部很難掌握整體船隊未來需求。本研究希望建立一套<strong class="statement-em">可計算、可追蹤、可更新</strong>的方法，協助管理者提前預測維修備品需求，並決定<strong class="statement-em">何時採購、採購多少</strong>。</p>
+          </article>
+          <aside class="question">
+            <blockquote>船隊應如何根據實際運轉與保養資料，提前預測備品需求，並在營運安全與成本控制之間取得平衡？</blockquote>
+          </aside>
+        </div>
+
+        <div class="research-brief">
+          <article class="research-panel">
+            <h3>本研究回答的問題</h3>
+            <ul class="research-questions">
+              <li>
+                <span class="check-badge" aria-hidden="true">✓</span>
+                <span>如何預測各船未來的備品需求？</span>
+              </li>
+              <li>
+                <span class="check-badge" aria-hidden="true">✓</span>
+                <span>如何區分再生零件需求與全新零件需求？</span>
+              </li>
+              <li>
+                <span class="check-badge" aria-hidden="true">✓</span>
+                <span>如何把各船需求整合成船隊週需求？</span>
+              </li>
+              <li>
+                <span class="check-badge" aria-hidden="true">✓</span>
+                <span>如何決定全新零件的最佳採購批量？</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="research-panel">
+            <h3>研究案例</h3>
+            <p class="case-copy">本研究以船舶主機燃油閥為個案，因為燃油閥需求與主機運轉時數、定期保養、再生加工與報廢率密切相關，適合作為船隊備品需求預測與採購規劃的驗證對象。</p>
+          </article>
+        </div>
+
+        <div class="detail-band">
+          <h3>論文中的個案資料範圍</h3>
+          <p class="detail-copy">論文第四章以個案公司 6,944 TEU × 10 艘貨櫃船船隊作為資料基礎，使用 2018 年 1 月 1 日至 2020 年 12 月 31 日的主機運轉、燃油閥保養與採購紀錄。研究不是只做單次成本比較，而是把每日運轉、保養間隔、船期週別、回母港補給與再生加工結果整理成可反覆計算的需求模型。</p>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <strong>10 艘船舶</strong>
+              <span>6,944 TEU × 10 艘貨櫃船船隊，每艘船分別服務於不同航線。</span>
+            </article>
+            <article class="detail-card">
+              <strong>15 條航線</strong>
+              <span>論文將航線週期納入需求預測與回母港補給排程。</span>
+            </article>
+            <article class="detail-card">
+              <strong>10 缸主機</strong>
+              <span>每艘船主機具有 10 個汽缸，是燃油閥保養紀錄的分析單位。</span>
+            </article>
+            <article class="detail-card">
+              <strong>每缸 3 個燃油閥</strong>
+              <span>燃油閥需求會隨主機運轉時數、保養時點與再生報廢結果變動。</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pdca-band" id="pdca">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">02 | 研究切入</div>
+            <h2>用 PDCA 看這篇研究：備品管理是一個持續校準的決策循環。</h2>
+          </div>
+          <p>這個角度能讓船東與船舶管理者快速理解：論文不是只提出一次性的採購計算，而是建立一套可以反覆更新、查核與改善的船隊備品管理流程。</p>
+        </div>
+
+        <div class="pdca-layout">
+          <div class="pdca-intro">
+            <aside class="pdca-core">
+              <strong>Management Cycle</strong>
+              <h3>從預測到採購，再回到資料修正。</h3>
+              <p>PLAN 負責建立長期需求預測，DO 將預測轉化為採購與供應商策略，CHECK 持續監控實際消耗與使用狀況，ACTION 再把偏差帶回模型，修正下一輪需求預測。</p>
+            </aside>
+            <figure class="pdca-diagram">
+              <img src="../assets/images/research/pdca-cycle-diagram.jpg" alt="PDCA 管理循環示意：從需求預測、採購執行、消耗監控到模型修正的閉環流程" loading="lazy" width="1024" height="564" />
+            </figure>
+          </div>
+
+          <div class="pdca-loop" aria-label="PDCA 研究切入流程">
+            <article class="pdca-item">
+              <span class="pdca-phase">PLAN</span>
+              <h3>統計消耗模式，預測長期備品需求</h3>
+              <p>整理過去船舶運轉紀錄、燃油閥保養紀錄、航線週期與再生零件報廢率，推估各船未來回母港時的備品需求。</p>
+              <span class="pdca-result">輸出：船隊週需求、全新件需求、再生件需求。</span>
+            </article>
+
+            <article class="pdca-item">
+              <span class="pdca-phase">DO</span>
+              <h3>執行長期採購規劃與供應商談判</h3>
+              <p>依照 MRP 與 Silver-Meal 方法規劃採購批量與下單時點，並把長期需求作為供應商議價、交期協調與備品補給安排的依據。</p>
+              <span class="pdca-result">輸出：採購批量、下單週期、供應商協議。</span>
+            </article>
+
+            <article class="pdca-item">
+              <span class="pdca-phase">CHECK</span>
+              <h3>監控備品消耗、使用與庫存狀況</h3>
+              <p>透過 MPDC 與 ERP 料帳追蹤全新件、再生良品與報廢件流向，檢視實際消耗是否符合預測，並確認船上安全庫存與服務水準。</p>
+              <span class="pdca-result">輸出：消耗偏差、庫存狀態、需求滿足率。</span>
+            </article>
+
+            <article class="pdca-item">
+              <span class="pdca-phase">ACTION</span>
+              <h3>分析執行偏差，修正需求預測模型</h3>
+              <p>將實際消耗、報廢率變化、供應商交期與船舶維修情形回饋到模型，調整下一期備品需求預測與採購規劃。</p>
+              <span class="pdca-result">輸出：修正後預測、改善規則、下一輪計畫。</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="pain">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">03 | 實務痛點</div>
+            <h2>船舶備品管理的困難，來自海上營運的不確定性。</h2>
+          </div>
+          <p>船舶不能像陸上工廠一樣隨時補料，備品通常必須配合靠港、回母港、維修週期與再生加工結果安排。</p>
+        </div>
+
+        <div class="pain-grid">
+          <article class="pain-card">
+            <span class="card-index">01</span>
+            <h3>缺料風險</h3>
+            <p>備品不足會影響船舶保養、設備運轉與航線穩定，缺料風險最後會轉化為營運風險。</p>
+          </article>
+          <article class="pain-card">
+            <span class="card-index">02</span>
+            <h3>庫存成本</h3>
+            <p>若各船因保守而多買，船上與岸上庫存會累積，造成資金占用與持有成本上升。</p>
+          </article>
+          <article class="pain-card">
+            <span class="card-index">03</span>
+            <h3>可視性不足</h3>
+            <p>需求分散在各船與工程師手上時，總部難以做船隊層級的採購規劃、成本控管與供應商協調。</p>
+          </article>
+        </div>
+
+        <div class="detail-band">
+          <h3>論文第一章整理出的四項管理挑戰</h3>
+          <ul class="detail-list">
+            <li>全新零件與再生零件的補給由個別維修工程師分散管理，沒有以整體船隊為單位整合，容易錯過船舶回母港時程並產生額外補救成本。</li>
+            <li>再生零件需求難以精確估算，燃油閥更換會受到船期提前或延後保養、燃油品質不良、全新件與再生件品質差異等因素影響。</li>
+            <li>各船航線週期不同，回母港時間不同，使全新零件與再生零件的週需求難以合併統計；再生件報廢又必須等待加工廠判定，讓新件需求更複雜。</li>
+            <li>全新零件採購缺乏成本評估模式，第一線船員可能因擔心缺料而提高申請數量，導致過量庫存、重複訂購與存貨持有成本增加。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-band" id="method">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">04 | 研究方法</div>
+            <h2>以三段式架構，把資料轉成可執行的採購計畫。</h2>
+          </div>
+          <p>研究從各船運轉與保養資料開始，彙整為船隊週需求，再用動態批量方法規劃全新零件採購時點與數量。</p>
+        </div>
+
+        <div class="method-flow">
+          <article class="method-step">
+            <h3>需求預測</h3>
+            <p>以主機運轉時數與燃油閥保養紀錄推估各船未來回母港時可能產生的維修備品需求。</p>
+            <div class="method-tags">
+              <span>主機運轉紀錄</span>
+              <span>燃油閥保養</span>
+              <span>回母港需求</span>
+            </div>
+          </article>
+          <article class="method-step">
+            <h3>船隊整合</h3>
+            <p>運用 MRP 將不同船舶、不同航線週期與不同回母港時點整合為整體船隊週需求。</p>
+            <div class="method-tags">
+              <span>MRP</span>
+              <span>週需求</span>
+              <span>船隊層級</span>
+            </div>
+          </article>
+          <article class="method-step">
+            <h3>採購規劃</h3>
+            <p>採用 Silver-Meal Heuristic，在採購成本、訂購成本與存貨成本之間推算較合理的採購批量。</p>
+            <div class="method-tags">
+              <span>Silver-Meal</span>
+              <span>動態批量</span>
+              <span>成本平衡</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="detail-band">
+          <h3>從原始資料到採購決策的計算細節</h3>
+          <p class="detail-copy">論文第四章將研究流程拆成幾個可執行的程序：先用各船各汽缸前後兩次燃油閥保養的主機運轉小時差，計算燃油閥保養間隔時數；再結合每日主機運轉小時與航線週期，推估船舶回母港前可能發生的保養次數與備品需求。</p>
+          <div class="detail-grid three">
+            <article class="detail-card">
+              <strong>Proc Cal_ARHPM</strong>
+              <span>計算燃油閥平均運轉時數，用於判斷不同船舶或航線是否存在保養間隔差異。</span>
+            </article>
+            <article class="detail-card">
+              <strong>Proc Cal_AERHPD</strong>
+              <span>計算船舶每日主機平均運轉小時，作為航線期間累積運轉時數的估算基礎。</span>
+            </article>
+            <article class="detail-card">
+              <strong>Demand Forecast</strong>
+              <span>把回母港前預估保養次數轉成再生件需求，再依再生報廢率推估全新件需求。</span>
+            </article>
+          </div>
+          <p class="detail-note">在採購批量規劃中，論文以週為時間單位，將全新零件採購前置時間設定為 12 週；燃油閥再生加工前置時間則可用於判斷 MPDC 是否需要事前保留再生加工產能與安全存量。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="mpdc">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">05 | 管理架構</div>
+            <h2>以 MPDC 作為母港集中備品管理節點。</h2>
+          </div>
+          <p>MPDC 將全新零件、再生良品與報廢零件納入同一個物流與料帳架構，讓備品流向與成本資訊可以同步被管理。</p>
+        </div>
+
+        <div class="architecture">
+          <div class="architecture-intro">
+            <aside class="mpdc-panel">
+              <h3>MPDC</h3>
+              <p>Maintenance Part Distribution Center，備品零件物流中心。它讓總部可以從被動接收各船申請，轉為主動掌握未來船隊需求與補給時點。</p>
+            </aside>
+            <figure class="mpdc-diagram">
+              <img src="../assets/images/research/mpdc-cycle-diagram.jpg" alt="MPDC 船隊備品物流循環示意：從需求偵測、資料整合、倉儲配送、零件供應到船舶維修的閉環流程" loading="lazy" width="1024" height="575" />
+            </figure>
+          </div>
+
+          <div class="architecture-map" aria-label="MPDC 管理流程">
+            <div class="map-row">
+              <div class="map-label">船上安全庫存</div>
+              <div class="map-content">
+                <strong>保留必要維修能力</strong>
+                <span>各船仍需保有合理備品，確保航行期間維修安全與服務水準。</span>
+              </div>
+            </div>
+            <div class="map-row">
+              <div class="map-label">母港集中補給</div>
+              <div class="map-content">
+                <strong>降低重複持有庫存</strong>
+                <span>其餘備品集中於 MPDC 管理，提高共用效率並降低過量採購。</span>
+              </div>
+            </div>
+            <div class="map-row">
+              <div class="map-label">ERP 料帳同步</div>
+              <div class="map-content">
+                <strong>追蹤物料流與成本</strong>
+                <span>建立全新備品庫、再生良品備品庫與報廢備品庫，支援查核與持續改善。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-band">
+          <h3>MPDC 導入後的料帳與物流流向</h3>
+          <p class="detail-copy">論文第三章建議在 ERP 中建立明確的料帳，讓船舶、MPDC、零件加工廠與供應商之間的物料流可以被追蹤。<br>這個設計的重點，是把「補給上船、送修再生、再生完成、報廢、新件入庫」全部變成可查核的交易紀錄。</p>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <strong>待再生備品庫</strong>
+              <span>船舶換下零件後，先在母港交給 MPDC，再由 MPDC 送交加工廠。</span>
+            </article>
+            <article class="detail-card">
+              <strong>再生良品備品庫</strong>
+              <span>加工完成且通過品質檢查的零件，回到 MPDC 後可供船隊共用。</span>
+            </article>
+            <article class="detail-card">
+              <strong>全新備品庫</strong>
+              <span>供應商交貨後由 MPDC 驗收、入庫，並依回母港需求補給上船。</span>
+            </article>
+            <article class="detail-card">
+              <strong>報廢備品庫</strong>
+              <span>加工廠判定無法再生的零件，進入報廢料帳並觸發全新件補充需求。</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">06 | 實證結果</div>
+            <h2>理想模式顯示，過去採購與實際船隊需求沒有有效對齊。</h2>
+          </div>
+          <p>本研究以個案公司 2018 年 1 月 1 日至 2020 年 12 月 31 日資料驗證，比較理想採購模式與歷史實際採購行為。</p>
+        </div>
+
+        <div class="effect-summary">
+          <h3>理想模式 vs. 實際採購成效比較</h3>
+          <p>以個案公司 6,944 TEU × 10 艘貨櫃船船隊、2018-2020 年三年歷史數據（主機燃油閥）驗證，結果如下：</p>
+          <div class="effect-grid" aria-label="本研究效益比例">
+            <article class="effect-card">
+              <strong>43<span>%</span></strong>
+              <p>備品採購數量<br>有效減少</p>
+            </article>
+            <article class="effect-card">
+              <strong>50<span>%</span></strong>
+              <p>整體總成本<br>最高可節省</p>
+            </article>
+            <article class="effect-card">
+              <strong>29<span>%</span></strong>
+              <p>訂購成本<br>最多降低</p>
+            </article>
+            <article class="effect-card">
+              <strong>96<span>×</span></strong>
+              <p>存貨成本差異<br>改善 9600%</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <article class="metric-card">
+            <span class="label">採購數量</span>
+            <span class="number">-283 個</span>
+            <span class="note">660 對 943</span>
+          </article>
+          <article class="metric-card">
+            <span class="label">訂購次數</span>
+            <span class="number">-9 次</span>
+            <span class="note">31 對 40</span>
+          </article>
+          <article class="metric-card">
+            <span class="label">總成本差額</span>
+            <span class="number">USD 98,991.55</span>
+            <span class="note">約 33.3%</span>
+          </article>
+          <article class="metric-card">
+            <span class="label">存貨成本</span>
+            <span class="number">USD 145.29</span>
+            <span class="note">理想模式</span>
+          </article>
+        </div>
+
+        <div class="comparison">
+          <table>
+            <thead>
+              <tr>
+                <th>指標</th>
+                <th>理想模式</th>
+                <th>歷史實際模式</th>
+                <th>相對視覺</th>
+                <th>管理意義</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>採購數量</td>
+                <td class="num">660 個</td>
+                <td class="num">943 個</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:70%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>歷史實際採購量明顯偏高</td>
+              </tr>
+              <tr>
+                <td>訂購次數</td>
+                <td class="num">31 次</td>
+                <td class="num">40 次</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:78%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>歷史模式有較多重複訂購</td>
+              </tr>
+              <tr>
+                <td>採購成本</td>
+                <td class="num">USD 198,000.00</td>
+                <td class="num">USD 282,900.00</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:70%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>過量採購造成成本增加</td>
+              </tr>
+              <tr>
+                <td>訂購成本</td>
+                <td class="num">USD 496.00</td>
+                <td class="num">USD 640.00</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:78%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>訂購次數增加帶來額外成本</td>
+              </tr>
+              <tr>
+                <td>存貨成本</td>
+                <td class="num">USD 145.29</td>
+                <td class="num">USD 14,092.84</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:1%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>歷史模式庫存等待與持有成本高</td>
+              </tr>
+              <tr>
+                <td>總成本</td>
+                <td class="num">USD 198,641.29</td>
+                <td class="num">USD 297,632.84</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:67%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>整體成本差距明顯</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="insight">管理意義：問題不是單純「有沒有備品」，而是採購數量、訂購時點與船隊實際需求沒有對齊，導致過量採購與庫存成本被放大。</p>
+
+        <div class="detail-band">
+          <h3>從實證資料看出的細項發現</h3>
+          <p class="detail-copy">論文第五章指出，6,944 TEU × 10 艘貨櫃船船隊各船燃油閥保養間隔時數大致集中於 800 至 900 小時，每日主機運轉時數約在 16 小時左右；但歷史實際採購數量卻呈現顯著差異，表示採購行為未必與設備實際運轉需求同步。</p>
+          <div class="detail-grid three">
+            <article class="detail-card">
+              <strong>航線週期影響需求尖峰</strong>
+              <span>6,944 TEU × 10 艘貨櫃船船隊航線週期最短約 41 天、最長約 81 天，回母港週別不同會造成週需求集中或分散。</span>
+            </article>
+            <article class="detail-card">
+              <strong>再生報廢率作為新件需求來源</strong>
+              <span>論文以燃油閥送修再生歷史資料估算報廢率，個案資料中的再生零件報廢率約為 9.7%。</span>
+            </article>
+            <article class="detail-card">
+              <strong>Fill Rate 補足成本觀點</strong>
+              <span>研究不只看最低成本，也用需求滿足率衡量缺貨風險，協助管理者在服務水準與成本間取捨。</span>
+            </article>
+          </div>
+          <p class="detail-note">敏感度分析也指出，當燃油閥保養間隔時數 RHPM 下降到歷史水準的 80% 以下時，總成本可能出現明顯變化。因此 RHPM 不只是模型參數，也可以作為船隊保養品質與成本風險的監控指標。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="value">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">07 | 實務價值</div>
+            <h2>這套模型讓備品管理更可預測、更可控。</h2>
+          </div>
+          <p>對船東、船舶管理者、船隊技術主管與採購主管而言，研究價值在於把經驗式補貨轉化成可稽核的管理循環。</p>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="card-index">01</span>
+            <h3>船隊整合管理</h3>
+            <p>由總部掌握整體船隊未來需求，降低各船重複採購與資訊分散。</p>
+          </article>
+          <article class="value-card">
+            <span class="card-index">02</span>
+            <h3>資料化需求預測</h3>
+            <p>用主機運轉、保養紀錄、航線週期與報廢率推估需求，而不只依賴主觀申請。</p>
+          </article>
+          <article class="value-card">
+            <span class="card-index">03</span>
+            <h3>新件與再生件同步</h3>
+            <p>同時管理送修、再生成功、報廢判定與全新零件補充。</p>
+          </article>
+          <article class="value-card">
+            <span class="card-index">04</span>
+            <h3>採購管理循環</h3>
+            <p>可連結採購申請、下單提醒、交貨查核、品質驗收與 PDCA 改善。</p>
+          </article>
+          <article class="value-card">
+            <span class="card-index">05</span>
+            <h3>成本與服務水準平衡</h3>
+            <p>在缺料風險、維修需求滿足率與總成本之間取得更穩健的決策平衡。</p>
+          </article>
+        </div>
+
+        <div class="keywords" aria-label="研究關鍵詞">
+          <span class="keyword">船隊整合管理</span>
+          <span class="keyword">資料化需求預測</span>
+          <span class="keyword">母港集中補給</span>
+          <span class="keyword">MRP</span>
+          <span class="keyword">Silver-Meal Heuristic</span>
+          <span class="keyword">MPDC</span>
+          <span class="keyword">採購與庫存成本控制</span>
+          <span class="keyword">營運風險管理</span>
+        </div>
+
+        <div class="detail-band">
+          <h3>導入後可以支援的管理決策</h3>
+          <p class="detail-copy">論文結論指出，模型的價值不只在於算出較低的總成本，而是讓管理者能在短期掌握採購計畫與設備運轉狀況，在長期估算整體成本與供應風險。這些預測資料也能成為採購部門與供應商談判、預先保留產能、安排交貨時點的依據。</p>
+          <div class="detail-grid three">
+            <article class="detail-card">
+              <strong>採購提醒與查核</strong>
+              <span>依 12 週採購前置時間回推下單週別，並透過 ERP 建立採購申請與主管查核節點。</span>
+            </article>
+            <article class="detail-card">
+              <strong>保養品質監控</strong>
+              <span>當 RHPM 顯著下降時，可回頭檢查燃油品質、船員保養流程或再生零件品質。</span>
+            </article>
+            <article class="detail-card">
+              <strong>延伸至其他主機備品</strong>
+              <span>論文建議未來可擴展到排氣閥、活塞保養與其他內燃機設備備品。</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section extension-section" id="extension">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">08 | 延伸應用</div>
+            <h2>延伸應用潛力</h2>
+          </div>
+          <p>本研究以燃油閥作為案例驗證，方法論可延伸至更廣泛的船舶設備與營運場景。</p>
+        </div>
+
+        <div class="extension-grid">
+          <article class="extension-card">
+            <span class="extension-label">EXTENSION 01</span>
+            <h3>主機其他相關備品整合</h3>
+            <p>排氣閥、活塞等同型設備有類似保養模式，但保養間隔更長、備品更昂貴，部分無法再生。整合主機相關備品需求預測，可大幅提升成本控管精度。</p>
+          </article>
+
+          <article class="extension-card">
+            <span class="extension-label">EXTENSION 02</span>
+            <h3>發電機備品管理</h3>
+            <p>貨櫃船配備 3–5 部發電機，與主機有類似的內燃機特性。多機組並聯運轉的複雜性若能突破，建立後將填補船上第二大設備成本管理的空白。</p>
+          </article>
+
+          <article class="extension-card">
+            <span class="extension-label">EXTENSION 03</span>
+            <h3>航線船期轉換分析</h3>
+            <p>實際運作中航線調度頻繁，船期受塞港等因素影響顯著。未來需研究船舶航線變動對主機運轉時數與母港補給規劃的影響，提升預測模型的動態適應能力。</p>
+          </article>
+
+          <article class="extension-card">
+            <span class="extension-label">EXTENSION 04</span>
+            <h3>自動化監控與動態調整</h3>
+            <p>將保養紀錄與主機運轉資料持續自動化導入計算模型，實現即時監控（Real-time Monitoring）與動態調整（Dynamic Adjustment），減少人工介入並降低作業程序成本。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="section-inner">
+        <div>
+          <div class="section-kicker">Conclusion</div>
+          <h2>船舶備品管理不只是採購問題，而是船隊可靠度、維修效率與營運成本控制的整合管理問題。</h2>
+          <p>本研究用資料與模型，讓船隊備品需求變得更可預測，讓母港補給與採購規劃更可控，也讓船東與船舶管理公司能用更低成本維持營運安全。</p>
+        </div>
+        <div class="closing-quote">用一句話介紹：運用船舶運轉與保養資料，預測整體船隊的維修備品需求，並透過母港集中管理與採購批量規劃，降低缺料風險、過量採購與庫存成本。</div>
+      </div>
+    </section>
+
+    <section id="share">
+      <div class="section-inner share-panel">
+        <div
+          class="article-share article-share--end"
+          data-article-share
+          data-share-url="https://reayhuang.com/research/fleet-spares-thesis-notes.html"
+          data-share-title="從經驗採購到資料化船隊備品管理｜Reay's Note"
+          data-share-email-body="我在 Reay 的管理筆記看到這篇，覺得可能對你有幫助：&#10;&#10;從經驗採購到資料化船隊備品管理｜Reay's Note&#10;https://reayhuang.com/research/fleet-spares-thesis-notes.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__brand">Reay Huang Maritime Notes</p>
+    <p><strong>資料來源與免責聲明：</strong>本頁依個人碩士論文研究整理，目的為知識分享與管理討論，不代表 Lloyd's Register 官方立場，亦不構成採購、庫存或營運決策建議。個案數據與成本估算僅供研究說明，實務導入仍應依各公司資料、合約與營運條件另行評估。</p>
+  </footer>
+
+</div>
+  <script src="../assets/js/article-share.js"></script>
+  <script src="../assets/js/back-to-top.js"></script>
+</body>
+</html>

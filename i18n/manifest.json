@@ -118,6 +118,13 @@
       "category": "research",
       "en": "research/sbc-demand-classification.en.html",
       "zh": "research/sbc-demand-classification.html"
+    },
+    {
+      "slug": "fleet-spares-thesis-notes",
+      "type": "article",
+      "category": "research",
+      "en": "research/fleet-spares-thesis-notes.en.html",
+      "zh": "research/fleet-spares-thesis-notes.html"
     }
   ]
 }

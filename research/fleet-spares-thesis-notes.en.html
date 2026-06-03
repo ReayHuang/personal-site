@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../assets/js/gtag-config.js"></script>
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    (function () {
+      var nav =
+        performance.getEntriesByType &&
+        performance.getEntriesByType("navigation")[0];
+      if (!nav || nav.type !== "reload") return;
+      if (location.hash) {
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+      scrollTo(0, 0);
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+
+  <title>From Experience-Based Purchasing to Data-Driven Fleet Spare Parts Management | Reay's Note</title>
+  <meta name="description" content="Master thesis research note on forecasting maintenance spare-parts demand and planning procurement for a 6,944 TEU container-vessel fleet, using fuel valves as the case item and integrating PDCA, MRP, and MPDC." />
+  <meta name="author" content="Reay Huang" />
+  <meta property="og:title" content="From Experience-Based Purchasing to Data-Driven Fleet Spare Parts Management | Reay's Note" />
+  <meta property="og:description" content="Master thesis research note on forecasting fleet spare-parts demand and planning procurement, using container-vessel fuel valves as the case item and integrating PDCA, MRP, and MPDC." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Reay Huang Maritime Notes" />
+  <meta property="og:url" content="https://reayhuang.com/research/fleet-spares-thesis-notes.en.html" />
+  <link rel="canonical" href="https://reayhuang.com/research/fleet-spares-thesis-notes.en.html" />
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/research/fleet-spares-thesis-linkedin-preview.en-1200.png" />
+  <meta property="og:image:alt" content="From Experience-Based Purchasing to Data-Driven Fleet Spare Parts Management | Reay's Note" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="537" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From Experience-Based Purchasing to Data-Driven Fleet Spare Parts Management | Reay's Note" />
+  <meta name="twitter:description" content="Master thesis research note on forecasting fleet spare-parts demand and planning procurement, using container-vessel fuel valves as the case item and integrating PDCA, MRP, and MPDC." />
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/research/fleet-spares-thesis-linkedin-preview.en-1200.png" />
+  <link rel="alternate" hreflang="zh-Hant" href="fleet-spares-thesis-notes.html" />
+  <link rel="alternate" hreflang="en" href="fleet-spares-thesis-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="fleet-spares-thesis-notes.en.html" />
+  <link rel="stylesheet" href="../assets/css/note-standalone.css" />
+  <link rel="stylesheet" href="../assets/css/article-share.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #06111f;
+      --navy-900: #0a1628;
+      --navy-800: #10243e;
+      --navy-700: #17375f;
+      --ink: #0b1627;
+      --muted: #56677d;
+      --soft-muted: #7b8ba0;
+      --line: #dce6f1;
+      --paper: #f5f8fc;
+      --panel: #ffffff;
+      --teal: #11806a;
+      --teal-dark: #0d5f4f;
+      --teal-soft: #e2f5ef;
+      --gold: #c8a96e;
+      --gold-soft: #f5ead1;
+      --rust: #b65035;
+      --steel: #1d5ea8;
+      --soft-teal: #e2f5ef;
+      --soft-gold: #fff2d9;
+      --soft-rust: #fde8df;
+      --shadow: 0 18px 45px rgba(6, 17, 31, .10);
+      --shadow-soft: 0 10px 28px rgba(6, 17, 31, .07);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(200, 169, 110, .18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(29, 94, 168, .12), transparent 34rem),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
+      font-family: "Noto Sans TC", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.78;
+      letter-spacing: 0;
+    }
+
+    .page { overflow: hidden; }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 248, 252, .82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220, 230, 241, .88);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 16px 12px 0;
+      scroll-padding-inline: 12px;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--navy-900);
+      border-color: rgba(200, 169, 110, .62);
+      background: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .nav {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        row-gap: 8px;
+        padding-right: 0;
+      }
+    }
+
+    .hero {
+      position: relative;
+      min-height: auto;
+      display: grid;
+      align-items: stretch;
+      overflow: hidden;
+      background: #17202a;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(11, 21, 29, 0.9) 0%, rgba(11, 21, 29, 0.68) 42%, rgba(11, 21, 29, 0.18) 78%),
+        url("../assets/images/research/fleet-spares-hero.png");
+      background-size: cover;
+      background-position: 52% 58%;
+      z-index: -2;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 38px 0 32px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      width: fit-content;
+      max-width: 100%;
+      gap: 10px;
+      padding: 7px 13px;
+      border: 1px solid rgba(200, 169, 110, .42);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, .10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(200, 169, 110, .9);
+    }
+
+    .hero-body {
+      margin-top: 0;
+      padding-top: 20px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin-bottom: 16px;
+      font-family: "Noto Serif TC", Georgia, serif;
+      font-size: clamp(34px, 3.2vw, 46px);
+      line-height: 1.16;
+      letter-spacing: -.03em;
+      font-weight: 900;
+      text-wrap: pretty;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-family: "Noto Serif TC", Georgia, serif;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.18;
+      letter-spacing: -.02em;
+      color: var(--navy-900);
+    }
+
+    h3 {
+      font-family: "Noto Serif TC", Georgia, serif;
+    }
+
+    .title-phrase {
+      display: block;
+    }
+
+    @media (min-width: 961px) {
+      .hero-body h1 {
+        font-size: clamp(38px, 3.1vw, 46px);
+        line-height: 1.14;
+      }
+    }
+
+    .hero-provenance {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 0;
+      max-width: 820px;
+      margin: 0 0 6px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .hero-provenance--sub {
+      margin-bottom: 18px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.54);
+    }
+
+    .hero-provenance__badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      margin-right: 2px;
+      padding: 2px 9px;
+      border: 1px solid rgba(200, 169, 110, 0.38);
+      border-radius: 999px;
+      color: #f0dcae;
+      background: rgba(200, 169, 110, 0.12);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-lede {
+      max-width: 860px;
+      margin-bottom: 16px;
+      color: #edf6f3;
+      font-size: clamp(15px, 1.42vw, 17px);
+      line-height: 1.62;
+    }
+
+    .hero-lede br {
+      display: block;
+      margin-top: 8px;
+      content: "";
+    }
+
+    .hero-focus {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+      gap: 12px;
+      width: min(820px, 100%);
+      padding: 12px 14px;
+      border: 1px solid rgba(247, 241, 223, 0.22);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius-sm);
+      background: rgba(13, 28, 38, 0.62);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 52px rgba(0, 0, 0, 0.16);
+    }
+
+    .hero-focus-main {
+      padding: 2px 6px 2px 0;
+    }
+
+    .hero-focus-kicker {
+      display: block;
+      margin-bottom: 6px;
+      color: #d8ad43;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-focus-main strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fffaf0;
+      font-size: clamp(16px, 1.85vw, 21px);
+      line-height: 1.35;
+      font-weight: 850;
+    }
+
+    .hero-focus-main p {
+      margin-bottom: 0;
+      color: #c8d4df;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .hero-focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .hero-focus-card {
+      min-height: 108px;
+      padding: 11px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-focus-card span {
+      display: block;
+      margin-bottom: 6px;
+      color: #d8ad43;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .hero-focus-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #f7f1df;
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .hero-focus-card p {
+      margin-bottom: 0;
+      color: #c8d4df;
+      font-size: 11px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .section {
+      padding: 58px 0;
+    }
+
+    .section.alt {
+      background: #ffffff;
+    }
+
+    .section-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    #share {
+      padding: 36px 0 56px;
+    }
+
+    #share .share-panel {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    #share .article-share {
+      justify-content: flex-start;
+      align-items: center;
+      gap: 12px 16px;
+    }
+
+    #share .article-share__label {
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.75fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    .section-heading > p {
+      margin: 0;
+      padding: 16px 18px 16px 16px;
+      border: 1px solid rgba(200, 169, 110, .24);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(255, 252, 245, .96), rgba(255, 255, 255, .88));
+      box-shadow: var(--shadow-soft);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .thesis-frame {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.8fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .statement {
+      padding: 26px;
+      border-left: 6px solid var(--teal);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .statement h3 {
+      margin-bottom: 12px;
+      font-size: 23px;
+      line-height: 1.28;
+    }
+
+    .statement p {
+      margin-bottom: 0;
+      color: #35404b;
+      font-size: 16px;
+    }
+
+    .statement-em {
+      color: var(--teal-dark);
+      font-weight: 700;
+      background: var(--teal-soft);
+      padding: 0 .28em;
+      border-radius: 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .question {
+      display: grid;
+      place-items: center;
+      padding: 26px;
+      border: 1px solid var(--line);
+      background: #eef5f2;
+    }
+
+    .question blockquote {
+      margin: 0;
+      color: var(--teal-dark);
+      font-size: 19px;
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    .research-brief {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .research-panel {
+      min-height: 260px;
+      padding: clamp(20px, 2.2vw, 24px);
+      border: 1px solid #d5e2e6;
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 18px 48px rgba(26, 38, 50, 0.07);
+    }
+
+    .research-panel h3 {
+      margin-bottom: 14px;
+      color: #16435a;
+      font-size: clamp(19px, 1.75vw, 22px);
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .research-questions {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .research-questions li {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px dashed #cadbe1;
+      color: #23313b;
+      font-size: clamp(14px, 1.15vw, 15px);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .research-questions li:first-child {
+      padding-top: 0;
+    }
+
+    .research-questions li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .check-badge {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      margin-top: 1px;
+      border-radius: 50%;
+      color: var(--teal);
+      background: #e4f6f0;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .case-copy {
+      margin-bottom: 0;
+      color: #26333d;
+      font-size: clamp(14px, 1.15vw, 15px);
+      line-height: 1.72;
+      font-weight: 500;
+    }
+
+    .detail-band {
+      margin-top: 28px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-band h3 {
+      margin-bottom: 14px;
+      color: #183543;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .detail-copy {
+      max-width: 880px;
+      margin-bottom: 18px;
+      color: #34424d;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .detail-grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .detail-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .detail-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #183543;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .detail-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .detail-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .detail-list li {
+      padding-left: 18px;
+      border-left: 3px solid #c9dedb;
+      color: #3a4852;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .detail-note {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--teal);
+      background: #eef7f4;
+      color: #2f4b50;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .extension-section {
+      background: #eaf6fb;
+    }
+
+    .extension-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .extension-card {
+      min-height: 260px;
+      padding: 28px;
+      border: 1px solid #cfe0e8;
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 14px 36px rgba(26, 38, 50, 0.06);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .extension-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .extension-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      margin-bottom: 24px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      color: #0a7894;
+      background: #ddf3ff;
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+    }
+
+    .extension-card h3 {
+      margin-bottom: 12px;
+      color: #14345a;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .extension-card p {
+      margin-bottom: 0;
+      color: #4c5d73;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .pdca-band {
+      background: #ffffff;
+    }
+
+    .pdca-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .pdca-intro {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 100%;
+    }
+
+    .pdca-diagram {
+      flex: 0 0 auto;
+      aspect-ratio: 1024 / 564;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pdca-diagram img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .pdca-core {
+      position: relative;
+      min-height: 340px;
+      padding: 28px;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background:
+        linear-gradient(150deg, rgba(15, 118, 110, 0.96), rgba(22, 37, 42, 0.96)),
+        url("../assets/images/research/fleet-spares-hero.png");
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .pdca-core::after {
+      content: "";
+      position: absolute;
+      inset: auto 28px 28px auto;
+      width: 140px;
+      height: 140px;
+      border: 2px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+    }
+
+    .pdca-core strong {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #ffe7aa;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .pdca-core h3 {
+      max-width: 420px;
+      margin-bottom: 12px;
+      font-size: clamp(25px, 2.6vw, 34px);
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .pdca-core p {
+      position: relative;
+      z-index: 1;
+      max-width: 460px;
+      margin-bottom: 0;
+      color: #d9ebe7;
+      font-size: 16px;
+    }
+
+    .pdca-loop {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .pdca-item {
+      min-height: 190px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 16px 40px rgba(26, 38, 50, 0.07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .pdca-item:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pdca-item,
+      .pain-card,
+      .value-card,
+      .method-step,
+      .effect-card,
+      .extension-card {
+        transition: none;
+      }
+    }
+
+    .pdca-item:nth-child(1) {
+      border-top: 4px solid var(--teal);
+    }
+
+    .pdca-item:nth-child(2) {
+      border-top: 4px solid var(--gold);
+    }
+
+    .pdca-item:nth-child(3) {
+      border-top: 4px solid var(--steel);
+    }
+
+    .pdca-item:nth-child(4) {
+      border-top: 4px solid var(--rust);
+    }
+
+    .pdca-phase {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .pdca-item h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .pdca-item p {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .pdca-result {
+      display: block;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: #2e4a51;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .pain-grid,
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pain-card,
+    .value-card,
+    .metric-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 16px 40px rgba(26, 38, 50, 0.07);
+    }
+
+    .pain-card,
+    .value-card {
+      padding: 22px;
+    }
+
+    .pain-card:nth-child(1) {
+      border-top: 4px solid var(--rust);
+    }
+
+    .pain-card:nth-child(2) {
+      border-top: 4px solid var(--gold);
+    }
+
+    .pain-card:nth-child(3) {
+      border-top: 4px solid var(--teal);
+    }
+
+    .pain-card,
+    .value-card {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .pain-card:hover,
+      .value-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .card-index {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .pain-card h3,
+    .value-card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .pain-card p,
+    .value-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .method-band {
+      background: #f1f5f4;
+    }
+
+    .method-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: method;
+    }
+
+    .method-step {
+      position: relative;
+      min-height: 260px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 16px 40px rgba(26, 38, 50, 0.07);
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .method-step:hover {
+        transform: translateY(-4px);
+        border-color: rgba(10, 22, 40, .12);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .method-step::before {
+      counter-increment: method;
+      content: "0" counter(method);
+      display: block;
+      margin-bottom: 20px;
+      color: rgba(15, 118, 110, 0.16);
+      font-size: 54px;
+      line-height: 0.9;
+      font-weight: 900;
+    }
+
+    .method-step::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(183, 121, 31, 0.12);
+    }
+
+    .method-step h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .method-step p {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .method-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .method-tags span,
+    .keyword {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #26424a;
+      background: #e9f0ee;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.3;
+    }
+
+    .architecture {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .architecture-intro {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .mpdc-panel {
+      padding: 28px;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: #183337;
+      box-shadow: var(--shadow);
+    }
+
+    .mpdc-panel h3 {
+      margin-bottom: 12px;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+
+    .mpdc-panel p {
+      margin-bottom: 0;
+      color: #d5e5e1;
+      font-size: 16px;
+    }
+
+    .mpdc-diagram {
+      margin: 0;
+    }
+
+    .mpdc-diagram img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+    }
+
+    .architecture-map {
+      display: grid;
+      gap: 14px;
+    }
+
+    .map-row {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .map-label,
+    .map-content {
+      min-height: 84px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .map-label {
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: var(--teal-dark);
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .map-content strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+
+    .map-content span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .effect-summary {
+      margin-bottom: 26px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: #fffaf0;
+      border: 1px solid #eadfca;
+    }
+
+    .effect-summary h3 {
+      margin-bottom: 8px;
+      color: #14345a;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.25;
+    }
+
+    .effect-summary > p {
+      margin-bottom: 24px;
+      color: #526072;
+      font-size: 17px;
+      line-height: 1.85;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 960px) {
+      .effect-summary > p {
+        white-space: normal;
+      }
+    }
+
+    .effect-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .effect-card {
+      min-height: 170px;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      padding: 22px 18px;
+      border-radius: var(--radius);
+      color: #e9eef3;
+      background: #12335e;
+      box-shadow: 0 16px 40px rgba(26, 38, 50, 0.07);
+      text-align: center;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .effect-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+    }
+
+    .effect-card strong {
+      display: block;
+      color: #f7f1df;
+      font-size: clamp(42px, 5.2vw, 66px);
+      line-height: 0.95;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .effect-card strong span {
+      color: #d8ad43;
+      font-size: 0.42em;
+      font-weight: 850;
+      margin-left: 2px;
+    }
+
+    .effect-card p {
+      margin: 16px 0 0;
+      color: #c8d4df;
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .metric-card {
+      padding: 18px;
+    }
+
+    .metric-card .label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .metric-card .number {
+      display: block;
+      margin-top: 8px;
+      color: var(--ink);
+      font-size: clamp(20px, 2.1vw, 27px);
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .metric-card .note {
+      display: block;
+      margin-top: 10px;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .comparison {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      color: #3c4a54;
+      background: #eef3f1;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    td.num {
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .bar {
+      display: grid;
+      gap: 7px;
+      min-width: 170px;
+    }
+
+    .track {
+      height: 9px;
+      border-radius: 99px;
+      background: #e5eaec;
+      overflow: hidden;
+    }
+
+    .fill {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--teal);
+    }
+
+    .fill.actual {
+      background: var(--rust);
+    }
+
+    .insight {
+      margin-top: 24px;
+      padding: 24px 28px;
+      border-left: 5px solid var(--gold);
+      background: var(--soft-gold);
+      color: #4c3920;
+      font-weight: 750;
+    }
+
+    .value-card:nth-child(1) .card-index,
+    .value-card:nth-child(4) .card-index {
+      background: var(--teal);
+    }
+
+    .value-card:nth-child(2) .card-index,
+    .value-card:nth-child(5) .card-index {
+      background: var(--gold);
+    }
+
+    .value-card:nth-child(3) .card-index {
+      background: var(--rust);
+    }
+
+    .value-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .keyword {
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .closing {
+      padding: 72px 0 84px;
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(10, 22, 40, .97), rgba(23, 55, 95, .96));
+    }
+
+    .closing h2 {
+      max-width: 820px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .closing .section-kicker {
+      color: #f0dcae;
+    }
+
+    .closing .section-kicker::before {
+      background: #f0dcae;
+    }
+
+    .closing .section-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.65fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .closing p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 19px;
+    }
+
+    .closing-quote {
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff4d8;
+      font-size: 22px;
+      line-height: 1.55;
+      font-weight: 850;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: var(--soft-muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: var(--navy-900);
+    }
+
+    .footer__brand {
+      margin: 0 0 10px;
+      color: var(--navy-900);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    @media print {
+      .nav-shell { display: none; }
+      .note-site-bar { display: none; }
+      .hero,
+      .closing,
+      .pdca-core {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 58px 0 42px;
+      }
+
+      .hero-body {
+        margin-top: 0;
+        padding-top: 34px;
+      }
+
+      .hero-focus,
+      .hero-focus-grid,
+      .section-heading,
+      .thesis-frame,
+      .research-brief,
+      .detail-grid,
+      .detail-grid.three,
+      .extension-grid,
+      .pdca-layout,
+      .architecture,
+      .closing .section-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .pdca-intro {
+        min-height: auto;
+      }
+
+      .pdca-diagram {
+        flex: none;
+        aspect-ratio: 1024 / 564;
+      }
+
+      .pdca-diagram img {
+        object-fit: contain;
+      }
+
+      .pain-grid,
+      .pdca-loop,
+      .method-flow,
+      .metrics,
+      .value-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        width: calc(100% - 28px);
+      }
+
+      .hero::before {
+        background-image:
+          linear-gradient(0deg, rgba(11, 21, 29, 0.9) 0%, rgba(11, 21, 29, 0.72) 62%, rgba(11, 21, 29, 0.54) 100%),
+          url("../assets/images/research/fleet-spares-hero.png");
+        background-position: 52% 58%;
+      }
+
+      .hero-body {
+        padding-top: 24px;
+      }
+
+      .hero-focus,
+      .hero-focus-grid,
+      .pain-grid,
+      .pdca-loop,
+      .method-flow,
+      .effect-grid,
+      .metrics,
+      .value-grid,
+      .extension-grid,
+      .map-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-focus-card {
+        min-height: auto;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .statement,
+      .question,
+      .research-panel,
+      .pdca-core,
+      .mpdc-panel,
+      .closing-quote {
+        padding: 24px;
+      }
+
+      .pdca-diagram {
+        aspect-ratio: 1024 / 564;
+      }
+
+      .research-panel {
+        min-height: auto;
+      }
+
+      .research-panel h3 {
+        margin-bottom: 16px;
+      }
+
+      .research-questions li {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 12px;
+        font-size: 15px;
+      }
+
+      .check-badge {
+        width: 26px;
+        height: 26px;
+        font-size: 15px;
+      }
+
+      .case-copy {
+        font-size: 15px;
+        line-height: 1.68;
+      }
+
+      .pdca-core {
+        min-height: 360px;
+      }
+
+      .question blockquote {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="index.en.html">← Management Notes</a>
+      <span>|</span>
+      <a href="../index.html">Home</a>
+      <a href="../about.en.html">About</a>
+      <a href="../notes/index.en.html">Maritime Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="fleet-spares-thesis-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="fleet-spares-thesis-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">Master Thesis · Fleet Spare Management · Reay's Note</div>
+      <div class="hero-body">
+        <h1><span class="title-phrase">From Experience-Based Purchasing to</span><span class="title-phrase">Data-Driven Fleet Spare Parts Management</span></h1>
+        <p class="article-meta">
+          <span>📅 Updated: 2026-06-03</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 15 min read</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 Fleet spares / Supply chain / PMP</span>
+        </p>
+        <p class="hero-provenance" aria-label="Thesis source">
+          <span class="hero-provenance__badge">Master's thesis</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>National Yang Ming Chiao Tung University</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>March 2023</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>Archived by National Central Library</span>
+        </p>
+        <p class="hero-provenance hero-provenance--sub">
+          <span>Thesis title: Demand forecasting and integrated demand planning of spare parts for liner shipping fleet</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>Author: Yen-Jui Huang (Reay Huang)</span>
+        </p>
+        <p class="hero-lede">This note summarizes my master thesis on integrated demand forecasting and procurement planning for maintenance spare parts in a liner fleet, using actual procurement data from a case fleet of ten 6,944 TEU container vessels and focusing on one spare-parts item.<br>Using PDCA as the management lens, the study combines vessel operating data, maintenance records, route cycles, home-port replenishment, and reconditioned-part scrap rates to build a fleet spare-parts management model that runs from demand forecasting and procurement execution to consumption monitoring and continuous correction.</p>
+        <div class="hero-focus" aria-label="Article focus">
+          <div class="hero-focus-main">
+            <span class="hero-focus-kicker">ARTICLE FOCUS</span>
+            <strong>Turning fleet spare-parts management from experience-based requests into a forecastable, auditable, and continuously correctable decision system.</strong>
+            <p>The key value of this research is that it converts maintenance, reconditioning, and procurement data for main-engine fuel valves into a fleet-level replenishment planning model.</p>
+          </div>
+          <div class="hero-focus-grid">
+            <article class="hero-focus-card">
+              <span>Data basis</span>
+              <strong>6,944 TEU × 10</strong>
+              <p>Validated with three years of actual operating, maintenance, and procurement records from a fleet of ten 6,944 TEU container vessels.</p>
+            </article>
+            <article class="hero-focus-card">
+              <span>Method framework</span>
+              <strong>PDCA + MRP</strong>
+              <p>Connects demand forecasting, weekly demand consolidation, and procurement lot-sizing into one cycle.</p>
+            </article>
+            <article class="hero-focus-card">
+              <span>Empirical highlights</span>
+              <strong>-43% / -50%</strong>
+              <p>Procurement quantity was effectively reduced, with substantial total-cost savings in the best scenario.</p>
+            </article>
+          </div>
+        </div>
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/research/fleet-spares-thesis-notes.en.html"
+          data-share-title="From Experience-Based Purchasing to Data-Driven Fleet Spare Parts Management | Reay's Note"
+          data-share-email-body="I found this note on Reay's Management Notes and thought it might be useful for you:&#10;&#10;From Experience-Based Purchasing to Data-Driven Fleet Spare Parts Management | Reay's Note&#10;https://reayhuang.com/research/fleet-spares-thesis-notes.en.html"
+          data-share-copy="Copy link"
+          data-share-copied="Copied"
+          data-toast-copied="Link copied to clipboard"
+        >
+          <p class="article-share__label" id="share-hero-label">Share this note</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-shell" aria-label="Section quick links">
+    <div class="nav">
+      <a href="#topic">Topic</a>
+      <a href="#pdca">PDCA</a>
+      <a href="#pain">Pain points</a>
+      <a href="#method">Method</a>
+      <a href="#mpdc">MPDC</a>
+      <a href="#results">Results</a>
+      <a href="#value">Value</a>
+      <a href="#extension">Extensions</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section" id="topic">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">01 | Research Positioning</div>
+            <h2>From single-vessel experience-based purchasing to fleet-level data-driven decisions.</h2>
+          </div>
+          <p>This research is not about whether one item was bought in excess or shortage. It addresses an integrated management problem across fleet reliability, maintenance efficiency, home-port replenishment, and procurement cost.</p>
+        </div>
+
+        <div class="thesis-frame">
+          <article class="statement">
+            <h3>Thesis Topic Overview</h3>
+            <p>When a shipping company relies only on requests from individual vessels or maintenance engineers, headquarters has limited visibility into future fleet-wide demand. This research proposes a <strong class="statement-em">calculable, traceable, and updatable</strong> method to help managers forecast maintenance spare-parts demand in advance and decide <strong class="statement-em">when to procure and how much to procure</strong>.</p>
+          </article>
+          <aside class="question">
+            <blockquote>How can a fleet use actual operating and maintenance data to forecast spare-parts demand in advance while balancing operational safety and cost control?</blockquote>
+          </aside>
+        </div>
+
+        <div class="research-brief">
+          <article class="research-panel">
+            <h3>Questions This Research Answers</h3>
+            <ul class="research-questions">
+              <li>
+                <span class="check-badge" aria-hidden="true">✓</span>
+                <span>How can future spare-parts demand for each vessel be forecast?</span>
+              </li>
+              <li>
+                <span class="check-badge" aria-hidden="true">✓</span>
+                <span>How can demand for reconditioned parts be separated from demand for new parts?</span>
+              </li>
+              <li>
+                <span class="check-badge" aria-hidden="true">✓</span>
+                <span>How can vessel-level demand be consolidated into weekly fleet demand?</span>
+              </li>
+              <li>
+                <span class="check-badge" aria-hidden="true">✓</span>
+                <span>How can the optimal procurement lot size for new parts be determined?</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="research-panel">
+            <h3>Case Item</h3>
+            <p class="case-copy">The study uses main-engine fuel valves as the case item because their demand is closely linked to engine running hours, scheduled maintenance, reconditioning, and scrap rates, making them suitable for validating fleet spare-parts demand forecasting and procurement planning.</p>
+          </article>
+        </div>
+
+        <div class="detail-band">
+          <h3>Case Data Scope in the Thesis</h3>
+          <p class="detail-copy">Chapter 4 of the thesis uses a case fleet of ten 6,944 TEU container vessels, with main-engine operating records, fuel-valve maintenance records, and procurement data from 1 January 2018 to 31 December 2020. Rather than making a one-time cost comparison, the study organizes daily operation, maintenance intervals, voyage-week timing, home-port replenishment, and reconditioning outcomes into a demand model that can be recalculated repeatedly.</p>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <strong>10 vessels</strong>
+              <span>A fleet of ten 6,944 TEU container vessels, each serving different routes.</span>
+            </article>
+            <article class="detail-card">
+              <strong>15 routes</strong>
+              <span>Route cycles are included in demand forecasting and home-port replenishment scheduling.</span>
+            </article>
+            <article class="detail-card">
+              <strong>10-cylinder main engine</strong>
+              <span>Each vessel has a 10-cylinder main engine, which forms the analytical unit for fuel-valve maintenance records.</span>
+            </article>
+            <article class="detail-card">
+              <strong>3 fuel valves per cylinder</strong>
+              <span>Fuel-valve demand varies with engine running hours, maintenance timing, and reconditioning/scrap outcomes.</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pdca-band" id="pdca">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">02 | Research Lens</div>
+            <h2>Viewing the study through PDCA: spare-parts management is a continuously calibrated decision cycle.</h2>
+          </div>
+          <p>This lens helps shipowners and ship managers see that the thesis is not just a one-off procurement calculation, but a fleet spare-parts management process that can be updated, checked, and improved repeatedly.</p>
+        </div>
+
+        <div class="pdca-layout">
+          <div class="pdca-intro">
+            <aside class="pdca-core">
+              <strong>Management Cycle</strong>
+              <h3>From forecasting to procurement, then back to data correction.</h3>
+              <p>PLAN builds the long-term demand forecast, DO turns the forecast into procurement and supplier strategy, CHECK monitors actual consumption and usage, and ACTION feeds deviations back into the model to correct the next demand forecast.</p>
+            </aside>
+            <figure class="pdca-diagram">
+              <img src="../assets/images/research/pdca-cycle-diagram.jpg" alt="PDCA management-cycle illustration: a closed loop from demand forecasting and procurement execution to consumption monitoring and model correction" loading="lazy" width="1024" height="564" />
+            </figure>
+          </div>
+
+          <div class="pdca-loop" aria-label="PDCA research flow">
+            <article class="pdca-item">
+              <span class="pdca-phase">PLAN</span>
+              <h3>Analyze consumption patterns and forecast long-term spare-parts demand</h3>
+              <p>Organize historical vessel operating records, fuel-valve maintenance records, route cycles, and reconditioned-part scrap rates to estimate future spare-parts demand when each vessel returns to home port.</p>
+              <span class="pdca-result">Output: weekly fleet demand, new-part demand, and reconditioned-part demand.</span>
+            </article>
+
+            <article class="pdca-item">
+              <span class="pdca-phase">DO</span>
+              <h3>Execute long-term procurement planning and supplier negotiation</h3>
+              <p>Use MRP and the Silver-Meal method to plan procurement lot sizes and ordering timing, while using long-term demand as the basis for supplier negotiation, delivery coordination, and spare-parts replenishment.</p>
+              <span class="pdca-result">Output: procurement lot size, ordering cycle, and supplier agreement.</span>
+            </article>
+
+            <article class="pdca-item">
+              <span class="pdca-phase">CHECK</span>
+              <h3>Monitor spare-parts consumption, usage, and inventory status</h3>
+              <p>Use MPDC and ERP inventory ledgers to track the movement of new parts, serviceable reconditioned parts, and scrapped parts, checking whether actual consumption aligns with the forecast and whether onboard safety stock and service levels are maintained.</p>
+              <span class="pdca-result">Output: consumption deviation, inventory status, and demand fill rate.</span>
+            </article>
+
+            <article class="pdca-item">
+              <span class="pdca-phase">ACTION</span>
+              <h3>Analyze execution deviations and correct the demand-forecasting model</h3>
+              <p>Feed actual consumption, scrap-rate changes, supplier lead time, and vessel maintenance conditions back into the model to adjust the next spare-parts demand forecast and procurement plan.</p>
+              <span class="pdca-result">Output: corrected forecast, improvement rules, and the next planning cycle.</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="pain">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">03 | Practical Pain Points</div>
+            <h2>The difficulty of vessel spare-parts management comes from the uncertainty of maritime operations.</h2>
+          </div>
+          <p>Unlike land-based factories, ships cannot be replenished at any time. Spare parts usually have to be arranged around port calls, home-port returns, maintenance cycles, and reconditioning outcomes.</p>
+        </div>
+
+        <div class="pain-grid">
+          <article class="pain-card">
+            <span class="card-index">01</span>
+            <h3>Shortage risk</h3>
+            <p>Insufficient spare parts can affect vessel maintenance, equipment operation, and route stability; shortage risk eventually becomes operational risk.</p>
+          </article>
+          <article class="pain-card">
+            <span class="card-index">02</span>
+            <h3>Inventory cost</h3>
+            <p>If each vessel buys conservatively and over-stocks, onboard and shore-side inventory accumulates, tying up capital and increasing holding costs.</p>
+          </article>
+          <article class="pain-card">
+            <span class="card-index">03</span>
+            <h3>Limited visibility</h3>
+            <p>When demand information is fragmented across vessels and engineers, headquarters struggles to conduct fleet-level procurement planning, cost control, and supplier coordination.</p>
+          </article>
+        </div>
+
+        <div class="detail-band">
+          <h3>Four management challenges identified in Chapter 1</h3>
+          <ul class="detail-list">
+            <li>Replenishment of new and reconditioned parts is managed separately by individual maintenance engineers rather than integrated at fleet level, making it easy to miss home-port schedules and incur extra recovery costs.</li>
+            <li>Demand for reconditioned parts is difficult to estimate accurately because fuel-valve replacement can be affected by early or delayed maintenance, poor fuel quality, and quality differences between new and reconditioned parts.</li>
+            <li>Different route cycles and home-port timings make it difficult to consolidate weekly demand for new and reconditioned parts; scrap decisions for reconditioned parts also require workshop confirmation, further complicating new-part demand.</li>
+            <li>New-part procurement lacks a cost-evaluation model, so frontline crew may increase request quantities out of shortage concerns, leading to excess inventory, duplicated ordering, and higher holding costs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-band" id="method">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">04 | Research Method</div>
+            <h2>A three-stage framework turns data into an executable procurement plan.</h2>
+          </div>
+          <p>The study starts from each vessel's operating and maintenance data, consolidates it into weekly fleet demand, and then applies dynamic lot-sizing to plan when and how many new parts to procure.</p>
+        </div>
+
+        <div class="method-flow">
+          <article class="method-step">
+            <h3>Demand forecasting</h3>
+            <p>Estimate each vessel's likely maintenance spare-parts demand at future home-port calls using main-engine running hours and fuel-valve maintenance records.</p>
+            <div class="method-tags">
+              <span>Engine running records</span>
+              <span>Fuel-valve maintenance</span>
+              <span>Home-port demand</span>
+            </div>
+          </article>
+          <article class="method-step">
+            <h3>Fleet consolidation</h3>
+            <p>Use MRP to consolidate different vessels, route cycles, and home-port return timings into overall weekly fleet demand.</p>
+            <div class="method-tags">
+              <span>MRP</span>
+              <span>Weekly demand</span>
+              <span>Fleet level</span>
+            </div>
+          </article>
+          <article class="method-step">
+            <h3>Procurement planning</h3>
+            <p>Apply the Silver-Meal heuristic to estimate a more reasonable procurement lot size by balancing purchase cost, ordering cost, and inventory cost.</p>
+            <div class="method-tags">
+              <span>Silver-Meal</span>
+              <span>Dynamic lot-sizing</span>
+              <span>Cost balance</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="detail-band">
+          <h3>Calculation Details from Raw Data to Procurement Decisions</h3>
+          <p class="detail-copy">Chapter 4 breaks the research process into executable procedures: first, calculate fuel-valve maintenance interval hours from the difference in main-engine running hours between two maintenance events for each cylinder on each vessel; then combine daily engine running hours with route cycles to estimate the number of maintenance events and spare-parts demand before each vessel returns to home port.</p>
+          <div class="detail-grid three">
+            <article class="detail-card">
+              <strong>Proc Cal_ARHPM</strong>
+              <span>Calculates average fuel-valve running hours to identify whether maintenance intervals differ across vessels or routes.</span>
+            </article>
+            <article class="detail-card">
+              <strong>Proc Cal_AERHPD</strong>
+              <span>Calculates each vessel's average daily main-engine running hours as the basis for estimating accumulated running hours over a route cycle.</span>
+            </article>
+            <article class="detail-card">
+              <strong>Demand Forecast</strong>
+              <span>Converts estimated maintenance events before home-port return into reconditioned-part demand, then estimates new-part demand based on the reconditioned-part scrap rate.</span>
+            </article>
+          </div>
+          <p class="detail-note">For procurement lot-sizing, the thesis uses weeks as the planning unit and sets the procurement lead time for new parts at 12 weeks. The reconditioning lead time for fuel valves can also be used to decide whether MPDC should reserve reconditioning capacity and safety stock in advance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="mpdc">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">05 | Management Architecture</div>
+            <h2>Use MPDC as the home-port hub for centralized spare-parts management.</h2>
+          </div>
+          <p>MPDC places new parts, serviceable reconditioned parts, and scrapped parts into one logistics and inventory-ledger framework, allowing spare-parts movement and cost information to be managed together.</p>
+        </div>
+
+        <div class="architecture">
+          <div class="architecture-intro">
+            <aside class="mpdc-panel">
+              <h3>MPDC</h3>
+              <p>Maintenance Part Distribution Center. It allows headquarters to move from passively receiving vessel requests to proactively understanding future fleet demand and replenishment timing.</p>
+            </aside>
+            <figure class="mpdc-diagram">
+              <img src="../assets/images/research/mpdc-cycle-diagram.jpg" alt="MPDC fleet spare-parts logistics cycle: a closed loop from demand detection, data integration, warehousing and distribution, and parts supply to vessel maintenance" loading="lazy" width="1024" height="575" />
+            </figure>
+          </div>
+
+          <div class="architecture-map" aria-label="MPDC management process">
+            <div class="map-row">
+              <div class="map-label">Onboard safety stock</div>
+              <div class="map-content">
+                <strong>Maintain essential repair capability</strong>
+                <span>Each vessel still needs reasonable spare-parts stock to ensure repair safety and service level during voyages.</span>
+              </div>
+            </div>
+            <div class="map-row">
+              <div class="map-label">Centralized home-port replenishment</div>
+              <div class="map-content">
+                <strong>Reduce duplicated inventory holdings</strong>
+                <span>Other spare parts are managed centrally by MPDC to improve sharing efficiency and reduce over-procurement.</span>
+              </div>
+            </div>
+            <div class="map-row">
+              <div class="map-label">ERP inventory-ledger synchronization</div>
+              <div class="map-content">
+                <strong>Track material flow and cost</strong>
+                <span>Set up inventories for new parts, serviceable reconditioned parts, and scrapped parts to support auditing and continuous improvement.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-band">
+          <h3>Inventory-Ledger and Logistics Flow after MPDC Implementation</h3>
+          <p class="detail-copy">Chapter 3 recommends establishing clear ERP inventory ledgers so that material flows among vessels, MPDC, reconditioning workshops, and suppliers can be tracked.<br>The key design point is to turn “replenished onboard, sent for reconditioning, reconditioning completed, scrapped, and new parts received” into auditable transaction records.</p>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <strong>Parts awaiting reconditioning</strong>
+              <span>After parts are removed from vessels, they are first handed to MPDC at the home port and then sent by MPDC to the workshop.</span>
+            </article>
+            <article class="detail-card">
+              <strong>Serviceable reconditioned-parts inventory</strong>
+              <span>Parts that complete reconditioning and pass quality inspection return to MPDC and can be shared across the fleet.</span>
+            </article>
+            <article class="detail-card">
+              <strong>New-parts inventory</strong>
+              <span>After supplier delivery, MPDC receives and stores new parts, then replenishes vessels according to home-port demand.</span>
+            </article>
+            <article class="detail-card">
+              <strong>Scrapped-parts inventory</strong>
+              <span>Parts judged unreconditionable by the workshop enter the scrap ledger and trigger new-part replenishment demand.</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">06 | Empirical Results</div>
+            <h2>The ideal model shows that past procurement was not well aligned with actual fleet demand.</h2>
+          </div>
+          <p>The study validates the model using data from 1 January 2018 to 31 December 2020 and compares the ideal procurement model with historical procurement behavior.</p>
+        </div>
+
+        <div class="effect-summary">
+          <h3>Ideal Model vs. Actual Procurement Performance</h3>
+          <p>Validated with three years of historical main-engine fuel-valve data from the case fleet of ten 6,944 TEU container vessels, the results are as follows:</p>
+          <div class="effect-grid" aria-label="Research benefit ratios">
+            <article class="effect-card">
+              <strong>43<span>%</span></strong>
+              <p>Spare-parts procurement quantity<br>effectively reduced</p>
+            </article>
+            <article class="effect-card">
+              <strong>50<span>%</span></strong>
+              <p>Total cost<br>maximum saving</p>
+            </article>
+            <article class="effect-card">
+              <strong>29<span>%</span></strong>
+              <p>Ordering cost<br>maximum reduction</p>
+            </article>
+            <article class="effect-card">
+              <strong>96<span>×</span></strong>
+              <p>Inventory-cost difference<br>improved by 9600%</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <article class="metric-card">
+            <span class="label">Procurement quantity</span>
+            <span class="number">-283 pcs</span>
+            <span class="note">660 vs. 943</span>
+          </article>
+          <article class="metric-card">
+            <span class="label">Number of orders</span>
+            <span class="number">-9 orders</span>
+            <span class="note">31 vs. 40</span>
+          </article>
+          <article class="metric-card">
+            <span class="label">Total cost difference</span>
+            <span class="number">USD 98,991.55</span>
+            <span class="note">approx. 33.3%</span>
+          </article>
+          <article class="metric-card">
+            <span class="label">Inventory cost</span>
+            <span class="number">USD 145.29</span>
+            <span class="note">Ideal model</span>
+          </article>
+        </div>
+
+        <div class="comparison">
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Ideal model</th>
+                <th>Historical actual model</th>
+                <th>Relative visual</th>
+                <th>Management implication</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Procurement quantity</td>
+                <td class="num">660 pcs</td>
+                <td class="num">943 pcs</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:70%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>Historical procurement quantity was clearly high</td>
+              </tr>
+              <tr>
+                <td>Number of orders</td>
+                <td class="num">31 orders</td>
+                <td class="num">40 orders</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:78%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>The historical model involved more repeated orders</td>
+              </tr>
+              <tr>
+                <td>Purchase cost</td>
+                <td class="num">USD 198,000.00</td>
+                <td class="num">USD 282,900.00</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:70%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>Over-procurement increased cost</td>
+              </tr>
+              <tr>
+                <td>Ordering cost</td>
+                <td class="num">USD 496.00</td>
+                <td class="num">USD 640.00</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:78%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>More orders created additional cost</td>
+              </tr>
+              <tr>
+                <td>Inventory cost</td>
+                <td class="num">USD 145.29</td>
+                <td class="num">USD 14,092.84</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:1%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>The historical model had high inventory waiting and holding cost</td>
+              </tr>
+              <tr>
+                <td>Total cost</td>
+                <td class="num">USD 198,641.29</td>
+                <td class="num">USD 297,632.84</td>
+                <td>
+                  <div class="bar">
+                    <div class="track"><span class="fill" style="width:67%"></span></div>
+                    <div class="track"><span class="fill actual" style="width:100%"></span></div>
+                  </div>
+                </td>
+                <td>The total cost gap was significant</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="insight">Management implication: the issue is not simply whether spare parts are available. The real problem is that procurement quantity and order timing were not aligned with actual fleet demand, which amplified over-procurement and inventory cost.</p>
+
+        <div class="detail-band">
+          <h3>Detailed Findings from the Empirical Data</h3>
+          <p class="detail-copy">Chapter 5 shows that fuel-valve maintenance intervals for the ten 6,944 TEU container vessels were generally concentrated around 800 to 900 hours, and daily main-engine running hours were around 16 hours. However, historical procurement quantities differed significantly, indicating that procurement behavior did not necessarily match actual equipment operating demand.</p>
+          <div class="detail-grid three">
+            <article class="detail-card">
+              <strong>Route cycles affect demand peaks</strong>
+              <span>For the ten 6,944 TEU container vessels, route cycles ranged from about 41 days to about 81 days; different home-port return weeks can concentrate or disperse weekly demand.</span>
+            </article>
+            <article class="detail-card">
+              <strong>Reconditioned-part scrap rate as a source of new-part demand</strong>
+              <span>The thesis estimates the scrap rate from historical fuel-valve reconditioning records; the reconditioned-part scrap rate in the case data was about 9.7%.</span>
+            </article>
+            <article class="detail-card">
+              <strong>Fill rate complements the cost perspective</strong>
+              <span>The study does not only look at minimum cost; it also uses demand fill rate to assess shortage risk and help managers balance service level and cost.</span>
+            </article>
+          </div>
+          <p class="detail-note">Sensitivity analysis also shows that when fuel-valve maintenance interval hours (RHPM) fall below 80% of the historical level, total cost may change noticeably. RHPM is therefore not only a model parameter but also a monitoring indicator for fleet maintenance quality and cost risk.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="value">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">07 | Practical Value</div>
+            <h2>This model makes spare-parts management more predictable and controllable.</h2>
+          </div>
+          <p>For shipowners, ship managers, fleet technical managers, and procurement managers, the value of the study is that it turns experience-based replenishment into an auditable management cycle.</p>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="card-index">01</span>
+            <h3>Integrated fleet management</h3>
+            <p>Allows headquarters to understand future fleet-wide demand and reduce duplicated vessel-level procurement and information fragmentation.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-index">02</span>
+            <h3>Data-driven demand forecasting</h3>
+            <p>Uses engine running hours, maintenance records, route cycles, and scrap rates to estimate demand instead of relying only on subjective requests.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-index">03</span>
+            <h3>Synchronize new and reconditioned parts</h3>
+            <p>Manages parts sent for reconditioning, successfully reconditioned parts, scrap decisions, and new-part replenishment at the same time.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-index">04</span>
+            <h3>Procurement management cycle</h3>
+            <p>Can connect purchase requests, ordering reminders, delivery checks, quality acceptance, and PDCA improvement.</p>
+          </article>
+          <article class="value-card">
+            <span class="card-index">05</span>
+            <h3>Balance cost and service level</h3>
+            <p>Supports a more robust decision balance among shortage risk, maintenance demand fill rate, and total cost.</p>
+          </article>
+        </div>
+
+        <div class="keywords" aria-label="Research keywords">
+          <span class="keyword">Integrated fleet management</span>
+          <span class="keyword">Data-driven demand forecasting</span>
+          <span class="keyword">Centralized home-port replenishment</span>
+          <span class="keyword">MRP</span>
+          <span class="keyword">Silver-Meal Heuristic</span>
+          <span class="keyword">MPDC</span>
+          <span class="keyword">Procurement and inventory cost control</span>
+          <span class="keyword">Operational risk management</span>
+        </div>
+
+        <div class="detail-band">
+          <h3>Management Decisions Supported after Implementation</h3>
+          <p class="detail-copy">The thesis concludes that the model's value is not only in calculating a lower total cost. It also enables managers to understand procurement plans and equipment operating conditions in the short term, and to estimate overall cost and supply risk in the long term. The forecast data can also support procurement negotiations with suppliers, capacity reservation, and delivery scheduling.</p>
+          <div class="detail-grid three">
+            <article class="detail-card">
+              <strong>Procurement reminders and checks</strong>
+              <span>Back-calculate ordering weeks based on the 12-week procurement lead time and use ERP to establish purchase requests and managerial checkpoints.</span>
+            </article>
+            <article class="detail-card">
+              <strong>Maintenance quality monitoring</strong>
+              <span>When RHPM drops significantly, fuel quality, crew maintenance procedures, or reconditioned-part quality can be reviewed.</span>
+            </article>
+            <article class="detail-card">
+              <strong>Extend to other main-engine spares</strong>
+              <span>The thesis suggests extending the approach to exhaust valves, piston maintenance, and other internal-combustion-engine equipment spares.</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section extension-section" id="extension">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">08 | Extensions</div>
+            <h2>Potential Extensions</h2>
+          </div>
+          <p>The study uses fuel valves as the validation case, but the methodology can be extended to broader vessel equipment and operating scenarios.</p>
+        </div>
+
+        <div class="extension-grid">
+          <article class="extension-card">
+            <span class="extension-label">EXTENSION 01</span>
+            <h3>Integrating other main-engine related spares</h3>
+            <p>Equipment such as exhaust valves and pistons has similar maintenance patterns, but longer maintenance intervals, higher spare-parts cost, and in some cases no reconditioning option. Integrating demand forecasting for related main-engine spares can greatly improve cost-control precision.</p>
+          </article>
+
+          <article class="extension-card">
+            <span class="extension-label">EXTENSION 02</span>
+            <h3>Generator spare-parts management</h3>
+            <p>Container vessels are equipped with three to five generators that share internal-combustion characteristics with the main engine. If the complexity of multi-unit parallel operation can be addressed, this would fill a gap in managing the second-largest equipment cost area onboard.</p>
+          </article>
+
+          <article class="extension-card">
+            <span class="extension-label">EXTENSION 03</span>
+            <h3>Route and schedule transition analysis</h3>
+            <p>In real operations, route assignments change frequently and schedules are significantly affected by port congestion. Future work should study how route changes affect main-engine running hours and home-port replenishment planning, improving the model's dynamic adaptability.</p>
+          </article>
+
+          <article class="extension-card">
+            <span class="extension-label">EXTENSION 04</span>
+            <h3>Automated monitoring and dynamic adjustment</h3>
+            <p>Continuously and automatically feeding maintenance records and main-engine operating data into the calculation model would enable real-time monitoring and dynamic adjustment, reducing manual intervention and process cost.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="section-inner">
+        <div>
+          <div class="section-kicker">Conclusion</div>
+          <h2>Vessel spare-parts management is not just a procurement issue; it is an integrated management issue involving fleet reliability, maintenance efficiency, and operating cost control.</h2>
+          <p>By using data and modeling, this research makes fleet spare-parts demand more predictable, home-port replenishment and procurement planning more controllable, and helps shipowners and ship management companies maintain operational safety at lower cost.</p>
+        </div>
+        <div class="closing-quote">In one sentence: use vessel operating and maintenance data to forecast maintenance spare-parts demand across the fleet, and reduce shortage risk, over-procurement, and inventory cost through centralized home-port management and procurement lot-sizing.</div>
+      </div>
+    </section>
+
+    <section id="share">
+      <div class="section-inner share-panel">
+        <div
+          class="article-share article-share--end"
+          data-article-share
+          data-share-url="https://reayhuang.com/research/fleet-spares-thesis-notes.en.html"
+          data-share-title="From Experience-Based Purchasing to Data-Driven Fleet Spare Parts Management | Reay's Note"
+          data-share-email-body="I found this note on Reay's Management Notes and thought it might be useful for you:&#10;&#10;From Experience-Based Purchasing to Data-Driven Fleet Spare Parts Management | Reay's Note&#10;https://reayhuang.com/research/fleet-spares-thesis-notes.en.html"
+          data-share-copy="Copy link"
+          data-share-copied="Copied"
+          data-toast-copied="Link copied to clipboard"
+        >
+          <p class="article-share__label" id="share-end-label">Useful? Share it with a colleague</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__brand">Reay Huang Maritime Notes</p>
+    <p><strong>Source and disclaimer: </strong>This page is summarized from my personal master thesis research for knowledge sharing and management discussion. It does not represent the official position of Lloyd's Register and does not constitute procurement, inventory, or operational decision advice. Case data and cost estimates are for research explanation only; practical implementation should be evaluated against each company's data, contracts, and operating conditions.</p>
+  </footer>
+
+</div>
+  <script src="../assets/js/article-share.js"></script>
+  <script src="../assets/js/back-to-top.js"></script>
+</body>
+</html>
