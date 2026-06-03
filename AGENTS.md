@@ -49,6 +49,7 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 
 | Slug | English | Traditional Chinese |
 |------|---------|---------------------|
+| Fleet spares thesis | `fleet-spares-thesis-notes.en.html` | `fleet-spares-thesis-notes.html` |
 | 5S study | `5s-study-notes.en.html` | `5s-study-notes.html` |
 | Business statistics | `stats-business-application.en.html` | `stats-business-application.html` |
 | SBC demand classification | `sbc-demand-classification.en.html` | `sbc-demand-classification.html` |
