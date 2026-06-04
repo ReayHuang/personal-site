@@ -35,6 +35,7 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 | Slug | English | Traditional Chinese |
 |------|---------|---------------------|
 | SOLAS framework | `solas-structure-notes.en.html` | `solas-structure-notes.html` |
+| MARPOL framework | `marpol-structure-notes.en.html` | `marpol-structure-notes.html` |
 | Explosion protection | `explosion-protection-notes.en.html` | `explosion-protection-notes.html` |
 | LPG fuel | `lpg-fuel-notes.en.html` | `lpg-fuel-notes.html` |
 | New construction PM | `new-construction-pm-notes.en.html` | `new-construction-pm-notes.html` |

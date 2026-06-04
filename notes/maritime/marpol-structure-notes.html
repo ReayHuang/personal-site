@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+
+  <title>MARPOL 法規架構摘要｜Reay's Note</title>
+  <meta name="description" content="以海事法規、驗船與船舶管理角度整理 MARPOL 法規架構、六大 Annex、章節摘要、證書文件與 PSC 實務查核重點。" />
+  <meta name="author" content="Reay Huang" />
+  <meta name="keywords" content="MARPOL, 海洋污染, Annex I, Annex VI, PSC, 油類紀錄簿, 船舶管理, 驗船" />
+  <meta property="og:title" content="MARPOL 法規架構摘要｜Reay's Note" />
+  <meta property="og:description" content="整理 MARPOL 73/78 公約架構、六大 Annex、證書文件與 PSC 實務查核重點的摘要筆記。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay Huang Maritime Notes" />
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/marpol-structure-notes.html" />
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/marpol-structure-notes.html" />
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/marpol-structure-linkedin-preview-1200.png" />
+  <meta property="og:image:alt" content="MARPOL 法規架構 — 船舶污染防止的六大 Annex 導覽" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="537" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MARPOL 法規架構摘要｜Reay's Note" />
+  <meta name="twitter:description" content="整理 MARPOL 73/78 公約架構、六大 Annex、證書文件與 PSC 實務查核重點的摘要筆記。" />
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/marpol-structure-linkedin-preview-1200.png" />
+  <link rel="alternate" hreflang="zh-Hant" href="marpol-structure-notes.html" />
+  <link rel="alternate" hreflang="en" href="marpol-structure-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="marpol-structure-notes.en.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/article-share.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --bg-2: #eef5f9;
+      --paper: #ffffff;
+      --paper-2: #f8fbfd;
+      --ink: #183247;
+      --ink-soft: #334f65;
+      --muted: #60758a;
+      --muted-2: #6f879a;
+      --navy: #07304f;
+      --navy-2: #07507a;
+      --navy-3: #0b83a5;
+      --amber: #2bb3c0;
+      --amber-2: #0b6fa4;
+      --copper: #0b6fa4;
+      --gold-soft: #e8f4fb;
+      --line: #dce8f1;
+      --line-2: #cfe0eb;
+      --shadow: 0 14px 32px rgba(7, 48, 79, 0.12);
+      --shadow-soft: 0 10px 24px rgba(7, 48, 79, 0.08);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+      --header-h: 54px;
+    }
+
+    .note-site-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .hero .article-meta {
+      margin-top: 16px;
+    }
+
+    .footer {
+      max-width: var(--max);
+      width: 100%;
+      margin: 0 auto;
+      padding: 14px 22px 40px;
+      box-sizing: border-box;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: var(--navy);
+    }
+
+    .share-end-wrap {
+      width: 100%;
+      margin: 28px 0 0;
+      padding: 0;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.78;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(43, 179, 192, 0.18), transparent 28rem),
+        radial-gradient(circle at 94% 6%, rgba(11, 111, 164, 0.16), transparent 24rem),
+        linear-gradient(180deg, #f4f8fb 0%, #eef5f9 100%);
+      min-height: 100vh;
+      letter-spacing: 0.01em;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.48;
+      background-image:
+        linear-gradient(rgba(7, 48, 79, 0.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(7, 48, 79, 0.032) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0.08));
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    p { margin: 0; }
+    strong { color: var(--navy); font-weight: 800; }
+    .nowrap { white-space: nowrap; }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 50px 22px 20px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 300px);
+      gap: 28px;
+      align-items: stretch;
+      padding-right: 38px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background:
+        radial-gradient(circle at 85% 18%, rgba(43, 179, 192, 0.30), transparent 32%),
+        linear-gradient(135deg, #062843 0%, #07507a 55%, #0b83a5 100%);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(30deg, transparent 48%, rgba(255, 255, 255, 0.45) 49%, transparent 51%),
+        linear-gradient(150deg, transparent 48%, rgba(255, 255, 255, 0.28) 49%, transparent 51%);
+      background-size: 68px 68px;
+      opacity: 0.1;
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
+    }
+
+    .hero-inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      min-height: 100%;
+      padding: 58px 0 24px 58px;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      color: #c8f0f4;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--amber), rgba(43, 179, 192, 0.1));
+      border-radius: 999px;
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      color: #fff;
+      max-width: 760px;
+      font-family: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "STSong", "PMingLiU", Georgia, serif;
+      font-size: clamp(3.15rem, 5.45vw, 6.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+      word-break: keep-all;
+      text-wrap: balance;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 4px;
+      color: #fff;
+      -webkit-text-stroke: 0;
+      letter-spacing: -0.045em;
+      font-size: 0.86em;
+      font-weight: 900;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 13px;
+      align-items: center;
+      margin-top: 16px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.93rem;
+      font-weight: 700;
+    }
+
+    .hero-meta .dot::before {
+      content: "·";
+      margin-right: 13px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: clamp(1.03rem, 1.75vw, 1.18rem);
+      line-height: 1.95;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+      margin-bottom: 4px;
+    }
+
+    .hero-inner .article-share--hero {
+      margin-top: auto;
+      padding-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    .pill-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 11px 16px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #e8f8fa;
+      font-weight: 900;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .pill-button:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.34);
+      text-decoration: none;
+    }
+
+    .pill-button.primary {
+      background: rgba(43, 179, 192, 0.2);
+      color: #fff;
+      border-color: rgba(43, 179, 192, 0.55);
+      box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
+
+    .pill-button.primary:hover {
+      background: rgba(43, 179, 192, 0.3);
+      border-color: rgba(43, 179, 192, 0.72);
+      color: #fff;
+    }
+
+    .overview-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      align-self: end;
+      justify-self: end;
+      width: 100%;
+      margin: 0 0 32px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 14px 28px rgba(2, 26, 43, 0.1);
+      backdrop-filter: blur(6px);
+    }
+
+    .overview-panel-title {
+      color: #fff;
+      font-size: 0.98rem;
+      line-height: 1.3;
+      font-weight: 950;
+      letter-spacing: 0.02em;
+    }
+
+    .overview-card {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 0 10px;
+      align-items: center;
+      padding: 0;
+      min-height: 50px;
+      background: transparent;
+    }
+
+    .overview-code {
+      grid-row: 1 / span 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #b8eef3;
+      font-size: 0.62rem;
+      font-weight: 950;
+      letter-spacing: 0.1em;
+    }
+
+    .overview-title {
+      margin-top: 0;
+      color: #fff;
+      font-size: 0.86rem;
+      line-height: 1.36;
+      font-weight: 900;
+    }
+
+    .overview-text {
+      margin-top: 4px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+
+    .focus-box {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 22px;
+      align-items: stretch;
+      border: 1px solid #cfe7f5;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, #ffffff, #e8f4fb);
+      box-shadow: var(--shadow-soft);
+      padding: 26px;
+    }
+
+    .focus-label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(11, 111, 164, 0.18);
+      color: var(--amber);
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.84rem;
+      line-height: 1.3;
+    }
+
+    .focus-label span {
+      margin-top: 5px;
+      color: var(--navy);
+      letter-spacing: 0;
+      font-size: 1.18rem;
+    }
+
+    .focus-text {
+      color: var(--navy);
+      font-size: clamp(1.14rem, 2vw, 1.42rem);
+      line-height: 1.78;
+      font-weight: 850;
+    }
+
+    .anchor-wrap {
+      position: sticky;
+      top: var(--header-h);
+      z-index: 95;
+      margin: 28px 0 42px;
+      padding: 10px;
+      max-width: 100%;
+      border: 1px solid rgba(220, 232, 241, 0.88);
+      border-radius: 20px;
+      background: rgba(244, 248, 251, 0.92);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 28px rgba(7, 48, 79, 0.08);
+      overflow: hidden;
+    }
+
+    .anchor-nav {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      padding: 2px 4px;
+    }
+
+    .anchor-nav::-webkit-scrollbar { display: none; }
+
+    .anchor-nav a {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 900;
+      transition: background 0.18s ease, color 0.18s ease, border 0.18s ease;
+    }
+
+    .anchor-nav a:hover,
+    .anchor-nav a.is-active {
+      background: var(--navy);
+      color: #fff;
+      border-color: rgba(43, 179, 192, 0.62);
+    }
+
+    .section {
+      scroll-margin-top: calc(var(--header-h) + 88px);
+      margin-top: 32px;
+      padding: 28px 28px 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section > .card.card-pad {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .section > .card.card-pad:last-child:not(:only-of-type) {
+      margin-top: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #ffffff, #f8fbfd);
+    }
+
+    .section > .table-wrap,
+    .section > .callout {
+      margin-top: 18px;
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line-2);
+    }
+
+    .section-head > div:not(.section-index) {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .section-index {
+      color: var(--amber);
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      font-size: 0.92rem;
+      padding-top: 4px;
+      white-space: nowrap;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+      font-weight: 950;
+    }
+
+    .section-lead {
+      margin-top: 14px;
+      max-width: none;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      line-height: 1.92;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .card-pad { padding: 28px; }
+
+    .layer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .layer-card {
+      --layer-accent: var(--amber);
+      --layer-soft: rgba(43, 179, 192, 0.32);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #ffffff, #f8fbfd);
+      padding: 28px 22px 22px;
+      min-height: 210px;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .layer-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: var(--layer-accent);
+    }
+
+    .layer-card:nth-child(1) { --layer-accent: #0b6fa4; --layer-soft: rgba(11, 111, 164, 0.26); }
+    .layer-card:nth-child(2) { --layer-accent: #2bb3c0; --layer-soft: rgba(43, 179, 192, 0.32); }
+    .layer-card:nth-child(3) { --layer-accent: #28a66a; --layer-soft: rgba(40, 166, 106, 0.26); }
+    .layer-card:nth-child(4) { --layer-accent: #6b5dd3; --layer-soft: rgba(107, 93, 211, 0.24); }
+
+    .layer-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--layer-accent);
+      box-shadow: 0 12px 24px rgba(7, 48, 79, 0.1);
+    }
+
+    .layer-no {
+      color: var(--layer-soft);
+      font-size: 2.7rem;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.08em;
+    }
+
+    .layer-card h3,
+    .mini-card h3,
+    .annex-card h3,
+    .source-card h3 {
+      margin: 12px 0 8px;
+      color: var(--navy);
+      line-height: 1.36;
+      font-size: 1.12rem;
+      font-weight: 950;
+    }
+
+    .layer-card p,
+    .mini-card p,
+    .annex-card p,
+    .source-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+
+    .flow-strip {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .flow-node {
+      border: 1px solid #cfe7f5;
+      border-radius: var(--radius-md);
+      padding: 18px;
+      background: var(--soft-blue, #e8f4fb);
+    }
+
+    .flow-node b { display: block; color: var(--navy); font-weight: 950; }
+    .flow-node span { display: block; margin-top: 5px; color: var(--muted); font-size: 0.9rem; line-height: 1.58; }
+    .flow-arrow { align-self: center; color: var(--amber); font-size: 1.8rem; font-weight: 900; }
+
+    .annex-guide-stack {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .annex-action-note,
+    .annex-guide {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 17px 20px;
+      border: 1.5px dashed rgba(11, 111, 164, 0.26);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f8fbfd, #eef6fb);
+      color: var(--ink-soft);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74);
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1.62;
+    }
+
+    .annex-action-note {
+      justify-content: flex-start;
+      color: var(--muted);
+    }
+
+    .annex-guide span {
+      color: var(--amber);
+      font-size: 0.92rem;
+      font-weight: 950;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .annex-map {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .annex-tile {
+      --tile-accent: var(--amber);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 152px;
+      padding: 17px 17px 17px 23px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: #fff;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
+    }
+
+    .annex-tile::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: var(--tile-accent);
+    }
+
+    .annex-map .annex-tile:nth-child(1) { --tile-accent: #0b6fa4; }
+    .annex-map .annex-tile:nth-child(2) { --tile-accent: #2bb3c0; }
+    .annex-map .annex-tile:nth-child(3) { --tile-accent: #28a66a; }
+    .annex-map .annex-tile:nth-child(4) { --tile-accent: #6b5dd3; }
+    .annex-map .annex-tile:nth-child(5) { --tile-accent: #f5a623; }
+    .annex-map .annex-tile:nth-child(6) { --tile-accent: #e55353; }
+
+    .annex-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(7, 48, 79, 0.12);
+      border-color: var(--tile-accent);
+    }
+
+    .annex-num {
+      color: var(--amber);
+      font-size: 0.8rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .annex-tile strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--navy);
+      font-size: 1.02rem;
+      line-height: 1.35;
+    }
+
+    .annex-tile span {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.55;
+    }
+
+    .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 20px 0 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(11, 111, 164, 0.18);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #e8f4fb;
+      color: var(--copper);
+      font-size: 0.8rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      font-size: 0.94rem;
+    }
+
+    th, td {
+      padding: 17px 18px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.81rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 950;
+    }
+
+    td { color: var(--ink-soft); }
+    th:first-child,
+    td:first-child {
+      width: 8.25rem;
+      min-width: 8.25rem;
+      white-space: nowrap;
+    }
+    td:first-child { color: var(--navy); font-weight: 950; }
+    tr:last-child td { border-bottom: 0; }
+
+    .impact-table td:nth-child(1) { width: 84px; }
+    .impact-table th:nth-child(2),
+    .impact-table td:nth-child(2) {
+      width: 8.25rem;
+      min-width: 8.25rem;
+      white-space: nowrap;
+    }
+    .impact-table .risk {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 950;
+      font-size: 0.78rem;
+    }
+
+    .impact-table .risk-high { background: #e55353; }
+    .impact-table .risk-mid-high { background: #f5a623; }
+    .impact-table .risk-medium { background: #28a66a; }
+
+    .callout {
+      margin-top: 18px;
+      border-left: 4px solid var(--amber);
+      border-radius: var(--radius-md);
+      background: linear-gradient(90deg, rgba(232, 244, 251, 0.92), rgba(255, 255, 255, 0.86));
+      padding: 18px 20px;
+      color: var(--ink-soft);
+      box-shadow: 0 10px 22px rgba(7, 48, 79, 0.07);
+    }
+
+    .callout b {
+      color: var(--navy);
+      font-weight: 950;
+    }
+
+    .annex-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .annex-card {
+      --annex-accent: var(--navy);
+      --annex-accent-dark: var(--navy-2);
+      scroll-margin-top: 130px;
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    #annex-i { --annex-accent: #0b6fa4; --annex-accent-dark: #07507a; }
+    #annex-ii { --annex-accent: #2bb3c0; --annex-accent-dark: #0b83a5; }
+    #annex-iii { --annex-accent: #28a66a; --annex-accent-dark: #1e8a55; }
+    #annex-iv { --annex-accent: #6b5dd3; --annex-accent-dark: #5746c7; }
+    #annex-v { --annex-accent: #f5a623; --annex-accent-dark: #c47d00; }
+    #annex-vi { --annex-accent: #e55353; --annex-accent-dark: #c93b3b; }
+
+    .annex-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px 20px;
+      background:
+        linear-gradient(180deg, var(--annex-accent), var(--annex-accent-dark));
+      color: #fff;
+    }
+
+    .annex-side .roman {
+      font-size: 2.7rem;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .annex-side .type {
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .annex-body { padding: 28px; }
+
+    .annex-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .annex-heading h3 {
+      margin: 0;
+      font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+      letter-spacing: -0.03em;
+    }
+
+    .annex-key {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: linear-gradient(135deg, var(--annex-accent), var(--annex-accent-dark));
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(7, 48, 79, 0.12);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-shadow: 0 1px 1px rgba(7, 48, 79, 0.18);
+      text-transform: uppercase;
+    }
+
+    .annex-core {
+      margin-bottom: 20px;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      line-height: 1.86;
+    }
+
+    .subgrid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 16px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: #f8fbfd;
+      padding: 19px;
+    }
+
+    .mini-card h4 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 0.95rem;
+      font-weight: 950;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    ul.clean-list,
+    ol.clean-list {
+      margin: 0;
+      padding-left: 0;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+      line-height: 1.78;
+      list-style: none;
+    }
+
+    ul.clean-list li,
+    ol.clean-list li {
+      display: grid;
+      grid-template-columns: auto max-content minmax(0, 1fr);
+      column-gap: 0.38rem;
+      align-items: start;
+      margin: 7px 0;
+      padding-left: 0;
+      text-indent: 0;
+    }
+
+    ul.clean-list li::before,
+    ol.clean-list li::before {
+      content: "";
+      display: block;
+      width: 0.34rem;
+      height: 0.34rem;
+      margin-top: 0.72em;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.82;
+    }
+
+    .chapter-label {
+      color: var(--ink-soft);
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .chapter-desc {
+      min-width: 0;
+    }
+
+    .memory {
+      margin-top: 16px;
+      border-radius: var(--radius-md);
+      padding: 15px 17px;
+      background: #e8f4fb;
+      color: var(--navy);
+      font-weight: 900;
+      line-height: 1.58;
+    }
+
+    .doc-grid,
+    .check-grid,
+    .memory-grid,
+    .update-grid,
+    .share-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .doc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .check-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .memory-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .update-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .share-grid { grid-template-columns: 1fr 1fr; }
+
+    .doc-card,
+    .check-card,
+    .memory-card,
+    .update-card,
+    .share-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(7, 48, 79, 0.08);
+      padding: 20px;
+    }
+
+    .doc-card .kicker,
+    .check-card .kicker,
+    .update-card .kicker {
+      color: var(--amber);
+      font-size: 0.76rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .doc-card h3,
+    .check-card h3,
+    .update-card h3,
+    .share-card h3 {
+      margin: 9px 0 8px;
+      color: var(--navy);
+      font-size: 1.05rem;
+      line-height: 1.38;
+      font-weight: 950;
+    }
+
+    .doc-card p,
+    .check-card p,
+    .update-card p,
+    .share-card p {
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.72;
+    }
+
+    .check-card {
+      --check-accent: var(--amber);
+      position: relative;
+      overflow: hidden;
+      padding: 24px 20px 20px;
+    }
+
+    .check-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: var(--check-accent);
+    }
+
+    .check-grid .check-card:nth-child(1) { --check-accent: #0b6fa4; }
+    .check-grid .check-card:nth-child(2) { --check-accent: #2bb3c0; }
+    .check-grid .check-card:nth-child(3) { --check-accent: #28a66a; }
+    .check-grid .check-card:nth-child(4) { --check-accent: #6b5dd3; }
+    .check-grid .check-card:nth-child(5) { --check-accent: #f5a623; }
+    .check-grid .check-card:nth-child(6) { --check-accent: #e55353; }
+
+    .check-card:hover { border-color: var(--check-accent); }
+    .check-card .kicker { color: var(--check-accent); }
+
+    .memory-card {
+      --memory-accent: var(--amber);
+      position: relative;
+      overflow: hidden;
+      min-height: 132px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 26px;
+      background: linear-gradient(180deg, #fff, #f8fbfd);
+    }
+
+    .memory-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: var(--memory-accent);
+    }
+
+    .memory-grid .memory-card:nth-child(1) { --memory-accent: #0b6fa4; }
+    .memory-grid .memory-card:nth-child(2) { --memory-accent: #2bb3c0; }
+    .memory-grid .memory-card:nth-child(3) { --memory-accent: #28a66a; }
+    .memory-grid .memory-card:nth-child(4) { --memory-accent: #6b5dd3; }
+    .memory-grid .memory-card:nth-child(5) { --memory-accent: #f5a623; }
+    .memory-grid .memory-card:nth-child(6) { --memory-accent: #e55353; }
+
+    .memory-card:hover { border-color: var(--memory-accent); }
+
+    .memory-card .annex-small {
+      color: var(--memory-accent);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .memory-card b {
+      display: block;
+      margin-top: 9px;
+      color: var(--navy);
+      font-size: 1rem;
+      line-height: 1.36;
+    }
+
+    .memory-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.52;
+    }
+
+    .footer-note {
+      scroll-margin-top: calc(var(--header-h) + 88px);
+      margin-top: 58px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 85% 18%, rgba(43, 179, 192, 0.24), transparent 34%),
+        linear-gradient(135deg, #062843 0%, #07507a 55%, #0b83a5 100%);
+      color: #fff;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .footer-note .inner {
+      padding: 38px;
+      position: relative;
+    }
+
+    .footer-note .inner::after {
+      content: "MARPOL";
+      position: absolute;
+      right: 30px;
+      bottom: 28px;
+      font-size: clamp(4rem, 13vw, 9rem);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.1em;
+      color: rgba(255, 255, 255, 0.06);
+      pointer-events: none;
+    }
+
+    .footer-note h2 {
+      color: #fff;
+      max-width: 860px;
+      font-size: clamp(1.6rem, 3.4vw, 2.55rem);
+    }
+
+    .footer-note p {
+      max-width: 850px;
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1rem;
+      line-height: 1.82;
+    }
+
+    .footer-note .share-grid { margin-top: 24px; }
+
+    .footer-note .share-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: none;
+    }
+
+    .footer-note .share-card h3 { color: #fff; }
+    .footer-note .share-card p { color: rgba(255, 255, 255, 0.72); margin-top: 0; }
+
+    .sources {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .source-card {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .source-card h3 { color: #fff; margin-top: 0; font-size: 0.96rem; }
+    .source-card p { margin-top: 6px; color: rgba(255, 255, 255, 0.7); font-size: 0.86rem; }
+    .source-card a { color: #b8eef3; text-decoration: underline; text-underline-offset: 4px; }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 120;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--navy);
+      box-shadow: 0 14px 30px rgba(7, 48, 79, 0.13);
+      font-weight: 950;
+    }
+
+    .print-label { display: none; }
+
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-right: 0;
+      }
+      .hero-inner { padding: 46px 36px 30px; }
+      .overview-grid {
+        width: auto;
+        margin: 0 36px 36px;
+        padding: 28px;
+        gap: 14px;
+        border-radius: 30px;
+      }
+      .overview-panel-title { font-size: 1.24rem; }
+      .overview-card { grid-template-columns: 78px minmax(0, 1fr); gap: 0 18px; min-height: 76px; }
+      .overview-code { min-height: 44px; border-radius: 12px; font-size: 0.82rem; letter-spacing: 0.16em; }
+      .overview-title { font-size: 1.08rem; }
+      .overview-text { font-size: 0.91rem; line-height: 1.66; }
+      .layer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .annex-map { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .doc-grid, .check-grid, .update-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .memory-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .subgrid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .page { padding: 28px 14px 16px; }
+      .hero { border-radius: 24px; }
+      .hero-inner { padding: 36px 24px 28px; }
+      h1 { font-size: clamp(2.7rem, 13vw, 4.4rem); letter-spacing: -0.045em; word-break: normal; }
+      h1 span { font-size: 0.84em; }
+      .hero-meta .dot::before { margin-right: 8px; }
+      .overview-grid { width: auto; margin: 0 20px 24px; padding: 20px; gap: 13px; border-radius: 22px; }
+      .overview-card { grid-template-columns: 1fr; gap: 6px; min-height: auto; padding: 0 0 13px; border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+      .overview-card:last-child { padding-bottom: 0; border-bottom: 0; }
+      .overview-code { grid-row: auto; justify-content: flex-start; width: fit-content; min-height: auto; padding: 5px 9px; font-size: 0.66rem; letter-spacing: 0.1em; }
+      .overview-title { font-size: 1rem; }
+      .overview-text { font-size: 0.86rem; line-height: 1.62; }
+      .focus-box { grid-template-columns: 1fr; padding: 22px; }
+      .focus-label { border-right: 0; border-bottom: 1px solid rgba(11, 111, 164, 0.18); padding-bottom: 14px; }
+      .anchor-wrap {
+        margin: 20px 0 28px;
+        padding: 8px;
+        border-radius: 16px;
+      }
+
+      .anchor-nav {
+        gap: 6px;
+        padding: 2px;
+      }
+
+      .anchor-nav a {
+        padding: 8px 12px;
+        font-size: 0.82rem;
+      }
+      .section {
+        margin-top: 24px;
+        padding: 20px 18px 22px;
+      }
+
+      .section-head { gap: 10px; }
+      .section-index { width: fit-content; }
+      .annex-action-note, .annex-guide { align-items: flex-start; flex-direction: column; gap: 6px; }
+      .layer-grid, .annex-map, .doc-grid, .check-grid, .memory-grid, .update-grid, .share-grid, .sources { grid-template-columns: 1fr; }
+      .flow-strip { grid-template-columns: 1fr; }
+      .flow-arrow { text-align: center; transform: rotate(90deg); }
+      .annex-card { grid-template-columns: 1fr; }
+      .annex-side { flex-direction: row; align-items: end; min-height: 96px; }
+      .card-pad, .annex-body { padding: 22px; }
+      .footer-note .inner { padding: 28px 22px; }
+      .back-to-top { width: 40px; height: 40px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      body::before, .note-site-bar, .anchor-wrap, .top-btn, .hero-actions, .article-share { display: none !important; }
+      .page { max-width: none; padding: 0; }
+      .hero, .card, .table-wrap, .annex-card, .footer-note { box-shadow: none; break-inside: avoid; }
+      .section,
+      .footer-note { break-inside: avoid; }
+      .print-label { display: inline; }
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="marpol-structure-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="marpol-structure-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <main class="page" id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <div class="eyebrow">MARPOL · 防止船舶造成海洋污染國際公約 · Reay's Note</div>
+        <h1 id="page-title">MARPOL 法規架構<span>摘要筆記</span></h1>
+        <p class="article-meta">
+          <span>📅 更新：2026-06-04</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 閱讀約 18 分鐘</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 MARPOL / 污染防止 / PSC / 船舶管理</span>
+        </p>
+        <p class="hero-copy">
+          MARPOL 是「防止船舶造成海洋污染」的國際公約架構，管理範圍包含油污染、散裝有毒液體、包裝有害物質、污水、垃圾，以及空氣污染與溫室氣體排放。實務上，它不只是排放限制，而是一套結合設計、設備、證書、操作、紀錄與岸上接收設施的合規系統。
+        </p>
+        <div class="hero-actions">
+          <a class="pill-button primary" href="#annex-summary">快速看六大 Annex</a>
+        </div>
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/marpol-structure-notes.html"
+          data-share-title="MARPOL 法規架構摘要｜Reay's Note"
+          data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;MARPOL 法規架構摘要｜Reay's Note&#10;https://reayhuang.com/notes/maritime/marpol-structure-notes.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-hero-label">分享此篇</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+      <div class="overview-grid" aria-label="架構概覽">
+        <div class="overview-panel-title">架構概覽</div>
+        <article class="overview-card">
+          <div class="overview-code">ANNEX</div>
+          <div class="overview-title">六大技術附則</div>
+          <div class="overview-text">油、散裝有毒液體、包裝有害物質、污水、垃圾、空污與能效。</div>
+        </article>
+        <article class="overview-card">
+          <div class="overview-code">SYS</div>
+          <div class="overview-title">四層法規結構</div>
+          <div class="overview-text">公約本文、Annex、Regulation、Appendix / Guideline。</div>
+        </article>
+        <article class="overview-card">
+          <div class="overview-code">OPS</div>
+          <div class="overview-title">合規不只看設備</div>
+          <div class="overview-text">設備、管路、證書、紀錄簿與實際操作必須相互一致。</div>
+        </article>
+        <article class="overview-card">
+          <div class="overview-code">PSC</div>
+          <div class="overview-title">PSC 查核高關聯</div>
+          <div class="overview-text">油類紀錄簿、垃圾紀錄簿、BDN、SEEMP 等紀錄常是關鍵。</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="focus-box" aria-label="Article Focus">
+      <div class="focus-label">Article Focus<span>核心觀點</span></div>
+      <p class="focus-text">MARPOL 的重點不是單一條文或單一設備，而是把「污染源 → 船上控制 → 操作紀錄 → 岸上接收 → 主管機關查核」串成可驗證的船舶污染防止系統。</p>
+    </section>
+
+    <div class="anchor-wrap" aria-label="章節導覽列">
+      <nav class="anchor-nav" id="sectionNav">
+        <a href="#structure">法規架構</a>
+        <a href="#annex-summary">Annex 全景</a>
+        <a href="#compliance-impact">查核影響</a>
+        <a href="#annex-details">各 Annex 摘要</a>
+        <a href="#documents">證書文件</a>
+        <a href="#checklist">檢核清單</a>
+        <a href="#updates">更新提醒</a>
+        <a href="#sources">資料來源</a>
+      </nav>
+    </div>
+
+    <section class="section" id="structure">
+      <div class="section-head">
+        <div class="section-index">01 | 架構</div>
+        <div>
+          <h2>MARPOL 要先用「法律骨架到船上落地」來讀。</h2>
+          <p class="section-lead">MARPOL 的正式架構來自 1973 Convention 與 1978 Protocol，常稱 MARPOL 73/78；後來 1997 Protocol 加入 Annex VI。實務閱讀時，建議把它拆成四層：公約本文、技術附則、章節條文與附錄／指南。</p>
+        </div>
+      </div>
+      <div class="card card-pad">
+        <div class="layer-grid">
+          <article class="layer-card">
+            <div class="layer-no">１</div>
+            <h3>Convention / Protocols</h3>
+            <p>公約本體與議定書，處理締約國義務、修正程序、生效方式與執行框架。</p>
+          </article>
+          <article class="layer-card">
+            <div class="layer-no">２</div>
+            <h3>Annex I–VI</h3>
+            <p>六大污染類別，是驗船、PSC、船舶管理與公司 SMS 最常查核的實務入口。</p>
+          </article>
+          <article class="layer-card">
+            <div class="layer-no">３</div>
+            <h3>章節 / 規則</h3>
+            <p>各 Annex 內部章節與具體規則，例如檢驗、證書、排放、設備與紀錄簿。</p>
+          </article>
+          <article class="layer-card">
+            <div class="layer-no">４</div>
+            <h3>Appendices / Guidelines</h3>
+            <p>證書格式、紀錄簿格式、IMO Guidelines 與操作細節，決定船上文件如何呈現。</p>
+          </article>
+        </div>
+        <div class="flow-strip" aria-label="MARPOL 落地流程">
+          <div class="flow-node"><b>公約核心</b><span>建立防止船舶污染的國際最低要求。</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><b>技術附則</b><span>依污染類別拆解設備、排放、紀錄與應變要求。</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><b>船上落地</b><span>回到證書、設備、管路、操作、紀錄與岸上接收設施。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="annex-summary">
+      <div class="section-head">
+        <div class="section-index">02 | 全景</div>
+        <div>
+          <h2>六大 Annex 對應六種污染源。</h2>
+          <p class="section-lead">MARPOL 的技術核心是 Annex I 至 Annex VI。不同船型、貨物、航區與營運方式會觸發不同附則；管理上應先判斷污染源，再回到證書、設備與紀錄。</p>
+        </div>
+      </div>
+      <div class="card card-pad">
+        <div class="annex-guide-stack">
+          <div class="annex-action-note">👇 點選下方方塊按鈕，快速導覽到說明章節。</div>
+        </div>
+        <div class="annex-map" aria-label="MARPOL Annex 快速導覽">
+          <a class="annex-tile" href="#annex-i"><div><div class="annex-num">Annex I</div><strong>Oil Pollution<br />油污染</strong></div><span>機艙油水、油輪貨油區、油渣與事故應變。</span></a>
+          <a class="annex-tile" href="#annex-ii"><div><div class="annex-num">Annex II</div><strong>NLS in Bulk<br />散裝有毒液體</strong></div><span>貨物分類、預洗、洗艙水與排放控制。</span></a>
+          <a class="annex-tile" href="#annex-iii"><div><div class="annex-num">Annex III</div><strong>Packaged Harmful<br />包裝有害物質</strong></div><span>包裝、標籤、文件、積載與 IMDG 連動。</span></a>
+          <a class="annex-tile" href="#annex-iv"><div><div class="annex-num">Annex IV</div><strong>Sewage<br />污水</strong></div><span>生活污水處理、污水儲存櫃與排放條件。</span></a>
+          <a class="annex-tile" href="#annex-v"><div><div class="annex-num">Annex V</div><strong>Garbage<br />垃圾</strong></div><span>垃圾分類、塑膠禁排、HME 貨物殘餘物。</span></a>
+          <a class="annex-tile" href="#annex-vi"><div><div class="annex-num">Annex VI</div><strong>Air + GHG<br />空污與能效</strong></div><span>SOx、NOx、燃油、EEXI、CII 與 SEEMP。</span></a>
+        </div>
+        <div class="legend-row">
+          <span class="tag">污染源導向</span>
+          <span class="tag">設備與管路</span>
+          <span class="tag">證書與紀錄</span>
+          <span class="tag">岸上接收設施</span>
+          <span class="tag">PSC / RO / 船旗國查核</span>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-top: 18px;">
+        <table aria-label="MARPOL 六大 Annex 摘要表">
+          <thead>
+            <tr>
+              <th>Annex</th>
+              <th>主題</th>
+              <th>管制重點</th>
+              <th>常見文件 / 查核點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Annex I</td><td>Oil Pollution 油污染</td><td>管制機艙油水、油輪貨油區、油渣、污油水排放與油污染事故應變。</td><td>IOPP 證書、油類紀錄簿 Part I/II、15 ppm OWS、ODME、SOPEP、油泥艙、STS 計畫。</td></tr>
+            <tr><td>Annex II</td><td>Noxious Liquid Substances in Bulk 散裝有毒液體物質</td><td>管制化學品船散裝液體貨物殘餘物、洗艙水、預洗與排放。</td><td>NLS 證書、貨物紀錄簿、P&amp;A Manual、貨物類別 X/Y/Z/OS。</td></tr>
+            <tr><td>Annex III</td><td>Harmful Substances in Packaged Form 包裝有害物質</td><td>管理以包裝形式運送、被 IMDG Code 識別為海洋污染物，或符合 Annex III 判定標準的有害物質。</td><td>IMDG Code、危險品申報、標籤、積載計畫、文件一致性。</td></tr>
+            <tr><td>Annex IV</td><td>Sewage 污水</td><td>管制船舶生活污水排放、污水處理設備與污水儲存櫃。</td><td>ISPP 證書、STP、粉碎／消毒系統、污水儲存櫃。</td></tr>
+            <tr><td>Annex V</td><td>Garbage 垃圾</td><td>管制船舶垃圾、塑膠、食物垃圾、貨物殘餘物、焚化灰等排放。</td><td>垃圾管理計畫、垃圾紀錄簿、告示牌、HME 貨物殘餘物。</td></tr>
+            <tr><td>Annex VI</td><td>Air Pollution 空氣污染與能效</td><td>管制 SOx、NOx、PM、ODS、VOC、燃油品質、焚化爐、EEDI / EEXI / CII / SEEMP。</td><td>IAPP 證書、IEE 證書、BDN、燃油取樣、SEEMP、CII 評級。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="compliance-impact">
+      <div class="section-head">
+        <div class="section-index">03 | 查核</div>
+        <div>
+          <h2>真正的風險，常出現在「文件、設備、操作」不一致。</h2>
+          <p class="section-lead">從驗船師與 PSC 的角度，MARPOL 合規不是看某個設備有沒有安裝，而是檢查系統是否完整、紀錄是否合理、排放條件是否符合航區與作業情境。</p>
+        </div>
+      </div>
+      <div class="table-wrap impact-table">
+        <table aria-label="MARPOL 船舶合規與 PSC 影響表">
+          <thead>
+            <tr>
+              <th>關聯度</th>
+              <th>Annex</th>
+              <th>常見觸發條件</th>
+              <th>船舶管理 / PSC 應檢核重點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="risk risk-high">高</span></td><td>Annex I</td><td>機艙排油水、油渣處理、油輪洗艙、STS、油污染事故。</td><td>OWS 是否正常、15 ppm 警報是否有效、油類紀錄簿是否與油泥／艙底水數量吻合、是否有旁通疑慮。</td></tr>
+            <tr><td><span class="risk risk-high">高</span></td><td>Annex II</td><td>化學品船裝卸、洗艙、預洗、NLS 殘餘物排放。</td><td>貨物分類、P&amp;A Manual、預洗要求、貨物紀錄簿、岸上接收紀錄是否一致。</td></tr>
+            <tr><td><span class="risk risk-mid-high">中高</span></td><td>Annex VI</td><td>進出 ECA、換油、低硫燃油、NOx 管制、能效評級。</td><td>BDN、燃油取樣、硫含量、IAPP / IEE、SEEMP、DCS、CII 評級與船上實際操作是否一致。</td></tr>
+            <tr><td><span class="risk risk-medium">中</span></td><td>Annex V</td><td>日常垃圾處理、貨物殘餘物、散貨船 HME 判定。</td><td>垃圾紀錄簿、垃圾管理計畫、告示牌、垃圾分類與岸上接收紀錄。</td></tr>
+            <tr><td><span class="risk risk-medium">中</span></td><td>Annex IV</td><td>生活污水排放、STP 故障、污水儲存櫃使用。</td><td>ISPP、污水處理設備型式認可、污水儲存櫃容量、排放閥與操作紀錄。</td></tr>
+            <tr><td><span class="risk risk-medium">中</span></td><td>Annex III</td><td>貨櫃船、雜貨船、包裝危險品或海洋污染物載運。</td><td>危險品申報、標籤、包裝、文件、積載與隔離是否符合 IMDG Code 要求。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><b>實務提醒：</b>很多 MARPOL 缺失不是因為「完全沒有設備」，而是因為證書附件、實船配置、管路走向、紀錄簿數量與實際操作彼此對不上。</div>
+    </section>
+
+    <section class="section" id="annex-details">
+      <div class="section-head">
+        <div class="section-index">04 | 摘要</div>
+        <div>
+          <h2>各 Annex 的章節重點，可以用「管什麼、查什麼、怎麼落地」理解。</h2>
+          <p class="section-lead">以下依 Annex I 至 VI 展開，保留章節架構，同時轉換成船上管理與檢查時更容易使用的語言。</p>
+        </div>
+      </div>
+      <div class="annex-list">
+        <article class="annex-card" id="annex-i">
+          <aside class="annex-side"><div class="roman">I</div><div class="type">Oil</div></aside>
+          <div class="annex-body">
+            <div class="annex-heading"><h3>Annex I｜Prevention of Pollution by Oil</h3><span class="annex-key">防止油污染</span></div>
+            <p class="annex-core">Annex I 是 MARPOL 最核心且最常被船上查核的附則之一，涵蓋機艙油水、油輪貨油區、油渣、排放控制與油污染事故應變。</p>
+            <div class="subgrid">
+              <div class="mini-card">
+                <h4>章節細項</h4>
+                <ul class="clean-list">
+                  <li><span class="chapter-label">第 1 章：</span><span class="chapter-desc">通則，定義、適用範圍、例外與等效安排。</span></li>
+                  <li><span class="chapter-label">第 2 章：</span><span class="chapter-desc">檢驗與發證，對應 IOPP 證書。</span></li>
+                  <li><span class="chapter-label">第 3 章：</span><span class="chapter-desc">機艙處所，管制艙底水、油泥／油渣、OWS、15 ppm 警報與油類紀錄簿 Part I。</span></li>
+                  <li><span class="chapter-label">第 4 章：</span><span class="chapter-desc">油輪貨油區，涵蓋貨油艙、污油水艙、ODME、COW、SBT 與油類紀錄簿 Part II。</span></li>
+                  <li><span class="chapter-label">第 5 章：</span><span class="chapter-desc">油污染事故應變，重點是 SOPEP、事故通報與船上應變安排。</span></li>
+                  <li><span class="chapter-label">第 6 章：</span><span class="chapter-desc">岸上接收設施，要求港口具備接收油泥、油渣與污油水等能力。</span></li>
+                  <li><span class="chapter-label">第 7 章：</span><span class="chapter-desc">固定或浮動平台的特殊要求。</span></li>
+                  <li><span class="chapter-label">第 8 章：</span><span class="chapter-desc">油輪海上過駁作業，對應 STS 作業計畫與操作要求。</span></li>
+                  <li><span class="chapter-label">第 9 章：</span><span class="chapter-desc">極地水域油類使用與載運限制，包含 HFO 相關要求。</span></li>
+                  <li><span class="chapter-label">第 10 章：</span><span class="chapter-desc">履約驗證，與締約國履約稽核有關。</span></li>
+                  <li><span class="chapter-label">第 11 章：</span><span class="chapter-desc">Polar Code，補充極地水域操作的環境要求。</span></li>
+                </ul>
+              </div>
+              <div class="mini-card">
+                <h4>實務重點</h4>
+                <p>查核時通常不只看設備有沒有裝，而是看設備、管路、艙櫃、證書、油類紀錄簿與實際操作紀錄是否一致。</p>
+                <div class="memory">記憶：Annex I ＝ 油水、油渣、油輪貨油區與 SOPEP。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="annex-card" id="annex-ii">
+          <aside class="annex-side"><div class="roman">II</div><div class="type">NLS</div></aside>
+          <div class="annex-body">
+            <div class="annex-heading"><h3>Annex II｜Noxious Liquid Substances in Bulk</h3><span class="annex-key">散裝有毒液體物質</span></div>
+            <p class="annex-core">Annex II 主要針對化學品船或載運散裝有毒液體物質的船。核心是把貨物依污染危害分類為 Category X、Y、Z、OS，再決定預洗、排放與接收設施要求。</p>
+            <div class="subgrid">
+              <div class="mini-card">
+                <h4>章節細項</h4>
+                <ul class="clean-list">
+                  <li><span class="chapter-label">第 1 章：</span><span class="chapter-desc">通則，定義、適用範圍、例外與等效安排。</span></li>
+                  <li><span class="chapter-label">第 2 章：</span><span class="chapter-desc">NLS 分類，建立 Category X / Y / Z / OS 類別。</span></li>
+                  <li><span class="chapter-label">第 3 章：</span><span class="chapter-desc">檢驗與發證，對應 NLS 證書。</span></li>
+                  <li><span class="chapter-label">第 4 章：</span><span class="chapter-desc">設計、建造、布置與設備，包含艙櫃、管路、泵浦、掃艙系統與洗艙系統。</span></li>
+                  <li><span class="chapter-label">第 5 章：</span><span class="chapter-desc">NLS 殘餘物排放，規範洗艙水、殘餘物與排放條件。</span></li>
+                  <li><span class="chapter-label">第 6 章：</span><span class="chapter-desc">PSC 管制，處理港口國對操作與排放證據的查核。</span></li>
+                  <li><span class="chapter-label">第 7 章：</span><span class="chapter-desc">污染事故應變，對應 SMPEP 與事故處理安排。</span></li>
+                  <li><span class="chapter-label">第 8 章：</span><span class="chapter-desc">岸上接收設施，確保港口可接收 NLS 殘餘物與洗艙水。</span></li>
+                  <li><span class="chapter-label">第 9 章：</span><span class="chapter-desc">履約驗證，與締約國履約稽核有關。</span></li>
+                  <li><span class="chapter-label">第 10 章：</span><span class="chapter-desc">Polar Code，補充極地水域操作限制。</span></li>
+                </ul>
+              </div>
+              <div class="mini-card">
+                <h4>實務重點</h4>
+                <p>重點不是單純「能不能排放」，而是貨物分類、P&amp;A Manual、預洗、岸上接收紀錄與貨物紀錄簿是否形成一致證據鏈。</p>
+                <div class="memory">記憶：Annex II ＝ 化學品貨物分類 + 洗艙水 / 預洗管理。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="annex-card" id="annex-iii">
+          <aside class="annex-side"><div class="roman">III</div><div class="type">Packaged</div></aside>
+          <div class="annex-body">
+            <div class="annex-heading"><h3>Annex III｜Harmful Substances in Packaged Form</h3><span class="annex-key">包裝有害物質</span></div>
+            <p class="annex-core">Annex III 主要與 IMDG Code 一起使用，管理以包裝形式運送、被識別為海洋污染物，或符合 Annex III 附錄判定標準的有害物質；重點是包裝、標示、標籤、文件、積載與數量限制。</p>
+            <div class="subgrid">
+              <div class="mini-card">
+                <h4>章節細項</h4>
+                <ul class="clean-list">
+                  <li><span class="chapter-label">第 1 章：</span><span class="chapter-desc">通則，處理包裝、標示、標籤、文件、積載與數量限制。</span></li>
+                  <li><span class="chapter-label">第 2 章：</span><span class="chapter-desc">履約驗證，與締約國履約驗證及稽核有關。</span></li>
+                  <li><span class="chapter-label">附錄：</span><span class="chapter-desc">提供判定包裝有害物質的標準。</span></li>
+                </ul>
+              </div>
+              <div class="mini-card">
+                <h4>實務重點</h4>
+                <p>Annex III 不像 Annex I 有大量船上污染設備要求，而是偏向有害物質／海洋污染物的文件、包裝、標籤、危險品申報與積載隔離正確性。</p>
+                <div class="memory">記憶：Annex III ＝ 包裝、標籤、申報、積載與 IMDG。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="annex-card" id="annex-iv">
+          <aside class="annex-side"><div class="roman">IV</div><div class="type">Sewage</div></aside>
+          <div class="annex-body">
+            <div class="annex-heading"><h3>Annex IV｜Prevention of Pollution by Sewage from Ships</h3><span class="annex-key">船舶污水</span></div>
+            <p class="annex-core">Annex IV 管制船上生活污水，包括污水處理設備、污水儲存櫃、排放距岸距離、航行條件、接收設施與證書要求；通常適用於國際航行 400 GT 以上船舶，或核准載運超過 15 人的船舶。</p>
+            <div class="subgrid">
+              <div class="mini-card">
+                <h4>章節細項</h4>
+                <ul class="clean-list">
+                  <li><span class="chapter-label">第 1 章：</span><span class="chapter-desc">通則，定義污水、適用船舶與基本要求。</span></li>
+                  <li><span class="chapter-label">第 2 章：</span><span class="chapter-desc">檢驗與發證，對應 ISPP 證書。</span></li>
+                  <li><span class="chapter-label">第 3 章：</span><span class="chapter-desc">設備與排放控制，處理 STP、粉碎／消毒系統、污水儲存櫃，以及 3 nm / 12 nm 等距岸與航行條件。</span></li>
+                  <li><span class="chapter-label">第 4 章：</span><span class="chapter-desc">岸上接收設施，要求港口提供污水接收能力。</span></li>
+                  <li><span class="chapter-label">第 5 章：</span><span class="chapter-desc">PSC 管制，檢查污水設備、證書與排放安排。</span></li>
+                  <li><span class="chapter-label">第 6 章：</span><span class="chapter-desc">履約驗證，與締約國履約稽核有關。</span></li>
+                  <li><span class="chapter-label">第 7 章：</span><span class="chapter-desc">Polar Code，補充極地水域污水排放限制。</span></li>
+                </ul>
+              </div>
+              <div class="mini-card">
+                <h4>實務重點</h4>
+                <p>常見檢查重點包括 ISPP、污水處理設備銘牌、型式認可、污水儲存櫃容量、排放閥位置、距岸條件與操作紀錄。</p>
+                <div class="memory">記憶：Annex IV ＝ STP、污水儲存櫃、排放距岸條件。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="annex-card" id="annex-v">
+          <aside class="annex-side"><div class="roman">V</div><div class="type">Garbage</div></aside>
+          <div class="annex-body">
+            <div class="annex-heading"><h3>Annex V｜Prevention of Pollution by Garbage from Ships</h3><span class="annex-key">船舶垃圾</span></div>
+            <p class="annex-core">Annex V 管制船舶垃圾，基本原則是禁止排放所有垃圾，除非 Annex V 明確允許。垃圾範圍包含食物垃圾、生活垃圾、作業垃圾、塑膠、貨物殘餘物、焚化灰、食用油、漁具、動物屍體等。</p>
+            <div class="subgrid">
+              <div class="mini-card">
+                <h4>章節細項</h4>
+                <ul class="clean-list">
+                  <li><span class="chapter-label">第 1 章：</span><span class="chapter-desc">通則，定義垃圾、排放條件、禁排項目、告示牌、垃圾管理計畫與垃圾紀錄簿。</span></li>
+                  <li><span class="chapter-label">第 2 章：</span><span class="chapter-desc">履約驗證，處理締約國履約驗證與稽核。</span></li>
+                  <li><span class="chapter-label">第 3 章：</span><span class="chapter-desc">Polar Code，加入極地水域垃圾排放限制。</span></li>
+                  <li><span class="chapter-label">附錄 I：</span><span class="chapter-desc">HME 貨物殘餘物判定標準。</span></li>
+                  <li><span class="chapter-label">附錄 II：</span><span class="chapter-desc">垃圾紀錄簿格式。</span></li>
+                </ul>
+              </div>
+              <div class="mini-card">
+                <h4>實務重點</h4>
+                <p>最容易被忽略的是垃圾分類與紀錄，尤其散貨船的貨物殘餘物是否屬於 HME，會影響是否可排放與是否需送岸上接收設施。</p>
+                <div class="memory">記憶：Annex V ＝ 原則禁排，例外才允許。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="annex-card" id="annex-vi">
+          <aside class="annex-side"><div class="roman">VI</div><div class="type">Air</div></aside>
+          <div class="annex-body">
+            <div class="annex-heading"><h3>Annex VI｜Prevention of Air Pollution from Ships</h3><span class="annex-key">空氣污染與能效</span></div>
+            <p class="annex-core">Annex VI 是目前發展最快、更新最頻繁的 Annex。它管制 SOx、NOx、PM、ODS、VOC、船上焚化、燃油品質，並在第 4 章納入 EEDI、SEEMP、EEXI、CII 等能效與碳強度要求。</p>
+            <div class="subgrid">
+              <div class="mini-card">
+                <h4>章節細項</h4>
+                <ul class="clean-list">
+                  <li><span class="chapter-label">第 1 章：</span><span class="chapter-desc">通則，定義、適用範圍、例外與等效安排。</span></li>
+                  <li><span class="chapter-label">第 2 章：</span><span class="chapter-desc">檢驗、發證與管制方式，對應 IAPP、IEE、PSC 與燃油文件驗證。</span></li>
+                  <li><span class="chapter-label">第 3 章：</span><span class="chapter-desc">排放控制，管制 ODS、NOx、SOx / PM、VOC、船上焚化與燃油品質。</span></li>
+                  <li><span class="chapter-label">第 4 章：</span><span class="chapter-desc">船舶能效與碳強度規則，涵蓋 EEDI、EEXI、SEEMP、IMO DCS、CII 評級。</span></li>
+                  <li><span class="chapter-label">第 5 章：</span><span class="chapter-desc">履約驗證，與締約國履約驗證及 IMO 稽核有關。Net-Zero Framework 仍屬 draft revised Annex VI 的後續修正議題，不應混同為已生效現行章節。</span></li>
+                </ul>
+              </div>
+              <div class="mini-card">
+                <h4>實務重點</h4>
+                <p>Annex VI 已不只是排氣污染，而是結合燃油硫含量、NOx Tier、ECA、BDN、燃油取樣、IAPP、IEE、SEEMP、DCS、CII 的完整合規系統。</p>
+                <div class="memory">記憶：Annex VI ＝ 空污、燃油、能效、碳強度。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="documents">
+      <div class="section-head">
+        <div class="section-index">05 | 文件</div>
+        <div>
+          <h2>把 Annex 轉成文件與設備清單，才是船上管理語言。</h2>
+          <p class="section-lead">MARPOL 在船上最終會落成證書、紀錄簿、設備、計畫書與岸上接收紀錄。下表可作為初步盤點，不取代船旗國、認可組織或最新版公約文本要求。</p>
+        </div>
+      </div>
+      <div class="doc-grid">
+        <article class="doc-card"><div class="kicker">證書</div><h3>污染防止證書</h3><p>IOPP、NLS、ISPP、IAPP、IEE 等，是確認船舶符合對應 Annex 的第一層證據。</p></article>
+        <article class="doc-card"><div class="kicker">紀錄簿</div><h3>操作紀錄簿</h3><p>油類紀錄簿、貨物紀錄簿、垃圾紀錄簿、換油紀錄等，是 PSC 最常用來追溯操作的材料。</p></article>
+        <article class="doc-card"><div class="kicker">計畫 / 手冊</div><h3>計畫書與手冊</h3><p>SOPEP、SMPEP、P&amp;A Manual、垃圾管理計畫、SEEMP 等，把規則轉成船上程序。</p></article>
+      </div>
+      <div class="table-wrap" style="margin-top: 18px;">
+        <table aria-label="MARPOL 證書文件與設備對照表">
+          <thead>
+            <tr><th>Annex</th><th>主要證書 / 文件</th><th>主要設備 / 系統</th><th>查核重點</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Annex I</td><td>IOPP、油類紀錄簿、SOPEP、STS 計畫</td><td>OWS、15 ppm 警報、ODME、油泥艙、標準排放接頭</td><td>排放紀錄、油泥數量、管路完整性與旁通疑慮。</td></tr>
+            <tr><td>Annex II</td><td>NLS 證書、貨物紀錄簿、P&amp;A Manual、SMPEP</td><td>掃艙系統、洗艙系統、貨物管路／泵浦</td><td>貨物分類、預洗、洗艙水處理與岸上接收紀錄。</td></tr>
+            <tr><td>Annex III</td><td>危險品申報、IMDG 文件、積載計畫</td><td>包裝、標籤、標示與隔離配置</td><td>文件、標籤、包裝與實際積載是否一致。</td></tr>
+            <tr><td>Annex IV</td><td>ISPP 證書、設備資料、操作紀錄</td><td>STP、粉碎／消毒系統、污水儲存櫃</td><td>設備型式認可、排放閥控制、污水儲存櫃容量與排放條件。</td></tr>
+            <tr><td>Annex V</td><td>垃圾管理計畫、垃圾紀錄簿、告示牌</td><td>垃圾分類、儲存、處理與岸上接收安排</td><td>分類是否正確、塑膠禁排、HME 判定與接收設施紀錄。</td></tr>
+            <tr><td>Annex VI</td><td>IAPP、IEE、BDN、SEEMP、DCS / CII 資料、NOx Technical File</td><td>燃油系統、主輔機 / 鍋爐排氣系統、焚化爐、取樣點</td><td>硫含量、ECA 換油、NOx Tier、燃油取樣、CII 評級。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="section-head">
+        <div class="section-index">06 | 清單</div>
+        <div>
+          <h2>用驗船師角度讀 MARPOL，先看適用性，再看一致性。</h2>
+          <p class="section-lead">以下六步驟可作為船舶管理、內部稽核、PSC 準備或改裝專案前期盤點的快速框架。</p>
+        </div>
+      </div>
+      <div class="check-grid">
+        <article class="check-card"><div class="kicker">01</div><h3>先判斷船型與航線</h3><p>油輪、化學品船、貨櫃船、散貨船、客船適用 Annex 與查核深度不同。</p></article>
+        <article class="check-card"><div class="kicker">02</div><h3>確認船舶證書</h3><p>常見包括 IOPP、NLS、ISPP、IAPP、IEE，並檢查證書附件與設備清單。</p></article>
+        <article class="check-card"><div class="kicker">03</div><h3>確認設備符合證書</h3><p>例如 OWS、ODME、STP、incinerator、fuel system、NOx 相關設備與 Technical File。</p></article>
+        <article class="check-card"><div class="kicker">04</div><h3>確認紀錄簿合理</h3><p>油類紀錄簿、貨物紀錄簿、垃圾紀錄簿、BDN、換油紀錄、CII / SEEMP 資料。</p></article>
+        <article class="check-card"><div class="kicker">05</div><h3>確認 Special Area 與 ECA</h3><p>Special Area 主要出現在 Annex I / II / IV / V；ECA 則屬 Annex VI 的 SOx、NOx、PM 管制區，兩者都會改變可排放或燃油要求。</p></article>
+        <article class="check-card"><div class="kicker">06</div><h3>確認岸上接收紀錄</h3><p>油渣、垃圾、污水、化學品殘餘物常需要岸上接收設施配合。</p></article>
+      </div>
+
+      <div class="card card-pad" style="margin-top: 18px;">
+        <h3 style="margin: 0 0 16px; color: var(--navy); font-size: 1.2rem; font-weight: 950;">最簡單的記憶方式</h3>
+        <div class="memory-grid">
+          <article class="memory-card"><div><div class="annex-small">Annex I</div><b>Oil</b></div><span>油污染</span></article>
+          <article class="memory-card"><div><div class="annex-small">Annex II</div><b>Bulk Chemical</b></div><span>散裝化學品</span></article>
+          <article class="memory-card"><div><div class="annex-small">Annex III</div><b>Packaged Goods</b></div><span>包裝有害物質</span></article>
+          <article class="memory-card"><div><div class="annex-small">Annex IV</div><b>Sewage</b></div><span>污水</span></article>
+          <article class="memory-card"><div><div class="annex-small">Annex V</div><b>Garbage</b></div><span>垃圾</span></article>
+          <article class="memory-card"><div><div class="annex-small">Annex VI</div><b>Air + GHG</b></div><span>空污與溫室氣體</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="updates">
+      <div class="section-head">
+        <div class="section-index">07 | 更新</div>
+        <div>
+          <h2>Annex VI 是目前最需要持續追蹤的部分。</h2>
+          <p class="section-lead">MARPOL 仍會透過 IMO 修正案與 MEPC 決議持續更新。以下為截至 2026-06-04 的更新提醒，實務適用仍須回到船舶建造日期、改裝日期、船旗國要求與最新版公約文本。</p>
+        </div>
+      </div>
+      <div class="update-grid">
+        <article class="update-card"><div class="kicker">2022-11-01 / 2023-01-01</div><h3>EEXI / CII 實施節點</h3><p>相關 Annex VI 修正案於 2022-11-01 生效；自 2023-01-01 起，適用船舶開始計算 EEXI，並蒐集年度營運 CII 與 CII 評級所需資料。</p></article>
+        <article class="update-card"><div class="kicker">2025 · MEPC 83</div><h3>IMO Net-Zero Framework 草案</h3><p>MEPC 83 已核准 draft legal text，目標是納入 draft revised Annex VI；但後續採納程序尚未完成，不宜視為已生效現行章節。</p></article>
+        <article class="update-card"><div class="kicker">2026 · MEPC 84</div><h3>Net-Zero Framework 延後再議</h3><p>MEPC 84 同意成立會間工作組，推動各方對全球措施形成共識；第二次特別會議預計於 2026-12-04 恢復，仍以 IMO 後續確認為準。</p></article>
+        <article class="update-card"><div class="kicker">2026 · MEPC 84</div><h3>North-East Atlantic ECA</h3><p>MEPC 84 採納新的 North-East Atlantic ECA，預計 2027-09-01 生效，並於 2028 年起適用較嚴格的 NOx、SOx 與 PM 要求。</p></article>
+      </div>
+      <div class="callout"><b>需進一步確認：</b>若用於正式送審、PSC 準備、船隊合規評估或商務決策，應以最新版 MARPOL 文本、IMO 決議、船旗國規定及認可組織通告為準。</div>
+    </section>
+
+    <section class="footer-note" id="sources">
+      <div class="inner">
+        <h2>一句話總結：MARPOL 是把船舶污染風險變成可檢查、可紀錄、可追溯的管理系統。</h2>
+        <p>這份筆記適合分享給船舶管理公司、船員、驗船／船務同仁、法規與合規人員、ESG / 碳管理團隊，以及正在學習 IMO 公約架構的海事工程與供應鏈從業者。</p>
+        <div class="share-grid">
+          <article class="share-card"><h3>適合分享給誰</h3><p>需要快速理解 MARPOL 全貌、準備 PSC / 內部稽核、整理船隊合規文件、或進行船舶改裝與營運風險盤點的人。</p></article>
+          <article class="share-card"><h3>實務應用價值</h3><p>可作為初步教育訓練、合規盤點、船上檢查前 briefing、管理層簡報與個人海事法規知識庫素材。</p></article>
+        </div>
+        <div class="sources" aria-label="資料來源">
+          <article class="source-card"><h3>IMO：MARPOL Convention</h3><p><a href="https://www.imo.org/en/about/conventions/pages/international-convention-for-the-prevention-of-pollution-from-ships-%28marpol%29.aspx" target="_blank" rel="noreferrer">International Convention for the Prevention of Pollution from Ships</a></p></article>
+          <article class="source-card"><h3>IMO：Annex I</h3><p><a href="https://www.imo.org/en/ourwork/environment/pages/oilpollution-default.aspx" target="_blank" rel="noreferrer">MARPOL Annex I – Prevention of Pollution by Oil</a></p></article>
+          <article class="source-card"><h3>IMO Rules mirror：Annex II 條文參照</h3><p><a href="https://www.imorules.com/MARPOL_ANNII.html" target="_blank" rel="noreferrer">Control of Pollution by Noxious Liquid Substances in Bulk</a></p></article>
+          <article class="source-card"><h3>IMO：Sewage / Garbage / Energy Efficiency</h3><p><a href="https://www.imo.org/en/ourwork/environment/pages/sewage-default.aspx" target="_blank" rel="noreferrer">Sewage</a> · <a href="https://www.imo.org/en/ourwork/environment/pages/garbage-default.aspx" target="_blank" rel="noreferrer">Garbage</a> · <a href="https://www.imo.org/en/ourwork/environment/pages/improving%20the%20energy%20efficiency%20of%20ships.aspx" target="_blank" rel="noreferrer">Energy Efficiency</a></p></article>
+          <article class="source-card"><h3>IMO：EEXI / CII</h3><p><a href="https://www.imo.org/en/mediacentre/hottopics/pages/eexi-cii-faq.aspx" target="_blank" rel="noreferrer">EEXI and CII - ship carbon intensity and rating system</a></p></article>
+          <article class="source-card"><h3>IMO：Special Areas / ECA</h3><p><a href="https://www.imo.org/en/ourwork/environment/pages/special-areas-marpol.aspx" target="_blank" rel="noreferrer">Special Areas under MARPOL</a></p></article>
+          <article class="source-card"><h3>IMO：MEPC 83</h3><p><a href="https://www.imo.org/en/MediaCentre/MeetingSummaries/Pages/MEPC-83rd-session.aspx" target="_blank" rel="noreferrer">Marine Environment Protection Committee, 83rd session</a></p></article>
+          <article class="source-card"><h3>IMO：MEPC 84</h3><p><a href="https://www.imo.org/en/mediacentre/meetingsummaries/pages/temporary-mepc-84th-session.aspx" target="_blank" rel="noreferrer">Marine Environment Protection Committee, 84th session</a></p></article>
+          <article class="source-card"><h3>整理資訊</h3><p>Reay Huang Maritime Notes｜MARPOL 法規架構摘要。整理與校訂日期：2026 年 6 月 4 日。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="share-end-wrap" id="share">
+      <div
+        class="article-share article-share--end"
+        data-article-share
+        data-share-url="https://reayhuang.com/notes/maritime/marpol-structure-notes.html"
+        data-share-title="MARPOL 法規架構摘要｜Reay's Note"
+        data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;MARPOL 法規架構摘要｜Reay's Note&#10;https://reayhuang.com/notes/maritime/marpol-structure-notes.html"
+        data-share-copy="複製連結"
+        data-share-copied="已複製"
+        data-toast-copied="連結已複製到剪貼簿"
+      >
+        <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+        <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <strong>Reay Huang Maritime Notes｜MARPOL 法規架構摘要</strong><br>
+    整理：Reay Huang · Maritime Survey / Environmental Compliance Learning Note · 整理日期：2026 年 6 月 4 日。<br>
+    免責聲明：本頁為個人學習與專業知識分享用途，不代表 Lloyd's Register 或任何客戶立場；實際適用仍以最新版 MARPOL 文本、IMO 決議、船旗國規定、認可組織規則及公司 SMS 為準。
+  </footer>
+
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (function () {
+      const nav = document.getElementById('sectionNav');
+      if (!nav) return;
+
+      const navLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
+      const sections = navLinks
+        .map((link) => document.getElementById(link.getAttribute('href').slice(1)))
+        .filter(Boolean);
+      if (!sections.length) return;
+
+      let activeId = '';
+
+      function readLineOffset() {
+        const headerH =
+          parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 54;
+        const anchorWrap = document.querySelector('.anchor-wrap');
+        const anchorH = anchorWrap ? anchorWrap.getBoundingClientRect().height : 0;
+        return headerH + anchorH + 20;
+      }
+
+      function setActive(id) {
+        if (!id || id === activeId) return;
+        activeId = id;
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute('href') === '#' + id;
+          link.classList.toggle('is-active', isActive);
+          if (isActive) {
+            link.setAttribute('aria-current', 'true');
+            link.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      function updateFromScroll() {
+        const line = readLineOffset();
+        const nearBottom =
+          window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 48;
+
+        let current = sections[0].id;
+        if (nearBottom) {
+          current = sections[sections.length - 1].id;
+        } else {
+          for (const section of sections) {
+            if (section.getBoundingClientRect().top <= line) current = section.id;
+          }
+        }
+        setActive(current);
+      }
+
+      let ticking = false;
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            updateFromScroll();
+            ticking = false;
+          });
+        },
+        { passive: true }
+      );
+      window.addEventListener('resize', updateFromScroll, { passive: true });
+      updateFromScroll();
+    })();
+  </script>
+</body>
+</html>

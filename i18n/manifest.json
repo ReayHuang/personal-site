@@ -36,6 +36,13 @@
       "zh": "notes/maritime/solas-structure-notes.html"
     },
     {
+      "slug": "marpol-structure-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/marpol-structure-notes.en.html",
+      "zh": "notes/maritime/marpol-structure-notes.html"
+    },
+    {
       "slug": "explosion-protection-notes",
       "type": "article",
       "category": "notes",
