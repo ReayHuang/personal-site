@@ -1338,7 +1338,7 @@
 
     @media (max-width: 900px) {
       :root {
-        --header-h: 88px;
+        --header-h: 116px;
       }
     }
 
@@ -1943,6 +1943,21 @@
   <script src="../../assets/js/back-to-top.js"></script>
   <script>
     (function () {
+      const bar = document.querySelector('.note-site-bar');
+      if (!bar) return;
+      function syncHeaderHeight() {
+        document.documentElement.style.setProperty('--header-h', bar.offsetHeight + 'px');
+      }
+      syncHeaderHeight();
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(syncHeaderHeight).observe(bar);
+      } else {
+        window.addEventListener('resize', syncHeaderHeight);
+      }
+      window.addEventListener('load', syncHeaderHeight);
+    })();
+
+    (function () {
       const nav = document.getElementById('sectionNav');
       if (!nav) return;
 
@@ -1953,6 +1968,13 @@
       if (!sections.length) return;
 
       let activeId = '';
+      let navScrollReady = false;
+
+      function scrollToPageTopInstant() {
+        if (window.location.hash) return;
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        window.scrollTo(0, 0);
+      }
 
       function readLineOffset() {
         const headerH =
@@ -1962,7 +1984,8 @@
         return headerH + anchorH + 20;
       }
 
-      function setActive(id) {
+      function setActive(id, options) {
+        const scrollLink = options && options.scrollLink;
         if (!id || id === activeId) return;
         activeId = id;
         navLinks.forEach((link) => {
@@ -1970,7 +1993,9 @@
           link.classList.toggle('is-active', isActive);
           if (isActive) {
             link.setAttribute('aria-current', 'true');
-            link.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+            if (scrollLink) {
+              link.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+            }
           } else {
             link.removeAttribute('aria-current');
           }
@@ -1990,7 +2015,18 @@
             if (section.getBoundingClientRect().top <= line) current = section.id;
           }
         }
-        setActive(current);
+        setActive(current, { scrollLink: navScrollReady });
+      }
+
+      function bootstrapNav() {
+        scrollToPageTopInstant();
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            scrollToPageTopInstant();
+            navScrollReady = true;
+            updateFromScroll();
+          });
+        });
       }
 
       let ticking = false;
@@ -2007,7 +2043,13 @@
         { passive: true }
       );
       window.addEventListener('resize', updateFromScroll, { passive: true });
-      updateFromScroll();
+      window.addEventListener('load', bootstrapNav);
+      window.addEventListener('pageshow', (event) => {
+        if (!window.location.hash) scrollToPageTopInstant();
+        if (!event.persisted) bootstrapNav();
+      });
+      scrollToPageTopInstant();
+      bootstrapNav();
     })();
   </script>
 </body>
