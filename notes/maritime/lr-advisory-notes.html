@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang" />
+  <meta name="keywords" content="LR Advisory, Lloyd's Register, maritime advisory, decarbonisation, fleet strategy, ship survey" />
+  <meta property="og:title" content="LR Advisory｜海事顧問服務視覺導覽｜Reay's Note" />
+  <meta property="og:description" content="以視覺化方式整理 LR Advisory 的定位、四大挑戰、服務內容、服務對象與應用情境。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="Reay Huang Maritime Notes" />
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/lr-advisory-notes.html" />
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/lr-advisory-notes.html" />
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/lr-advisory/lr-advisory-link-preview-1200.png" />
+  <meta property="og:image:alt" content="LR Advisory｜海事顧問服務視覺導覽｜Reay's Note" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="537" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LR Advisory｜海事顧問服務視覺導覽｜Reay's Note" />
+  <meta name="twitter:description" content="以視覺化方式整理 LR Advisory 的定位、四大挑戰、服務內容、服務對象與應用情境。" />
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/lr-advisory/lr-advisory-link-preview-1200.png" />
+  <link rel="alternate" hreflang="zh-Hant" href="lr-advisory-notes.html" />
+  <link rel="alternate" hreflang="en" href="lr-advisory-notes.en.html" />
+  <link rel="alternate" hreflang="x-default" href="lr-advisory-notes.en.html" />
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/article-share.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LR Advisory｜海事顧問服務視覺導覽｜Reay's Note</title>
+  <meta
+    name="description"
+    content="以視覺化方式整理 LR Advisory 的定位、四大挑戰、服務內容、服務對象與應用情境。"
+  />
+
+  <style>
+    :root {
+      --ink: #061b22;
+      --deep: #0b2b35;
+      --ocean: #0e5964;
+      --teal: #12c7af;
+      --teal-soft: #d8f8f3;
+      --orange: #ff5a2f;
+      --orange-soft: #ffe2d8;
+      --amber: #f4b63f;
+      --blue-soft: #e7f1f4;
+      --green-soft: #e6f5e7;
+      --paper: #ffffff;
+      --wash: #f5f8f8;
+      --line: #dbe7e7;
+      --muted: #60767c;
+      --radius: 8px;
+      --shadow: 0 16px 44px rgba(6, 27, 34, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      scroll-margin-top: 96px;
+    }
+
+    .section-inner {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(260px, 0.42fr);
+      gap: 44px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      color: var(--deep);
+      font-size: 42px;
+      line-height: 1.22;
+      font-weight: 900;
+    }
+
+    .section-title > p {
+      margin: 0;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--wash);
+      box-shadow: 0 8px 20px rgba(6, 27, 34, 0.04);
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .hero {
+      min-height: 640px;
+      color: var(--paper);
+      background:
+        linear-gradient(90deg, rgba(3, 18, 24, 0.93) 0%, rgba(3, 18, 24, 0.80) 38%, rgba(3, 18, 24, 0.36) 72%, rgba(3, 18, 24, 0.12) 100%),
+        url("../../assets/images/maritime/lr-advisory/lr-advisory-hero.png") center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 150px;
+      background: linear-gradient(180deg, rgba(5, 20, 27, 0), rgba(5, 20, 27, 0.72));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 82px 0 70px;
+    }
+
+    .brand-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .brand-logo-link {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .brand-logo-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .brand-logo-link:focus-visible {
+      outline: 3px solid #8ffff2;
+      outline-offset: 4px;
+    }
+
+    .brand-logo {
+      width: 132px;
+      aspect-ratio: 2.36 / 1;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #d9fffb;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 58px;
+      line-height: 1.12;
+      font-weight: 900;
+    }
+
+    .hero .lead {
+      max-width: 780px;
+      margin: 26px 0 0;
+      color: #ddf2f1;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .hero .lead strong {
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 11px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: var(--radius);
+      color: var(--paper);
+      background: rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(12px);
+      font-size: 15px;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .action-link:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 90, 47, 0.88);
+    }
+
+    .action-link svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .signal-row {
+      position: absolute;
+      right: 0;
+      bottom: 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      width: min(300px, 28vw);
+      max-width: 300px;
+      margin-top: 0;
+    }
+
+    .signal {
+      min-height: 96px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(16px);
+    }
+
+    .signal b {
+      display: block;
+      color: #8ffff2;
+      font-size: 23px;
+      line-height: 1.1;
+    }
+
+    .signal span {
+      display: block;
+      margin-top: 8px;
+      color: #d6eceb;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 8px 20px rgba(6, 27, 34, 0.06);
+    }
+
+    .nav-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 90, 47, 0.45) transparent;
+    }
+
+    .nav-scroll::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .nav-scroll::-webkit-scrollbar-thumb {
+      background: rgba(255, 90, 47, 0.45);
+      border-radius: 999px;
+    }
+
+    .nav-scroll a {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      color: var(--deep);
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .nav-scroll a:hover,
+    .nav-scroll a.active {
+      color: var(--paper);
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .quick-band {
+      background: var(--paper);
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.75fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .quick-points {
+      display: grid;
+      gap: 14px;
+    }
+
+    .quick-point {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 8px 22px rgba(6, 27, 34, 0.05);
+    }
+
+    .quick-point .num {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      color: var(--paper);
+      background: var(--deep);
+      font-weight: 900;
+    }
+
+    .quick-point h3 {
+      margin: 0 0 6px;
+      color: var(--deep);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .quick-point p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .compass {
+      position: relative;
+      min-height: 420px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at center, rgba(18, 199, 175, 0.12), rgba(255, 255, 255, 0) 38%),
+        linear-gradient(135deg, #f9fbfb, #ecf6f6);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .compass::before,
+    .compass::after {
+      content: "";
+      position: absolute;
+      inset: 40px;
+      border: 1px dashed rgba(11, 43, 53, 0.22);
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .compass::after {
+      inset: 88px;
+      border-color: rgba(255, 90, 47, 0.28);
+    }
+
+    .compass-center {
+      position: absolute;
+      inset: 50%;
+      width: 176px;
+      height: 176px;
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      color: var(--paper);
+      background: linear-gradient(135deg, var(--deep), #0f6570);
+      box-shadow: 0 18px 42px rgba(6, 27, 34, 0.24);
+      padding: 24px;
+      font-weight: 900;
+      line-height: 1.42;
+      z-index: 1;
+    }
+
+    .compass-axis {
+      display: none;
+    }
+
+    .compass-axis.horizontal {
+      transform: rotate(90deg) translateY(-50%);
+    }
+
+    .compass-axis.vertical {
+      transform: translateY(-50%);
+    }
+
+    .compass-node {
+      position: absolute;
+      width: 156px;
+      height: 154px;
+      min-height: 154px;
+      padding: 14px;
+      border: 1px solid rgba(11, 43, 53, 0.12);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 10px 24px rgba(6, 27, 34, 0.08);
+      z-index: 2;
+    }
+
+    .compass-node b {
+      display: block;
+      color: var(--deep);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .compass-node span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .compass-node.tech {
+      top: 24px;
+      left: 24px;
+      right: auto;
+      bottom: auto;
+      transform: none;
+      border-top: 5px solid var(--teal);
+    }
+
+    .compass-node.rule {
+      top: 24px;
+      right: 24px;
+      left: auto;
+      bottom: auto;
+      transform: none;
+      border-top: 5px solid var(--orange);
+    }
+
+    .compass-node.ops {
+      bottom: 24px;
+      right: 24px;
+      left: auto;
+      top: auto;
+      transform: none;
+      border-top: 5px solid var(--amber);
+    }
+
+    .compass-node.biz {
+      bottom: 24px;
+      left: 24px;
+      right: auto;
+      top: auto;
+      transform: none;
+      border-top: 5px solid var(--ocean);
+    }
+
+    .challenge-band {
+      background: linear-gradient(180deg, var(--wash), #ffffff);
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .challenge-card,
+    .service-card,
+    .scenario-card,
+    .principle-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 10px 28px rgba(6, 27, 34, 0.06);
+    }
+
+    .challenge-card {
+      min-height: 238px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      will-change: transform;
+    }
+
+    .challenge-card:hover,
+    .challenge-card:focus,
+    .challenge-card:focus-within,
+    .challenge-card.is-floating {
+      transform: translateY(-10px);
+      border-color: rgba(255, 90, 47, 0.72);
+      box-shadow: 0 22px 46px rgba(6, 27, 34, 0.16);
+    }
+
+    .challenge-card::after {
+      content: "";
+      position: absolute;
+      width: 88px;
+      height: 88px;
+      right: -26px;
+      bottom: -26px;
+      background: var(--teal-soft);
+      border-radius: 50%;
+      opacity: 0.85;
+    }
+
+    .challenge-card:nth-child(2)::after {
+      background: var(--orange-soft);
+    }
+
+    .challenge-card:nth-child(3)::after {
+      background: var(--green-soft);
+    }
+
+    .challenge-card:nth-child(4)::after {
+      background: var(--blue-soft);
+    }
+
+    .icon-box {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 18px;
+      border-radius: var(--radius);
+      color: var(--deep);
+      background: var(--teal-soft);
+    }
+
+    .challenge-card:nth-child(2) .icon-box {
+      background: var(--orange-soft);
+    }
+
+    .challenge-card:nth-child(3) .icon-box {
+      background: var(--green-soft);
+    }
+
+    .challenge-card:nth-child(4) .icon-box {
+      background: var(--blue-soft);
+    }
+
+    .icon-box svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .challenge-card h3,
+    .service-card h3,
+    .scenario-card h3,
+    .principle-card h3 {
+      margin: 0;
+      color: var(--deep);
+      font-size: 19px;
+      line-height: 1.36;
+    }
+
+    .challenge-card .en {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .challenge-card p,
+    .service-card p,
+    .scenario-card p,
+    .principle-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.68;
+    }
+
+    .process-band {
+      color: var(--paper);
+      background:
+        linear-gradient(135deg, rgba(6, 27, 34, 0.97), rgba(11, 43, 53, 0.95)),
+        radial-gradient(circle at 20% 20%, rgba(18, 199, 175, 0.24), transparent 28%);
+    }
+
+    .process-band .section-title h2 {
+      color: var(--paper);
+    }
+
+    .process-band .section-title > p {
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: none;
+    }
+
+    .process-band .eyebrow {
+      color: #8ffff2;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+      counter-reset: process;
+    }
+
+    .process-step {
+      min-height: 214px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-step::before {
+      counter-increment: process;
+      content: "0" counter(process);
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: var(--radius);
+      color: var(--deep);
+      background: #8ffff2;
+      font-weight: 900;
+    }
+
+    .process-step h3 {
+      margin: 0;
+      color: var(--paper);
+      font-size: 19px;
+      line-height: 1.36;
+    }
+
+    .process-step p {
+      margin: 12px 0 0;
+      color: #cae1e1;
+      font-size: 14.5px;
+      line-height: 1.68;
+    }
+
+    .services-band {
+      background: var(--paper);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      align-items: start;
+    }
+
+    .service-card {
+      min-height: 202px;
+      padding: 20px;
+      border-top: 5px solid var(--line);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      border-top-color: var(--orange);
+    }
+
+    .service-card .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      margin-bottom: 12px;
+      padding: 4px 8px;
+      border-radius: var(--radius);
+      color: #9c341f;
+      background: var(--orange-soft);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      line-height: 1.38;
+    }
+
+    .ecosystem-band {
+      background: #f6faf9;
+    }
+
+    .ecosystem {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+      position: relative;
+    }
+
+    .sector {
+      min-height: 124px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sector::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--teal);
+    }
+
+    .sector:nth-child(2n)::before {
+      background: var(--orange);
+    }
+
+    .sector:nth-child(3n)::before {
+      background: var(--amber);
+    }
+
+    .sector b {
+      display: block;
+      color: var(--deep);
+      font-size: 18px;
+      line-height: 1.38;
+    }
+
+    .sector span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.62;
+    }
+
+    .ecosystem-note {
+      margin-top: 22px;
+      padding: 22px;
+      border-left: 6px solid var(--orange);
+      border-radius: var(--radius);
+      background: var(--paper);
+      color: var(--deep);
+      box-shadow: 0 10px 26px rgba(6, 27, 34, 0.06);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .scenario-band {
+      background: var(--paper);
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .scenario-card {
+      min-height: 238px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .scenario-card .scenario-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      color: var(--paper);
+      background: var(--deep);
+      font-weight: 900;
+    }
+
+    .scenario-card:nth-child(1) .scenario-num {
+      background: #ff5a2f;
+    }
+
+    .scenario-card:nth-child(2) .scenario-num {
+      background: #f36f2b;
+    }
+
+    .scenario-card:nth-child(3) .scenario-num {
+      background: #e65d1f;
+    }
+
+    .scenario-card:nth-child(4) .scenario-num {
+      background: #d94b19;
+    }
+
+    .scenario-card:nth-child(5) .scenario-num {
+      background: #c93e14;
+    }
+
+    .scenario-card h3 {
+      font-size: 18px;
+      line-height: 1.38;
+    }
+
+    .scenario-card .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border: 1px solid rgba(14, 89, 100, 0.18);
+      border-radius: var(--radius);
+      color: var(--ocean);
+      background: #f2fbfa;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .compare-band {
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f5f8f8 100%);
+    }
+
+    .compare-band .section-title h2 {
+      max-width: 760px;
+      text-wrap: balance;
+    }
+
+    .comparison-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th,
+    td {
+      padding: 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--paper);
+      background: var(--deep);
+      font-size: 15px;
+    }
+
+    th:nth-child(3) {
+      color: var(--orange);
+    }
+
+    td {
+      color: var(--muted);
+      font-size: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    th:first-child,
+    td:first-child {
+      border-right: 1px solid var(--line);
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      border-right: 1px solid var(--line);
+    }
+
+    td:first-child {
+      color: var(--deep);
+      font-weight: 900;
+      width: 22%;
+    }
+
+    td[data-label="傳統船級服務"] {
+      background: var(--blue-soft);
+    }
+
+    td[data-label="LR Advisory"] {
+      background: var(--orange-soft);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .principles-band {
+      background: var(--deep);
+      color: var(--paper);
+    }
+
+    .principles-band .section-title h2 {
+      color: var(--paper);
+    }
+
+    .principles-band .section-title > p {
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: none;
+    }
+
+    .brand-orange {
+      color: var(--orange);
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+    .principle-card {
+      min-height: 188px;
+      padding: 22px;
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: none;
+    }
+
+    .principle-card h3 {
+      color: var(--paper);
+      font-size: 19px;
+    }
+
+    .principle-card p {
+      color: #cae1e1;
+    }
+
+    .principle-card .en {
+      display: block;
+      margin-bottom: 8px;
+      color: #8ffff2;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .closing-band {
+      background: var(--paper);
+    }
+
+    .closing-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(260px, 0.42fr);
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .summary-quote {
+      padding: 34px;
+      border-radius: var(--radius);
+      color: var(--paper);
+      background:
+        linear-gradient(135deg, rgba(6, 27, 34, 0.96), rgba(14, 89, 100, 0.94)),
+        radial-gradient(circle at 80% 20%, rgba(255, 90, 47, 0.32), transparent 24%);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-quote h2 {
+      margin: 0 0 16px;
+      font-size: 34px;
+      line-height: 1.26;
+    }
+
+    .summary-quote p {
+      margin: 0;
+      color: #d9f0ef;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .summary-quote h3 {
+      margin: 56px auto 0;
+      max-width: 620px;
+      color: var(--orange);
+      font-size: 25px;
+      line-height: 1.35;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .source-box {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f7fbfb;
+    }
+
+    .source-box h3 {
+      margin: 0;
+      color: var(--deep);
+      font-size: 20px;
+    }
+
+    .source-box p,
+    .source-box li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .source-box p {
+      margin: 0;
+    }
+
+    .resource-links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .source-box a {
+      color: var(--ocean);
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .qr-link {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      color: var(--deep);
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .source-box a.qr-link {
+      color: var(--deep);
+      text-decoration: none;
+    }
+
+    .qr-link img {
+      width: 100%;
+      max-width: 148px;
+      aspect-ratio: 1;
+      justify-self: center;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      object-fit: contain;
+      box-shadow: 0 16px 34px rgba(6, 27, 34, 0.1);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .qr-link span {
+      display: block;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .qr-link small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .qr-link:hover img,
+    .qr-link:focus-visible img {
+      border-color: rgba(255, 90, 47, 0.72);
+      box-shadow: 0 20px 40px rgba(6, 27, 34, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .footer {
+      padding: 28px 0;
+      color: #cde2e2;
+      background: #061b22;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .signal-row {
+        position: static;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: auto;
+        max-width: 780px;
+        margin-top: 38px;
+      }
+
+      .section-title,
+      .quick-grid,
+      .closing-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .challenge-grid,
+      .process-grid,
+      .principles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .scenario-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-scroll {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .nav-scroll::-webkit-scrollbar {
+        display: none;
+      }
+
+      .closing-band .section-inner {
+        padding-bottom: 24px;
+      }
+
+      .share-band .section-inner {
+        padding-top: 14px;
+        padding-bottom: 28px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .brand-line {
+        transform: translateY(-24px);
+      }
+
+      .hero-inner .article-share--hero,
+      .article-share--end {
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 6px 10px;
+      }
+
+      .hero-inner .article-share--hero .article-share__label,
+      .article-share--end .article-share__label {
+        width: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      .hero-inner .article-share--hero .article-share__actions,
+      .article-share--end .article-share__actions {
+        flex-wrap: nowrap;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .hero {
+        min-height: auto;
+        background-position: 58% center;
+      }
+
+      .hero-inner {
+        min-height: 0;
+        padding: 68px 0 20px;
+      }
+
+      .hero-inner .article-share--hero {
+        margin-top: 16px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        line-height: 1.18;
+      }
+
+      .hero .lead {
+        font-size: 17px;
+      }
+
+      .signal-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 24px;
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+
+      .signal {
+        width: 100%;
+        min-height: 92px;
+      }
+
+      .section-inner {
+        padding: 44px 0;
+      }
+
+      .closing-band .section-inner {
+        padding-bottom: 20px;
+      }
+
+      .share-band .section-inner {
+        padding-top: 12px;
+        padding-bottom: 24px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .section-title {
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .section-title > p {
+        padding: 14px 16px;
+        font-size: 15px;
+      }
+
+      .challenge-grid,
+      .process-grid,
+      .service-grid,
+      .ecosystem,
+      .scenario-grid,
+      .principles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compass {
+        min-height: 420px;
+      }
+
+      .compass-axis {
+        display: none;
+      }
+
+      .compass::before,
+      .compass::after {
+        inset: 26px;
+      }
+
+      .compass::after {
+        inset: 78px;
+      }
+
+      .compass-center {
+        width: 124px;
+        height: 124px;
+        font-size: 14px;
+      }
+
+      .compass-node {
+        width: min(142px, calc(50% - 20px));
+        height: 167px;
+        min-height: 167px;
+        padding: 11px;
+      }
+
+      .compass-node.tech {
+        top: 16px;
+        left: 16px;
+        right: auto;
+        bottom: auto;
+        transform: none;
+      }
+
+      .compass-node.rule {
+        top: 16px;
+        right: 16px;
+        left: auto;
+        bottom: auto;
+        transform: none;
+      }
+
+      .compass-node.ops {
+        bottom: 16px;
+        right: 16px;
+        left: auto;
+        top: auto;
+        transform: none;
+      }
+
+      .compass-node.biz {
+        bottom: 16px;
+        left: 16px;
+        right: auto;
+        top: auto;
+        transform: none;
+      }
+
+      .quick-point {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-quote {
+        padding: 26px;
+      }
+
+      .summary-quote h2 {
+        font-size: 28px;
+      }
+
+      .summary-quote p {
+        font-size: 17px;
+      }
+
+      .summary-quote h3 {
+        margin-top: 34px;
+        max-width: 340px;
+        font-size: 21px;
+        text-align: left;
+      }
+
+      .summary-quote h3 .mobile-break {
+        display: block;
+      }
+
+      .summary-quote h3 .mobile-shift {
+        display: block;
+        text-align: right;
+      }
+
+      .compare-band .comparison-wrap {
+        overflow-x: visible;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .compare-band table {
+        width: 100%;
+        min-width: 0;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+
+      .compare-band thead {
+        display: none;
+      }
+
+      .compare-band tbody,
+      .compare-band tr,
+      .compare-band td {
+        display: block;
+        width: 100%;
+      }
+
+      .compare-band tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .compare-band tr {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--paper);
+        box-shadow: 0 10px 24px rgba(6, 27, 34, 0.06);
+      }
+
+      .compare-band td {
+        display: grid;
+        grid-template-columns: minmax(92px, 0.34fr) minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .compare-band tr:last-child td {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .compare-band tr td:last-child {
+        border-bottom: 0;
+      }
+
+      .compare-band td::before {
+        content: attr(data-label);
+        color: var(--deep);
+        font-size: 13px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+
+      .compare-band td[data-label="LR Advisory"]::before {
+        color: var(--orange);
+      }
+
+      .compare-band td:first-child {
+        width: 100%;
+        color: var(--deep);
+        background: #f2fbfa;
+        border-right: 0;
+      }
+
+      .compare-band td:nth-child(2) {
+        border-right: 0;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .brand-logo {
+        width: 112px;
+      }
+
+      .action-link {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .compass-node {
+        width: calc(50% - 18px);
+        height: 91px;
+        min-height: 91px;
+        padding: 10px;
+      }
+
+      .compass-node b {
+        font-size: 13px;
+      }
+
+      .compass-node span {
+        margin-top: 4px;
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      .compass {
+        min-height: 360px;
+      }
+
+      .compass::before,
+      .compass::after {
+        inset: 18px;
+      }
+
+      .compass::after {
+        inset: 64px;
+      }
+
+      .compass-center {
+        width: 108px;
+        height: 108px;
+        padding: 18px;
+        font-size: 13px;
+      }
+    }
+
+    .hero .article-meta {
+      margin: 18px 0 0;
+      max-width: 820px;
+    }
+
+    .hero-inner .article-share--hero {
+      margin-top: 28px;
+    }
+
+    /* Desktop：僅首行（brand-line）上移；分享列固定於 Hero 左下角 */
+    @media (min-width: 1101px) {
+      .brand-line {
+        transform: translateY(-32px);
+      }
+
+      .hero-inner .article-share--hero {
+        position: absolute;
+        left: 0;
+        bottom: 24px;
+        margin-top: 0;
+        z-index: 2;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px 12px;
+        max-width: min(520px, 46vw);
+      }
+
+      .hero-inner .article-share--hero .article-share__label {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      .hero-inner .article-share--hero .article-share__actions {
+        flex-wrap: nowrap;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+    }
+
+    /* Tablet / iPad：僅首行上移；分享列橫跨整行，四顆按鈕維持單行 */
+    @media (min-width: 761px) and (max-width: 1100px) {
+      .brand-line {
+        transform: translateY(-28px);
+      }
+
+      .hero-inner {
+        min-height: 0;
+        padding-bottom: 20px;
+      }
+
+      .signal-row {
+        margin-top: 24px;
+      }
+
+      .hero-inner .article-share--hero {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px 12px;
+        width: 100%;
+        max-width: 780px;
+        margin-top: 16px;
+      }
+
+      .hero-inner .article-share--hero .article-share__label {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      .hero-inner .article-share--hero .article-share__actions {
+        flex-wrap: nowrap;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .compass {
+        min-height: 400px;
+      }
+
+      .compass::before,
+      .compass::after {
+        inset: 32px;
+      }
+
+      .compass::after {
+        inset: 72px;
+      }
+
+      .compass-center {
+        width: 140px;
+        height: 140px;
+        padding: 18px;
+        font-size: 14px;
+      }
+
+      .compass-node {
+        width: 156px;
+        height: 150px;
+        min-height: 150px;
+        padding: 12px;
+      }
+
+      .compass-node.tech {
+        top: 20px;
+        left: 20px;
+        right: auto;
+        bottom: auto;
+        transform: none;
+      }
+
+      .compass-node.rule {
+        top: 20px;
+        right: 20px;
+        left: auto;
+        bottom: auto;
+        transform: none;
+      }
+
+      .compass-node.ops {
+        bottom: 20px;
+        right: 20px;
+        left: auto;
+        top: auto;
+        transform: none;
+      }
+
+      .compass-node.biz {
+        bottom: 20px;
+        left: 20px;
+        right: auto;
+        top: auto;
+        transform: none;
+      }
+    }
+
+    .closing-band .section-inner {
+      padding-bottom: 28px;
+    }
+
+    .share-band .section-inner {
+      padding-top: 16px;
+      padding-bottom: 32px;
+    }
+
+    .site-footer {
+      background: #061b22;
+      color: rgba(255, 255, 255, 0.82);
+      padding: 36px 0 44px;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .site-footer .container {
+      text-align: left;
+    }
+
+    .site-footer strong {
+      color: #fff;
+    }
+
+    .site-footer a {
+      color: #8ffff2;
+    }
+
+    .site-footer a:hover {
+      color: #c8fff8;
+    }
+
+    .site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 760px;
+      text-align: left;
+    }
+
+    .site-footer .small {
+      font-size: 13px;
+    }
+
+    @media (min-width: 1101px) {
+      .site-footer .disclaimer {
+        max-width: none;
+      }
+
+      .site-footer .disclaimer-tail {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="lr-advisory-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="lr-advisory-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+  <header class="hero" id="top">
+    <div class="container hero-inner">
+      <div class="brand-line" aria-label="頁面主題">
+        <a
+          class="brand-logo-link"
+          href="https://www.lr.org/en/services/advisory/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="開啟 LR Advisory 服務頁面"
+        >
+          <img class="brand-logo" src="../../assets/images/maritime/lr-advisory/lr-advisory-logo.webp" alt="LR Advisory" />
+        </a>
+        <span class="brand-name">Lloyd's Register｜海事顧問服務導覽｜REAY'S NOTE</span>
+      </div>
+
+      <h1>從船舶合規，到海事決策支援</h1>
+      <p class="article-meta">
+        <span>📅 更新：2026-06-05</span>
+        <span class="article-meta__sep" aria-hidden="true">·</span>
+        <span>⏱ 閱讀約 9 分鐘</span>
+        <span class="article-meta__sep" aria-hidden="true">·</span>
+        <span>🏷 LR Advisory / 海事顧問 / 減碳轉型</span>
+      </p>
+      <p class="lead">
+        <strong>LR Advisory</strong> 將船級、風險、安全、數據與商業判斷整合在一起，
+        協助船東、船廠、港口、能源與金融單位，在低碳轉型與市場變動中判斷「下一步該怎麼做」。
+        它不只是單點技術諮詢，而是把規範要求、營運限制、投資選項與長期風險放到同一張決策地圖裡，
+        讓複雜的海事問題變成可以比較、可以排序、也可以執行的行動方案。
+      </p>
+
+      <div class="hero-actions" aria-label="主要導覽">
+        <a class="action-link" href="#quick">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="m13 6 6 6-6 6"></path>
+          </svg>
+          先看懂核心
+        </a>
+        <a class="action-link" href="#services">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+          看 10 大服務
+        </a>
+      </div>
+
+      <div class="signal-row" aria-label="快速定位">
+        <div class="signal">
+          <b>1760</b>
+          <span>源自 Lloyd’s Register 自 1760 年以來的海事安全、船級與標準經驗，作為 Advisory 判斷風險與合規的基礎。</span>
+        </div>
+        <div class="signal">
+          <b>80 年</b>
+          <span>LR Advisory 承接 LR 近 80 年的海事顧問服務經驗，協助客戶把技術、法規與商業風險整合成可執行判斷。</span>
+        </div>
+        <div class="signal">
+          <b>10 類</b>
+          <span>LR Advisory 的主要顧問服務分類，涵蓋策略、低碳、效率、風險、專案與新造船等海事決策需求。</span>
+        </div>
+      </div>
+
+      <div
+        class="article-share article-share--hero"
+        data-article-share
+        data-share-url="https://reayhuang.com/notes/maritime/lr-advisory-notes.html"
+        data-share-title="LR Advisory｜海事顧問服務視覺導覽｜Reay's Note"
+        data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;LR Advisory｜海事顧問服務視覺導覽｜Reay's Note&#10;https://reayhuang.com/notes/maritime/lr-advisory-notes.html"
+        data-share-copy="複製連結"
+        data-share-copied="已複製"
+        data-toast-copied="連結已複製到剪貼簿"
+      >
+        <p class="article-share__label" id="share-hero-label">分享此篇</p>
+        <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sticky-nav" aria-label="頁面段落導覽">
+    <div class="container nav-scroll">
+      <a href="#quick" class="active">快速看懂</a>
+      <a href="#challenges">01 四大挑戰</a>
+      <a href="#process">02 怎麼幫忙</a>
+      <a href="#services">03 服務內容</a>
+      <a href="#ecosystem">04 服務對象</a>
+      <a href="#scenarios">05 應用情境</a>
+      <a href="#difference">06 角色差異</a>
+      <a href="#principles">07 核心原則</a>
+      <a href="#summary">了解更多</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section quick-band" id="quick">
+      <div class="container section-inner">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Quick Read</p>
+            <h2>10 秒理解：它不是只回答「是否合格」。</h2>
+          </div>
+          <p>
+            傳統船級服務偏向確認船舶或設備是否符合規範；Advisory 更像決策支援，
+            把技術、法規、營運與商業放在同一個框架中判斷。
+          </p>
+        </div>
+
+        <div class="quick-grid">
+          <div class="quick-points">
+            <article class="quick-point">
+              <span class="num">01</span>
+              <div>
+                <h3>把複雜問題變成可比較的選項</h3>
+                <p>例如新燃料、新造船、改裝、港口加注或投資案，不能只看單一設備價格。還要把 CAPEX、OPEX、供應鏈成熟度、法規時程與營運風險一起放進同一張比較表。</p>
+              </div>
+            </article>
+            <article class="quick-point">
+              <span class="num">02</span>
+              <div>
+                <h3>同時評估安全、合規、成本與市場</h3>
+                <p>能源供應、船員訓練、碳成本、租約競爭力與資產殘值都會互相影響。Advisory 會把這些因素放在同一個情境中檢視，避免只在單一部門或單一成本項目內做判斷。</p>
+              </div>
+            </article>
+            <article class="quick-point">
+              <span class="num">03</span>
+              <div>
+                <h3>輸出可執行的路線圖或決策依據</h3>
+                <p>它的重點不是多一份報告，而是讓客戶知道下一步該投資、改裝、等待或調整。最後的輸出會整理成可討論、可排序、可追蹤的行動路線，讓決策能往前推進。</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="compass" aria-label="技術、法規、營運與商業決策框架示意">
+            <span class="compass-axis vertical"></span>
+            <span class="compass-axis horizontal"></span>
+            <div class="compass-center">海事產業<br />決策支援</div>
+            <div class="compass-node tech">
+              <b>技術</b>
+              <span>燃料、設備、數據、船型與可靠度。</span>
+            </div>
+            <div class="compass-node rule">
+              <b>法規</b>
+              <span>船級、IMO、港口、能效與碳排要求。</span>
+            </div>
+            <div class="compass-node ops">
+              <b>營運</b>
+              <span>船員、維修、停航、加注與應變。</span>
+            </div>
+            <div class="compass-node biz">
+              <b>商業</b>
+              <span>CAPEX、OPEX、租約、殘值與競爭力。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section challenge-band" id="challenges">
+      <div class="container section-inner">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">01｜Industry Challenges</p>
+            <h2>海事產業正在同時面對四種轉型壓力。</h2>
+          </div>
+          <p>
+            LR Advisory 將關鍵挑戰整理成四類。這四類說明了為什麼客戶需要能同時理解海事技術與商業決策的顧問角色。
+          </p>
+        </div>
+
+        <div class="challenge-grid">
+          <article class="challenge-card" tabindex="0">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 17h16"></path>
+                <path d="M7 17V9"></path>
+                <path d="M12 17V5"></path>
+                <path d="M17 17v-7"></path>
+                <path d="M4 20h16"></path>
+              </svg>
+            </span>
+            <h3>數位化與新技術<span class="en">Digitalisation and Technology</span></h3>
+            <p>新技術不能直接搬到船上使用，必須考量船級、通訊、資安、船員操作與實際海上環境。</p>
+          </article>
+
+          <article class="challenge-card" tabindex="0">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2 4 14h7l-1 8 10-14h-7z"></path>
+              </svg>
+            </span>
+            <h3>能源轉型<span class="en">Energy Transition</span></h3>
+            <p>甲醇、氨、氫、LNG、生質燃料與電氣化都可能成為選項，但每一種方案都有不同風險。</p>
+          </article>
+
+          <article class="challenge-card" tabindex="0">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6z"></path>
+                <path d="m9 12 2 2 4-5"></path>
+              </svg>
+            </span>
+            <h3>安全營運<span class="en">Safe Operations</span></h3>
+            <p>新燃料、新系統與新作業模式會改變危害樣貌，需要重新辨識、評估與緩解。</p>
+          </article>
+
+          <article class="challenge-card" tabindex="0">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 19V5"></path>
+                <path d="M4 19h16"></path>
+                <path d="m7 15 4-4 3 3 5-7"></path>
+              </svg>
+            </span>
+            <h3>商業成功<span class="en">Commercial Success</span></h3>
+            <p>燃油效率、停航風險、租約競爭力、資產可用率與長期殘值，都會直接影響獲利。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-band" id="process">
+      <div class="container section-inner">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">02｜Decision Path</p>
+            <h2>從模糊問題，整理成可以執行的決策路線。</h2>
+          </div>
+          <p>
+            Advisory 的價值在於整合不同專業：不是只交付單點答案，而是讓客戶能比較方案、理解風險，並形成下一步行動。
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <h3>釐清問題</h3>
+            <p>判斷客戶真正面對的是合規、投資、營運、風險、技術導入，還是多者交疊。</p>
+          </article>
+
+          <article class="process-step">
+            <h3>建立框架</h3>
+            <p>把技術、法規、安全、成本、供應鏈、船員與市場影響放在同一個視角比較。</p>
+          </article>
+
+          <article class="process-step">
+            <h3>分析選項</h3>
+            <p>比較不同方案的可行性、限制、短期成本、長期競爭力與可能的 reputational impact。</p>
+          </article>
+
+          <article class="process-step">
+            <h3>形成行動</h3>
+            <p>輸出減碳路線圖、風險緩解措施、投資判斷、專案治理或營運改善建議。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-band" id="services">
+      <div class="container section-inner">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">03｜Advisory Services</p>
+            <h2>10 大服務分類，涵蓋船舶與海洋經濟全生命週期。</h2>
+          </div>
+          <p>
+            這裡將 LR Advisory 的服務分類整理成容易掃描的卡片，讓讀者快速掌握每一類服務能解決的問題。
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="tag">Strategy</span>
+            <h3>管理顧問</h3>
+            <p>企業策略、投資、ESG、成長規劃、永續報告與營運卓越建議。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">Low Carbon</span>
+            <h3>能源轉型</h3>
+            <p>替代燃料、船隊減碳路線、法規因應與低碳投資策略。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">Efficiency</span>
+            <h3>資產效能</h3>
+            <p>船舶性能、能效改善、數據分析、性能驗證與資產表現優化。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">Risk</span>
+            <h3>資產與風險管理</h3>
+            <p>危害辨識、風險評估、安全管理、緩解措施與操作程序規劃。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">Delivery</span>
+            <h3>專案顧問</h3>
+            <p>新造船、改裝、港口基礎設施與大型海事專案的治理與管理支援。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">Infrastructure</span>
+            <h3>港口顧問</h3>
+            <p>港口策略、營運優化、新燃料加注、碼頭安全與基礎設施規劃。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">People</span>
+            <h3>人因與人員能力</h3>
+            <p>人因工程、訓練、操作流程、安全文化與人員能力建構。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">Lifecycle</span>
+            <h3>營運服務</h3>
+            <p>緊急應變、船況評估、燃油品質監測、退役與日常營運支援。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">Investigation</span>
+            <h3>技術與失效調查</h3>
+            <p>設備失效、性能異常、根本原因分析與恢復營運建議。</p>
+          </article>
+
+          <article class="service-card">
+            <span class="tag">Newbuild</span>
+            <h3>新造船顧問</h3>
+            <p>新造船策略、船廠能力、替代燃料設計與長期營運適配。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ecosystem-band" id="ecosystem">
+      <div class="container section-inner">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">04｜Ocean Economy</p>
+            <h2>它服務的不只是船東，而是整個海洋經濟鏈。</h2>
+          </div>
+          <p>
+            現代海事問題往往牽涉多個角色。Advisory 的作用，是讓不同利害關係人能用共同的技術、風險與商業語言溝通。
+          </p>
+        </div>
+
+        <div class="ecosystem" aria-label="海洋經濟服務對象">
+          <div class="sector"><b>船東與船舶營運商</b><span>協助在船隊更新、能效提升、合規要求與維修策略之間，判斷最適合的營運路線。</span></div>
+          <div class="sector"><b>船廠、OEM 與設計公司</b><span>支援新船型、設備整合與替代燃料設計，讓技術方案更符合船東需求與實船營運條件。</span></div>
+          <div class="sector"><b>租船方、貨主與貿易商</b><span>釐清租約競爭力、碳排責任與航線選擇，降低供應鏈中斷與合規成本的不確定性。</span></div>
+          <div class="sector"><b>港口、碼頭與拖船服務</b><span>從新燃料加注、碼頭安全到基礎設施規劃，建立可執行的營運、應變與投資方案。</span></div>
+          <div class="sector"><b>能源、離岸與再生能源業</b><span>評估能源資產、燃料供應、離岸專案與 power-to-X 佈局，銜接海事安全與商業可行性。</span></div>
+          <div class="sector"><b>海軍、國防與海巡單位</b><span>支援採購、物流、船隊可靠度與新技術導入，兼顧任務安全、韌性與長期維持能力。</span></div>
+          <div class="sector"><b>主管機關與港口國</b><span>協助建立政策、許可、監理與安全標準，讓法規要求能落地到港口與船舶操作。</span></div>
+          <div class="sector"><b>燃料供應鏈與加注業者</b><span>針對新燃料儲存、輸送、加注程序與人員操作，辨識風險並建立安全控制框架。</span></div>
+          <div class="sector"><b>金融、保險與法律服務業</b><span>透過技術盡職調查與風險評估，協助判斷資產價值、保險條件與合約責任。</span></div>
+        </div>
+
+        <div class="ecosystem-note">
+          從造船角度看，Advisory 的價值不只是協助通過規範，更是協助理解未來船型趨勢、替代燃料設計風險、客戶投資需求與專案執行風險。
+        </div>
+      </div>
+    </section>
+
+    <section class="section scenario-band" id="scenarios">
+      <div class="container section-inner">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">05｜Use Cases</p>
+            <h2>五個情境，看懂 Advisory 的實際價值。</h2>
+          </div>
+          <p>
+            這些情境把抽象服務轉成具體決策場景，適合放在頁面中段，讓讀者快速連到自己的問題。
+          </p>
+        </div>
+
+        <div class="scenario-grid">
+          <article class="scenario-card">
+            <span class="scenario-num">1</span>
+            <h3>船東投資甲醇燃料新造船</h3>
+            <p>不只比較船價，也評估燃料艙配置、加注港口、船員訓練、供應鏈與未來碳成本。</p>
+            <div class="chips"><span class="chip">Newbuild</span><span class="chip">Methanol</span></div>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-num">2</span>
+            <h3>船隊建立減碳路線圖</h3>
+            <p>分析船齡、航線、油耗、租約與改裝潛力，排出更新、改裝或退役優先順序。</p>
+            <div class="chips"><span class="chip">Fleet</span><span class="chip">Decarbonisation</span></div>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-num">3</span>
+            <h3>港口規劃新燃料加注設施</h3>
+            <p>評估儲存、輸送、消防、洩漏偵測、作業隔離、許可與緊急應變。</p>
+            <div class="chips"><span class="chip">Ports</span><span class="chip">Bunkering</span></div>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-num">4</span>
+            <h3>金融機構評估海事資產</h3>
+            <p>透過技術盡職調查，判斷船舶或港口資產是否具備長期價值與風險承受能力。</p>
+            <div class="chips"><span class="chip">Due Diligence</span><span class="chip">Investment</span></div>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-num">5</span>
+            <h3>船舶發生性能異常</h3>
+            <p>從燃油品質、操作條件、維修策略、船體狀況與設備匹配找出根本原因。</p>
+            <div class="chips"><span class="chip">Failure</span><span class="chip">Root Cause</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compare-band" id="difference">
+      <div class="container section-inner">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">06｜Role Difference</p>
+            <h2>船級服務偏向合規判定，<br>Advisory 偏向決策支援。</h2>
+          </div>
+          <p>
+            兩者不是互相取代，而是處理不同層級的問題。這張表讓讀者快速看懂差異。
+          </p>
+        </div>
+
+        <div class="comparison-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>比較項目</th>
+                <th>傳統船級服務</th>
+                <th>LR Advisory</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="比較項目">核心問題</td>
+                <td data-label="傳統船級服務">船舶、設備或設計是否符合規範。</td>
+                <td data-label="LR Advisory">這個方案是否值得做，風險在哪裡，下一步應該怎麼做。</td>
+              </tr>
+              <tr>
+                <td data-label="比較項目">主要輸出</td>
+                <td data-label="傳統船級服務">檢驗結果、合規證明、審查意見與船級相關文件。</td>
+                <td data-label="LR Advisory">策略建議、風險評估、技術路線圖、改善方案與投資判斷依據。</td>
+              </tr>
+              <tr>
+                <td data-label="比較項目">時間尺度</td>
+                <td data-label="傳統船級服務">多集中在設計、建造、檢驗與證書維持節點。</td>
+                <td data-label="LR Advisory">橫跨資產全生命週期，從投資、建造、營運、改裝到退役。</td>
+              </tr>
+              <tr>
+                <td data-label="比較項目">決策層級</td>
+                <td data-label="傳統船級服務">偏向技術合規與安全標準。</td>
+                <td data-label="LR Advisory">整合技術、營運、風險、財務、政策與商業策略。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section principles-band" id="principles">
+      <div class="container section-inner">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">07｜Underlying Logic</p>
+            <h2>四個原則，說明 <span class="brand-orange">LR Advisory</span> 為什麼有價值。</h2>
+          </div>
+          <p>
+            LR Advisory 的思考方式建立在誠信判斷、海洋經濟視角、適應變化與技術經濟整合上。
+          </p>
+        </div>
+
+        <div class="principles-grid">
+          <article class="principle-card">
+            <span class="en">誠信判斷</span>
+            <h3>誠信與專業判斷</h3>
+            <p>以安全與長期價值為核心，協助客戶面對不容易、也不一定有標準答案的決策。</p>
+          </article>
+
+          <article class="principle-card">
+            <span class="en">海洋經濟</span>
+            <h3>海洋經濟視角</h3>
+            <p>不只看單一船舶，而是理解船東、船廠、港口、能源、金融與監管之間的互相影響。</p>
+          </article>
+
+          <article class="principle-card">
+            <span class="en">適應變化</span>
+            <h3>適應變化</h3>
+            <p>在法規、能源、技術與市場快速變動中，協助企業找到可執行、可調整的路徑。</p>
+          </article>
+
+          <article class="principle-card">
+            <span class="en">技術經濟</span>
+            <h3>技術經濟整合</h3>
+            <p>把工程、法規、安全、成本與商業判斷整合在同一個決策框架，而不是分開看待。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section closing-band" id="summary">
+      <div class="container section-inner">
+        <div class="closing-panel">
+          <div class="summary-quote">
+            <h2>一句話理解 <span class="brand-orange">LR Advisory</span></h2>
+            <p>
+              它是協助海事產業在安全、合規、低碳、效率與投資報酬之間，
+              找到可執行平衡點的專業顧問服務。
+            </p>
+            <h3><span class="mobile-break">「把下一步，</span><span class="mobile-shift">變成可以被比較與執行的決策。」</span></h3>
+          </div>
+
+          <aside class="source-box" aria-label="了解更多">
+            <h3>了解更多</h3>
+            <p>
+              想進一步了解服務範圍、聯繫顧問或查看最新資訊，請前往
+              <a href="https://www.lr.org/en/services/advisory/" target="_blank" rel="noreferrer">LR Advisory 服務頁面</a>。
+            </p>
+            <div class="qr-grid" aria-label="QR code links">
+              <a class="qr-link" href="https://www.lr.org/en/services/advisory/" target="_blank" rel="noreferrer">
+                <img src="../../assets/images/maritime/lr-advisory/qr-lr-advisory.webp" alt="LR Advisory 服務頁面 QR code">
+                <span>LR Advisory<small>掃描或點選前往服務頁面</small></span>
+              </a>
+              <a class="qr-link" href="https://maritime.lr.org/advisory-digital-brochure-25" target="_blank" rel="noreferrer">
+                <img src="../../assets/images/maritime/lr-advisory/qr-digital-brochure.webp" alt="LR Advisory Digital Brochure QR code">
+                <span>Digital Brochure<small>掃描或點選查看 April 2025手冊</small></span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="section share-band" id="share">
+      <div class="container section-inner">
+        <div
+          class="article-share article-share--end"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/lr-advisory-notes.html"
+          data-share-title="LR Advisory｜海事顧問服務視覺導覽｜Reay's Note"
+          data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;LR Advisory｜海事顧問服務視覺導覽｜Reay's Note&#10;https://reayhuang.com/notes/maritime/lr-advisory-notes.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>LR Advisory｜海事顧問服務視覺導覽｜Reay's Note</strong><br>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        本文為學習與知識分享用途，協助讀者理解 LR Advisory 服務定位與應用情境。內容整理自公開資料與個人學習筆記，不代表 Lloyd's Register 官方立場；<span class="disclaimer-tail">實際服務範圍與聯繫方式請以 <a href="https://www.lr.org/en/services/advisory/" target="_blank" rel="noreferrer">LR Advisory 官方頁面</a> 為準。</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    const navLinks = [...document.querySelectorAll(".nav-scroll a")];
+    const sections = [...document.querySelectorAll(".section")];
+    const challengeCards = [...document.querySelectorAll(".challenge-card")];
+
+    challengeCards.forEach(card => {
+      card.addEventListener("pointerenter", () => card.classList.add("is-floating"));
+      card.addEventListener("pointerleave", () => card.classList.remove("is-floating"));
+      card.addEventListener("blur", () => card.classList.remove("is-floating"));
+    });
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach(link => {
+            const isActive = link.getAttribute("href") === "#" + entry.target.id;
+            link.classList.toggle("active", isActive);
+            if (isActive) {
+              link.scrollIntoView({
+                behavior: "smooth",
+                inline: "center",
+                block: "nearest"
+              });
+            }
+          });
+        });
+      },
+      {
+        rootMargin: "-38% 0px -54% 0px",
+        threshold: 0
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
