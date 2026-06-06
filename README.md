@@ -20,7 +20,9 @@ personal-site/
 ├── index.en.html           # 轉址至 index.html（保留舊連結相容）
 ├── about.html              # 關於我（繁中）
 ├── about.en.html           # About（英文）
-├── assets/css/style.css    # LR 風格配色
+├── assets/
+│   ├── css/style.css       # LR 風格配色
+│   └── js/                 # 全站共用腳本（Analytics、複製來源）
 ├── notes/                  # 專業筆記
 │   ├── index.html          # 海事筆記列表（繁中）
 │   ├── index.en.html       # Maritime Note listing（英文）
@@ -54,9 +56,29 @@ personal-site/
 
 ## 新增筆記
 
-1. 複製同類型的英文範本（例如 `notes/maritime/*.en.html`）
+1. 複製同類型的英文範本（例如 `notes/maritime/*.en.html`）— 範本 `<head>` 開頭應已含三支全站 script（`gtag.js`、`gtag-config.js`、`copy-source-attribution.js`）
 2. 修改內容後，在 `notes/index.en.html`（或 `research/index.en.html`）加入卡片連結
 3. 若有繁中版本，再建立對應的 `*.html` 並加入繁中列表頁
+
+### 全站 `<head>` script（新頁面必備）
+
+每個 HTML 頁面 `<head>` 開頭需載入（路徑依目錄深度調整）：
+
+| 位置 | `assets/js/` 相對路徑 |
+|------|----------------------|
+| 根目錄 | `assets/js/` |
+| `notes/`、`research/` | `../assets/js/` |
+| `notes/maritime/` | `../../assets/js/` |
+
+```html
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+<script src="（依上表）gtag-config.js"></script>
+<script src="（依上表）copy-source-attribution.js"></script>
+```
+
+`copy-source-attribution.js` 會在使用者複製超過 100 字元的內容時，自動在剪貼簿附上頁面標題與 URL；`input`、`textarea`、程式碼區塊等不受影響。最簡單做法是從**同目錄既有頁面**複製這三行，不要手動改路徑。
+
+檢查是否漏載入：`grep -L "copy-source-attribution" **/*.html`（無輸出代表全部涵蓋）。
 
 ## 聲明
 

@@ -78,6 +78,20 @@ See `README.md` for file naming and listing conventions. For machine-readable lo
 
 Copy an existing English HTML file as a template, add a card link on the relevant English listing page (`notes/index.en.html` or `research/index.en.html`), then add a Traditional Chinese version and listing link if needed. See `README.md` for details.
 
-### Google Analytics
+### Site-wide scripts (`<head>`)
 
-Every HTML page must include **Google tag (gtag.js)** at the start of `<head>`: async loader for `G-YJDKH6WYT1` plus `gtag-config.js` (path: `assets/js/` at root, `../assets/js/` under `notes/` or `research/`, `../../assets/js/` under `notes/maritime/`). Copy the snippet from a sibling page in the same directory when adding new pages.
+Every HTML page must include the following at the start of `<head>` (copy the three `<script>` lines from a sibling page in the same directory when adding new pages):
+
+1. **Google tag (gtag.js)** — async loader for `G-YJDKH6WYT1`
+2. **`gtag-config.js`**
+3. **`copy-source-attribution.js`** — immediately after `gtag-config.js`; appends source attribution when users copy selections longer than 100 characters (skips `input`, `textarea`, `[contenteditable]`, `pre`, and `code`)
+
+Relative path to `assets/js/` by page depth:
+
+| Depth | Example path | Script `src` prefix |
+|-------|--------------|---------------------|
+| 0 | `index.html`, `about.en.html` | `assets/js/` |
+| 1 | `notes/index.en.html`, `research/index.html` | `../assets/js/` |
+| 2 | `notes/maritime/*.en.html` | `../../assets/js/` |
+
+To verify all pages include the copy script: `grep -L "copy-source-attribution" **/*.html` (no output means every file is covered).
