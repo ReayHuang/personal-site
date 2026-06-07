@@ -67,8 +67,11 @@
 
   if (document.querySelector(".top-btn")) return;
 
-  var lang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
-  var label = lang.indexOf("en") === 0 ? "Back to top" : "回頂部";
+  var root = document.documentElement;
+  var lang = (root.getAttribute("lang") || "").toLowerCase();
+  var label = root.getAttribute("data-back-to-top-label") || "回頂部";
+  if (lang.indexOf("en") === 0) label = "Back to top";
+  if (lang.indexOf("ko") === 0) label = "맨 위로";
 
   var btn = document.createElement("button");
   btn.className = "top-btn";
