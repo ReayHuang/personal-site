@@ -106,6 +106,13 @@
       "zh": "notes/maritime/mepc-83-84-visual-notes.html"
     },
     {
+      "slug": "maritime-cyber-resilience-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/maritime-cyber-resilience-notes.en.html",
+      "zh": "notes/maritime/maritime-cyber-resilience-notes.html"
+    },
+    {
       "slug": "5s-study-notes",
       "type": "article",
       "category": "research",
