@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="LR BWTS, ballast water treatment system, Part 5 Chapter 25, ship survey, D-2, TAC, BWMP, P&ID">
+  <meta property="og:title" content="LR BWTS｜壓艙水處理系統安全審查導覽｜Reay's Note">
+  <meta property="og:description" content="以 LR 規範第 5 篇第 25 章為主軸，整理 BWTS 安裝安全審查邏輯、10 類技術分類、13 節規範重點與驗船師現場清單。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/lr-bwts-notes.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/lr-bwts-notes.html">
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/lr-bwts/lr-bwts-link-preview-1200.jpg">
+  <meta property="og:image:alt" content="LR BWTS｜壓艙水處理系統安全審查導覽｜Reay's Note">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LR BWTS｜壓艙水處理系統安全審查導覽｜Reay's Note">
+  <meta name="twitter:description" content="以 LR 規範第 5 篇第 25 章為主軸，整理 BWTS 安裝安全審查邏輯、10 類技術分類、13 節規範重點與驗船師現場清單。">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/lr-bwts/lr-bwts-link-preview-1200.jpg">
+  <link rel="alternate" hreflang="zh-Hant" href="lr-bwts-notes.html">
+  <link rel="alternate" hreflang="en" href="lr-bwts-notes.en.html">
+  <link rel="alternate" hreflang="x-default" href="lr-bwts-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="以 LR 規範第 5 篇第 25 章為主軸，整理 BWTS 安裝安全審查邏輯、10 類技術分類、13 節規範重點與驗船師現場清單。">
+  <title>LR BWTS｜壓艙水處理系統安全審查導覽｜Reay's Note</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #061b22;
+      --muted: #5b6d73;
+      --paper: #ffffff;
+      --panel: #ffffff;
+      --line: #dce8e8;
+      --teal: #3accc2;
+      --green: #0b2b35;
+      --navy: #071720;
+      --orange: #ff6b3d;
+      --amber: #c8892b;
+      --red: #b74d42;
+      --blue: #24638f;
+      --soft-teal: #eefaf9;
+      --soft-amber: #fff5e8;
+      --soft-red: #fff0ee;
+      --soft-blue: #edf6fb;
+      --shadow: 0 18px 46px rgba(7, 23, 32, 0.08);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    [id] {
+      scroll-margin-top: 72px;
+    }
+
+    #top {
+      scroll-margin-top: 0;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.68;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(58, 204, 194, 0.45);
+      background: rgba(58, 204, 194, 0.12);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .eyebrow .brand-mark {
+      display: inline-grid;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      padding-bottom: 2px;
+    }
+
+    .nav a {
+      white-space: nowrap;
+      font-size: 14px;
+      color: #405052;
+      padding: 7px 10px;
+      border: 1px solid transparent;
+    }
+
+    .nav a:hover {
+      border-color: rgba(18, 106, 109, 0.22);
+      background: rgba(230, 241, 239, 0.65);
+    }
+
+    main {
+      overflow: visible;
+    }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 22px;
+    }
+
+    main > .section:not(.hero) {
+      --band-bg: #ffffff;
+      position: relative;
+      background: var(--band-bg);
+      box-shadow: 0 0 0 100vmax var(--band-bg);
+      clip-path: inset(0 -100vmax);
+      border-top: 1px solid rgba(31, 79, 67, 0.06);
+    }
+
+    #quick {
+      --band-bg: #ffffff;
+    }
+
+    #categories {
+      --band-bg: #fbfdfc;
+    }
+
+    #sections {
+      --band-bg: #f7fbfb;
+    }
+
+    #focus {
+      --band-bg: #fffdf8;
+    }
+
+    #inspection {
+      --band-bg: #f8fbff;
+    }
+
+    #confusion {
+      --band-bg: #fffafa;
+    }
+
+    main > .section:last-of-type {
+      --band-bg: #f8fcfb;
+    }
+
+    .hero {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 640px;
+      background:
+        linear-gradient(90deg, rgba(7, 23, 32, 0.94) 0%, rgba(7, 23, 32, 0.78) 46%, rgba(7, 23, 32, 0.38) 100%),
+        linear-gradient(180deg, rgba(7, 23, 32, 0.08) 0%, rgba(7, 23, 32, 0.48) 100%),
+        url("../../assets/images/maritime/lr-bwts/hero-bwts-blueprint.png") center right / cover no-repeat,
+        linear-gradient(135deg, #071720 0%, #17363d 36%, #aab3b2 100%);
+      border-bottom: 1px solid rgba(58, 204, 194, 0.25);
+      color: #fff;
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      min-height: 640px;
+      margin: 0 auto;
+      padding: 82px 22px 56px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 280px);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      max-width: 100%;
+      transform: translateY(-28px);
+      margin-bottom: 40px;
+      min-height: 48px;
+      padding: 11px 20px;
+      border: 1px solid rgba(143, 255, 242, 0.38);
+      border-radius: 999px;
+      background: rgba(14, 89, 100, 0.34);
+      color: #dffaff;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.28;
+    }
+
+    .hero .eyebrow::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 10px;
+      height: 10px;
+      margin-right: 14px;
+      border-radius: 50%;
+      background: #38d4dc;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 840px;
+      margin-bottom: 18px;
+      color: #fff;
+      font-size: 58px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .hero .article-meta {
+      margin: 18px 0 24px;
+      max-width: 780px;
+    }
+
+    .hero-inner .article-share--hero {
+      margin-top: 44px;
+    }
+
+    .lead {
+      max-width: 780px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 20px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .lead strong {
+      color: #ff815d;
+      font-weight: 850;
+    }
+
+    .hero-actions,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .pill strong {
+      color: #fff;
+      font-weight: 850;
+    }
+
+    .action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 10px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      font-weight: 850;
+      border-radius: var(--radius);
+    }
+
+    .action-link:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.55);
+    }
+
+    .callout {
+      margin-top: 28px;
+      border-left: 5px solid var(--orange);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 18px 20px;
+      box-shadow: none;
+    }
+
+    .callout p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 680;
+    }
+
+    .hero-stats {
+      display: grid;
+      width: min(100%, 280px);
+      gap: 8px;
+      align-self: end;
+      justify-self: end;
+      align-content: end;
+      margin-bottom: 0;
+    }
+
+    .hero-stat {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.11);
+      box-shadow: 0 20px 54px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 11px 13px;
+    }
+
+    .hero-stat b {
+      display: block;
+      color: var(--teal);
+      font-size: 21px;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat span {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .jump-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    .jump-nav.is-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 12px 28px rgba(7, 23, 32, 0.12);
+    }
+
+    .jump-nav-spacer {
+      height: 0;
+    }
+
+    .jump-nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .jump-nav a {
+      white-space: nowrap;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 850;
+      padding: 8px 12px;
+      border-radius: var(--radius);
+    }
+
+    .jump-nav a.is-active {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .jump-nav a:hover {
+      background: var(--soft-teal);
+    }
+
+    .jump-nav a.is-active:hover {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .jump-nav.is-fixed a.is-active {
+      box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.28);
+    }
+
+    .system-card {
+      min-height: 100%;
+      border: 1px solid rgba(31, 79, 67, 0.16);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .article-visual {
+      margin-top: 24px;
+      min-height: 0;
+    }
+
+    .system-card h2 {
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 24px;
+      line-height: 1.28;
+    }
+
+    .system-card > p {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .system-flow {
+      display: grid;
+      gap: 12px;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: 1fr 32px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .flow-node {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      min-height: 74px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .flow-node b {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--green);
+      font-size: 15px;
+    }
+
+    .flow-node span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .pipe {
+      height: 2px;
+      background: var(--teal);
+      position: relative;
+    }
+
+    .pipe::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid var(--teal);
+      border-right: 2px solid var(--teal);
+      transform: translateY(-50%) rotate(45deg);
+      background: transparent;
+    }
+
+    .hazards {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .hazard {
+      display: grid;
+      place-items: center;
+      min-height: 62px;
+      padding: 10px;
+      border: 1px solid rgba(153, 65, 60, 0.2);
+      background: var(--soft-red);
+      color: #5c2521;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.38;
+      text-align: center;
+    }
+
+    .subhead {
+      max-width: 820px;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker,
+    .quick-label {
+      margin: 0 0 10px;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      color: var(--green);
+      font-size: 31px;
+      line-height: 1.24;
+      margin-bottom: 12px;
+      letter-spacing: 0;
+    }
+
+    .subhead p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .principle-card {
+      --principle-accent: var(--teal);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(31, 79, 67, 0.13);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 22px 18px 18px;
+    }
+
+    .principle-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--principle-accent);
+    }
+
+    .principle-card:nth-child(1) {
+      --principle-accent: #35bfb7;
+    }
+
+    .principle-card:nth-child(2) {
+      --principle-accent: #5d92bb;
+    }
+
+    .principle-card:nth-child(3) {
+      --principle-accent: #c89534;
+    }
+
+    .principle-card:nth-child(4) {
+      --principle-accent: #d77365;
+    }
+
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .principle-card h3 {
+      color: var(--green);
+      font-size: 18px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .principle-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .info-band {
+      background: #f1f8f7;
+      color: var(--ink);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-band .section {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    .band-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .band-grid h2 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .band-grid p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      padding: 18px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .metric b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--teal);
+      font-size: 26px;
+      line-height: 1.1;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 820px;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf3ef;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    td {
+      color: #334245;
+      font-size: 15px;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .category {
+      color: var(--teal);
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .section-card {
+      --card-bg: #ffffff;
+      --card-accent: var(--teal);
+      --note-bg: var(--soft-teal);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(31, 79, 67, 0.13);
+      background: linear-gradient(180deg, var(--card-bg) 0%, #ffffff 82%);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .section-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--card-accent);
+      opacity: 0.72;
+    }
+
+    .section-card:nth-child(1) {
+      --card-bg: #f8fffe;
+      --card-accent: #35bfb7;
+      --note-bg: #edfafa;
+    }
+
+    .section-card:nth-child(2) {
+      --card-bg: #f8fbff;
+      --card-accent: #5d92bb;
+      --note-bg: #edf5fb;
+    }
+
+    .section-card:nth-child(3) {
+      --card-bg: #fffdf6;
+      --card-accent: #c89534;
+      --note-bg: #fff5e0;
+    }
+
+    .section-card:nth-child(4) {
+      --card-bg: #fffafa;
+      --card-accent: #d77365;
+      --note-bg: #fff0ed;
+    }
+
+    .section-card:nth-child(5) {
+      --card-bg: #fbfdf8;
+      --card-accent: #7ea273;
+      --note-bg: #f2f8ed;
+    }
+
+    .section-card:nth-child(6) {
+      --card-bg: #fbfbff;
+      --card-accent: #7d82b8;
+      --note-bg: #f0f1fb;
+    }
+
+    .section-card:nth-child(7) {
+      --card-bg: #f8fdff;
+      --card-accent: #4d9bb3;
+      --note-bg: #edf8fc;
+    }
+
+    .section-card:nth-child(8) {
+      --card-bg: #fafdfc;
+      --card-accent: #5b9089;
+      --note-bg: #eef7f5;
+    }
+
+    .section-card:nth-child(9) {
+      --card-bg: #fffdf9;
+      --card-accent: #bd8f47;
+      --note-bg: #fff4e4;
+    }
+
+    .section-card:nth-child(10) {
+      --card-bg: #fdfbff;
+      --card-accent: #987db8;
+      --note-bg: #f6effb;
+    }
+
+    .section-card:nth-child(11) {
+      --card-bg: #f8fffc;
+      --card-accent: #49a36f;
+      --note-bg: #eef9f2;
+    }
+
+    .section-card:nth-child(12) {
+      --card-bg: #fffbfb;
+      --card-accent: #bd6a75;
+      --note-bg: #fff0f2;
+    }
+
+    .section-card:nth-child(13) {
+      --card-bg: #fbfcfb;
+      --card-accent: #708a82;
+      --note-bg: #f1f5f3;
+    }
+
+    .section-card h3 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: baseline;
+      color: var(--green);
+      font-size: 19px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .section-card h3 span {
+      color: var(--card-accent);
+      font-size: 13px;
+      font-weight: 900;
+      min-width: max-content;
+    }
+
+    .section-card h3 small {
+      color: #6b7c80;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .section-brief {
+      margin-bottom: 12px;
+      color: #51666b;
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .section-card mark {
+      color: inherit;
+      background: linear-gradient(180deg, transparent 52%, rgba(255, 221, 92, 0.58) 52%);
+      border-radius: 2px;
+      padding: 0 2px;
+      font-weight: 850;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .section-card ul,
+    .checklist ul,
+    .quick-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .section-card li,
+    .checklist li,
+    .quick-list li {
+      margin: 8px 0;
+      color: #435255;
+      font-size: 15px;
+    }
+
+    .surveyor-note {
+      margin-top: 14px;
+      border-left: 4px solid var(--teal);
+      background: var(--soft-teal);
+      padding: 12px 14px;
+      color: #234542;
+      font-size: 14px;
+      font-weight: 680;
+    }
+
+    .section-card .surveyor-note {
+      border-left-color: var(--card-accent);
+      background: var(--note-bg);
+    }
+
+    .focus-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .focus-panel {
+      border: 1px solid rgba(31, 79, 67, 0.14);
+      border-left: 5px solid var(--focus-accent, var(--teal));
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 20px 20px 20px 22px;
+    }
+
+    .focus-panel:nth-child(1) {
+      --focus-accent: #38b8c6;
+    }
+
+    .focus-panel:nth-child(2) {
+      --focus-accent: #c89534;
+    }
+
+    .focus-panel h3 {
+      margin-bottom: 14px;
+      color: var(--green);
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .risk-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .risk-item {
+      --risk-accent: var(--teal);
+      border: 1.5px solid var(--risk-accent);
+      background: #fbfcfa;
+      padding: 13px;
+    }
+
+    .risk-item:nth-child(1) {
+      --risk-accent: #38b8c6;
+    }
+
+    .risk-item:nth-child(2) {
+      --risk-accent: #d18b3a;
+    }
+
+    .risk-item:nth-child(3) {
+      --risk-accent: #7fb06d;
+    }
+
+    .risk-item:nth-child(4) {
+      --risk-accent: #8a7bc0;
+    }
+
+    .risk-item:nth-child(5) {
+      --risk-accent: #cc6c73;
+    }
+
+    .risk-item:nth-child(6) {
+      --risk-accent: #4d9bb3;
+    }
+
+    .risk-item b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--risk-accent);
+      font-size: 15px;
+    }
+
+    .risk-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .inspection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .checklist {
+      --check-accent: var(--blue);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(31, 79, 67, 0.14);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .checklist::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: var(--check-accent);
+    }
+
+    .checklist:nth-child(1) {
+      --check-accent: #4d9bb3;
+    }
+
+    .checklist:nth-child(2) {
+      --check-accent: #7ea273;
+    }
+
+    .checklist:nth-child(3) {
+      --check-accent: #c89534;
+    }
+
+    .checklist h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .badge {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      background: var(--soft-blue);
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .confusion-table td:first-child {
+      font-weight: 800;
+      color: var(--red);
+      width: 38%;
+    }
+
+    .summary-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      counter-reset: summary;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .summary-list li {
+      --summary-accent: var(--green);
+      --summary-bg: var(--panel);
+      counter-increment: summary;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      border: 1px solid rgba(31, 79, 67, 0.14);
+      border-left: 4px solid var(--summary-accent);
+      background: var(--summary-bg);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      color: #344548;
+      font-weight: 680;
+    }
+
+    .summary-list li:nth-child(5n + 1) {
+      --summary-accent: #35bfb7;
+      --summary-bg: #f3fbfa;
+    }
+
+    .summary-list li:nth-child(5n + 2) {
+      --summary-accent: #5d92bb;
+      --summary-bg: #f4f9fd;
+    }
+
+    .summary-list li:nth-child(5n + 3) {
+      --summary-accent: #c89534;
+      --summary-bg: #fff9eb;
+    }
+
+    .summary-list li:nth-child(5n + 4) {
+      --summary-accent: #7ea273;
+      --summary-bg: #f5fbf1;
+    }
+
+    .summary-list li:nth-child(5n) {
+      --summary-accent: #987db8;
+      --summary-bg: #faf6fd;
+    }
+
+    .summary-list li::before {
+      content: counter(summary);
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      background: var(--summary-accent);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .share-band {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 22px 32px;
+    }
+
+    .site-footer {
+      background: #061b22;
+      color: rgba(255, 255, 255, 0.82);
+      padding: 36px 0 44px;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .site-footer .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    .site-footer strong {
+      color: #fff;
+    }
+
+    .site-footer a {
+      color: #8ffff2;
+    }
+
+    .site-footer a:hover {
+      color: #c8fff8;
+    }
+
+    .site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 760px;
+      text-align: left;
+    }
+
+    .site-footer .small {
+      font-size: 13px;
+    }
+
+    @media (min-width: 1101px) {
+      .hero-inner {
+        position: relative;
+      }
+
+      .hero-inner .article-share--hero {
+        margin-top: 44px;
+        z-index: 2;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px 12px;
+        max-width: min(520px, 46vw);
+      }
+
+      .hero-inner .article-share--hero .article-share__label {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      .hero-inner .article-share--hero .article-share__actions {
+        flex-wrap: nowrap;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .site-footer .disclaimer {
+        max-width: none;
+      }
+
+      .site-footer .disclaimer-tail {
+        display: block;
+      }
+    }
+
+    @media (min-width: 761px) and (max-width: 1100px) {
+      .hero-inner .article-share--hero {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px 12px;
+        width: 100%;
+        max-width: 780px;
+        margin-top: 44px;
+      }
+
+      .hero-inner .article-share--hero .article-share__label {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      .hero-inner .article-share--hero .article-share__actions {
+        flex-wrap: nowrap;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-inner .article-share--hero {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px 10px;
+        max-width: 100%;
+      }
+
+      .hero-inner .article-share--hero .article-share__label {
+        width: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+        text-align: left;
+      }
+
+      .hero-inner .article-share--hero .article-share__actions {
+        flex-wrap: nowrap;
+        flex: 0 1 auto;
+        min-width: 0;
+        justify-content: flex-start;
+      }
+
+      .article-share--end {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .article-share--end .article-share__label {
+        text-align: center;
+      }
+
+      .article-share--end .article-share__actions {
+        justify-content: center;
+      }
+    }
+
+    strong {
+      font-weight: 850;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .band-grid,
+      .focus-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      .hero-inner {
+        min-height: 0;
+      }
+
+      .hero-stats {
+        width: 100%;
+        justify-self: stretch;
+        align-self: stretch;
+        margin-bottom: 0;
+      }
+
+      .principles,
+      .inspection-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .system-card {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 34px 16px;
+      }
+
+      .hero {
+        padding: 0;
+      }
+
+      .hero-inner {
+        padding: 42px 16px 36px;
+      }
+
+      .hero .eyebrow {
+        min-height: 42px;
+        padding: 9px 13px;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+      }
+
+      .hero .eyebrow::before {
+        width: 8px;
+        height: 8px;
+        margin-right: 9px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .hero-stats {
+        display: grid;
+        width: 100%;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+
+      .hero-stat {
+        min-width: 0;
+        padding: 14px 15px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      .lead {
+        font-size: 18px;
+      }
+
+      .principles,
+      .section-grid,
+      .metric-grid,
+      .inspection-grid,
+      .risk-matrix,
+      .summary-list {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-row {
+        grid-template-columns: 1fr;
+      }
+
+      .pipe {
+        width: 2px;
+        height: 26px;
+        margin: 0 auto;
+      }
+
+      .pipe::after {
+        right: auto;
+        top: auto;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%) rotate(135deg);
+      }
+
+      .hazards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="lr-bwts-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="lr-bwts-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+  <main id="top">
+    <section class="section hero" id="core">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">LR Rules · BWTS檢驗要點 · Reay's Note</p>
+          <h1>壓艙水處理設備BWTS檢驗要點</h1>
+          <p class="article-meta">
+            <span>📅 更新：2026-06-08</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 閱讀約 11 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 LR 規範 / BWTS / 驗船師清單</span>
+          </p>
+          <p class="lead">
+            這份 LR 規範（LR Rules Pt.5 Ch.25）的重點，不是單純判定 BWTS 是否達到 <strong>D-2 生物排放標準</strong>；
+            而是把 BWTS 當成船上的 <strong>機械、管路、電氣、控制、危險氣體與化學品系統</strong>，
+            檢查它是否能被安全設計、安裝、審查與現場驗證。驗船師需要把技術類別、風險評估、PFD（製程流程圖）、
+            P&ID（管路與儀表圖）、BWMP（壓艙水管理計畫）、TAC（型式認可證書）、OMM（操作、維護與安全手冊）
+            與現場功能試驗串在一起，確認通風、偵測、隔離、旁通、警報與停機邏輯都能互相對應。
+          </p>
+          <div class="hero-actions">
+            <a class="action-link" href="#quick">→ 先看懂核心</a>
+            <a class="action-link" href="#categories">☰ 看技術分類</a>
+            <a class="action-link" href="#sections">§ 看規範章節</a>
+          </div>
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/lr-bwts-notes.html"
+            data-share-title="LR BWTS｜壓艙水處理系統安全審查導覽｜Reay's Note"
+            data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;LR BWTS｜壓艙水處理系統安全審查導覽｜Reay's Note&#10;https://reayhuang.com/notes/maritime/lr-bwts-notes.html"
+            data-share-copy="複製連結"
+            data-share-copied="已複製"
+            data-toast-copied="連結已複製到剪貼簿"
+          >
+            <p class="article-share__label" id="share-hero-label">分享此篇</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div>
+        </div>
+
+        <aside class="hero-stats" aria-label="BWTS 審查摘要">
+          <div class="hero-stat">
+            <b>共13節</b>
+            <span>從一般要求、功能、材料、風險、管路、電氣、消防到安裝配置，建立完整審查路徑。</span>
+          </div>
+          <div class="hero-stat">
+            <b>10 類</b>
+            <span>UV、電解、臭氧、脫氧、化學注入等技術類別，對應不同危險源與安全要求。</span>
+          </div>
+          <div class="hero-stat">
+            <b>30% / 60%</b>
+            <span>可燃氣體警報不得高於 30% LFL，BWTS 停機不得高於 60% LFL。</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="jump-nav" aria-label="文章章節">
+      <div class="jump-nav-inner">
+        <a class="is-active" href="#quick" aria-current="true">快速閱讀</a>
+        <a href="#categories">01 技術分類</a>
+        <a href="#sections">02 規範章節</a>
+        <a href="#focus">03 驗船師焦點</a>
+        <a href="#inspection">04 現場檢查清單</a>
+        <a href="#confusion">05 角色差異</a>
+        <a href="#review-logic">06 審查邏輯</a>
+      </div>
+    </nav>
+    <div class="jump-nav-spacer" aria-hidden="true"></div>
+
+    <section class="section" id="quick">
+      <div class="subhead">
+        <p class="quick-label">快速閱讀</p>
+        <h2>10 秒理解：先確認能安全安裝，再談 D-2 排放合格。</h2>
+        <p>把整份文件收斂成四個判斷框架，可以快速抓住 LR 審查 BWTS 的真正目的。</p>
+      </div>
+      <div class="principles">
+        <article class="principle-card">
+          <span class="number">1</span>
+          <h3>安全性</h3>
+          <p>防止危險氣體、危險液體、化學品與反應性物質危害船員、船舶與環境。</p>
+        </article>
+        <article class="principle-card">
+          <span class="number">2</span>
+          <h3>不影響基本功能</h3>
+          <p>BWTS 故障時不得妨礙壓載、排載，也不得影響主機、發電、舵機、消防等必要服務。</p>
+        </article>
+        <article class="principle-card">
+          <span class="number">3</span>
+          <h3>船上整合安全</h3>
+          <p>管路、壓載艙、通風、電氣、控制、危險區與材料相容性必須一起審。</p>
+        </article>
+        <article class="principle-card">
+          <span class="number">4</span>
+          <h3>審圖與現場驗證</h3>
+          <p>PFD、P&ID、BWMP、TAC、OMM、風險評估與現場功能試驗要互相一致。</p>
+        </article>
+      </div>
+      <aside class="system-card article-visual" aria-label="BWTS 系統風險路徑示意">
+        <h2>系統風險路徑</h2>
+        <p>BWTS 不是孤立設備，審查重點在於它如何接入船舶既有系統。</p>
+        <div class="system-flow">
+          <div class="flow-row">
+            <div class="flow-node">
+              <b>壓載水入口</b>
+              <span>壓載泵、濾器、取樣與流量限制</span>
+            </div>
+            <span class="pipe" aria-hidden="true"></span>
+            <div class="flow-node">
+              <b>處理單元</b>
+              <span>UV、電解、臭氧、脫氧、化學注入</span>
+            </div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-node">
+              <b>設備安裝空間／甲板</b>
+              <span>通風、排氣、氣體偵測、危險區</span>
+            </div>
+            <span class="pipe" aria-hidden="true"></span>
+            <div class="flow-node">
+              <b>壓載艙</b>
+              <span>壓力保護、塗層相容性、殘留物控制</span>
+            </div>
+          </div>
+        </div>
+        <div class="hazards" aria-label="主要危害">
+          <span class="hazard">H₂ / Cl₂ / O₃<br>可燃與毒性氣體</span>
+          <span class="hazard">CO₂ / CO / N₂<br>缺氧與窒息風險</span>
+          <span class="hazard">化學品／TRO<br>腐蝕、洩漏與中和</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="subhead">
+        <p class="section-kicker">01｜技術分類</p>
+        <h2>BWTS 技術分類與第一風險</h2>
+        <p>分類判斷錯誤，後續的通風、偵測、危險區、消防與隔離審查就可能整串偏掉。</p>
+      </div>
+      <div class="table-wrap" role="region" aria-label="BWTS 技術分類表" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th>類別</th>
+              <th>技術型式</th>
+              <th>驗船師要先想到的風險</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="category">類別 1</td>
+              <td>UV／UV + AOT／UV + TiO₂／UV + 電漿</td>
+              <td>UV 輻射、電氣安全、壓力設備、濾器堵塞</td>
+            </tr>
+            <tr>
+              <td class="category">類別 2</td>
+              <td>管內絮凝</td>
+              <td>化學品、沉澱物、藥劑儲存與處理</td>
+            </tr>
+            <tr>
+              <td class="category">類別 3a</td>
+              <td>膜分離 + N₂ 脫氧</td>
+              <td>氮氣窒息、富氧排氣、壓力／真空保護</td>
+            </tr>
+            <tr>
+              <td class="category">類別 3b</td>
+              <td>惰性氣體脫氧</td>
+              <td>CO₂、CO、缺氧、惰氣系統安全</td>
+            </tr>
+            <tr>
+              <td class="category">類別 3c</td>
+              <td>艙內惰氣脫氧</td>
+              <td>壓載艙壓力、P/V 裝置、艙內氣體積聚</td>
+            </tr>
+            <tr>
+              <td class="category">類別 4</td>
+              <td>全流量電解</td>
+              <td>氫氣、氯氣、爆炸、TRO 中和</td>
+            </tr>
+            <tr>
+              <td class="category">類別 5</td>
+              <td>側流電解</td>
+              <td>濃縮處理液、氫氣、氯氣、較高通風要求</td>
+            </tr>
+            <tr>
+              <td class="category">類別 6</td>
+              <td>儲存化學品注入</td>
+              <td>化學品儲存、洩漏、腐蝕、消防相容性</td>
+            </tr>
+            <tr>
+              <td class="category">類別 7a / 7b</td>
+              <td>臭氧注入</td>
+              <td>臭氧毒性、富氧、氣液分離、臭氧破壞器</td>
+            </tr>
+            <tr>
+              <td class="category">類別 8</td>
+              <td>艙內加熱殺菌 + N₂ 脫氧</td>
+              <td>高溫、氮氣窒息、壓載艙壓力控制</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="sections">
+      <div class="subhead">
+        <p class="section-kicker">02｜規範章節</p>
+        <h2>各章節重點</h2>
+        <p>每個章節都以「審什麼」與「驗船師注意」兩層呈現，方便快速建立審圖與現場檢查脈絡。</p>
+      </div>
+      <div class="section-grid">
+        <article class="section-card">
+          <h3><span>第 1 節</span>一般要求</h3>
+          <p class="section-brief">
+            這一節先界定 LR 此章的適用範圍：重點在 BWTS 的 <mark>設計、建造與船上安裝安全</mark>，而不是直接取代 IMO、船旗國主管機關或主管機關對 <mark>D-2 排放性能</mark>的要求。
+          </p>
+          <ul>
+            <li>說明 BWTS 目的在防止有害水生生物與病原體經由壓艙水及沉積物轉移。</li>
+            <li>定義 <mark>危險氣體、危險液體、危險物質、BWTR（Ballast Water Treatment Room）與氣閘</mark>。</li>
+            <li>確認 <mark>危險排氣須導至安全位置</mark>。</li>
+            <li>船級符號包含 <mark>BWTS 與 BWTS*</mark>，後者代表系統同時依 LR 型式認可程序完成認可。</li>
+          </ul>
+          <div class="surveyor-note">先確認 <mark>BWTS 技術類別</mark>與可能產生的<mark>危險氣體／液體</mark>；類別判錯，通風、偵測、危險區與消防要求都可能跟著判錯。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 2 節</span>功能要求</h3>
+          <p class="section-brief">
+            本節雖短，但它建立了整章的安全底線：BWTS 不能因為<mark>故障、停機或維修</mark>而讓船舶失去<mark>基本壓載能力</mark>，也不能牽連主機、發電、舵機、消防等<mark>必要服務</mark>。
+          </p>
+          <ul>
+            <li>BWTS 故障 <mark>不得妨礙壓載或排載</mark>。</li>
+            <li><mark>不得影響船上必要服務</mark>。</li>
+            <li>正常與可預見故障狀態下不得造成危害。</li>
+            <li>審查時要把<mark>故障後的操作路徑</mark>一起看，而不只是看設備在正常模式下能否運轉。</li>
+          </ul>
+          <div class="surveyor-note"><mark>旁通、隔離、失效安全</mark>是核心檢查項目；故障後仍能安全壓載／排載，才是本節真正要確認的事。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 3 節</span>性能要求</h3>
+          <p class="section-brief">
+            這裡的性能要求<mark>不是在重複審 D-2 生物性能</mark>，而是確認 BWTS 裝到船上後，仍能在全球正常航行條件下維持<mark>壓載系統能力、壓力條件與安全邊界</mark>。
+          </p>
+          <ul>
+            <li>審查船上使用能力與安全性能，<mark>不是審 D-2 生物性能</mark>。</li>
+            <li><mark>BWTS 容量須符合壓載能力</mark>，並考慮全球正常航行環境。</li>
+            <li><mark>壓力損失、火災、過熱、爆炸、窒息與材料影響</mark>都要評估。</li>
+            <li>不得讓危險物質在壓載管路或壓載艙累積，也不得讓處理產物長期破壞壓載艙塗層。</li>
+          </ul>
+          <div class="surveyor-note">核對 <mark>BWTS TRC（Treatment Rated Capacity，額定處理能力）與壓載泵容量</mark>；泵流量過大時 <mark>BWMP 必須限制操作</mark>。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 4 節</span>審查文件</h3>
+          <p class="section-brief">
+            這是審圖時最常用的一節。LR 要看的不是單一原廠型錄，而是 <mark>BWTS 本體文件與船上安裝文件能否互相對上</mark>，並能支持完整的安全審查。
+          </p>
+          <ul>
+            <li>BWTS 本體需有處理技術說明、<mark>PFD（Process Flow Diagram，製程流程圖）、材料規格、壓力與溫度等級</mark>、化學品可燃性／毒性／反應性資料。</li>
+            <li><mark>控制、警報、安全系統圖、風險評估</mark>、危險區設備與電氣資料、型式認可證書都要納入審查。</li>
+            <li>船上安裝需 <mark>P&ID（Piping and Instrumentation Diagram，管路與儀表圖）、總布置圖（GA）、危險區圖、通風圖、消防圖</mark>、電氣資料與水密試驗報告。</li>
+            <li>改裝船須提交既有壓載系統 P&ID 與修改內容。</li>
+          </ul>
+          <div class="surveyor-note">不要只看原廠圖，要把 <mark>TAC（Type Approval Certificate，型式認可證書）、OMM（Operation, Maintenance and Safety Manual，操作、維護與安全手冊）、BWMP</mark>、船上 P&ID、總布置圖、危險區圖、通風圖、電氣圖、消防圖與風險評估串起來看。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 5 節</span>材料</h3>
+          <p class="section-brief">
+            材料審查的重點不只是強度或壓力等級，而是材料在<mark>實際化學品、氧化劑、處理水與副產物</mark>環境中能否維持功能與隔離能力。
+          </p>
+          <ul>
+            <li>材料須符合 LR 製造、試驗與證書要求。</li>
+            <li>危險或反應性材料的適用性須納入風險評估。</li>
+            <li><mark>化學品儲槽與相關管路須耐受實際化學品</mark>。</li>
+            <li><mark>非金屬材料</mark>若不符合耐火要求，須能透過鋼製或耐火認可隔離閥與其他船舶系統隔離，並具<mark>失效安全特性</mark>。</li>
+          </ul>
+          <div class="surveyor-note">材料審查要看<mark>化學相容性</mark>，不是只看壓力等級。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 6 節</span>風險基礎研究</h3>
+          <p class="section-brief">
+            風險評估不是形式附件，而是用來證明 BWTS 本體、壓載系統整合、異常狀況與替代設計都已被系統性檢視，尤其是<mark>危險物質如何產生、洩漏、累積與被緩解</mark>。
+          </p>
+          <ul>
+            <li>評估 BWTS 本體、船上整合與替代設計安全。</li>
+            <li>涵蓋<mark>正常、異常、洩漏、危險物質累積</mark>與系統放大風險。</li>
+            <li>處理技術、副產物、中和方法、壓載艙塗層、既有管件、船體強度、隔離閥與危險區都須納入。</li>
+            <li><mark>可燃／有毒氣體、化學品儲存與處理方式</mark>，要和實際佈置、通風、偵測與停機邏輯連在一起看。</li>
+          </ul>
+          <div class="surveyor-note">風險評估要回答哪裡可能<mark>洩漏</mark>、哪裡可能<mark>積氣</mark>、失效後如何<mark>安全停機</mark>，以及是否會影響必要服務。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 7 節</span>管路系統</h3>
+          <p class="section-brief">
+            管路審查要把 BWTS 視為會和壓載水、化學品、淡水、壓縮空氣、惰氣與取樣管線互相接觸的系統，因此任何<mark>交叉連接</mark>都可能形成<mark>危險物質遷移路徑</mark>。
+          </p>
+          <ul>
+            <li>管路與附件須符合船舶管路、機艙管路與油輪管路要求。</li>
+            <li>化學品管路須符合液體化學品船概念。</li>
+            <li>海水或淡水管路若可能被危險物質污染，也要依<mark>危險化學品管路概念</mark>考慮。</li>
+            <li>活性／反應性物質管路須與其他船舶管路<mark>分開</mark>，塑膠管也須符合 LR 對塑膠管的要求。</li>
+          </ul>
+          <div class="surveyor-note">特別注意<mark>交叉連接</mark>，避免<mark>危險物質進入非危險區</mark>。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 8 節</span>機械設備</h3>
+          <p class="section-brief">
+            本節把 BWTS 相關機械、壓力元件、濾器、脫氣設備、氣瓶與處理單元納入船級安全邏輯，現場檢驗時不能只核對圖面，還要看實際<mark>支撐、排放與維修條件</mark>。
+          </p>
+          <ul>
+            <li>空氣管、測深管與溢流管須符合壓載系統要求。</li>
+            <li>化學注入管、濃縮處理液注入管、惰氣注入管與取樣點須為<mark>剛性結構並妥善支撐</mark>。</li>
+            <li>脫氣設備須防止洩漏，<mark>排氣須導至開放甲板安全位置</mark>。</li>
+            <li>氫氣排放前須<mark>低於 4% LEL</mark>，失效時觸發 <mark>BWTS 停機</mark>。</li>
+            <li>濾器、壓力元件、熱交換器、氣瓶、臭氧產生器、電解單元與 UV 單元須符合可接受標準與試驗要求。</li>
+          </ul>
+          <div class="surveyor-note">現場要看<mark>支撐、排氣方向、洩漏收集</mark>、維修空間、銘牌與證書。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 9 節</span>電氣與控制</h3>
+          <p class="section-brief">
+            電氣與控制系統是 BWTS 安全功能能否真正落地的關鍵。LR 關心<mark>警報、偵測、停機、閥位、旁通記錄</mark>與危險區電氣設備是否能在故障時維持安全狀態。
+          </p>
+          <ul>
+            <li>控制、警報與安全系統須符合 LR 控制工程要求。</li>
+            <li>可能存在危險氣體的空間須設置<mark>聲光警報氣體偵測</mark>；偵測器須適用於實際氣體種類。</li>
+            <li>可燃氣體警報<mark>不得高於 30% LFL</mark>；停機<mark>不得高於 60% LFL</mark>。</li>
+            <li>旁通與隔離閥須有<mark>位置指示</mark>，啟動時須<mark>警報並自動記錄</mark>。</li>
+            <li>電源或控制故障不得使 BWTS 變成危險狀態；<mark>安全停機系統應盡可能獨立</mark>於 BWTS 控制系統。</li>
+          </ul>
+          <div class="surveyor-note">試車一定要測<mark>警報、停機、閥位指示、旁通記錄、氣體偵測器反應與通風連鎖</mark>。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 10 節</span>BWTR 位置與邊界</h3>
+          <p class="section-brief">
+            BWTR（Ballast Water Treatment Room）的<mark>位置、艙壁邊界、防火完整性、氣密門、氣閘、通風與排氣位置</mark>，會直接影響危險氣體或化學品是否可能擴散到<mark>居住區、機艙或其他非危險空間</mark>。
+          </p>
+          <ul>
+            <li>BWTR 邊界、防火完整性、穿孔與化學品儲槽結構須符合要求。</li>
+            <li>使用化學品的 BWTR 與化學品儲存室<mark>不得位於居住區</mark>，通風排氣與開口須遠離居住區入口、進氣口與開口。</li>
+            <li>臭氧系統須設於專用艙間，與其他空間以<mark>氣密邊界分隔，常需氣閘</mark>。</li>
+            <li>爆炸性或毒性氣體空間原則上<mark>每小時至少換氣 30 次</mark>。</li>
+            <li>電解、臭氧、脫氧或化學注入系統的 BWTR <mark>通風須獨立</mark>，並依<mark>氣體密度配置排氣位置</mark>。</li>
+          </ul>
+          <div class="surveyor-note">通風要看<mark>獨立性、進排氣位置、故障警報、連鎖停機</mark>、危險氣體密度與排氣出口安全距離。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 11 節</span>系統配置</h3>
+          <p class="section-brief">
+            這是整份文件最核心、也最容易審錯的一節。它把<mark>類別適用性、旁通隔離、電力負載、TAC/BWMP 操作限制</mark>、壓力保護、危險區與油輪特殊配置全部連在一起。
+          </p>
+          <ul>
+            <li>依 BWTS 類別查<mark>適用性表</mark>。</li>
+            <li>須設置<mark>旁通、隔離或覆越安排</mark>，且旁通與隔離安排須符合電氣與控制安全要求。</li>
+            <li>發電機容量須用<mark>電力負載分析</mark>證明足夠；BWTS 必須依 TAC 與 BWMP 操作，<mark>TRC 不得超過 TAC 限制</mark>。</li>
+            <li>壓載管路或壓載艙可能發生過壓或真空時，須設置 <mark>P/V 閥、P/V 破壓器、釋壓閥或高低壓警報</mark>。</li>
+            <li>惰氣或氮氣脫氧系統排氣須導至<mark>開放甲板安全位置</mark>；危險區內電氣設備須為適用認證型。</li>
+          </ul>
+          <div class="surveyor-note"><mark>油輪</mark>要防止貨油區危險物質經 BWTS 管路、取樣管或輔助管線進入<mark>非危險區</mark>。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 12 節</span>消防安全</h3>
+          <p class="section-brief">
+            BWTS 可能導入新的<mark>火災、爆炸、毒性、腐蝕與化學反應危險</mark>，因此消防審查要看新增危害是否削弱既有消防設計，不能直接沿用原艙間假設。
+          </p>
+          <ul>
+            <li>BWTS 可能導入火災、爆炸、毒性、腐蝕與化學反應危險。</li>
+            <li>消防系統要考慮<mark>材料與化學品相容性</mark>。</li>
+            <li>BWTR、化學品儲存室與危險氣體空間須有適當<mark>偵測、滅火與抑制安排</mark>。</li>
+            <li>若化學品或反應性物質與既有滅火介質不相容，<mark>不能直接套用原有消防設計</mark>。</li>
+          </ul>
+          <div class="surveyor-note">不能只問有沒有滅火器，要確認<mark>滅火介質是否會與化學品反應、產生毒氣</mark>，或影響既有固定滅火系統性能。</div>
+        </article>
+
+        <article class="section-card">
+          <h3><span>第 13 節</span>安裝配置</h3>
+          <p class="section-brief">
+            本節把前面各節落到實船配置，尤其針對油輪可能採用<mark>單一管內式 BWTS 同時服務貨油區與非貨油區壓載艙</mark>的情況，要求以<mark>隔離與配置防止危險傳遞</mark>。
+          </p>
+          <ul>
+            <li>油輪可能採用單一 BWTS 同時服務<mark>貨油區與非貨油區</mark>壓載艙。</li>
+            <li>核心目的在防止貨油區<mark>危險氣體、液體或受污染壓載水</mark>連通至非危險區。</li>
+            <li>安裝配置須與<mark>第 11 節</mark>的隔離、危險區、取樣、旁通、管路與控制要求一致。</li>
+            <li>需配合<mark>配置圖、管路圖、設備分類表與現場實際閥件位置</mark>一起審。</li>
+          </ul>
+          <div class="surveyor-note">確認實際配置與核准圖一致，<mark>隔離點、閥件型式、危險區與排氣位置</mark>都要對。</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="subhead">
+        <p class="section-kicker">03｜驗船師焦點</p>
+        <h2>驗船師最需要注意的審查焦點</h2>
+        <p>這一段可以當成審圖與現場檢驗前的快速風險索引。</p>
+      </div>
+      <div class="focus-layout">
+        <aside class="focus-panel">
+          <h3>不同技術的主要危害</h3>
+          <div class="risk-matrix">
+            <div class="risk-item"><b>UV</b><span>UV 輻射、電氣、過熱、濾器堵塞</span></div>
+            <div class="risk-item"><b>電解</b><span>H₂、Cl₂、爆炸、腐蝕、TRO 中和</span></div>
+            <div class="risk-item"><b>臭氧</b><span>O₃ 毒性、富氧、強氧化、破壞器失效</span></div>
+            <div class="risk-item"><b>脫氧／惰氣</b><span>缺氧、窒息、CO₂、CO、壓載艙壓力</span></div>
+            <div class="risk-item"><b>化學注入</b><span>化學品洩漏、毒性、腐蝕、消防相容性</span></div>
+            <div class="risk-item"><b>側流系統</b><span>濃縮處理液、高局部危險性、管路隔離</span></div>
+          </div>
+        </aside>
+
+        <div class="focus-panel">
+          <h3>審查時要連續追問</h3>
+          <ol class="quick-list">
+            <li>這套 BWTS 是 UV、電解、臭氧、脫氧、化學注入，還是複合式？</li>
+            <li>是否具備可用、可顯示、可記錄的旁通／隔離／覆越安排？</li>
+            <li>氣體偵測器是否對應實際氣體，警報與停機設定值是否正確？</li>
+            <li>通風是否具備足夠風量、正確位置、故障警報與連鎖停機？</li>
+            <li>油輪是否防止貨油區危險物質污染非危險區？</li>
+            <li>TRC 是否與壓載泵流量一致；若不一致，BWMP 是否限制最大操作流量？</li>
+            <li>管材、閥材、墊片、密封件與壓載艙塗層是否耐受 BWTS 產物？</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="inspection">
+      <div class="subhead">
+        <p class="section-kicker">04｜現場檢查清單</p>
+        <h2>現場檢驗建議清單</h2>
+        <p>把文件、實物與功能試車分開看，最容易找出圖面與現場不一致的地方。</p>
+      </div>
+      <div class="inspection-grid">
+        <article class="checklist">
+          <h3><span class="badge">A</span>文件核對</h3>
+          <ul>
+            <li>型式認可證書（TAC）</li>
+            <li>操作、維護與安全手冊（OMM）</li>
+            <li>壓艙水管理計畫（BWMP）</li>
+            <li>PFD、P&ID、總布置圖</li>
+            <li>材料證書、化學品 MSDS、風險評估報告</li>
+            <li>電力負載分析、危險區圖、通風圖、消防圖</li>
+            <li>控制、警報、安全系統圖</li>
+            <li>壓力容器、濾器證書、試壓與功能試驗紀錄</li>
+          </ul>
+        </article>
+
+        <article class="checklist">
+          <h3><span class="badge">B</span>現場確認</h3>
+          <ul>
+            <li>BWTS 型號、銘牌、容量與 TAC 一致</li>
+            <li>實際管路與核准 P&ID 一致</li>
+            <li>旁通、隔離、止回閥、盲通與短管段位置正確</li>
+            <li>排氣口位置符合安全距離</li>
+            <li>BWTR 門為氣密自閉，氣閘功能正常</li>
+            <li>通風方向、風量與連鎖正常</li>
+            <li>氣體偵測器位置合理且可測試</li>
+            <li>化學品儲存、洩漏收集與標示正確</li>
+          </ul>
+        </article>
+
+        <article class="checklist">
+          <h3><span class="badge">C</span>試車功能</h3>
+          <ul>
+            <li>BWTS 正常啟動／停止</li>
+            <li>旁通啟動警報與記錄</li>
+            <li>隔離閥遠端指示</li>
+            <li>通風失效警報與停機</li>
+            <li>氣體偵測警報與停機</li>
+            <li>壓載艙高／低壓警報與停機</li>
+            <li>超流量限制、濾器反洗、中和系統</li>
+            <li>緊急停機與斷電後失效安全狀態</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="confusion">
+      <div class="subhead">
+        <p class="section-kicker">05｜角色差異</p>
+        <h2>最容易混淆的地方</h2>
+        <p>這些誤解最容易讓審查方向偏離船級安全與安裝整合。</p>
+      </div>
+      <div class="table-wrap" role="region" aria-label="易混淆點與正確認知" tabindex="0">
+        <table class="confusion-table">
+          <thead>
+            <tr>
+              <th>易混淆點</th>
+              <th>正確認知</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BWTS 達到 D-2 = LR 安裝合格？</td>
+              <td>不一定。D-2 是環境性能，LR 此章重點是船級安全與安裝。</td>
+            </tr>
+            <tr>
+              <td>有 TAC 就不用審船上安裝？</td>
+              <td>錯。TAC 是型式認可，船上安裝仍須依 LR 審查。</td>
+            </tr>
+            <tr>
+              <td>旁通就是違規？</td>
+              <td>不一定。旁通可作為安全與故障措施，但須符合 BWMP、TAC、警報與記錄要求。</td>
+            </tr>
+            <tr>
+              <td>通風只看風量？</td>
+              <td>錯。還要看獨立性、排氣位置、氣體密度、連鎖與停機。</td>
+            </tr>
+            <tr>
+              <td>UV 系統沒有危險氣體所以不用重視？</td>
+              <td>錯。仍有電氣、UV 輻射、過熱、壓力與濾器風險。</td>
+            </tr>
+            <tr>
+              <td>油輪只要設備是防爆型就可以？</td>
+              <td>不夠。還要看危險區是否擴大、貨油區與非危險區是否隔離。</td>
+            </tr>
+            <tr>
+              <td>化學品管路小口徑就不重要？</td>
+              <td>錯。小管徑也可能造成危險物質遷移、腐蝕或毒性暴露。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="review-logic">
+      <div class="subhead">
+        <p class="section-kicker">06｜審查邏輯</p>
+        <h2>總結複習重點</h2>
+        <p>最後用十句話收束，適合作為對外分享或內部訓練的結尾。</p>
+      </div>
+      <ol class="summary-list">
+        <li>這份文件審的是 BWTS 安裝安全，不是單純審 D-2 排放性能。</li>
+        <li>第一步永遠是確認 BWTS 技術類別與危險源。</li>
+        <li>BWTS 故障不得影響壓載／排載與必要服務。</li>
+        <li>旁通、隔離、失效安全、警報與記錄是核心審查點。</li>
+        <li>危險氣體要看偵測、通風、排氣位置、危險區與停機邏輯。</li>
+        <li>油輪要防止貨油區危險物質經 BWTS 系統進入非危險區。</li>
+        <li>化學品、臭氧、電解、脫氧系統都要做風險評估。</li>
+        <li>現場驗船不能只核文件，必須試警報、停機、通風連鎖與旁通記錄。</li>
+        <li>TAC、BWMP、OMM、P&ID、危險區圖、通風圖、消防圖必須一致。</li>
+        <li>實務上仍須以最新 LR 規範、船旗國主管機關要求、IMO 公約與核准圖為準。</li>
+      </ol>
+    </section>
+
+    <section class="share-band" id="share">
+      <div
+        class="article-share article-share--end"
+        data-article-share
+        data-share-url="https://reayhuang.com/notes/maritime/lr-bwts-notes.html"
+        data-share-title="LR BWTS｜壓艙水處理系統安全審查導覽｜Reay's Note"
+        data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;LR BWTS｜壓艙水處理系統安全審查導覽｜Reay's Note&#10;https://reayhuang.com/notes/maritime/lr-bwts-notes.html"
+        data-share-copy="複製連結"
+        data-share-copied="已複製"
+        data-toast-copied="連結已複製到剪貼簿"
+      >
+        <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+        <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>LR Rules Pt.5 Ch.25｜壓艙水處理系統安全審查導覽｜Reay's Note</strong><br>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        本頁為學習、內訓與驗船準備用途的視覺化整理，不代表 Lloyd's Register、IMO 或其他機構之正式意見；<span class="disclaimer-tail">正式設計、審圖、檢驗與合規判斷，仍應以最新 LR 規範、船旗國要求、IMO 公約、TAC／BWMP／P&ID 核准圖及船級社正式意見為準。</span>
+      </p>
+    </div>
+  </footer>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      const nav = document.querySelector(".jump-nav");
+      const spacer = document.querySelector(".jump-nav-spacer");
+      if (!nav || !spacer) return;
+
+      const navInner = nav.querySelector(".jump-nav-inner");
+      const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      let navTop = 0;
+      let activeId = "";
+
+      const measure = () => {
+        const wasFixed = nav.classList.contains("is-fixed");
+        if (wasFixed) nav.classList.remove("is-fixed");
+        spacer.style.height = "0px";
+        navTop = nav.getBoundingClientRect().top + window.scrollY;
+        if (wasFixed) update();
+      };
+
+      const update = () => {
+        const shouldStick = window.scrollY >= navTop;
+        nav.classList.toggle("is-fixed", shouldStick);
+        spacer.style.height = shouldStick ? `${nav.offsetHeight}px` : "0px";
+        updateActiveLink();
+      };
+
+      const centerActiveLink = (link) => {
+        if (!navInner || !link) return;
+        const targetLeft = link.offsetLeft - (navInner.clientWidth - link.offsetWidth) / 2;
+        navInner.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: "smooth"
+        });
+      };
+
+      const updateActiveLink = () => {
+        const offset = nav.offsetHeight + 24;
+        let current = sections[0];
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop <= offset) current = section;
+        });
+
+        if (!current || current.id === activeId) return;
+        activeId = current.id;
+
+        links.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${activeId}`;
+          link.classList.toggle("is-active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "true");
+            centerActiveLink(link);
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      measure();
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", measure);
+    })();
+  </script>
+</body>
+</html>

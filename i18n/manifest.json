@@ -106,6 +106,13 @@
       "zh": "notes/maritime/mepc-83-84-visual-notes.html"
     },
     {
+      "slug": "lr-bwts-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/lr-bwts-notes.en.html",
+      "zh": "notes/maritime/lr-bwts-notes.html"
+    },
+    {
       "slug": "maritime-cyber-resilience-notes",
       "type": "article",
       "category": "notes",
