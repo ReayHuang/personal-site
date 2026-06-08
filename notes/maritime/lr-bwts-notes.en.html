@@ -1247,16 +1247,26 @@
       }
 
       .article-share--end {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px 10px;
+        max-width: 100%;
       }
 
       .article-share--end .article-share__label {
-        text-align: center;
+        width: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+        text-align: left;
       }
 
       .article-share--end .article-share__actions {
-        justify-content: center;
+        flex-wrap: nowrap;
+        flex: 0 1 auto;
+        min-width: 0;
+        justify-content: flex-start;
       }
     }
 
@@ -1399,11 +1409,11 @@
           <p class="eyebrow">LR Rules · BWTS Review Guide · Reay's Note</p>
           <h1>BWTS Safety Survey Guide</h1>
           <p class="article-meta">
-            <span>Updated: 2026-06-08</span>
+            <span>📅 Updated: 2026-06-08</span>
             <span class="article-meta__sep" aria-hidden="true">·</span>
-            <span>11 min read</span>
+            <span>⏱ 11 min read</span>
             <span class="article-meta__sep" aria-hidden="true">·</span>
-            <span>LR Rules / BWTS / Surveyor Checklist</span>
+            <span>🏷 LR Rules / BWTS / Surveyor Checklist</span>
           </p>
           <p class="lead">
             The focus of LR Rules Pt.5 Ch.25 is not simply to confirm whether a BWTS meets the <strong><span class="nowrap">D-2</span> biological discharge standard</strong>.

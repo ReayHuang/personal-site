@@ -1243,16 +1243,26 @@
       }
 
       .article-share--end {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px 10px;
+        max-width: 100%;
       }
 
       .article-share--end .article-share__label {
-        text-align: center;
+        width: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+        text-align: left;
       }
 
       .article-share--end .article-share__actions {
-        justify-content: center;
+        flex-wrap: nowrap;
+        flex: 0 1 auto;
+        min-width: 0;
+        justify-content: flex-start;
       }
     }
 
