@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="steering gear, LR SPM, Survey Procedures Manual, SOLAS II-1/29, LR Rules Pt 5 Ch 19, sea trials, ship survey">
+  <meta property="og:title" content="Ship Steering Gear Survey Procedure Essentials | Reay's Note">
+  <meta property="og:description" content="A practical note based on LR Survey Procedures Manual (SPM) steering gear survey items, covering SOLAS II-1/29, LR Rules Pt 5 Ch 19, steering gear performance, emergency steering, sea trials, and in-service survey checks.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/steering-gear-notes.en.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/steering-gear-notes.en.html">
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/steering-gear/steering-gear-link-preview.en-1200.jpg">
+  <meta property="og:image:alt" content="Ship Steering Gear Survey Procedure Essentials | Reay's Note">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ship Steering Gear Survey Procedure Essentials | Reay's Note">
+  <meta name="twitter:description" content="A practical note based on LR Survey Procedures Manual (SPM) steering gear survey items, covering SOLAS II-1/29, LR Rules Pt 5 Ch 19, steering gear performance, emergency steering, sea trials, and in-service survey checks.">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/steering-gear/steering-gear-link-preview.en-1200.jpg">
+  <link rel="alternate" hreflang="zh-Hant" href="steering-gear-notes.html">
+  <link rel="alternate" hreflang="en" href="steering-gear-notes.en.html">
+  <link rel="alternate" hreflang="x-default" href="steering-gear-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta name="description" content="A practical note based on LR Survey Procedures Manual (SPM) steering gear survey items, covering SOLAS II-1/29, LR Rules Pt 5 Ch 19, steering gear performance, emergency steering, sea trials, and in-service survey checks.">
+  <title>Ship Steering Gear Survey Procedure Essentials | Reay's Note</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    :root {
+      --navy: #102a43;
+      --blue: #1d4ed8;
+      --blue-soft: #dbeafe;
+      --cyan: #0891b2;
+      --green: #047857;
+      --green-soft: #d1fae5;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --red: #b91c1c;
+      --red-soft: #fee2e2;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --white: #ffffff;
+      --shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        "PingFang TC",
+        Arial,
+        sans-serif;
+      color: var(--gray-900);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 34%),
+        linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    .article-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: 18px 0 28px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(203, 213, 225, 0.86);
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-list {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 0;
+      scrollbar-width: none;
+    }
+
+    .nav-list a {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      color: var(--gray-700);
+      font-weight: 700;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .nav-list a:hover {
+      background: var(--blue-soft);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .nav-list a.is-active,
+    .nav-list a[aria-current="location"] {
+      background: var(--blue-soft);
+      border-color: rgba(29, 78, 216, 0.28);
+      color: var(--blue);
+      box-shadow: inset 0 0 0 1px rgba(29, 78, 216, 0.12);
+    }
+
+    main {
+      padding: 34px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(29, 78, 216, 0.88)),
+        linear-gradient(45deg, #0f172a, #1d4ed8);
+      border-radius: 28px;
+      padding: 48px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -120px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 4rem;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      margin: 22px 0 0;
+      font-size: 1.08rem;
+      max-width: 860px;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .hero strong {
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .quick-read {
+      margin-top: 0;
+    }
+
+    .quick-read-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .quick-read-point {
+      padding: 14px 16px;
+      border-left: 5px solid var(--blue);
+      border-radius: 12px;
+      background: var(--gray-50);
+      color: var(--gray-700);
+      font-weight: 700;
+    }
+
+    .quick-read-point strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .meta-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .meta-card span {
+      display: block;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.68);
+      font-weight: 800;
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 1rem;
+    }
+
+    .hero .meta-card strong {
+      color: var(--white);
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+      scroll-margin-top: 118px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 1.55rem;
+      line-height: 1.35;
+    }
+
+    h2::before {
+      content: "";
+      width: 8px;
+      height: 30px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--blue), var(--cyan));
+      flex: 0 0 auto;
+    }
+
+    h3 {
+      margin: 26px 0 10px;
+      color: var(--gray-900);
+      font-size: 1.18rem;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    strong {
+      color: var(--navy);
+    }
+
+    .source-ref {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      border: 1px solid rgba(8, 145, 178, 0.22);
+      color: #0f4c81;
+      font-size: 0.76rem;
+      font-weight: 900;
+      line-height: 1.55;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+
+    .hero .source-ref {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.28);
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .source-table td:first-child {
+      width: 28%;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .lead {
+      font-size: 1.04rem;
+      color: var(--gray-700);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0;
+    }
+
+    .kpi {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 20px;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+    }
+
+    .kpi::after {
+      content: "";
+      position: absolute;
+      right: -24px;
+      top: -24px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--blue-soft);
+    }
+
+    .kpi .number {
+      position: relative;
+      z-index: 1;
+      color: var(--blue);
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .kpi .label {
+      position: relative;
+      z-index: 1;
+      margin-top: 6px;
+      color: var(--gray-700);
+      font-weight: 800;
+    }
+
+    .kpi .note {
+      position: relative;
+      z-index: 1;
+      margin-top: 4px;
+      color: var(--gray-600);
+      font-size: 0.88rem;
+    }
+
+    .callout {
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 18px 0;
+      border-left: 6px solid;
+    }
+
+    .callout.info {
+      background: var(--blue-soft);
+      border-left-color: var(--blue);
+    }
+
+    .callout.warn {
+      background: var(--amber-soft);
+      border-left-color: var(--amber);
+    }
+
+    .callout.danger {
+      background: var(--red-soft);
+      border-left-color: var(--red);
+    }
+
+    .callout.success {
+      background: var(--green-soft);
+      border-left-color: var(--green);
+    }
+
+    .callout-title {
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      font-weight: 800;
+      font-size: 0.82rem;
+      border: 1px solid var(--gray-200);
+    }
+
+    .article-nav .tag {
+      line-height: 1.35;
+    }
+
+    .article-nav .nav-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 16px;
+      border: 1px solid var(--gray-200);
+      margin: 18px 0;
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: white;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    th {
+      background: #e0f2fe;
+      color: var(--navy);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .timeline-no {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(29, 78, 216, 0.25);
+    }
+
+    .timeline-content {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .timeline-content strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .flow-step {
+      position: relative;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+    }
+
+    .flow-step .step {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: #ffffff;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+    }
+
+    .check::before {
+      content: "✓";
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green-soft);
+      color: var(--green);
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .formula-box {
+      margin: 18px 0;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px dashed var(--blue);
+      background: #eff6ff;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      font-weight: 800;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    .note-figure {
+      margin: 18px 0;
+      padding: 14px;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      background: #ffffff;
+    }
+
+    .note-figure img {
+      display: block;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      height: auto;
+    }
+
+    .note-figure figcaption {
+      margin-top: 10px;
+      color: var(--gray-600);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .term {
+      border-radius: 16px;
+      border: 1px solid var(--gray-200);
+      background: white;
+      padding: 14px 16px;
+    }
+
+    .term strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .term span {
+      color: var(--gray-700);
+      font-size: 0.94rem;
+    }
+
+    .footer {
+      margin: 30px 0 0;
+      padding: 24px;
+      color: var(--gray-600);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 1080px) {
+      main {
+        padding: 22px;
+      }
+
+      .meta-grid,
+      .kpi-grid,
+      .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .article-nav {
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 16px;
+      }
+
+      .hero {
+        padding: 30px 22px;
+        border-radius: 22px;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      .meta-grid,
+      .kpi-grid,
+      .flow,
+      .checklist,
+      .quick-read-grid,
+      .term-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-card {
+        padding: 22px;
+        scroll-margin-top: 148px;
+      }
+
+      table {
+        min-width: 640px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .article-nav {
+        display: none;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      .hero,
+      .section-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .hero {
+        color: var(--gray-900);
+        background: white;
+        border: 2px solid var(--gray-300);
+      }
+
+      .meta-card {
+        color: var(--gray-900);
+        background: var(--gray-50);
+        border-color: var(--gray-300);
+      }
+
+      .meta-card span,
+      .hero-subtitle {
+        color: var(--gray-700);
+      }
+
+      .hero strong,
+      .hero .meta-card strong {
+        color: var(--gray-900);
+      }
+
+      a {
+        color: var(--gray-900);
+      }
+    }
+
+
+
+
+
+
+    .layout-reference .hero-content {
+      max-width: none;
+    }
+
+    .layout-reference .eyebrow {
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+
+    .layout-reference h1 {
+      font-size: 2.8rem;
+      line-height: 1.16;
+    }
+
+    .layout-reference .hero-subtitle {
+      max-width: 1060px;
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .layout-reference .meta-grid {
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .layout-reference .meta-card {
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+    /* Site shell — aligned with lr-bwts-notes */
+    :root {
+      --max: 1180px;
+      --ink: #061b22;
+      --muted: #5b6d73;
+      --line: #dce8e8;
+      --teal: #3accc2;
+      --green: #0b2b35;
+      --orange: #ff6b3d;
+      --soft-teal: #eefaf9;
+      --shell-radius: 8px;
+    }
+
+    body.steering-shell {
+      background: #ffffff;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.68;
+    }
+
+    body.steering-shell main {
+      overflow: visible;
+      padding: 0;
+    }
+
+    body.steering-shell .section.hero {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 0;
+      border-radius: 0;
+      box-shadow: none;
+      border-bottom: 1px solid rgba(58, 204, 194, 0.25);
+      background:
+        linear-gradient(90deg, rgba(7, 20, 35, 0.94) 0%, rgba(7, 20, 35, 0.72) 42%, rgba(7, 20, 35, 0.22) 100%),
+        url("../../assets/images/maritime/steering-gear/steering-gear-hero-cutaway.png") right center / cover no-repeat;
+    }
+
+    body.steering-shell .section.hero::after {
+      display: none;
+    }
+
+    body.steering-shell .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 22px 44px;
+    }
+
+    body.steering-shell .hero-content {
+      max-width: none;
+    }
+
+    body.steering-shell .hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      max-width: 100%;
+      margin: 0 0 24px;
+      min-height: 48px;
+      padding: 11px 20px;
+      border: 1px solid rgba(143, 255, 242, 0.38);
+      border-radius: 999px;
+      background: rgba(14, 89, 100, 0.34);
+      color: #dffaff;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.28;
+      text-transform: uppercase;
+    }
+
+    body.steering-shell .hero .eyebrow::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 10px;
+      height: 10px;
+      margin-right: 14px;
+      border-radius: 50%;
+      background: #38d4dc;
+    }
+
+    body.steering-shell h1 {
+      color: #fff;
+      font-size: clamp(2rem, 4.8vw, 2.8rem);
+      line-height: 1.16;
+    }
+
+    body.steering-shell .hero .article-meta {
+      margin: 16px 0 18px;
+      max-width: 900px;
+    }
+
+    body.steering-shell .hero .article-share--hero {
+      margin-top: 28px;
+    }
+
+    body.steering-shell .hero-subtitle {
+      margin-top: 16px;
+      font-size: 1rem;
+      max-width: 900px;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    body.steering-shell .meta-grid {
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    body.steering-shell .meta-card {
+      padding: 12px 14px;
+      border-radius: var(--shell-radius);
+    }
+
+    body.steering-shell .jump-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    body.steering-shell .jump-nav.is-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 12px 28px rgba(7, 23, 32, 0.12);
+    }
+
+    body.steering-shell .jump-nav-spacer {
+      height: 0;
+    }
+
+    body.steering-shell .jump-nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    body.steering-shell .jump-nav a {
+      white-space: nowrap;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 850;
+      padding: 8px 12px;
+      border-radius: var(--shell-radius);
+      border: 1px solid transparent;
+    }
+
+    body.steering-shell .jump-nav a.is-active,
+    body.steering-shell .jump-nav a[aria-current="true"] {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    body.steering-shell .jump-nav a:hover {
+      background: var(--soft-teal);
+    }
+
+    body.steering-shell .jump-nav a.is-active:hover,
+    body.steering-shell .jump-nav a[aria-current="true"]:hover {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    body.steering-shell .article-body {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 22px 12px;
+    }
+
+    body.steering-shell .article-body > section {
+      margin-top: 18px;
+    }
+
+    body.steering-shell .section-card {
+      padding: 22px;
+      border-radius: var(--shell-radius);
+      box-shadow: none;
+      background: #ffffff;
+      border: 1px solid rgba(220, 232, 232, 0.95);
+      scroll-margin-top: 72px;
+    }
+
+    body.steering-shell .share-band {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 22px 32px;
+    }
+
+    body.steering-shell footer.site-footer {
+      margin: 0;
+      padding: 36px 0 44px;
+      background: #061b22;
+      color: rgba(255, 255, 255, 0.82);
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    body.steering-shell footer.site-footer .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    body.steering-shell footer.site-footer strong {
+      color: #fff;
+    }
+
+    body.steering-shell footer.site-footer a {
+      color: #8ffff2;
+    }
+
+    body.steering-shell footer.site-footer .small {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 13px;
+    }
+
+    body.steering-shell footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 760px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (min-width: 1101px) {
+      body.steering-shell footer.site-footer .disclaimer-tail {
+        display: block;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body.steering-shell .hero-inner {
+        padding: 36px 16px 32px;
+      }
+
+      body.steering-shell .article-body,
+      body.steering-shell .share-band {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      body.steering-shell .jump-nav-inner {
+        padding: 10px 16px;
+      }
+
+      body.steering-shell .section-card {
+        scroll-margin-top: 64px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .article-nav {
+        display: none;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      .hero,
+      .section-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .hero {
+        color: var(--gray-900);
+        background: white;
+        border: 2px solid var(--gray-300);
+      }
+
+      .meta-card {
+        color: var(--gray-900);
+        background: var(--gray-50);
+        border-color: var(--gray-300);
+      }
+
+      .meta-card span,
+      .hero-subtitle {
+        color: var(--gray-700);
+      }
+
+      .hero strong,
+      .hero .meta-card strong {
+        color: var(--gray-900);
+      }
+
+      a {
+        color: var(--gray-900);
+      }
+    }
+
+
+
+
+
+
+    .layout-reference .hero-content {
+      max-width: none;
+    }
+
+    .layout-reference .eyebrow {
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+
+    .layout-reference h1 {
+      font-size: 2.8rem;
+      line-height: 1.16;
+    }
+
+    .layout-reference .hero-subtitle {
+      max-width: 1060px;
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .layout-reference .meta-grid {
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .layout-reference .meta-card {
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+
+    .layout-reference .nav-list {
+      flex-wrap: wrap;
+      gap: 6px;
+      overflow-x: visible;
+    }
+
+    .layout-reference .nav-list a {
+      padding: 6px 9px;
+      border-radius: 7px;
+      font-size: 0.88rem;
+    }
+
+    .layout-reference section {
+      margin-top: 18px;
+    }
+
+    .layout-reference .section-card {
+      padding: 22px;
+      border-radius: 8px;
+      box-shadow: none;
+      background: #ffffff;
+      scroll-margin-top: 110px;
+    }
+
+    .layout-reference h2 {
+      margin-bottom: 14px;
+      font-size: 1.34rem;
+    }
+
+    .layout-reference h2::before {
+      width: 6px;
+      height: 24px;
+    }
+
+    .layout-reference h3 {
+      margin: 20px 0 8px;
+      font-size: 1.04rem;
+    }
+
+    .layout-reference p {
+      margin: 8px 0;
+    }
+
+    .layout-reference .lead {
+      font-size: 1rem;
+    }
+
+    .layout-reference .quick-read-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .layout-reference .quick-read-point {
+      padding: 12px;
+      border-left-width: 4px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+    }
+
+    .layout-reference .kpi-grid {
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .layout-reference .kpi {
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
+    .layout-reference .kpi::after {
+      width: 58px;
+      height: 58px;
+    }
+
+    .layout-reference .kpi .number {
+      font-size: 1.75rem;
+    }
+
+    .layout-reference .callout {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left-width: 4px;
+      border-radius: 8px;
+    }
+
+    .layout-reference .table-wrap,
+    .layout-reference .formula-box,
+    .layout-reference .note-figure,
+    .layout-reference .flow-step,
+    .layout-reference .check {
+      border-radius: 8px;
+    }
+
+    .layout-reference table {
+      min-width: 720px;
+      font-size: 0.92rem;
+    }
+
+    .layout-reference th,
+    .layout-reference td {
+      padding: 10px 12px;
+      line-height: 1.65;
+    }
+
+    .layout-reference .timeline {
+      gap: 10px;
+    }
+
+    .layout-reference .timeline-item {
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .layout-reference .timeline-no {
+      width: 32px;
+      height: 32px;
+    }
+
+    .layout-reference .timeline-content {
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+    .layout-reference .flow {
+      gap: 10px;
+    }
+
+    .layout-reference .flow-step {
+      padding: 12px;
+      box-shadow: none;
+    }
+
+    .layout-reference .flow-step .step {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      margin-bottom: 6px;
+    }
+
+    .layout-reference .checklist {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .layout-reference .check {
+      padding: 10px 12px;
+    }
+
+    .layout-reference .check::before {
+      width: 20px;
+      height: 20px;
+      font-size: 0.78rem;
+    }
+
+    .layout-reference .note-figure {
+      padding: 10px;
+    }
+
+    .layout-reference .note-figure img {
+      max-width: 640px;
+    }
+
+    .layout-reference .footer {
+      margin-top: 18px;
+      padding: 18px;
+    }
+
+    @media (max-width: 1080px) {
+      .layout-reference .quick-read-grid,
+      .layout-reference .checklist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .layout-reference main {
+        padding: 16px;
+      }
+
+      .layout-reference .hero {
+        padding: 26px 20px;
+      }
+
+      .layout-reference h1 {
+        font-size: 2.15rem;
+      }
+
+      .layout-reference .nav-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      .layout-reference .quick-read-grid,
+      .layout-reference .checklist {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    .layout-reference .hero .article-meta {
+      margin: 14px 0 0;
+      max-width: 1060px;
+    }
+
+    .layout-reference .hero .article-share--hero {
+      margin-top: 18px;
+    }
+
+
+
+
+
+
+
+
+
+    @media (max-width: 720px) {
+
+    }
+
+    @media print {
+      .note-site-bar,
+      .article-share,
+      .share-band {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="layout-reference steering-shell">
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Notes</a>
+      <span>|</span>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="steering-gear-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="steering-gear-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="section hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">LR SPM · Steering Gear Survey · Reay's Note</p>
+          <h1>Ship Steering Gear Survey Procedure Essentials</h1>
+          <p class="article-meta">
+            <span>📅 Updated: 2026-06-11</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 15 min read</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 LR SPM / Steering Gear Survey / SOLAS II-1/29</span>
+          </p>
+          <p class="hero-subtitle">
+            This note summarizes the steering gear survey items in the LR Survey Procedures Manual (SPM), organizing the survey logic for manufacture, installation, sea trials, periodical surveys, defect handling, and reporting.
+            It covers <strong>SOLAS Chapter II-1 Regulation 29</strong><span class="source-ref">SOLAS II-1/29</span>, <strong>LR Rules for Ships Part 5 Chapter 19</strong><span class="source-ref">LR Pt 5 Ch 19</span>,
+            steering gear power arrangements, emergency steering capability, sea trials, and in-service survey checks.
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-card">
+              <span>Note Type</span>
+              <strong>Survey Procedure Note</strong>
+            </div>
+            <div class="meta-card">
+              <span>Subject Equipment</span>
+              <strong>Steering Gear</strong>
+            </div>
+            <div class="meta-card">
+              <span>Main References</span>
+              <strong>SOLAS II-1/29<br />LR Rules Pt 5 Ch 19</strong>
+            </div>
+            <div class="meta-card">
+              <span>Use Cases</span>
+              <strong>New Construction / Existing Ships</strong>
+            </div>
+          </div>
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/steering-gear-notes.en.html"
+            data-share-title="Ship Steering Gear Survey Procedure Essentials | Reay's Note"
+            data-share-email-body="I found this maritime note by Reay and thought it might be useful for you:&#10;&#10;Ship Steering Gear Survey Procedure Essentials | Reay's Note&#10;https://reayhuang.com/notes/maritime/steering-gear-notes.en.html"
+            data-share-copy="Copy link"
+            data-share-copied="Copied"
+            data-toast-copied="Link copied to clipboard"
+          >
+            <p class="article-share__label" id="share-hero-label">Share this note</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump-nav" aria-label="Quick navigation">
+      <div class="jump-nav-inner">
+          <a href="#quick-read">Quick Read</a>
+          <a href="#overview">Subject</a>
+          <a href="#structure">Structure</a>
+          <a href="#core">Core Points</a>
+          <a href="#performance">Performance</a>
+          <a href="#installation">Installation & Sea Trials</a>
+          <a href="#periodical">Periodical Surveys</a>
+          <a href="#implications">Implications</a>
+          <a href="#pitfalls">Pitfalls</a>
+          <a href="#summary">Review Points</a>
+      </div>
+    </nav>
+    <div class="jump-nav-spacer" aria-hidden="true"></div>
+
+    <div class="article-body">
+      <section id="quick-read" class="section-card quick-read">
+        <h2>Quick Read | Key Points in 30 Seconds</h2>
+        <p class="lead">
+          Start with one core idea: a steering gear survey is not just about confirming that the equipment exists. It verifies that the ship can still steer under normal and emergency conditions, with demonstrable timing, pressure, power supply, and isolation capability.
+        </p>
+
+        <div class="quick-read-grid">
+          <div class="quick-read-point">
+            <strong>Main steering gear performance</strong>
+            The sea trial focus is moving from 35° on one side to 30° on the other side, a total of 65°, within 28 seconds.<span class="source-ref">SOLAS II-1/29.3.2</span><span class="source-ref">LR Pt 5 Ch 19/7.2</span>
+          </div>
+          <div class="quick-read-point">
+            <strong>Emergency steering is not low-power movement</strong>
+            Emergency power supply and power unit arrangements must meet the required steering capability. Dual-winding, dual-rating arrangements are not acceptable.<span class="source-ref">SOLAS II-1/29.6.1</span><span class="source-ref">SOLAS II-1/30.2</span>
+          </div>
+          <div class="quick-read-point">
+            <strong>Tankers depend on redundancy and isolation</strong>
+            Interconnected systems, automatic isolation, and common-cause failure need particular attention; compliance cannot be judged by the number of pumps or power units alone.<span class="source-ref">SOLAS II-1/29.19-20</span><span class="source-ref">IACS UI SC94</span>
+          </div>
+          <div class="quick-read-point">
+            <strong>On-site checks focus on installation quality</strong>
+            Keyless tiller contact, rudder jumping clearance, foundation securing, hydraulic leakage, pipe supports, and drill records all affect the survey conclusion.
+          </div>
+        </div>
+      </section>
+
+      <section id="overview" class="section-card">
+        <h2>1. Note Subject and Background</h2>
+        <p class="lead">
+          The purpose of this note is to explain how a ship's <strong>steering gear</strong> is surveyed, tested, verified, and documented under the <strong>LR Rules</strong> and <strong>SOLAS</strong>.
+        </p>
+
+        <div class="table-wrap">
+          <table class="source-table">
+            <thead>
+              <tr>
+                <th>Source Type</th>
+                <th>How It Is Used in This Note</th>
+                <th>Chapter / Document Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SOLAS steering gear requirements</td>
+                <td>Main steering gear performance, auxiliary / emergency steering capability, and tanker steering gear arrangements.</td>
+                <td>Chapter II-1, Part C, Regulation 29. Sea trial conditions are in 29.3.2; exemption from auxiliary steering gear with two power units is in 29.6.1; existing tanker arrangements are in 29.19-20.</td>
+              </tr>
+              <tr>
+                <td>SOLAS emergency power supply</td>
+                <td>One steering gear circuit may be supplied through the emergency switchboard.</td>
+                <td>Chapter II-1/30.2; the corresponding LR requirement is LR Rules for Ships Pt 5, Ch 19, 5.1.6.</td>
+              </tr>
+              <tr>
+                <td>LR Rules</td>
+                <td>Steering gear arrangements, components, power units, sea trials, and test requirements.</td>
+                <td>LR Rules for Ships Pt 5, Ch 19. Common references include 2.1.4, 3.2, 5.1.6, 6.1, and 7.2.</td>
+              </tr>
+              <tr>
+                <td>IACS / IMO references</td>
+                <td>Control system independence, non-traditional propulsion / steering arrangements, and heading information at the emergency steering position.</td>
+                <td>IACS UI SC94, IACS UI SC242, and IACS Rec.16; for small or special service craft, also refer to LR Special Service Craft Pt 14.</td>
+              </tr>
+              <tr>
+                <td>Survey Procedures Manual</td>
+                <td>Installation, sea trials, periodical surveys, certification, and reporting procedures in this note.</td>
+                <td>Survey Procedures Manual - Surveyable Items - Steering Gear. This note organizes content from the introduction, survey scope, survey prerequisites, first entry, certification, and documentation sections.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">Note Positioning</div>
+          <p>
+            This note is not merely a design-rule summary. It organizes <strong>survey procedure requirements</strong> used by surveyors, shipyards, manufacturers, and ship staff. The focus is not whether steering gear exists, but whether it retains reliable steering capability under normal and emergency conditions.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Use Case</th>
+                <th>Main Content</th>
+                <th>Practical Focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Maker component and equipment survey</strong></td>
+                <td>Check materials, certificates, components, and test arrangements.</td>
+                <td>Confirm that the steering gear complies with class requirements before delivery.</td>
+              </tr>
+              <tr>
+                <td><strong>New construction maker survey</strong></td>
+                <td>Check steering gear manufacture, assembly, and testing.</td>
+                <td>Focus on certificates, stamping, component compliance, and manufacturing quality.</td>
+              </tr>
+              <tr>
+                <td><strong>New construction yard installation survey</strong></td>
+                <td>Check foundations, alignment, push-up fitting, securing, and functional tests.</td>
+                <td>Installation quality directly affects sea trials and service reliability.</td>
+              </tr>
+              <tr>
+                <td><strong>Existing ship periodical survey</strong></td>
+                <td>Check leakage, wear, hoses, piping, and steering drill records.</td>
+                <td>The focus shifts to ageing, damage, and functional retention in service.</td>
+              </tr>
+              <tr>
+                <td><strong>Condition survey</strong></td>
+                <td>Assess the current condition of an existing ship or installation.</td>
+                <td>Describe the steering gear type, hard-over test, and correctness of rudder angle indication.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">Regulatory Reminder</div>
+          <p>
+            SOLAS, LR Rules, IACS UIs, and flag Administration requirements may be updated. For actual design, approval, or survey work, always refer to the latest official documents, Administration instructions, and class approval comments.
+          </p>
+        </div>
+      </section>
+
+      <section id="structure" class="section-card">
+        <h2>2. Note Structure</h2>
+        <p>
+          This note follows the steering gear survey process across the equipment life cycle: from <strong>rule basis</strong>, <strong>plan submission</strong>, and <strong>maker survey</strong> to <strong>yard installation</strong>, <strong>sea trial verification</strong>, and <strong>periodical survey of existing ships</strong>.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-no">1</div>
+            <div class="timeline-content">
+              <strong>Introduction</strong>
+              Explains applicable procedures, emergency steering capability, dual power units, and unacceptable dual-winding / dual-rating arrangements.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-no">2</div>
+            <div class="timeline-content">
+              <strong>Rules, Regulations and Other Requirements</strong>
+              Lists LR Rules, SOLAS, IACS UIs, and related reference documents.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-no">3</div>
+            <div class="timeline-content">
+              <strong>Submission of Plans</strong>
+              Requires drawings, specifications, and inspection and test plans, including flag statutory requirements.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-no">4</div>
+            <div class="timeline-content">
+              <strong>Scope and Conduct of Survey</strong>
+              Covers rudder jumping clearance, actuator sealing, keyless tillers, sea trials, and existing ship surveys.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-no">5</div>
+            <div class="timeline-content">
+              <strong>Certification, Documentation and Reporting</strong>
+              Explains fitting curves, sea trial reports, defect handling, and conditional certificate requirements.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="core" class="section-card">
+        <h2>3. Core Content</h2>
+
+        <h3>1. Emergency Steering Capability and Power Unit Arrangement</h3>
+        <p>
+          The SPM specifically addresses <strong>emergency steering power</strong>. If a ship is fitted with <strong>two or more identical power units</strong>, a separate <strong>auxiliary steering gear</strong> may not be required under specified conditions.
+          <span class="source-ref">LR Pt 5 Ch 19/2.1.4</span><span class="source-ref">SOLAS II-1/29.6.1</span>
+        </p>
+
+        <div class="callout success">
+          <div class="callout-title">Standard Interpretation</div>
+          <p>
+            The emergency generator should be capable of supplying one identical steering gear power unit. In other words, emergency operation cannot be merely low-power movement; it must meet the required emergency steering performance. The SPM also states that one circuit may pass through the <strong>emergency switchboard</strong>.
+            <span class="source-ref">LR Pt 5 Ch 19/5.1.6</span><span class="source-ref">SOLAS II-1/30.2</span>
+          </p>
+        </div>
+
+        <div class="callout danger">
+          <div class="callout-title">Unacceptable Design</div>
+          <p>
+            The SPM clearly states that a steering gear power unit with <strong>two windings</strong> and <strong>dual rating</strong> is not acceptable. If it changes to a lower rating during an emergency such as a blackout, it may fail to meet the auxiliary steering capability requirement.
+            <span class="source-ref">SOLAS II-1/29</span><span class="source-ref">LR Pt 5 Ch 19/6.1</span>
+          </p>
+        </div>
+
+        <h3>2. Ship Types and Steering Gear Arrangements</h3>
+        <p>
+          The <strong>Expected arrangements table (Table 2.2)</strong> in the SPM is a key reference, summarizing performance and redundancy requirements for cargo ships, tankers, and different steering gear arrangements.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Ship Type</th>
+                <th>Steering Gear Arrangement</th>
+                <th>Power Units</th>
+                <th>Performance</th>
+                <th>Practical Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cargo Ship</strong></td>
+                <td>Main steering gear + auxiliary steering gear</td>
+                <td>One or more</td>
+                <td>Main steering gear: 65° / 28 seconds; auxiliary steering gear: 30° / 60 seconds</td>
+                <td>The SPM notes that this arrangement is now less common.</td>
+              </tr>
+              <tr>
+                <td><strong>Cargo Ships</strong></td>
+                <td>One steering gear with two or more power units</td>
+                <td>Two or more</td>
+                <td>All power units together achieve 65° / 28 seconds</td>
+                <td>Very common.</td>
+              </tr>
+              <tr>
+                <td><strong>Tankers &gt; 10,000 grt</strong></td>
+                <td>Two independent power actuating systems</td>
+                <td>Two or more identical units</td>
+                <td>Each system must achieve 65° / 28 seconds</td>
+                <td>Strict requirement, but the SPM notes that it is less common.</td>
+              </tr>
+              <tr>
+                <td><strong>Tankers &gt; 10,000 grt</strong></td>
+                <td>Two interconnected systems with automatic isolation</td>
+                <td>Two or more identical units</td>
+                <td>All power units together achieve 65° / 28 seconds</td>
+                <td>Common arrangement; the key point is automatic isolation.</td>
+              </tr>
+              <tr>
+                <td><strong>Tankers &gt; 10,000 grt &lt; 100,000 dwt</strong></td>
+                <td>Concession arrangement with one power actuating system</td>
+                <td>Two or more identical units</td>
+                <td>All power units together achieve 65° / 28 seconds</td>
+                <td>Must comply with IMO guidance and automatic isolation requirements.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">Technical Logic</div>
+          <p>
+            Steering gear safety is not judged by the number of installed components alone. It must be confirmed that the ship can retain sufficient manoeuvring capability during failure, isolation, power loss, or hydraulic abnormality. For tankers, higher risk means stricter redundancy and automatic isolation requirements. Existing tanker arrangements must still comply with the relevant SOLAS Regulation 29 provisions to maintain the validity of the Safety Construction Certificate.
+            <span class="source-ref">SOLAS II-1/29.19-20</span>
+          </p>
+        </div>
+      </section>
+
+      <section id="performance" class="section-card">
+        <h2>4. Performance Requirements and Key Figures</h2>
+
+        <div class="kpi-grid">
+          <div class="kpi">
+            <div class="number">35°</div>
+            <div class="label">Starting rudder angle</div>
+            <div class="note">Start from 35° on either side</div>
+          </div>
+
+          <div class="kpi">
+            <div class="number">30°</div>
+            <div class="label">Target rudder angle</div>
+            <div class="note">Move to 30° on the other side</div>
+          </div>
+
+          <div class="kpi">
+            <div class="number">65°</div>
+            <div class="label">Total rudder angle</div>
+            <div class="note">35° + 30°</div>
+          </div>
+
+          <div class="kpi">
+            <div class="number">28 sec</div>
+            <div class="label">Main steering gear limit</div>
+            <div class="note">Time not to exceed 28 seconds</div>
+          </div>
+        </div>
+
+        <div class="formula-box">
+          Main steering gear performance: 35° on one side → 30° on the other side; total angle 65°; time ≤ 28 seconds
+          <span class="source-ref">SOLAS II-1/29.3.2</span>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">Sea Trial Conditions and Alternative Verification</div>
+          <p>
+            The SPM cites SOLAS requirements: steering gear tests should generally be carried out at the ship's deepest seagoing draught and maximum ahead service speed. If this cannot be demonstrated during sea trials, alternative verification may be accepted to the satisfaction of the Administration. LR Rules place the trial requirement under <strong>Rules for Ships Pt 5, Ch 19, 7.2 Trials</strong>.
+            <span class="source-ref">SOLAS II-1/29.3.2</span><span class="source-ref">LR Pt 5 Ch 19/7.2</span>
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Performance</th>
+                <th>Verification Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Main Steering Gear</strong></td>
+                <td>35° to 30° on the other side, total 65°, within 28 seconds. The SPM explains that this test is carried out with the main steering gear in operation.</td>
+                <td>Verify steering capability under normal maximum service conditions.</td>
+              </tr>
+              <tr>
+                <td><strong>Auxiliary Steering Gear</strong></td>
+                <td>Typically 30° (15° to 15° on the other side) within 60 seconds, verified at half speed or 7 kn; used to verify emergency steering capability after main steering gear failure.</td>
+                <td>Verify that basic manoeuvring capability remains after main steering gear failure.</td>
+              </tr>
+              <tr>
+                <td><strong>Relief Valve</strong></td>
+                <td>The maximum working pressure during sea trials should not exceed 80% of the set pressure.</td>
+                <td>Avoid normal steering operation approaching relief-valve opening conditions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">Common Mistake</div>
+          <p>
+            The main steering gear sea trial is not 35° to 35°. It is <strong>35° to 30° on the other side</strong>, so the total rudder angle is <strong>65°</strong>, not 70°.
+          </p>
+        </div>
+      </section>
+
+      <section id="installation" class="section-card">
+        <h2>5. Installation, Fitting, and Sea Trials</h2>
+
+        <h3>1. Rudder Jumping Clearance</h3>
+        <p>
+          The rudder jumping clearance illustration in the SPM explains that, to prevent steering gear damage when the rudder jumps upward, the <strong>rudder lift / tiller clearance</strong> must be greater than the clearance between the rudder and the fixed <strong>anti-jump arrangement</strong>.
+        </p>
+
+        <figure class="note-figure">
+          <img
+            src="../../assets/images/maritime/steering-gear/rudder-jumping-clearance-lr-spm.jpg"
+            alt="Rudder jumping clearance and anti-jump arrangement clearance diagram"
+          />
+          <figcaption>Rudder jumping clearance and anti-jump arrangement clearance. Source: LR Survey Procedures Manual.</figcaption>
+        </figure>
+
+        <div class="formula-box">
+          Steering gear clearance > rudder-to-anti-jump clearance
+        </div>
+
+        <p>
+          The engineering meaning is that when the rudder jumps upward due to external force, sea conditions, or vertical movement, the fixed anti-jump arrangement should limit the movement first, rather than transmitting impact directly to the tiller, rudder stock, or steering gear itself.
+        </p>
+
+        <div class="callout info">
+          <div class="callout-title">Actuator Sealing and Component Requirements</div>
+          <p>
+            The SPM also notes that sealing arrangements for certain oscillating piston actuators should be checked against the applicable rules. At the piston rod, the external pressure boundary typically uses a single pressure seal plus a single wiper seal; this arrangement may be accepted as meeting duplicated sealing requirements. Component surveys should also confirm that stamping and certificates comply with the rules.
+            <span class="source-ref">LR Pt 5 Ch 19/3.2</span>
+          </p>
+        </div>
+
+        <h3>2. Ram Type Steering Gear | Installation Flow</h3>
+        <p>
+          The installation and testing flow in the SPM shows a typical ram type steering gear installation and test sequence, which can be used as a yard site checklist. The shipyard / manufacturer should also check the warning plate on the tiller top; it should state the approved maximum fitting pressure, which must not be exceeded during installation.
+        </p>
+
+        <div class="flow">
+          <div class="flow-step">
+            <div class="step">1</div>
+            <strong>Cone Contact Check</strong>
+            <p>Check the contact condition between the upper rudder stock cone and the tiller.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">2</div>
+            <strong>Foundation Assembly</strong>
+            <p>Fabricate the steering gear foundation assembly.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">3</div>
+            <strong>Rudder Stock Push Fitting</strong>
+            <p>Carry out rudder stock push fitting to the tiller.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">4</div>
+            <strong>Nut and Locking Device</strong>
+            <p>Install the rudder stock nut and locking tab.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">5</div>
+            <strong>Pump, Cylinder, and Ram Alignment</strong>
+            <p>Use the rudder stock as the datum for alignment.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">6</div>
+            <strong>Chocking and Securing</strong>
+            <p>Carry out chocking, resin chocking, hardness checks, and holding-down bolt checks.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">7</div>
+            <strong>Quay Functional Test</strong>
+            <p>Confirm relief valves, automatic isolation, alarms, and control functions.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">8</div>
+            <strong>Sea Trial</strong>
+            <p>Verify steering efficiency, rudder movement time, pressure, leakage, and emergency functions.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">9</div>
+            <strong>Submit Sea Trial Data</strong>
+            <p>Complete the First Entry Report and Sea Trials Data.</p>
+          </div>
+        </div>
+
+        <h3>3. Sea Trials | Survey Focus</h3>
+        <p>
+          Steering gear sea trials do not only measure rudder movement time. They also verify hydraulic integrity, control reliability, redundancy and isolation, emergency power supply, communication, and indication systems.
+        </p>
+
+        <div class="checklist">
+          <div class="check">Record ship draught.</div>
+          <div class="check">Record the time from 35° to 30° on the other side.</div>
+          <div class="check">Record the maximum hydraulic pressure during sea trials.</div>
+          <div class="check">Confirm no leakage from steering rams, pump glands, and valve stems.</div>
+          <div class="check">Confirm piping and cable supports are satisfactory, with no excessive vibration.</div>
+          <div class="check">Confirm the hydraulic oil header tank level is maintained.</div>
+          <div class="check">Confirm one power actuating system can be isolated from the other.</div>
+          <div class="check">Confirm relief valves do not lift continuously or abnormally.</div>
+          <div class="check">Confirm emergency steering power supply changeover and operation.</div>
+          <div class="check">Confirm anti-hydraulic lock function.</div>
+          <div class="check">Confirm communication between the steering gear compartment and the bridge.</div>
+          <div class="check">Confirm the gyro repeater agrees with the bridge heading.</div>
+        </div>
+      </section>
+
+      <section id="periodical" class="section-card">
+        <h2>6. Periodical Survey of Existing Ships</h2>
+        <p>
+          For existing ships, the survey focus shifts from design and installation compliance during new construction to <strong>ageing, wear, leakage, support, functional testing, and record verification</strong>.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Inspection Scope</th>
+                <th>Main Check Items</th>
+                <th>Risk Implication</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Steering gear compartment access</strong></td>
+                <td>Check mechanical parts, handrails, and non-slip surfaces.</td>
+                <td>Affects maintenance and emergency operation safety.</td>
+              </tr>
+              <tr>
+                <td><strong>Hydraulic piping</strong></td>
+                <td>Check cracks, flange connections, stress concentration, and insufficient support.</td>
+                <td>Vibration may cause fatigue cracks and leakage.</td>
+              </tr>
+              <tr>
+                <td><strong>Flexible hoses</strong></td>
+                <td>Check damage and date markings; renew if necessary.</td>
+                <td>Aged hoses may burst during high-pressure steering operation.</td>
+              </tr>
+              <tr>
+                <td><strong>Mechanical linkages and securing</strong></td>
+                <td>Check pins, securing arrangements, and holding-down arrangements.</td>
+                <td>Looseness or wear may cause inaccurate control or structural failure.</td>
+              </tr>
+              <tr>
+                <td><strong>Functional tests</strong></td>
+                <td>Test main steering gear, auxiliary steering gear, emergency steering gear, and telemotor gear.</td>
+                <td>Confirm the system still meets steering function requirements.</td>
+              </tr>
+              <tr>
+                <td><strong>Steering drill records</strong></td>
+                <td>Check SOLAS steering test drill logs and confirm related navigation equipment and system requirements.</td>
+                <td>Deficiencies may affect statutory survey and PSC inspection results.</td>
+              </tr>
+              <tr>
+                <td><strong>Pre-1986 ship caution notices</strong></td>
+                <td>If applicable, confirm that a caution notice is posted at the bridge steering control position for operation with two power units running simultaneously.</td>
+                <td>When control abnormalities occur, crew need to know how to stop pumps one by one to restore steering command control.</td>
+              </tr>
+              <tr>
+                <td><strong>Telemotor / auxiliary or emergency steering</strong></td>
+                <td>Test telemotor gear where fitted; auxiliary or emergency steering systems, where provided, should also be tested.</td>
+                <td>Avoid a steering chain outside the main system being unavailable during a real emergency.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">Additional Source Note for Periodical Survey</div>
+          <p>
+            The SPM places functional testing of existing ships, drill records, caution notices, telemotor gear, and auxiliary / emergency steering tests under Scope and Conduct of Survey 5.1.6 to 5.1.10. The drill-record section refers to <strong>SOLAS Chapter V Regulation 19.2</strong>. Where a Chief Engineer self-inspection arrangement is used, the SPM lists only <strong>steering gear pumps</strong> as items that may be checked by the Chief Engineer; other steering gear surveyable items are outside that scope.
+            <span class="source-ref">SOLAS V/19.2</span>
+          </p>
+        </div>
+
+        <h3>Special Equipment: Azimuth Thruster</h3>
+        <p>
+          If the ship is fitted with <strong>azimuth thrusters</strong>, their steering systems should be checked together with the propulsion system survey, with particular attention to <strong>pinions</strong>, <strong>wheel rims</strong>, tooth wear, and tooth flank surface degradation.
+        </p>
+
+        <h3>Special Equipment: Rotary Vane Steering Gear</h3>
+        <p>
+          Some rotary vane steering gear seals are prone to wear. If the surveyor suspects that the steering gear no longer satisfies SOLAS Regulation 29, the owner or operator should contact the manufacturer for further advice.
+          <span class="source-ref">SOLAS II-1/29.3.2</span>
+        </p>
+
+        <div class="callout warn">
+          <div class="callout-title">Notes on A.E.G. Type Rotary Vane Steering Gear</div>
+          <p>
+            The SPM recommends not opening the vane unit outside factory conditions. If opening is unavoidable, strict precautions are needed to prevent contamination of the hydraulic system. If the unit cannot be sent to the factory, temporary screening should be arranged on site to make cleanliness as close as practicable to factory conditions. Periodical checks of A.E.G. type rotary vane steering gear also include an Engine Survey / CSM interval not exceeding 5 years, an approximately 7 bar pressure limit during hard-over operation, hard-over to hard-over time, and relief valve lifting pressure.
+          </p>
+        </div>
+      </section>
+
+      <section id="implications" class="section-card">
+        <h2>7. Technical and Regulatory Implications</h2>
+
+        <div class="callout info">
+          <div class="callout-title">1. Steering gear is both a class and statutory item</div>
+          <p>
+            The SPM refers to LR Rules, SOLAS, and IACS documents, showing that steering gear is <strong>safety-critical equipment</strong>. Steering gear failure may affect both class certificates and statutory safety certificates.
+            <span class="source-ref">LR Pt 5 Ch 19</span><span class="source-ref">SOLAS II-1/29</span><span class="source-ref">IACS UI SC94</span>
+          </p>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">2. Performance verification matters more than equipment count</div>
+          <p>
+            Two pumps or two power units do not automatically mean compliance. It must be demonstrated that, under the specified draught, speed, power, and failure conditions, the steering gear can still meet the required rudder movement time and steering capability.
+          </p>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">3. Redundant systems must avoid common-cause failure</div>
+          <p>
+            Tanker requirements, interconnected systems, automatic isolation, and caution notices for older ships all show that steering gear redundancy must avoid common-cause failure, such as shared hydraulic contamination, control conflict, or failed isolation.
+            <span class="source-ref">IACS UI SC94</span><span class="source-ref">IACS UI SC242</span>
+          </p>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">4. Installation quality directly affects reliability</div>
+          <p>
+            Keyless tiller contact, rudder stock push-up, foundation welding, resin chocking, holding-down bolts, alignment, and pipe supports all affect steering gear reliability under high load, high vibration, and rapid steering conditions.
+          </p>
+        </div>
+      </section>
+
+      <section id="pitfalls" class="section-card">
+        <h2>8. Common Pitfalls and Points to Watch</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Potential Confusion</th>
+                <th>Correct Understanding</th>
+                <th>Practical Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Do two pumps automatically mean compliance?</strong></td>
+                <td>Not necessarily. Performance, isolation, power supply, and control redundancy still need to be confirmed.</td>
+                <td>The equipment count may be sufficient, but steering may still be unavailable in an emergency.</td>
+              </tr>
+              <tr>
+                <td><strong>Main steering gear test angle</strong></td>
+                <td>It is 35° to 30° on the other side, not 35° to 35°.</td>
+                <td>Sea trial records or exam answers are easily written incorrectly.</td>
+              </tr>
+              <tr>
+                <td><strong>Dual-winding, dual-rating design</strong></td>
+                <td>The SPM clearly states that it is not acceptable.</td>
+                <td>Output may be insufficient in an emergency and fail to meet auxiliary steering requirements.</td>
+              </tr>
+              <tr>
+                <td><strong>Relief valve set pressure</strong></td>
+                <td>It is not the normal working pressure. Maximum sea trial working pressure should not exceed 80% of it.</td>
+                <td>Frequent relief valve lifting may indicate design or adjustment problems.</td>
+              </tr>
+              <tr>
+                <td><strong>Engineer's blue contact check</strong></td>
+                <td>It should be thin and even, not mixed with oil, and applied using a roller.</td>
+                <td>Applying it too thickly may produce false contact readings.</td>
+              </tr>
+              <tr>
+                <td><strong>Opening rotary vane steering gear</strong></td>
+                <td>It should not be opened casually outside factory conditions.</td>
+                <td>Hydraulic contamination may cause valve sticking, pump wear, and seal damage.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="summary" class="section-card">
+        <h2>9. Summary and Review Points</h2>
+
+        <div class="checklist">
+          <div class="check">Steering gear is safety-critical equipment governed by both class and SOLAS statutory requirements.</div>
+          <div class="check">The main steering gear performance point is 35° to 30° on the other side, total 65°, within 28 seconds.</div>
+          <div class="check">Auxiliary or emergency steering capability cannot be merely low-power movement; it must meet the specified performance.</div>
+          <div class="check">Dual-winding, dual-rating steering gear power units are not acceptable.</div>
+          <div class="check">Tanker steering gear arrangements require particular attention to redundancy, interconnection, automatic isolation, and common-cause failure.</div>
+          <div class="check">Rudder jumping clearance should ensure that the anti-jump arrangement takes upward rudder movement before the steering gear itself.</div>
+          <div class="check">Keyless tiller contact should reach 80-90%, and engineer's blue application affects interpretation.</div>
+          <div class="check">Sea trials should confirm rudder movement time, pressure, leakage, isolation, emergency power supply, communication, and alarms.</div>
+          <div class="check">Existing ship surveys focus on leakage, wear, hose age, pipe cracks, securing arrangements, and drill records.</div>
+          <div class="check">Major defects in the main or auxiliary steering gear may lead to conditional safety certificates.</div>
+        </div>
+
+        <div class="callout success">
+          <div class="callout-title">One-Sentence Summary</div>
+          <p>
+            This note organizes the class survey logic for steering gear from manufacture, installation, and sea trials to in-service surveys. Its core purpose is to help readers understand how to confirm that a ship has reliable and verifiable steering capability under both normal and emergency conditions.
+          </p>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">Certification, Reporting, and Defect Handling</div>
+          <p>
+            After sea trials, the SPM requires submission of the <strong>Report on Installation of Machinery, Form 2095</strong> under First Entry Procedures. During new construction, the <strong>fitting curve</strong> should be available on board. If a statutory survey finds that the main or auxiliary steering gear cannot operate properly and permanent repair cannot be completed at the survey port, a conditional Safety Construction Certificate, conditional Cargo Ship Safety Certificate, or conditional Passenger Ship Safety Certificate may be required.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="share-band" id="share">
+      <div
+            class="article-share article-share--end"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/steering-gear-notes.en.html"
+            data-share-title="Ship Steering Gear Survey Procedure Essentials | Reay's Note"
+            data-share-email-body="I found this maritime note by Reay and thought it might be useful for you:&#10;&#10;Ship Steering Gear Survey Procedure Essentials | Reay's Note&#10;https://reayhuang.com/notes/maritime/steering-gear-notes.en.html"
+            data-share-copy="Copy link"
+            data-share-copied="Copied"
+            data-toast-copied="Link copied to clipboard"
+          >
+            <p class="article-share__label" id="share-end-label">Found this useful? Share it with colleagues</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+          </div>
+    </section>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>Ship Steering Gear Survey Procedure Essentials | Reay's Note</strong>
+      <span class="small">Prepared by Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        This page is a visual learning note for study, internal training, and survey preparation. It does not represent the official view of Lloyd's Register, IMO, or any other organization.<span class="disclaimer-tail">Formal design, plan approval, survey, and compliance decisions should always be based on the latest LR Rules, SOLAS, LR SPM, flag Administration requirements, and official class opinions.</span>
+      </p>
+    </div>
+  </footer>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      const nav = document.querySelector(".jump-nav");
+      const spacer = document.querySelector(".jump-nav-spacer");
+      if (!nav || !spacer) return;
+
+      const navInner = nav.querySelector(".jump-nav-inner");
+      const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      let navTop = 0;
+      let activeId = "";
+
+      const measure = () => {
+        const wasFixed = nav.classList.contains("is-fixed");
+        if (wasFixed) nav.classList.remove("is-fixed");
+        spacer.style.height = "0px";
+        navTop = nav.getBoundingClientRect().top + window.scrollY;
+        if (wasFixed) update();
+      };
+
+      const update = () => {
+        const shouldStick = window.scrollY >= navTop;
+        nav.classList.toggle("is-fixed", shouldStick);
+        spacer.style.height = shouldStick ? `${nav.offsetHeight}px` : "0px";
+        updateActiveLink();
+      };
+
+      const centerActiveLink = (link) => {
+        if (!navInner || !link) return;
+        const targetLeft = link.offsetLeft - (navInner.clientWidth - link.offsetWidth) / 2;
+        navInner.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: "smooth"
+        });
+      };
+
+      const updateActiveLink = () => {
+        const offset = nav.offsetHeight + 24;
+        let current = sections[0];
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop <= offset) current = section;
+        });
+
+        if (!current || current.id === activeId) return;
+        activeId = current.id;
+
+        links.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${activeId}`;
+          link.classList.toggle("is-active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "true");
+            centerActiveLink(link);
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const hash = link.getAttribute("href");
+          const target = document.querySelector(hash);
+          if (!target) return;
+          event.preventDefault();
+          const gap = 12;
+          const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY;
+          const scrollTop = Math.max(targetTop - nav.offsetHeight - gap, 0);
+          window.scrollTo({ top: scrollTop, behavior: prefersReducedMotion ? "auto" : "smooth" });
+        });
+      });
+
+      measure();
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", measure);
+    })();
+  </script>
+</body>
+</html>

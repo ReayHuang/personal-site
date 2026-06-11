@@ -113,6 +113,13 @@
       "zh": "notes/maritime/lr-bwts-notes.html"
     },
     {
+      "slug": "steering-gear-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/steering-gear-notes.en.html",
+      "zh": "notes/maritime/steering-gear-notes.html"
+    },
+    {
       "slug": "maritime-cyber-resilience-notes",
       "type": "article",
       "category": "notes",

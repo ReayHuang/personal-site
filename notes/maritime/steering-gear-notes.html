@@ -1,0 +1,2285 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="舵機, steering gear, SOLAS II-1/29, LR Rules Pt 5 Ch 19, LR SPM, 海試, 驗船">
+  <meta property="og:title" content="船舶舵機檢驗程序要點｜Reay's Note">
+  <meta property="og:description" content="整理 LR Survey Procedures Manual（SPM）中舵機檢驗項目，涵蓋 SOLAS II-1/29、LR Rules Pt 5 Ch 19、應急操舵能力、海試與現有船檢查要求。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/steering-gear-notes.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/steering-gear-notes.html">
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/steering-gear/steering-gear-link-preview-1200.jpg">
+  <meta property="og:image:alt" content="船舶舵機檢驗程序要點｜Reay's Note">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="船舶舵機檢驗程序要點｜Reay's Note">
+  <meta name="twitter:description" content="整理 LR Survey Procedures Manual（SPM）中舵機檢驗項目，涵蓋 SOLAS II-1/29、LR Rules Pt 5 Ch 19、應急操舵能力、海試與現有船檢查要求。">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/steering-gear/steering-gear-link-preview-1200.jpg">
+  <link rel="alternate" hreflang="zh-Hant" href="steering-gear-notes.html">
+  <link rel="alternate" hreflang="en" href="steering-gear-notes.en.html">
+  <link rel="alternate" hreflang="x-default" href="steering-gear-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta name="description" content="整理 LR Survey Procedures Manual（SPM）中舵機檢驗項目，涵蓋 SOLAS II-1/29、LR Rules Pt 5 Ch 19、應急操舵能力、海試與現有船檢查要求。">
+  <title>船舶舵機檢驗程序要點｜Reay's Note</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    :root {
+      --navy: #102a43;
+      --blue: #1d4ed8;
+      --blue-soft: #dbeafe;
+      --cyan: #0891b2;
+      --green: #047857;
+      --green-soft: #d1fae5;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --red: #b91c1c;
+      --red-soft: #fee2e2;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --white: #ffffff;
+      --shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        "PingFang TC",
+        Arial,
+        sans-serif;
+      color: var(--gray-900);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 34%),
+        linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    .article-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: 18px 0 28px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(203, 213, 225, 0.86);
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-list {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 0;
+      scrollbar-width: none;
+    }
+
+    .nav-list a {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      color: var(--gray-700);
+      font-weight: 700;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .nav-list a:hover {
+      background: var(--blue-soft);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .nav-list a.is-active,
+    .nav-list a[aria-current="location"] {
+      background: var(--blue-soft);
+      border-color: rgba(29, 78, 216, 0.28);
+      color: var(--blue);
+      box-shadow: inset 0 0 0 1px rgba(29, 78, 216, 0.12);
+    }
+
+    main {
+      padding: 34px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(29, 78, 216, 0.88)),
+        linear-gradient(45deg, #0f172a, #1d4ed8);
+      border-radius: 28px;
+      padding: 48px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -120px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 4rem;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      margin: 22px 0 0;
+      font-size: 1.08rem;
+      max-width: 860px;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .hero strong {
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .quick-read {
+      margin-top: 0;
+    }
+
+    .quick-read-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .quick-read-point {
+      padding: 14px 16px;
+      border-left: 5px solid var(--blue);
+      border-radius: 12px;
+      background: var(--gray-50);
+      color: var(--gray-700);
+      font-weight: 700;
+    }
+
+    .quick-read-point strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .meta-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .meta-card span {
+      display: block;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.68);
+      font-weight: 800;
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 1rem;
+    }
+
+    .hero .meta-card strong {
+      color: var(--white);
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+      scroll-margin-top: 118px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 1.55rem;
+      line-height: 1.35;
+    }
+
+    h2::before {
+      content: "";
+      width: 8px;
+      height: 30px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--blue), var(--cyan));
+      flex: 0 0 auto;
+    }
+
+    h3 {
+      margin: 26px 0 10px;
+      color: var(--gray-900);
+      font-size: 1.18rem;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    strong {
+      color: var(--navy);
+    }
+
+    .source-ref {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      border: 1px solid rgba(8, 145, 178, 0.22);
+      color: #0f4c81;
+      font-size: 0.76rem;
+      font-weight: 900;
+      line-height: 1.55;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+
+    .hero .source-ref {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.28);
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .source-table td:first-child {
+      width: 28%;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .lead {
+      font-size: 1.04rem;
+      color: var(--gray-700);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0;
+    }
+
+    .kpi {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 20px;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+    }
+
+    .kpi::after {
+      content: "";
+      position: absolute;
+      right: -24px;
+      top: -24px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--blue-soft);
+    }
+
+    .kpi .number {
+      position: relative;
+      z-index: 1;
+      color: var(--blue);
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .kpi .label {
+      position: relative;
+      z-index: 1;
+      margin-top: 6px;
+      color: var(--gray-700);
+      font-weight: 800;
+    }
+
+    .kpi .note {
+      position: relative;
+      z-index: 1;
+      margin-top: 4px;
+      color: var(--gray-600);
+      font-size: 0.88rem;
+    }
+
+    .callout {
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 18px 0;
+      border-left: 6px solid;
+    }
+
+    .callout.info {
+      background: var(--blue-soft);
+      border-left-color: var(--blue);
+    }
+
+    .callout.warn {
+      background: var(--amber-soft);
+      border-left-color: var(--amber);
+    }
+
+    .callout.danger {
+      background: var(--red-soft);
+      border-left-color: var(--red);
+    }
+
+    .callout.success {
+      background: var(--green-soft);
+      border-left-color: var(--green);
+    }
+
+    .callout-title {
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      font-weight: 800;
+      font-size: 0.82rem;
+      border: 1px solid var(--gray-200);
+    }
+
+    .article-nav .tag {
+      line-height: 1.35;
+    }
+
+    .article-nav .nav-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 16px;
+      border: 1px solid var(--gray-200);
+      margin: 18px 0;
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: white;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    th {
+      background: #e0f2fe;
+      color: var(--navy);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .timeline-no {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(29, 78, 216, 0.25);
+    }
+
+    .timeline-content {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .timeline-content strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .flow-step {
+      position: relative;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+    }
+
+    .flow-step .step {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: #ffffff;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+    }
+
+    .check::before {
+      content: "✓";
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green-soft);
+      color: var(--green);
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .formula-box {
+      margin: 18px 0;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px dashed var(--blue);
+      background: #eff6ff;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      font-weight: 800;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    .note-figure {
+      margin: 18px 0;
+      padding: 14px;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      background: #ffffff;
+    }
+
+    .note-figure img {
+      display: block;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      height: auto;
+    }
+
+    .note-figure figcaption {
+      margin-top: 10px;
+      color: var(--gray-600);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .term {
+      border-radius: 16px;
+      border: 1px solid var(--gray-200);
+      background: white;
+      padding: 14px 16px;
+    }
+
+    .term strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .term span {
+      color: var(--gray-700);
+      font-size: 0.94rem;
+    }
+
+    .footer {
+      margin: 30px 0 0;
+      padding: 24px;
+      color: var(--gray-600);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 1080px) {
+      main {
+        padding: 22px;
+      }
+
+      .meta-grid,
+      .kpi-grid,
+      .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .article-nav {
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 16px;
+      }
+
+      .hero {
+        padding: 30px 22px;
+        border-radius: 22px;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      .meta-grid,
+      .kpi-grid,
+      .flow,
+      .checklist,
+      .quick-read-grid,
+      .term-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-card {
+        padding: 22px;
+        scroll-margin-top: 148px;
+      }
+
+      table {
+        min-width: 640px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .article-nav {
+        display: none;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      .hero,
+      .section-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .hero {
+        color: var(--gray-900);
+        background: white;
+        border: 2px solid var(--gray-300);
+      }
+
+      .meta-card {
+        color: var(--gray-900);
+        background: var(--gray-50);
+        border-color: var(--gray-300);
+      }
+
+      .meta-card span,
+      .hero-subtitle {
+        color: var(--gray-700);
+      }
+
+      .hero strong,
+      .hero .meta-card strong {
+        color: var(--gray-900);
+      }
+
+      a {
+        color: var(--gray-900);
+      }
+    }
+
+
+
+
+
+
+    .layout-reference .hero-content {
+      max-width: none;
+    }
+
+    .layout-reference .eyebrow {
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+
+    .layout-reference h1 {
+      font-size: 2.8rem;
+      line-height: 1.16;
+    }
+
+    .layout-reference .hero-subtitle {
+      max-width: 1060px;
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .layout-reference .meta-grid {
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .layout-reference .meta-card {
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+    /* Site shell — aligned with lr-bwts-notes */
+    :root {
+      --max: 1180px;
+      --ink: #061b22;
+      --muted: #5b6d73;
+      --line: #dce8e8;
+      --teal: #3accc2;
+      --green: #0b2b35;
+      --orange: #ff6b3d;
+      --soft-teal: #eefaf9;
+      --shell-radius: 8px;
+    }
+
+    body.steering-shell {
+      background: #ffffff;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.68;
+    }
+
+    body.steering-shell main {
+      overflow: visible;
+      padding: 0;
+    }
+
+    body.steering-shell .section.hero {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 0;
+      border-radius: 0;
+      box-shadow: none;
+      border-bottom: 1px solid rgba(58, 204, 194, 0.25);
+      background:
+        linear-gradient(90deg, rgba(7, 20, 35, 0.94) 0%, rgba(7, 20, 35, 0.72) 42%, rgba(7, 20, 35, 0.22) 100%),
+        url("../../assets/images/maritime/steering-gear/steering-gear-hero-cutaway.png") right center / cover no-repeat;
+    }
+
+    body.steering-shell .section.hero::after {
+      display: none;
+    }
+
+    body.steering-shell .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 22px 44px;
+    }
+
+    body.steering-shell .hero-content {
+      max-width: none;
+    }
+
+    body.steering-shell .hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      max-width: 100%;
+      margin: 0 0 24px;
+      min-height: 48px;
+      padding: 11px 20px;
+      border: 1px solid rgba(143, 255, 242, 0.38);
+      border-radius: 999px;
+      background: rgba(14, 89, 100, 0.34);
+      color: #dffaff;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.28;
+      text-transform: uppercase;
+    }
+
+    body.steering-shell .hero .eyebrow::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 10px;
+      height: 10px;
+      margin-right: 14px;
+      border-radius: 50%;
+      background: #38d4dc;
+    }
+
+    body.steering-shell h1 {
+      color: #fff;
+      font-size: clamp(2rem, 4.8vw, 2.8rem);
+      line-height: 1.16;
+    }
+
+    body.steering-shell .hero .article-meta {
+      margin: 16px 0 18px;
+      max-width: 900px;
+    }
+
+    body.steering-shell .hero .article-share--hero {
+      margin-top: 28px;
+    }
+
+    body.steering-shell .hero-subtitle {
+      margin-top: 16px;
+      font-size: 1rem;
+      max-width: 900px;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    body.steering-shell .meta-grid {
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    body.steering-shell .meta-card {
+      padding: 12px 14px;
+      border-radius: var(--shell-radius);
+    }
+
+    body.steering-shell .jump-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    body.steering-shell .jump-nav.is-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 12px 28px rgba(7, 23, 32, 0.12);
+    }
+
+    body.steering-shell .jump-nav-spacer {
+      height: 0;
+    }
+
+    body.steering-shell .jump-nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    body.steering-shell .jump-nav a {
+      white-space: nowrap;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 850;
+      padding: 8px 12px;
+      border-radius: var(--shell-radius);
+      border: 1px solid transparent;
+    }
+
+    body.steering-shell .jump-nav a.is-active,
+    body.steering-shell .jump-nav a[aria-current="true"] {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    body.steering-shell .jump-nav a:hover {
+      background: var(--soft-teal);
+    }
+
+    body.steering-shell .jump-nav a.is-active:hover,
+    body.steering-shell .jump-nav a[aria-current="true"]:hover {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    body.steering-shell .article-body {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 22px 12px;
+    }
+
+    body.steering-shell .article-body > section {
+      margin-top: 18px;
+    }
+
+    body.steering-shell .section-card {
+      padding: 22px;
+      border-radius: var(--shell-radius);
+      box-shadow: none;
+      background: #ffffff;
+      border: 1px solid rgba(220, 232, 232, 0.95);
+      scroll-margin-top: 72px;
+    }
+
+    body.steering-shell .share-band {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 22px 32px;
+    }
+
+    body.steering-shell footer.site-footer {
+      margin: 0;
+      padding: 36px 0 44px;
+      background: #061b22;
+      color: rgba(255, 255, 255, 0.82);
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    body.steering-shell footer.site-footer .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    body.steering-shell footer.site-footer strong {
+      color: #fff;
+    }
+
+    body.steering-shell footer.site-footer a {
+      color: #8ffff2;
+    }
+
+    body.steering-shell footer.site-footer .small {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 13px;
+    }
+
+    body.steering-shell footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 760px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (min-width: 1101px) {
+      body.steering-shell footer.site-footer .disclaimer-tail {
+        display: block;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body.steering-shell .hero-inner {
+        padding: 36px 16px 32px;
+      }
+
+      body.steering-shell .article-body,
+      body.steering-shell .share-band {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      body.steering-shell .jump-nav-inner {
+        padding: 10px 16px;
+      }
+
+      body.steering-shell .section-card {
+        scroll-margin-top: 64px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .article-nav {
+        display: none;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      .hero,
+      .section-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .hero {
+        color: var(--gray-900);
+        background: white;
+        border: 2px solid var(--gray-300);
+      }
+
+      .meta-card {
+        color: var(--gray-900);
+        background: var(--gray-50);
+        border-color: var(--gray-300);
+      }
+
+      .meta-card span,
+      .hero-subtitle {
+        color: var(--gray-700);
+      }
+
+      .hero strong,
+      .hero .meta-card strong {
+        color: var(--gray-900);
+      }
+
+      a {
+        color: var(--gray-900);
+      }
+    }
+
+
+
+
+
+
+    .layout-reference .hero-content {
+      max-width: none;
+    }
+
+    .layout-reference .eyebrow {
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+
+    .layout-reference h1 {
+      font-size: 2.8rem;
+      line-height: 1.16;
+    }
+
+    .layout-reference .hero-subtitle {
+      max-width: 1060px;
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .layout-reference .meta-grid {
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .layout-reference .meta-card {
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+
+    .layout-reference .nav-list {
+      flex-wrap: wrap;
+      gap: 6px;
+      overflow-x: visible;
+    }
+
+    .layout-reference .nav-list a {
+      padding: 6px 9px;
+      border-radius: 7px;
+      font-size: 0.88rem;
+    }
+
+    .layout-reference section {
+      margin-top: 18px;
+    }
+
+    .layout-reference .section-card {
+      padding: 22px;
+      border-radius: 8px;
+      box-shadow: none;
+      background: #ffffff;
+      scroll-margin-top: 110px;
+    }
+
+    .layout-reference h2 {
+      margin-bottom: 14px;
+      font-size: 1.34rem;
+    }
+
+    .layout-reference h2::before {
+      width: 6px;
+      height: 24px;
+    }
+
+    .layout-reference h3 {
+      margin: 20px 0 8px;
+      font-size: 1.04rem;
+    }
+
+    .layout-reference p {
+      margin: 8px 0;
+    }
+
+    .layout-reference .lead {
+      font-size: 1rem;
+    }
+
+    .layout-reference .quick-read-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .layout-reference .quick-read-point {
+      padding: 12px;
+      border-left-width: 4px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+    }
+
+    .layout-reference .kpi-grid {
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .layout-reference .kpi {
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
+    .layout-reference .kpi::after {
+      width: 58px;
+      height: 58px;
+    }
+
+    .layout-reference .kpi .number {
+      font-size: 1.75rem;
+    }
+
+    .layout-reference .callout {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left-width: 4px;
+      border-radius: 8px;
+    }
+
+    .layout-reference .table-wrap,
+    .layout-reference .formula-box,
+    .layout-reference .note-figure,
+    .layout-reference .flow-step,
+    .layout-reference .check {
+      border-radius: 8px;
+    }
+
+    .layout-reference table {
+      min-width: 720px;
+      font-size: 0.92rem;
+    }
+
+    .layout-reference th,
+    .layout-reference td {
+      padding: 10px 12px;
+      line-height: 1.65;
+    }
+
+    .layout-reference .timeline {
+      gap: 10px;
+    }
+
+    .layout-reference .timeline-item {
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .layout-reference .timeline-no {
+      width: 32px;
+      height: 32px;
+    }
+
+    .layout-reference .timeline-content {
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+    .layout-reference .flow {
+      gap: 10px;
+    }
+
+    .layout-reference .flow-step {
+      padding: 12px;
+      box-shadow: none;
+    }
+
+    .layout-reference .flow-step .step {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      margin-bottom: 6px;
+    }
+
+    .layout-reference .checklist {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .layout-reference .check {
+      padding: 10px 12px;
+    }
+
+    .layout-reference .check::before {
+      width: 20px;
+      height: 20px;
+      font-size: 0.78rem;
+    }
+
+    .layout-reference .note-figure {
+      padding: 10px;
+    }
+
+    .layout-reference .note-figure img {
+      max-width: 640px;
+    }
+
+    .layout-reference .footer {
+      margin-top: 18px;
+      padding: 18px;
+    }
+
+    @media (max-width: 1080px) {
+      .layout-reference .quick-read-grid,
+      .layout-reference .checklist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .layout-reference main {
+        padding: 16px;
+      }
+
+      .layout-reference .hero {
+        padding: 26px 20px;
+      }
+
+      .layout-reference h1 {
+        font-size: 2.15rem;
+      }
+
+      .layout-reference .nav-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      .layout-reference .quick-read-grid,
+      .layout-reference .checklist {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    .layout-reference .hero .article-meta {
+      margin: 14px 0 0;
+      max-width: 1060px;
+    }
+
+    .layout-reference .hero .article-share--hero {
+      margin-top: 18px;
+    }
+
+
+
+
+
+
+
+
+
+    @media (max-width: 720px) {
+
+    }
+
+    @media print {
+      .note-site-bar,
+      .article-share,
+      .share-band {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="layout-reference steering-shell">
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="steering-gear-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="steering-gear-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="section hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">LR SPM · 舵機檢驗要點 · Reay's Note</p>
+          <h1>船舶舵機檢驗程序要點</h1>
+          <p class="article-meta">
+            <span>📅 更新：2026-06-11</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 閱讀約 15 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 LR SPM / 舵機檢驗 / SOLAS II-1/29</span>
+          </p>
+          <p class="hero-subtitle">
+            這篇筆記整理 LR Survey Procedures Manual（SPM）針對舵機的檢驗項目，梳理舵機在製造、安裝、海試、定期檢驗、缺陷處理與報告紀錄中的檢驗邏輯，
+            重點涵蓋 <strong>SOLAS 第 II-1 章第 29 條</strong><span class="source-ref">SOLAS II-1/29</span>、<strong>LR 船級規則第 5 篇第 19 章</strong><span class="source-ref">LR Pt 5 Ch 19</span>、
+            舵機動力配置、應急操舵能力、海試與現有船檢查要求。
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-card">
+              <span>筆記類型</span>
+              <strong>檢驗程序筆記</strong>
+            </div>
+            <div class="meta-card">
+              <span>主題設備</span>
+              <strong>舵機（Steering Gear）</strong>
+            </div>
+            <div class="meta-card">
+              <span>主要法規</span>
+              <strong>SOLAS II-1/29<br />LR Rules Pt 5 Ch 19</strong>
+            </div>
+            <div class="meta-card">
+              <span>適用情境</span>
+              <strong>新造船／現有船</strong>
+            </div>
+          </div>
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/steering-gear-notes.html"
+            data-share-title="船舶舵機檢驗程序要點｜Reay's Note"
+            data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船舶舵機檢驗程序要點｜Reay's Note&#10;https://reayhuang.com/notes/maritime/steering-gear-notes.html"
+            data-share-copy="複製連結"
+            data-share-copied="已複製"
+            data-toast-copied="連結已複製到剪貼簿"
+          >
+            <p class="article-share__label" id="share-hero-label">分享此篇</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump-nav" aria-label="快速導覽">
+      <div class="jump-nav-inner">
+          <a href="#quick-read">快速閱讀</a>
+          <a href="#overview">筆記主題</a>
+          <a href="#structure">筆記架構</a>
+          <a href="#core">核心內容</a>
+          <a href="#performance">性能要求</a>
+          <a href="#installation">安裝與海試</a>
+          <a href="#periodical">定期檢驗</a>
+          <a href="#implications">技術與法規意涵</a>
+          <a href="#pitfalls">易混淆處</a>
+          <a href="#summary">複習重點</a>
+      </div>
+    </nav>
+    <div class="jump-nav-spacer" aria-hidden="true"></div>
+
+    <div class="article-body">
+      <section id="quick-read" class="section-card quick-read">
+        <h2>快速閱讀｜30 秒抓重點</h2>
+        <p class="lead">
+          這篇文章可以先抓住一個主軸：舵機檢驗不是只確認設備存在，而是確認船舶在正常與應急狀態下，
+          仍能以可驗證的時間、壓力、供電與隔離能力完成操舵。
+        </p>
+
+        <div class="quick-read-grid">
+          <div class="quick-read-point">
+            <strong>主舵機性能</strong>
+            海試重點是由一舷 35° 轉至另一舷 30°，總計 65°，時間不得超過 28 秒。<span class="source-ref">SOLAS II-1/29.3.2</span><span class="source-ref">LR Pt 5 Ch 19/7.2</span>
+          </div>
+          <div class="quick-read-point">
+            <strong>應急操舵不是低功率可動</strong>
+            應急供電與動力單元配置必須能滿足規定操舵能力，雙繞組雙額定設計不可接受。<span class="source-ref">SOLAS II-1/29.6.1</span><span class="source-ref">SOLAS II-1/30.2</span>
+          </div>
+          <div class="quick-read-point">
+            <strong>油輪重點在冗餘與隔離</strong>
+            對互聯系統、自動隔離與共因失效要特別敏感，不能只用泵或動力單元數量判斷合格。<span class="source-ref">SOLAS II-1/29.19-20</span><span class="source-ref">IACS UI SC94</span>
+          </div>
+          <div class="quick-read-point">
+            <strong>現場檢查看安裝品質</strong>
+            無鍵舵柄接觸率、舵跳間隙、基座固定、液壓洩漏、管路支撐與演練紀錄都會影響結論。
+          </div>
+        </div>
+      </section>
+
+      <section id="overview" class="section-card">
+        <h2>一、筆記主題與背景</h2>
+        <p class="lead">
+          本筆記的核心目的，是說明如何依據 <strong>LR 船級規則</strong> 與
+          <strong>SOLAS 國際海上人命安全公約</strong>，對船舶 <strong>舵機（Steering Gear）</strong>
+          進行檢驗、測試、確認與紀錄化。
+        </p>
+
+        <div class="table-wrap">
+          <table class="source-table">
+            <thead>
+              <tr>
+                <th>出處類型</th>
+                <th>本筆記引用位置</th>
+                <th>章節編號／文件代號</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SOLAS 舵機要求</td>
+                <td>主舵機性能、輔助／應急操舵能力、油輪舵機安排。</td>
+                <td>第 II-1 章 C 部第 29 條；其中海試條件見第 29.3.2 條，雙動力單元免設輔助舵機見第 29.6.1 條，舊油輪安排見第 29.19-20 條。</td>
+              </tr>
+              <tr>
+                <td>SOLAS 應急配電</td>
+                <td>其中一路舵機電路可通過應急配電板（emergency switchboard）。</td>
+                <td>第 II-1 章第 30.2 條；LR 對應規則為《LR 船級規則》第 5 篇第 19 章第 5.1.6 條。</td>
+              </tr>
+              <tr>
+                <td>LR 船級規則</td>
+                <td>舵機配置、組件、動力單元、海試與試驗要求。</td>
+                <td>《LR 船級規則》第 5 篇第 19 章（Rules for Ships Pt 5, Ch 19）；常用章節包括 2.1.4、3.2、5.1.6、6.1、7.2。</td>
+              </tr>
+              <tr>
+                <td>IACS / IMO 參考</td>
+                <td>控制系統獨立性、非傳統推進／操舵安排、應急操舵位置航向資訊。</td>
+                <td>IACS UI SC94、IACS UI SC242、IACS Rec.16；小型或特殊服務船另見 LR 特殊服務船規則第 14 篇（Special Service Craft Pt 14）。</td>
+              </tr>
+              <tr>
+                <td>原檢驗手冊</td>
+                <td>本文中的安裝、海試、定期檢驗、證書與報告程序。</td>
+                <td>《檢驗程序手冊：可檢驗項目－舵機》（Survey Procedures Manual - Surveyable Items - Steering Gear）；內文以導論、檢驗範圍、檢驗前提、首次入級、證書文件等手冊章節整理。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">筆記定位</div>
+          <p>
+            本筆記整理的對象不是單純的設計規範，而是給驗船師、船廠、製造商與船上人員使用的
+            <strong>檢驗程序性要求</strong>。重點不是「舵機是否存在」，
+            而是「舵機在正常與應急狀態下是否仍具備可靠操舵能力」。
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>適用情境</th>
+                <th>主要內容</th>
+                <th>實務重點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>製造廠零組件與設備檢驗</strong></td>
+                <td>檢查材料、證書、組件、試驗安排。</td>
+                <td>確認舵機設備於出廠前符合船級要求。</td>
+              </tr>
+              <tr>
+                <td><strong>新造船製造廠檢驗</strong></td>
+                <td>檢查舵機本體製造、裝配與測試。</td>
+                <td>重點在於證書、硬印、組件符合性與製造品質。</td>
+              </tr>
+              <tr>
+                <td><strong>新造船船廠安裝檢驗</strong></td>
+                <td>檢查基座、對中、壓配、固定與功能測試。</td>
+                <td>安裝品質會直接影響後續海試與營運可靠性。</td>
+              </tr>
+              <tr>
+                <td><strong>現有船定期檢驗</strong></td>
+                <td>檢查洩漏、磨耗、軟管、管路、操舵演練紀錄。</td>
+                <td>重點轉向服役後老化、損傷與功能保持。</td>
+              </tr>
+              <tr>
+                <td><strong>狀況檢驗</strong></td>
+                <td>針對既有船舶或裝置之現況評估。</td>
+                <td>需描述舵機型式、硬舵測試與舵角指示正確性。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">法規提醒</div>
+          <p>
+            SOLAS、LR 船級規則（LR Rules）、IACS UI 與船旗國要求可能更新。實務設計、審查或檢驗時，
+            必須以最新版正式文件、主管機關公告與船級社審查意見為準。
+          </p>
+        </div>
+      </section>
+
+      <section id="structure" class="section-card">
+        <h2>二、筆記架構</h2>
+        <p>
+          本筆記依照舵機設備的完整生命週期檢驗流程整理：
+          從 <strong>規範依據</strong>、<strong>圖面提交</strong>、<strong>製造檢驗</strong>、
+          <strong>船廠安裝</strong>、<strong>海試驗證</strong> 到 <strong>現有船定期檢驗</strong>。
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-no">1</div>
+            <div class="timeline-content">
+              <strong>導論（Introduction）</strong>
+              說明適用程序、應急操舵能力、雙動力單元與不可接受的雙繞組雙額定設計。
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-no">2</div>
+            <div class="timeline-content">
+              <strong>規則、法規與其他要求（Rules, Regulations and Other Requirements）</strong>
+              列出 LR 船級規則（LR Rules）、SOLAS、IACS UI 與相關參考文件。
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-no">3</div>
+            <div class="timeline-content">
+              <strong>圖面與資料提交（Submission of Plans）</strong>
+              要求提交圖面、規格與檢驗試驗計畫，並納入船旗國法定要求。
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-no">4</div>
+            <div class="timeline-content">
+              <strong>檢驗範圍與執行（Scope and Conduct of Survey）</strong>
+              涵蓋舵跳間隙、作動器密封、無鍵舵柄、海試與現有船檢驗。
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-no">5</div>
+            <div class="timeline-content">
+              <strong>證書、文件與報告（Certification, Documentation and Reporting）</strong>
+              說明配合曲線（fitting curve）、海試報告、缺陷處理與條件證書要求。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="core" class="section-card">
+        <h2>三、核心內容解析</h2>
+
+        <h3>1. 應急操舵能力與動力單元配置</h3>
+        <p>
+          原檢驗手冊特別討論 <strong>應急操舵動力（Emergency Steering Power）</strong>。
+          若船舶裝有 <strong>兩個或以上相同動力單元（two or more identical power units）</strong>，
+          在特定條件下可不設獨立 <strong>輔助舵機（Auxiliary Steering Gear）</strong>。
+          <span class="source-ref">LR Pt 5 Ch 19/2.1.4</span><span class="source-ref">SOLAS II-1/29.6.1</span>
+        </p>
+
+        <div class="callout success">
+          <div class="callout-title">標準解釋</div>
+          <p>
+            應急發電機應能承擔其中一組相同舵機動力單元的功率需求。
+            換言之，應急狀態下不能只是讓舵機「低功率勉強可動」，
+            而應滿足規定的應急操舵性能。原檢驗手冊同時列明，其中一路電路可通過
+            <strong>應急配電板（emergency switchboard）</strong>。
+            <span class="source-ref">LR Pt 5 Ch 19/5.1.6</span><span class="source-ref">SOLAS II-1/30.2</span>
+          </p>
+        </div>
+
+        <div class="callout danger">
+          <div class="callout-title">不可接受設計</div>
+          <p>
+            原檢驗手冊明確指出：具有 <strong>雙繞組（two windings）</strong> 且允許
+            <strong>雙額定（dual rating）</strong> 的舵機動力單元不可接受。
+            因為在全船失電（blackout）等應急狀態下切換至較低額定功率，
+            可能無法滿足輔助操舵能力要求。
+            <span class="source-ref">SOLAS II-1/29</span><span class="source-ref">LR Pt 5 Ch 19/6.1</span>
+          </p>
+        </div>
+
+        <h3>2. 不同船型與舵機配置</h3>
+        <p>
+          原檢驗手冊中的 <strong>預期配置表（Table 2.2 Expected arrangements）</strong>
+          是全文重要表格，整理貨船、油輪及不同舵機配置下的性能與冗餘要求。
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>船型</th>
+                <th>舵機配置</th>
+                <th>動力單元</th>
+                <th>性能要求</th>
+                <th>實務備註</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>貨船（Cargo Ship）</strong></td>
+                <td>主舵機 + 輔助舵機</td>
+                <td>一個或以上</td>
+                <td>主舵機 65°／28 秒；輔助舵機 30°／60 秒</td>
+                <td>原檢驗手冊指出此配置現在較少見。</td>
+              </tr>
+              <tr>
+                <td><strong>貨船（Cargo Ships）</strong></td>
+                <td>一套舵機，兩個或以上動力單元</td>
+                <td>兩個或以上</td>
+                <td>全部動力單元達成 65°／28 秒</td>
+                <td>非常常見。</td>
+              </tr>
+              <tr>
+                <td><strong>油輪（Tankers &gt; 10,000 grt）</strong></td>
+                <td>兩套獨立動力作動系統（power actuating systems）</td>
+                <td>兩個或以上相同單元</td>
+                <td>每套系統均需達成 65°／28 秒</td>
+                <td>要求嚴格，但原檢驗手冊指出較少見。</td>
+              </tr>
+              <tr>
+                <td><strong>油輪（Tankers &gt; 10,000 grt）</strong></td>
+                <td>兩套互聯且具自動隔離系統</td>
+                <td>兩個或以上相同單元</td>
+                <td>全部動力單元達成 65°／28 秒</td>
+                <td>常見配置，重點是自動隔離。</td>
+              </tr>
+              <tr>
+                <td><strong>油輪（Tankers &gt; 10,000 grt &lt; 100,000 dwt）</strong></td>
+                <td>一套動力作動系統（power actuating system）特許安排</td>
+                <td>兩個或以上相同單元</td>
+                <td>全部動力單元達成 65°／28 秒</td>
+                <td>需符合 IMO 指引及自動隔離要求。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">技術邏輯</div>
+          <p>
+            舵機安全不是單純看設備數量，而是要確認在故障、隔離、失電或液壓異常時，
+            船舶仍能維持足夠操縱能力。對油輪而言，因風險較高，冗餘與自動隔離要求也更嚴格；
+            舊油輪安排仍需符合 SOLAS 第 29 條相關段落，以維持安全構造證書（Safety Construction Certificate）有效性。
+            <span class="source-ref">SOLAS II-1/29.19-20</span>
+          </p>
+        </div>
+      </section>
+
+      <section id="performance" class="section-card">
+        <h2>四、性能要求與關鍵數值</h2>
+
+        <div class="kpi-grid">
+          <div class="kpi">
+            <div class="number">35°</div>
+            <div class="label">起始舵角</div>
+            <div class="note">由任一舷 35° 開始轉舵</div>
+          </div>
+
+          <div class="kpi">
+            <div class="number">30°</div>
+            <div class="label">目標舵角</div>
+            <div class="note">轉至另一舷 30°</div>
+          </div>
+
+          <div class="kpi">
+            <div class="number">65°</div>
+            <div class="label">總轉舵角</div>
+            <div class="note">35° + 30°</div>
+          </div>
+
+          <div class="kpi">
+            <div class="number">28 秒</div>
+            <div class="label">主舵機限制</div>
+            <div class="note">時間不得超過 28 秒</div>
+          </div>
+        </div>
+
+        <div class="formula-box">
+          主舵機性能要求：一舷 35° → 另一舷 30°，總角度 65°，時間 ≤ 28 秒
+          <span class="source-ref">SOLAS II-1/29.3.2</span>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">海試條件與替代驗證</div>
+          <p>
+            原檢驗手冊引用 SOLAS 要求：舵機測試原則上應在船舶最深海上吃水、
+            以前進最大服務航速進行；若海試時無法實際證明，得在主管機關滿意的前提下採用替代驗證。
+            LR 規則則將海試要求列於 <strong>《LR 船級規則》第 5 篇第 19 章第 7.2 節試驗（Rules for Ships Pt 5, Ch 19, 7.2 Trials）</strong>。
+            <span class="source-ref">SOLAS II-1/29.3.2</span><span class="source-ref">LR Pt 5 Ch 19/7.2</span>
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>系統</th>
+                <th>性能要求</th>
+                <th>驗證意義</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>主舵機（Main Steering Gear）</strong></td>
+                <td>35° 至另一舷 30°，總計 65°，不得超過 28 秒；原檢驗手冊說明此測試以主舵機運轉完成。</td>
+                <td>驗證正常最大服務條件下的操舵能力。</td>
+              </tr>
+              <tr>
+                <td><strong>輔助舵機（Auxiliary Steering Gear）</strong></td>
+                <td>通常為 30°（15° 到另一舷 15°）／60 秒，於半速或 7 kn 條件下驗證；用以對照主舵機失效後的應急操舵能力。</td>
+                <td>驗證主舵機失效後仍可維持基本操縱能力。</td>
+              </tr>
+              <tr>
+                <td><strong>洩壓閥（Relief Valve）</strong></td>
+                <td>海試最大工作壓力不應超過設定壓力的 80%。</td>
+                <td>避免正常操舵時接近安全閥開啟狀態。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">常見錯誤</div>
+          <p>
+            主舵機海試不是 35° 到 35°，而是 <strong>35° 到另一舷 30°</strong>。
+            因此總轉舵角是 <strong>65°</strong>，不是 70°。
+          </p>
+        </div>
+      </section>
+
+      <section id="installation" class="section-card">
+        <h2>五、安裝、配合與海試</h2>
+
+        <h3>1. 舵跳間隙（Rudder jumping clearance）</h3>
+        <p>
+          原檢驗手冊的舵跳間隙圖示說明，為避免舵上跳時損壞舵機，
+          <strong>舵升間隙／舵柄間隙（rudder lift／tiller clearance）</strong> 必須大於舵與船體固定
+          <strong>防跳裝置（anti-jump arrangement）</strong> 之間的間隙。
+        </p>
+
+        <figure class="note-figure">
+          <img
+            src="../../assets/images/maritime/steering-gear/rudder-jumping-clearance-lr-spm.jpg"
+            alt="舵跳間隙與防跳裝置間隙示意圖"
+          />
+          <figcaption>舵跳間隙與防跳裝置間隙示意。資料來源：LR Survey Procedures Manual。</figcaption>
+        </figure>
+
+        <div class="formula-box">
+          舵機處間隙 ＞ 舵與防跳裝置間隙
+        </div>
+
+        <p>
+          其工程意義是：當舵因外力、海況或垂向運動上跳時，應先由船體固定防跳裝置限制，
+          而不是讓衝擊力直接傳遞至舵柄、舵桿或舵機本體。
+        </p>
+
+        <div class="callout info">
+          <div class="callout-title">作動器密封與組件要求</div>
+          <p>
+            原檢驗手冊另提醒，部分擺動活塞作動器（oscillating piston actuators）的密封安排需依適用規則確認。
+            外部壓力邊界在活塞桿（piston rod）處通常採單一壓力密封（pressure seal）加單一刮油密封（wiper seal）；
+            該安排可被接受為滿足重複密封要求。組件檢驗則需確認硬印與證書符合規則。
+            <span class="source-ref">LR Pt 5 Ch 19/3.2</span>
+          </p>
+        </div>
+
+        <h3>2. 液壓缸式舵機（Ram Type Steering Gear）｜安裝流程</h3>
+        <p>
+          原檢驗手冊的安裝與測試流程圖顯示典型液壓缸式舵機（ram type steering gear）的安裝與測試程序，
+          可視為船廠現場檢查清單。船廠／製造廠還需注意舵柄頂部（tiller top）上的警示牌，
+          其內容應標示核准最大配合壓力（fitting pressure），且安裝時不得超過。
+        </p>
+
+        <div class="flow">
+          <div class="flow-step">
+            <div class="step">1</div>
+            <strong>錐面接觸檢查</strong>
+            <p>檢查上部舵桿錐面（upper rudder stock cone）與舵柄（tiller）的接觸狀況。</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">2</div>
+            <strong>基座製作</strong>
+            <p>製作舵機基座總成（steering gear foundation assembly）。</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">3</div>
+            <strong>舵桿推入配合</strong>
+            <p>執行舵桿推入配合至舵柄（rudder stock push fitting to tiller）。</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">4</div>
+            <strong>螺母與防鬆件</strong>
+            <p>安裝舵桿螺母（rudder stock nut）與防鬆片（locking tab）。</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">5</div>
+            <strong>泵、缸與液壓缸（ram）對中</strong>
+            <p>以舵桿作為基準（datum）進行對中（alignment）。</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">6</div>
+            <strong>墊塊與固定</strong>
+            <p>進行墊塊施工（chocking）、樹脂墊塊（resin chocking）、硬度與地腳螺栓檢查。</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">7</div>
+            <strong>碼頭功能測試</strong>
+            <p>確認安全閥、自動隔離、警報與控制功能。</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">8</div>
+            <strong>海試</strong>
+            <p>驗證操舵效率、轉舵時間、壓力、洩漏與應急功能。</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="step">9</div>
+            <strong>提交海試資料</strong>
+            <p>完成首次入級報告（First Entry Report）與海試資料（Sea Trials Data）。</p>
+          </div>
+        </div>
+
+        <h3>3. 海試（Sea Trials）｜檢驗重點</h3>
+        <p>
+          舵機海試不是只測轉舵時間，而是同時確認液壓完整性、控制可靠性、
+          冗餘隔離、應急供電、通訊與指示系統。
+        </p>
+
+        <div class="checklist">
+          <div class="check">記錄船舶吃水。</div>
+          <div class="check">記錄 35° 至另一舷 30° 的轉舵時間。</div>
+          <div class="check">記錄海試時最大液壓壓力。</div>
+          <div class="check">確認舵機液壓缸（steering rams）、泵軸封（pump glands）與閥桿（valve stems）無洩漏。</div>
+          <div class="check">確認管路與電纜支撐良好，無過度振動。</div>
+          <div class="check">確認液壓油高位櫃液位維持。</div>
+          <div class="check">確認一套動力作動系統（power actuating system）可與另一套隔離。</div>
+          <div class="check">確認洩壓閥（relief valve）無異常連續開啟。</div>
+          <div class="check">確認應急操舵電源（emergency steering power supplies）切換與操作正常。</div>
+          <div class="check">確認防液壓鎖死（anti-hydraulic lock）功能。</div>
+          <div class="check">確認舵機室與駕駛台通訊。</div>
+          <div class="check">確認陀螺複示器（gyro repeater）與駕駛台航向一致。</div>
+        </div>
+      </section>
+
+      <section id="periodical" class="section-card">
+        <h2>六、現有船定期檢驗</h2>
+        <p>
+          現有船的檢驗重點，從新造階段的「設計與安裝符合性」轉為
+          <strong>老化、磨耗、洩漏、支撐、功能測試與紀錄確認</strong>。
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>檢查範圍</th>
+                <th>主要檢查內容</th>
+                <th>風險意涵</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>舵機艙可接近性</strong></td>
+                <td>檢查機械部件、扶手、防滑面。</td>
+                <td>影響檢修與應急操作安全。</td>
+              </tr>
+              <tr>
+                <td><strong>液壓管路</strong></td>
+                <td>檢查裂紋、法蘭連接、應力集中、支撐不足。</td>
+                <td>振動可能導致疲勞裂紋與洩漏。</td>
+              </tr>
+              <tr>
+                <td><strong>撓性軟管</strong></td>
+                <td>檢查損傷與日期標示，必要時換新。</td>
+                <td>老化軟管可能於高壓操舵時破裂。</td>
+              </tr>
+              <tr>
+                <td><strong>機械連桿與固定件</strong></td>
+                <td>檢查銷（pins）、固定安排（securing arrangements）與地腳固定安排（holding down arrangements）。</td>
+                <td>鬆脫或磨耗會造成控制不準或結構失效。</td>
+              </tr>
+              <tr>
+                <td><strong>功能測試</strong></td>
+                <td>測試主舵機、輔助舵機、應急舵機與遙控傳動裝置（telemotor gear）。</td>
+                <td>確認系統仍符合操舵功能要求。</td>
+              </tr>
+              <tr>
+                <td><strong>操舵演練紀錄</strong></td>
+                <td>檢查 SOLAS 要求之操舵演練紀錄（test drills log），並確認相關導航設備與系統要求。</td>
+                <td>缺失可能影響法定檢查與 PSC 檢查結果。</td>
+              </tr>
+              <tr>
+                <td><strong>1986 年前船舶警示牌</strong></td>
+                <td>如適用，確認駕駛台操舵控制位置（steering control position）張貼兩台動力單元（power units）同時運轉時之注意標示（caution notice）。</td>
+                <td>控制系統異常時，船員需知道如何逐一停止泵以恢復舵令控制。</td>
+              </tr>
+              <tr>
+                <td><strong>遙控傳動裝置／輔助或應急操舵（Telemotor）</strong></td>
+                <td>遙控傳動裝置（telemotor gear）如有裝設需測試；若有輔助或應急操舵系統（auxiliary or emergency steering system），也需測試。</td>
+                <td>避免主系統以外的操舵鏈在實際應急時無法使用。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">定期檢驗出處補充</div>
+          <p>
+            原檢驗手冊將現有船功能測試、演練紀錄、警示牌、遙控傳動裝置（telemotor gear）與輔助／應急操舵測試
+            列在檢驗範圍與執行（Scope and Conduct of Survey）5.1.6 至 5.1.10；其中演練紀錄段落引用
+            <strong>SOLAS 第 V 章第 19.2 條</strong>。若採輪機長（Chief Engineer）自檢安排，原檢驗手冊只將
+            <strong>舵機泵（steering gear pumps）</strong> 列為可由輪機長檢查的項目，其他舵機可檢驗項目（steering gear surveyable items）
+            不在此範圍內。
+            <span class="source-ref">SOLAS V/19.2</span>
+          </p>
+        </div>
+
+        <h3>特殊設備：方位推進器（Azimuth Thruster）</h3>
+        <p>
+          若船舶配有 <strong>全迴轉推進器（azimuth thrusters）</strong>，
+          應於推進系統檢驗時同步檢查其操舵系統，特別注意
+          <strong>小齒輪（pinions）</strong>、<strong>齒圈（wheel rim）</strong>、
+          齒面磨耗與齒面劣化（tooth flank surface degradation）。
+        </p>
+
+        <h3>特殊設備：旋葉式舵機（Rotary Vane Steering Gear）</h3>
+        <p>
+          部分旋葉式舵機密封容易磨耗。若驗船師懷疑舵機已不能滿足 SOLAS 第 29 條要求，
+          船東或營運人應聯繫製造商取得進一步建議。
+          <span class="source-ref">SOLAS II-1/29.3.2</span>
+        </p>
+
+        <div class="callout warn">
+          <div class="callout-title">A.E.G. 型旋葉式舵機注意事項</div>
+          <p>
+            原檢驗手冊建議不要在非工廠條件下拆開旋葉單元（vane unit）。
+            若必須拆檢，需嚴防污物進入液壓系統；若無法送工廠，
+            現場也應設臨時圍屏，使清潔條件盡量接近工廠環境。A.E.G. 型旋葉式舵機（A.E.G. type rotary vane steering gear）
+            的定期檢查還包括不超過 5 年的輪機檢驗／連續檢驗機械（Engine Survey/CSM）週期、硬舵運轉時約 7 bar 壓力限制、
+            滿舵至滿舵（hard-over to hard-over）時間與洩壓閥起跳壓力（relief valve lifting pressure）的確認。
+          </p>
+        </div>
+      </section>
+
+      <section id="implications" class="section-card">
+        <h2>七、技術與法規意涵</h2>
+
+        <div class="callout info">
+          <div class="callout-title">1. 舵機是船級與法定雙重管制項目</div>
+          <p>
+            原檢驗手冊同時引用 LR 船級規則（LR Rules）、SOLAS 與 IACS 文件，代表舵機屬於
+            <strong>安全關鍵設備</strong>。若舵機失效，可能影響船級證書與法定安全證書。
+            <span class="source-ref">LR Pt 5 Ch 19</span><span class="source-ref">SOLAS II-1/29</span><span class="source-ref">IACS UI SC94</span>
+          </p>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">2. 性能驗證比設備數量更重要</div>
+          <p>
+            兩台泵或兩個動力單元不一定代表合格。必須證明在規定吃水、航速、動力與失效條件下，
+            舵機仍能達到規定轉舵時間與操舵能力。
+          </p>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">3. 冗餘系統必須避免共因失效</div>
+          <p>
+            油輪、互聯系統、自動隔離與舊船警示牌要求，都反映舵機冗餘設計需避免
+            共因失效（common cause failure），例如共同液壓污染、控制衝突或隔離失敗。
+            <span class="source-ref">IACS UI SC94</span><span class="source-ref">IACS UI SC242</span>
+          </p>
+        </div>
+
+        <div class="callout info">
+          <div class="callout-title">4. 安裝品質直接影響可靠性</div>
+          <p>
+            無鍵舵柄接觸率、舵桿推入量、基座焊接、樹脂墊塊、地腳螺栓、對中與管路支撐，
+            都會影響舵機在高負荷、高振動與急轉舵情況下的可靠性。
+          </p>
+        </div>
+      </section>
+
+      <section id="pitfalls" class="section-card">
+        <h2>八、易混淆或需注意之處</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>易混淆點</th>
+                <th>正確理解</th>
+                <th>實務風險</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>兩台泵是否等於符合要求？</strong></td>
+                <td>不一定。仍需確認性能、隔離、供電與控制冗餘。</td>
+                <td>設備數量足夠但應急狀態下仍可能無法操舵。</td>
+              </tr>
+              <tr>
+                <td><strong>主舵機測試角度</strong></td>
+                <td>是 35° 至另一舷 30°，不是 35° 至 35°。</td>
+                <td>海試紀錄或考試容易誤寫。</td>
+              </tr>
+              <tr>
+                <td><strong>雙繞組雙額定設計</strong></td>
+                <td>原檢驗手冊明確指出不可接受。</td>
+                <td>應急狀態下可能輸出不足，無法滿足輔助操舵要求。</td>
+              </tr>
+              <tr>
+                <td><strong>安全閥設定壓力</strong></td>
+                <td>不等於正常工作壓力，海試最大工作壓力不應超過其 80%。</td>
+                <td>安全閥頻繁開啟可能代表設計或調整問題。</td>
+              </tr>
+              <tr>
+                <td><strong>工程藍接觸檢查</strong></td>
+                <td>需薄、均勻、不可混油，並使用滾輪。</td>
+                <td>塗太厚會造成假接觸判讀。</td>
+              </tr>
+              <tr>
+                <td><strong>旋葉式舵機拆檢</strong></td>
+                <td>不宜在非工廠條件下任意拆開。</td>
+                <td>液壓系統污染會造成閥卡滯、泵磨耗與密封損傷。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="summary" class="section-card">
+        <h2>九、總結與複習重點</h2>
+
+        <div class="checklist">
+          <div class="check">舵機是安全關鍵設備，同時受船級與 SOLAS 法定要求管制。</div>
+          <div class="check">主舵機性能重點是 35° 至另一舷 30°，總計 65°，不得超過 28 秒。</div>
+          <div class="check">輔助或應急操舵能力不能只是低功率可動，必須符合規定性能。</div>
+          <div class="check">雙繞組雙額定舵機動力單元不可接受。</div>
+          <div class="check">油輪舵機配置需特別注意冗餘、互聯、自動隔離與共因失效。</div>
+          <div class="check">舵跳間隙配置應使防跳裝置先承受舵上跳，而非舵機本體。</div>
+          <div class="check">無鍵舵柄接觸檢查需達 80–90%，工程藍使用方式會影響判讀。</div>
+          <div class="check">海試需確認轉舵時間、壓力、洩漏、隔離、應急供電、通訊與警報。</div>
+          <div class="check">現有船檢驗重點是洩漏、磨耗、軟管期限、管路裂紋、固定件與演練紀錄。</div>
+          <div class="check">主舵機或輔助舵機重大缺陷可能導致條件式安全證書。</div>
+        </div>
+
+        <div class="callout success">
+          <div class="callout-title">一句話總結</div>
+          <p>
+            本筆記整理了舵機從製造、安裝、海試到服役檢驗的完整船級檢驗邏輯；
+            核心目標是幫助讀者理解如何確認船舶在正常與應急狀態下，都具備可靠且可驗證的操舵能力。
+          </p>
+        </div>
+
+        <div class="callout warn">
+          <div class="callout-title">證書、報告與缺陷處理</div>
+          <p>
+            海試完成後，原檢驗手冊要求依首次入級程序（First Entry Procedures）提交
+            <strong>機械安裝報告 Form 2095（Report on Installation of Machinery, Form 2095）</strong>；新造船階段需確認
+            <strong>配合曲線（fitting curve）</strong> 可在船上取得。若法定檢驗（statutory survey）時發現主舵機或輔助舵機不能正常操作，
+            且未能在檢驗港永久修復，可能需核發條件式安全構造證書（conditional Safety Construction Certificate）、
+            條件式貨船安全證書（conditional Cargo Ship Safety Certificate）或條件式客船安全證書（conditional Passenger Ship Safety Certificate）。
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="share-band" id="share">
+      <div
+            class="article-share article-share--end"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/steering-gear-notes.html"
+            data-share-title="船舶舵機檢驗程序要點｜Reay's Note"
+            data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船舶舵機檢驗程序要點｜Reay's Note&#10;https://reayhuang.com/notes/maritime/steering-gear-notes.html"
+            data-share-copy="複製連結"
+            data-share-copied="已複製"
+            data-toast-copied="連結已複製到剪貼簿"
+          >
+            <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+          </div>
+    </section>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>船舶舵機檢驗程序要點｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        本頁為學習、內訓與驗船準備用途的視覺化整理，不代表 Lloyd's Register、IMO 或其他機構之正式意見；<span class="disclaimer-tail">正式設計、審圖、檢驗與合規判斷，仍應以最新 LR 規範、SOLAS、LR SPM、船旗國要求及船級社正式意見為準。</span>
+      </p>
+    </div>
+  </footer>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      const nav = document.querySelector(".jump-nav");
+      const spacer = document.querySelector(".jump-nav-spacer");
+      if (!nav || !spacer) return;
+
+      const navInner = nav.querySelector(".jump-nav-inner");
+      const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      let navTop = 0;
+      let activeId = "";
+
+      const measure = () => {
+        const wasFixed = nav.classList.contains("is-fixed");
+        if (wasFixed) nav.classList.remove("is-fixed");
+        spacer.style.height = "0px";
+        navTop = nav.getBoundingClientRect().top + window.scrollY;
+        if (wasFixed) update();
+      };
+
+      const update = () => {
+        const shouldStick = window.scrollY >= navTop;
+        nav.classList.toggle("is-fixed", shouldStick);
+        spacer.style.height = shouldStick ? `${nav.offsetHeight}px` : "0px";
+        updateActiveLink();
+      };
+
+      const centerActiveLink = (link) => {
+        if (!navInner || !link) return;
+        const targetLeft = link.offsetLeft - (navInner.clientWidth - link.offsetWidth) / 2;
+        navInner.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: "smooth"
+        });
+      };
+
+      const updateActiveLink = () => {
+        const offset = nav.offsetHeight + 24;
+        let current = sections[0];
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop <= offset) current = section;
+        });
+
+        if (!current || current.id === activeId) return;
+        activeId = current.id;
+
+        links.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${activeId}`;
+          link.classList.toggle("is-active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "true");
+            centerActiveLink(link);
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const hash = link.getAttribute("href");
+          const target = document.querySelector(hash);
+          if (!target) return;
+          event.preventDefault();
+          const gap = 12;
+          const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY;
+          const scrollTop = Math.max(targetTop - nav.offsetHeight - gap, 0);
+          window.scrollTo({ top: scrollTop, behavior: prefersReducedMotion ? "auto" : "smooth" });
+        });
+      });
+
+      measure();
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", measure);
+    })();
+  </script>
+</body>
+</html>
