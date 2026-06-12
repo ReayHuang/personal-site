@@ -120,6 +120,13 @@
       "zh": "notes/maritime/steering-gear-notes.html"
     },
     {
+      "slug": "tailshaft-survey-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/tailshaft-survey-notes.en.html",
+      "zh": "notes/maritime/tailshaft-survey-notes.html"
+    },
+    {
       "slug": "maritime-cyber-resilience-notes",
       "type": "article",
       "category": "notes",

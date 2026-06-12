@@ -1,0 +1,3071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="tailshaft, screwshaft, LR SPM, ship survey, NDE, liner, propeller shaft">
+  <meta property="og:title" content="Ship Tailshaft Survey Procedure Essentials | Reay's Note">
+  <meta property="og:description" content="A practical classification survey note on Tailshaft / Screwshaft survey procedures, covering manufacturer and yard surveys, periodical surveys, NDE, liners, corrosion protection wrapping, repairs, renewals, and reporting records.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/tailshaft-survey-notes.en.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/tailshaft-survey-notes.en.html">
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/tailshaft/tailshaft-link-preview.en-1200.png">
+  <meta property="og:image:alt" content="Ship Tailshaft Survey Procedure Essentials | Reay's Note">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ship Tailshaft Survey Procedure Essentials | Reay's Note">
+  <meta name="twitter:description" content="A practical classification survey note on Tailshaft / Screwshaft survey procedures, covering manufacturer and yard surveys, periodical surveys, NDE, liners, corrosion protection wrapping, repairs, renewals, and reporting records.">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/tailshaft/tailshaft-link-preview.en-1200.png">
+  <link rel="alternate" hreflang="zh-Hant" href="tailshaft-survey-notes.html">
+  <link rel="alternate" hreflang="en" href="tailshaft-survey-notes.en.html">
+  <link rel="alternate" hreflang="x-default" href="tailshaft-survey-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta name="description" content="A practical classification survey note on Tailshaft / Screwshaft survey procedures, covering manufacturer and yard surveys, periodical surveys, NDE, liners, corrosion protection wrapping, repairs, renewals, and reporting records.">
+  <title>Ship Tailshaft Survey Procedure Essentials | Reay's Note</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --surface-soft: #eef4f3;
+      --ink: #172326;
+      --muted: #5f6d70;
+      --line: #d9e0df;
+      --teal: #0b766f;
+      --teal-dark: #07524e;
+      --blue: #2f6d96;
+      --rust: #a94d3f;
+      --amber: #bd7b1f;
+      --green: #4f7b43;
+      --charcoal: #213237;
+      --shadow: 0 18px 50px rgba(23, 35, 38, 0.12);
+      --radius: 8px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.72;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(11, 118, 111, 0.45);
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: var(--teal-dark);
+      text-decoration-color: var(--teal-dark);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    strong {
+      color: var(--ink);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(217, 224, 223, 0.9);
+      background: rgba(247, 248, 246, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 190px;
+    }
+
+    .brand strong {
+      font-size: 0.96rem;
+      line-height: 1.2;
+      font-weight: 760;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      border-radius: 999px;
+      padding: 8px 11px;
+      color: #344246;
+      font-size: 0.84rem;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      background: var(--surface-soft);
+      color: var(--teal-dark);
+    }
+
+    main {
+      overflow: clip;
+    }
+
+    .hero {
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(11, 118, 111, 0.08) 0 1px, transparent 1px),
+        linear-gradient(180deg, #ffffff 0%, var(--paper) 88%);
+      background-size: 32px 100%, auto;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: min(560px, calc(100svh - 86px));
+      margin: 0 auto;
+      padding: 58px 0 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 760;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 18px;
+      font-size: 3.5rem;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-bottom: 24px;
+      color: #3d4b4f;
+      font-size: 1.15rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 16px;
+      background: var(--surface);
+      color: var(--charcoal);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(23, 35, 38, 0.06);
+    }
+
+    .text-link.primary {
+      border-color: var(--teal);
+      background: var(--teal);
+      color: #ffffff;
+    }
+
+    .text-link:hover {
+      transform: translateY(-1px);
+      color: var(--teal-dark);
+    }
+
+    .text-link.primary:hover {
+      color: #ffffff;
+      background: var(--teal-dark);
+    }
+
+    .fact-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 780px;
+    }
+
+    .fact {
+      min-height: 94px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .fact b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 1.03rem;
+      line-height: 1.25;
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.48;
+    }
+
+    .section {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 74px 0;
+    }
+
+    .band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .band-muted {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #edf3f2;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 820;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      max-width: 860px;
+      margin-bottom: 16px;
+      font-size: 2.55rem;
+      line-height: 1.14;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .section-intro {
+      max-width: 800px;
+      margin-bottom: 34px;
+      color: #405055;
+      font-size: 1.02rem;
+    }
+
+    .quick-grid,
+    .card-grid,
+    .two-col,
+    .three-col,
+    .four-col {
+      display: grid;
+      gap: 16px;
+    }
+
+    .quick-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .three-col {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .four-col {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .note-card,
+    .check-card,
+    .risk-card,
+    .summary-card,
+    .metric-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .note-card,
+    .metric-card {
+      padding: 20px;
+    }
+
+    .note-card b,
+    .metric-card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .note-card p,
+    .check-card p,
+    .risk-card p,
+    .summary-card p,
+    .metric-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: #e6f2f0;
+      color: var(--teal-dark);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .callout {
+      border-left: 4px solid var(--teal);
+      padding: 18px 20px;
+      background: #eef7f5;
+      color: #26383c;
+    }
+
+    .callout.warning {
+      border-left-color: var(--amber);
+      background: #f9f1e4;
+    }
+
+    .callout.danger {
+      border-left-color: var(--rust);
+      background: #f7e9e5;
+    }
+
+    .callout strong {
+      color: var(--teal-dark);
+    }
+
+    .callout.danger strong {
+      color: #7c3028;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f4f3;
+      color: #213237;
+      font-size: 0.82rem;
+      font-weight: 820;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td strong {
+      color: var(--ink);
+    }
+
+    .stage-map {
+      display: grid;
+      grid-template-columns: 1fr 46px 1fr 46px 1fr;
+      align-items: stretch;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stage-box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--surface);
+    }
+
+    .stage-box h3 {
+      margin-bottom: 12px;
+      font-size: 1.16rem;
+    }
+
+    .stage-box ul,
+    .check-card ul,
+    .risk-card ul,
+    .source-list,
+    .review-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .stage-box li,
+    .check-card li,
+    .risk-card li,
+    .source-list li,
+    .review-list li {
+      margin: 0.38rem 0;
+      color: #47575b;
+    }
+
+    .arrow {
+      display: grid;
+      place-items: center;
+      color: var(--teal-dark);
+      font-size: 1.8rem;
+      font-weight: 900;
+    }
+
+    .check-card,
+    .risk-card,
+    .summary-card {
+      padding: 18px;
+    }
+
+    .check-card h3,
+    .risk-card h3,
+    .summary-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.04rem;
+      line-height: 1.25;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 4px 9px;
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 820;
+      line-height: 1.2;
+    }
+
+    .label.teal {
+      background: var(--teal);
+    }
+
+    .label.blue {
+      background: var(--blue);
+    }
+
+    .label.rust {
+      background: var(--rust);
+    }
+
+    .label.amber {
+      background: var(--amber);
+    }
+
+    .label.green {
+      background: var(--green);
+    }
+
+    .logic-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin: 28px 0 8px;
+    }
+
+    .flow-item {
+      position: relative;
+      min-height: 138px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: var(--surface);
+    }
+
+    .flow-item::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      right: -7px;
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid var(--teal);
+      border-right: 2px solid var(--teal);
+      transform: rotate(45deg);
+      background: var(--surface);
+    }
+
+    .flow-item:last-child::after {
+      content: none;
+    }
+
+    .flow-item b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      line-height: 1.28;
+    }
+
+    .flow-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .matrix-grid .table-wrap {
+      min-width: 0;
+    }
+
+    .matrix-grid > .table-wrap:first-child table {
+      min-width: 620px;
+    }
+
+    .mini-table table {
+      min-width: 100%;
+      font-size: 0.9rem;
+    }
+
+    .matrix-grid .table-wrap:nth-child(3) {
+      grid-column: 1 / -1;
+    }
+
+    .details-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 16px 18px;
+      color: var(--ink);
+      font-weight: 820;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .details-body {
+      padding: 18px;
+    }
+
+    .term-table td:first-child {
+      width: 24%;
+      font-weight: 820;
+      color: var(--ink);
+    }
+
+    .term-table td:nth-child(2) {
+      width: 26%;
+      color: #334347;
+    }
+
+    .footer-note {
+      border-top: 1px solid var(--line);
+      background: #172326;
+      color: #dbe4e2;
+    }
+
+    .footer-note .section {
+      padding-top: 52px;
+      padding-bottom: 52px;
+    }
+
+    .footer-note h2 {
+      margin-bottom: 14px;
+      font-size: 1.35rem;
+      color: #ffffff;
+    }
+
+    .footer-note p {
+      max-width: 920px;
+      color: #cad5d3;
+    }
+
+    .source-list a {
+      color: #ffffff;
+      text-decoration-color: rgba(255, 255, 255, 0.42);
+    }
+
+    .source-list li {
+      color: #dbe4e2;
+    }
+
+    @media (max-width: 1120px) {
+      .matrix-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix-grid .table-wrap {
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner {
+        min-height: auto;
+        padding-top: 58px;
+      }
+
+      .quick-grid,
+      .three-col,
+      .four-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .logic-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flow-item::after {
+        content: none;
+      }
+
+      .stage-map {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        min-height: 28px;
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+      }
+
+      .hero-inner,
+      .section {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-inner {
+        min-height: 0;
+        padding: 42px 0 30px;
+        gap: 30px;
+      }
+
+      h1 {
+        font-size: 2.18rem;
+      }
+
+      .lead {
+        font-size: 1.02rem;
+      }
+
+      .section-title {
+        font-size: 1.86rem;
+      }
+
+      .fact-strip,
+      .quick-grid,
+      .two-col,
+      .three-col,
+      .four-col,
+      .matrix-grid,
+      .logic-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .inspection-row {
+        grid-template-columns: 30px 1fr;
+      }
+
+      .inspection-row small {
+        grid-column: 2;
+        justify-self: start;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .hero-actions {
+        display: none;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .section,
+      .hero-inner {
+        width: 100%;
+        padding: 28px 0;
+      }
+
+      .hero {
+        border-bottom: 1px solid #cccccc;
+      }
+
+      .footer-note {
+        background: #ffffff;
+        color: #172326;
+      }
+
+      .footer-note h2,
+      .footer-note p,
+      .source-list li {
+        color: #172326;
+      }
+    }
+
+    /* Site-style alignment, matched to steering-gear-notes.html */
+    :root {
+      --max: 1180px;
+      --ink: #061b22;
+      --muted: #5b6d73;
+      --line: #dce8e8;
+      --teal: #3accc2;
+      --teal-dark: #08776f;
+      --green: #0b2b35;
+      --orange: #ff6b3d;
+      --soft-teal: #eefaf9;
+      --blue: #1d4ed8;
+      --blue-soft: #dbeafe;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --red: #b91c1c;
+      --red-soft: #fee2e2;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --surface: #ffffff;
+      --surface-soft: #eefaf9;
+      --shell-radius: 8px;
+      --radius: 8px;
+      --shadow: none;
+    }
+
+    body.steering-shell {
+      background: #ffffff;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.68;
+    }
+
+    body.steering-shell a {
+      text-decoration: none;
+    }
+
+    body.steering-shell main {
+      padding: 0;
+      overflow: visible;
+    }
+
+    body.steering-shell .hero {
+      position: relative;
+      overflow: hidden;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      background-image:
+        linear-gradient(90deg, rgba(7, 20, 35, 0.98) 0%, rgba(7, 20, 35, 0.92) 34%, rgba(7, 20, 35, 0.66) 62%, rgba(7, 20, 35, 0.24) 100%),
+        linear-gradient(180deg, rgba(7, 20, 35, 0.18), rgba(7, 20, 35, 0.42)),
+        url("../../assets/images/maritime/tailshaft/tailshaft-propeller-hero.jpg"),
+        linear-gradient(135deg, #071423 0%, #0e5964 54%, #123b57 100%);
+      background-position: center, center, center right, center;
+      background-repeat: no-repeat;
+      background-size: cover, cover, cover, cover;
+    }
+
+    @supports (background-image: image-set(url("dummy.webp") type("image/webp"))) {
+      body.steering-shell .hero {
+        background-image:
+          linear-gradient(90deg, rgba(7, 20, 35, 0.98) 0%, rgba(7, 20, 35, 0.92) 34%, rgba(7, 20, 35, 0.66) 62%, rgba(7, 20, 35, 0.24) 100%),
+          linear-gradient(180deg, rgba(7, 20, 35, 0.18), rgba(7, 20, 35, 0.42)),
+          image-set(
+            url("../../assets/images/maritime/tailshaft/tailshaft-propeller-hero.webp") type("image/webp"),
+            url("../../assets/images/maritime/tailshaft/tailshaft-propeller-hero.jpg") type("image/jpeg")
+          ),
+          linear-gradient(135deg, #071423 0%, #0e5964 54%, #123b57 100%);
+      }
+    }
+
+    body.steering-shell .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(143, 255, 242, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(143, 255, 242, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(90deg, black, transparent 80%);
+    }
+
+    body.steering-shell .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max), 100%);
+      min-height: 0;
+      margin: 0 auto;
+      padding: 56px 22px 44px;
+      display: block;
+    }
+
+    body.steering-shell .hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      min-height: 48px;
+      margin: 0 0 24px;
+      padding: 11px 20px;
+      border: 1px solid rgba(143, 255, 242, 0.38);
+      border-radius: 999px;
+      background: rgba(14, 89, 100, 0.34);
+      color: #dffaff;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      font-size: 0.94rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    body.steering-shell .hero .eyebrow::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 10px;
+      height: 10px;
+      margin-right: 14px;
+      border-radius: 50%;
+      background: #38d4dc;
+    }
+
+    body.steering-shell h1 {
+      max-width: 980px;
+      margin: 0;
+      color: #ffffff;
+      font-size: 2.8rem;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    body.steering-shell .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      max-width: 1060px;
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.92rem;
+      font-weight: 760;
+    }
+
+    body.steering-shell .article-meta__sep {
+      color: rgba(255, 255, 255, 0.42);
+    }
+
+    body.steering-shell .hero-subtitle {
+      max-width: 900px;
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1rem;
+      line-height: 1.76;
+    }
+
+    body.steering-shell .hero strong {
+      color: #ffffff;
+    }
+
+    body.steering-shell .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 1060px;
+      margin-top: 20px;
+    }
+
+    body.steering-shell .meta-card {
+      min-height: 82px;
+      padding: 12px 14px;
+      border-radius: var(--shell-radius);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    body.steering-shell .meta-card span {
+      display: block;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    body.steering-shell .meta-card strong {
+      display: block;
+      margin-top: 4px;
+      color: #ffffff;
+      font-size: 1rem;
+      line-height: 1.42;
+    }
+
+    body.steering-shell .jump-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    body.steering-shell .jump-nav.is-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 12px 28px rgba(7, 23, 32, 0.12);
+    }
+
+    body.steering-shell .jump-nav-spacer {
+      height: 0;
+    }
+
+    body.steering-shell .jump-nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    body.steering-shell .jump-nav a {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 850;
+      padding: 8px 12px;
+      border-radius: var(--shell-radius);
+      border: 1px solid transparent;
+    }
+
+    body.steering-shell .jump-nav a:hover {
+      background: var(--soft-teal);
+      color: var(--ink);
+    }
+
+    body.steering-shell .jump-nav a.is-active,
+    body.steering-shell .jump-nav a[aria-current="true"] {
+      background: var(--orange);
+      color: #ffffff;
+    }
+
+    body.steering-shell .jump-nav a.is-active:hover,
+    body.steering-shell .jump-nav a[aria-current="true"]:hover {
+      background: var(--orange);
+      color: #ffffff;
+    }
+
+    body.steering-shell .article-body {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 22px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    body.steering-shell .article-body > .section,
+    body.steering-shell .article-body > .band > .section,
+    body.steering-shell .article-body > .band-muted > .section {
+      overflow: clip;
+      width: 100%;
+      margin: 0;
+      padding: 22px;
+      border: 1px solid rgba(220, 232, 232, 0.95);
+      border-radius: var(--shell-radius);
+      background: #ffffff;
+      box-shadow: none;
+      scroll-margin-top: 72px;
+    }
+
+    body.steering-shell .article-body > .band,
+    body.steering-shell .article-body > .band-muted {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    body.steering-shell .section-kicker {
+      margin-bottom: 8px;
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    body.steering-shell h2,
+    body.steering-shell .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: none;
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: 1.34rem;
+      line-height: 1.35;
+      letter-spacing: 0;
+      text-wrap: initial;
+    }
+
+    body.steering-shell h2::before,
+    body.steering-shell .section-title::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 6px;
+      height: 24px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--teal), var(--blue));
+    }
+
+    body.steering-shell h3 {
+      margin: 20px 0 8px;
+      color: var(--gray-900);
+      font-size: 1.04rem;
+      line-height: 1.35;
+    }
+
+    body.steering-shell p {
+      margin: 8px 0;
+    }
+
+    body.steering-shell .section-intro {
+      max-width: 900px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    body.steering-shell .quick-grid,
+    body.steering-shell .two-col,
+    body.steering-shell .three-col,
+    body.steering-shell .four-col,
+    body.steering-shell .card-grid {
+      gap: 16px;
+    }
+
+    body.steering-shell .quick-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    body.steering-shell .summary-card-grid {
+      gap: 20px;
+    }
+
+    body.steering-shell .note-card,
+    body.steering-shell .check-card,
+    body.steering-shell .risk-card,
+    body.steering-shell .summary-card,
+    body.steering-shell .metric-card,
+    body.steering-shell .stage-box,
+    body.steering-shell details,
+    body.steering-shell .flow-item {
+      border: 1px solid var(--line);
+      border-radius: var(--shell-radius);
+      background: #ffffff;
+      box-shadow: none;
+    }
+
+    body.steering-shell .note-card,
+    body.steering-shell .check-card,
+    body.steering-shell .risk-card,
+    body.steering-shell .summary-card,
+    body.steering-shell .metric-card,
+    body.steering-shell .flow-item {
+      padding: 16px;
+    }
+
+    body.steering-shell .note-card {
+      border-left: 4px solid var(--blue);
+      background: var(--gray-50);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(1) {
+      border-left-color: var(--blue);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(2) {
+      border-left-color: var(--orange);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(3) {
+      border-left-color: var(--teal-dark);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(4) {
+      border-left-color: var(--red);
+    }
+
+    body.steering-shell .number {
+      width: 26px;
+      height: 26px;
+      margin-bottom: 8px;
+      border-radius: 7px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(2) .number {
+      background: var(--amber-soft);
+      color: var(--orange);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(3) .number {
+      background: var(--soft-teal);
+      color: var(--teal-dark);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(4) .number {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    body.steering-shell .rules-prereq-grid .check-card {
+      position: relative;
+      overflow: hidden;
+      padding-top: 20px;
+    }
+
+    body.steering-shell .rules-prereq-grid .check-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .rules-prereq-grid .check-card:nth-child(2)::before {
+      background: var(--orange);
+    }
+
+    body.steering-shell #periodical .risk-card {
+      border-left-width: 4px;
+    }
+
+    body.steering-shell #periodical .risk-card .label {
+      margin-bottom: 6px;
+    }
+
+    body.steering-shell #periodical .risk-card h3 {
+      margin-top: 0;
+    }
+
+    body.steering-shell #periodical .risk-card:nth-child(1) {
+      border-left-color: var(--red);
+    }
+
+    body.steering-shell #periodical .risk-card:nth-child(2) {
+      border-left-color: var(--orange);
+    }
+
+    body.steering-shell #periodical .risk-card:nth-child(3) {
+      border-left-color: var(--blue);
+    }
+
+    body.steering-shell .method-reminder {
+      margin: 22px 0 18px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      border-radius: var(--shell-radius);
+      background: linear-gradient(90deg, #eff6ff 0%, #ffffff 82%);
+    }
+
+    body.steering-shell .method-reminder__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    body.steering-shell .method-reminder__head strong {
+      color: var(--green);
+      line-height: 1.45;
+    }
+
+    body.steering-shell .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    body.steering-shell .method-grid > div {
+      min-width: 0;
+      padding: 10px 12px;
+      border-top: 3px solid var(--blue);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    body.steering-shell .method-grid > div:nth-child(2) {
+      border-top-color: var(--orange);
+    }
+
+    body.steering-shell .method-grid > div:nth-child(3) {
+      border-top-color: var(--red);
+    }
+
+    body.steering-shell .method-grid > div:nth-child(4) {
+      border-top-color: var(--teal-dark);
+    }
+
+    body.steering-shell .method-grid b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--green);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    body.steering-shell .method-grid span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    body.steering-shell .subsection-heading {
+      margin: 24px 0 8px;
+      color: var(--green);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    body.steering-shell .repair-card-grid .check-card {
+      position: relative;
+      overflow: hidden;
+      padding-top: 20px;
+    }
+
+    body.steering-shell .repair-card-grid .label {
+      margin-bottom: 6px;
+    }
+
+    body.steering-shell .repair-card-grid h3 {
+      margin-top: 0;
+    }
+
+    body.steering-shell .repair-card-grid .check-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--orange);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(1) .label {
+      background: var(--orange);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(2)::before {
+      background: var(--red);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(2) .label {
+      background: var(--red);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(3)::before {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(3) .label {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .summary-card-grid .summary-card {
+      position: relative;
+      overflow: hidden;
+      padding-top: 20px;
+    }
+
+    body.steering-shell .summary-card-grid .summary-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--blue);
+    }
+
+    body.steering-shell .summary-card-grid .summary-card:nth-child(2)::before {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .label {
+      border-radius: var(--shell-radius);
+      padding: 5px 9px;
+      font-size: 0.72rem;
+      font-weight: 850;
+    }
+
+    body.steering-shell .label.teal,
+    body.steering-shell .label.green {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .label.rust,
+    body.steering-shell .label.amber {
+      background: var(--orange);
+    }
+
+    body.steering-shell .label.blue {
+      background: var(--blue);
+    }
+
+    body.steering-shell .source-ref {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      margin: 0 0 0 6px;
+      padding: 2px 7px;
+      border: 1px solid rgba(47, 109, 150, 0.22);
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: var(--blue);
+      font-size: 0.74rem;
+      font-weight: 900;
+      line-height: 1.45;
+      vertical-align: baseline;
+      white-space: normal;
+    }
+
+    body.steering-shell h2 .source-ref,
+    body.steering-shell h3 .source-ref,
+    body.steering-shell b .source-ref,
+    body.steering-shell strong .source-ref {
+      margin-left: 8px;
+      font-size: 0.68rem;
+    }
+
+    body.steering-shell td .source-ref,
+    body.steering-shell li .source-ref {
+      margin-top: 2px;
+    }
+
+    body.steering-shell .term-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    body.steering-shell .callout {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--blue);
+      border-radius: var(--shell-radius);
+      background: var(--blue-soft);
+      color: var(--gray-900);
+    }
+
+    body.steering-shell .callout.warning,
+    body.steering-shell .callout.warn {
+      border-left-color: var(--amber);
+      background: var(--amber-soft);
+    }
+
+    body.steering-shell .callout.danger {
+      border-left-color: var(--red);
+      background: var(--red-soft);
+    }
+
+    body.steering-shell .callout strong {
+      color: var(--green);
+    }
+
+    body.steering-shell .table-wrap {
+      overflow-x: auto;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--shell-radius);
+      background: #ffffff;
+    }
+
+    body.steering-shell table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: #ffffff;
+      font-size: 0.92rem;
+    }
+
+    body.steering-shell .table-wrap.mini-table {
+      overflow-x: visible;
+    }
+
+    body.steering-shell .table-wrap.mini-table table {
+      min-width: 0;
+      table-layout: fixed;
+    }
+
+    body.steering-shell .table-wrap.mini-table th:first-child,
+    body.steering-shell .table-wrap.mini-table td:first-child {
+      width: 72px;
+      white-space: nowrap;
+    }
+
+    body.steering-shell .table-wrap.mini-table th,
+    body.steering-shell .table-wrap.mini-table td {
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    body.steering-shell .table-wrap.mini-table .source-ref {
+      margin-left: 0;
+      margin-top: 4px;
+    }
+
+    body.steering-shell .table-wrap.compact-table table {
+      min-width: 0;
+      table-layout: fixed;
+    }
+
+    body.steering-shell .table-wrap.compact-table th:first-child,
+    body.steering-shell .table-wrap.compact-table td:first-child {
+      width: 34%;
+    }
+
+    body.steering-shell th,
+    body.steering-shell td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.65;
+    }
+
+    body.steering-shell th {
+      background: #e0f2fe;
+      color: var(--green);
+      font-size: 0.82rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    body.steering-shell tbody tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    body.steering-shell .stage-map {
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    body.steering-shell .stage-box {
+      position: relative;
+      overflow: hidden;
+      padding: 16px;
+    }
+
+    body.steering-shell #framework .stage-box {
+      padding-top: 20px;
+    }
+
+    body.steering-shell #framework .stage-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--blue);
+    }
+
+    body.steering-shell #framework .stage-box:nth-child(3)::before {
+      background: var(--orange);
+    }
+
+    body.steering-shell #framework .stage-box:nth-child(5)::before {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .arrow {
+      color: var(--teal-dark);
+    }
+
+    body.steering-shell .logic-flow {
+      gap: 10px;
+      margin: 18px 0 8px;
+    }
+
+    body.steering-shell .logic-flow.defect-flow {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    body.steering-shell .flow-item {
+      min-height: 132px;
+    }
+
+    body.steering-shell .defect-flow .flow-item {
+      min-height: 152px;
+      border-top: 4px solid var(--blue);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(2) {
+      border-top-color: var(--orange);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(3) {
+      border-top-color: var(--teal-dark);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(4) {
+      border-top-color: var(--red);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(5) {
+      border-top-color: var(--orange);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(6) {
+      border-top-color: var(--blue);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item {
+      border-top: 4px solid var(--blue);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item:nth-child(2) {
+      border-top-color: var(--orange);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item:nth-child(3) {
+      border-top-color: var(--teal-dark);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item:nth-child(4) {
+      border-top-color: var(--red);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item:nth-child(5) {
+      border-top-color: var(--amber);
+    }
+
+    body.steering-shell .flow-item::after {
+      border-color: var(--teal-dark);
+    }
+
+    body.steering-shell summary {
+      padding: 14px 16px;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    body.steering-shell .details-list,
+    body.steering-shell details,
+    body.steering-shell .details-body {
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    body.steering-shell details {
+      overflow: hidden;
+    }
+
+    body.steering-shell .details-body {
+      padding: 16px;
+    }
+
+    body.steering-shell .footer-note {
+      margin: 0;
+      padding: 36px 0 44px;
+      border-top: 0;
+      background: var(--green);
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    body.steering-shell .footer-note .section {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      padding: 0 22px;
+      background: transparent;
+      border: 0;
+    }
+
+    body.steering-shell .footer-note h2 {
+      color: #ffffff;
+      font-size: 1.18rem;
+    }
+
+    body.steering-shell .footer-note h2::before {
+      display: none;
+    }
+
+    body.steering-shell .footer-note h3 {
+      margin: 22px 0 8px;
+      color: #ffffff;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+
+    body.steering-shell .footer-note p,
+    body.steering-shell .source-list li {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    body.steering-shell .source-list {
+      max-width: 980px;
+      margin: 10px 0 0;
+      padding-left: 1.2rem;
+      line-height: 1.35;
+    }
+
+    body.steering-shell .source-list li {
+      margin: 0;
+    }
+
+    body.steering-shell .source-list li + li {
+      margin-top: 2px;
+    }
+
+    body.steering-shell code {
+      color: #ffffff;
+    }
+
+    body.steering-shell .hero .article-share--hero {
+      margin-top: 28px;
+    }
+
+    body.steering-shell .share-band {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 22px 32px;
+    }
+
+    body.steering-shell footer.site-footer {
+      margin: 0;
+      padding: 36px 0 44px;
+      background: #061b22;
+      color: rgba(255, 255, 255, 0.82);
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    body.steering-shell footer.site-footer .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    body.steering-shell footer.site-footer strong {
+      color: #fff;
+    }
+
+    body.steering-shell footer.site-footer a {
+      color: #8ffff2;
+    }
+
+    body.steering-shell footer.site-footer .small {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 13px;
+    }
+
+    body.steering-shell footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 760px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    body.steering-shell footer.site-footer .footer-sources {
+      margin: 18px 0 0;
+      max-width: 980px;
+    }
+
+    body.steering-shell footer.site-footer .footer-sources__title {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    body.steering-shell footer.site-footer .source-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+
+    body.steering-shell footer.site-footer .source-list li {
+      color: rgba(255, 255, 255, 0.62);
+      margin: 0;
+    }
+
+    body.steering-shell footer.site-footer .source-list li + li {
+      margin-top: 4px;
+    }
+
+    @media (min-width: 1101px) {
+      body.steering-shell footer.site-footer .disclaimer-tail {
+        display: block;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      body.steering-shell .meta-grid,
+      body.steering-shell .quick-grid,
+      body.steering-shell .three-col,
+      body.steering-shell .four-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.steering-shell .logic-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.steering-shell .logic-flow.defect-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.steering-shell .method-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.steering-shell .flow-item::after {
+        content: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body.steering-shell .hero-inner {
+        padding: 36px 16px 32px;
+      }
+
+      body.steering-shell h1 {
+        font-size: 2.15rem;
+      }
+
+      body.steering-shell .hero .eyebrow {
+        min-height: 0;
+        padding: 9px 14px;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+      }
+
+      body.steering-shell .article-meta__sep {
+        display: none;
+      }
+
+      body.steering-shell .jump-nav-inner {
+        padding: 10px 16px;
+      }
+
+      body.steering-shell .article-body {
+        padding: 20px 16px 12px;
+      }
+
+      body.steering-shell .article-body > .section,
+      body.steering-shell .article-body > .band > .section,
+      body.steering-shell .article-body > .band-muted > .section {
+        padding: 20px;
+        scroll-margin-top: 64px;
+      }
+
+      body.steering-shell .meta-grid,
+      body.steering-shell .quick-grid,
+      body.steering-shell .two-col,
+      body.steering-shell .three-col,
+      body.steering-shell .four-col,
+      body.steering-shell .matrix-grid,
+      body.steering-shell .logic-flow,
+      body.steering-shell .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body.steering-shell .logic-flow.defect-flow {
+        grid-template-columns: 1fr;
+      }
+
+      body.steering-shell .stage-map {
+        grid-template-columns: 1fr;
+      }
+
+      body.steering-shell .arrow {
+        min-height: 24px;
+        transform: rotate(90deg);
+      }
+
+      body.steering-shell table {
+        min-width: 640px;
+      }
+    }
+
+    @media print {
+      .note-site-bar,
+      .jump-nav,
+      .article-share,
+      .share-band {
+        display: none !important;
+      }
+
+      body.steering-shell .hero {
+        color: var(--gray-900);
+        background: #ffffff;
+        border: 2px solid var(--gray-300);
+      }
+
+      body.steering-shell .hero::after {
+        display: none;
+      }
+
+      body.steering-shell h1,
+      body.steering-shell .hero strong,
+      body.steering-shell .meta-card strong {
+        color: var(--gray-900);
+      }
+
+      body.steering-shell .hero-subtitle,
+      body.steering-shell .article-meta,
+      body.steering-shell .meta-card span {
+        color: var(--gray-700);
+      }
+
+      body.steering-shell .meta-card {
+        background: var(--gray-50);
+        border-color: var(--gray-300);
+      }
+    }
+  </style>
+</head>
+<body class="layout-reference steering-shell">
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Notes</a>
+      <span>|</span>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="tailshaft-survey-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="tailshaft-survey-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <article>
+      <section class="hero" aria-labelledby="article-title">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">LR SPM · TAILSHAFT SURVEY · REAY'S NOTE</p>
+            <h1 id="article-title">Ship Tailshaft Survey Procedure Essentials</h1>
+            <p class="article-meta">
+              <span>📅 Updated: 2026-06-12</span>
+              <span class="article-meta__sep" aria-hidden="true">·</span>
+              <span>⏱ 18 min read</span>
+              <span class="article-meta__sep" aria-hidden="true">·</span>
+              <span>🏷 LR SPM / Tailshaft Survey / Screwshaft</span>
+            </p>
+            <p class="hero-subtitle">This note summarises the key points from <strong>LR Survey Procedures Manual - Surveyable Items - Tailshafts</strong>. It focuses on the practical survey judgement for <strong>Tailshaft / Screwshaft</strong> during manufacture, installation, periodical survey, repair, renewal, and reporting. The aim is not only to list what should be checked, but to connect the field risks, documents, NDE, certification, and follow-up records into a traceable workflow for surveyors.</p>
+            <div class="meta-grid" aria-label="Article metadata">
+              <div class="meta-card">
+                <span>Note type</span>
+                <strong>Survey procedure note</strong>
+              </div>
+              <div class="meta-card">
+                <span>Subject equipment</span>
+                <strong>Tailshaft / screwshaft</strong>
+              </div>
+              <div class="meta-card">
+                <span>Survey focus</span>
+                <strong>NDE, liners, alignment, corrosion protection</strong>
+              </div>
+              <div class="meta-card">
+                <span>Applicable context</span>
+                <strong>New construction / existing ships</strong>
+              </div>
+            </div>
+            <div
+              class="article-share article-share--hero"
+              data-article-share
+              data-share-url="https://reayhuang.com/notes/maritime/tailshaft-survey-notes.en.html"
+              data-share-title="Ship Tailshaft Survey Procedure Essentials | Reay's Note"
+              data-share-email-body="I found this article on Reay's Maritime Notes and thought it might be useful:&#10;&#10;Ship Tailshaft Survey Procedure Essentials | Reay's Note&#10;https://reayhuang.com/notes/maritime/tailshaft-survey-notes.en.html"
+              data-share-copy="Copy link"
+              data-share-copied="Copied"
+              data-toast-copied="Link copied to clipboard"
+            >
+              <p class="article-share__label" id="share-hero-label">Share this article</p>
+              <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <nav class="jump-nav" aria-label="Quick navigation">
+        <div class="jump-nav-inner">
+          <a href="#quick">Quick Read</a>
+          <a href="#framework">Document Logic</a>
+          <a href="#newbuilding">New Construction</a>
+          <a href="#periodical">Periodical Survey</a>
+          <a href="#repair">Repair / Renewal</a>
+          <a href="#records">Reporting</a>
+          <a href="#checklist">Checklist</a>
+          <a href="#mistakes">Common Pitfalls</a>
+          <a href="#terms">Glossary</a>
+          <a href="#summary">Summary</a>
+        </div>
+      </nav>
+      <div class="jump-nav-spacer" aria-hidden="true"></div>
+
+      <div class="article-body">
+      <section class="section" id="quick" aria-labelledby="quick-title">
+        <p class="section-kicker">Quick read</p>
+        <h2 class="section-title" id="quick-title">Understand the Note Through Four Judgement Points</h2>
+        <p class="section-intro">A tailshaft survey is not just a single component check. It is where propulsion system risks meet: material, machining, propeller fit, bearings, sealing, corrosion protection, and class records all connect.</p>
+        <div class="quick-grid">
+          <div class="note-card">
+            <span class="number">01</span>
+            <b>High risk, low visibility</b>
+            <p>The tailshaft is subject to torque, bending moment, axial load, and corrosion risk. Cracking, liner failure, or seawater ingress can lead to propulsion failure or propeller loosening.</p>
+          </div>
+          <div class="note-card">
+            <span class="number">02</span>
+            <b>Be conservative with keyed propellers</b>
+            <p>The keyway is a typical stress concentration area. During periodical screwshaft surveys, a keyed propeller must be removed so that MT can be carried out on the shaft taper.</p>
+          </div>
+          <div class="note-card">
+            <span class="number">03</span>
+            <b>The Chief Engineer cannot substitute for the survey</b>
+            <p>A Chief Engineer cannot carry out the tailshaft survey for classification purposes. This restriction applies in CSM and MPMS contexts. SCM is Screwshaft Condition Monitoring and does not replace the requirement to remove a keyed propeller and perform MT on the taper.</p>
+          </div>
+          <div class="note-card">
+            <span class="number">04</span>
+            <b>Reports are the baseline for future surveys</b>
+            <p>Bearing clearances, poker gauge readings, special liners, protective wrapping, repair results, and rejected shaft markings must all be traceable for the next surveyor.</p>
+          </div>
+        </div>
+        <div class="callout warning" style="margin-top: 24px;">
+          <strong>Scope note:</strong> This article is a learning summary based on the provided Survey Procedures Manual. It is suitable for study, survey preparation, and field understanding. Formal decisions must still be based on the latest LR Rules, Survey Procedures, statutory requirements, and class technical review.
+        </div>
+      </section>
+
+      <section class="band" id="framework" aria-labelledby="framework-title">
+        <div class="section">
+          <p class="section-kicker">Document logic</p>
+          <h2 class="section-title" id="framework-title">Document Logic: A Closed Loop from Manufacture and Installation to In-Service Survey</h2>
+          <p class="section-intro">This procedure is not simply a design formula. It converts rule requirements into survey work that can be performed, witnessed, recorded, and followed up by surveyors.</p>
+
+          <div class="stage-map" aria-label="Survey stages">
+            <div class="stage-box">
+              <h3>New construction survey at manufacturer's works</h3>
+              <ul>
+                <li>Material, dimensions, and machining quality</li>
+                <li>NDE such as UT, MT, and PT</li>
+                <li>Bronze / gunmetal liners and hydraulic test</li>
+                <li>Identification stamping and certificate endorsement</li>
+              </ul>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div class="stage-box">
+              <h3>Builder / yard survey</h3>
+              <ul>
+                <li>Delivery condition and outstanding items</li>
+                <li>Shaft alignment and coupling bolts</li>
+                <li>Bearing clearance and poker gauge baseline</li>
+                <li>Sea trial and Form 2095B</li>
+              </ul>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div class="stage-box">
+              <h3>Periodical survey of existing ships</h3>
+              <ul>
+                <li>Propeller removal, taper, and keyway NDE</li>
+                <li>Liner ends, welds, and flange root</li>
+                <li>Corrosion protection wrapping and hidden corrosion concerns</li>
+                <li>Repair, renewal, and class records</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="table-wrap" style="margin-top: 28px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Survey context</th>
+                  <th>Description</th>
+                  <th>Core purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>New Construction Survey at Manufacturer's Works</strong></td>
+                  <td>New construction survey at manufacturer's works</td>
+                  <td>Confirm shaft manufacture, dimensions, surface quality, NDE, liners, hydraulic testing, and stamping.</td>
+                </tr>
+                <tr>
+                  <td><strong>New Construction Survey at Builder's / Fabricator's Yard</strong></td>
+                  <td>New construction survey at builder's / fabricator's yard</td>
+                  <td>Confirm shaft delivery condition, installation, alignment, coupling, bearing clearances, and sea trial.</td>
+                </tr>
+                <tr>
+                  <td><strong>Periodical Survey of Existing Vessels / Installations</strong></td>
+                  <td>Periodical survey of existing vessels / installations</td>
+                  <td>Check cracking, corrosion, liner looseness, propeller fit, corrosion protection coating, repairs, and record status.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="rules-title">
+        <p class="section-kicker">Rules and prerequisites</p>
+        <h2 class="section-title" id="rules-title">Scope, Rule Basis, and Survey Prerequisites</h2>
+        <p class="section-intro">Tailshaft / screwshaft procedures connect to ship rules, material rules, special service craft, offshore units, SCM, and MPMS. In the field, the first task is to confirm whether the applicable survey method permits the propeller to remain fitted, whether protective coating must be removed, and which items cannot be substituted by shipboard self-inspection.</p>
+
+        <div class="two-col rules-prereq-grid">
+          <div class="check-card">
+            <span class="label teal">Rule sources</span>
+            <h3>The procedure itself is not the only basis</h3>
+            <ul>
+              <li>LR Rules for Ships: design, sea trials, periodical survey, and SCM.<span class="source-ref" title="Rules for Ships Pt 5 Ch 6, 3; Pt 5 Ch 1, 5.2; Pt 1 Ch 3, 17; Pt 1 Ch 3, 18.4; Pt 5 Ch 6, 3.9, 3.12 and 4.1">LR Ships</span></li>
+              <li>LR Rules for Materials: material manufacture, testing, and NDE.<span class="source-ref" title="Rules for Materials Ch 5, 3.5 Non-Destructive Examination">LR Materials Ch 5, 3.5</span></li>
+              <li>Rules for Special Service Craft: shafting and sea trial requirements for special service craft.<span class="source-ref" title="Rules for Special Service Craft Pt 11 Ch 2, 4; Pt 9 Ch 2, 9; Pt 1 Ch 3, 11; Pt 1 Ch 4, 10; Pt 11 Ch 2, 4.14, 4.16 and 5.2">Special Service Craft</span></li>
+              <li>Rules for Offshore Units: periodical survey requirements for offshore units.<span class="source-ref" title="Rules and Regulations for the Classification of Offshore Units Pt 1 Ch 3, 12">Offshore Pt 1 Ch 3, 12</span></li>
+              <li>ShipRight MPMS / SCM: machinery planned maintenance and condition monitoring schemes.<span class="source-ref" title="LR ShipRight - Machinery Planned Maintenance and Condition Monitoring; Rules for Ships Pt 1 Ch 3, 18.4 and Pt 5 Ch 6, 4.1">ShipRight MPMS/SCM</span></li>
+            </ul>
+          </div>
+          <div class="check-card">
+            <span class="label rust">Survey prerequisites</span>
+            <h3>Confirm that the field conditions allow the required examination</h3>
+            <ul>
+              <li>For periodical surveys of keyed propellers, the propeller must be removed so that MT can be performed on the tailshaft taper.</li>
+              <li>TS Method 3 is not permitted for keyed propellers.</li>
+              <li>When the tailshaft is withdrawn, protective coating should be removed if its condition is suspect.</li>
+              <li>For flanged connections to the propeller boss, sample bolts may be removed where necessary.</li>
+              <li>If fiberglass or approved coating is confirmed effective at each dry docking, it should not be unnecessarily disturbed. Remove it only to the necessary extent when there is doubt.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout danger" style="margin-top: 24px;">
+          <strong>Classification practice point:</strong> A Tailshaft / Screwshaft survey cannot be carried out by the Chief Engineer in place of a class surveyor for classification purposes. Even under Continuous Survey Machinery or MPMS notation, the required tailshaft checks must be performed or witnessed by a class surveyor.
+        </div>
+      </section>
+
+      <section class="band-muted" id="newbuilding" aria-labelledby="newbuilding-title">
+        <div class="section">
+          <p class="section-kicker">New construction</p>
+          <h2 class="section-title" id="newbuilding-title">New Construction Survey: What to Check at Manufacturer and Yard Stages</h2>
+          <p class="section-intro">At the manufacturer stage, the focus is on material, machining, dimensions, and NDE. At the yard stage, the shaft is considered as part of the propulsion system, including delivery condition, alignment, coupling, bearing clearances, and sea trial baselines.</p>
+
+          <div class="matrix-grid">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Manufacturer survey item</th>
+                    <th>What the surveyor should confirm</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Dimensions and geometry</strong></td>
+                    <td>Shaft diameter, roundness, straightness, keyway, taper, flange, and surface roughness should comply with approved drawings and strength requirements.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Surface quality</strong></td>
+                    <td>Pay particular attention to stress concentration areas such as diameter changes, keyways, and the upper third of the taper. Use a profilometer or comparator blocks where necessary.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>NDE</strong></td>
+                    <td>MT is used for surface and near-surface cracks in ferromagnetic materials; UT is used for internal forging defects; PT is commonly used for non-magnetic materials or bronze liner welds.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bronze / gunmetal liners</strong><span class="term-note">Bronze / gunmetal</span></td>
+                    <td>They should generally be cast in one piece and hydraulically tested before fitting. Fitting to the shaft should be witnessed by the surveyor, with close contact confirmed along the full length.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Two-piece welded liners</strong></td>
+                    <td>Where CL notation is required, the joint design, PT examination, lead content not exceeding 0.5%, and shrinkage stress control requirements should be satisfied.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Identification stamping</strong></td>
+                    <td>Stamp LR, SDO, control number, surveyor initials, and date. Do not stamp in high-stress areas; use low-stress or dot-type stamps where necessary.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-wrap mini-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>NDE</th>
+                    <th>Use</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>MT</strong></td>
+                    <td>Surface / near-surface cracks at the tailshaft taper, keyway, flange root, etc.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>UT</strong></td>
+                    <td>Internal discontinuities and defects in forgings or shaft material.<span class="source-ref" title="Rules for Materials Ch 5, 3.5 Non-Destructive Examination">LR Materials Ch 5, 3.5</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>PT</strong></td>
+                    <td>Non-magnetic materials, surface-breaking defects, and copper-alloy liner welds.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Yard installation focus</th>
+                    <th>Practical judgement</th>
+                    <th>Follow-up records</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Delivery condition</strong></td>
+                    <td>Confirm whether the shaft is delivered black forged, rough machined, or in final condition. If unfinished, check the shaft certificate and SDO data.</td>
+                    <td>Outstanding items, certificate limitations, and further survey requirements.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Shaft alignment</strong></td>
+                    <td>Carry out according to the agreed procedure, considering hull, foundation, support locations, hot/cold deformation, and propeller weight.</td>
+                    <td>Seek local engineering TSO advice if there is doubt.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Coupling bolts</strong></td>
+                    <td>Coupling bolts should be an interference fit; ISO h6/j6 may be accepted, and hydraulic bolts such as Suregrip or Pilgrim may be considered.</td>
+                    <td>If liquid nitrogen shrink fitting is used, future dismantling issues should be confirmed with the owner / operator.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bearing clearance</strong></td>
+                    <td>Measure shaft bearing clearances and poker gauge readings after new construction installation.</td>
+                    <td>Use these as the baseline for the First Entry Report and future periodical surveys.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sea trial</strong></td>
+                    <td>Multi-propeller ships should demonstrate that navigation and manoeuvring capability is retained when one or more propellers are out of operation.<span class="source-ref" title="Rules for Ships Pt 5 Ch 1, 5.2 Sea trials; Rules for Special Service Craft Pt 9 Ch 2, 9 Sea trials">LR Sea trials</span></td>
+                    <td>Enter sea trial data, bearing clearances, and poker gauge readings in Form 2095B.<span class="source-ref" title="Survey Procedures Manual - Tailshafts, First Entry Reporting Procedure 1.1.1-1.1.2; Form 2095Bzz1">Form 2095B</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="periodical" aria-labelledby="periodical-title">
+        <p class="section-kicker">Periodical survey</p>
+        <h2 class="section-title" id="periodical-title">Periodical Survey of Existing Ships: High-Risk Areas and Judgement Logic</h2>
+        <p class="section-intro">The core of periodical survey is to find early signs at locations most prone to fatigue, corrosion, looseness, and fit failure. For keyed propellers, the keyway and large end of the taper must not be passed over by visual inspection only.</p>
+
+        <div class="method-reminder" aria-label="TS Method judgement reminder">
+          <div class="method-reminder__head">
+            <span class="label blue">TS Method</span>
+            <strong>Judgement reminder: confirm propeller removal requirements before deciding whether a survey method is applicable.</strong>
+          </div>
+          <div class="method-grid">
+            <div>
+              <b>TS Methods 1, 2, and 4</b>
+              <span>Where required by the Rules, the propeller must be removed for inspection.</span>
+            </div>
+            <div>
+              <b>Keyed propeller</b>
+              <span>For all screwshaft periodical surveys, keyed propellers must be removed to allow MT of the taper.</span>
+            </div>
+            <div>
+              <b>TS Method 3</b>
+              <span>Not permitted for keyed propellers.</span>
+            </div>
+            <div>
+              <b>SCM</b>
+              <span>Does not remove the requirement to remove a keyed propeller.</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-heading">Differences Between Keyed, Keyless, and Flanged Connections</h3>
+        <div class="table-wrap compact-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Survey focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Keyed propeller</strong></td>
+                <td>Keyway, taper, MT, fretting, and nut locking condition.</td>
+              </tr>
+              <tr>
+                <td><strong>Keyless propeller</strong></td>
+                <td>Taper contact, push-up amount, hydraulic fitting records, and mating surface condition.</td>
+              </tr>
+              <tr>
+                <td><strong>Flanged connection to propeller boss</strong></td>
+                <td>Flange root radius, bolt tightness, and ringing. If the sound is dull or low resonance is noted, further NDE is required and sample bolts may need to be removed.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Common defects</th>
+                <th>Inspection method</th>
+                <th>Main risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Keyway</strong></td>
+                <td>Fatigue cracking, stress concentration</td>
+                <td>MT, visual inspection</td>
+                <td>Crack propagation, shaft fracture</td>
+              </tr>
+              <tr>
+                <td><strong>Shaft cone / taper</strong></td>
+                <td>Fretting, corrosion, poor fit, cracking</td>
+                <td>MT, visual inspection, contact check</td>
+                <td>Propeller looseness, fatigue cracking</td>
+              </tr>
+              <tr>
+                <td><strong>Large end of cone</strong></td>
+                <td>Circumferential corrosion band, suspected stress corrosion cracking</td>
+                <td>MT is the main method for steel tailshaft tapers. PT is mainly used for non-magnetic materials, copper-alloy liner welds, or other applicable surface-breaking defects. Further assessment may be required.</td>
+                <td>Branching circumferential stress corrosion cracks</td>
+              </tr>
+              <tr>
+                <td><strong>Liner ends</strong></td>
+                <td>Corrosion, looseness, loss of sealing function</td>
+                <td>Hammer sound check, visual inspection, local examination</td>
+                <td>Seawater ingress to shaft material, causing hidden corrosion</td>
+              </tr>
+              <tr>
+                <td><strong>Circumferential weld</strong></td>
+                <td>Weld cracking, leakage risk</td>
+                <td>PT or suitable NDE</td>
+                <td>Failure of corrosion protection</td>
+              </tr>
+              <tr>
+                <td><strong>Flange root radius</strong></td>
+                <td>Fatigue cracking</td>
+                <td>Visual inspection, NDE</td>
+                <td>Flange failure, loss of torque transmission</td>
+              </tr>
+              <tr>
+                <td><strong>Bolts</strong></td>
+                <td>Looseness, cracking, low resonance</td>
+                <td>Ringing, NDE, removal of sample bolts</td>
+                <td>Failure of propeller or coupling connection</td>
+              </tr>
+              <tr>
+                <td><strong>Wrapped coating</strong></td>
+                <td>Debonding, damage, hidden corrosion underneath</td>
+                <td>Visual inspection at dry docking; do not disturb if effective, remove locally or as necessary only when in doubt</td>
+                <td>Hidden corrosion and loss of protective function</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="three-col" style="margin-top: 24px;">
+          <div class="risk-card">
+            <span class="label rust">High-risk signal</span>
+            <h3>Circumferential corrosion band at the large end of the taper</h3>
+            <p>The procedure specifically notes that this may be associated with seawater ingress and branching circumferential stress corrosion cracks. Treat conservatively and arrange suitable NDE.</p>
+          </div>
+          <div class="risk-card">
+            <span class="label amber">Field judgement</span>
+            <h3>Abnormal sound when tapping the liner</h3>
+            <p>The key is not only to decide whether it is loose, but to assess whether the liner has lost its core function of preventing seawater contact with the tailshaft steel.</p>
+          </div>
+          <div class="risk-card">
+            <span class="label blue">Bolt check</span>
+            <h3>Dull sound or low resonance</h3>
+            <p>If ringing of flange or propeller bolts is abnormal, further NDE should be carried out and sample bolts may need to be removed.</p>
+          </div>
+        </div>
+
+        <h3 class="subsection-heading">Stern Tube Oil Analysis / Contamination Monitoring</h3>
+        <div class="callout" style="margin-top: 10px;">
+          <strong>Additional reference / supporting evidence:</strong> IACS Rec.36 may be used as supporting reference for oil-lubricated stern tube systems. Trends in metallic wear particles, water, or contamination in stern tube lubricating oil can help assess bearing, seal, seawater ingress, or abnormal wear risks. This does not mean the procedure requires oil analysis every time; it can be used as supporting evidence when field condition, history, or maintenance records need corroboration.
+        </div>
+
+        <h3 class="subsection-heading">Response Flow After a Defect Is Found</h3>
+        <div class="logic-flow defect-flow" aria-label="Defect response flow">
+          <div class="flow-item">
+            <b>01 | Find anomaly</b>
+            <span>Cracking, corrosion, fretting, abnormal hammer sound, abnormal ringing, coating concerns, or abnormal oil trend.</span>
+          </div>
+          <div class="flow-item">
+            <b>02 | Locate the area</b>
+            <span>First locate whether it is at the keyway, large end of taper, liner end, circumferential weld, flange root, bolts, or wrapped area.</span>
+          </div>
+          <div class="flow-item">
+            <b>03 | Select NDE</b>
+            <span>Select MT, PT, UT, visual inspection, hammer sound check, ringing, or further examination based on material and defect type.</span>
+          </div>
+          <div class="flow-item">
+            <b>04 | Assess impact</b>
+            <span>Assess whether seawater exclusion, torque transmission, fatigue safety, mating surface reliability, or future operation risk is affected.</span>
+          </div>
+          <div class="flow-item">
+            <b>05 | Decide action</b>
+            <span>Decide whether to accept the risk, repair, withdraw the shaft, refer to TSO, restrict future checks, or require renewal of the tailshaft / related parts.</span>
+          </div>
+          <div class="flow-item">
+            <b>06 | Update records</b>
+            <span>Record conclusions, limitations, repair results, and follow-up requirements in Asset Note, Actionable Item, or Survey Report.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="repair" aria-labelledby="repair-title">
+        <div class="section">
+          <p class="section-kicker">Repairs and alterations</p>
+          <h2 class="section-title" id="repair-title">Repair, Renewal, and Corrosion Protection: Repairable Does Not Mean Uncontrolled</h2>
+          <p class="section-intro">Tailshaft repair involves material, heat effects, fit condition, and future class records. Even apparently local liner wear requires confirmation of lead content, cooling, post-weld NDE, and tight contact condition.</p>
+
+          <div class="three-col repair-card-grid">
+            <div class="check-card">
+              <span class="label amber">Bronze liner repair</span>
+              <h3>Bronze liner weld repair conditions</h3>
+              <ul>
+                <li>Lead content of liner material and filler metal must not exceed 0.5%.</li>
+                <li>Machine worn areas smooth first.</li>
+                <li>Cool both ends of the repair area to avoid disturbing the shrink fit.</li>
+                <li>Peen after each weld pass.</li>
+                <li>After machining to final size, carry out PT or suitable crack detection.</li>
+                <li>Confirm the repaired liner area remains tightly fitted to the shaft.</li>
+              </ul>
+            </div>
+            <div class="check-card">
+              <span class="label rust">Shaft renewal</span>
+              <h3>Tailshaft renewal requirements</h3>
+              <ul>
+                <li>Identification stamps on a rejected tailshaft must be cancelled by cross-cutting.</li>
+                <li>The replacement shaft must come from an approved works.</li>
+                <li>Confirm material strength, chemical composition, and thermo-mechanical process information.</li>
+                <li>Confirm dimensional tolerances, straightness, roundness, and approved drawings.</li>
+                <li>Complete suitable NDE and new identification stamping.</li>
+                <li>Record the rejected shaft and replacement shaft markings in the report.</li>
+              </ul>
+            </div>
+            <div class="check-card">
+              <span class="label green">Coating design</span>
+              <h3>Conditions for a 5-year survey cycle</h3>
+              <ul>
+                <li>The coating must be of an LR approved type.</li>
+                <li>Fiberglass should be applied in multiple layers and wound in opposite directions.</li>
+                <li>Resin should be applied between layers, with the shaft rotated during application.</li>
+                <li>A suitable step or taper should be provided at the connection with the bronze liner.</li>
+                <li>Follow the manufacturer's requirements for surface preparation, temperature, mixing, application, and curing.</li>
+                <li>A 5-year survey cycle is not automatically assigned just because wrapping is fitted. It may be assigned only after the next Screwshaft Survey confirms all conditions are met or restored to satisfactory condition.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top: 24px;">
+            <strong>TSO escalation:</strong> If a non-welded bronze liner repair is proposed, or if unapproved coating, special joint design, alignment concerns, or unusual cracking risk is encountered, refer to the relevant TSO or Global TSO - Materials &amp; NDE for technical confirmation.
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="records" aria-labelledby="records-title">
+        <p class="section-kicker">Certification and reporting</p>
+        <h2 class="section-title" id="records-title">Certification, Reporting, and Class Records: Making the Next Survey Traceable</h2>
+        <p class="section-intro">Tailshaft survey records are highly valuable because many risks appear only after long-term accumulation. A good report does more than close the current survey; it preserves special designs, repairs, numerical baselines, and concerns that future surveyors need to follow.</p>
+
+        <div class="logic-flow" aria-label="Reporting flow">
+          <div class="flow-item">
+            <b>01 | Shaft certificate</b>
+            <span>After final machining, the surveyor should endorse both the original and duplicate shaft certificates.</span>
+          </div>
+          <div class="flow-item">
+            <b>02 | Liner notation</b>
+            <span>When two-piece or multi-piece liners are joined by an approved method, the certificate should note the circumferential weld information.</span>
+          </div>
+          <div class="flow-item">
+            <b>03 | First Entry</b>
+            <span>Enter sea trial data, bearing clearances, and poker gauge readings in Form 2095B.<span class="source-ref" title="Survey Procedures Manual - Tailshafts, First Entry Reporting Procedure 1.1.1-1.1.2; Form 2095Bzz1">Form 2095B</span></span>
+          </div>
+          <div class="flow-item">
+            <b>04 | Asset Note</b>
+            <span>Special conditions such as two-piece welded liners or bronze liner weld repairs should be made available for future surveyors.</span>
+          </div>
+          <div class="flow-item">
+            <b>05 | Actionable Item</b>
+            <span>Items requiring follow-up, such as fiberglass or approved coating wrapping, should be tracked.</span>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 28px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Situation</th>
+                <th>Record requirement</th>
+                <th>Practical purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Liner welded from two pieces</strong></td>
+                <td>Note it in the Shaft Certificate and Asset Note.</td>
+                <td>Remind future surveys to check the circumferential weld for cracking or leakage risk.</td>
+              </tr>
+              <tr>
+                <td><strong>Tailshaft wrapped with fiberglass or approved coating</strong></td>
+                <td>Create an Actionable Item and follow it up at dry docking or the relevant survey.</td>
+                <td>Prevent corrosion under the wrapping from being hidden by an apparently intact surface.</td>
+              </tr>
+              <tr>
+                <td><strong>Bronze liner weld repair completed satisfactorily</strong></td>
+                <td>Normally no Condition of Class is required, but an Asset Note is needed.</td>
+                <td>Preserve the repair method, area, and follow-up survey points.</td>
+              </tr>
+              <tr>
+                <td><strong>Wrapped area examined satisfactorily</strong></td>
+                <td>Mark CMM as continues satisfactory.</td>
+                <td>Maintain condition monitoring and the future survey baseline.</td>
+              </tr>
+              <tr>
+                <td><strong>Tailshaft rejected and renewed</strong></td>
+                <td>Record the rejected and replacement shaft identification marks in the report.</td>
+                <td>Prevent the rejected shaft from being reused for classification purposes and preserve traceability.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="band-muted" id="checklist" aria-labelledby="checklist-title">
+        <div class="section">
+          <p class="section-kicker">Surveyor checklist</p>
+          <h2 class="section-title" id="checklist-title">Surveyor Checklist: Turning the Procedure into Practical Steps</h2>
+          <p class="section-intro">The following checklist can be used as a prompt before attendance and during manufacturer, yard installation, and periodical surveys. Formal surveys should still be adjusted according to applicable rules, actual ship arrangements, and class system requirements.</p>
+
+          <div class="details-list">
+            <details open>
+              <summary>Step 1 | Confirm the survey type first</summary>
+              <div class="details-body">
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Type</th>
+                        <th>Survey focus</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>New construction survey at manufacturer's works</strong></td>
+                        <td>Material, machining, dimensions, NDE, liners, hydraulic test, stamping.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Builder / yard survey</strong></td>
+                        <td>Delivery condition, certificates, alignment, coupling, bearing clearances, sea trial.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Periodical screwshaft survey</strong></td>
+                        <td>Propeller removal, MT, corrosion, liners, keyway, taper, bolts.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Repair / renewal survey</strong></td>
+                        <td>Repair method approval, NDE, certificates, stamping, reports.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Protective coating survey</strong></td>
+                        <td>Coating approval, adhesion condition, dry docking effectiveness; remove only to the necessary extent when in doubt and check for corrosion underneath.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+
+            <details>
+              <summary>Step 2 | Document review before attendance</summary>
+              <div class="details-body">
+                <div class="four-col">
+                  <div class="check-card">
+                    <h3>Drawings and certificates</h3>
+                    <ul>
+                      <li>Approved drawings</li>
+                      <li>Shaft certificate</li>
+                      <li>Material certificate</li>
+                    </ul>
+                  </div>
+                  <div class="check-card">
+                    <h3>NDE and machining</h3>
+                    <ul>
+                      <li>NDE reports</li>
+                      <li>Dimensional and surface quality records</li>
+                      <li>Liner hydraulic test and fitting records</li>
+                    </ul>
+                  </div>
+                  <div class="check-card">
+                    <h3>Installation baseline</h3>
+                    <ul>
+                      <li>Shaft alignment procedure</li>
+                      <li>Bearing clearance records</li>
+                      <li>Poker gauge readings</li>
+                    </ul>
+                  </div>
+                  <div class="check-card">
+                    <h3>Historical records</h3>
+                    <ul>
+                      <li>Previous survey reports</li>
+                      <li>SCM / MPMS status</li>
+                      <li>Asset Note / Actionable Item</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details>
+              <summary>Step 3 | Manufacturer and yard survey checklist</summary>
+              <div class="details-body">
+                <div class="two-col">
+                  <div class="check-card">
+                    <span class="label teal">Manufacturer</span>
+                    <h3>Manufacturer survey</h3>
+                    <ul>
+                      <li>Whether the shaft material comes from an approved manufacturer.</li>
+                      <li>Material strength, chemical composition, heat treatment / thermo-mechanical process.</li>
+                      <li>Shaft diameter, length, flange, taper, keyway.</li>
+                      <li>Surface quality, especially stress concentration areas and the upper third of the taper.</li>
+                      <li>Whether UT and MT have been completed in accordance with the Rules.</li>
+                      <li>Whether bronze / gunmetal liners are cast in one piece, hydraulically tested, and fitted under surveyor witness.</li>
+                      <li>Whether stamping locations avoid high-stress areas.</li>
+                    </ul>
+                  </div>
+                  <div class="check-card">
+                    <span class="label blue">Builder / yard</span>
+                    <h3>Builder / yard survey</h3>
+                    <ul>
+                      <li>Confirm delivery condition and outstanding items.</li>
+                      <li>Carry out shaft alignment in accordance with the agreed procedure.</li>
+                      <li>Confirm whether hull, foundation, or support deformation affects the shaft line.</li>
+                      <li>Whether coupling bolts are interference fitted.</li>
+                      <li>Whether future dismantling issues have been confirmed if liquid nitrogen shrink fitting is used.</li>
+                      <li>Bearing clearances and poker gauge readings have been established as baseline.</li>
+                      <li>Complete Form 2095B data after sea trial.<span class="source-ref" title="Survey Procedures Manual - Tailshafts, First Entry Reporting Procedure 1.1.1-1.1.2">Form 2095B</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details>
+              <summary>Step 4 | Periodical survey checklist</summary>
+              <div class="details-body">
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Inspection item</th>
+                        <th>Judgement point</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Whether the propeller must be removed</strong></td>
+                        <td>Remove when required under TS Methods 1, 2, and 4; keyed propellers must be removed for taper MT.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>TS Method 3</strong></td>
+                        <td>Not permitted for keyed propellers.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Protective coating</strong></td>
+                        <td>If the coating is confirmed effective at each dry docking, it should not be unnecessarily disturbed. If condition is suspect, remove locally or to the necessary extent to confirm the shaft material underneath.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Flange bolts</strong></td>
+                        <td>Remove sample bolts as necessary; carry out further NDE if ringing is abnormal.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Large end of taper and keyway</strong></td>
+                        <td>Check for fretting, corrosion, circumferential corrosion band, and signs of cracking.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Liners and welds</strong></td>
+                        <td>Use hammer sound checks for looseness; for two-piece liners, pay attention to cracks in circumferential welds.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="mistakes" aria-labelledby="mistakes-title">
+        <p class="section-kicker">Field learning</p>
+        <h2 class="section-title" id="mistakes-title">Common Field Pitfalls</h2>
+        <p class="section-intro">These mistakes usually do not come from not knowing what to check, but from mistaking a scheme, survey method, or visible condition for sufficient evidence.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Pitfall</th>
+                <th>Correct understanding</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Assuming SCM removes keyed propeller removal</strong></td>
+                <td>Incorrect. A keyed propeller still needs to be removed during periodical survey for taper MT.</td>
+              </tr>
+              <tr>
+                <td><strong>Assuming the Chief Engineer can substitute for tailshaft survey</strong></td>
+                <td>Incorrect. The tailshaft survey for classification purposes cannot be carried out by the Chief Engineer.</td>
+              </tr>
+              <tr>
+                <td><strong>Checking the shaft body but not the keyway</strong></td>
+                <td>The keyway is a high-risk fatigue crack origin, especially for keyed propellers.</td>
+              </tr>
+              <tr>
+                <td><strong>Abnormal liner tapping sound not followed up</strong></td>
+                <td>Assess whether seawater exclusion has been compromised; do not merely record that there was a sound.</td>
+              </tr>
+              <tr>
+                <td><strong>Ignoring fiberglass wrapping because it appears intact</strong></td>
+                <td>If cracking, debonding, blistering, or water ingress is suspected, local removal may still be required to verify the condition underneath.</td>
+              </tr>
+              <tr>
+                <td><strong>Stamping in a high-stress area</strong></td>
+                <td>Stamping may create stress concentration; avoid high-stress locations or use low-stress stamps.</td>
+              </tr>
+              <tr>
+                <td><strong>Bronze liner weld repair without lead control or post-weld PT</strong></td>
+                <td>Lead content in base and filler materials must not exceed 0.5%, and crack detection is required after completion.</td>
+              </tr>
+              <tr>
+                <td><strong>Two-piece welded liner not recorded in certificate / report</strong></td>
+                <td>Follow-up information should be left for future surveys, especially circumferential weld checks.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="band" id="terms" aria-labelledby="terms-title">
+        <div class="section">
+          <p class="section-kicker">Glossary</p>
+          <h2 class="section-title" id="terms-title">Key Terms and Definitions</h2>
+          <p class="section-intro">The glossary keeps the original terms and concise definitions for quick reference when reading class documents or communicating in the field.</p>
+
+          <div class="table-wrap">
+            <table class="term-table">
+              <thead>
+                <tr>
+                  <th>Term / abbreviation</th>
+                  <th>Meaning</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tailshaft</td>
+                  <td>Tailshaft</td>
+                  <td>The shaft section near the stern that connects to the propeller.</td>
+                </tr>
+                <tr>
+                  <td>Screwshaft</td>
+                  <td>Screwshaft</td>
+                  <td>Often used in documents in a similar sense to tailshaft.</td>
+                </tr>
+                <tr>
+                  <td>Stern tube</td>
+                  <td>Stern tube</td>
+                  <td>The stern shafting structure containing stern tube bearings and seals.</td>
+                </tr>
+                <tr>
+                  <td>Liner</td>
+                  <td>Liner</td>
+                  <td>Protects the tailshaft from seawater corrosion, commonly bronze or gunmetal.</td>
+                </tr>
+                <tr>
+                  <td>Keyway</td>
+                  <td>Keyway</td>
+                  <td>The groove that transmits torque for a keyed propeller; also a stress concentration location.</td>
+                </tr>
+                <tr>
+                  <td>Shaft cone / taper</td>
+                  <td>Shaft cone / taper</td>
+                  <td>The fitted area between propeller and tailshaft, where fretting, corrosion, and cracking require attention.</td>
+                </tr>
+                <tr>
+                  <td>Fretting</td>
+                  <td>Fretting</td>
+                  <td>Wear and oxidation caused by small relative movement at mating surfaces.</td>
+                </tr>
+                <tr>
+                  <td>NDE / MT / UT / PT</td>
+                  <td>NDE</td>
+                  <td>Respectively: non-destructive examination, magnetic particle testing, ultrasonic testing, and penetrant testing.</td>
+                </tr>
+                <tr>
+                  <td>SCM</td>
+                  <td>Screwshaft condition monitoring</td>
+                  <td>Screwshaft Condition Monitoring, a class condition monitoring scheme.</td>
+                </tr>
+                <tr>
+                  <td>MPMS</td>
+                  <td>Machinery Planned Maintenance Scheme</td>
+                  <td>Machinery Planned Maintenance Scheme, a class-approved maintenance scheme.</td>
+                </tr>
+                <tr>
+                  <td>TSO / SDO</td>
+                  <td>Technical support / service delivery office</td>
+                  <td>TSO handles technical issues; SDO relates to certification, service delivery, and survey data.</td>
+                </tr>
+                <tr>
+                  <td>Asset Note / Actionable Item</td>
+                  <td>Asset note / actionable item</td>
+                  <td>Used by future surveyors to check special designs, repairs, or items requiring continued follow-up.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="summary" aria-labelledby="summary-title">
+        <p class="section-kicker">Review points</p>
+        <h2 class="section-title" id="summary-title">Summary: Fourteen Review Points for Tailshaft Survey</h2>
+        <div class="two-col summary-card-grid">
+          <div class="summary-card">
+            <h3>Technical and Survey Points</h3>
+            <ul class="review-list">
+              <li>The tailshaft is a high-risk propulsion component; survey attention focuses on cracking, corrosion, mating surfaces, liners, and alignment.</li>
+              <li>During periodical survey of a keyed propeller, the propeller must be removed and MT carried out on the tailshaft taper; TS Method 3 is not permitted for keyed propellers.</li>
+              <li>The tailshaft survey for classification purposes cannot be delegated to the Chief Engineer. This restriction applies to CSM and MPMS contexts. SCM is Screwshaft Condition Monitoring and does not replace the keyed propeller removal and taper MT requirement.</li>
+              <li>At the manufacturing stage, pay attention to dimensions, keyway geometry, surface roughness, the upper third of the taper, and NDE.</li>
+              <li>Bronze / gunmetal liners should generally be cast in one piece and hydraulically tested; two-piece welded liners must meet the requirements and be PT examined.</li>
+              <li>Tailshaft liners must not be secured to the tailshaft by pins.</li>
+              <li>During periodical survey, the keyway, large end of taper, liner ends, circumferential welds, flange root, and bolts are all high-risk areas.</li>
+            </ul>
+          </div>
+          <div class="summary-card">
+            <h3>Records and Follow-Up</h3>
+            <ul class="review-list">
+              <li>A circumferential corrosion band at the large end of the taper should be treated with high suspicion, as it may relate to seawater ingress and stress corrosion cracking.</li>
+              <li>Fiberglass or approved coating may provide corrosion protection. If it is found effective at dry docking, it should not be unnecessarily disturbed; when in doubt, the surveyor may require removal to the necessary extent to inspect the shaft material underneath.</li>
+              <li>Bearing clearances and poker gauge readings at new construction must be recorded as baselines for later in-service surveys.</li>
+              <li>Liquid nitrogen shrink fitting of coupling bolts may create future dismantling difficulty and should be confirmed with the owner / operator.</li>
+              <li>Bronze liner weld repair requires control of lead content, cooling, post-weld PT, and confirmation of tight contact.</li>
+              <li>Identification stamps on rejected tailshafts must be cancelled. Replacement shafts must come from approved works and undergo material, dimensional, and NDE confirmation.</li>
+              <li>Special designs, welded liners, protective coatings, and repair results should be properly reflected in certificates, Asset Notes, Actionable Items, or Survey Reports.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <section class="share-band" id="share">
+        <div
+          class="article-share article-share--end"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/tailshaft-survey-notes.en.html"
+          data-share-title="Ship Tailshaft Survey Procedure Essentials | Reay's Note"
+          data-share-email-body="I found this article on Reay's Maritime Notes and thought it might be useful:&#10;&#10;Ship Tailshaft Survey Procedure Essentials | Reay's Note&#10;https://reayhuang.com/notes/maritime/tailshaft-survey-notes.en.html"
+          data-share-copy="Copy link"
+          data-share-copied="Copied"
+          data-toast-copied="Link copied to clipboard"
+        >
+          <p class="article-share__label" id="share-end-label">Found this useful? Share it with colleagues</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>Ship Tailshaft Survey Procedure Essentials | Reay's Note</strong>
+      <span class="small">Prepared by Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        This page is a visual learning note for study, internal training, and survey preparation. It does not represent the official position of Lloyd's Register, IMO, or any other organisation. <span class="disclaimer-tail">For design, class approval, PSC inspection, or regulatory application, always refer to the latest LR Survey Procedures, IMO circulars, flag requirements, and formal class rules.</span>
+      </p>
+      <div class="footer-sources small">
+        <p class="footer-sources__title">References / Source notes</p>
+        <ul class="source-list">
+          <li>LR Survey Procedures Manual - Surveyable Items - Tailshafts</li>
+          <li>LR Rules for Ships, Pt 5 Ch 6; Pt 1 Ch 3; Pt 5 Ch 1</li>
+          <li>LR Rules for Materials, Ch 5, 3.5 Non-Destructive Examination.</li>
+          <li>IACS Rec.36, used only as supporting reference for stern tube lubricating oil contamination / metal content monitoring.</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      const nav = document.querySelector(".jump-nav");
+      const spacer = document.querySelector(".jump-nav-spacer");
+      if (!nav || !spacer) return;
+
+      const navInner = nav.querySelector(".jump-nav-inner");
+      const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      let navTop = 0;
+      let activeId = "";
+
+      const centerActiveLink = (link) => {
+        if (!navInner || !link) return;
+        const targetLeft = link.offsetLeft - (navInner.clientWidth - link.offsetWidth) / 2;
+        navInner.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: "smooth"
+        });
+      };
+
+      const updateActiveLink = () => {
+        const offset = nav.offsetHeight + Math.min(window.innerHeight * 0.35, 260);
+        let current = sections[0];
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop <= offset) current = section;
+        });
+
+        if (!current || current.id === activeId) return;
+        activeId = current.id;
+
+        links.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${activeId}`;
+          link.classList.toggle("is-active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "true");
+            centerActiveLink(link);
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      const update = () => {
+        const shouldStick = window.scrollY >= navTop;
+        nav.classList.toggle("is-fixed", shouldStick);
+        spacer.style.height = shouldStick ? `${nav.offsetHeight}px` : "0px";
+        updateActiveLink();
+      };
+
+      const measure = () => {
+        const wasFixed = nav.classList.contains("is-fixed");
+        if (wasFixed) nav.classList.remove("is-fixed");
+        spacer.style.height = "0px";
+        navTop = nav.offsetTop;
+        if (wasFixed) update();
+      };
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const hash = link.getAttribute("href");
+          const target = document.querySelector(hash);
+          if (!target) return;
+          event.preventDefault();
+          const gap = 12;
+          const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY;
+          const scrollTop = Math.max(targetTop - nav.offsetHeight - gap, 0);
+          window.scrollTo({ top: scrollTop, behavior: prefersReducedMotion ? "auto" : "smooth" });
+        });
+      });
+
+      measure();
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", measure);
+    })();
+  </script>
+</body>
+</html>

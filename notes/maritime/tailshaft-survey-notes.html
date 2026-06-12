@@ -1,0 +1,3071 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="艉軸, tailshaft, screwshaft, LR SPM, 驗船, NDE, 軸襯, 螺旋槳軸">
+  <meta property="og:title" content="船舶艉軸檢驗程序要點｜Reay's Note">
+  <meta property="og:description" content="以船級檢驗實務角度整理 Tailshaft / Screwshaft 檢驗程序，涵蓋製造廠、船廠安裝、定期檢驗、NDE、軸襯、防蝕包覆、修理更換與報告紀錄重點。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/tailshaft-survey-notes.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/tailshaft-survey-notes.html">
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/tailshaft/tailshaft-link-preview-1200.png">
+  <meta property="og:image:alt" content="船舶艉軸檢驗程序要點｜Reay's Note">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="船舶艉軸檢驗程序要點｜Reay's Note">
+  <meta name="twitter:description" content="以船級檢驗實務角度整理 Tailshaft / Screwshaft 檢驗程序，涵蓋製造廠、船廠安裝、定期檢驗、NDE、軸襯、防蝕包覆、修理更換與報告紀錄重點。">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/tailshaft/tailshaft-link-preview-1200.png">
+  <link rel="alternate" hreflang="zh-Hant" href="tailshaft-survey-notes.html">
+  <link rel="alternate" hreflang="en" href="tailshaft-survey-notes.en.html">
+  <link rel="alternate" hreflang="x-default" href="tailshaft-survey-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta name="description" content="以船級檢驗實務角度整理 Tailshaft / Screwshaft 檢驗程序，涵蓋製造廠、船廠安裝、定期檢驗、NDE、軸襯、防蝕包覆、修理更換與報告紀錄重點。">
+  <title>船舶艉軸檢驗程序要點｜Reay's Note</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --surface-soft: #eef4f3;
+      --ink: #172326;
+      --muted: #5f6d70;
+      --line: #d9e0df;
+      --teal: #0b766f;
+      --teal-dark: #07524e;
+      --blue: #2f6d96;
+      --rust: #a94d3f;
+      --amber: #bd7b1f;
+      --green: #4f7b43;
+      --charcoal: #213237;
+      --shadow: 0 18px 50px rgba(23, 35, 38, 0.12);
+      --radius: 8px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.72;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(11, 118, 111, 0.45);
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: var(--teal-dark);
+      text-decoration-color: var(--teal-dark);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    strong {
+      color: var(--ink);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(217, 224, 223, 0.9);
+      background: rgba(247, 248, 246, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 190px;
+    }
+
+    .brand strong {
+      font-size: 0.96rem;
+      line-height: 1.2;
+      font-weight: 760;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      border-radius: 999px;
+      padding: 8px 11px;
+      color: #344246;
+      font-size: 0.84rem;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      background: var(--surface-soft);
+      color: var(--teal-dark);
+    }
+
+    main {
+      overflow: clip;
+    }
+
+    .hero {
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(11, 118, 111, 0.08) 0 1px, transparent 1px),
+        linear-gradient(180deg, #ffffff 0%, var(--paper) 88%);
+      background-size: 32px 100%, auto;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: min(560px, calc(100svh - 86px));
+      margin: 0 auto;
+      padding: 58px 0 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 760;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 18px;
+      font-size: 3.5rem;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-bottom: 24px;
+      color: #3d4b4f;
+      font-size: 1.15rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 16px;
+      background: var(--surface);
+      color: var(--charcoal);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(23, 35, 38, 0.06);
+    }
+
+    .text-link.primary {
+      border-color: var(--teal);
+      background: var(--teal);
+      color: #ffffff;
+    }
+
+    .text-link:hover {
+      transform: translateY(-1px);
+      color: var(--teal-dark);
+    }
+
+    .text-link.primary:hover {
+      color: #ffffff;
+      background: var(--teal-dark);
+    }
+
+    .fact-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 780px;
+    }
+
+    .fact {
+      min-height: 94px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .fact b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 1.03rem;
+      line-height: 1.25;
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.48;
+    }
+
+    .section {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 74px 0;
+    }
+
+    .band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .band-muted {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #edf3f2;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 820;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      max-width: 860px;
+      margin-bottom: 16px;
+      font-size: 2.55rem;
+      line-height: 1.14;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .section-intro {
+      max-width: 800px;
+      margin-bottom: 34px;
+      color: #405055;
+      font-size: 1.02rem;
+    }
+
+    .quick-grid,
+    .card-grid,
+    .two-col,
+    .three-col,
+    .four-col {
+      display: grid;
+      gap: 16px;
+    }
+
+    .quick-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .three-col {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .four-col {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .note-card,
+    .check-card,
+    .risk-card,
+    .summary-card,
+    .metric-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .note-card,
+    .metric-card {
+      padding: 20px;
+    }
+
+    .note-card b,
+    .metric-card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .note-card p,
+    .check-card p,
+    .risk-card p,
+    .summary-card p,
+    .metric-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: #e6f2f0;
+      color: var(--teal-dark);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .callout {
+      border-left: 4px solid var(--teal);
+      padding: 18px 20px;
+      background: #eef7f5;
+      color: #26383c;
+    }
+
+    .callout.warning {
+      border-left-color: var(--amber);
+      background: #f9f1e4;
+    }
+
+    .callout.danger {
+      border-left-color: var(--rust);
+      background: #f7e9e5;
+    }
+
+    .callout strong {
+      color: var(--teal-dark);
+    }
+
+    .callout.danger strong {
+      color: #7c3028;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f4f3;
+      color: #213237;
+      font-size: 0.82rem;
+      font-weight: 820;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td strong {
+      color: var(--ink);
+    }
+
+    .stage-map {
+      display: grid;
+      grid-template-columns: 1fr 46px 1fr 46px 1fr;
+      align-items: stretch;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stage-box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--surface);
+    }
+
+    .stage-box h3 {
+      margin-bottom: 12px;
+      font-size: 1.16rem;
+    }
+
+    .stage-box ul,
+    .check-card ul,
+    .risk-card ul,
+    .source-list,
+    .review-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .stage-box li,
+    .check-card li,
+    .risk-card li,
+    .source-list li,
+    .review-list li {
+      margin: 0.38rem 0;
+      color: #47575b;
+    }
+
+    .arrow {
+      display: grid;
+      place-items: center;
+      color: var(--teal-dark);
+      font-size: 1.8rem;
+      font-weight: 900;
+    }
+
+    .check-card,
+    .risk-card,
+    .summary-card {
+      padding: 18px;
+    }
+
+    .check-card h3,
+    .risk-card h3,
+    .summary-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.04rem;
+      line-height: 1.25;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 4px 9px;
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 820;
+      line-height: 1.2;
+    }
+
+    .label.teal {
+      background: var(--teal);
+    }
+
+    .label.blue {
+      background: var(--blue);
+    }
+
+    .label.rust {
+      background: var(--rust);
+    }
+
+    .label.amber {
+      background: var(--amber);
+    }
+
+    .label.green {
+      background: var(--green);
+    }
+
+    .logic-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin: 28px 0 8px;
+    }
+
+    .flow-item {
+      position: relative;
+      min-height: 138px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: var(--surface);
+    }
+
+    .flow-item::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      right: -7px;
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid var(--teal);
+      border-right: 2px solid var(--teal);
+      transform: rotate(45deg);
+      background: var(--surface);
+    }
+
+    .flow-item:last-child::after {
+      content: none;
+    }
+
+    .flow-item b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      line-height: 1.28;
+    }
+
+    .flow-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .matrix-grid .table-wrap {
+      min-width: 0;
+    }
+
+    .matrix-grid > .table-wrap:first-child table {
+      min-width: 620px;
+    }
+
+    .mini-table table {
+      min-width: 100%;
+      font-size: 0.9rem;
+    }
+
+    .matrix-grid .table-wrap:nth-child(3) {
+      grid-column: 1 / -1;
+    }
+
+    .details-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 16px 18px;
+      color: var(--ink);
+      font-weight: 820;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .details-body {
+      padding: 18px;
+    }
+
+    .term-table td:first-child {
+      width: 24%;
+      font-weight: 820;
+      color: var(--ink);
+    }
+
+    .term-table td:nth-child(2) {
+      width: 26%;
+      color: #334347;
+    }
+
+    .footer-note {
+      border-top: 1px solid var(--line);
+      background: #172326;
+      color: #dbe4e2;
+    }
+
+    .footer-note .section {
+      padding-top: 52px;
+      padding-bottom: 52px;
+    }
+
+    .footer-note h2 {
+      margin-bottom: 14px;
+      font-size: 1.35rem;
+      color: #ffffff;
+    }
+
+    .footer-note p {
+      max-width: 920px;
+      color: #cad5d3;
+    }
+
+    .source-list a {
+      color: #ffffff;
+      text-decoration-color: rgba(255, 255, 255, 0.42);
+    }
+
+    .source-list li {
+      color: #dbe4e2;
+    }
+
+    @media (max-width: 1120px) {
+      .matrix-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix-grid .table-wrap {
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner {
+        min-height: auto;
+        padding-top: 58px;
+      }
+
+      .quick-grid,
+      .three-col,
+      .four-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .logic-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flow-item::after {
+        content: none;
+      }
+
+      .stage-map {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        min-height: 28px;
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+      }
+
+      .hero-inner,
+      .section {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-inner {
+        min-height: 0;
+        padding: 42px 0 30px;
+        gap: 30px;
+      }
+
+      h1 {
+        font-size: 2.18rem;
+      }
+
+      .lead {
+        font-size: 1.02rem;
+      }
+
+      .section-title {
+        font-size: 1.86rem;
+      }
+
+      .fact-strip,
+      .quick-grid,
+      .two-col,
+      .three-col,
+      .four-col,
+      .matrix-grid,
+      .logic-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .inspection-row {
+        grid-template-columns: 30px 1fr;
+      }
+
+      .inspection-row small {
+        grid-column: 2;
+        justify-self: start;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .hero-actions {
+        display: none;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .section,
+      .hero-inner {
+        width: 100%;
+        padding: 28px 0;
+      }
+
+      .hero {
+        border-bottom: 1px solid #cccccc;
+      }
+
+      .footer-note {
+        background: #ffffff;
+        color: #172326;
+      }
+
+      .footer-note h2,
+      .footer-note p,
+      .source-list li {
+        color: #172326;
+      }
+    }
+
+    /* Site-style alignment, matched to steering-gear-notes.html */
+    :root {
+      --max: 1180px;
+      --ink: #061b22;
+      --muted: #5b6d73;
+      --line: #dce8e8;
+      --teal: #3accc2;
+      --teal-dark: #08776f;
+      --green: #0b2b35;
+      --orange: #ff6b3d;
+      --soft-teal: #eefaf9;
+      --blue: #1d4ed8;
+      --blue-soft: #dbeafe;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --red: #b91c1c;
+      --red-soft: #fee2e2;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --surface: #ffffff;
+      --surface-soft: #eefaf9;
+      --shell-radius: 8px;
+      --radius: 8px;
+      --shadow: none;
+    }
+
+    body.steering-shell {
+      background: #ffffff;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.68;
+    }
+
+    body.steering-shell a {
+      text-decoration: none;
+    }
+
+    body.steering-shell main {
+      padding: 0;
+      overflow: visible;
+    }
+
+    body.steering-shell .hero {
+      position: relative;
+      overflow: hidden;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      background-image:
+        linear-gradient(90deg, rgba(7, 20, 35, 0.98) 0%, rgba(7, 20, 35, 0.92) 34%, rgba(7, 20, 35, 0.66) 62%, rgba(7, 20, 35, 0.24) 100%),
+        linear-gradient(180deg, rgba(7, 20, 35, 0.18), rgba(7, 20, 35, 0.42)),
+        url("../../assets/images/maritime/tailshaft/tailshaft-propeller-hero.jpg"),
+        linear-gradient(135deg, #071423 0%, #0e5964 54%, #123b57 100%);
+      background-position: center, center, center right, center;
+      background-repeat: no-repeat;
+      background-size: cover, cover, cover, cover;
+    }
+
+    @supports (background-image: image-set(url("dummy.webp") type("image/webp"))) {
+      body.steering-shell .hero {
+        background-image:
+          linear-gradient(90deg, rgba(7, 20, 35, 0.98) 0%, rgba(7, 20, 35, 0.92) 34%, rgba(7, 20, 35, 0.66) 62%, rgba(7, 20, 35, 0.24) 100%),
+          linear-gradient(180deg, rgba(7, 20, 35, 0.18), rgba(7, 20, 35, 0.42)),
+          image-set(
+            url("../../assets/images/maritime/tailshaft/tailshaft-propeller-hero.webp") type("image/webp"),
+            url("../../assets/images/maritime/tailshaft/tailshaft-propeller-hero.jpg") type("image/jpeg")
+          ),
+          linear-gradient(135deg, #071423 0%, #0e5964 54%, #123b57 100%);
+      }
+    }
+
+    body.steering-shell .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(143, 255, 242, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(143, 255, 242, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(90deg, black, transparent 80%);
+    }
+
+    body.steering-shell .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max), 100%);
+      min-height: 0;
+      margin: 0 auto;
+      padding: 56px 22px 44px;
+      display: block;
+    }
+
+    body.steering-shell .hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      min-height: 48px;
+      margin: 0 0 24px;
+      padding: 11px 20px;
+      border: 1px solid rgba(143, 255, 242, 0.38);
+      border-radius: 999px;
+      background: rgba(14, 89, 100, 0.34);
+      color: #dffaff;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      font-size: 0.94rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    body.steering-shell .hero .eyebrow::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 10px;
+      height: 10px;
+      margin-right: 14px;
+      border-radius: 50%;
+      background: #38d4dc;
+    }
+
+    body.steering-shell h1 {
+      max-width: 980px;
+      margin: 0;
+      color: #ffffff;
+      font-size: 2.8rem;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    body.steering-shell .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      max-width: 1060px;
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.92rem;
+      font-weight: 760;
+    }
+
+    body.steering-shell .article-meta__sep {
+      color: rgba(255, 255, 255, 0.42);
+    }
+
+    body.steering-shell .hero-subtitle {
+      max-width: 900px;
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1rem;
+      line-height: 1.76;
+    }
+
+    body.steering-shell .hero strong {
+      color: #ffffff;
+    }
+
+    body.steering-shell .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 1060px;
+      margin-top: 20px;
+    }
+
+    body.steering-shell .meta-card {
+      min-height: 82px;
+      padding: 12px 14px;
+      border-radius: var(--shell-radius);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    body.steering-shell .meta-card span {
+      display: block;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    body.steering-shell .meta-card strong {
+      display: block;
+      margin-top: 4px;
+      color: #ffffff;
+      font-size: 1rem;
+      line-height: 1.42;
+    }
+
+    body.steering-shell .jump-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    body.steering-shell .jump-nav.is-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 12px 28px rgba(7, 23, 32, 0.12);
+    }
+
+    body.steering-shell .jump-nav-spacer {
+      height: 0;
+    }
+
+    body.steering-shell .jump-nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    body.steering-shell .jump-nav a {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 850;
+      padding: 8px 12px;
+      border-radius: var(--shell-radius);
+      border: 1px solid transparent;
+    }
+
+    body.steering-shell .jump-nav a:hover {
+      background: var(--soft-teal);
+      color: var(--ink);
+    }
+
+    body.steering-shell .jump-nav a.is-active,
+    body.steering-shell .jump-nav a[aria-current="true"] {
+      background: var(--orange);
+      color: #ffffff;
+    }
+
+    body.steering-shell .jump-nav a.is-active:hover,
+    body.steering-shell .jump-nav a[aria-current="true"]:hover {
+      background: var(--orange);
+      color: #ffffff;
+    }
+
+    body.steering-shell .article-body {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 22px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    body.steering-shell .article-body > .section,
+    body.steering-shell .article-body > .band > .section,
+    body.steering-shell .article-body > .band-muted > .section {
+      overflow: clip;
+      width: 100%;
+      margin: 0;
+      padding: 22px;
+      border: 1px solid rgba(220, 232, 232, 0.95);
+      border-radius: var(--shell-radius);
+      background: #ffffff;
+      box-shadow: none;
+      scroll-margin-top: 72px;
+    }
+
+    body.steering-shell .article-body > .band,
+    body.steering-shell .article-body > .band-muted {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    body.steering-shell .section-kicker {
+      margin-bottom: 8px;
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    body.steering-shell h2,
+    body.steering-shell .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: none;
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: 1.34rem;
+      line-height: 1.35;
+      letter-spacing: 0;
+      text-wrap: initial;
+    }
+
+    body.steering-shell h2::before,
+    body.steering-shell .section-title::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 6px;
+      height: 24px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--teal), var(--blue));
+    }
+
+    body.steering-shell h3 {
+      margin: 20px 0 8px;
+      color: var(--gray-900);
+      font-size: 1.04rem;
+      line-height: 1.35;
+    }
+
+    body.steering-shell p {
+      margin: 8px 0;
+    }
+
+    body.steering-shell .section-intro {
+      max-width: 900px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    body.steering-shell .quick-grid,
+    body.steering-shell .two-col,
+    body.steering-shell .three-col,
+    body.steering-shell .four-col,
+    body.steering-shell .card-grid {
+      gap: 16px;
+    }
+
+    body.steering-shell .quick-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    body.steering-shell .summary-card-grid {
+      gap: 20px;
+    }
+
+    body.steering-shell .note-card,
+    body.steering-shell .check-card,
+    body.steering-shell .risk-card,
+    body.steering-shell .summary-card,
+    body.steering-shell .metric-card,
+    body.steering-shell .stage-box,
+    body.steering-shell details,
+    body.steering-shell .flow-item {
+      border: 1px solid var(--line);
+      border-radius: var(--shell-radius);
+      background: #ffffff;
+      box-shadow: none;
+    }
+
+    body.steering-shell .note-card,
+    body.steering-shell .check-card,
+    body.steering-shell .risk-card,
+    body.steering-shell .summary-card,
+    body.steering-shell .metric-card,
+    body.steering-shell .flow-item {
+      padding: 16px;
+    }
+
+    body.steering-shell .note-card {
+      border-left: 4px solid var(--blue);
+      background: var(--gray-50);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(1) {
+      border-left-color: var(--blue);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(2) {
+      border-left-color: var(--orange);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(3) {
+      border-left-color: var(--teal-dark);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(4) {
+      border-left-color: var(--red);
+    }
+
+    body.steering-shell .number {
+      width: 26px;
+      height: 26px;
+      margin-bottom: 8px;
+      border-radius: 7px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(2) .number {
+      background: var(--amber-soft);
+      color: var(--orange);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(3) .number {
+      background: var(--soft-teal);
+      color: var(--teal-dark);
+    }
+
+    body.steering-shell .quick-grid .note-card:nth-child(4) .number {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    body.steering-shell .rules-prereq-grid .check-card {
+      position: relative;
+      overflow: hidden;
+      padding-top: 20px;
+    }
+
+    body.steering-shell .rules-prereq-grid .check-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .rules-prereq-grid .check-card:nth-child(2)::before {
+      background: var(--orange);
+    }
+
+    body.steering-shell #periodical .risk-card {
+      border-left-width: 4px;
+    }
+
+    body.steering-shell #periodical .risk-card .label {
+      margin-bottom: 6px;
+    }
+
+    body.steering-shell #periodical .risk-card h3 {
+      margin-top: 0;
+    }
+
+    body.steering-shell #periodical .risk-card:nth-child(1) {
+      border-left-color: var(--red);
+    }
+
+    body.steering-shell #periodical .risk-card:nth-child(2) {
+      border-left-color: var(--orange);
+    }
+
+    body.steering-shell #periodical .risk-card:nth-child(3) {
+      border-left-color: var(--blue);
+    }
+
+    body.steering-shell .method-reminder {
+      margin: 22px 0 18px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      border-radius: var(--shell-radius);
+      background: linear-gradient(90deg, #eff6ff 0%, #ffffff 82%);
+    }
+
+    body.steering-shell .method-reminder__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    body.steering-shell .method-reminder__head strong {
+      color: var(--green);
+      line-height: 1.45;
+    }
+
+    body.steering-shell .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    body.steering-shell .method-grid > div {
+      min-width: 0;
+      padding: 10px 12px;
+      border-top: 3px solid var(--blue);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    body.steering-shell .method-grid > div:nth-child(2) {
+      border-top-color: var(--orange);
+    }
+
+    body.steering-shell .method-grid > div:nth-child(3) {
+      border-top-color: var(--red);
+    }
+
+    body.steering-shell .method-grid > div:nth-child(4) {
+      border-top-color: var(--teal-dark);
+    }
+
+    body.steering-shell .method-grid b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--green);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    body.steering-shell .method-grid span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    body.steering-shell .subsection-heading {
+      margin: 24px 0 8px;
+      color: var(--green);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    body.steering-shell .repair-card-grid .check-card {
+      position: relative;
+      overflow: hidden;
+      padding-top: 20px;
+    }
+
+    body.steering-shell .repair-card-grid .label {
+      margin-bottom: 6px;
+    }
+
+    body.steering-shell .repair-card-grid h3 {
+      margin-top: 0;
+    }
+
+    body.steering-shell .repair-card-grid .check-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--orange);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(1) .label {
+      background: var(--orange);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(2)::before {
+      background: var(--red);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(2) .label {
+      background: var(--red);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(3)::before {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .repair-card-grid .check-card:nth-child(3) .label {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .summary-card-grid .summary-card {
+      position: relative;
+      overflow: hidden;
+      padding-top: 20px;
+    }
+
+    body.steering-shell .summary-card-grid .summary-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--blue);
+    }
+
+    body.steering-shell .summary-card-grid .summary-card:nth-child(2)::before {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .label {
+      border-radius: var(--shell-radius);
+      padding: 5px 9px;
+      font-size: 0.72rem;
+      font-weight: 850;
+    }
+
+    body.steering-shell .label.teal,
+    body.steering-shell .label.green {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .label.rust,
+    body.steering-shell .label.amber {
+      background: var(--orange);
+    }
+
+    body.steering-shell .label.blue {
+      background: var(--blue);
+    }
+
+    body.steering-shell .source-ref {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      margin: 0 0 0 6px;
+      padding: 2px 7px;
+      border: 1px solid rgba(47, 109, 150, 0.22);
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: var(--blue);
+      font-size: 0.74rem;
+      font-weight: 900;
+      line-height: 1.45;
+      vertical-align: baseline;
+      white-space: normal;
+    }
+
+    body.steering-shell h2 .source-ref,
+    body.steering-shell h3 .source-ref,
+    body.steering-shell b .source-ref,
+    body.steering-shell strong .source-ref {
+      margin-left: 8px;
+      font-size: 0.68rem;
+    }
+
+    body.steering-shell td .source-ref,
+    body.steering-shell li .source-ref {
+      margin-top: 2px;
+    }
+
+    body.steering-shell .term-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    body.steering-shell .callout {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--blue);
+      border-radius: var(--shell-radius);
+      background: var(--blue-soft);
+      color: var(--gray-900);
+    }
+
+    body.steering-shell .callout.warning,
+    body.steering-shell .callout.warn {
+      border-left-color: var(--amber);
+      background: var(--amber-soft);
+    }
+
+    body.steering-shell .callout.danger {
+      border-left-color: var(--red);
+      background: var(--red-soft);
+    }
+
+    body.steering-shell .callout strong {
+      color: var(--green);
+    }
+
+    body.steering-shell .table-wrap {
+      overflow-x: auto;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--shell-radius);
+      background: #ffffff;
+    }
+
+    body.steering-shell table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: #ffffff;
+      font-size: 0.92rem;
+    }
+
+    body.steering-shell .table-wrap.mini-table {
+      overflow-x: visible;
+    }
+
+    body.steering-shell .table-wrap.mini-table table {
+      min-width: 0;
+      table-layout: fixed;
+    }
+
+    body.steering-shell .table-wrap.mini-table th:first-child,
+    body.steering-shell .table-wrap.mini-table td:first-child {
+      width: 72px;
+      white-space: nowrap;
+    }
+
+    body.steering-shell .table-wrap.mini-table th,
+    body.steering-shell .table-wrap.mini-table td {
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    body.steering-shell .table-wrap.mini-table .source-ref {
+      margin-left: 0;
+      margin-top: 4px;
+    }
+
+    body.steering-shell .table-wrap.compact-table table {
+      min-width: 0;
+      table-layout: fixed;
+    }
+
+    body.steering-shell .table-wrap.compact-table th:first-child,
+    body.steering-shell .table-wrap.compact-table td:first-child {
+      width: 34%;
+    }
+
+    body.steering-shell th,
+    body.steering-shell td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.65;
+    }
+
+    body.steering-shell th {
+      background: #e0f2fe;
+      color: var(--green);
+      font-size: 0.82rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    body.steering-shell tbody tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    body.steering-shell .stage-map {
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    body.steering-shell .stage-box {
+      position: relative;
+      overflow: hidden;
+      padding: 16px;
+    }
+
+    body.steering-shell #framework .stage-box {
+      padding-top: 20px;
+    }
+
+    body.steering-shell #framework .stage-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--blue);
+    }
+
+    body.steering-shell #framework .stage-box:nth-child(3)::before {
+      background: var(--orange);
+    }
+
+    body.steering-shell #framework .stage-box:nth-child(5)::before {
+      background: var(--teal-dark);
+    }
+
+    body.steering-shell .arrow {
+      color: var(--teal-dark);
+    }
+
+    body.steering-shell .logic-flow {
+      gap: 10px;
+      margin: 18px 0 8px;
+    }
+
+    body.steering-shell .logic-flow.defect-flow {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    body.steering-shell .flow-item {
+      min-height: 132px;
+    }
+
+    body.steering-shell .defect-flow .flow-item {
+      min-height: 152px;
+      border-top: 4px solid var(--blue);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(2) {
+      border-top-color: var(--orange);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(3) {
+      border-top-color: var(--teal-dark);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(4) {
+      border-top-color: var(--red);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(5) {
+      border-top-color: var(--orange);
+    }
+
+    body.steering-shell .defect-flow .flow-item:nth-child(6) {
+      border-top-color: var(--blue);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item {
+      border-top: 4px solid var(--blue);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item:nth-child(2) {
+      border-top-color: var(--orange);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item:nth-child(3) {
+      border-top-color: var(--teal-dark);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item:nth-child(4) {
+      border-top-color: var(--red);
+    }
+
+    body.steering-shell .logic-flow:not(.defect-flow) .flow-item:nth-child(5) {
+      border-top-color: var(--amber);
+    }
+
+    body.steering-shell .flow-item::after {
+      border-color: var(--teal-dark);
+    }
+
+    body.steering-shell summary {
+      padding: 14px 16px;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    body.steering-shell .details-list,
+    body.steering-shell details,
+    body.steering-shell .details-body {
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    body.steering-shell details {
+      overflow: hidden;
+    }
+
+    body.steering-shell .details-body {
+      padding: 16px;
+    }
+
+    body.steering-shell .footer-note {
+      margin: 0;
+      padding: 36px 0 44px;
+      border-top: 0;
+      background: var(--green);
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    body.steering-shell .footer-note .section {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      padding: 0 22px;
+      background: transparent;
+      border: 0;
+    }
+
+    body.steering-shell .footer-note h2 {
+      color: #ffffff;
+      font-size: 1.18rem;
+    }
+
+    body.steering-shell .footer-note h2::before {
+      display: none;
+    }
+
+    body.steering-shell .footer-note h3 {
+      margin: 22px 0 8px;
+      color: #ffffff;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+
+    body.steering-shell .footer-note p,
+    body.steering-shell .source-list li {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    body.steering-shell .source-list {
+      max-width: 980px;
+      margin: 10px 0 0;
+      padding-left: 1.2rem;
+      line-height: 1.35;
+    }
+
+    body.steering-shell .source-list li {
+      margin: 0;
+    }
+
+    body.steering-shell .source-list li + li {
+      margin-top: 2px;
+    }
+
+    body.steering-shell code {
+      color: #ffffff;
+    }
+
+    body.steering-shell .hero .article-share--hero {
+      margin-top: 28px;
+    }
+
+    body.steering-shell .share-band {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 22px 32px;
+    }
+
+    body.steering-shell footer.site-footer {
+      margin: 0;
+      padding: 36px 0 44px;
+      background: #061b22;
+      color: rgba(255, 255, 255, 0.82);
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    body.steering-shell footer.site-footer .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    body.steering-shell footer.site-footer strong {
+      color: #fff;
+    }
+
+    body.steering-shell footer.site-footer a {
+      color: #8ffff2;
+    }
+
+    body.steering-shell footer.site-footer .small {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 13px;
+    }
+
+    body.steering-shell footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 760px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    body.steering-shell footer.site-footer .footer-sources {
+      margin: 18px 0 0;
+      max-width: 980px;
+    }
+
+    body.steering-shell footer.site-footer .footer-sources__title {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    body.steering-shell footer.site-footer .source-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+
+    body.steering-shell footer.site-footer .source-list li {
+      color: rgba(255, 255, 255, 0.62);
+      margin: 0;
+    }
+
+    body.steering-shell footer.site-footer .source-list li + li {
+      margin-top: 4px;
+    }
+
+    @media (min-width: 1101px) {
+      body.steering-shell footer.site-footer .disclaimer-tail {
+        display: block;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      body.steering-shell .meta-grid,
+      body.steering-shell .quick-grid,
+      body.steering-shell .three-col,
+      body.steering-shell .four-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.steering-shell .logic-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.steering-shell .logic-flow.defect-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.steering-shell .method-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.steering-shell .flow-item::after {
+        content: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body.steering-shell .hero-inner {
+        padding: 36px 16px 32px;
+      }
+
+      body.steering-shell h1 {
+        font-size: 2.15rem;
+      }
+
+      body.steering-shell .hero .eyebrow {
+        min-height: 0;
+        padding: 9px 14px;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+      }
+
+      body.steering-shell .article-meta__sep {
+        display: none;
+      }
+
+      body.steering-shell .jump-nav-inner {
+        padding: 10px 16px;
+      }
+
+      body.steering-shell .article-body {
+        padding: 20px 16px 12px;
+      }
+
+      body.steering-shell .article-body > .section,
+      body.steering-shell .article-body > .band > .section,
+      body.steering-shell .article-body > .band-muted > .section {
+        padding: 20px;
+        scroll-margin-top: 64px;
+      }
+
+      body.steering-shell .meta-grid,
+      body.steering-shell .quick-grid,
+      body.steering-shell .two-col,
+      body.steering-shell .three-col,
+      body.steering-shell .four-col,
+      body.steering-shell .matrix-grid,
+      body.steering-shell .logic-flow,
+      body.steering-shell .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body.steering-shell .logic-flow.defect-flow {
+        grid-template-columns: 1fr;
+      }
+
+      body.steering-shell .stage-map {
+        grid-template-columns: 1fr;
+      }
+
+      body.steering-shell .arrow {
+        min-height: 24px;
+        transform: rotate(90deg);
+      }
+
+      body.steering-shell table {
+        min-width: 640px;
+      }
+    }
+
+    @media print {
+      .note-site-bar,
+      .jump-nav,
+      .article-share,
+      .share-band {
+        display: none !important;
+      }
+
+      body.steering-shell .hero {
+        color: var(--gray-900);
+        background: #ffffff;
+        border: 2px solid var(--gray-300);
+      }
+
+      body.steering-shell .hero::after {
+        display: none;
+      }
+
+      body.steering-shell h1,
+      body.steering-shell .hero strong,
+      body.steering-shell .meta-card strong {
+        color: var(--gray-900);
+      }
+
+      body.steering-shell .hero-subtitle,
+      body.steering-shell .article-meta,
+      body.steering-shell .meta-card span {
+        color: var(--gray-700);
+      }
+
+      body.steering-shell .meta-card {
+        background: var(--gray-50);
+        border-color: var(--gray-300);
+      }
+    }
+  </style>
+</head>
+<body class="layout-reference steering-shell">
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="tailshaft-survey-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="tailshaft-survey-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <article>
+      <section class="hero" aria-labelledby="article-title">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">LR SPM · TAILSHAFT SURVEY · REAY'S NOTE</p>
+            <h1 id="article-title">船舶艉軸檢驗程序要點</h1>
+            <p class="article-meta">
+              <span>📅 更新：2026-06-12</span>
+              <span class="article-meta__sep" aria-hidden="true">·</span>
+              <span>⏱ 閱讀約 18 分鐘</span>
+              <span class="article-meta__sep" aria-hidden="true">·</span>
+              <span>🏷 LR SPM / 艉軸檢驗 / Tailshaft</span>
+            </p>
+            <p class="hero-subtitle">本篇筆記是依照 <strong>LR Survey Procedures Manual - Surveyable Items - Tailshafts</strong> 的章節脈絡整理出的重點摘要，內容聚焦於 <strong>Tailshaft / Screwshaft</strong> 在製造、安裝、定期檢驗、修理與報告紀錄中的核心判斷。重點不只是「要檢查什麼」，而是把 Surveyor 在現場需要追的風險、文件、NDE、證書與後續紀錄串成一條可回查的工作線。</p>
+            <div class="meta-grid" aria-label="Article metadata">
+              <div class="meta-card">
+                <span>筆記類型</span>
+                <strong>檢驗程序筆記</strong>
+              </div>
+              <div class="meta-card">
+                <span>主題設備</span>
+                <strong>艉軸／螺旋槳軸</strong>
+              </div>
+              <div class="meta-card">
+                <span>檢驗焦點</span>
+                <strong>NDE、軸襯、對中、防蝕包覆</strong>
+              </div>
+              <div class="meta-card">
+                <span>適用情境</span>
+                <strong>新造船／現有船</strong>
+              </div>
+            </div>
+            <div
+              class="article-share article-share--hero"
+              data-article-share
+              data-share-url="https://reayhuang.com/notes/maritime/tailshaft-survey-notes.html"
+              data-share-title="船舶艉軸檢驗程序要點｜Reay's Note"
+              data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船舶艉軸檢驗程序要點｜Reay's Note&#10;https://reayhuang.com/notes/maritime/tailshaft-survey-notes.html"
+              data-share-copy="複製連結"
+              data-share-copied="已複製"
+              data-toast-copied="連結已複製到剪貼簿"
+            >
+              <p class="article-share__label" id="share-hero-label">分享此篇</p>
+              <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <nav class="jump-nav" aria-label="快速導覽">
+        <div class="jump-nav-inner">
+          <a href="#quick">快速閱讀</a>
+          <a href="#framework">文件架構</a>
+          <a href="#newbuilding">新造檢驗</a>
+          <a href="#periodical">定期檢驗</a>
+          <a href="#repair">修理更換</a>
+          <a href="#records">報告紀錄</a>
+          <a href="#checklist">Checklist</a>
+          <a href="#mistakes">容易出錯</a>
+          <a href="#terms">術語表</a>
+          <a href="#summary">總結</a>
+        </div>
+      </nav>
+      <div class="jump-nav-spacer" aria-hidden="true"></div>
+
+      <div class="article-body">
+      <section class="section" id="quick" aria-labelledby="quick-title">
+        <p class="section-kicker">Quick read</p>
+        <h2 class="section-title" id="quick-title">先用四個判斷點掌握全文</h2>
+        <p class="section-intro">艉軸不是單一零件檢查，而是推進系統風險的交會點：材料、加工、螺旋槳配合、軸承、密封、防蝕與船級紀錄都會連在一起。</p>
+        <div class="quick-grid">
+          <div class="note-card">
+            <span class="number">01</span>
+            <b>高風險、低可見性</b>
+            <p>艉軸承受扭矩、彎矩、軸向力與腐蝕風險；裂損、襯套失效或海水侵入可能導致推進失效或螺旋槳鬆脫。</p>
+          </div>
+          <div class="note-card">
+            <span class="number">02</span>
+            <b>Keyed propeller 要特別保守</b>
+            <p>鍵槽是典型應力集中區。定期螺旋槳軸檢驗時，keyed propeller 必須拆卸，以便對軸錐部做 MT。</p>
+          </div>
+          <div class="note-card">
+            <span class="number">03</span>
+            <b>Chief Engineer 不可代檢</b>
+            <p>艉軸不得由 Chief Engineer 代行分類目的檢驗；此限制適用於 CSM 與 MPMS 情境。SCM 則屬於 Screwshaft Condition Monitoring，不能取代 keyed propeller 拆槳與錐部 MT 要求。</p>
+          </div>
+          <div class="note-card">
+            <span class="number">04</span>
+            <b>報告是後續檢驗的基準</b>
+            <p>軸承間隙、poker gauge readings、特殊襯套、包覆塗層、修理結果與被拒軸標記，都要能被下一位 Surveyor 追蹤。</p>
+          </div>
+        </div>
+        <div class="callout warning" style="margin-top: 24px;">
+          <strong>使用邊界：</strong>本文依據提供的 Survey Procedures Manual 摘要整理，適合作為學習、審查準備與現場理解。正式判定仍須以最新版 LR Rules、Survey Procedures、主管機關要求與船級技術審查意見為準。
+        </div>
+      </section>
+
+      <section class="band" id="framework" aria-labelledby="framework-title">
+        <div class="section">
+          <p class="section-kicker">Document logic</p>
+          <h2 class="section-title" id="framework-title">文件架構：從製造、安裝到營運檢驗的閉環</h2>
+          <p class="section-intro">這份程序不是單純的設計公式，而是把規範要求轉成 Surveyor 可以執行、見證、記錄與追蹤的檢驗工作。</p>
+
+          <div class="stage-map" aria-label="Survey stages">
+            <div class="stage-box">
+              <h3>製造廠新造檢驗</h3>
+              <ul>
+                <li>材料、尺寸、加工品質</li>
+                <li>UT、MT、PT 等 NDE</li>
+                <li>青銅／炮銅襯套與水壓試驗</li>
+                <li>識別刻印與證書背書</li>
+              </ul>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div class="stage-box">
+              <h3>船廠安裝檢驗</h3>
+              <ul>
+                <li>交付狀態與未完成事項</li>
+                <li>軸系對中與聯軸器螺栓</li>
+                <li>軸承間隙與 poker gauge 基準</li>
+                <li>海試與 Form 2095B</li>
+              </ul>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div class="stage-box">
+              <h3>現有船定期檢驗</h3>
+              <ul>
+                <li>拆槳、錐部與鍵槽 NDE</li>
+                <li>襯套端部、焊縫、法蘭根部</li>
+                <li>防蝕包覆與下方腐蝕疑慮</li>
+                <li>修理、更換與船級紀錄</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="table-wrap" style="margin-top: 28px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>檢驗情境</th>
+                  <th>中文說明</th>
+                  <th>核心目的</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>New Construction Survey at Manufacturer's Works</strong></td>
+                  <td>製造廠新造檢驗</td>
+                  <td>確認軸件製造、尺寸、表面品質、NDE、軸襯、水壓試驗與刻印。</td>
+                </tr>
+                <tr>
+                  <td><strong>New Construction Survey at Builder's / Fabricator's Yard</strong></td>
+                  <td>船廠／組裝廠新造檢驗</td>
+                  <td>確認軸件交付狀態、安裝、對中、聯軸器、軸承間隙與海試。</td>
+                </tr>
+                <tr>
+                  <td><strong>Periodical Survey of Existing Vessels / Installations</strong></td>
+                  <td>現有船舶／設施定期檢驗</td>
+                  <td>檢查裂紋、腐蝕、襯套鬆動、螺旋槳配合、防蝕塗層、修理與紀錄狀態。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="rules-title">
+        <p class="section-kicker">Rules and prerequisites</p>
+        <h2 class="section-title" id="rules-title">適用範圍、規範依據與檢驗前提</h2>
+        <p class="section-intro">Tailshaft / Screwshaft 的程序會連到船舶規範、材料規範、特殊服務船、海工設施、SCM 與 MPMS 等制度。現場作業時，最重要的是先確認這次檢驗方法是否允許不拆槳、保護塗層是否必須移除，以及哪些事項不能用船上自檢取代。</p>
+
+        <div class="two-col rules-prereq-grid">
+          <div class="check-card">
+            <span class="label teal">規範來源</span>
+            <h3>程序本身不是唯一依據</h3>
+            <ul>
+              <li>LR Rules for Ships：設計、海試、定期檢驗、SCM。<span class="source-ref" title="Rules for Ships Pt 5 Ch 6, 3; Pt 5 Ch 1, 5.2; Pt 1 Ch 3, 17; Pt 1 Ch 3, 18.4; Pt 5 Ch 6, 3.9, 3.12 and 4.1">LR Ships</span></li>
+              <li>LR Rules for Materials：材料製造、測試與 NDE。<span class="source-ref" title="Rules for Materials Ch 5, 3.5 Non-Destructive Examination">LR Materials Ch 5, 3.5</span></li>
+              <li>Rules for Special Service Craft：特殊用途船軸系與海試要求。<span class="source-ref" title="Rules for Special Service Craft Pt 11 Ch 2, 4; Pt 9 Ch 2, 9; Pt 1 Ch 3, 11; Pt 1 Ch 4, 10; Pt 11 Ch 2, 4.14, 4.16 and 5.2">Special Service Craft</span></li>
+              <li>Rules for Offshore Units：海工設施定期檢驗要求。<span class="source-ref" title="Rules and Regulations for the Classification of Offshore Units Pt 1 Ch 3, 12">Offshore Pt 1 Ch 3, 12</span></li>
+              <li>ShipRight MPMS / SCM：機械計畫保養與狀態監測制度。<span class="source-ref" title="LR ShipRight - Machinery Planned Maintenance and Condition Monitoring; Rules for Ships Pt 1 Ch 3, 18.4 and Pt 5 Ch 6, 4.1">ShipRight MPMS/SCM</span></li>
+            </ul>
+          </div>
+          <div class="check-card">
+            <span class="label rust">檢驗前提</span>
+            <h3>先確認現場是否具備檢查條件</h3>
+            <ul>
+              <li>Keyed propeller 定期檢驗時必須拆卸，以便對艉軸錐部做 MT。</li>
+              <li>TS Method 3 不允許用於 keyed propeller。</li>
+              <li>艉軸抽出時，若保護塗層狀況可疑，應移除塗層。</li>
+              <li>法蘭連接螺旋槳轂可視需要拆卸樣本螺栓。</li>
+              <li>玻璃纖維或認可塗層若於每次 dry docking 檢查確認有效，原則上不必任意破壞；只有有疑慮時才移除至必要程度。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout danger" style="margin-top: 24px;">
+          <strong>船級實務重點：</strong>Tailshaft / Screwshaft 不得由 Chief Engineer 代替船級 Surveyor 進行分類目的檢驗。即使船舶屬於 Continuous Survey Machinery 或具有 MPMS 註記，艉軸仍需由船級 Surveyor 執行或見證必要檢查。
+        </div>
+      </section>
+
+      <section class="band-muted" id="newbuilding" aria-labelledby="newbuilding-title">
+        <div class="section">
+          <p class="section-kicker">New construction</p>
+          <h2 class="section-title" id="newbuilding-title">新造檢驗：製造廠與船廠階段各看什麼</h2>
+          <p class="section-intro">製造廠階段重點在材料、加工、尺寸與 NDE；船廠階段則把軸件放進整個推進系統，確認交付狀態、軸系對中、聯軸器、軸承間隙與海試基準。</p>
+
+          <div class="matrix-grid">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>製造廠檢查項目</th>
+                    <th>Surveyor 應確認</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>尺寸與幾何</strong></td>
+                    <td>軸徑、真圓度、直線度、鍵槽、錐部、法蘭與表面粗糙度均應符合核准圖面與強度要求。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>表面品質</strong></td>
+                    <td>軸徑變化、鍵槽、錐部上方三分之一等應力集中區要特別注意，必要時用 profilometer 或 comparator blocks 校驗。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>NDE</strong></td>
+                    <td>MT 用於鐵磁材料表面與近表面裂紋；UT 用於鍛件內部缺陷；PT 常用於非磁性材料或青銅襯套焊縫。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>青銅／炮銅襯套</strong><span class="term-note">青銅（Bronze）／炮銅（Gunmetal）</span></td>
+                    <td>原則上整體鑄造成一件，安裝前做水壓試驗；裝配到軸上時需 Surveyor 見證，並確認整個長度密貼。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>兩段式焊接襯套</strong></td>
+                    <td>若需符合 CL notation，應滿足接頭設計、PT 檢測、鉛含量不超過 0.5% 與收縮應力控制要求。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>識別刻印</strong></td>
+                    <td>刻印 LR、SDO、控制號、Surveyor initials 與日期；不可刻在高應力位置，必要時使用低應力或點狀鋼印。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-wrap mini-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>NDE</th>
+                    <th>用途</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>MT</strong></td>
+                    <td>艉軸錐部、鍵槽、法蘭根部等表面／近表面裂紋。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>UT</strong></td>
+                    <td>鍛件或軸材內部不連續與缺陷。<span class="source-ref" title="Rules for Materials Ch 5, 3.5 Non-Destructive Examination">LR Materials Ch 5, 3.5</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>PT</strong></td>
+                    <td>非磁性材料、表面開口缺陷與銅合金襯套焊縫。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>船廠安裝重點</th>
+                    <th>實務判斷</th>
+                    <th>後續紀錄</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>交付狀態</strong></td>
+                    <td>確認軸件為 black forged、rough machined 或 final condition；若未完成，需查軸證書與 SDO 資料。</td>
+                    <td>未完成事項、證書限制與後續檢驗要求。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Shaft alignment</strong></td>
+                    <td>依 agreed procedure 執行，並考慮船體、基座、支承位置、冷熱態變形與螺旋槳重量影響。</td>
+                    <td>如有疑慮，尋求當地工程 TSO 建議。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Coupling bolts</strong></td>
+                    <td>聯軸器螺栓應為 interference fit；ISO h6/j6 可接受，液壓螺栓如 Suregrip、Pilgrim 可考慮。</td>
+                    <td>若用液態氮冷縮，需與船東／營運者確認日後拆卸問題。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bearing clearance</strong></td>
+                    <td>新造安裝後量測 shaft bearing clearances 與 poker gauge readings。</td>
+                    <td>作為 First Entry Report 與日後定期檢驗比較基準。</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sea trial</strong></td>
+                    <td>多螺旋槳推進船需展示一個或多個螺旋槳失效時仍具導航與操縱能力。<span class="source-ref" title="Rules for Ships Pt 5 Ch 1, 5.2 Sea trials; Rules for Special Service Craft Pt 9 Ch 2, 9 Sea trials">LR Sea trials</span></td>
+                    <td>海試資料、軸承間隙與 poker gauge 填入 Form 2095B。<span class="source-ref" title="Survey Procedures Manual - Tailshafts, First Entry Reporting Procedure 1.1.1-1.1.2; Form 2095Bzz1">Form 2095B</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="periodical" aria-labelledby="periodical-title">
+        <p class="section-kicker">Periodical survey</p>
+        <h2 class="section-title" id="periodical-title">現有船定期檢驗：高風險區域與判斷邏輯</h2>
+        <p class="section-intro">定期檢驗的核心，是在最容易累積疲勞、腐蝕、鬆動與配合失效的位置找到早期跡象。特別是 keyed propeller 的鍵槽與錐部大端，不能只靠目視略過。</p>
+
+        <div class="method-reminder" aria-label="TS Method 判斷提醒">
+          <div class="method-reminder__head">
+            <span class="label blue">TS Method</span>
+            <strong>判斷提醒：先確認拆槳要求，再判斷檢驗方法是否適用。</strong>
+          </div>
+          <div class="method-grid">
+            <div>
+              <b>TS Methods 1、2、4</b>
+              <span>規範要求時，螺旋槳需拆卸檢查。</span>
+            </div>
+            <div>
+              <b>Keyed propeller</b>
+              <span>所有 Screwshaft Periodical Surveys 均須拆槳，以利錐部 MT。</span>
+            </div>
+            <div>
+              <b>TS Method 3</b>
+              <span>不可用於 keyed propeller。</span>
+            </div>
+            <div>
+              <b>SCM</b>
+              <span>不免除 keyed propeller 拆槳要求。</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-heading">Keyed、Keyless、Flanged connection 差異</h3>
+        <div class="table-wrap compact-table">
+          <table>
+            <thead>
+              <tr>
+                <th>類型</th>
+                <th>檢驗重點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Keyed propeller</strong></td>
+                <td>鍵槽、錐部、MT、fretting、螺帽鎖緊狀態。</td>
+              </tr>
+              <tr>
+                <td><strong>Keyless propeller</strong></td>
+                <td>錐面接觸、推入量、油壓裝配紀錄、配合面狀況。</td>
+              </tr>
+              <tr>
+                <td><strong>Flanged connection to propeller boss</strong></td>
+                <td>法蘭根部圓角、螺栓 tightness、ringing；若聲音沉悶或低共振，需進一步 NDE，必要時拆樣本螺栓確認。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>部位</th>
+                <th>常見缺陷</th>
+                <th>檢查方法</th>
+                <th>主要風險</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Keyway 鍵槽</strong></td>
+                <td>疲勞裂紋、應力集中</td>
+                <td>MT、目視</td>
+                <td>裂紋擴展、軸裂斷</td>
+              </tr>
+              <tr>
+                <td><strong>Shaft cone / taper 軸錐部</strong></td>
+                <td>fretting、腐蝕、配合不良、裂紋</td>
+                <td>MT、目視、接觸面確認</td>
+                <td>螺旋槳鬆動、疲勞裂紋</td>
+              </tr>
+              <tr>
+                <td><strong>Large end of cone 錐部大端</strong></td>
+                <td>環狀腐蝕帶、疑似應力腐蝕裂紋</td>
+                <td>鋼製艉軸錐部以 MT 為主；PT 主要用於非磁性材料、銅合金襯套焊縫或其他適用表面開口缺陷；必要時進一步評估。</td>
+                <td>分枝型環向應力腐蝕裂紋</td>
+              </tr>
+              <tr>
+                <td><strong>Liner ends 襯套端部</strong></td>
+                <td>腐蝕、鬆動、密封功能失效</td>
+                <td>敲擊聽音、目視、局部檢查</td>
+                <td>海水進入軸材，造成隱藏腐蝕</td>
+              </tr>
+              <tr>
+                <td><strong>Circumferential weld 周向焊縫</strong></td>
+                <td>焊縫裂紋、滲漏風險</td>
+                <td>PT 或合適 NDE</td>
+                <td>防蝕保護失效</td>
+              </tr>
+              <tr>
+                <td><strong>Flange root radius 法蘭根部圓角</strong></td>
+                <td>疲勞裂紋</td>
+                <td>目視、NDE</td>
+                <td>法蘭破壞、扭矩傳遞失效</td>
+              </tr>
+              <tr>
+                <td><strong>Bolts 螺栓</strong></td>
+                <td>鬆動、裂紋、低共振</td>
+                <td>ringing、NDE、拆樣本螺栓</td>
+                <td>螺旋槳或聯軸器連接失效</td>
+              </tr>
+              <tr>
+                <td><strong>Wrapped coating 包覆塗層</strong></td>
+                <td>剝離、破損、下方腐蝕</td>
+                <td>dry docking 目視；若有效不必破壞，有疑慮才局部或必要程度移除</td>
+                <td>隱藏腐蝕與保護層失效</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="three-col" style="margin-top: 24px;">
+          <div class="risk-card">
+            <span class="label rust">高風險訊號</span>
+            <h3>錐部大端出現環狀腐蝕帶</h3>
+            <p>文件特別提醒，這可能與海水進入與分枝型環向應力腐蝕裂紋有關，應保守處理並安排合適 NDE。</p>
+          </div>
+          <div class="risk-card">
+            <span class="label amber">現場判斷</span>
+            <h3>襯套敲擊聽音異常</h3>
+            <p>重點不是只判斷「有無鬆動」，而是評估是否已破壞襯套防止海水接觸艉軸鋼材的核心功能。</p>
+          </div>
+          <div class="risk-card">
+            <span class="label blue">螺栓檢查</span>
+            <h3>沉悶聲或低共振</h3>
+            <p>法蘭或螺旋槳螺栓 ringing 異常時，應進一步 NDE；必要時拆卸樣本螺栓確認。</p>
+          </div>
+        </div>
+
+        <h3 class="subsection-heading">艉管油分析／污染物監測</h3>
+        <div class="callout" style="margin-top: 10px;">
+          <strong>Additional reference / supporting evidence：</strong>IACS Rec.36 可作為油潤滑艉管系統的輔助判斷參考。stern tube lubricating oil 中金屬磨耗顆粒、水分或污染物趨勢，可協助判斷軸承、密封、海水進入或異常磨耗風險。這不是本程序要求每次都必須做油分析，而是當現場狀況、歷史資料或維護紀錄需要佐證時，可納入綜合判斷的 supporting evidence。
+        </div>
+
+        <h3 class="subsection-heading">發現缺陷後的處置流程</h3>
+        <div class="logic-flow defect-flow" aria-label="Defect response flow">
+          <div class="flow-item">
+            <b>01｜發現異常</b>
+            <span>裂紋、腐蝕、fretting、敲擊音異常、ringing 異常、塗層疑慮或油品趨勢異常。</span>
+          </div>
+          <div class="flow-item">
+            <b>02｜判斷位置</b>
+            <span>先定位在鍵槽、錐部大端、襯套端部、周向焊縫、法蘭根部、螺栓或包覆區。</span>
+          </div>
+          <div class="flow-item">
+            <b>03｜選擇 NDE</b>
+            <span>依材料與缺陷型態選擇 MT、PT、UT、目視、敲擊聽音、ringing 或必要的進一步檢查。</span>
+          </div>
+          <div class="flow-item">
+            <b>04｜判斷影響</b>
+            <span>評估是否影響防海水功能、扭矩傳遞、疲勞安全、配合面可靠性或後續營運風險。</span>
+          </div>
+          <div class="flow-item">
+            <b>05｜決定處置</b>
+            <span>依風險接受、修理、抽軸、送 TSO、限制後續檢查，或要求更換艉軸／相關零件。</span>
+          </div>
+          <div class="flow-item">
+            <b>06｜更新紀錄</b>
+            <span>把結論、限制、修理結果與追蹤要求寫入 Asset Note、Actionable Item 或 Survey Report。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="repair" aria-labelledby="repair-title">
+        <div class="section">
+          <p class="section-kicker">Repairs and alterations</p>
+          <h2 class="section-title" id="repair-title">修理、更換與防蝕包覆：可修不代表可任意修</h2>
+          <p class="section-intro">艉軸修理牽涉材料、熱影響、配合狀態與後續船級紀錄。即使是看似局部的襯套磨耗，也要確認材料鉛含量、冷卻、焊後 NDE 與密貼狀態。</p>
+
+          <div class="three-col repair-card-grid">
+            <div class="check-card">
+              <span class="label amber">Bronze liner repair</span>
+              <h3>青銅軸襯焊補條件</h3>
+              <ul>
+                <li>襯套材料與填充焊材鉛含量不得超過 0.5%。</li>
+                <li>磨耗處先加工平滑。</li>
+                <li>修理區兩端需冷卻，避免破壞 shrink fit。</li>
+                <li>每道焊道完成後 peening。</li>
+                <li>加工至最終尺寸後做 PT 或合適裂紋檢測。</li>
+                <li>確認修理區襯套仍緊密貼合於軸上。</li>
+              </ul>
+            </div>
+            <div class="check-card">
+              <span class="label rust">Shaft renewal</span>
+              <h3>艉軸更換要求</h3>
+              <ul>
+                <li>被拒艉軸的識別刻印須以交叉切削方式作廢。</li>
+                <li>替換軸需來自認可工廠。</li>
+                <li>確認材料強度、化學成分與熱機械製程資料。</li>
+                <li>確認尺寸公差、直線度、真圓度與核准圖面。</li>
+                <li>完成合適 NDE 與新的識別刻印。</li>
+                <li>報告記錄被拒軸與替換軸標記。</li>
+              </ul>
+            </div>
+            <div class="check-card">
+              <span class="label green">Coating design</span>
+              <h3>5 年檢驗週期條件</h3>
+              <ul>
+                <li>塗層須為 LR 認可型式。</li>
+                <li>玻璃纖維多層、相反方向纏繞。</li>
+                <li>層間塗佈樹脂，施工時軸須旋轉。</li>
+                <li>與青銅襯套連接處有合適階梯或倒角。</li>
+                <li>遵守製造商表面準備、溫度、混合、施工與固化要求。</li>
+                <li>5-year survey cycle 並非因有包覆就自動適用，需在下次 Screwshaft Survey 完成後，確認所有條件符合或已恢復正常，才可 assigned。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top: 24px;">
+            <strong>TSO escalation：</strong>若提出非焊接方式修理青銅襯套，或遇到非認可塗層、特殊接合設計、對中疑慮與異常裂紋風險，應送交相應 TSO 或 Global TSO - Materials &amp; NDE 取得技術確認。
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="records" aria-labelledby="records-title">
+        <p class="section-kicker">Certification and reporting</p>
+        <h2 class="section-title" id="records-title">證書、報告與船級紀錄：讓下一次檢驗接得上</h2>
+        <p class="section-intro">Tailshaft survey 的紀錄價值很高，因為許多風險是長期累積後才浮現。好的報告不是把這次檢驗寫完而已，而是把後續要追的特殊設計、修理、數值基準與疑慮保存下來。</p>
+
+        <div class="logic-flow" aria-label="Reporting flow">
+          <div class="flow-item">
+            <b>01｜Shaft certificate</b>
+            <span>完成最終加工後，Surveyor 應在軸證書正本與副本上背書。</span>
+          </div>
+          <div class="flow-item">
+            <b>02｜Liner notation</b>
+            <span>兩段或多段襯套以認可方式接合時，證書須註記周向焊縫資訊。</span>
+          </div>
+          <div class="flow-item">
+            <b>03｜First Entry</b>
+            <span>海試資料、軸承間隙與 poker gauge readings 填入 Form 2095B。<span class="source-ref" title="Survey Procedures Manual - Tailshafts, First Entry Reporting Procedure 1.1.1-1.1.2; Form 2095Bzz1">Form 2095B</span></span>
+          </div>
+          <div class="flow-item">
+            <b>04｜Asset Note</b>
+            <span>兩段焊接襯套、青銅襯套焊補等特殊狀態需供後續 Surveyor 查閱。</span>
+          </div>
+          <div class="flow-item">
+            <b>05｜Actionable Item</b>
+            <span>玻璃纖維或認可塗層包覆等需後續檢查的項目應建立追蹤。</span>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 28px;">
+          <table>
+            <thead>
+              <tr>
+                <th>情況</th>
+                <th>紀錄要求</th>
+                <th>實務目的</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>襯套由兩段焊接</strong></td>
+                <td>在 Shaft Certificate 與 Asset Note 中註記。</td>
+                <td>提醒日後檢查周向焊縫是否有裂紋或滲漏風險。</td>
+              </tr>
+              <tr>
+                <td><strong>艉軸以玻璃纖維或認可塗層包覆</strong></td>
+                <td>建立 Actionable Item，並在乾塢或相應檢驗時追蹤。</td>
+                <td>避免包覆下方腐蝕被視覺完整的外觀掩蓋。</td>
+              </tr>
+              <tr>
+                <td><strong>青銅襯套焊補完成且滿意</strong></td>
+                <td>通常不需開 Condition of Class，但需 Asset Note。</td>
+                <td>保存修理方法、區域與後續檢查重點。</td>
+              </tr>
+              <tr>
+                <td><strong>包覆區檢查滿意</strong></td>
+                <td>CMM 標示 continues satisfactory。</td>
+                <td>延續狀態監測與後續檢驗基準。</td>
+              </tr>
+              <tr>
+                <td><strong>艉軸被拒並更換</strong></td>
+                <td>報告記錄被拒軸與替換軸識別標記。</td>
+                <td>防止被拒軸再次流入分類用途，並保留追蹤性。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="band-muted" id="checklist" aria-labelledby="checklist-title">
+        <div class="section">
+          <p class="section-kicker">Surveyor checklist</p>
+          <h2 class="section-title" id="checklist-title">現場檢驗清單：把程序轉成可執行步驟</h2>
+          <p class="section-intro">以下清單可以作為到場前、製造廠、船廠安裝與定期檢驗的工作提示。正式檢驗仍應依適用規範、船舶實際安排與船級系統要求調整。</p>
+
+          <div class="details-list">
+            <details open>
+              <summary>Step 1｜先確認檢驗類型</summary>
+              <div class="details-body">
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>類型</th>
+                        <th>檢驗重點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>製造廠新造檢驗</strong></td>
+                        <td>材料、加工、尺寸、NDE、襯套、水壓、刻印。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>船廠安裝檢驗</strong></td>
+                        <td>交付狀態、證書、對中、聯軸器、軸承間隙、海試。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>定期螺旋槳軸檢驗</strong></td>
+                        <td>拆槳、MT、腐蝕、襯套、鍵槽、錐部、螺栓。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>修理／更換檢驗</strong></td>
+                        <td>修理方法認可、NDE、證書、刻印、報告。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>保護塗層檢驗</strong></td>
+                        <td>塗層認可、附著狀態、dry docking 有效性；有疑慮時才必要程度移除並確認下方腐蝕。</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+
+            <details>
+              <summary>Step 2｜到場前文件審查</summary>
+              <div class="details-body">
+                <div class="four-col">
+                  <div class="check-card">
+                    <h3>圖面與證書</h3>
+                    <ul>
+                      <li>Approved drawings</li>
+                      <li>Shaft certificate</li>
+                      <li>Material certificate</li>
+                    </ul>
+                  </div>
+                  <div class="check-card">
+                    <h3>NDE 與加工</h3>
+                    <ul>
+                      <li>NDE reports</li>
+                      <li>尺寸與表面品質紀錄</li>
+                      <li>襯套水壓與裝配紀錄</li>
+                    </ul>
+                  </div>
+                  <div class="check-card">
+                    <h3>安裝基準</h3>
+                    <ul>
+                      <li>Shaft alignment procedure</li>
+                      <li>Bearing clearance records</li>
+                      <li>Poker gauge readings</li>
+                    </ul>
+                  </div>
+                  <div class="check-card">
+                    <h3>歷史紀錄</h3>
+                    <ul>
+                      <li>Previous survey reports</li>
+                      <li>SCM / MPMS status</li>
+                      <li>Asset Note / Actionable Item</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details>
+              <summary>Step 3｜製造廠與船廠檢驗清單</summary>
+              <div class="details-body">
+                <div class="two-col">
+                  <div class="check-card">
+                    <span class="label teal">Manufacturer</span>
+                    <h3>製造廠檢驗</h3>
+                    <ul>
+                      <li>軸材來源是否來自認可製造廠。</li>
+                      <li>材料強度、化學成分、熱處理／熱機械製程。</li>
+                      <li>軸徑、長度、法蘭、錐度、鍵槽。</li>
+                      <li>表面品質，尤其應力集中區與錐部上三分之一。</li>
+                      <li>UT、MT 是否依規範完成。</li>
+                      <li>青銅／炮銅襯套是否一體鑄造、水壓試驗、Surveyor 見證裝配。</li>
+                      <li>刻印位置是否避開高應力區。</li>
+                    </ul>
+                  </div>
+                  <div class="check-card">
+                    <span class="label blue">Builder / yard</span>
+                    <h3>船廠安裝檢驗</h3>
+                    <ul>
+                      <li>確認交付狀態與未完成事項。</li>
+                      <li>依 agreed procedure 做軸系對中。</li>
+                      <li>確認船體、基座或支承變形是否影響軸線。</li>
+                      <li>聯軸器螺栓是否為干涉配合。</li>
+                      <li>液態氮冷縮螺栓是否已確認日後拆卸問題。</li>
+                      <li>軸承間隙與 poker gauge 讀數已建立基準。</li>
+                      <li>海試後完成 Form 2095B 資料。<span class="source-ref" title="Survey Procedures Manual - Tailshafts, First Entry Reporting Procedure 1.1.1-1.1.2">Form 2095B</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details>
+              <summary>Step 4｜定期檢驗清單</summary>
+              <div class="details-body">
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>檢查項目</th>
+                        <th>判斷重點</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>螺旋槳是否需拆</strong></td>
+                        <td>TS Method 1、2、4 規定時需拆；keyed propeller 必須拆，以便錐部 MT。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>TS Method 3</strong></td>
+                        <td>不可用於 keyed propeller。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>保護塗層</strong></td>
+                        <td>每次 dry docking 若確認塗層有效，原則上不必任意破壞；若狀況可疑，才局部或必要程度移除，以確認下方軸材。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>法蘭螺栓</strong></td>
+                        <td>視需要拆樣本螺栓；ringing 異常時進一步 NDE。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>錐部大端與鍵槽</strong></td>
+                        <td>檢查 fretting、腐蝕、環狀腐蝕帶與裂紋跡象。</td>
+                      </tr>
+                      <tr>
+                        <td><strong>襯套與焊縫</strong></td>
+                        <td>敲擊聽音檢查鬆動；兩段襯套需注意周向焊縫裂紋。</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="mistakes" aria-labelledby="mistakes-title">
+        <p class="section-kicker">Field learning</p>
+        <h2 class="section-title" id="mistakes-title">現場最容易出錯的地方</h2>
+        <p class="section-intro">這些錯誤通常不是因為不知道要檢查，而是把制度、檢驗方法或現場可見狀態誤判成足夠證據。</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>易錯點</th>
+                <th>正確理解</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>以為 SCM 可免除 keyed propeller 拆槳</strong></td>
+                <td>錯。Keyed propeller 定期檢驗仍需拆槳做錐部 MT。</td>
+              </tr>
+              <tr>
+                <td><strong>以為 Chief Engineer 可代檢艉軸</strong></td>
+                <td>錯。艉軸不可由 Chief Engineer 代行分類目的檢驗。</td>
+              </tr>
+              <tr>
+                <td><strong>只看軸身，不看鍵槽</strong></td>
+                <td>鍵槽是高風險疲勞裂紋源，尤其 keyed propeller。</td>
+              </tr>
+              <tr>
+                <td><strong>襯套敲擊有異音但未追查</strong></td>
+                <td>需判斷防海水功能是否受損，不能只記錄「有聲音」。</td>
+              </tr>
+              <tr>
+                <td><strong>玻璃纖維包覆看起來完整就完全不管</strong></td>
+                <td>若有裂開、剝離、鼓起或滲水跡象，仍可要求局部移除確認下方狀態。</td>
+              </tr>
+              <tr>
+                <td><strong>在高應力區刻印</strong></td>
+                <td>刻印可能形成應力集中，應避開高應力位置或使用低應力鋼印。</td>
+              </tr>
+              <tr>
+                <td><strong>青銅襯套焊補未控鉛含量或焊後不做 PT</strong></td>
+                <td>材料與焊材鉛含量不得超過 0.5%，完工後需做裂紋檢測。</td>
+              </tr>
+              <tr>
+                <td><strong>兩段焊接襯套未在證書／報告註記</strong></td>
+                <td>應留下後續檢驗追蹤資訊，尤其周向焊縫檢查。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="band" id="terms" aria-labelledby="terms-title">
+        <div class="section">
+          <p class="section-kicker">Glossary</p>
+          <h2 class="section-title" id="terms-title">重要術語與定義</h2>
+          <p class="section-intro">以下保留英文原詞與繁體中文說明，方便閱讀船級文件與現場溝通時快速對照。</p>
+
+          <div class="table-wrap">
+            <table class="term-table">
+              <thead>
+                <tr>
+                  <th>英文／縮寫</th>
+                  <th>中文</th>
+                  <th>說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tailshaft</td>
+                  <td>艉軸</td>
+                  <td>靠近艉部並連接螺旋槳的軸段。</td>
+                </tr>
+                <tr>
+                  <td>Screwshaft</td>
+                  <td>螺旋槳軸</td>
+                  <td>文件中常與 tailshaft 近似使用。</td>
+                </tr>
+                <tr>
+                  <td>Stern tube</td>
+                  <td>艉管</td>
+                  <td>包含艉管軸承與密封的艉部軸系結構。</td>
+                </tr>
+                <tr>
+                  <td>Liner</td>
+                  <td>軸襯／襯套</td>
+                  <td>保護艉軸免受海水腐蝕，常為青銅或炮銅。</td>
+                </tr>
+                <tr>
+                  <td>Keyway</td>
+                  <td>鍵槽</td>
+                  <td>Keyed propeller 傳遞扭矩的凹槽，也是應力集中位置。</td>
+                </tr>
+                <tr>
+                  <td>Shaft cone / taper</td>
+                  <td>軸錐部</td>
+                  <td>螺旋槳與艉軸配合區，需注意 fretting、腐蝕與裂紋。</td>
+                </tr>
+                <tr>
+                  <td>Fretting</td>
+                  <td>微動磨耗</td>
+                  <td>配合面微小相對運動造成的磨耗與氧化。</td>
+                </tr>
+                <tr>
+                  <td>NDE / MT / UT / PT</td>
+                  <td>非破壞檢測</td>
+                  <td>分別對應非破壞檢測、磁粉檢測、超音波檢測與滲透檢測。</td>
+                </tr>
+                <tr>
+                  <td>SCM</td>
+                  <td>螺旋槳軸狀態監測</td>
+                  <td>Screwshaft Condition Monitoring，船級狀態監測制度。</td>
+                </tr>
+                <tr>
+                  <td>MPMS</td>
+                  <td>機械計畫保養制度</td>
+                  <td>Machinery Planned Maintenance Scheme，船級認可保養制度。</td>
+                </tr>
+                <tr>
+                  <td>TSO / SDO</td>
+                  <td>技術支援／服務交付單位</td>
+                  <td>TSO 處理技術疑慮；SDO 與證書、服務交付與檢驗資料相關。</td>
+                </tr>
+                <tr>
+                  <td>Asset Note / Actionable Item</td>
+                  <td>資產註記／待追蹤項目</td>
+                  <td>供後續 Surveyor 查核特殊設計、修理或需要持續檢查的項目。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="summary" aria-labelledby="summary-title">
+        <p class="section-kicker">Review points</p>
+        <h2 class="section-title" id="summary-title">總結：艉軸檢驗的十四個複習點</h2>
+        <div class="two-col summary-card-grid">
+          <div class="summary-card">
+            <h3>技術與檢驗重點</h3>
+            <ul class="review-list">
+              <li>艉軸是推進系統高風險構件，檢驗集中在裂紋、腐蝕、配合面、軸襯與對中。</li>
+              <li>Keyed propeller 定期檢驗時必須拆卸，並對艉軸錐部做 MT；TS Method 3 不可用於 keyed propeller。</li>
+              <li>艉軸不得由 Chief Engineer 代行分類目的檢驗；此限制適用於 CSM 與 MPMS 情境。SCM 屬於 Screwshaft Condition Monitoring，不能取代 keyed propeller 拆槳與錐部 MT 要求。</li>
+              <li>製造階段要重視尺寸、鍵槽形狀、表面粗糙度、錐部上三分之一區域與 NDE。</li>
+              <li>青銅／炮銅軸襯原則上為一體鑄造並水壓試驗；兩段焊接襯套需符合要求並做 PT。</li>
+              <li>艉軸襯套不得用 pin 固定於艉軸上。</li>
+              <li>定期檢驗時，鍵槽、錐部大端、襯套端部、周向焊縫、法蘭根部與螺栓都是高風險部位。</li>
+            </ul>
+          </div>
+          <div class="summary-card">
+            <h3>紀錄與後續追蹤</h3>
+            <ul class="review-list">
+              <li>錐部大端環狀腐蝕帶必須高度懷疑，可能與海水進入及應力腐蝕裂紋有關。</li>
+              <li>玻璃纖維或認可塗層可作為防蝕保護；若 dry docking 檢查有效不必任意破壞，有疑慮時 Surveyor 才要求移除至必要程度檢查下方軸材。</li>
+              <li>新造時的軸承間隙與 poker gauge readings 必須記錄，作為後續營運檢驗基準。</li>
+              <li>液態氮冷縮安裝聯軸器螺栓可能造成日後拆卸困難，需與船東／營運者確認。</li>
+              <li>青銅襯套焊補須控制鉛含量、冷卻、焊後 PT 與密貼確認。</li>
+              <li>被拒艉軸的識別刻印須作廢，替換軸需來自認可工廠並完成材料、尺寸與 NDE 確認。</li>
+              <li>特殊設計、焊接襯套、保護塗層與修理結果都應正確反映在證書、Asset Note、Actionable Item 或 Survey Report 中。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <section class="share-band" id="share">
+        <div
+          class="article-share article-share--end"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/tailshaft-survey-notes.html"
+          data-share-title="船舶艉軸檢驗程序要點｜Reay's Note"
+          data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船舶艉軸檢驗程序要點｜Reay's Note&#10;https://reayhuang.com/notes/maritime/tailshaft-survey-notes.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>船舶艉軸檢驗程序要點｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        本頁為學習、內訓與驗船準備用途的視覺化整理，不代表 Lloyd's Register、IMO 或其他機構之正式意見；<span class="disclaimer-tail">正式設計、船級審查、PSC 檢查或法規適用，仍應以最新版 LR Survey Procedures、IMO Circular、船旗國要求與船級協會正式規範為準。</span>
+      </p>
+      <div class="footer-sources small">
+        <p class="footer-sources__title">References / Source notes</p>
+        <ul class="source-list">
+          <li>LR Survey Procedures Manual - Surveyable Items - Tailshafts</li>
+          <li>LR Rules for Ships, Pt 5 Ch 6; Pt 1 Ch 3; Pt 5 Ch 1</li>
+          <li>LR Rules for Materials, Ch 5, 3.5 Non-Destructive Examination.</li>
+          <li>IACS Rec.36, used only as supporting reference for stern tube lubricating oil contamination / metal content monitoring.</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      const nav = document.querySelector(".jump-nav");
+      const spacer = document.querySelector(".jump-nav-spacer");
+      if (!nav || !spacer) return;
+
+      const navInner = nav.querySelector(".jump-nav-inner");
+      const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      let navTop = 0;
+      let activeId = "";
+
+      const centerActiveLink = (link) => {
+        if (!navInner || !link) return;
+        const targetLeft = link.offsetLeft - (navInner.clientWidth - link.offsetWidth) / 2;
+        navInner.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: "smooth"
+        });
+      };
+
+      const updateActiveLink = () => {
+        const offset = nav.offsetHeight + Math.min(window.innerHeight * 0.35, 260);
+        let current = sections[0];
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop <= offset) current = section;
+        });
+
+        if (!current || current.id === activeId) return;
+        activeId = current.id;
+
+        links.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${activeId}`;
+          link.classList.toggle("is-active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "true");
+            centerActiveLink(link);
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      const update = () => {
+        const shouldStick = window.scrollY >= navTop;
+        nav.classList.toggle("is-fixed", shouldStick);
+        spacer.style.height = shouldStick ? `${nav.offsetHeight}px` : "0px";
+        updateActiveLink();
+      };
+
+      const measure = () => {
+        const wasFixed = nav.classList.contains("is-fixed");
+        if (wasFixed) nav.classList.remove("is-fixed");
+        spacer.style.height = "0px";
+        navTop = nav.offsetTop;
+        if (wasFixed) update();
+      };
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const hash = link.getAttribute("href");
+          const target = document.querySelector(hash);
+          if (!target) return;
+          event.preventDefault();
+          const gap = 12;
+          const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY;
+          const scrollTop = Math.max(targetTop - nav.offsetHeight - gap, 0);
+          window.scrollTo({ top: scrollTop, behavior: prefersReducedMotion ? "auto" : "smooth" });
+        });
+      });
+
+      measure();
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", measure);
+    })();
+  </script>
+</body>
+</html>
