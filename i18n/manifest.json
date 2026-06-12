@@ -127,6 +127,13 @@
       "zh": "notes/maritime/tailshaft-survey-notes.html"
     },
     {
+      "slug": "lr-advisory-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/lr-advisory-notes.en.html",
+      "zh": "notes/maritime/lr-advisory-notes.html"
+    },
+    {
       "slug": "maritime-cyber-resilience-notes",
       "type": "article",
       "category": "notes",

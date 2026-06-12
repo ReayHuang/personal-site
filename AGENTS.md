@@ -34,6 +34,11 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 
 | Slug | English | Traditional Chinese |
 |------|---------|---------------------|
+| Tailshaft survey | `tailshaft-survey-notes.en.html` | `tailshaft-survey-notes.html` |
+| Steering gear | `steering-gear-notes.en.html` | `steering-gear-notes.html` |
+| LR BWTS | `lr-bwts-notes.en.html` | `lr-bwts-notes.html` |
+| Maritime cyber resilience | `maritime-cyber-resilience-notes.en.html` | `maritime-cyber-resilience-notes.html` |
+| LR Advisory | `lr-advisory-notes.en.html` | `lr-advisory-notes.html` |
 | SOLAS framework | `solas-structure-notes.en.html` | `solas-structure-notes.html` |
 | MARPOL framework | `marpol-structure-notes.en.html` | `marpol-structure-notes.html` |
 | Explosion protection | `explosion-protection-notes.en.html` | `explosion-protection-notes.html` |
