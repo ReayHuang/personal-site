@@ -127,6 +127,13 @@
       "zh": "notes/maritime/tailshaft-survey-notes.html"
     },
     {
+      "slug": "lfpf-note",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/lfpf-note.en.html",
+      "zh": "notes/maritime/lfpf-note.html"
+    },
+    {
       "slug": "lr-advisory-notes",
       "type": "article",
       "category": "notes",

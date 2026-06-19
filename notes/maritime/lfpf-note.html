@@ -1,0 +1,3039 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="LR-RU-012, LFPF, low-flashpoint fuels, IGF Code, Gas Ready, LNG, methanol, ammonia, hydrogen, LPG, Lloyd's Register">
+  <meta property="og:title" content="LR-RU-012 低閃點燃料船舶入級規則｜Reay's Note">
+  <meta property="og:description" content="整理 Lloyd's Register《Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025》的文件定位、章節架構、技術邏輯、燃料別要求與實務審查重點。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/lfpf-note.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/lfpf-note.html">
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/lr-ru-012/lfpf-note-link-preview-1200.png">
+  <meta property="og:image:alt" content="LR低閃點燃料船舶入級規則架構 — Reay Huang Maritime Notes">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LR-RU-012 低閃點燃料船舶入級規則｜Reay's Note">
+  <meta name="twitter:description" content="整理 Lloyd's Register《Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025》的文件定位、章節架構、技術邏輯、燃料別要求與實務審查重點。">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/lr-ru-012/lfpf-note-link-preview-1200.png">
+  <link rel="alternate" hreflang="zh-Hant" href="lfpf-note.html">
+  <link rel="alternate" hreflang="en" href="lfpf-note.en.html">
+  <link rel="alternate" hreflang="x-default" href="lfpf-note.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="整理 Lloyd's Register《Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025》的文件定位、章節架構、技術邏輯、燃料別要求與實務審查重點。">
+  <title>LR-RU-012 低閃點燃料船舶入級規則｜Reay's Note</title>
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --paper: #ffffff;
+      --ink: #183247;
+      --muted: #60758a;
+      --line: #dce8f1;
+      --navy: #07304f;
+      --blue: #0b6fa4;
+      --cyan: #00a7b5;
+      --green: #1e6640;
+      --amber: #b06a18;
+      --red: #b84b4b;
+      --purple: #5746c7;
+      --gray: #f8fbfd;
+      --soft-blue: #eef7fb;
+      --soft-green: #eaf8f0;
+      --soft-amber: #fff5e1;
+      --soft-red: #fff0ef;
+      --soft-purple: #f0efff;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 39, 66, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f4f8fb 0%, #eef5f9 100%);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    strong,
+    b {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #062843 0%, #07507a 55%, #0b83a5 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: none;
+      display: none;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+    }
+
+    .hero h1 {
+      margin: 18px 0 12px;
+      font-size: 3.4rem;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .hero p:not(.article-share__label):not(.article-meta) {
+      max-width: 900px;
+      margin: 0;
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #fff;
+      font-size: 0.92rem;
+    }
+
+    .layout {
+      max-width: 1180px;
+      margin: 28px auto 80px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 18px;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+    }
+
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 10px;
+      margin: 2px 0;
+      border-radius: 10px;
+      color: #334155;
+      font-size: 0.94rem;
+    }
+
+    .toc a:hover {
+      background: var(--soft-blue);
+      text-decoration: none;
+      color: var(--blue);
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    section h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--soft-blue);
+    }
+
+    section h3 {
+      margin: 26px 0 10px;
+      color: #123b63;
+      font-size: 1.28rem;
+    }
+
+    section h4 {
+      margin: 20px 0 8px;
+      color: #1e3a8a;
+      font-size: 1.06rem;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .lead {
+      font-size: 1.06rem;
+      color: #374151;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .callout {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      border-left: 6px solid var(--blue);
+      background: var(--soft-blue);
+    }
+
+    .callout.warning {
+      border-left-color: var(--amber);
+      background: var(--soft-amber);
+    }
+
+    .callout.danger {
+      border-left-color: var(--red);
+      background: var(--soft-red);
+    }
+
+    .callout.success {
+      border-left-color: var(--green);
+      background: var(--soft-green);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 18px;
+    }
+
+    .card h3,
+    .card h4 {
+      margin-top: 0;
+    }
+
+    .metric-card {
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .metric-card .num {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      vertical-align: middle;
+      margin: 2px 4px 2px 0;
+    }
+
+    .badge.blue { background: var(--soft-blue); color: #1d4ed8; }
+    .badge.green { background: var(--soft-green); color: #047857; }
+    .badge.amber { background: var(--soft-amber); color: #b45309; }
+    .badge.red { background: var(--soft-red); color: #be123c; }
+    .badge.purple { background: var(--soft-purple); color: #6d28d9; }
+    .badge.gray { background: var(--gray); color: #374151; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      overflow: hidden;
+      border-radius: 12px;
+      font-size: 0.96rem;
+    }
+
+    th {
+      background: #123b63;
+      color: white;
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 800;
+      border: 1px solid #123b63;
+    }
+
+    td {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      vertical-align: top;
+      background: white;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.3rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      margin: 12px 0;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      background: #f8fafc;
+      color: var(--navy);
+      font-weight: 800;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "＋";
+      font-size: 1.1rem;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    details[open] summary::after {
+      content: "－";
+    }
+
+    .details-body {
+      padding: 16px 18px 18px;
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .chapter-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: linear-gradient(180deg, #ffffff, #f9fbff);
+    }
+
+    .chapter-card .chapter-no {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: white;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .fuel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .fuel-card {
+      border-radius: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .fuel-card.ng { border-top: 6px solid var(--blue); }
+    .fuel-card.methanol { border-top: 6px solid var(--green); }
+    .fuel-card.ammonia { border-top: 6px solid var(--red); }
+    .fuel-card.hydrogen { border-top: 6px solid var(--purple); }
+    .fuel-card.lpg { border-top: 6px solid var(--amber); }
+
+    .timeline {
+      position: relative;
+      margin: 18px 0 0;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .step {
+      position: relative;
+      margin-bottom: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+        max-height: none;
+      }
+
+      .grid.two,
+      .grid.three,
+      .chapter-grid,
+      .fuel-grid,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Reay's Note article-page styling override. Content markup above is preserved. */
+    :root {
+      --bg: #f4f8fb;
+      --paper: #ffffff;
+      --ink: #183247;
+      --muted: #60758a;
+      --line: #dce8f1;
+      --navy: #07304f;
+      --blue: #0b6fa4;
+      --cyan: #00a7b5;
+      --green: #1e6640;
+      --amber: #b06a18;
+      --red: #b84b4b;
+      --purple: #5746c7;
+      --gray: #f8fbfd;
+      --soft-blue: #eef7fb;
+      --soft-green: #eaf8f0;
+      --soft-amber: #fff5e1;
+      --soft-red: #fff0ef;
+      --soft-purple: #f0efff;
+      --radius: 18px;
+      --shadow: 0 14px 32px rgba(7, 48, 79, 0.12);
+    }
+
+    html {
+      background: #f4f8fb;
+      scroll-padding-top: calc(var(--toc-height, 64px) + 18px);
+    }
+
+    body {
+      color: var(--ink);
+      background: linear-gradient(180deg, #f4f8fb 0%, #eef5f9 100%);
+      font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        "PingFang TC",
+        system-ui,
+        sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    strong,
+    b {
+      color: #06314f;
+      font-weight: 900;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #062843 0%, #07507a 55%, #0b83a5 100%);
+      padding: 72px 24px 46px;
+    }
+
+    .hero::after {
+      content: none;
+      display: none;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(190px, 260px);
+      gap: 44px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .document-cover {
+      width: clamp(190px, 20vw, 260px);
+      margin: 0;
+      justify-self: end;
+      align-self: end;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 24px 58px rgba(0, 12, 24, 0.34);
+      transform: translateY(8px);
+    }
+
+    .document-cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 16px 34px rgba(0, 12, 24, 0.30);
+    }
+
+    .hero-jump {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #06314f;
+      box-shadow: 0 12px 26px rgba(0, 18, 35, 0.18);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .hero-jump::after {
+      content: "↓";
+      display: inline-grid;
+      width: 22px;
+      height: 22px;
+      place-items: center;
+      border-radius: 999px;
+      background: #0b83a5;
+      color: #ffffff;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .hero-jump:hover {
+      color: #06314f;
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(0, 18, 35, 0.22);
+    }
+
+    .eyebrow {
+      padding: 7px 13px;
+      border-color: rgba(43, 179, 192, 0.42);
+      background: rgba(43, 179, 192, 0.12);
+      color: #c8f0f4;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      max-width: 780px;
+      font-size: 3.625rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .hero p:not(.article-share__label):not(.article-meta) {
+      max-width: 760px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .tags {
+      margin-top: 18px;
+      gap: 8px;
+      max-width: 900px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border: 0;
+      background: rgba(255, 255, 255, 0.14);
+      color: #e8f8fa;
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+
+    .layout {
+      display: block;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-height: none;
+      margin: 0;
+      padding: 12px max(24px, calc((100vw - 1180px) / 2));
+      overflow-x: auto;
+      border: 0;
+      border-bottom: 1px solid rgba(220, 232, 241, 0.9);
+      border-radius: 0;
+      background: rgba(244, 248, 251, 0.88);
+      box-shadow: none;
+      scrollbar-width: none;
+    }
+
+    .toc::-webkit-scrollbar {
+      display: none;
+    }
+
+    .toc h2 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .toc a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      min-height: 34px;
+      margin: 0;
+      padding: 7px 12px;
+      border: 1px solid rgba(11, 111, 164, 0.12);
+      border-radius: 999px;
+      color: #38556a;
+      background: rgba(255, 255, 255, 0.66);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .toc a:hover {
+      background: #ffffff;
+      color: var(--cyan);
+      border-color: rgba(0, 167, 181, 0.3);
+      text-decoration: none;
+    }
+
+    .toc a.is-active,
+    .toc a[aria-current="true"] {
+      background: var(--navy);
+      color: #ffffff;
+      border-color: var(--navy);
+      box-shadow: 0 8px 18px rgba(7, 48, 79, 0.16);
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 0 0;
+    }
+
+    section {
+      scroll-margin-top: calc(var(--toc-height, 64px) + 22px);
+      margin: 0 0 24px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    section h2 {
+      display: flex;
+      margin: 0 0 18px;
+      padding: 0;
+      border: 0;
+      color: var(--navy);
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    section h3 {
+      margin: 24px 0 8px;
+      color: #10415f;
+      font-size: 18px;
+      line-height: 1.72;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    section h4 {
+      color: #233f55;
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .lead {
+      color: #334f65;
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 16px 18px;
+      border: 0;
+      border-left: 6px solid var(--blue);
+      border-radius: 16px;
+      background: #eef7fb;
+      color: #334f65;
+    }
+
+    .callout.warning {
+      border-left-color: #f5a623;
+      background: #fff5e1;
+      color: #6f4b18;
+    }
+
+    .callout.danger {
+      border-left-color: #e55353;
+      background: #fff0ef;
+      color: #713232;
+    }
+
+    .callout.success {
+      border-left-color: #2f9e62;
+      background: #eaf8f0;
+      color: #1e6640;
+    }
+
+    .grid,
+    .chapter-grid,
+    .fuel-grid {
+      gap: 14px;
+    }
+
+    .card,
+    .metric-card,
+    .chapter-card,
+    .fuel-card,
+    .step,
+    details {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(#ffffff, #f8fbfd);
+      box-shadow: none;
+    }
+
+    .card,
+    .metric-card,
+    .chapter-card,
+    .fuel-card {
+      padding: 16px;
+    }
+
+    .metric-card .num {
+      display: block;
+      width: auto;
+      height: auto;
+      margin: 0 0 8px;
+      border-radius: 0;
+      background: transparent;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .chapter-card .chapter-no {
+      border-radius: 8px;
+      background: #102f49;
+      color: #ffffff;
+      font-size: 11px;
+      letter-spacing: 0;
+    }
+
+    .fuel-card.ng,
+    .fuel-card.methanol,
+    .fuel-card.ammonia,
+    .fuel-card.hydrogen,
+    .fuel-card.lpg {
+      border-top-width: 1px;
+      border-left-width: 6px;
+    }
+
+    .badge {
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    table {
+      width: 100%;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+      font-size: 14.5px;
+      line-height: 1.72;
+    }
+
+    th {
+      padding: 13px 14px;
+      border: 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.16);
+      background: var(--navy);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    td {
+      padding: 13px 14px;
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: #334f65;
+      background: #ffffff;
+      vertical-align: top;
+    }
+
+    .clause-label {
+      display: grid;
+      grid-template-columns: minmax(4.4em, max-content) minmax(0, 1fr);
+      column-gap: 0.35em;
+      align-items: start;
+    }
+
+    .clause-no {
+      white-space: nowrap;
+    }
+
+    .clause-label span:not(.clause-no) {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fbfd;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.35rem;
+    }
+
+    li {
+      margin: 6px 0;
+      color: #3e596d;
+    }
+
+    summary {
+      background: #f8fbfd;
+      color: var(--navy);
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .details-body {
+      padding: 16px 18px 18px;
+      background: #ffffff;
+    }
+
+    .timeline {
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      left: 8px;
+      background: var(--line);
+    }
+
+    .step {
+      padding: 14px;
+    }
+
+    .step::before {
+      left: -22px;
+      background: var(--cyan);
+      box-shadow: 0 0 0 2px var(--cyan);
+    }
+
+    .checklist {
+      gap: 10px;
+    }
+
+    .checklist li {
+      padding: 14px 14px 14px 42px;
+      border-radius: 16px;
+      background: #ffffff;
+      color: #38556a;
+      position: relative;
+    }
+
+    .checklist li::before {
+      position: absolute;
+      left: 16px;
+      color: #2f9e62;
+    }
+
+    /* Color enrichment: closer to the SOLAS note's categorized card system. */
+    :root {
+      --accent-blue: #0b6fa4;
+      --accent-cyan: #00a7b5;
+      --accent-green: #2f9e62;
+      --accent-amber: #f5a623;
+      --accent-red: #e55353;
+      --accent-purple: #7665e8;
+      --accent-indigo: #3f66c7;
+      --soft-cyan: #e8fbfd;
+      --soft-indigo: #eef3ff;
+      --soft-gold: #fff7e8;
+    }
+
+    section {
+      --section-accent: var(--accent-blue);
+      --section-soft: #eef7fb;
+      position: relative;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: 18px;
+      left: 18px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--section-accent);
+      opacity: 0.85;
+    }
+
+    section h2 {
+      align-items: center;
+      gap: 12px;
+    }
+
+    section h2::before {
+      content: "";
+      flex: 0 0 12px;
+      width: 12px;
+      height: 32px;
+      border-radius: 999px;
+      background: var(--section-accent);
+      box-shadow: 0 8px 18px color-mix(in srgb, var(--section-accent) 28%, transparent);
+    }
+
+    #position { --section-accent: var(--accent-blue); --section-soft: #eef7fb; }
+    #relationship { --section-accent: var(--accent-cyan); --section-soft: var(--soft-cyan); }
+    #scope { --section-accent: var(--accent-amber); --section-soft: var(--soft-gold); }
+    #architecture { --section-accent: var(--accent-purple); --section-soft: #f2f0ff; }
+    #front { --section-accent: var(--accent-indigo); --section-soft: var(--soft-indigo); }
+    #part-a { --section-accent: #102f49; --section-soft: #eef4f8; }
+    #goal { --section-accent: var(--accent-green); --section-soft: var(--soft-green); }
+    #part-a1 { --section-accent: #0ea5a4; --section-soft: #e8fbf8; }
+    #part-bcd { --section-accent: #9a6a2f; --section-soft: #fff5e6; }
+    #appendices { --section-accent: var(--accent-purple); --section-soft: #f3f0ff; }
+    #themes { --section-accent: var(--accent-red); --section-soft: var(--soft-red); }
+    #users { --section-accent: var(--accent-blue); --section-soft: #eef7fb; }
+    #confusion { --section-accent: #f97316; --section-soft: #fff3e8; }
+    #study { --section-accent: #10a37f; --section-soft: #eaf8f0; }
+    #summary { --section-accent: #102f49; --section-soft: #eef4f8; }
+
+    section .lead,
+    section > p:first-of-type {
+      border-radius: 14px;
+    }
+
+    .callout {
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--section-accent) 13%, #ffffff), #ffffff 78%);
+      border-left-color: var(--section-accent);
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--section-accent) 18%, transparent);
+    }
+
+    .callout.warning {
+      background: linear-gradient(135deg, #fff6e3, #ffffff 82%);
+    }
+
+    .callout.danger {
+      background: linear-gradient(135deg, #fff0ef, #ffffff 82%);
+    }
+
+    .callout.success {
+      background: linear-gradient(135deg, #eaf8f0, #ffffff 82%);
+    }
+
+    .card,
+    .metric-card,
+    .chapter-card,
+    .fuel-card,
+    .step,
+    details {
+      --card-accent: var(--section-accent);
+      --card-soft: var(--section-soft);
+      position: relative;
+      border-color: color-mix(in srgb, var(--card-accent) 28%, var(--line));
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--card-soft) 72%, #ffffff), #ffffff 72%);
+      box-shadow: 0 10px 22px rgba(7, 48, 79, 0.06);
+    }
+
+    .card::before,
+    .metric-card::before,
+    .chapter-card::before,
+    .fuel-card::before,
+    .step::after,
+    details::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      bottom: 14px;
+      left: 0;
+      width: 5px;
+      border-radius: 0 999px 999px 0;
+      background: var(--card-accent);
+    }
+
+    .metric-card:nth-child(1),
+    .grid.two .card:nth-child(1) {
+      --card-accent: var(--accent-blue);
+      --card-soft: #eef7fb;
+    }
+
+    .metric-card:nth-child(2),
+    .grid.two .card:nth-child(2) {
+      --card-accent: var(--accent-cyan);
+      --card-soft: var(--soft-cyan);
+    }
+
+    .metric-card:nth-child(3),
+    .grid.three .card:nth-child(3) {
+      --card-accent: var(--accent-green);
+      --card-soft: var(--soft-green);
+    }
+
+    .grid.three .card:nth-child(1) {
+      --card-accent: var(--accent-blue);
+      --card-soft: #eef7fb;
+    }
+
+    .grid.three .card:nth-child(2) {
+      --card-accent: var(--accent-purple);
+      --card-soft: #f3f0ff;
+    }
+
+    .grid.three .card h3,
+    .grid.two .card h3,
+    .metric-card h3,
+    .chapter-card h3,
+    .fuel-card h3 {
+      color: color-mix(in srgb, var(--card-accent) 72%, #102f49);
+    }
+
+    .metric-card .num {
+      color: var(--card-accent);
+    }
+
+    .chapter-card:nth-child(5n+1) { --card-accent: var(--accent-blue); --card-soft: #eef7fb; }
+    .chapter-card:nth-child(5n+2) { --card-accent: var(--accent-cyan); --card-soft: var(--soft-cyan); }
+    .chapter-card:nth-child(5n+3) { --card-accent: var(--accent-green); --card-soft: var(--soft-green); }
+    .chapter-card:nth-child(5n+4) { --card-accent: var(--accent-amber); --card-soft: var(--soft-gold); }
+    .chapter-card:nth-child(5n) { --card-accent: var(--accent-purple); --card-soft: #f3f0ff; }
+
+    .chapter-card .chapter-no {
+      background: var(--card-accent);
+      box-shadow: 0 6px 14px color-mix(in srgb, var(--card-accent) 25%, transparent);
+    }
+
+    .fuel-card.ng {
+      --card-accent: var(--accent-blue);
+      --card-soft: #eef7fb;
+    }
+
+    .fuel-card.methanol {
+      --card-accent: var(--accent-green);
+      --card-soft: var(--soft-green);
+    }
+
+    .fuel-card.ammonia {
+      --card-accent: var(--accent-red);
+      --card-soft: var(--soft-red);
+    }
+
+    .fuel-card.hydrogen {
+      --card-accent: var(--accent-purple);
+      --card-soft: #f3f0ff;
+    }
+
+    .fuel-card.lpg {
+      --card-accent: var(--accent-amber);
+      --card-soft: var(--soft-gold);
+    }
+
+    .fuel-card {
+      border-left: 6px solid var(--card-accent);
+      border-top: 1px solid color-mix(in srgb, var(--card-accent) 28%, var(--line));
+    }
+
+    table {
+      box-shadow: 0 8px 22px rgba(7, 48, 79, 0.05);
+    }
+
+    th {
+      background: linear-gradient(135deg, var(--section-accent), #102f49);
+    }
+
+    tbody tr:nth-child(even) td {
+      background: color-mix(in srgb, var(--section-soft) 48%, #ffffff);
+    }
+
+    tbody tr:hover td {
+      background: color-mix(in srgb, var(--section-soft) 78%, #ffffff);
+    }
+
+    .badge.blue { background: #e8f4ff; color: #0b5f97; }
+    .badge.green { background: #e8f8ee; color: #1f7a4c; }
+    .badge.amber { background: #fff1d6; color: #9a5f12; }
+    .badge.red { background: #ffe6e5; color: #b23a3a; }
+    .badge.purple { background: #eeeaff; color: #5a49c9; }
+    .badge.gray { background: #eef4f8; color: #405a70; }
+
+    details:nth-of-type(5n+1) { --card-accent: var(--accent-blue); --card-soft: #eef7fb; }
+    details:nth-of-type(5n+2) { --card-accent: var(--accent-cyan); --card-soft: var(--soft-cyan); }
+    details:nth-of-type(5n+3) { --card-accent: var(--accent-amber); --card-soft: var(--soft-gold); }
+    details:nth-of-type(5n+4) { --card-accent: var(--accent-red); --card-soft: var(--soft-red); }
+    details:nth-of-type(5n) { --card-accent: var(--accent-purple); --card-soft: #f3f0ff; }
+
+    summary {
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--card-accent) 13%, #ffffff), #ffffff);
+      color: color-mix(in srgb, var(--card-accent) 72%, #102f49);
+    }
+
+    summary::after {
+      color: var(--card-accent);
+    }
+
+    .step:nth-child(5n+1) { --card-accent: var(--accent-blue); --card-soft: #eef7fb; }
+    .step:nth-child(5n+2) { --card-accent: var(--accent-cyan); --card-soft: var(--soft-cyan); }
+    .step:nth-child(5n+3) { --card-accent: var(--accent-green); --card-soft: var(--soft-green); }
+    .step:nth-child(5n+4) { --card-accent: var(--accent-amber); --card-soft: var(--soft-gold); }
+    .step:nth-child(5n) { --card-accent: var(--accent-purple); --card-soft: #f3f0ff; }
+
+    .step::before {
+      background: var(--card-accent);
+      box-shadow: 0 0 0 2px var(--card-accent);
+    }
+
+    .checklist li:nth-child(5n+1) { --card-accent: var(--accent-blue); --card-soft: #eef7fb; }
+    .checklist li:nth-child(5n+2) { --card-accent: var(--accent-cyan); --card-soft: var(--soft-cyan); }
+    .checklist li:nth-child(5n+3) { --card-accent: var(--accent-green); --card-soft: var(--soft-green); }
+    .checklist li:nth-child(5n+4) { --card-accent: var(--accent-amber); --card-soft: var(--soft-gold); }
+    .checklist li:nth-child(5n) { --card-accent: var(--accent-purple); --card-soft: #f3f0ff; }
+
+    .checklist li {
+      border-color: color-mix(in srgb, var(--card-accent) 24%, var(--line));
+      background: linear-gradient(135deg, color-mix(in srgb, var(--card-soft) 62%, #ffffff), #ffffff 78%);
+    }
+
+    .checklist li::before {
+      color: var(--card-accent);
+    }
+
+    @media (max-width: 1228px) {
+      main {
+        padding-right: 24px;
+        padding-left: 24px;
+      }
+
+      .toc {
+        padding-right: 24px;
+        padding-left: 24px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 48px 20px 36px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .document-cover {
+        width: min(48vw, 210px);
+        transform: none;
+      }
+
+      .hero h1 {
+        font-size: 2.18rem;
+        line-height: 1.16;
+      }
+
+      .hero p:not(.article-share__label):not(.article-meta) {
+        font-size: 16px;
+      }
+
+      main {
+        padding: 22px 16px 42px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      section h2 {
+        font-size: 24px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
+
+      .clause-label {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 2.05rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .hero {
+        background: #102f49 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .layout {
+        display: block;
+        max-width: none;
+        margin: 0;
+      }
+
+      .toc {
+        position: static;
+        box-shadow: none;
+        page-break-after: always;
+      }
+
+      section {
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  
+    .hero .article-meta {
+      margin: 14px 0 18px;
+      max-width: 900px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .hero-copy .eyebrow {
+      margin-top: -12px;
+    }
+
+    .hero .article-share--hero {
+      margin-top: 22px;
+    }
+
+    .hero .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    main > section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .share-band {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 20px 32px;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      scroll-margin-top: 0;
+    }
+
+    .share-band::before {
+      content: none;
+      display: none;
+    }
+
+    .share-band .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .share-band .article-share--end {
+      margin: 0;
+    }
+
+    .site-footer {
+      background: #061b22;
+      color: rgba(255, 255, 255, 0.82);
+      padding: 36px 0 44px;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .site-footer .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    .site-footer strong {
+      color: #fff;
+    }
+
+    .site-footer a {
+      color: #8ffff2;
+    }
+
+    .site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 760px;
+    }
+
+    .site-footer .small {
+      font-size: 13px;
+    }
+
+    .site-footer .footer-sources {
+      margin: 18px 0 0;
+      max-width: 980px;
+    }
+
+    .site-footer .footer-sources__title {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .site-footer .source-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .site-footer .source-list li {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    @media print {
+      .note-site-bar,
+      .article-share,
+      .share-band {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="lfpf-note.en.html" lang="en" hreflang="en">EN</a>
+      <a href="lfpf-note.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">船級規範｜低閃點燃料船｜REAY'S NOTE</div>
+        <h1>LR低閃點燃料船舶<br />入級規則架構</h1>
+        <p class="article-meta">
+          <span>📅 更新：2026-06-19</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 閱讀約 22 分鐘</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 LR-RU-012 / 低閃點燃料 / LFPF</span>
+        </p>
+
+        <p>
+          本筆記整理 Lloyd’s Register《Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025》
+          的文件定位、章節架構、技術邏輯、燃料別要求與實務審查重點，協助讀者快速掌握低閃點燃料船舶設計與入級要求。
+        </p>
+
+        <a class="hero-jump" href="#architecture" aria-label="快速移動到第四章整體架構">快速移動到文章架構</a>
+
+        <div class="tags">
+          <span class="tag">IMO IGF Code</span>
+          <span class="tag">LFPF 入級符號</span>
+          <span class="tag">Gas Ready</span>
+          <span class="tag">NG（LNG／CNG）</span>
+          <span class="tag">甲醇／乙醇</span>
+          <span class="tag">氨</span>
+          <span class="tag">氫</span>
+          <span class="tag">LPG</span>
+        </div>
+
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/lfpf-note.html"
+          data-share-title="LR-RU-012 低閃點燃料船舶入級規則｜Reay's Note"
+          data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;LR-RU-012 低閃點燃料船舶入級規則｜Reay's Note&#10;https://reayhuang.com/notes/maritime/lfpf-note.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-hero-label">分享此篇</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+
+      <figure class="document-cover" aria-label="LR-RU-012 規則文件封面">
+        <img src="../../assets/images/maritime/lr-ru-012/lr-ru-012-cover.png" alt="Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025 文件封面" />
+      </figure>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <h2>目錄</h2>
+      <a href="#position">一、文件基本定位</a>
+      <a href="#relationship">二、與 IGF Code／船旗國／LR 的關係</a>
+      <a href="#scope">三、適用範圍</a>
+      <a href="#architecture">四、整體架構</a>
+      <a href="#front">五、文件前置部分</a>
+      <a href="#part-a">六、Part A：一般規定</a>
+      <a href="#goal">七、目標與功能要求</a>
+      <a href="#part-a1">八、Part A-1：天然氣燃料船要求</a>
+      <a href="#part-bcd">九、製造、操作與訓練</a>
+      <a href="#appendices">十、燃料別附錄</a>
+      <a href="#themes">十一、重要技術主題整合</a>
+      <a href="#users">十二、不同使用者的實務應用</a>
+      <a href="#confusion">十三、易混淆觀念</a>
+      <a href="#study">十四、建議學習路徑</a>
+      <a href="#summary">十五、總結與工程判斷</a>
+    </aside>
+
+    <main>
+      <section id="position">
+        <h2>一、文件基本定位</h2>
+
+        <p class="lead">
+          本文件為 <strong>Lloyd’s Register，LR</strong> 針對使用
+          <strong>氣體燃料 gases</strong> 或 <strong>其他低閃點燃料 low-flashpoint fuels</strong>
+          船舶所制定的入級規則。文件名稱為：
+        </p>
+
+        <div class="callout">
+          <strong>Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025</strong><br />
+          中文可理解為：<strong>LR 使用氣體或其他低閃點燃料船舶之入級規則，2025 年 7 月版</strong>。
+        </div>
+
+        <p>
+          LR-RU-012 是 Lloyd’s Register 將 <strong>IMO IGF Code</strong> 納入船級規則，並加入 LR 補充入級要求與燃料別附錄後，形成的低閃點燃料船舶入級規則文件。其內容涵蓋設計、建造、測試、操作與訓練相關要求；但操作、訓練與法定核可事項仍須依船旗國 Administration、IMO 文件與專案船級審查意見分開確認。
+        </p>
+
+        <div class="grid three">
+          <div class="metric-card">
+            <div class="num">1</div>
+            <h3>規範性質</h3>
+            <p>LR 船級協會針對低閃點燃料船舶制定的入級規則。</p>
+          </div>
+
+          <div class="metric-card">
+            <div class="num">2</div>
+            <h3>法規基礎</h3>
+            <p>將 <strong>IMO IGF Code</strong> 納入船級規則，並加入 LR 補充要求與燃料別附錄。</p>
+          </div>
+
+          <div class="metric-card">
+            <div class="num">3</div>
+            <h3>工程目標</h3>
+            <p>確保低閃點燃料船舶達到與傳統燃油船相當的安全水準。</p>
+          </div>
+        </div>
+
+        <h3>LR 燃料代號對照（LFPF yy）</h3>
+        <p>
+          本文件不是單純的 LNG 燃料船規範，而是 LR 針對
+          <strong>低閃點燃料船舶</strong> 建立的總體入級框架。下列為 LR-RU-012 中
+          <strong>LFPF(xx,yy)</strong> 與 <strong>GR(yy,z)</strong> 使用的 yy 燃料識別代號對照。
+        </p>
+
+        <table id="fuel-identifiers">
+          <thead>
+            <tr>
+              <th>燃料類型</th>
+              <th>LR 代號</th>
+              <th>說明</th>
+              <th>本文是否展開</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Natural Gas</strong></td>
+              <td><strong>NG</strong></td>
+              <td>天然氣，可為 LNG 或 CNG 型態</td>
+              <td>本文重點燃料之一</td>
+            </tr>
+            <tr>
+              <td><strong>Ethane Gas</strong></td>
+              <td><strong>EG</strong></td>
+              <td>乙烷氣</td>
+              <td>補充列示，不作深入展開</td>
+            </tr>
+            <tr>
+              <td><strong>Petroleum Gas</strong></td>
+              <td><strong>PG</strong></td>
+              <td>石油氣，包含 propane、butane 或其混合物；LPG 燃料在 LR-RU-012 中以 PG 表示</td>
+              <td>Appendix LR4</td>
+            </tr>
+            <tr>
+              <td><strong>Methyl Alcohol</strong></td>
+              <td><strong>ML</strong></td>
+              <td>甲醇 Methanol</td>
+              <td>Appendix LR1</td>
+            </tr>
+            <tr>
+              <td><strong>Ethyl Alcohol</strong></td>
+              <td><strong>EL</strong></td>
+              <td>乙醇 Ethanol</td>
+              <td>Appendix LR1</td>
+            </tr>
+            <tr>
+              <td><strong>Hydrogen</strong></td>
+              <td><strong>HY</strong></td>
+              <td>氫燃料</td>
+              <td>Appendix LR3</td>
+            </tr>
+            <tr>
+              <td><strong>Ammonia</strong></td>
+              <td><strong>AM</strong></td>
+              <td>氨燃料</td>
+              <td>Appendix LR2</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="relationship">
+        <h2>二、與 IGF Code／船旗國／LR 的關係</h2>
+
+        <h3>1. 與 IMO IGF Code 的關係</h3>
+        <p>
+          <strong>IGF Code</strong> 全名為
+          <strong>International Code of Safety for Ships Using Gases or Other Low-Flashpoint Fuels</strong>，
+          中文可譯為 <strong>使用氣體或其他低閃點燃料船舶安全國際章程</strong>。
+        </p>
+
+        <p>
+          LR-RU-012 的核心，是將 IGF Code 的要求整合進 LR 入級規則。船舶若要取得 LR 低閃點燃料相關入級，
+          除了必須符合 IGF Code 的基本要求，也須符合 LR 在本文件中補充的入級要求。
+        </p>
+
+        <h3>2. 「LR」前綴條文的意義</h3>
+        <div class="callout warning">
+          文件中若某項要求前面標示 <strong>LR</strong>，代表該條文是
+          <strong>Lloyd’s Register 的船級補充要求</strong>，不一定是 IGF Code 原文。
+        </div>
+
+        <p>實務上，送審時不能只看 IMO 原文，也必須檢查 LR 補充要求，尤其是燃料別附錄、入級符號、Gas Ready 描述與風險評估要求。</p>
+
+        <h3>3. 三層責任關係</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>層級</th>
+              <th>角色</th>
+              <th>主要功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>IMO</strong></td>
+              <td>制定 IGF Code 等國際安全章程</td>
+              <td>提供國際最低安全標準</td>
+            </tr>
+            <tr>
+              <td><strong>船旗國 Administration</strong></td>
+              <td>法規解釋與法定證書核發</td>
+              <td>決定船舶是否符合法定要求</td>
+            </tr>
+            <tr>
+              <td><strong>LR</strong></td>
+              <td>船級審查與入級規範執行</td>
+              <td>確認船舶符合 LR 入級規則與相關技術要求</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="scope">
+        <h2>三、適用範圍與不適用範圍</h2>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>適用對象</h3>
+            <ul>
+              <li>LNG 燃料貨櫃船</li>
+              <li>LNG 燃料散裝船</li>
+              <li>LNG 燃料渡輪</li>
+              <li>甲醇燃料船</li>
+              <li>氨燃料船</li>
+              <li>氫燃料船</li>
+              <li>LPG 燃料船</li>
+              <li>預留未來使用替代燃料的 Gas Ready 船舶</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>需特別區分</h3>
+            <p>
+              本文件主要適用於使用氣體或低閃點燃料作為
+              <strong>船用燃料 fuel</strong> 的船舶，而非單純運載液化氣體作為貨物的船舶。
+            </p>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>類型</th>
+              <th>適用法規邏輯</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>使用 LNG 作為船舶燃料</strong></td>
+              <td>通常適用 <strong>IGF Code</strong> 與 <strong>LR-RU-012</strong></td>
+            </tr>
+            <tr>
+              <td><strong>運載 LNG 作為散裝貨物的 LNG carrier</strong></td>
+              <td>通常適用 <strong>IGC Code</strong> 與液化氣體散裝船規範</td>
+            </tr>
+            <tr>
+              <td><strong>特殊混合功能船型</strong></td>
+              <td>需依 LR 與主管機關確認適用規則邊界</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout danger">
+          <strong>重要觀念：</strong>不能簡單地說「LNG 船都適用本規範」。重點要看 LNG 是作為
+          <strong>燃料 fuel</strong>，還是作為 <strong>貨物 cargo</strong>。
+        </div>
+      </section>
+
+      <section id="architecture">
+        <h2>四、整份文件的總體架構</h2>
+
+        <p class="lead">
+          這份文件可以從「船舶生命週期」角度理解：先確認法規定位與適用範圍，再進入設計、建造、測試，以及入級規則所涵蓋的操作與訓練相關要求，最後依燃料種類查閱對應附錄。其中 Part C-1／Part D 的操作與訓練條文屬入級範疇，須與船旗國法定核可分開確認。
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>文件部分</th>
+              <th>主要內容</th>
+              <th>功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Preamble 前言</strong></td>
+              <td>文件目的、IGF Code 關係、LR 額外要求、主管機關責任</td>
+              <td>建立法規與入級定位</td>
+            </tr>
+            <tr>
+              <td><strong>Part A：General</strong></td>
+              <td>適用範圍、定義、替代設計、目標與功能要求</td>
+              <td>所有低閃點燃料船舶的共同基礎</td>
+            </tr>
+            <tr>
+              <td><strong>Part A-1</strong></td>
+              <td>天然氣燃料船具體設計要求</td>
+              <td>NG 天然氣燃料船（可為 LNG 或 CNG 型態）主要設計審查章節</td>
+            </tr>
+            <tr>
+              <td><strong>Part B-1</strong></td>
+              <td>製造、工藝、檢查與測試</td>
+              <td>對應船廠施工、LR survey、壓力測試與功能測試</td>
+            </tr>
+            <tr>
+              <td><strong>Part C-1</strong></td>
+              <td>操作、演練、緊急程序</td>
+              <td>入級規則所要求之操作文件與演練安排（法定 SMS 核可仍屬船旗國）</td>
+            </tr>
+            <tr>
+              <td><strong>Part D</strong></td>
+              <td>船員訓練</td>
+              <td>入級規則所涵蓋之船員能力要求（STCW／船旗國訓練核可仍須分開確認）</td>
+            </tr>
+            <tr>
+              <td><strong>Appendix LR1</strong></td>
+              <td>甲醇／乙醇燃料船要求</td>
+              <td>將 MSC.1/Circ.1621 轉化為 LR 入級要求</td>
+            </tr>
+            <tr>
+              <td><strong>Appendix LR2</strong></td>
+              <td>氨燃料船要求</td>
+              <td>強調毒性、洩漏偵測、通風與人員防護</td>
+            </tr>
+            <tr>
+              <td><strong>Appendix LR3</strong></td>
+              <td>氫燃料船要求</td>
+              <td>強調爆炸分析、氫洩漏偵測、通風與安全距離</td>
+            </tr>
+            <tr>
+              <td><strong>Appendix LR4</strong></td>
+              <td>LPG 燃料船要求</td>
+              <td>強調丙烷／丁烷特性、低處積聚與擴散風險</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="timeline">
+          <div class="step">
+            <strong>第一層：法規定位</strong><br />
+            Preamble 說明 LR、IGF Code、船旗國與入級責任關係。
+          </div>
+          <div class="step">
+            <strong>第二層：共同規則</strong><br />
+            Part A 建立適用範圍、定義、替代設計、功能要求與風險哲學。
+          </div>
+          <div class="step">
+            <strong>第三層：天然氣具體要求</strong><br />
+            Part A-1 對天然氣燃料船提供完整設計規範。
+          </div>
+          <div class="step">
+            <strong>第四層：製造、操作與訓練</strong><br />
+            Part B-1、Part C-1、Part D 分別處理施工測試、操作演練與船員能力相關的入級要求；營運核可與法定訓練仍須依船旗國與 IMO 文件確認。
+          </div>
+          <div class="step">
+            <strong>第五層：燃料別補充</strong><br />
+            Appendix LR1–LR4 針對甲醇／乙醇、氨、氫、LPG 補充特殊安全要求。
+          </div>
+        </div>
+      </section>
+
+      <section id="front">
+        <h2>五、文件前置部分摘要</h2>
+
+        <details open>
+          <summary>封面與出版資訊</summary>
+          <div class="details-body">
+            <p>
+              封面說明本文件為 <strong>July 2025</strong> 版，主題是使用氣體或其他低閃點燃料船舶的 LR 入級規則。
+              此部分對確認適用版本、後續 Notice 修訂、合約日期、建造日期與交船日期非常重要。
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>A guide to the Rules and published requirements</summary>
+          <div class="details-body">
+            <p>此部分說明 LR 規則的發布與更新方式，重點包括：</p>
+            <ul>
+              <li>LR 規則通常定期發布。</li>
+              <li>兩次正式發布之間，可能以 <strong>Notices</strong> 方式修訂。</li>
+              <li>特殊船型、特殊燃料、特殊配置或替代設計，可能需要提交 <strong>direct calculations 直接計算</strong>。</li>
+              <li>LR 可能使用其內部或認可的計算方法進行審查。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Preamble 前言</summary>
+          <div class="details-body">
+            <p>Preamble 是理解整份文件的關鍵，說明：</p>
+            <ul>
+              <li>本規範的目的，是確保低閃點燃料船舶可符合 IGF Code。</li>
+              <li>本規範已納入發行時的 IGF Code 內容。</li>
+              <li>LR 額外要求會以前綴 <strong>LR</strong> 標示。</li>
+              <li>IGF Code 的法規解釋權仍屬船旗國或 Administration。</li>
+              <li>天然氣要求最完整，其他低閃點燃料需透過替代設計或附錄要求證明等效安全。</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <section id="part-a">
+        <h2>六、Part A：General 一般規定</h2>
+
+        <p>
+          Part A 是整份規範的共同基礎，適用於所有氣體或低閃點燃料船舶。它處理的是：
+          <strong>這份規範怎麼用、哪些船適用、重要術語怎麼定義、替代燃料如何證明等效安全，以及整體安全目標是什麼</strong>。
+        </p>
+
+        <h3>Chapter 2：General 一般規定</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>小節</th>
+              <th>內容摘要</th>
+              <th>實務用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong class="clause-label"><span class="clause-no">2.1</span><span>Application</span></strong></td>
+              <td>界定適用範圍，主要適用於 SOLAS Chapter II-1 Part G 所涵蓋船舶。</td>
+              <td>判斷船舶是走 IGF Code／LR-RU-012，還是 IGC Code。</td>
+            </tr>
+            <tr>
+              <td><strong class="clause-label"><span class="clause-no">2.1-07</span><span>Class notation</span></strong></td>
+              <td>定義 <strong>LFPF(xx,yy)</strong> 與 <strong>GR(yy,z)</strong>。</td>
+              <td>用於船級證書、新造船合約、替代燃料預留與改裝規劃。</td>
+            </tr>
+            <tr>
+              <td><strong class="clause-label"><span class="clause-no">2.1-08</span><span>Submission</span></strong></td>
+              <td>說明燃料艙、測試程序、支撐計算、轉換說明等圖面與資料。</td>
+              <td>形成設計公司與船廠的送審文件清單。</td>
+            </tr>
+            <tr>
+              <td><strong class="clause-label"><span class="clause-no">2.2</span><span>Definitions</span></strong></td>
+              <td>定義 accident、bunkering、CNG、LNG、ESD、LEL、MAWP、MARVS 等。</td>
+              <td>建立後續條文解讀基準，避免審查誤判。</td>
+            </tr>
+            <tr>
+              <td><strong class="clause-label"><span class="clause-no">2.3</span><span>Alternative Design</span></strong></td>
+              <td>若燃料或系統未被具體涵蓋，需證明達到等效安全。</td>
+              <td>適用於甲醇、氨、氫、LPG 或新型燃料系統。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>入級符號：LFPF(xx,yy)</h3>
+        <p>
+          <strong>LFPF</strong> 是 <strong>Low Flash Point Fuel</strong> 的縮寫，表示船舶低閃點燃料機械、系統與布置已依 LR 規範設計、建造、安裝與測試。
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>欄位</th>
+              <th>意義</th>
+              <th>例子</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>xx</strong></td>
+              <td>適用規則識別</td>
+              <td><strong>GF</strong> 表示依 LR-RU-012／IGF Code；<strong>GC</strong> 表示依 IGC Code</td>
+            </tr>
+            <tr>
+              <td><strong>yy</strong></td>
+              <td>燃料種類識別（fuel identifier）</td>
+              <td>見 <a href="#fuel-identifiers">LR 燃料代號對照表</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout success">
+          <strong>例：</strong>
+          <span class="badge blue">LFPF(GF,NG)</span> 依 LR-RU-012／IGF Code 入級的天然氣燃料船；
+          <span class="badge green">LFPF(GF,ML)</span> 甲醇燃料船；
+          <span class="badge purple">LFPF(GF,HY)</span> 氫燃料船。
+        </div>
+
+        <div class="callout">
+          <strong>燃料代號提醒：</strong>
+          LFPF notation 的天然氣正式代號為 <strong>NG</strong>（Natural Gas）。
+          <strong>LNG</strong> 與 <strong>CNG</strong> 是儲存或供應型態，不是 yy 欄位的燃料代號。
+        </div>
+
+        <h3>Gas Ready：GR(yy,z)</h3>
+        <p>
+          <strong>GR</strong> 是 <strong>Gas Ready</strong> 描述，不是正式入級符號，而是表示船舶已針對某種低閃點燃料完成部分預留、核准或安裝。
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>代號</th>
+              <th>意義</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>A</strong></td><td>Approval in Principle，原則性批准</td></tr>
+            <tr><td><strong>S</strong></td><td>Structural Reinforcement Installed，結構補強已安裝</td></tr>
+            <tr><td><strong>T1</strong></td><td>燃料艙具備未來轉換能力</td></tr>
+            <tr><td><strong>T2</strong></td><td>燃料艙已安裝</td></tr>
+            <tr><td><strong>P</strong></td><td>管路與燃料系統已安裝</td></tr>
+            <tr><td><strong>E1</strong></td><td>設備／機械具備轉換能力</td></tr>
+            <tr><td><strong>E2</strong></td><td>設備／機械已安裝</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout danger">
+          <strong>注意：</strong>Gas Ready 不代表船舶已可使用該燃料營運，也不代表未來一定能無條件取得 LFPF 入級。
+          若日後正式啟用該燃料，仍須依當時有效的 LR 規範、IMO 要求與主管機關要求重新審查。
+        </div>
+
+        <h3>重要術語整理</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>術語</th>
+              <th>中文說明</th>
+              <th>工程意義</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Low-flashpoint fuel</strong></td>
+              <td>低閃點燃料</td>
+              <td>閃點低於 SOLAS II-2/4 一般允許條件的氣體或液體燃料</td>
+            </tr>
+            <tr>
+              <td><strong>Bunkering</strong></td>
+              <td>燃料加注</td>
+              <td>從岸基、浮動設施或可攜式燃料艙向船舶供應燃料</td>
+            </tr>
+            <tr>
+              <td><strong>ESD</strong></td>
+              <td>Emergency Shutdown，緊急關斷</td>
+              <td>洩漏、火災或異常時隔離燃料系統</td>
+            </tr>
+            <tr>
+              <td><strong>LEL</strong></td>
+              <td>Lower Explosive Limit，爆炸下限</td>
+              <td>氣體偵測警報與關斷設定的重要基準</td>
+            </tr>
+            <tr>
+              <td><strong>MAWP</strong></td>
+              <td>Maximum Allowable Working Pressure，最大允許工作壓力</td>
+              <td>壓力容器、管路與閥件設計基準</td>
+            </tr>
+            <tr>
+              <td><strong>MARVS</strong></td>
+              <td>Maximum Allowable Relief Valve Setting，安全閥最大設定壓力</td>
+              <td>燃料艙壓力釋放系統設計基準</td>
+            </tr>
+            <tr>
+              <td><strong>TMIV</strong></td>
+              <td>Tank Master Isolation Valve，燃料艙主隔離閥</td>
+              <td>液化氣燃料艙出口附近的重要遠端操作隔離閥</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>替代設計 Alternative Design</h3>
+        <p>
+          當燃料、設備或系統偏離既有條文，或使用 IGF Code 尚未完整具體涵蓋的燃料時，必須透過
+          <strong>等效安全 equivalent safety</strong> 證明其符合本規範的目標與功能要求。
+        </p>
+
+        <div class="grid three">
+          <div class="card">
+            <h4>HAZID</h4>
+            <p>Hazard Identification，危害辨識。</p>
+          </div>
+          <div class="card">
+            <h4>HAZOP</h4>
+            <p>Hazard and Operability Study，危害與可操作性分析。</p>
+          </div>
+          <div class="card">
+            <h4>FMEA</h4>
+            <p>Failure Mode and Effects Analysis，失效模式與效應分析。</p>
+          </div>
+          <div class="card">
+            <h4>Explosion Analysis</h4>
+            <p>爆炸分析，用於評估爆炸壓力與後果。</p>
+          </div>
+          <div class="card">
+            <h4>Gas Dispersion Analysis</h4>
+            <p>氣體擴散分析，用於判斷洩漏後氣體雲範圍。</p>
+          </div>
+          <div class="card">
+            <h4>RBC</h4>
+            <p>Risk Based Certification，風險基礎認證。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="goal">
+        <h2>七、Chapter 3–4：目標、功能要求與一般技術要求</h2>
+
+        <h3>Chapter 3：Goal and Functional Requirements</h3>
+        <p>
+          Chapter 3 是整份文件的安全哲學核心。它採用
+          <strong>目標型標準 goal-based approach</strong>，不只要求某個設備尺寸或布置，而是要求整體系統必須達成明確的安全功能。
+        </p>
+
+        <ul class="checklist">
+          <li>系統安全性、可靠性與可依賴性應等同於新型傳統燃油主機與輔機。</li>
+          <li>燃料相關危害的機率與後果應透過布置、通風、偵測與安全動作降到最低。</li>
+          <li>安全措施不得導致不可接受的動力喪失。</li>
+          <li>危險區域應盡量限制。</li>
+          <li>危險區域內設備應盡量減少，且必須適當認證。</li>
+          <li>應防止爆炸性、可燃性或有毒氣體意外累積。</li>
+          <li>系統元件應防止外部損傷。</li>
+          <li>應降低危險區域內點火源。</li>
+          <li>燃料儲存、供應與加注系統應能安全接收、保存與輸送燃料。</li>
+          <li>必須配置控制、警報、監測、關斷、固定式氣體偵測與消防系統。</li>
+          <li>技術文件應足以證明規範符合性。</li>
+          <li>單一故障不得導致不安全或不可靠情況。</li>
+        </ul>
+
+        <div class="callout">
+          <strong>工程解讀：</strong>低閃點燃料船的安全，不是單靠燃料艙厚度、閥件等級或管路材料，
+          而是靠整個系統在洩漏、火災、爆炸、停電、閥件失效、通風失效、偵測器動作與 ESD 啟動時仍能受控。
+        </div>
+
+        <h3>Chapter 4：General Requirements</h3>
+        <p>
+          Chapter 4 是從 Chapter 3 的功能要求進一步進入具體設計前的總體安全要求。它通常與下列文件或分析連動：
+        </p>
+
+        <div class="grid two">
+          <div class="card">
+            <h4>安全分析文件</h4>
+            <ul>
+              <li>風險評估報告</li>
+              <li>爆炸分析</li>
+              <li>氣體擴散分析</li>
+              <li>替代設計等效安全證明</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>設計與控制文件</h4>
+            <ul>
+              <li>危險區域圖</li>
+              <li>系統安全概念</li>
+              <li>布置圖</li>
+              <li>ESD cause-and-effect</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="part-a1">
+        <h2>八、Part A-1：天然氣燃料船專用要求</h2>
+
+        <p class="lead">
+          Part A-1 是本文件中最完整的技術主體，主要針對 <strong>天然氣（NG；可為 LNG 或 CNG 型態）</strong> 作為燃料的船舶。
+          其他低閃點燃料可參考其設計架構，但不能直接照搬，因為各燃料的火災、爆炸、毒性、低溫與洩漏特性不同。
+        </p>
+
+        <div class="chapter-grid">
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 5</span>
+            <h3>Ship Design and Arrangement 船舶設計與配置</h3>
+            <p>
+              規定燃料艙、機艙、tank connection space、fuel preparation room、bunkering station、居住區、控制站、危險區域與逃生通道的布置原則。
+            </p>
+            <p><strong>實務影響：</strong>直接影響 GA Plan、燃料艙位置、危險區域邊界、加注站位置與通風口配置。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 6</span>
+            <h3>Fuel Containment System 燃料圍護系統</h3>
+            <p>
+              規定燃料艙型式、一次屏障、二次屏障、絕熱、interbarrier space、支撐、壓力釋放、裝載限制與低溫保護。
+            </p>
+            <p><strong>實務影響：</strong>用於審查 Type C tank、independent tank、membrane tank、LNG fuel tank 與二次屏障設計。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 7</span>
+            <h3>Material and General Pipe Design 材料與一般管路設計</h3>
+            <p>
+              規定低溫材料、管路強度、壓力等級、雙層管、duct、焊接、閥件、防外部損傷與火災耐受性。
+            </p>
+            <p><strong>實務影響：</strong>是燃料供應管路、加注管路、GVU 管路、管架與穿艙件設計的主要依據。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 8</span>
+            <h3>Bunkering 加注系統</h3>
+            <p>
+              規定 bunkering station、加注管路、加注控制、通訊、ESD、洩漏偵測、溢流保護與連接方式。
+            </p>
+            <p><strong>實務影響：</strong>對 truck-to-ship、shore-to-ship、ship-to-ship 加注作業特別重要。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 9</span>
+            <h3>Fuel Supply to Consumers 對用戶之燃料供應</h3>
+            <p>
+              規定燃料從儲存艙到主機、輔機、鍋爐、燃料電池或其他消耗設備的供應系統。
+            </p>
+            <p><strong>實務影響：</strong>審查 FGSS、GVU、雙層管、master gas fuel valve、purging、venting 與壓力控制。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 10</span>
+            <h3>Power Generation and Gas Consumers 推進、發電與燃料消耗設備</h3>
+            <p>
+              規定雙燃料主機、純氣體主機、輔機、鍋爐、燃料電池、燃氣渦輪與其他 gas consumer 的安全要求。
+            </p>
+            <p><strong>實務影響：</strong>重點在燃料切換、pilot fuel、engine shutdown、發電冗餘與單一故障安全。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 11</span>
+            <h3>Fire Safety 消防安全</h3>
+            <p>
+              規定火災偵測、防火分隔、消防水、水霧、乾粉、固定式滅火系統，以及燃料相關區域防護。
+            </p>
+            <p><strong>實務影響：</strong>影響 Fire Control Plan、消防管路、加注站消防與 fuel preparation room 滅火配置。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 12</span>
+            <h3>Explosion Prevention 防爆</h3>
+            <p>
+              規定危險區域分類、點火源控制、爆炸壓力釋放、氣體累積防止與安全距離。
+            </p>
+            <p><strong>實務影響：</strong>與 Hazardous Area Plan、防爆設備清單、爆炸分析與通風設計密切相關。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 13</span>
+            <h3>Ventilation 通風</h3>
+            <p>
+              規定 tank connection space、fuel preparation room、bunkering station、duct、airlock 與機艙通風要求。
+            </p>
+            <p><strong>實務影響：</strong>影響風機容量、通風口位置、通風失效警報與自動關斷邏輯。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 14</span>
+            <h3>Electrical Installations 電氣設備</h3>
+            <p>
+              規定危險區域內電氣設備的防爆型式、認證、安裝、電纜穿艙件、照明與電源安全。
+            </p>
+            <p><strong>實務影響：</strong>需與 IEC 60079、IEC 60092-502、防爆設備選型與危險區域分類一致。</p>
+          </div>
+
+          <div class="chapter-card">
+            <span class="chapter-no">Chapter 15</span>
+            <h3>Control, Monitoring and Safety Systems 控制、監測與安全系統</h3>
+            <p>
+              規定氣體偵測、火災偵測、壓力／溫度／液位監測、警報、ESD、interlock 與 cause-and-effect。
+            </p>
+            <p><strong>實務影響：</strong>是 ESD logic、alarm list、FMEA、commissioning test 與 sea trial 的核心章節。</p>
+          </div>
+        </div>
+
+        <div class="callout warning">
+          <strong>Bunkering 特別提醒：</strong>bunkering station 原則上應位於開敞甲板以確保自然通風。
+          若位於封閉或半封閉空間，需透過風險評估考量隔離、強制通風、洩漏偵測、airlock、CCTV 或直接視線監控。
+        </div>
+      </section>
+
+      <section id="part-bcd">
+        <h2>九、Part B-1／Part C-1／Part D：製造、操作與訓練</h2>
+
+        <div class="callout warning">
+          <strong>入級範疇提醒：</strong>
+          Part B-1 主要對應建造與測驗；Part C-1／Part D 雖涵蓋操作、演練與訓練相關要求，但並不表示所有營運、SMS 與法定訓練核可事項皆由 LR 入級直接管轄，仍須與船旗國 Administration 及專案審查意見分開確認。
+        </div>
+
+        <h3>Part B-1：Chapter 16 製造、工藝與測試</h3>
+        <p>
+          Chapter 16 的重點不是設計概念，而是確認實際建造出來的系統符合已核准設計。
+        </p>
+
+        <div class="grid two">
+          <div class="card">
+            <h4>主要內容</h4>
+            <ul>
+              <li>製造品質</li>
+              <li>焊接要求</li>
+              <li>材料證書與追溯性</li>
+              <li>燃料艙測試</li>
+              <li>管路壓力測試</li>
+              <li>洩漏測試</li>
+              <li>雙層管或 duct 測試</li>
+              <li>ESD 測試</li>
+              <li>commissioning 與 sea trial</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>船廠常見輸出文件</h4>
+            <ul>
+              <li>ITP，Inspection and Test Plan</li>
+              <li>WPS，Welding Procedure Specification</li>
+              <li>PQR，Procedure Qualification Record</li>
+              <li>壓力測試報告</li>
+              <li>洩漏測試報告</li>
+              <li>ESD valve 關閉時間測試</li>
+              <li>燃料系統冷態與熱態試運轉紀錄</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>測試重點：</strong>雙層燃料管的外管或 duct 也須經壓力測試，以證明能承受內管破裂時的最大預期壓力；
+          液化氣管路中的 ESD valve 應能在要求時間內平順完全關閉。
+        </div>
+
+        <h3>Part C-1：Chapter 17–18 操作與演練</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>章節</th>
+              <th>主題</th>
+              <th>重點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chapter 17</strong></td>
+              <td>Drills and Emergency Exercises</td>
+              <td>燃料洩漏、火災、加注事故、ESD 啟動、通風失效、氣體偵測警報等演練。</td>
+            </tr>
+            <tr>
+              <td><strong>Chapter 18</strong></td>
+              <td>Operation</td>
+              <td>正常操作、燃料切換、加注、purging、inerting、venting、維護、檢查與緊急程序。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>船上常見文件包括：</p>
+        <ul class="checklist">
+          <li>Fuel Handling Manual</li>
+          <li>Bunkering Procedure</li>
+          <li>Emergency Shutdown Procedure</li>
+          <li>Gas Freeing Procedure</li>
+          <li>Maintenance Manual</li>
+          <li>Permit to Work Procedure</li>
+          <li>Enclosed Space Entry Procedure</li>
+          <li>Emergency Response Plan</li>
+        </ul>
+
+        <h3>Part D：Chapter 19 船員訓練</h3>
+        <p>
+          Chapter 19 要求船公司確保相關船員依職責接受適當訓練，並與 <strong>STCW Convention and Code</strong> 要求銜接。
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>人員類型</th>
+              <th>訓練重點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>一般甲板與機艙人員</td>
+              <td>燃料危害、警報意義、基本應變、逃生與 PPE</td>
+            </tr>
+            <tr>
+              <td>負責燃料操作人員</td>
+              <td>加注、燃料切換、purging、ESD、洩漏處理</td>
+            </tr>
+            <tr>
+              <td>輪機員與輪機長</td>
+              <td>燃料供應系統、主輔機操作、維護與故障處理</td>
+            </tr>
+            <tr>
+              <td>船長與高級船員</td>
+              <td>加注作業指揮、風險管理、緊急應變與法規責任</td>
+            </tr>
+            <tr>
+              <td>加注相關人員</td>
+              <td>ship-shore communication、ESD link、bunkering checklist</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="appendices">
+        <h2>十、燃料別附錄要求</h2>
+
+        <div class="fuel-grid">
+          <div class="fuel-card ng">
+            <h3>NG Natural Gas：天然氣燃料系統（可為 LNG 或 CNG 型態）</h3>
+            <p>
+              天然氣是 IGF Code 目前最完整涵蓋的燃料，因此 Part A-1 是 NG 天然氣燃料船的主體規範。
+            </p>
+            <ul>
+              <li>NG 燃料艙形式與位置（LNG 或 CNG 型態）</li>
+              <li>燃料供應管路與 GVU</li>
+              <li>雙層管或 duct</li>
+              <li>通風與氣體偵測</li>
+              <li>bunkering station</li>
+              <li>消防、防爆、控制監測與 ESD</li>
+              <li>LNG Bunker Delivery Note</li>
+            </ul>
+          </div>
+
+          <div class="fuel-card methanol">
+            <h3>Appendix LR1：甲醇／乙醇</h3>
+            <p>
+              適用於 <strong>Methyl Alcohol，Methanol 甲醇</strong> 與
+              <strong>Ethyl Alcohol，Ethanol 乙醇</strong> 作為船舶燃料的船舶。
+            </p>
+            <ul>
+              <li>常溫液體，低溫風險較 LNG 小</li>
+              <li>仍屬低閃點燃料，需控制可燃蒸氣</li>
+              <li>甲醇具毒性，需重視人員暴露與防護</li>
+              <li>重點在燃料艙、洩漏收集、通風、加注與 ESD</li>
+              <li>燃料艙最大裝載與 filling limit 有特定限制</li>
+            </ul>
+          </div>
+
+          <div class="fuel-card ammonia">
+            <h3>Appendix LR2：氨 Ammonia</h3>
+            <p>
+              氨燃料的主要問題不只是火災或爆炸，更是 <strong>毒性 toxicity</strong>。
+            </p>
+            <ul>
+              <li>毒性區域圖與人員暴露風險</li>
+              <li>氨氣偵測器位置與警報設定</li>
+              <li>通風進口、居住區、控制站與機艙開口相對位置</li>
+              <li>PPE、呼吸器、逃生路線</li>
+              <li>vent outlet 排放位置</li>
+              <li>cause-and-effect diagram</li>
+              <li>燃料供應系統安全順序關斷</li>
+            </ul>
+          </div>
+
+          <div class="fuel-card hydrogen">
+            <h3>Appendix LR3：氫 Hydrogen</h3>
+            <p>
+              氫燃料的核心風險是 <strong>易洩漏、可燃範圍寬、點火能低與爆炸風險</strong>。
+            </p>
+            <ul>
+              <li>高壓氫或液氫儲存方式</li>
+              <li>材料相容性</li>
+              <li>氫偵測與火焰偵測</li>
+              <li>通風與安全距離</li>
+              <li>爆炸分析與危險區域分類</li>
+              <li>purging、venting 與 ESD</li>
+              <li>PFD、P&ID、HAZID、HAZOP、FMEA</li>
+            </ul>
+          </div>
+
+          <div class="fuel-card lpg">
+            <h3>Appendix LR4：LPG／PG</h3>
+            <p>
+              LPG 通常包括 <strong>propane 丙烷</strong>、<strong>butane 丁烷</strong> 或其混合物。
+            </p>
+            <ul>
+              <li>蒸氣通常比空氣重</li>
+              <li>洩漏後可能向低處流動並積聚</li>
+              <li>需分析甲板凹陷、排水槽、艙底與通風死角</li>
+              <li>重點在燃料艙、管路、閥件、洩漏偵測與隔離</li>
+              <li>需要完整 P&ID、cause-and-effect、FMEA、操作手冊與測試計畫</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="themes">
+        <h2>十一、重要技術主題整合</h2>
+
+        <h3>1. 低閃點燃料船的核心風險</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>風險</th>
+              <th>說明</th>
+              <th>典型燃料</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>火災</strong></td>
+              <td>可燃燃料洩漏後遇點火源燃燒</td>
+              <td>天然氣、甲醇、氫、LPG</td>
+            </tr>
+            <tr>
+              <td><strong>爆炸</strong></td>
+              <td>可燃氣體或蒸氣在封閉或半封閉空間累積後點火</td>
+              <td>天然氣、氫、LPG</td>
+            </tr>
+            <tr>
+              <td><strong>毒性</strong></td>
+              <td>燃料本身對人員造成危害</td>
+              <td>氨、甲醇</td>
+            </tr>
+            <tr>
+              <td><strong>低溫</strong></td>
+              <td>液化氣燃料洩漏造成凍傷或鋼材脆裂</td>
+              <td>LNG、液氫、部分液化氣</td>
+            </tr>
+            <tr>
+              <td><strong>窒息</strong></td>
+              <td>氣體置換氧氣造成缺氧</td>
+              <td>LNG 氣化、氫、惰化氣體</td>
+            </tr>
+            <tr>
+              <td><strong>失去動力</strong></td>
+              <td>ESD 或燃料系統故障導致主推進或發電受影響</td>
+              <td>所有低閃點燃料船</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>2. 典型安全防護層</h3>
+        <div class="grid two">
+          <div class="card">
+            <h4>預防洩漏與降低後果</h4>
+            <ul>
+              <li>安全布置</li>
+              <li>一次圍護</li>
+              <li>二次圍護</li>
+              <li>防外部損傷</li>
+              <li>低溫保護</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>偵測、隔離與應變</h4>
+            <ul>
+              <li>通風</li>
+              <li>氣體偵測</li>
+              <li>ESD</li>
+              <li>防爆設備</li>
+              <li>消防系統</li>
+              <li>操作程序與訓練</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>3. 設計文件常見清單</h3>
+        <ul class="checklist">
+          <li>Design Statement</li>
+          <li>ConOp，Concept of Operation</li>
+          <li>General Arrangement Plan</li>
+          <li>Fuel Tank Arrangement</li>
+          <li>PFD，Process Flow Diagram</li>
+          <li>P&ID，Piping and Instrumentation Diagram</li>
+          <li>Hazardous Area Plan</li>
+          <li>Gas Detection Layout</li>
+          <li>Ventilation Arrangement</li>
+          <li>Fire Safety Plan</li>
+          <li>Explosion Analysis</li>
+          <li>Gas Dispersion Analysis</li>
+          <li>Risk Assessment</li>
+          <li>HAZID／HAZOP Report</li>
+          <li>FMEA</li>
+          <li>Cause-and-effect Diagram</li>
+          <li>ESD Logic</li>
+          <li>Alarm List</li>
+          <li>Fuel Handling Manual</li>
+          <li>Bunkering Procedure</li>
+          <li>Inspection and Test Plan</li>
+          <li>Commissioning／Sea Trial Test Procedure</li>
+        </ul>
+      </section>
+
+      <section id="users">
+        <h2>十二、不同使用者的實務應用</h2>
+
+        <div class="grid three">
+          <div class="card">
+            <h3>對船廠</h3>
+            <ul>
+              <li>確認入級符號是 LFPF 或 GR</li>
+              <li>確認燃料種類與對應附錄</li>
+              <li>管路施工、焊接品質與材料證書</li>
+              <li>壓力測試、洩漏測試與 ESD 測試</li>
+              <li>第一次 bunkering 前測試</li>
+              <li>LR survey 節點與 sea trial 項目</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>對設計公司</h3>
+            <ul>
+              <li>初期 GA 是否符合燃料艙與加注站布置要求</li>
+              <li>危險區域是否合理</li>
+              <li>通風口是否與居住區或控制站衝突</li>
+              <li>燃料管路是否具備二次圍護</li>
+              <li>ESD cause-and-effect 是否清楚</li>
+              <li>替代燃料是否有風險評估支持</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>對船東與船管公司</h3>
+            <ul>
+              <li>Gas Ready 不等於正式可營運</li>
+              <li>日後改裝仍須重新審查</li>
+              <li>船員是否具備相應訓練</li>
+              <li>bunkering procedure 是否完整</li>
+              <li>演練是否納入 SMS</li>
+              <li>船員是否理解毒性、爆炸與低溫風險</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="confusion">
+        <h2>十三、易混淆觀念整理</h2>
+
+        <details open>
+          <summary>1. LR-RU-012 不等於 IGF Code 原文</summary>
+          <div class="details-body">
+            <p>
+              LR-RU-012 包含 IGF Code，也包含 LR 額外入級要求。看到 <strong>LR</strong> 前綴時，
+              表示該條文是 LR 補充要求。
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>2. 天然氣以外燃料不能直接套用天然氣規則</summary>
+          <div class="details-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>燃料</th>
+                  <th>主要風險</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>NG Natural Gas（LNG／CNG 型態）</strong></td><td>低溫、可燃氣體、爆炸</td></tr>
+                <tr><td><strong>甲醇</strong></td><td>可燃液體、毒性、火焰不易察覺</td></tr>
+                <tr><td><strong>氨</strong></td><td>毒性、腐蝕、洩漏擴散</td></tr>
+                <tr><td><strong>氫</strong></td><td>易洩漏、可燃範圍寬、點火能低、爆炸</td></tr>
+                <tr><td><strong>LPG</strong></td><td>蒸氣較重、低處積聚、爆炸</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>3. Gas Ready 不是正式燃料入級</summary>
+          <div class="details-body">
+            <p>
+              <strong>GR</strong> 只是描述船舶具備某些預留或安裝項目，不代表船舶可以實際使用該燃料營運。
+              正式使用低閃點燃料，仍須取得相應 <strong>LFPF</strong> 入級與主管機關核可。
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>4. 操作程序不能取代硬體安全要求</summary>
+          <div class="details-body">
+            <p>
+              替代設計可以透過等效安全證明，但不能簡單以「船員操作程序」取代規範要求的設備、材料、隔離或安全系統。
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>5. 風險評估不是形式文件</summary>
+          <div class="details-body">
+            <p>風險評估會直接影響：</p>
+            <ul>
+              <li>bunkering station 設計</li>
+              <li>fuel preparation room 布置</li>
+              <li>tank connection space 設計</li>
+              <li>通風量與氣體偵測器位置</li>
+              <li>ESD 邏輯與危險區域分類</li>
+              <li>防火分隔、vent outlet 位置與船員暴露風險</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <section id="study">
+        <h2>十四、建議學習路徑</h2>
+
+        <div class="timeline">
+          <div class="step">
+            <strong>第一階段：先看懂文件定位</strong><br />
+            閱讀 Preamble、Chapter 2 Application、Definitions、Alternative Design。
+          </div>
+
+          <div class="step">
+            <strong>第二階段：掌握安全哲學</strong><br />
+            閱讀 Chapter 3 Goal and Functional Requirements 與 Chapter 4 General Requirements。
+          </div>
+
+          <div class="step">
+            <strong>第三階段：進入天然氣燃料船主體設計</strong><br />
+            閱讀 Chapter 5–9，理解燃料儲存、加注、輸送與消耗端設計。
+          </div>
+
+          <div class="step">
+            <strong>第四階段：補強安全系統</strong><br />
+            閱讀 Chapter 11–15，理解消防、防爆、通風、防爆電氣、控制監測與 ESD。
+          </div>
+
+          <div class="step">
+            <strong>第五階段：理解建造與營運</strong><br />
+            閱讀 Chapter 16–19，理解施工、測試、操作、演練與訓練。
+          </div>
+
+          <div class="step">
+            <strong>第六階段：依燃料查附錄</strong><br />
+            甲醇／乙醇查 LR1，氨查 LR2，氫查 LR3，LPG 查 LR4。
+          </div>
+        </div>
+      </section>
+
+      <section id="summary">
+        <h2>十五、總結與工程判斷</h2>
+
+        <div class="callout success">
+          <strong>一句話總結：</strong><br />
+          LR-RU-012 是 Lloyd’s Register 將 IMO IGF Code 納入船級規則，並加入 LR 補充入級要求與燃料別附錄後，形成的低閃點燃料船舶入級規則文件。其內容涵蓋設計、建造、測試、操作與訓練相關要求；但操作、訓練與法定核可事項仍須依船旗國 Administration、IMO 文件與專案船級審查意見分開確認。
+        </div>
+
+        <h3>核心複習重點</h3>
+        <ul class="checklist">
+          <li>文件定位：LR 低閃點燃料船舶入級規則文件（納入 IGF Code＋LR 補充要求與燃料別附錄）。</li>
+          <li>法規基礎：IGF Code 納入船級規則，並加入 LR 補充入級要求。</li>
+          <li>責任切分：操作、訓練與法定核可須與入級範疇分開確認。</li>
+          <li>適用對象：使用氣體或低閃點燃料作為船用燃料的船舶。</li>
+          <li>重要區分：使用 LNG 作燃料不同於運載 LNG 作貨物。</li>
+          <li>正式入級符號為 LFPF(xx,yy)。</li>
+          <li>Gas Ready 為 GR(yy,z)，但不是正式燃料入級。</li>
+          <li>安全哲學：以目標型標準與等效安全為核心。</li>
+          <li>主要風險：火災、爆炸、毒性、低溫、洩漏、失去動力、錯誤操作。</li>
+          <li>設計重點：燃料艙、管路、加注、燃料供應、通風、防爆、消防、控制監測與 ESD。</li>
+          <li>建造重點：焊接、材料、壓力測試、洩漏測試、ESD 測試與試車。</li>
+          <li>操作重點：入級規則所要求之燃料處理手冊、加注程序、緊急程序、演練與維護。</li>
+          <li>訓練重點：入級規則所涵蓋之低閃點燃料相關船員能力要求；STCW／船旗國要求另須確認。</li>
+        </ul>
+
+      </section>
+    </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/lfpf-note.html"
+      data-share-title="LR-RU-012 低閃點燃料船舶入級規則｜Reay's Note"
+      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;LR-RU-012 低閃點燃料船舶入級規則｜Reay's Note&#10;https://reayhuang.com/notes/maritime/lfpf-note.html"
+      data-share-copy="複製連結"
+      data-share-copied="已複製"
+      data-toast-copied="連結已複製到剪貼簿"
+    >
+      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  </div>
+
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      if (location.hash) {
+        history.replaceState(null, "", `${location.pathname}${location.search}`);
+      }
+
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+      const initTocTracking = () => {
+        const toc = document.querySelector(".toc");
+        if (!toc) return;
+
+        const items = Array.from(toc.querySelectorAll('a[href^="#"]'))
+          .map((link) => {
+            const id = link.getAttribute("href").slice(1);
+            return { id, link, section: document.getElementById(id) };
+          })
+          .filter((item) => item.section);
+
+        if (!items.length) return;
+
+        const setTocHeight = () => {
+          const height = Math.ceil(toc.getBoundingClientRect().height);
+          document.documentElement.style.setProperty("--toc-height", `${height}px`);
+          return height;
+        };
+
+        let activeId = "";
+        let isProgrammaticScroll = false;
+        let programmaticTimer;
+        let pendingTarget;
+
+        const centerActiveLink = (link) => {
+          const tocRect = toc.getBoundingClientRect();
+          const linkRect = link.getBoundingClientRect();
+          const targetLeft =
+            toc.scrollLeft +
+            linkRect.left -
+            tocRect.left -
+            (tocRect.width - linkRect.width) / 2;
+
+          toc.scrollTo({
+            left: Math.max(0, targetLeft),
+            behavior: "smooth",
+          });
+        };
+
+        const setActive = (id) => {
+          if (id === activeId) return;
+          activeId = id;
+
+          for (const item of items) {
+            const isActive = item.id === id;
+            item.link.classList.toggle("is-active", isActive);
+            if (isActive) {
+              item.link.setAttribute("aria-current", "true");
+              centerActiveLink(item.link);
+            } else {
+              item.link.removeAttribute("aria-current");
+            }
+          }
+        };
+
+        const findActiveSection = () => {
+          const boundary = setTocHeight() + 28;
+          let current = items[0].id;
+
+          for (const item of items) {
+            if (item.section.getBoundingClientRect().top <= boundary) {
+              current = item.id;
+            } else {
+              break;
+            }
+          }
+
+          const nearBottom =
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 6;
+
+          if (nearBottom) {
+            current = items[items.length - 1].id;
+          }
+
+          setActive(current);
+        };
+
+        const resumeTracking = () => {
+          window.clearTimeout(programmaticTimer);
+          if (pendingTarget) {
+            const offset = setTocHeight() + 18;
+            const expectedTop = offset;
+            const actualTop = pendingTarget.section.getBoundingClientRect().top;
+            if (Math.abs(actualTop - expectedTop) > 6) {
+              window.scrollTo({
+                top: Math.max(0, pendingTarget.section.offsetTop - offset),
+                behavior: "auto",
+              });
+            }
+            pendingTarget = null;
+          }
+          isProgrammaticScroll = false;
+          findActiveSection();
+        };
+
+        let ticking = false;
+        const requestUpdate = () => {
+          if (isProgrammaticScroll) return;
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(() => {
+            findActiveSection();
+            ticking = false;
+          });
+        };
+
+        for (const item of items) {
+          item.link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            setTocHeight();
+            isProgrammaticScroll = true;
+            pendingTarget = item;
+            window.history.pushState(null, "", `#${item.id}`);
+            setActive(item.id);
+
+            window.scrollTo({
+              top: Math.max(0, item.section.offsetTop - setTocHeight() - 18),
+              behavior: "smooth",
+            });
+
+            window.clearTimeout(programmaticTimer);
+            programmaticTimer = window.setTimeout(resumeTracking, 1700);
+          });
+        }
+
+        const alignCurrentHash = () => {
+          const target = items.find((item) => `#${item.id}` === location.hash);
+          if (!target) return;
+
+          isProgrammaticScroll = true;
+          setActive(target.id);
+          window.scrollTo({
+            top: Math.max(0, target.section.offsetTop - setTocHeight() - 18),
+            behavior: "auto",
+          });
+          pendingTarget = null;
+          isProgrammaticScroll = false;
+          findActiveSection();
+        };
+
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        window.addEventListener("resize", requestUpdate);
+        window.addEventListener("hashchange", () => {
+          window.setTimeout(alignCurrentHash, 0);
+        });
+        setTocHeight();
+
+        findActiveSection();
+        window.addEventListener("load", () => {
+          if (!location.hash) {
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+            findActiveSection();
+          }
+        }, { once: true });
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initTocTracking);
+      } else {
+        initTocTracking();
+      }
+    })();
+  </script>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>LR-RU-012 低閃點燃料船舶入級規則｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        本頁為學習、內訓與驗船準備用途的視覺化整理，不代表 Lloyd's Register、IMO 或其他機構之正式意見；<span class="disclaimer-tail">正式設計、船級審查、入級符號核發、船旗國核可或營運合規，仍應以 LR 最新正式規範、IMO IGF Code、船旗國主管機關要求與專案船級審查意見為準。</span>
+      </p>
+      <div class="footer-sources small">
+        <p class="footer-sources__title">References / Source notes</p>
+        <ul class="source-list">
+          <li>Lloyd's Register — Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025 (LR-RU-012)</li>
+          <li>IMO International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (IGF Code)</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

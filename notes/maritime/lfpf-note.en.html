@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="LR-RU-012, LFPF, low-flashpoint fuels, IGF Code, Gas Ready, LNG, methanol, ammonia, hydrogen, LPG, Lloyd's Register">
+  <meta property="og:title" content="LR-RU-012 Class Rules for Low-Flashpoint Fuel Ships | Reay's Note">
+  <meta property="og:description" content="A practical note on Lloyd's Register LR-RU-012, covering the rule position, chapter architecture, IGF Code integration, LFPF notation, fuel-specific appendices and design-review focus areas.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/lfpf-note.en.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/lfpf-note.en.html">
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/lr-ru-012/lfpf-note-link-preview.en-1200.png">
+  <meta property="og:image:alt" content="LR Low-Flashpoint Fuel Ships Classification Rules Framework — Reay Huang Maritime Notes">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LR-RU-012 Class Rules for Low-Flashpoint Fuel Ships | Reay's Note">
+  <meta name="twitter:description" content="A practical note on Lloyd's Register LR-RU-012, covering the rule position, chapter architecture, IGF Code integration, LFPF notation, fuel-specific appendices and design-review focus areas.">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/lr-ru-012/lfpf-note-link-preview.en-1200.png">
+  <link rel="alternate" hreflang="zh-Hant" href="lfpf-note.html">
+  <link rel="alternate" hreflang="en" href="lfpf-note.en.html">
+  <link rel="alternate" hreflang="x-default" href="lfpf-note.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical note on Lloyd's Register LR-RU-012, covering the rule position, chapter architecture, IGF Code integration, LFPF notation, fuel-specific appendices and design-review focus areas.">
+  <title>LR-RU-012 Class Rules for Low-Flashpoint Fuel Ships | Reay's Note</title>
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --paper: #ffffff;
+      --ink: #183247;
+      --muted: #60758a;
+      --line: #dce8f1;
+      --navy: #07304f;
+      --blue: #0b6fa4;
+      --cyan: #00a7b5;
+      --green: #1e6640;
+      --amber: #b06a18;
+      --red: #b84b4b;
+      --purple: #5746c7;
+      --gray: #f8fbfd;
+      --soft-blue: #eef7fb;
+      --soft-green: #eaf8f0;
+      --soft-amber: #fff5e1;
+      --soft-red: #fff0ef;
+      --soft-purple: #f0efff;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 39, 66, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f4f8fb 0%, #eef5f9 100%);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    strong,
+    b {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #062843 0%, #07507a 55%, #0b83a5 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: none;
+      display: none;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+    }
+
+    .hero h1 {
+      margin: 18px 0 12px;
+      font-size: 3.4rem;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .hero p:not(.article-share__label):not(.article-meta) {
+      max-width: 900px;
+      margin: 0;
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #fff;
+      font-size: 0.92rem;
+    }
+
+    .layout {
+      max-width: 1180px;
+      margin: 28px auto 80px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 18px;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+    }
+
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 10px;
+      margin: 2px 0;
+      border-radius: 10px;
+      color: #334155;
+      font-size: 0.94rem;
+    }
+
+    .toc a:hover {
+      background: var(--soft-blue);
+      text-decoration: none;
+      color: var(--blue);
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    section h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--soft-blue);
+    }
+
+    section h3 {
+      margin: 26px 0 10px;
+      color: #123b63;
+      font-size: 1.28rem;
+    }
+
+    section h4 {
+      margin: 20px 0 8px;
+      color: #1e3a8a;
+      font-size: 1.06rem;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .lead {
+      font-size: 1.06rem;
+      color: #374151;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .callout {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      border-left: 6px solid var(--blue);
+      background: var(--soft-blue);
+    }
+
+    .callout.warning {
+      border-left-color: var(--amber);
+      background: var(--soft-amber);
+    }
+
+    .callout.danger {
+      border-left-color: var(--red);
+      background: var(--soft-red);
+    }
+
+    .callout.success {
+      border-left-color: var(--green);
+      background: var(--soft-green);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 18px;
+    }
+
+    .card h3,
+    .card h4 {
+      margin-top: 0;
+    }
+
+    .metric-card {
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .metric-card .num {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      vertical-align: middle;
+      margin: 2px 4px 2px 0;
+    }
+
+    .badge.blue { background: var(--soft-blue); color: #1d4ed8; }
+    .badge.green { background: var(--soft-green); color: #047857; }
+    .badge.amber { background: var(--soft-amber); color: #b45309; }
+    .badge.red { background: var(--soft-red); color: #be123c; }
+    .badge.purple { background: var(--soft-purple); color: #6d28d9; }
+    .badge.gray { background: var(--gray); color: #374151; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      overflow: hidden;
+      border-radius: 12px;
+      font-size: 0.96rem;
+    }
+
+    th {
+      background: #123b63;
+      color: white;
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 800;
+      border: 1px solid #123b63;
+    }
+
+    td {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      vertical-align: top;
+      background: white;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.3rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      margin: 12px 0;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      background: #f8fafc;
+      color: var(--navy);
+      font-weight: 800;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "＋";
+      font-size: 1.1rem;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    details[open] summary::after {
+      content: "－";
+    }
+
+    .details-body {
+      padding: 16px 18px 18px;
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .chapter-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: linear-gradient(180deg, #ffffff, #f9fbff);
+    }
+
+    .chapter-card .chapter-no {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: white;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .fuel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .fuel-card {
+      border-radius: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .fuel-card.ng { border-top: 6px solid var(--blue); }
+    .fuel-card.methanol { border-top: 6px solid var(--green); }
+    .fuel-card.ammonia { border-top: 6px solid var(--red); }
+    .fuel-card.hydrogen { border-top: 6px solid var(--purple); }
+    .fuel-card.lpg { border-top: 6px solid var(--amber); }
+
+    .timeline {
+      position: relative;
+      margin: 18px 0 0;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .step {
+      position: relative;
+      margin-bottom: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+        max-height: none;
+      }
+
+      .grid.two,
+      .grid.three,
+      .chapter-grid,
+      .fuel-grid,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Reay's Note article-page styling override. Content markup above is preserved. */
+    :root {
+      --bg: #f4f8fb;
+      --paper: #ffffff;
+      --ink: #183247;
+      --muted: #60758a;
+      --line: #dce8f1;
+      --navy: #07304f;
+      --blue: #0b6fa4;
+      --cyan: #00a7b5;
+      --green: #1e6640;
+      --amber: #b06a18;
+      --red: #b84b4b;
+      --purple: #5746c7;
+      --gray: #f8fbfd;
+      --soft-blue: #eef7fb;
+      --soft-green: #eaf8f0;
+      --soft-amber: #fff5e1;
+      --soft-red: #fff0ef;
+      --soft-purple: #f0efff;
+      --radius: 18px;
+      --shadow: 0 14px 32px rgba(7, 48, 79, 0.12);
+    }
+
+    html {
+      background: #f4f8fb;
+      scroll-padding-top: calc(var(--toc-height, 64px) + 18px);
+    }
+
+    body {
+      color: var(--ink);
+      background: linear-gradient(180deg, #f4f8fb 0%, #eef5f9 100%);
+      font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        "PingFang TC",
+        system-ui,
+        sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    strong,
+    b {
+      color: #06314f;
+      font-weight: 900;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #062843 0%, #07507a 55%, #0b83a5 100%);
+      padding: 72px 24px 46px;
+    }
+
+    .hero::after {
+      content: none;
+      display: none;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(190px, 260px);
+      gap: 44px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .document-cover {
+      width: clamp(190px, 20vw, 260px);
+      margin: 0;
+      justify-self: end;
+      align-self: end;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 24px 58px rgba(0, 12, 24, 0.34);
+      transform: translateY(8px);
+    }
+
+    .document-cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 16px 34px rgba(0, 12, 24, 0.30);
+    }
+
+    .hero-jump {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #06314f;
+      box-shadow: 0 12px 26px rgba(0, 18, 35, 0.18);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .hero-jump::after {
+      content: "↓";
+      display: inline-grid;
+      width: 22px;
+      height: 22px;
+      place-items: center;
+      border-radius: 999px;
+      background: #0b83a5;
+      color: #ffffff;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .hero-jump:hover {
+      color: #06314f;
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(0, 18, 35, 0.22);
+    }
+
+    .eyebrow {
+      padding: 7px 13px;
+      border-color: rgba(43, 179, 192, 0.42);
+      background: rgba(43, 179, 192, 0.12);
+      color: #c8f0f4;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      max-width: 780px;
+      font-size: 3.625rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .hero p:not(.article-share__label):not(.article-meta) {
+      max-width: 760px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .tags {
+      margin-top: 18px;
+      gap: 8px;
+      max-width: 900px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border: 0;
+      background: rgba(255, 255, 255, 0.14);
+      color: #e8f8fa;
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+
+    .layout {
+      display: block;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-height: none;
+      margin: 0;
+      padding: 12px max(24px, calc((100vw - 1180px) / 2));
+      overflow-x: auto;
+      border: 0;
+      border-bottom: 1px solid rgba(220, 232, 241, 0.9);
+      border-radius: 0;
+      background: rgba(244, 248, 251, 0.88);
+      box-shadow: none;
+      scrollbar-width: none;
+    }
+
+    .toc::-webkit-scrollbar {
+      display: none;
+    }
+
+    .toc h2 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .toc a {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      min-height: 34px;
+      margin: 0;
+      padding: 7px 12px;
+      border: 1px solid rgba(11, 111, 164, 0.12);
+      border-radius: 999px;
+      color: #38556a;
+      background: rgba(255, 255, 255, 0.66);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .toc a:hover {
+      background: #ffffff;
+      color: var(--cyan);
+      border-color: rgba(0, 167, 181, 0.3);
+      text-decoration: none;
+    }
+
+    .toc a.is-active,
+    .toc a[aria-current="true"] {
+      background: var(--navy);
+      color: #ffffff;
+      border-color: var(--navy);
+      box-shadow: 0 8px 18px rgba(7, 48, 79, 0.16);
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 0 0;
+    }
+
+    section {
+      scroll-margin-top: calc(var(--toc-height, 64px) + 22px);
+      margin: 0 0 24px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    section h2 {
+      display: flex;
+      margin: 0 0 18px;
+      padding: 0;
+      border: 0;
+      color: var(--navy);
+      font-size: 28px;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    section h3 {
+      margin: 24px 0 8px;
+      color: #10415f;
+      font-size: 18px;
+      line-height: 1.72;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    section h4 {
+      color: #233f55;
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .lead {
+      color: #334f65;
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 16px 18px;
+      border: 0;
+      border-left: 6px solid var(--blue);
+      border-radius: 16px;
+      background: #eef7fb;
+      color: #334f65;
+    }
+
+    .callout.warning {
+      border-left-color: #f5a623;
+      background: #fff5e1;
+      color: #6f4b18;
+    }
+
+    .callout.danger {
+      border-left-color: #e55353;
+      background: #fff0ef;
+      color: #713232;
+    }
+
+    .callout.success {
+      border-left-color: #2f9e62;
+      background: #eaf8f0;
+      color: #1e6640;
+    }
+
+    .grid,
+    .chapter-grid,
+    .fuel-grid {
+      gap: 14px;
+    }
+
+    .card,
+    .metric-card,
+    .chapter-card,
+    .fuel-card,
+    .step,
+    details {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(#ffffff, #f8fbfd);
+      box-shadow: none;
+    }
+
+    .card,
+    .metric-card,
+    .chapter-card,
+    .fuel-card {
+      padding: 16px;
+    }
+
+    .metric-card .num {
+      display: block;
+      width: auto;
+      height: auto;
+      margin: 0 0 8px;
+      border-radius: 0;
+      background: transparent;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .chapter-card .chapter-no {
+      border-radius: 8px;
+      background: #102f49;
+      color: #ffffff;
+      font-size: 11px;
+      letter-spacing: 0;
+    }
+
+    .fuel-card.ng,
+    .fuel-card.methanol,
+    .fuel-card.ammonia,
+    .fuel-card.hydrogen,
+    .fuel-card.lpg {
+      border-top-width: 1px;
+      border-left-width: 6px;
+    }
+
+    .badge {
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    table {
+      width: 100%;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+      font-size: 14.5px;
+      line-height: 1.72;
+    }
+
+    th {
+      padding: 13px 14px;
+      border: 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.16);
+      background: var(--navy);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    td {
+      padding: 13px 14px;
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: #334f65;
+      background: #ffffff;
+      vertical-align: top;
+    }
+
+    .clause-label {
+      display: grid;
+      grid-template-columns: minmax(4.4em, max-content) minmax(0, 1fr);
+      column-gap: 0.35em;
+      align-items: start;
+    }
+
+    .clause-no {
+      white-space: nowrap;
+    }
+
+    .clause-label span:not(.clause-no) {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fbfd;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.35rem;
+    }
+
+    li {
+      margin: 6px 0;
+      color: #3e596d;
+    }
+
+    summary {
+      background: #f8fbfd;
+      color: var(--navy);
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .details-body {
+      padding: 16px 18px 18px;
+      background: #ffffff;
+    }
+
+    .timeline {
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      left: 8px;
+      background: var(--line);
+    }
+
+    .step {
+      padding: 14px;
+    }
+
+    .step::before {
+      left: -22px;
+      background: var(--cyan);
+      box-shadow: 0 0 0 2px var(--cyan);
+    }
+
+    .checklist {
+      gap: 10px;
+    }
+
+    .checklist li {
+      padding: 14px 14px 14px 42px;
+      border-radius: 16px;
+      background: #ffffff;
+      color: #38556a;
+      position: relative;
+    }
+
+    .checklist li::before {
+      position: absolute;
+      left: 16px;
+      color: #2f9e62;
+    }
+
+    /* Color enrichment: closer to the SOLAS note's categorized card system. */
+    :root {
+      --accent-blue: #0b6fa4;
+      --accent-cyan: #00a7b5;
+      --accent-green: #2f9e62;
+      --accent-amber: #f5a623;
+      --accent-red: #e55353;
+      --accent-purple: #7665e8;
+      --accent-indigo: #3f66c7;
+      --soft-cyan: #e8fbfd;
+      --soft-indigo: #eef3ff;
+      --soft-gold: #fff7e8;
+    }
+
+    section {
+      --section-accent: var(--accent-blue);
+      --section-soft: #eef7fb;
+      position: relative;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: 18px;
+      left: 18px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--section-accent);
+      opacity: 0.85;
+    }
+
+    section h2 {
+      align-items: center;
+      gap: 12px;
+    }
+
+    section h2::before {
+      content: "";
+      flex: 0 0 12px;
+      width: 12px;
+      height: 32px;
+      border-radius: 999px;
+      background: var(--section-accent);
+      box-shadow: 0 8px 18px color-mix(in srgb, var(--section-accent) 28%, transparent);
+    }
+
+    #position { --section-accent: var(--accent-blue); --section-soft: #eef7fb; }
+    #relationship { --section-accent: var(--accent-cyan); --section-soft: var(--soft-cyan); }
+    #scope { --section-accent: var(--accent-amber); --section-soft: var(--soft-gold); }
+    #architecture { --section-accent: var(--accent-purple); --section-soft: #f2f0ff; }
+    #front { --section-accent: var(--accent-indigo); --section-soft: var(--soft-indigo); }
+    #part-a { --section-accent: #102f49; --section-soft: #eef4f8; }
+    #goal { --section-accent: var(--accent-green); --section-soft: var(--soft-green); }
+    #part-a1 { --section-accent: #0ea5a4; --section-soft: #e8fbf8; }
+    #part-bcd { --section-accent: #9a6a2f; --section-soft: #fff5e6; }
+    #appendices { --section-accent: var(--accent-purple); --section-soft: #f3f0ff; }
+    #themes { --section-accent: var(--accent-red); --section-soft: var(--soft-red); }
+    #users { --section-accent: var(--accent-blue); --section-soft: #eef7fb; }
+    #confusion { --section-accent: #f97316; --section-soft: #fff3e8; }
+    #study { --section-accent: #10a37f; --section-soft: #eaf8f0; }
+    #summary { --section-accent: #102f49; --section-soft: #eef4f8; }
+
+    section .lead,
+    section > p:first-of-type {
+      border-radius: 14px;
+    }
+
+    .callout {
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--section-accent) 13%, #ffffff), #ffffff 78%);
+      border-left-color: var(--section-accent);
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--section-accent) 18%, transparent);
+    }
+
+    .callout.warning {
+      background: linear-gradient(135deg, #fff6e3, #ffffff 82%);
+    }
+
+    .callout.danger {
+      background: linear-gradient(135deg, #fff0ef, #ffffff 82%);
+    }
+
+    .callout.success {
+      background: linear-gradient(135deg, #eaf8f0, #ffffff 82%);
+    }
+
+    .card,
+    .metric-card,
+    .chapter-card,
+    .fuel-card,
+    .step,
+    details {
+      --card-accent: var(--section-accent);
+      --card-soft: var(--section-soft);
+      position: relative;
+      border-color: color-mix(in srgb, var(--card-accent) 28%, var(--line));
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--card-soft) 72%, #ffffff), #ffffff 72%);
+      box-shadow: 0 10px 22px rgba(7, 48, 79, 0.06);
+    }
+
+    .card::before,
+    .metric-card::before,
+    .chapter-card::before,
+    .fuel-card::before,
+    .step::after,
+    details::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      bottom: 14px;
+      left: 0;
+      width: 5px;
+      border-radius: 0 999px 999px 0;
+      background: var(--card-accent);
+    }
+
+    .metric-card:nth-child(1),
+    .grid.two .card:nth-child(1) {
+      --card-accent: var(--accent-blue);
+      --card-soft: #eef7fb;
+    }
+
+    .metric-card:nth-child(2),
+    .grid.two .card:nth-child(2) {
+      --card-accent: var(--accent-cyan);
+      --card-soft: var(--soft-cyan);
+    }
+
+    .metric-card:nth-child(3),
+    .grid.three .card:nth-child(3) {
+      --card-accent: var(--accent-green);
+      --card-soft: var(--soft-green);
+    }
+
+    .grid.three .card:nth-child(1) {
+      --card-accent: var(--accent-blue);
+      --card-soft: #eef7fb;
+    }
+
+    .grid.three .card:nth-child(2) {
+      --card-accent: var(--accent-purple);
+      --card-soft: #f3f0ff;
+    }
+
+    .grid.three .card h3,
+    .grid.two .card h3,
+    .metric-card h3,
+    .chapter-card h3,
+    .fuel-card h3 {
+      color: color-mix(in srgb, var(--card-accent) 72%, #102f49);
+    }
+
+    .metric-card .num {
+      color: var(--card-accent);
+    }
+
+    .chapter-card:nth-child(5n+1) { --card-accent: var(--accent-blue); --card-soft: #eef7fb; }
+    .chapter-card:nth-child(5n+2) { --card-accent: var(--accent-cyan); --card-soft: var(--soft-cyan); }
+    .chapter-card:nth-child(5n+3) { --card-accent: var(--accent-green); --card-soft: var(--soft-green); }
+    .chapter-card:nth-child(5n+4) { --card-accent: var(--accent-amber); --card-soft: var(--soft-gold); }
+    .chapter-card:nth-child(5n) { --card-accent: var(--accent-purple); --card-soft: #f3f0ff; }
+
+    .chapter-card .chapter-no {
+      background: var(--card-accent);
+      box-shadow: 0 6px 14px color-mix(in srgb, var(--card-accent) 25%, transparent);
+    }
+
+    .fuel-card.ng {
+      --card-accent: var(--accent-blue);
+      --card-soft: #eef7fb;
+    }
+
+    .fuel-card.methanol {
+      --card-accent: var(--accent-green);
+      --card-soft: var(--soft-green);
+    }
+
+    .fuel-card.ammonia {
+      --card-accent: var(--accent-red);
+      --card-soft: var(--soft-red);
+    }
+
+    .fuel-card.hydrogen {
+      --card-accent: var(--accent-purple);
+      --card-soft: #f3f0ff;
+    }
+
+    .fuel-card.lpg {
+      --card-accent: var(--accent-amber);
+      --card-soft: var(--soft-gold);
+    }
+
+    .fuel-card {
+      border-left: 6px solid var(--card-accent);
+      border-top: 1px solid color-mix(in srgb, var(--card-accent) 28%, var(--line));
+    }
+
+    table {
+      box-shadow: 0 8px 22px rgba(7, 48, 79, 0.05);
+    }
+
+    th {
+      background: linear-gradient(135deg, var(--section-accent), #102f49);
+    }
+
+    tbody tr:nth-child(even) td {
+      background: color-mix(in srgb, var(--section-soft) 48%, #ffffff);
+    }
+
+    tbody tr:hover td {
+      background: color-mix(in srgb, var(--section-soft) 78%, #ffffff);
+    }
+
+    .badge.blue { background: #e8f4ff; color: #0b5f97; }
+    .badge.green { background: #e8f8ee; color: #1f7a4c; }
+    .badge.amber { background: #fff1d6; color: #9a5f12; }
+    .badge.red { background: #ffe6e5; color: #b23a3a; }
+    .badge.purple { background: #eeeaff; color: #5a49c9; }
+    .badge.gray { background: #eef4f8; color: #405a70; }
+
+    details:nth-of-type(5n+1) { --card-accent: var(--accent-blue); --card-soft: #eef7fb; }
+    details:nth-of-type(5n+2) { --card-accent: var(--accent-cyan); --card-soft: var(--soft-cyan); }
+    details:nth-of-type(5n+3) { --card-accent: var(--accent-amber); --card-soft: var(--soft-gold); }
+    details:nth-of-type(5n+4) { --card-accent: var(--accent-red); --card-soft: var(--soft-red); }
+    details:nth-of-type(5n) { --card-accent: var(--accent-purple); --card-soft: #f3f0ff; }
+
+    summary {
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--card-accent) 13%, #ffffff), #ffffff);
+      color: color-mix(in srgb, var(--card-accent) 72%, #102f49);
+    }
+
+    summary::after {
+      color: var(--card-accent);
+    }
+
+    .step:nth-child(5n+1) { --card-accent: var(--accent-blue); --card-soft: #eef7fb; }
+    .step:nth-child(5n+2) { --card-accent: var(--accent-cyan); --card-soft: var(--soft-cyan); }
+    .step:nth-child(5n+3) { --card-accent: var(--accent-green); --card-soft: var(--soft-green); }
+    .step:nth-child(5n+4) { --card-accent: var(--accent-amber); --card-soft: var(--soft-gold); }
+    .step:nth-child(5n) { --card-accent: var(--accent-purple); --card-soft: #f3f0ff; }
+
+    .step::before {
+      background: var(--card-accent);
+      box-shadow: 0 0 0 2px var(--card-accent);
+    }
+
+    .checklist li:nth-child(5n+1) { --card-accent: var(--accent-blue); --card-soft: #eef7fb; }
+    .checklist li:nth-child(5n+2) { --card-accent: var(--accent-cyan); --card-soft: var(--soft-cyan); }
+    .checklist li:nth-child(5n+3) { --card-accent: var(--accent-green); --card-soft: var(--soft-green); }
+    .checklist li:nth-child(5n+4) { --card-accent: var(--accent-amber); --card-soft: var(--soft-gold); }
+    .checklist li:nth-child(5n) { --card-accent: var(--accent-purple); --card-soft: #f3f0ff; }
+
+    .checklist li {
+      border-color: color-mix(in srgb, var(--card-accent) 24%, var(--line));
+      background: linear-gradient(135deg, color-mix(in srgb, var(--card-soft) 62%, #ffffff), #ffffff 78%);
+    }
+
+    .checklist li::before {
+      color: var(--card-accent);
+    }
+
+    @media (max-width: 1228px) {
+      main {
+        padding-right: 24px;
+        padding-left: 24px;
+      }
+
+      .toc {
+        padding-right: 24px;
+        padding-left: 24px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 48px 20px 36px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .document-cover {
+        width: min(48vw, 210px);
+        transform: none;
+      }
+
+      .hero h1 {
+        font-size: 2.18rem;
+        line-height: 1.16;
+      }
+
+      .hero p:not(.article-share__label):not(.article-meta) {
+        font-size: 16px;
+      }
+
+      main {
+        padding: 22px 16px 42px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      section h2 {
+        font-size: 24px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
+
+      .clause-label {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 2.05rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .hero {
+        background: #102f49 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .layout {
+        display: block;
+        max-width: none;
+        margin: 0;
+      }
+
+      .toc {
+        position: static;
+        box-shadow: none;
+        page-break-after: always;
+      }
+
+      section {
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  
+    .hero .article-meta {
+      margin: 14px 0 18px;
+      max-width: 900px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .hero-copy .eyebrow {
+      margin-top: -12px;
+    }
+
+    .hero .article-share--hero {
+      margin-top: 22px;
+    }
+
+    .hero .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    main > section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .share-band {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 20px 32px;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      scroll-margin-top: 0;
+    }
+
+    .share-band::before {
+      content: none;
+      display: none;
+    }
+
+    .share-band .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .share-band .article-share--end {
+      margin: 0;
+    }
+
+    .site-footer {
+      background: #061b22;
+      color: rgba(255, 255, 255, 0.82);
+      padding: 36px 0 44px;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .site-footer .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    .site-footer strong {
+      color: #fff;
+    }
+
+    .site-footer a {
+      color: #8ffff2;
+    }
+
+    .site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 760px;
+    }
+
+    .site-footer .small {
+      font-size: 13px;
+    }
+
+    .site-footer .footer-sources {
+      margin: 18px 0 0;
+      max-width: 980px;
+    }
+
+    .site-footer .footer-sources__title {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .site-footer .source-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .site-footer .source-list li {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    @media print {
+      .note-site-bar,
+      .article-share,
+      .share-band {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Notes</a>
+      <span>|</span>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="lfpf-note.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="lfpf-note.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">CLASS RULES | LOW-FLASHPOINT FUEL SHIPS | REAY'S NOTE</div>
+        <h1>LR Class Rules for<br />Low-Flashpoint Fuel Ships</h1>
+        <p class="article-meta">
+          <span>📅 Updated: 2026-06-19</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 22 min read</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 LR-RU-012 / Low-flashpoint fuels / LFPF</span>
+        </p>
+
+        <p>
+          This note summarises Lloyd's Register's <em>Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025</em>, focusing on the document's regulatory position, chapter architecture, technical logic, fuel-specific requirements, and practical design-review points.
+        </p>
+
+        <a class="hero-jump" href="#architecture" aria-label="Jump to the article architecture section">Jump to the rule architecture</a>
+
+        <div class="tags">
+          <span class="tag">IMO IGF Code</span>
+          <span class="tag">LFPF notation</span>
+          <span class="tag">Gas Ready</span>
+          <span class="tag">NG (LNG/CNG)</span>
+          <span class="tag">Methanol / Ethanol</span>
+          <span class="tag">Ammonia</span>
+          <span class="tag">Hydrogen</span>
+          <span class="tag">LPG</span>
+        </div>
+
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/lfpf-note.en.html"
+          data-share-title="LR-RU-012 Class Rules for Low-Flashpoint Fuel Ships | Reay's Note"
+          data-share-email-body="I found this maritime note by Reay and thought it may be useful for you:&#10;&#10;LR-RU-012 Class Rules for Low-Flashpoint Fuel Ships | Reay's Note&#10;https://reayhuang.com/notes/maritime/lfpf-note.en.html"
+          data-share-copy="Copy link"
+          data-share-copied="Copied"
+          data-toast-copied="Link copied to clipboard"
+        >
+          <p class="article-share__label" id="share-hero-label">Share this article</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+
+      <figure class="document-cover" aria-label="LR-RU-012 rule document cover">
+        <img src="../../assets/images/maritime/lr-ru-012/lr-ru-012-cover.png" alt="Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025 document cover" />
+      </figure>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <h2>Contents</h2>
+      <a href="#position">1. Document Position</a>
+      <a href="#relationship">2. IGF Code / Flag / LR</a>
+      <a href="#scope">3. Scope of Application</a>
+      <a href="#architecture">4. Overall Architecture</a>
+      <a href="#front">5. Front Matter</a>
+      <a href="#part-a">6. Part A: General</a>
+      <a href="#goal">7. Goals and Functional Requirements</a>
+      <a href="#part-a1">8. Part A-1: Natural Gas Fuel</a>
+      <a href="#part-bcd">9. Manufacture, Operation and Training</a>
+      <a href="#appendices">10. Fuel-Specific Appendices</a>
+      <a href="#themes">11. Technical Themes</a>
+      <a href="#users">12. Practical Use Cases</a>
+      <a href="#confusion">13. Common Misunderstandings</a>
+      <a href="#study">14. Suggested Study Path</a>
+      <a href="#summary">15. Summary and Engineering Judgement</a>
+    </aside>
+
+    <main>
+      <section id="position">
+        <h2>1. Document Position</h2>
+        <p class="lead">
+          This document is Lloyd's Register's class rule framework for ships using <strong>gases</strong> or <strong>other low-flashpoint fuels</strong>. Its formal title is:
+        </p>
+        <div class="callout">
+          <strong>Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025</strong>.
+        </div>
+        <p>
+          LR-RU-012 is Lloyd's Register's class rule document for low-flashpoint fuel ships, formed by incorporating the <strong>IMO IGF Code</strong> into LR class rules together with LR supplementary class requirements and fuel-specific appendices. It covers requirements relating to design, construction, testing, operation and training; but operation, training and statutory approval matters must still be confirmed separately against the flag Administration, IMO instruments and project-specific class review comments.
+        </p>
+        <div class="grid three">
+          <div class="metric-card"><div class="num">1</div><h3>Rule Nature</h3><p>LR class rules for ships using low-flashpoint fuels.</p></div>
+          <div class="metric-card"><div class="num">2</div><h3>Regulatory Basis</h3><p>Incorporates the <strong>IMO IGF Code</strong> into class rules, with LR supplementary requirements and fuel-specific appendices.</p></div>
+          <div class="metric-card"><div class="num">3</div><h3>Engineering Aim</h3><p>To achieve a safety level equivalent to conventional oil-fuelled ships.</p></div>
+        </div>
+        <h3>Main Fuels and LR Fuel Identifiers (LFPF yy)</h3>
+        <p>This is not only an LNG-fuelled ship rule. It is LR's wider classification framework for <strong>low-flashpoint fuel ships</strong>. The table below lists the yy fuel identifiers used in <strong>LFPF(xx,yy)</strong> and <strong>GR(yy,z)</strong> under LR-RU-012.</p>
+        <table id="fuel-identifiers">
+          <thead><tr><th>Fuel Type</th><th>LR Code</th><th>Description</th><th>Covered in This Note</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Natural Gas</strong></td><td><strong>NG</strong></td><td>Natural gas; may be supplied as LNG or CNG</td><td>One of the main fuels covered in depth</td></tr>
+            <tr><td><strong>Ethane Gas</strong></td><td><strong>EG</strong></td><td>Ethane gas</td><td>Listed for reference only; not expanded in depth</td></tr>
+            <tr><td><strong>Petroleum Gas</strong></td><td><strong>PG</strong></td><td>Petroleum gas, including propane, butane or their mixtures; LPG fuel is denoted as PG in LR-RU-012</td><td>Appendix LR4</td></tr>
+            <tr><td><strong>Methyl Alcohol</strong></td><td><strong>ML</strong></td><td>Methanol</td><td>Appendix LR1</td></tr>
+            <tr><td><strong>Ethyl Alcohol</strong></td><td><strong>EL</strong></td><td>Ethanol</td><td>Appendix LR1</td></tr>
+            <tr><td><strong>Hydrogen</strong></td><td><strong>HY</strong></td><td>Hydrogen fuel</td><td>Appendix LR3</td></tr>
+            <tr><td><strong>Ammonia</strong></td><td><strong>AM</strong></td><td>Ammonia fuel</td><td>Appendix LR2</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="relationship">
+        <h2>2. Relationship with the IGF Code, Flag Administration and LR</h2>
+        <h3>1. Relationship with the IMO IGF Code</h3>
+        <p><strong>IGF Code</strong> means the <strong>International Code of Safety for Ships Using Gases or Other Low-Flashpoint Fuels</strong>.</p>
+        <p>LR-RU-012 integrates the IGF Code into LR's classification rules. A ship seeking LR low-flashpoint fuel classification must comply with both the IGF Code baseline and the LR supplementary requirements contained in this rule.</p>
+        <h3>2. Meaning of an "LR" Prefix</h3>
+        <div class="callout warning"><strong>Where a requirement is prefixed by LR, it is an LR class supplementary requirement</strong>, not necessarily a direct quotation from the IGF Code.</div>
+        <p>In practice, plan approval should not stop at the IMO text. LR appendices, notations, Gas Ready descriptors and risk-assessment requirements also need to be checked.</p>
+        <h3>3. Three Layers of Responsibility</h3>
+        <table>
+          <thead><tr><th>Layer</th><th>Role</th><th>Main Function</th></tr></thead>
+          <tbody>
+            <tr><td><strong>IMO</strong></td><td>Develops international codes such as the IGF Code.</td><td>Provides the international minimum safety standard.</td></tr>
+            <tr><td><strong>Flag Administration</strong></td><td>Interprets statutory requirements and issues statutory certification.</td><td>Determines statutory compliance.</td></tr>
+            <tr><td><strong>LR</strong></td><td>Performs class approval and applies class rules.</td><td>Verifies compliance with LR class requirements and related technical criteria.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="scope">
+        <h2>3. Scope and Boundary of Application</h2>
+        <div class="grid two">
+          <div class="card"><h3>Typical Application</h3><ul><li>LNG-fuelled container ships</li><li>LNG-fuelled bulk carriers</li><li>LNG-fuelled ferries</li><li>Methanol-fuelled ships</li><li>Ammonia-fuelled ships</li><li>Hydrogen-fuelled ships</li><li>LPG-fuelled ships</li><li>Gas Ready ships prepared for future alternative-fuel use</li></ul></div>
+          <div class="card"><h3>Key Distinction</h3><p>The rule primarily applies when gas or another low-flashpoint substance is used as <strong>ship fuel</strong>, not merely carried as cargo.</p></div>
+        </div>
+        <table>
+          <thead><tr><th>Case</th><th>Regulatory Logic</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Using LNG as ship fuel</strong></td><td>Normally follows the <strong>IGF Code</strong> and <strong>LR-RU-012</strong>.</td></tr>
+            <tr><td><strong>Carrying LNG as bulk cargo</strong></td><td>Normally follows the <strong>IGC Code</strong> and gas carrier rules.</td></tr>
+            <tr><td><strong>Hybrid or special-purpose designs</strong></td><td>The rule boundary should be confirmed with LR and the Administration.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout danger"><strong>Important:</strong> Do not assume that every "LNG ship" falls under this rule. The key question is whether LNG is used as <strong>fuel</strong> or carried as <strong>cargo</strong>.</div>
+      </section>
+
+      <section id="architecture">
+        <h2>4. Overall Document Architecture</h2>
+        <p class="lead">The rule can be read as a ship life-cycle structure: regulatory position and applicability first, then design, construction and testing, followed by operation and training requirements within the class rule scope, and finally fuel-specific appendices. Part C-1 and Part D should be read as classification scope, separate from flag statutory approval.</p>
+        <table>
+          <thead><tr><th>Part</th><th>Main Content</th><th>Function</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Preamble</strong></td><td>Purpose, IGF Code relationship, LR additional requirements and Administration responsibility.</td><td>Sets the statutory and class context.</td></tr>
+            <tr><td><strong>Part A: General</strong></td><td>Application, definitions, alternative design, goals and functional requirements.</td><td>Common basis for all low-flashpoint fuel ships.</td></tr>
+            <tr><td><strong>Part A-1</strong></td><td>Specific design requirements for natural-gas fuelled ships.</td><td>Main design-review body for NG natural-gas fuelled ships (LNG or CNG supply form).</td></tr>
+            <tr><td><strong>Part B-1</strong></td><td>Manufacture, workmanship, inspection and testing.</td><td>Connects shipyard construction, LR survey and functional testing.</td></tr>
+            <tr><td><strong>Part C-1</strong></td><td>Operation, drills and emergency procedures.</td><td>Operation documents and drills required by class rules (statutory SMS approval remains with the flag Administration).</td></tr>
+            <tr><td><strong>Part D</strong></td><td>Crew training.</td><td>Crew competence requirements within class rules (STCW / flag training approval must still be confirmed separately).</td></tr>
+            <tr><td><strong>Appendix LR1</strong></td><td>Methanol / ethanol fuelled ships.</td><td>Translates MSC.1/Circ.1621 into LR class requirements.</td></tr>
+            <tr><td><strong>Appendix LR2</strong></td><td>Ammonia fuelled ships.</td><td>Focuses on toxicity, detection, ventilation and personnel protection.</td></tr>
+            <tr><td><strong>Appendix LR3</strong></td><td>Hydrogen fuelled ships.</td><td>Focuses on explosion analysis, hydrogen detection, ventilation and separation distances.</td></tr>
+            <tr><td><strong>Appendix LR4</strong></td><td>LPG fuelled ships.</td><td>Focuses on propane / butane behaviour, low-level accumulation and dispersion risk.</td></tr>
+          </tbody>
+        </table>
+        <div class="timeline">
+          <div class="step"><strong>Layer 1: Regulatory Position</strong><br />The Preamble explains the relationship among LR, the IGF Code, the flag Administration and class responsibility.</div>
+          <div class="step"><strong>Layer 2: Common Rules</strong><br />Part A establishes application, definitions, alternative design, functional requirements and risk philosophy.</div>
+          <div class="step"><strong>Layer 3: Natural Gas Requirements</strong><br />Part A-1 provides the complete design framework for natural-gas fuelled ships.</div>
+          <div class="step"><strong>Layer 4: Manufacture, Operation and Training</strong><br />Part B-1, Part C-1 and Part D address construction testing, operational drills and crew competence within class scope; operational approval and statutory training still depend on the flag Administration and IMO instruments.</div>
+          <div class="step"><strong>Layer 5: Fuel-Specific Supplements</strong><br />Appendices LR1 to LR4 add special safety requirements for methanol / ethanol, ammonia, hydrogen and LPG.</div>
+        </div>
+      </section>
+
+      <section id="front">
+        <h2>5. Front Matter Summary</h2>
+        <details open><summary>Cover and publication information</summary><div class="details-body"><p>The cover confirms the <strong>July 2025</strong> edition and the subject of LR class rules for ships using gases or other low-flashpoint fuels. This matters for edition control, subsequent Notices, contract dates, keel-laying dates and delivery dates.</p></div></details>
+        <details><summary>A guide to the Rules and published requirements</summary><div class="details-body"><p>This part explains how LR rules are published and updated:</p><ul><li>LR rules are normally published periodically.</li><li>Between formal publications, amendments may be issued as <strong>Notices</strong>.</li><li>Special ship types, fuels, arrangements or alternative designs may require <strong>direct calculations</strong>.</li><li>LR may use internal or recognised calculation methods for review.</li></ul></div></details>
+        <details><summary>Preamble</summary><div class="details-body"><p>The Preamble is essential because it states that:</p><ul><li>The rule aims to ensure low-flashpoint fuel ships can comply with the IGF Code.</li><li>The IGF Code text current at publication has been incorporated.</li><li>LR additional requirements are marked with the <strong>LR</strong> prefix.</li><li>Interpretation of the IGF Code remains with the flag Administration.</li><li>Natural-gas requirements are the most complete; other fuels require equivalent-safety demonstration through alternative design or appendices.</li></ul></div></details>
+      </section>
+
+      <section id="part-a">
+        <h2>6. Part A: General</h2>
+        <p>Part A is the common foundation for all ships using gases or low-flashpoint fuels. It explains how the rule is applied, which ships are covered, how important terms are defined, how alternative fuels can demonstrate equivalent safety, and what overall safety objective must be achieved.</p>
+        <h3>Chapter 2: General</h3>
+        <table>
+          <thead><tr><th>Clause</th><th>Summary</th><th>Practical Use</th></tr></thead>
+          <tbody>
+            <tr><td><strong class="clause-label"><span class="clause-no">2.1</span><span>Application</span></strong></td><td>Defines the scope, mainly for ships covered by SOLAS Chapter II-1 Part G.</td><td>Helps decide whether the project follows IGF Code / LR-RU-012 or IGC Code logic.</td></tr>
+            <tr><td><strong class="clause-label"><span class="clause-no">2.1-07</span><span>Class notation</span></strong></td><td>Defines <strong>LFPF(xx,yy)</strong> and <strong>GR(yy,z)</strong>.</td><td>Used in class certificates, newbuilding contracts, fuel-readiness planning and conversions.</td></tr>
+            <tr><td><strong class="clause-label"><span class="clause-no">2.1-08</span><span>Submission</span></strong></td><td>Lists drawings and information such as fuel tanks, test procedures, supporting calculations and conversion descriptions.</td><td>Forms the plan-approval submission checklist.</td></tr>
+            <tr><td><strong class="clause-label"><span class="clause-no">2.2</span><span>Definitions</span></strong></td><td>Defines accident, bunkering, CNG, LNG, ESD, LEL, MAWP, MARVS and other terms.</td><td>Creates a common basis for interpreting later clauses.</td></tr>
+            <tr><td><strong class="clause-label"><span class="clause-no">2.3</span><span>Alternative Design</span></strong></td><td>Requires equivalent safety when a fuel or system is not specifically covered.</td><td>Relevant for methanol, ammonia, hydrogen, LPG and emerging fuel systems.</td></tr>
+          </tbody>
+        </table>
+        <h3>Class Notation: LFPF(xx,yy)</h3>
+        <p><strong>LFPF</strong> means <strong>Low Flash Point Fuel</strong>. It indicates that the ship's low-flashpoint fuel machinery, systems and arrangements have been designed, constructed, installed and tested in accordance with LR rules.</p>
+        <table><thead><tr><th>Field</th><th>Meaning</th><th>Examples</th></tr></thead><tbody><tr><td><strong>xx</strong></td><td>Applicable rule basis</td><td><strong>GF</strong> for LR-RU-012 / IGF Code; <strong>GC</strong> for IGC Code.</td></tr><tr><td><strong>yy</strong></td><td>Fuel identifier</td><td>See the <a href="#fuel-identifiers">LR fuel identifier table</a></td></tr></tbody></table>
+        <div class="callout success"><strong>Examples:</strong> <span class="badge blue">LFPF(GF,NG)</span> natural-gas fuelled ship under LR-RU-012 / IGF Code; <span class="badge green">LFPF(GF,ML)</span> methanol-fuelled ship; <span class="badge purple">LFPF(GF,HY)</span> hydrogen-fuelled ship.</div>
+        <div class="callout"><strong>Fuel code reminder:</strong> the formal natural-gas identifier in LFPF notation is <strong>NG</strong> (Natural Gas). <strong>LNG</strong> and <strong>CNG</strong> are storage or supply forms, not yy fuel codes.</div>
+        <h3>Gas Ready: GR(yy,z)</h3>
+        <p><strong>GR</strong> is a <strong>Gas Ready</strong> descriptor, not a full fuel class notation. It indicates that certain approvals, reservations or installations have been completed for a future low-flashpoint fuel.</p>
+        <table><thead><tr><th>Code</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>A</strong></td><td>Approval in Principle.</td></tr><tr><td><strong>S</strong></td><td>Structural reinforcement installed.</td></tr><tr><td><strong>T1</strong></td><td>Fuel tank is convertible in future.</td></tr><tr><td><strong>T2</strong></td><td>Fuel tank installed.</td></tr><tr><td><strong>P</strong></td><td>Piping and fuel system installed.</td></tr><tr><td><strong>E1</strong></td><td>Equipment / machinery is convertible.</td></tr><tr><td><strong>E2</strong></td><td>Equipment / machinery installed.</td></tr></tbody></table>
+        <div class="callout danger"><strong>Note:</strong> Gas Ready does not mean that the ship is already allowed to operate on that fuel, nor does it guarantee unconditional future LFPF classification. Future activation must be reviewed under the LR rules, IMO requirements and Administration requirements effective at that time.</div>
+        <h3>Key Terms</h3>
+        <table><thead><tr><th>Term</th><th>Explanation</th><th>Engineering Meaning</th></tr></thead><tbody><tr><td><strong>Low-flashpoint fuel</strong></td><td>A gas or liquid fuel with a flashpoint below the normal SOLAS II-2/4 allowance.</td><td>Triggers special design, detection, ventilation and safety requirements.</td></tr><tr><td><strong>Bunkering</strong></td><td>Transfer of fuel to the ship from shore, floating facility or portable tank.</td><td>Critical interface for ESD, communication and spill control.</td></tr><tr><td><strong>ESD</strong></td><td>Emergency Shutdown.</td><td>Isolates the fuel system during leakage, fire or abnormal conditions.</td></tr><tr><td><strong>LEL</strong></td><td>Lower Explosive Limit.</td><td>Key basis for gas detector alarm and shutdown settings.</td></tr><tr><td><strong>MAWP</strong></td><td>Maximum Allowable Working Pressure.</td><td>Design basis for pressure vessels, piping and valves.</td></tr><tr><td><strong>MARVS</strong></td><td>Maximum Allowable Relief Valve Setting.</td><td>Basis for fuel tank pressure relief design.</td></tr><tr><td><strong>TMIV</strong></td><td>Tank Master Isolation Valve.</td><td>Important remotely operated isolation valve near the liquefied gas fuel tank outlet.</td></tr></tbody></table>
+        <h3>Alternative Design</h3>
+        <p>Where a fuel, equipment item or system departs from prescriptive clauses, or where the IGF Code does not yet fully cover the fuel, the design must demonstrate <strong>equivalent safety</strong> against the rule's goals and functional requirements.</p>
+        <div class="grid three"><div class="card"><h4>HAZID</h4><p>Hazard Identification.</p></div><div class="card"><h4>HAZOP</h4><p>Hazard and Operability Study.</p></div><div class="card"><h4>FMEA</h4><p>Failure Mode and Effects Analysis.</p></div><div class="card"><h4>Explosion Analysis</h4><p>Assessment of explosion pressure and consequences.</p></div><div class="card"><h4>Gas Dispersion Analysis</h4><p>Assessment of gas cloud extent after leakage.</p></div><div class="card"><h4>RBC</h4><p>Risk Based Certification.</p></div></div>
+      </section>
+
+      <section id="goal">
+        <h2>7. Chapter 3-4: Goals, Functional Requirements and General Technical Requirements</h2>
+        <h3>Chapter 3: Goal and Functional Requirements</h3>
+        <p>Chapter 3 is the safety philosophy of the rule. It applies a <strong>goal-based approach</strong>: the system must achieve defined safety functions, not merely satisfy isolated equipment dimensions or arrangements.</p>
+        <ul class="checklist"><li>Safety, reliability and dependability should be equivalent to new conventional oil-fuelled main and auxiliary machinery.</li><li>The probability and consequences of fuel-related hazards should be minimised through arrangement, ventilation, detection and safety actions.</li><li>Safety measures must not create unacceptable loss of power.</li><li>Hazardous areas should be limited as far as practicable.</li><li>Equipment in hazardous areas should be minimised and properly certified.</li><li>Unintended accumulation of explosive, flammable or toxic gas should be prevented.</li><li>System components should be protected from external damage.</li><li>Ignition sources in hazardous areas should be reduced.</li><li>Fuel storage, supply and bunkering systems should safely receive, store and transfer fuel.</li><li>Control, alarm, monitoring, shutdown, fixed gas detection and fire safety systems are required.</li><li>Technical documentation must demonstrate compliance.</li><li>A single failure must not lead to an unsafe or unreliable condition.</li></ul>
+        <div class="callout"><strong>Engineering interpretation:</strong> Safety is not delivered by tank thickness, valve rating or pipe material alone. It depends on a controlled system response during leakage, fire, explosion, blackout, valve failure, ventilation failure, detector activation and ESD initiation.</div>
+        <h3>Chapter 4: General Requirements</h3>
+        <p>Chapter 4 turns the functional requirements into the overall safety requirements used before detailed design. It is typically linked to the following documents and analyses:</p>
+        <div class="grid two"><div class="card"><h4>Safety Analysis Documents</h4><ul><li>Risk assessment report</li><li>Explosion analysis</li><li>Gas dispersion analysis</li><li>Equivalent-safety demonstration for alternative design</li></ul></div><div class="card"><h4>Design and Control Documents</h4><ul><li>Hazardous area plan</li><li>System safety concept</li><li>Arrangement plans</li><li>ESD cause-and-effect</li></ul></div></div>
+      </section>
+
+      <section id="part-a1">
+        <h2>8. Part A-1: Requirements for Natural-Gas Fuelled Ships</h2>
+        <p class="lead">Part A-1 is the most complete technical body of the rule. It mainly addresses ships using <strong>natural gas (NG; LNG or CNG supply form)</strong> as fuel. Other fuels may borrow its design logic, but cannot simply copy it because fire, explosion, toxicity, cryogenic and leakage characteristics differ by fuel.</p>
+        <div class="chapter-grid">
+          <div class="chapter-card"><span class="chapter-no">Chapter 5</span><h3>Ship Design and Arrangement</h3><p>Covers fuel tanks, machinery spaces, tank connection spaces, fuel preparation rooms, bunkering stations, accommodation, control stations, hazardous areas and escape routes.</p><p><strong>Practical impact:</strong> Affects GA plan, tank location, hazardous area boundary, bunkering station and ventilation outlet arrangement.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 6</span><h3>Fuel Containment System</h3><p>Covers tank type, primary and secondary barriers, insulation, interbarrier space, supports, relief arrangements, loading limits and cryogenic protection.</p><p><strong>Practical impact:</strong> Used for Type C tanks, independent tanks, membrane tanks, LNG fuel tanks and secondary barrier design.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 7</span><h3>Material and General Pipe Design</h3><p>Covers low-temperature materials, pipe strength, pressure ratings, double-wall pipes, ducts, welding, valves, external damage protection and fire endurance.</p><p><strong>Practical impact:</strong> Main basis for fuel supply piping, bunkering lines, GVU piping, pipe supports and penetrations.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 8</span><h3>Bunkering</h3><p>Covers bunkering station, bunkering piping, bunkering control, communication, ESD, leak detection, overflow protection and connection methods.</p><p><strong>Practical impact:</strong> Important for truck-to-ship, shore-to-ship and ship-to-ship bunkering.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 9</span><h3>Fuel Supply to Consumers</h3><p>Covers the supply system from storage tank to main engines, auxiliaries, boilers, fuel cells or other consumers.</p><p><strong>Practical impact:</strong> Reviews FGSS, GVU, double-wall piping, master gas fuel valve, purging, venting and pressure control.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 10</span><h3>Power Generation and Gas Consumers</h3><p>Covers dual-fuel engines, gas-only engines, auxiliaries, boilers, fuel cells, gas turbines and other gas consumers.</p><p><strong>Practical impact:</strong> Focuses on fuel changeover, pilot fuel, engine shutdown, power redundancy and single-failure safety.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 11</span><h3>Fire Safety</h3><p>Covers fire detection, fire separation, fire main, water mist, dry powder, fixed fire-extinguishing systems and protection of fuel-related spaces.</p><p><strong>Practical impact:</strong> Affects fire control plan, fire piping, bunkering station fire protection and fuel preparation room extinguishing arrangements.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 12</span><h3>Explosion Prevention</h3><p>Covers hazardous area classification, ignition source control, explosion pressure relief, gas accumulation prevention and separation distance.</p><p><strong>Practical impact:</strong> Closely connected to hazardous area plan, Ex equipment list, explosion analysis and ventilation design.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 13</span><h3>Ventilation</h3><p>Covers ventilation for tank connection spaces, fuel preparation rooms, bunkering stations, ducts, airlocks and machinery spaces.</p><p><strong>Practical impact:</strong> Affects fan capacity, vent positions, ventilation failure alarms and automatic shutdown logic.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 14</span><h3>Electrical Installations</h3><p>Covers Ex type, certification, installation, cable penetrations, lighting and power safety for electrical equipment in hazardous areas.</p><p><strong>Practical impact:</strong> Must align with IEC 60079, IEC 60092-502, Ex equipment selection and hazardous area classification.</p></div>
+          <div class="chapter-card"><span class="chapter-no">Chapter 15</span><h3>Control, Monitoring and Safety Systems</h3><p>Covers gas detection, fire detection, pressure / temperature / level monitoring, alarms, ESD, interlocks and cause-and-effect logic.</p><p><strong>Practical impact:</strong> Core chapter for ESD logic, alarm list, FMEA, commissioning tests and sea trials.</p></div>
+        </div>
+        <div class="callout warning"><strong>Bunkering reminder:</strong> the bunkering station should generally be located on open deck to ensure natural ventilation. If located in an enclosed or semi-enclosed space, risk assessment should consider segregation, forced ventilation, leak detection, airlock, CCTV or direct line-of-sight monitoring.</div>
+      </section>
+
+      <section id="part-bcd">
+        <h2>9. Part B-1 / Part C-1 / Part D: Manufacture, Operation and Training</h2>
+        <div class="callout warning"><strong>Classification scope reminder:</strong> Part B-1 mainly addresses construction and testing. Although Part C-1 and Part D cover operation, drills and training requirements, this does not mean that all operational, SMS and statutory training approval matters are directly governed by LR classification. They must still be confirmed separately against the flag Administration and project review comments.</div>
+        <h3>Part B-1: Chapter 16 Manufacture, Workmanship and Testing</h3>
+        <p>Chapter 16 is about proving that the installed system actually matches the approved design.</p>
+        <div class="grid two"><div class="card"><h4>Main Content</h4><ul><li>Manufacturing quality</li><li>Welding requirements</li><li>Material certificates and traceability</li><li>Fuel tank tests</li><li>Pipe pressure tests</li><li>Leak tests</li><li>Double-wall pipe or duct tests</li><li>ESD testing</li><li>Commissioning and sea trial</li></ul></div><div class="card"><h4>Common Shipyard Deliverables</h4><ul><li>Inspection and Test Plan (ITP)</li><li>Welding Procedure Specification (WPS)</li><li>Procedure Qualification Record (PQR)</li><li>Pressure test report</li><li>Leak test report</li><li>ESD valve closing-time test</li><li>Cold and hot commissioning records for the fuel system</li></ul></div></div>
+        <div class="callout"><strong>Testing focus:</strong> the outer pipe or duct of a double-wall fuel pipe must also be pressure-tested to show that it can withstand the maximum expected pressure after inner pipe rupture. ESD valves in liquefied gas piping should close smoothly and completely within the required time.</div>
+        <h3>Part C-1: Chapters 17-18 Operation and Drills</h3>
+        <table><thead><tr><th>Chapter</th><th>Topic</th><th>Focus</th></tr></thead><tbody><tr><td><strong>Chapter 17</strong></td><td>Drills and Emergency Exercises</td><td>Fuel leakage, fire, bunkering accident, ESD activation, ventilation failure and gas detection alarm drills.</td></tr><tr><td><strong>Chapter 18</strong></td><td>Operation</td><td>Normal operation, fuel changeover, bunkering, purging, inerting, venting, maintenance, inspection and emergency procedures.</td></tr></tbody></table>
+        <p>Typical onboard documents include:</p>
+        <ul class="checklist"><li>Fuel Handling Manual</li><li>Bunkering Procedure</li><li>Emergency Shutdown Procedure</li><li>Gas Freeing Procedure</li><li>Maintenance Manual</li><li>Permit to Work Procedure</li><li>Enclosed Space Entry Procedure</li><li>Emergency Response Plan</li></ul>
+        <h3>Part D: Chapter 19 Crew Training</h3>
+        <p>Chapter 19 requires the company to ensure that relevant crew members receive appropriate training according to their responsibilities, aligned with the <strong>STCW Convention and Code</strong>.</p>
+        <table><thead><tr><th>Personnel</th><th>Training Focus</th></tr></thead><tbody><tr><td>General deck and engine-room personnel</td><td>Fuel hazards, alarm meanings, basic response, escape and PPE.</td></tr><tr><td>Personnel responsible for fuel operations</td><td>Bunkering, fuel changeover, purging, ESD and leak response.</td></tr><tr><td>Engineers and chief engineers</td><td>Fuel supply system, main / auxiliary machinery operation, maintenance and troubleshooting.</td></tr><tr><td>Masters and senior officers</td><td>Bunkering command, risk management, emergency response and regulatory responsibility.</td></tr><tr><td>Bunkering personnel</td><td>Ship-shore communication, ESD link and bunkering checklist.</td></tr></tbody></table>
+      </section>
+
+      <section id="appendices">
+        <h2>10. Fuel-Specific Appendices</h2>
+        <div class="fuel-grid"><div class="fuel-card ng"><h3>NG Natural Gas: natural-gas fuel system (LNG or CNG supply form)</h3><p>Natural gas is the fuel most fully covered by the IGF Code, so Part A-1 is the main body for NG natural-gas fuelled ships.</p><ul><li>NG fuel tank type and location (LNG or CNG supply form)</li><li>Fuel supply piping and GVU</li><li>Double-wall pipe or duct</li><li>Ventilation and gas detection</li><li>Bunkering station</li><li>Fire safety, explosion prevention, control / monitoring and ESD</li><li>LNG Bunker Delivery Note</li></ul></div><div class="fuel-card methanol"><h3>Appendix LR1: Methanol / Ethanol</h3><p>Applies to ships using <strong>methyl alcohol (methanol)</strong> or <strong>ethyl alcohol (ethanol)</strong> as fuel.</p><ul><li>Ambient-temperature liquid; lower cryogenic risk than LNG</li><li>Still a low-flashpoint fuel requiring vapour control</li><li>Methanol toxicity requires exposure control and personnel protection</li><li>Focus on tank, leakage collection, ventilation, bunkering and ESD</li><li>Specific filling-limit requirements apply</li></ul></div><div class="fuel-card ammonia"><h3>Appendix LR2: Ammonia</h3><p>The key issue for ammonia is not only fire or explosion, but <strong>toxicity</strong>.</p><ul><li>Toxic area plans and personnel exposure risk</li><li>Ammonia detector location and alarm settings</li><li>Relative location of air intakes, accommodation, control stations and machinery openings</li><li>PPE, breathing apparatus and escape routes</li><li>Vent outlet location</li><li>Cause-and-effect diagram</li><li>Safe sequential shutdown of the fuel supply system</li></ul></div><div class="fuel-card hydrogen"><h3>Appendix LR3: Hydrogen</h3><p>Hydrogen risk centres on <strong>leakage tendency, wide flammable range, low ignition energy and explosion risk</strong>.</p><ul><li>High-pressure hydrogen or liquid hydrogen storage</li><li>Material compatibility</li><li>Hydrogen detection and flame detection</li><li>Ventilation and separation distance</li><li>Explosion analysis and hazardous area classification</li><li>Purging, venting and ESD</li><li>PFD, P&ID, HAZID, HAZOP and FMEA</li></ul></div><div class="fuel-card lpg"><h3>Appendix LR4: LPG / PG</h3><p>LPG usually includes <strong>propane</strong>, <strong>butane</strong> or mixtures of both.</p><ul><li>Vapour is usually heavier than air</li><li>Leakage may flow to and accumulate in low areas</li><li>Deck recesses, drains, bilges and ventilation dead zones must be analysed</li><li>Focus on tank, piping, valves, leak detection and isolation</li><li>Complete P&ID, cause-and-effect, FMEA, manuals and test plans are needed</li></ul></div></div>
+      </section>
+
+      <section id="themes">
+        <h2>11. Integrated Technical Themes</h2>
+        <h3>1. Core Risks of Low-Flashpoint Fuel Ships</h3>
+        <table><thead><tr><th>Risk</th><th>Description</th><th>Typical Fuels</th></tr></thead><tbody><tr><td><strong>Fire</strong></td><td>Flammable fuel ignites after leakage.</td><td>Natural gas, methanol, hydrogen, LPG.</td></tr><tr><td><strong>Explosion</strong></td><td>Flammable gas or vapour accumulates in enclosed or semi-enclosed spaces and ignites.</td><td>Natural gas, hydrogen, LPG.</td></tr><tr><td><strong>Toxicity</strong></td><td>The fuel itself harms personnel.</td><td>Ammonia, methanol.</td></tr><tr><td><strong>Cryogenic hazard</strong></td><td>Liquefied fuel leakage causes frostbite or steel embrittlement.</td><td>LNG, liquid hydrogen, some liquefied gases.</td></tr><tr><td><strong>Asphyxiation</strong></td><td>Gas displaces oxygen.</td><td>LNG vapour, hydrogen, inert gas.</td></tr><tr><td><strong>Loss of power</strong></td><td>ESD or fuel system failure affects propulsion or power generation.</td><td>All low-flashpoint fuel ships.</td></tr></tbody></table>
+        <h3>2. Typical Safety Layers</h3>
+        <div class="grid two"><div class="card"><h4>Leak Prevention and Consequence Reduction</h4><ul><li>Safe arrangement</li><li>Primary containment</li><li>Secondary containment</li><li>External damage protection</li><li>Cryogenic protection</li></ul></div><div class="card"><h4>Detection, Isolation and Response</h4><ul><li>Ventilation</li><li>Gas detection</li><li>ESD</li><li>Ex-certified equipment</li><li>Fire safety systems</li><li>Procedures and training</li></ul></div></div>
+        <h3>3. Common Design Document List</h3>
+        <ul class="checklist"><li>Design Statement</li><li>Concept of Operation (ConOp)</li><li>General Arrangement Plan</li><li>Fuel Tank Arrangement</li><li>Process Flow Diagram (PFD)</li><li>Piping and Instrumentation Diagram (P&ID)</li><li>Hazardous Area Plan</li><li>Gas Detection Layout</li><li>Ventilation Arrangement</li><li>Fire Safety Plan</li><li>Explosion Analysis</li><li>Gas Dispersion Analysis</li><li>Risk Assessment</li><li>HAZID / HAZOP Report</li><li>FMEA</li><li>Cause-and-effect Diagram</li><li>ESD Logic</li><li>Alarm List</li><li>Fuel Handling Manual</li><li>Bunkering Procedure</li><li>Inspection and Test Plan</li><li>Commissioning / Sea Trial Test Procedure</li></ul>
+      </section>
+
+      <section id="users">
+        <h2>12. Practical Application for Different Users</h2>
+        <div class="grid three"><div class="card"><h3>For Shipyards</h3><ul><li>Confirm whether the notation is LFPF or GR</li><li>Confirm the fuel type and relevant appendix</li><li>Control piping fabrication, welding quality and material certificates</li><li>Prepare pressure tests, leak tests and ESD tests</li><li>Complete tests before first bunkering</li><li>Coordinate LR survey hold points and sea trial items</li></ul></div><div class="card"><h3>For Designers</h3><ul><li>Check early GA against tank and bunkering station requirements</li><li>Validate hazardous area classification</li><li>Check conflicts between vents and accommodation or control stations</li><li>Confirm secondary containment for fuel piping</li><li>Make ESD cause-and-effect clear</li><li>Support alternative fuels with risk assessment</li></ul></div><div class="card"><h3>For Owners and Managers</h3><ul><li>Gas Ready does not mean ready for operation</li><li>Future conversion still requires review</li><li>Crew competence must match the fuel risk</li><li>Bunkering procedure must be complete</li><li>Drills should be incorporated into SMS</li><li>Crew must understand toxicity, explosion and cryogenic risks</li></ul></div></div>
+      </section>
+
+      <section id="confusion">
+        <h2>13. Common Misunderstandings</h2>
+        <details open><summary>1. LR-RU-012 is not just the IGF Code text</summary><div class="details-body"><p>LR-RU-012 includes the IGF Code and LR's additional class requirements. An <strong>LR</strong> prefix indicates a supplementary LR requirement.</p></div></details>
+        <details><summary>2. Fuels other than natural gas cannot simply copy natural-gas rules</summary><div class="details-body"><table><thead><tr><th>Fuel</th><th>Main Risk</th></tr></thead><tbody><tr><td><strong>NG Natural Gas (LNG/CNG forms)</strong></td><td>Cryogenic hazard, flammable gas and explosion.</td></tr><tr><td><strong>Methanol</strong></td><td>Flammable liquid, toxicity and hard-to-see flame.</td></tr><tr><td><strong>Ammonia</strong></td><td>Toxicity, corrosiveness and leakage dispersion.</td></tr><tr><td><strong>Hydrogen</strong></td><td>Leakage tendency, wide flammable range, low ignition energy and explosion.</td></tr><tr><td><strong>LPG</strong></td><td>Heavy vapour, low-level accumulation and explosion.</td></tr></tbody></table></div></details>
+        <details><summary>3. Gas Ready is not full fuel classification</summary><div class="details-body"><p><strong>GR</strong> only describes certain reservations, approvals or installed items. It does not mean the ship can operate on the fuel. Actual operation still requires the applicable <strong>LFPF</strong> notation and Administration approval.</p></div></details>
+        <details><summary>4. Procedures cannot replace hardware safety requirements</summary><div class="details-body"><p>Alternative design can demonstrate equivalent safety, but crew procedures alone cannot replace required equipment, material, segregation or safety systems.</p></div></details>
+        <details><summary>5. Risk assessment is not a formality</summary><div class="details-body"><p>Risk assessment directly influences:</p><ul><li>Bunkering station design</li><li>Fuel preparation room arrangement</li><li>Tank connection space design</li><li>Ventilation capacity and detector location</li><li>ESD logic and hazardous area classification</li><li>Fire separation, vent outlet position and crew exposure risk</li></ul></div></details>
+      </section>
+
+      <section id="study">
+        <h2>14. Suggested Study Path</h2>
+        <div class="timeline"><div class="step"><strong>Step 1: Understand the document position</strong><br />Read the Preamble, Chapter 2 Application, Definitions and Alternative Design.</div><div class="step"><strong>Step 2: Understand the safety philosophy</strong><br />Read Chapter 3 Goal and Functional Requirements and Chapter 4 General Requirements.</div><div class="step"><strong>Step 3: Enter the natural-gas fuelled ship design body</strong><br />Read Chapters 5-9 to understand fuel storage, bunkering, transfer and consumers.</div><div class="step"><strong>Step 4: Strengthen the safety systems</strong><br />Read Chapters 11-15 for fire safety, explosion prevention, ventilation, Ex electrical design, control / monitoring and ESD.</div><div class="step"><strong>Step 5: Understand construction and operation</strong><br />Read Chapters 16-19 for fabrication, testing, operation, drills and training.</div><div class="step"><strong>Step 6: Check the appendix by fuel</strong><br />Use LR1 for methanol / ethanol, LR2 for ammonia, LR3 for hydrogen and LR4 for LPG.</div></div>
+      </section>
+
+      <section id="summary">
+        <h2>15. Summary and Engineering Judgement</h2>
+        <div class="callout success"><strong>One-sentence summary:</strong><br />LR-RU-012 is Lloyd's Register's class rule document for low-flashpoint fuel ships, formed by incorporating the IMO IGF Code into LR class rules together with LR supplementary class requirements and fuel-specific appendices. It covers requirements relating to design, construction, testing, operation and training; but operation, training and statutory approval matters must still be confirmed separately against the flag Administration, IMO instruments and project-specific class review comments.</div>
+        <h3>Core Review Points</h3>
+        <ul class="checklist"><li>Document position: LR class rule document for low-flashpoint fuel ships (IGF Code incorporation plus LR supplementary requirements and fuel-specific appendices).</li><li>Regulatory basis: IGF Code incorporated into class rules, with LR supplementary class requirements.</li><li>Responsibility split: operation, training and statutory approval must be confirmed separately from classification scope.</li><li>Application: ships using gas or low-flashpoint substances as marine fuel.</li><li>Key distinction: using LNG as fuel is different from carrying LNG as cargo.</li><li>Formal class notation is LFPF(xx,yy).</li><li>Gas Ready is GR(yy,z), but it is not full fuel classification.</li><li>Safety philosophy: goal-based standards and equivalent safety.</li><li>Main risks: fire, explosion, toxicity, cryogenic hazard, leakage, loss of power and human error.</li><li>Design focus: fuel tanks, piping, bunkering, fuel supply, ventilation, explosion prevention, fire safety, control / monitoring and ESD.</li><li>Construction focus: welding, materials, pressure tests, leak tests, ESD tests and commissioning.</li><li>Operation focus: fuel handling manual, bunkering procedure, emergency procedure, drills and maintenance as required by class rules.</li><li>Training focus: crew competence requirements within class rules; STCW / flag requirements must be confirmed separately.</li></ul>
+
+      </section>
+    </main>
+
+    <section class="share-band" id="share">
+      <div
+        class="article-share article-share--end"
+        data-article-share
+        data-share-url="https://reayhuang.com/notes/maritime/lfpf-note.en.html"
+        data-share-title="LR-RU-012 Class Rules for Low-Flashpoint Fuel Ships | Reay's Note"
+        data-share-email-body="I found this maritime note by Reay and thought it may be useful for you:&#10;&#10;LR-RU-012 Class Rules for Low-Flashpoint Fuel Ships | Reay's Note&#10;https://reayhuang.com/notes/maritime/lfpf-note.en.html"
+        data-share-copy="Copy link"
+        data-share-copied="Copied"
+        data-toast-copied="Link copied to clipboard"
+      >
+        <p class="article-share__label" id="share-end-label">Found this useful? Share it with colleagues</p>
+        <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      if (location.hash) history.replaceState(null, "", `${location.pathname}${location.search}`);
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      const initTocTracking = () => {
+        const toc = document.querySelector(".toc");
+        if (!toc) return;
+        const items = Array.from(toc.querySelectorAll('a[href^="#"]')).map((link) => ({ link, section: document.querySelector(link.getAttribute("href")), id: link.getAttribute("href").slice(1) })).filter((item) => item.section);
+        if (!items.length) return;
+        const setTocHeight = () => { const height = Math.ceil(toc.getBoundingClientRect().height); document.documentElement.style.setProperty("--toc-height", `${height}px`); return height; };
+        let activeId = "";
+        const setActive = (id) => { if (id === activeId) return; activeId = id; for (const item of items) { const active = item.id === id; item.link.classList.toggle("is-active", active); if (active) item.link.setAttribute("aria-current", "true"); else item.link.removeAttribute("aria-current"); } };
+        const findActiveSection = () => { const boundary = setTocHeight() + 28; let current = items[0].id; for (const item of items) { if (item.section.getBoundingClientRect().top <= boundary) current = item.id; else break; } if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 6) current = items[items.length - 1].id; setActive(current); };
+        for (const item of items) item.link.addEventListener("click", (event) => { event.preventDefault(); window.history.pushState(null, "", `#${item.id}`); window.scrollTo({ top: Math.max(0, item.section.offsetTop - setTocHeight() - 18), behavior: "smooth" }); setActive(item.id); });
+        let ticking = false; const requestUpdate = () => { if (ticking) return; ticking = true; window.requestAnimationFrame(() => { findActiveSection(); ticking = false; }); };
+        window.addEventListener("scroll", requestUpdate, { passive: true }); window.addEventListener("resize", requestUpdate); setTocHeight(); findActiveSection();
+      };
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initTocTracking); else initTocTracking();
+    })();
+  </script>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>LR-RU-012 Class Rules for Low-Flashpoint Fuel Ships | Reay's Note</strong>
+      <span class="small">Compiled by Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">This page is a visual learning note for study, briefing and survey preparation. It does not represent the official position of Lloyd's Register, IMO or any other organisation. Formal design, class approval, notation assignment, flag acceptance and operational compliance should always be based on the latest LR rules, IMO instruments, flag Administration requirements and project-specific class review comments.</p>
+      <div class="footer-sources small"><p class="footer-sources__title">References / Source notes</p><ul class="source-list"><li>Lloyd's Register — Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025 (LR-RU-012)</li><li>IMO International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (IGF Code)</li></ul></div>
+    </div>
+  </footer>
+</body>
+
+</html>
