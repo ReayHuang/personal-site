@@ -1872,23 +1872,179 @@
   <script src="../../assets/js/back-to-top.js"></script>
   <script>
     (() => {
-      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-      if (location.hash) history.replaceState(null, "", `${location.pathname}${location.search}`);
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      if (location.hash) {
+        history.replaceState(null, "", `${location.pathname}${location.search}`);
+      }
+
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
       const initTocTracking = () => {
         const toc = document.querySelector(".toc");
         if (!toc) return;
-        const items = Array.from(toc.querySelectorAll('a[href^="#"]')).map((link) => ({ link, section: document.querySelector(link.getAttribute("href")), id: link.getAttribute("href").slice(1) })).filter((item) => item.section);
+
+        const items = Array.from(toc.querySelectorAll('a[href^="#"]'))
+          .map((link) => {
+            const id = link.getAttribute("href").slice(1);
+            return { id, link, section: document.getElementById(id) };
+          })
+          .filter((item) => item.section);
+
         if (!items.length) return;
-        const setTocHeight = () => { const height = Math.ceil(toc.getBoundingClientRect().height); document.documentElement.style.setProperty("--toc-height", `${height}px`); return height; };
+
+        const setTocHeight = () => {
+          const height = Math.ceil(toc.getBoundingClientRect().height);
+          document.documentElement.style.setProperty("--toc-height", `${height}px`);
+          return height;
+        };
+
         let activeId = "";
-        const setActive = (id) => { if (id === activeId) return; activeId = id; for (const item of items) { const active = item.id === id; item.link.classList.toggle("is-active", active); if (active) item.link.setAttribute("aria-current", "true"); else item.link.removeAttribute("aria-current"); } };
-        const findActiveSection = () => { const boundary = setTocHeight() + 28; let current = items[0].id; for (const item of items) { if (item.section.getBoundingClientRect().top <= boundary) current = item.id; else break; } if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 6) current = items[items.length - 1].id; setActive(current); };
-        for (const item of items) item.link.addEventListener("click", (event) => { event.preventDefault(); window.history.pushState(null, "", `#${item.id}`); window.scrollTo({ top: Math.max(0, item.section.offsetTop - setTocHeight() - 18), behavior: "smooth" }); setActive(item.id); });
-        let ticking = false; const requestUpdate = () => { if (ticking) return; ticking = true; window.requestAnimationFrame(() => { findActiveSection(); ticking = false; }); };
-        window.addEventListener("scroll", requestUpdate, { passive: true }); window.addEventListener("resize", requestUpdate); setTocHeight(); findActiveSection();
+        let isProgrammaticScroll = false;
+        let programmaticTimer;
+        let pendingTarget;
+
+        const centerActiveLink = (link) => {
+          const tocRect = toc.getBoundingClientRect();
+          const linkRect = link.getBoundingClientRect();
+          const targetLeft =
+            toc.scrollLeft +
+            linkRect.left -
+            tocRect.left -
+            (tocRect.width - linkRect.width) / 2;
+
+          toc.scrollTo({
+            left: Math.max(0, targetLeft),
+            behavior: "smooth",
+          });
+        };
+
+        const setActive = (id) => {
+          if (id === activeId) return;
+          activeId = id;
+
+          for (const item of items) {
+            const isActive = item.id === id;
+            item.link.classList.toggle("is-active", isActive);
+            if (isActive) {
+              item.link.setAttribute("aria-current", "true");
+              centerActiveLink(item.link);
+            } else {
+              item.link.removeAttribute("aria-current");
+            }
+          }
+        };
+
+        const findActiveSection = () => {
+          const boundary = setTocHeight() + 28;
+          let current = items[0].id;
+
+          for (const item of items) {
+            if (item.section.getBoundingClientRect().top <= boundary) {
+              current = item.id;
+            } else {
+              break;
+            }
+          }
+
+          const nearBottom =
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 6;
+
+          if (nearBottom) {
+            current = items[items.length - 1].id;
+          }
+
+          setActive(current);
+        };
+
+        const resumeTracking = () => {
+          window.clearTimeout(programmaticTimer);
+          if (pendingTarget) {
+            const offset = setTocHeight() + 18;
+            const expectedTop = offset;
+            const actualTop = pendingTarget.section.getBoundingClientRect().top;
+            if (Math.abs(actualTop - expectedTop) > 6) {
+              window.scrollTo({
+                top: Math.max(0, pendingTarget.section.offsetTop - offset),
+                behavior: "auto",
+              });
+            }
+            pendingTarget = null;
+          }
+          isProgrammaticScroll = false;
+          findActiveSection();
+        };
+
+        let ticking = false;
+        const requestUpdate = () => {
+          if (isProgrammaticScroll) return;
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(() => {
+            findActiveSection();
+            ticking = false;
+          });
+        };
+
+        for (const item of items) {
+          item.link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            setTocHeight();
+            isProgrammaticScroll = true;
+            pendingTarget = item;
+            window.history.pushState(null, "", `#${item.id}`);
+            setActive(item.id);
+
+            window.scrollTo({
+              top: Math.max(0, item.section.offsetTop - setTocHeight() - 18),
+              behavior: "smooth",
+            });
+
+            window.clearTimeout(programmaticTimer);
+            programmaticTimer = window.setTimeout(resumeTracking, 1700);
+          });
+        }
+
+        const alignCurrentHash = () => {
+          const target = items.find((item) => `#${item.id}` === location.hash);
+          if (!target) return;
+
+          isProgrammaticScroll = true;
+          setActive(target.id);
+          window.scrollTo({
+            top: Math.max(0, target.section.offsetTop - setTocHeight() - 18),
+            behavior: "auto",
+          });
+          pendingTarget = null;
+          isProgrammaticScroll = false;
+          findActiveSection();
+        };
+
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        window.addEventListener("resize", requestUpdate);
+        window.addEventListener("hashchange", () => {
+          window.setTimeout(alignCurrentHash, 0);
+        });
+        setTocHeight();
+
+        findActiveSection();
+        window.addEventListener("load", () => {
+          if (!location.hash) {
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+            findActiveSection();
+          }
+        }, { once: true });
       };
-      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initTocTracking); else initTocTracking();
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initTocTracking);
+      } else {
+        initTocTracking();
+      }
     })();
   </script>
 
