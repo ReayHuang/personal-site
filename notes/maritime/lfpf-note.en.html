@@ -974,7 +974,7 @@
 
     .clause-label {
       display: grid;
-      grid-template-columns: minmax(4.4em, max-content) minmax(0, 1fr);
+      grid-template-columns: max-content max-content;
       column-gap: 0.35em;
       align-items: start;
     }
@@ -984,8 +984,9 @@
     }
 
     .clause-label span:not(.clause-no) {
-      min-width: 0;
-      overflow-wrap: anywhere;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
     }
 
     tr:nth-child(even) td {
