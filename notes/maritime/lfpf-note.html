@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../../assets/css/article-share.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="整理 Lloyd's Register《Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2025》的文件定位、章節架構、技術邏輯、燃料別要求與實務審查重點。">
@@ -66,6 +66,7 @@
       --soft-purple: #f0efff;
       --radius: 16px;
       --shadow: 0 10px 30px rgba(15, 39, 66, 0.10);
+      --font-sans: "Source Sans Pro", sans-serif;
     }
 
     * {
@@ -81,12 +82,11 @@
       color: var(--ink);
       background: linear-gradient(180deg, #f4f8fb 0%, #eef5f9 100%);
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
+        var(--font-sans),
         "Noto Sans TC",
         "Microsoft JhengHei",
-        Arial,
+        "PingFang TC",
+        system-ui,
         sans-serif;
       line-height: 1.75;
     }
@@ -570,6 +570,7 @@
       --soft-purple: #f0efff;
       --radius: 18px;
       --shadow: 0 14px 32px rgba(7, 48, 79, 0.12);
+      --font-sans: "Source Sans Pro", sans-serif;
     }
 
     html {
@@ -581,6 +582,7 @@
       color: var(--ink);
       background: linear-gradient(180deg, #f4f8fb 0%, #eef5f9 100%);
       font-family:
+        var(--font-sans),
         "Noto Sans TC",
         "Microsoft JhengHei",
         "PingFang TC",
@@ -588,6 +590,14 @@
         sans-serif;
       font-size: 16px;
       line-height: 1.72;
+    }
+
+    .note-site-bar {
+      font-family:
+        var(--font-sans),
+        "Noto Sans TC",
+        "PingFang TC",
+        sans-serif;
     }
 
     a {
