@@ -210,7 +210,7 @@
     .share-band{
       max-width:var(--page-max);
       margin:0 auto;
-      padding:16px max(24px, calc((100vw - var(--page-max)) / 2)) 32px;
+      padding:16px 0 32px;
       border:none;
       border-radius:0;
       background:transparent;
@@ -228,10 +228,19 @@
       font-weight:800;
       letter-spacing:.04em;
       line-height:1;
+      width:auto;
     }
 
     .share-band .article-share--end{
       margin:0;
+      width:100%;
+      justify-content:flex-start;
+      align-items:center;
+    }
+
+    .share-band .article-share--end .article-share__actions{
+      justify-content:flex-start;
+      flex:0 0 auto;
     }
 
     .site-footer{
