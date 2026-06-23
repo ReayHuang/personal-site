@@ -127,6 +127,13 @@
       "zh": "notes/maritime/tailshaft-survey-notes.html"
     },
     {
+      "slug": "engine-fat-shipboard-note",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/engine-fat-shipboard-note.en.html",
+      "zh": "notes/maritime/engine-fat-shipboard-note.html"
+    },
+    {
       "slug": "lfpf-note",
       "type": "article",
       "category": "notes",

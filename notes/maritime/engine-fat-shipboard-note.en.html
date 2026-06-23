@@ -1,0 +1,2407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="LR-RU-001, FAT, factory acceptance test, shipboard trials, Shipboard trials, works trial, reciprocating internal combustion engines, MCR, DF engine, GF engine, Lloyd's Register">
+  <meta property="og:title" content="LR-RU-001 Engine FAT and Shipboard Trials Requirements | Reay's Note">
+  <meta property="og:description" content="A practical note on LR-RU-001 Part 5 Ch 2 Section 11 for reciprocating internal combustion engine FAT and shipboard trials, covering test scope, DF/GF engines, electronic control, and practical survey checkpoints.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.en.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.en.html">
+  <!-- Social preview: og:image must be a public HTTPS URL (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/engine-fat-shipboard-note/engine-fat-shipboard-note-link-preview.en-1200.png">
+  <meta property="og:image:alt" content="LR Rules Engine FAT &amp; Shipboard Trials — Reay Huang Maritime Notes">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LR-RU-001 Engine FAT and Shipboard Trials Requirements | Reay's Note">
+  <meta name="twitter:description" content="A practical note on LR-RU-001 Part 5 Ch 2 Section 11 for reciprocating internal combustion engine FAT and shipboard trials, covering test scope, DF/GF engines, electronic control, and practical survey checkpoints.">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/engine-fat-shipboard-note/engine-fat-shipboard-note-link-preview.en-1200.png">
+  <link rel="alternate" hreflang="zh-Hant" href="engine-fat-shipboard-note.html">
+  <link rel="alternate" hreflang="en" href="engine-fat-shipboard-note.en.html">
+  <link rel="alternate" hreflang="x-default" href="engine-fat-shipboard-note.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical note on LR-RU-001 Part 5 Ch 2 Section 11 for reciprocating internal combustion engine FAT and shipboard trials, covering test scope, DF/GF engines, electronic control, and practical survey checkpoints.">
+  <title>LR-RU-001 Engine FAT and Shipboard Trials Requirements | Reay's Note</title>
+
+  <style>
+    :root{
+      --navy:#0b1f3a;
+      --navy-2:#12345a;
+      --blue:#1e63b6;
+      --cyan:#1aa6a6;
+      --teal:#17a398;
+      --sky:#eaf4ff;
+      --bg:#eef4f8;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#64748b;
+      --line:#d9e4ef;
+      --yellow:#fff7d6;
+      --yellow-border:#f2c94c;
+      --red:#fff0f0;
+      --red-border:#ef5350;
+      --green:#ecfdf5;
+      --green-border:#22c55e;
+      --blue-soft:#eef6ff;
+      --blue-border:#3b82f6;
+      --shadow:0 16px 40px rgba(15, 23, 42, .08);
+      --radius:22px;
+      --page-max:1180px;
+      --page-gutter:22px;
+      --card-pad:30px;
+      --font-sans:"Source Sans Pro", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font-sans);
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(26,166,166,.12), transparent 36rem),
+        linear-gradient(180deg,#f8fbff 0%,var(--bg) 100%);
+      line-height:1.75;
+    }
+
+    .note-site-bar{
+      font-family:var(--font-sans);
+    }
+
+    a{color:inherit;text-decoration:none}
+    strong{color:var(--navy)}
+    code{
+      padding:.1rem .35rem;
+      border-radius:.4rem;
+      background:#eef2f7;
+      color:#0f3f66;
+      font-family:"SFMono-Regular",Consolas,monospace;
+      font-size:.92em;
+    }
+
+    .hero{
+      width:100%;
+      color:#fff;
+      background:
+        linear-gradient(90deg, rgba(7,22,45,.96) 0%, rgba(13,58,101,.86) 46%, rgba(20,126,133,.48) 100%),
+        url("../../assets/images/maritime/engine-fat-shipboard-note/engine-fat-shipboard-hero.png") center right / cover no-repeat,
+        linear-gradient(135deg, rgba(7,22,45,.96), rgba(13,58,101,.95) 52%, rgba(20,126,133,.92));
+      padding:56px 22px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero::after{
+      content:none;
+      display:none;
+    }
+
+    .hero-inner{
+      max-width:var(--page-max);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      gap:36px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-copy{
+      padding-inline:var(--card-pad);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.38rem .72rem;
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      backdrop-filter:blur(12px);
+      font-weight:700;
+      font-size:.88rem;
+      letter-spacing:.08em;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:.55rem;
+      height:.55rem;
+      border-radius:999px;
+      background:#3ff0dc;
+      box-shadow:0 0 0 5px rgba(63,240,220,.14);
+    }
+
+    .hero h1{
+      margin:22px 0 14px;
+      font-size:clamp(2rem,4vw,4.2rem);
+      line-height:1.12;
+      letter-spacing:-.04em;
+    }
+
+    .hero .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:0 0 22px;
+      color:#dbeafe;
+      font-size:.95rem;
+    }
+
+    .hero .meta span{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      padding:.3rem .68rem;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+    }
+
+    .hero p:not(.article-share__label):not(.article-meta){
+      max-width:780px;
+      margin:0;
+      color:#e8f2ff;
+      font-size:1.08rem;
+    }
+
+    .hero .article-meta{
+      margin:14px 0 18px;
+      max-width:780px;
+      font-size:14px;
+      font-weight:500;
+      line-height:1.5;
+    }
+
+    .hero .article-share--hero{
+      margin-top:22px;
+    }
+
+    .hero .article-share__label{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.04em;
+      line-height:1;
+    }
+
+    .share-band{
+      max-width:var(--page-max);
+      margin:0 auto;
+      padding:16px var(--card-pad) 32px;
+      border:none;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+      scroll-margin-top:0;
+    }
+
+    .share-band::before{
+      content:none;
+      display:none;
+    }
+
+    .share-band .article-share__label{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.04em;
+      line-height:1;
+    }
+
+    .share-band .article-share--end{
+      margin:0;
+    }
+
+    .site-footer{
+      background:#061b22;
+      color:rgba(255,255,255,.82);
+      padding:36px 0 44px;
+      font-size:14px;
+      line-height:1.7;
+      text-align:left;
+      margin-top:0;
+    }
+
+    .site-footer .container{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 22px;
+    }
+
+    .site-footer strong{
+      color:#fff;
+    }
+
+    .site-footer a{
+      color:#8ffff2;
+    }
+
+    .site-footer .disclaimer{
+      margin:14px 0 0;
+      color:rgba(255,255,255,.62);
+      max-width:760px;
+    }
+
+    .site-footer .small{
+      font-size:13px;
+    }
+
+    .site-footer .footer-sources{
+      margin:18px 0 0;
+      max-width:980px;
+    }
+
+    .site-footer .footer-sources__title{
+      margin:0 0 8px;
+      color:rgba(255,255,255,.82);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .site-footer .source-list{
+      margin:0;
+      padding-left:1.2rem;
+      line-height:1.5;
+    }
+
+    .site-footer .source-list li{
+      color:rgba(255,255,255,.62);
+    }
+
+    @media print{
+      .note-site-bar,
+      .article-share,
+      .share-band{
+        display:none !important;
+      }
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      padding:.72rem 1rem;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.82);
+      background:#ffffff;
+      color:var(--navy);
+      box-shadow:0 12px 30px rgba(0,0,0,.18);
+      transition:.2s ease;
+    }
+
+    .btn.primary,
+    .btn.ghost{
+      background:#ffffff;
+      color:var(--navy);
+      border-color:rgba(255,255,255,.82);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 34px rgba(0,0,0,.18);
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:22px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:.28rem .62rem;
+      border-radius:999px;
+      font-size:.84rem;
+      font-weight:700;
+      color:#eaffff;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.1);
+    }
+
+    .hero-visual{
+      min-height:390px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:32px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.08)),
+        rgba(255,255,255,.06);
+      backdrop-filter:blur(16px);
+      box-shadow:0 20px 60px rgba(0,0,0,.2);
+      padding:24px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-visual::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:999px;
+      background:rgba(63,240,220,.16);
+      right:-80px;
+      top:-70px;
+    }
+
+    .engine-card{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:24px;
+      padding:20px;
+    }
+
+    .engine-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+    }
+
+    .flow{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .flow-step{
+      display:grid;
+      grid-template-columns:46px 1fr;
+      gap:12px;
+      align-items:center;
+      padding:14px;
+      border-radius:18px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .flow-step b{
+      display:grid;
+      place-items:center;
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      color:var(--navy);
+      background:#9ff7ed;
+    }
+
+    .flow-step span{
+      color:#eaf8ff;
+      font-weight:700;
+    }
+
+    .stat-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .stat{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .stat .num{
+      display:block;
+      font-size:1.7rem;
+      font-weight:900;
+      color:#9ff7ed;
+      line-height:1.1;
+    }
+
+    .stat .label{
+      display:block;
+      color:#eaf8ff;
+      font-size:.88rem;
+      margin-top:4px;
+    }
+
+    .page-shell{
+      max-width:var(--page-max);
+      margin:34px auto 70px;
+      padding:0;
+      display:grid;
+      grid-template-columns:280px minmax(0,1fr);
+      gap:26px;
+      align-items:start;
+    }
+
+    .page-shell > *,
+    .toc,
+    .toc *{
+      min-width:0;
+    }
+
+    .toc{
+      position:sticky;
+      top:18px;
+      background:rgba(255,255,255,.86);
+      backdrop-filter:blur(16px);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+      max-height:calc(100vh - 36px);
+      overflow:auto;
+    }
+
+    .toc-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin:0 0 12px;
+      padding-bottom:12px;
+      border-bottom:1px solid var(--line);
+      color:var(--navy);
+      font-weight:900;
+    }
+
+    .toc ol{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:6px;
+      counter-reset:toc;
+    }
+
+    .toc a{
+      display:grid;
+      grid-template-columns:28px 1fr;
+      gap:8px;
+      align-items:start;
+      padding:9px 10px;
+      border-radius:12px;
+      color:#334155;
+      font-size:.92rem;
+      font-weight:700;
+    }
+
+    .toc a::before{
+      counter-increment:toc;
+      content:counter(toc, decimal-leading-zero);
+      display:grid;
+      place-items:center;
+      height:24px;
+      border-radius:8px;
+      color:#0f4b73;
+      background:#e5f6ff;
+      font-size:.72rem;
+      font-weight:900;
+    }
+
+    .toc a:hover{
+      background:#eef6ff;
+      color:var(--navy);
+    }
+
+    .content{
+      display:grid;
+      gap:26px;
+      min-width:0;
+    }
+
+    .section-card{
+      min-width:0;
+      overflow-wrap:anywhere;
+      word-break:normal;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:var(--card-pad);
+      scroll-margin-top:28px;
+    }
+
+    .section-card h2{
+      position:relative;
+      margin:0 0 18px;
+      padding-bottom:14px;
+      color:var(--navy);
+      font-size:clamp(1.45rem,2.2vw,2rem);
+      line-height:1.25;
+      letter-spacing:-.02em;
+    }
+
+    .section-card h2::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:84px;
+      height:4px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--blue),var(--cyan));
+    }
+
+    .section-card h3{
+      margin:28px 0 12px;
+      color:#12345a;
+      font-size:1.2rem;
+    }
+
+    .lead{
+      margin:0 0 18px;
+      color:#475569;
+      font-size:1.02rem;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.3rem;
+      padding:.22rem .55rem;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:900;
+      vertical-align:baseline;
+      white-space:nowrap;
+    }
+
+    .badge.blue{color:#0f4b73;background:#dff2ff}
+    .badge.teal{color:#075e59;background:#d9fbf6}
+    .badge.green{color:#166534;background:#dcfce7}
+    .badge.yellow{color:#854d0e;background:#fef3c7}
+    .badge.red{color:#991b1b;background:#fee2e2}
+    .badge.gray{color:#334155;background:#e2e8f0}
+
+    .callout{
+      position:relative;
+      margin:18px 0;
+      padding:18px 18px 18px 54px;
+      border-radius:18px;
+      border:1px solid;
+    }
+
+    .callout::before{
+      position:absolute;
+      left:18px;
+      top:19px;
+      width:24px;
+      height:24px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      color:#fff;
+      font-size:.85rem;
+      font-weight:900;
+    }
+
+    .callout.info{
+      background:var(--blue-soft);
+      border-color:var(--blue-border);
+    }
+    .callout.info::before{content:"i";background:var(--blue)}
+
+    .callout.warning{
+      background:var(--yellow);
+      border-color:var(--yellow-border);
+    }
+    .callout.warning::before{content:"!";background:#d99400}
+
+    .callout.danger{
+      background:var(--red);
+      border-color:var(--red-border);
+    }
+    .callout.danger::before{content:"!";background:#dc2626}
+
+    .callout.success{
+      background:var(--green);
+      border-color:var(--green-border);
+    }
+    .callout.success::before{content:"✓";background:#16a34a}
+
+    .callout p{
+      margin:.15rem 0;
+    }
+
+    .grid-2,
+    .grid-3{
+      display:grid;
+      gap:16px;
+      margin:18px 0;
+    }
+
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+    .mini-card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-left:6px solid var(--card-accent, var(--cyan));
+      border-radius:18px;
+      background:linear-gradient(180deg,#ffffff,#f8fbff);
+      padding:18px 18px 18px 20px;
+    }
+
+    .mini-card::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:6px;
+      background:var(--card-accent, var(--cyan));
+    }
+
+    .mini-card:nth-child(4n + 1){--card-accent:#1e63b6;}
+    .mini-card:nth-child(4n + 2){--card-accent:#17a398;}
+    .mini-card:nth-child(4n + 3){--card-accent:#f59e0b;}
+    .mini-card:nth-child(4n + 4){--card-accent:#ef5350;}
+
+    .mini-card h4{
+      margin:0 0 8px;
+      color:var(--navy);
+      font-size:1.02rem;
+    }
+
+    .mini-card p{
+      margin:0;
+      color:#475569;
+    }
+
+    .chapter-nav{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .chapter-link{
+      display:grid;
+      grid-template-columns:56px 1fr;
+      gap:14px;
+      align-items:center;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:#f8fbff;
+      transition:.2s ease;
+    }
+
+    .chapter-link:hover{
+      transform:translateY(-2px);
+      border-color:#93c5fd;
+      box-shadow:0 12px 26px rgba(30,99,182,.09);
+    }
+
+    .chapter-link .no{
+      display:grid;
+      place-items:center;
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--navy-2),var(--cyan));
+      color:#fff;
+      font-weight:900;
+    }
+
+    .chapter-link b{
+      display:block;
+      color:var(--navy);
+    }
+
+    .chapter-link small{
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .table-wrap{
+      width:100%;
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid var(--line);
+      margin:18px 0;
+      background:#fff;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:680px;
+    }
+
+    th{
+      background:linear-gradient(135deg,var(--navy),var(--navy-2));
+      color:#fff;
+      text-align:left;
+      padding:13px 14px;
+      font-size:.92rem;
+      line-height:1.5;
+    }
+
+    td{
+      padding:13px 14px;
+      border-top:1px solid var(--line);
+      vertical-align:top;
+      color:#334155;
+    }
+
+    tr:nth-child(even) td{
+      background:#f8fbff;
+    }
+
+    .timeline{
+      list-style:none;
+      margin:20px 0;
+      padding:0;
+      position:relative;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:20px;
+      top:21px;
+      bottom:21px;
+      width:3px;
+      border-radius:999px;
+      background:linear-gradient(var(--blue),var(--cyan));
+    }
+
+    .timeline li{
+      position:relative;
+      display:grid;
+      grid-template-columns:42px minmax(0,1fr);
+      column-gap:16px;
+      row-gap:4px;
+      align-items:start;
+      min-width:0;
+      margin:0 0 18px;
+      padding:0;
+    }
+
+    .timeline li::before{
+      content:attr(data-step);
+      position:relative;
+      z-index:1;
+      grid-column:1;
+      grid-row:1 / span 2;
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:#fff;
+      border:3px solid var(--cyan);
+      color:var(--navy);
+      font-weight:900;
+      box-shadow:0 8px 20px rgba(15,23,42,.08);
+    }
+
+    .timeline h4{
+      grid-column:2;
+      min-width:0;
+      margin:0 0 4px;
+      color:var(--navy);
+      overflow-wrap:anywhere;
+    }
+
+    .timeline p{
+      grid-column:2;
+      min-width:0;
+      margin:0;
+      color:#475569;
+      overflow-wrap:anywhere;
+    }
+
+    .checklist{
+      list-style:none;
+      padding:0;
+      margin:18px 0;
+      display:grid;
+      gap:10px;
+    }
+
+    .checklist.two-col{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .checklist li{
+      position:relative;
+      padding:12px 14px 12px 42px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#f8fbff;
+      color:#334155;
+      font-weight:650;
+    }
+
+    .checklist li::before{
+      content:"✓";
+      position:absolute;
+      left:13px;
+      top:12px;
+      display:grid;
+      place-items:center;
+      width:22px;
+      height:22px;
+      border-radius:8px;
+      background:#d9fbf6;
+      color:#04736c;
+      font-weight:900;
+    }
+
+    .faq{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    details{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#f8fbff;
+      padding:14px 16px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--navy);
+    }
+
+    details p{
+      margin:10px 0 0;
+      color:#475569;
+    }
+
+    .footer-note{
+      color:#64748b;
+      font-size:.9rem;
+      text-align:center;
+      padding:34px 22px 60px;
+    }
+
+    @media (max-width:960px){
+      .hero-inner{
+        grid-template-columns:1fr;
+      }
+
+      .hero-visual{
+        min-height:auto;
+      }
+
+      .page-shell{
+        grid-template-columns:1fr;
+      }
+
+      .toc{
+        position:relative;
+        top:auto;
+        max-height:none;
+      }
+
+      .grid-2,
+      .grid-3,
+      .chapter-nav,
+      .checklist.two-col{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:640px){
+      :root{
+        --page-gutter:16px;
+        --card-pad:22px;
+      }
+
+      .hero{
+        padding:40px var(--page-gutter);
+      }
+
+      .page-shell{
+        padding-inline:var(--page-gutter);
+        margin-top:22px;
+      }
+
+      .share-band{
+        padding-inline:calc(var(--page-gutter) + var(--card-pad));
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+
+
+    /* Horizontal sticky section navigation */
+    html{
+      scroll-padding-top:92px;
+    }
+
+    .toc{
+      position:sticky;
+      top:0;
+      z-index:40;
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      align-items:center;
+      gap:14px;
+      width:100%;
+      max-height:none;
+      margin:0;
+      padding:10px max(16px, calc((100vw - var(--page-max)) / 2 + var(--card-pad)));
+      overflow:visible;
+      border:0;
+      border-bottom:1px solid rgba(217,228,239,.92);
+      border-radius:0;
+      background:rgba(255,255,255,.9);
+      box-shadow:0 12px 28px rgba(15,23,42,.08);
+      backdrop-filter:blur(16px);
+    }
+
+    .toc-title{
+      margin:0;
+      padding:0;
+      border:0;
+      white-space:nowrap;
+      color:var(--navy);
+      font-size:.94rem;
+    }
+
+    .toc-title .badge{
+      display:none;
+    }
+
+    .toc ol{
+      display:flex;
+      gap:8px;
+      min-width:0;
+      margin:0;
+      padding:2px 0;
+      overflow-x:auto;
+      overflow-y:hidden;
+      overscroll-behavior-x:contain;
+      scroll-padding-inline:24px;
+      scrollbar-width:none;
+    }
+
+    .toc ol::-webkit-scrollbar{
+      display:none;
+    }
+
+    .toc li{
+      flex:0 0 auto;
+    }
+
+    .toc a{
+      display:inline-flex;
+      grid-template-columns:none;
+      align-items:center;
+      gap:8px;
+      min-height:38px;
+      padding:7px 12px 7px 8px;
+      border:1px solid #d9e4ef;
+      border-radius:999px;
+      background:#f8fbff;
+      color:#334155;
+      white-space:nowrap;
+      transition:background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+    }
+
+    .toc a::before{
+      width:26px;
+      height:24px;
+      flex:0 0 26px;
+    }
+
+    .toc a:hover{
+      transform:translateY(-1px);
+      text-decoration:none;
+      background:#eef6ff;
+    }
+
+    .toc a.is-active{
+      border-color:rgba(30,99,182,.35);
+      background:linear-gradient(135deg,var(--navy),var(--cyan));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(30,99,182,.22);
+    }
+
+    .toc a.is-active::before{
+      color:var(--navy);
+      background:#ffffff;
+    }
+
+    .page-shell{
+      grid-template-columns:minmax(0,1fr);
+      margin-top:34px;
+    }
+
+    .section-card{
+      scroll-margin-top:96px;
+    }
+
+    @media (max-width:640px){
+      html{
+        scroll-padding-top:112px;
+      }
+
+      .toc{
+        grid-template-columns:1fr;
+        gap:8px;
+        padding:9px var(--page-gutter) 10px;
+      }
+
+      .toc-title{
+        font-size:.86rem;
+      }
+
+      .toc a{
+        min-height:36px;
+        padding:6px 11px 6px 7px;
+        font-size:.86rem;
+      }
+
+      .section-card{
+        scroll-margin-top:116px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Notes</a>
+      <span>|</span>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="engine-fat-shipboard-note.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="engine-fat-shipboard-note.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">LR Rules · Engine FAT and Shipboard Trials · REAY'S NOTE</span>
+
+        <h1>LR Class Rules: Engine FAT and Shipboard Trials Requirements</h1>
+
+        <p class="article-meta">
+          <span>Updated: 2026-06-23</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>18 min read</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>LR-RU-001 / FAT / Shipboard trials / Reciprocating IC engines</span>
+        </p>
+
+        <p>
+          This note explains <strong style="color:#fff;">LR-RU-001, Rules and Regulations for the Classification of Ships</strong>,
+          Part 5 Main and Auxiliary Machinery, Chapter 2 Reciprocating Internal Combustion Engines,
+          Section 11: Factory acceptance test and shipboard trials of engines.
+          This section addresses verification requirements for marine reciprocating internal combustion engines during <strong style="color:#fff;">FAT (factory acceptance test)</strong> and
+          <strong style="color:#fff;">shipboard trials</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#sec-04">FAT quick reference</a>
+          <a class="btn ghost" href="#sec-07">Shipboard trials quick reference</a>
+          <a class="btn ghost" href="#sec-11">Jump to review points</a>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">FAT</span>
+          <span class="tag">Shipboard Trials</span>
+          <span class="tag">MCR</span>
+          <span class="tag">DF Engine</span>
+          <span class="tag">GF Engine</span>
+          <span class="tag">LR Surveyor</span>
+          <span class="tag">MARPOL</span>
+        </div>
+
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.en.html"
+          data-share-title="LR-RU-001 Engine FAT and Shipboard Trials Requirements | Reay's Note"
+          data-share-email-body="I found this note on Reay's Maritime Notes and thought it may be useful for you:&#10;&#10;LR-RU-001 Engine FAT and Shipboard Trials Requirements | Reay's Note&#10;https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.en.html"
+          data-share-copy="Copy link"
+          data-share-copied="Copied"
+          data-toast-copied="Link copied to clipboard"
+        >
+          <p class="article-share__label" id="share-hero-label">Share this note</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Section links">
+    <ol>
+      <li><a href="#sec-01">Topic and Background</a></li>
+      <li><a href="#sec-02">Document Structure</a></li>
+      <li><a href="#sec-03">Core Requirements</a></li>
+      <li><a href="#sec-04">FAT Test Scope</a></li>
+      <li><a href="#sec-05">DF/GF Engine Requirements</a></li>
+      <li><a href="#sec-06">Electronically Controlled Engines</a></li>
+      <li><a href="#sec-07">Shipboard Trials</a></li>
+      <li><a href="#sec-08">Key Terms and Definitions</a></li>
+      <li><a href="#sec-09">Technical and Regulatory Implications</a></li>
+      <li><a href="#sec-10">Practical Use and Notes</a></li>
+      <li><a href="#sec-11">Summary and Review Points</a></li>
+    </ol>
+  </nav>
+
+  <main class="page-shell">
+    <article class="content">
+
+      <section class="section-card" id="sec-01">
+        <h2>1. Topic and Background</h2>
+
+        <p class="lead">
+          This document belongs to the <strong>Lloyd’s Register (LR) Rules and Regulations</strong> requirements for main and auxiliary machinery, with particular focus on acceptance testing and trials for <strong>reciprocating internal combustion engines</strong>.
+        </p>
+
+        <div class="callout info">
+          <p>
+            The core purpose is not merely to prove that the engine can run. It is to confirm engine performance, safety protection, shipboard system integration, and the safe handling of DF/GF engine fuel modes and fault scenarios.
+          </p>
+        </div>
+
+        <div class="chapter-nav">
+          <a class="chapter-link" href="#sec-03">
+            <span class="no">01</span>
+            <span>
+              <b>Engine design performance</b>
+              <small>MCR, rated speed, 110% overload, combustion pressure</small>
+            </span>
+          </a>
+
+          <a class="chapter-link" href="#sec-03">
+            <span class="no">02</span>
+            <span>
+              <b>Safety protection systems</b>
+              <small>Overspeed protection, shutdown functions, crankcase explosion protection</small>
+            </span>
+          </a>
+
+          <a class="chapter-link" href="#sec-07">
+            <span class="no">03</span>
+            <span>
+              <b>Post-installation compatibility onboard</b>
+              <small>Propulsion shafting, generators, PTO, control systems</small>
+            </span>
+          </a>
+
+          <a class="chapter-link" href="#sec-05">
+            <span class="no">04</span>
+            <span>
+              <b>Dual-fuel and gas-fuel risks</b>
+              <small>Gas leakage, ignition failure, fuel changeover</small>
+            </span>
+          </a>
+        </div>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4><span class="badge blue">FAT</span> Factory acceptance test</h4>
+            <p>
+              Verifies the engine itself and design parameters, such as power, fire protection arrangements, maximum pressure limits, and functionality, while establishing baseline values for later operational reference.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4><span class="badge teal">Shipboard Trials</span> Shipboard trials</h4>
+            <p>
+              Verifies how the installed engine integrates with propulsion, power generation, control, safety, and auxiliary systems onboard.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-02">
+        <h2>2. Document Structure</h2>
+
+        <p class="lead">
+          This section can be read in four main parts. The technical logic is:
+          <strong>safety prerequisites -> works trials -> shipboard integration trials -> special fuel and electronic-control verification -> statutory and emission requirements</strong>.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Clause</th>
+                <th>Topic</th>
+                <th>Main content</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>11.1 Safety</strong></td>
+                <td>Safety requirements</td>
+                <td>Pre-test safety equipment, overspeed protection setting, and low-pressure gas fuel pipe tightness</td>
+              </tr>
+              <tr>
+                <td><strong>11.2 General</strong></td>
+                <td>General requirements</td>
+                <td>Test scope, LR Surveyor witnessing, QAM, test-bed conditions, measurement items, and no adjustment during acceptance tests</td>
+              </tr>
+              <tr>
+                <td><strong>11.3 Works trials / FAT</strong></td>
+                <td>Factory acceptance test</td>
+                <td>FAT purpose, ambient-condition records, operating-parameter records, and test conditions</td>
+              </tr>
+              <tr>
+                <td><strong>11.4 Shipboard trials</strong></td>
+                <td>Shipboard trials</td>
+                <td>Shipboard integration verification, test conditions, DF/GF engines, fuel changeover, and barred speed range</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-03">
+        <h2>3. Core Requirements Explained</h2>
+
+        <p class="lead">
+          This chapter summarises the key requirements of <strong>11.1 Safety</strong>, <strong>11.2 General</strong>, and <strong>11.3 Works trials</strong>.
+        </p>
+
+        <h3>1. 11.1 Safety: pre-test safety conditions</h3>
+
+        <div class="callout danger">
+          <p>
+            Before any test starts, the manufacturer or shipyard must provide and ensure that all personnel-safety-related equipment is available and functioning correctly.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="mini-card">
+            <h4>Crankcase explosive conditions protection</h4>
+            <p>Protection against crankcase explosive conditions.</p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Overspeed protection</h4>
+            <p>Overspeed protection.</p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Shutdown function</h4>
+            <p>Shutdown protection function.</p>
+          </div>
+        </div>
+
+        <p>
+          The setting of the <strong>overspeed protective device</strong> must not exceed the overspeed value proven acceptable for that engine type during type testing, and it must be verified by an <strong>LR Surveyor</strong>. This means the overspeed setting is not arbitrary; it must trace back to the approved type-test basis.
+        </p>
+
+        <div class="callout warning">
+          <p>
+            For engines using low-pressure gas fuel, the document requires confirmation of <strong>low-pressure gas fuel pipe tightness</strong> before starting. This is an important safety prerequisite for DF/GF engines because low-pressure methane can still form a flammable mixture after leakage.
+          </p>
+        </div>
+
+        <h3>2. 11.2 General: general test requirements</h3>
+
+        <p>
+          This section requires tests carried out on the manufacturer’s test bed to be witnessed by the <strong>Surveyor</strong> and performed within the scope of <strong>11.3 Works trials</strong>. The test scope must be agreed between <strong>LR and the manufacturer</strong> before testing.
+        </p>
+
+        <ol class="timeline">
+          <li data-step="1">
+            <h4>Multiple engines of the same type may be accepted under quality assurance</h4>
+            <p>
+              Where multiple engines are of the same design and the manufacturer complies with <strong>QAM (Quality Assurance Scheme for Machinery)</strong>, acceptance may be carried out under the quality assurance approach.
+            </p>
+          </li>
+
+          <li data-step="2">
+            <h4>Run-in must be completed before formal testing</h4>
+            <p>
+              The document requires the engine to complete <strong>run-in</strong> in accordance with the manufacturer’s instructions before formal testing.
+            </p>
+          </li>
+
+          <li data-step="3">
+            <h4>The test bed and test fluids must be suitable</h4>
+            <p>
+              The test bed must be capable of providing the loads required by Table 2.11.1. Fluids such as fuel oil, lubricating oil, and cooling water must be clean and, where necessary, preheated to the recommended operating temperature.
+            </p>
+          </li>
+
+          <li data-step="4">
+            <h4>No machinery adjustment during acceptance testing</h4>
+            <p>
+              Clause 11.2.7 states that no intervention or adjustment may be made to the machinery under test during acceptance testing. This is a key principle of FAT.
+            </p>
+          </li>
+        </ol>
+
+        <h3>3. Surveyor inspection items</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Inspection item</th>
+                <th>Technical purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>High-pressure fuel pipe jacketing and leak detection</strong></td>
+                <td>Prevent high-pressure fuel spray from contacting hot surfaces and causing fire</td>
+              </tr>
+              <tr>
+                <td><strong>Shielding of flammable-liquid pipe joints</strong></td>
+                <td>Prevent leakage from joints from spraying onto hot surfaces</td>
+              </tr>
+              <tr>
+                <td><strong>Hot-surface insulation and temperature spot checks</strong></td>
+                <td>Verify whether fire-protection measures remain consistent with the type-test basis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <p>
+            Temperature spot checks of hot surfaces should be compared with the corresponding type-test data. If insulation arrangements have been modified after type approval, LR may require enhanced temperature measurement. This means <strong>design changes after type approval</strong> cannot be ignored.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-04">
+        <h2>4. Factory Acceptance Test Scope</h2>
+
+        <p class="lead">
+          The factory acceptance test can be understood as baseline performance verification before engine delivery. The focus is not simply whether the engine can start, but whether it can operate stably at rated power, short-time overload, partial loads, starting, stopping, and protection-function conditions according to its intended service. Different applications, such as main propulsion, generator engines, PTO generation, or mechanical auxiliaries, have different test loads and durations.
+        </p>
+
+        <div class="callout info">
+          <p>
+            <strong>Works trials</strong> verify design parameters, such as power, fire protection and fire-prevention arrangements,
+            approved limiting values, and functionality, while establishing baseline values for later operational reference.
+          </p>
+        </div>
+
+        <h3>1. Ambient conditions to be recorded during FAT</h3>
+
+        <div class="grid-3">
+          <div class="mini-card">
+            <h4>Ambient air temperature</h4>
+            <p>Ambient air temperature.</p>
+          </div>
+          <div class="mini-card">
+            <h4>Ambient air pressure</h4>
+            <p>Ambient air pressure.</p>
+          </div>
+          <div class="mini-card">
+            <h4>Atmospheric humidity</h4>
+            <p>Atmospheric humidity.</p>
+          </div>
+        </div>
+
+        <h3>2. Operating parameters to be recorded during FAT</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Parameter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Basic output</td>
+                <td><strong>Power and speed</strong></td>
+              </tr>
+              <tr>
+                <td>Fuel control</td>
+                <td><strong>Fuel index</strong>, including gas and fuel oil, or equivalent readings</td>
+              </tr>
+              <tr>
+                <td>Gas fuel</td>
+                <td>Gas pressure and temperature</td>
+              </tr>
+              <tr>
+                <td>Ignition / pilot fuel</td>
+                <td>Pilot fuel temperature and pressure, or common-rail pressure</td>
+              </tr>
+              <tr>
+                <td>Combustion condition</td>
+                <td>Maximum combustion pressure</td>
+              </tr>
+              <tr>
+                <td>Exhaust condition</td>
+                <td>Exhaust temperature before turbine, individual-cylinder exhaust temperature, or manifold temperature</td>
+              </tr>
+              <tr>
+                <td>Scavenge / charge air</td>
+                <td>Scavenge / charge air temperature and pressure</td>
+              </tr>
+              <tr>
+                <td>Turbocharger</td>
+                <td>Category B and Category C turbocharger speed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <p>
+            Measurements under all FAT conditions should be taken under <strong>steady operating conditions</strong>. For <strong>MCR / 100% power</strong>, readings must be taken at least twice, with an interval of not less than <strong>30 minutes</strong>. This is an important acceptance requirement under 11.3.5 for the FAT report and Surveyor witnessing.
+          </p>
+        </div>
+
+        <h3>3. Main propulsion engines driving propellers or waterjets</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Test condition</th>
+                <th>Duration</th>
+                <th>Focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>100% power at rated speed R</strong></td>
+                <td>>= 60 min</td>
+                <td>Verify MCR capability</td>
+              </tr>
+              <tr>
+                <td><strong>110% power at 1.032R</strong></td>
+                <td>15 min or until steady condition is reached</td>
+                <td>Verify short-time overload capability</td>
+              </tr>
+              <tr>
+                <td>Approved intermittent overload</td>
+                <td>To be agreed with the manufacturer</td>
+                <td>Only where approved</td>
+              </tr>
+              <tr>
+                <td>90%, 75%, 50%, and 25% power</td>
+                <td>No fixed duration specified</td>
+                <td>Engine speed according to the nominal propeller curve; test sequence selected by the manufacturer</td>
+              </tr>
+              <tr>
+                <td>Reversing operation</td>
+                <td>Where applicable</td>
+                <td>Applicable to reversible engines or relevant arrangements</td>
+              </tr>
+              <tr>
+                <td>Governor and independent overspeed protection</td>
+                <td>To be tested</td>
+                <td>Linked to control and monitoring requirements</td>
+              </tr>
+              <tr>
+                <td>Shutdown device</td>
+                <td>To be tested</td>
+                <td>Verify safe shutdown function</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout success">
+          <p>
+            <strong>1.032R</strong> is a useful engineering approximation for understanding the speed corresponding to <strong>110% power</strong>. For a fixed-pitch propeller, power is approximately proportional to the cube of speed, so 110% power corresponds to the cube root of 1.1, or about 1.032 times rated speed. Actual acceptance remains subject to the conditions specified in <strong>LR Table 2.11.1 / 2.11.2</strong>.
+          </p>
+        </div>
+
+        <h3>4. Generator engines</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Test condition</th>
+                <th>Duration</th>
+                <th>Focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% rated power at rated speed R</td>
+                <td>>= 60 min</td>
+                <td>Verify continuous rated output</td>
+              </tr>
+              <tr>
+                <td>110% power</td>
+                <td>15 min or until steady condition is reached</td>
+                <td>Verify transient governing and protection margin</td>
+              </tr>
+              <tr>
+                <td>75%, 50%, 25%, and idle speed</td>
+                <td>No fixed duration</td>
+                <td>Verify load-step performance</td>
+              </tr>
+              <tr>
+                <td>Starting test</td>
+                <td>To be carried out</td>
+                <td>Verify starting capability</td>
+              </tr>
+              <tr>
+                <td>Governor and overspeed protection</td>
+                <td>To be carried out</td>
+                <td>Important for power quality and safety</td>
+              </tr>
+              <tr>
+                <td>Shutdown device</td>
+                <td>To be carried out</td>
+                <td>Verify protection logic</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warning">
+          <p>
+            The 110% capability for generator engines differs from that of main engines. Its purpose is to provide <strong>transient governing margin</strong> so that electrical protection can operate before the engine stalls.
+          </p>
+        </div>
+
+        <h3>5. Propulsion engines for PTO generators and engines for mechanical auxiliaries</h3>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4><span class="badge teal">PTO</span> propulsion engine</h4>
+            <p>
+              Under a PTO arrangement, the engine carries both propulsion and generator branch loads. FAT therefore needs to confirm 100% engine power, 110% power, approved intermittent overload, and 90%, 75%, 50%, and 25% part loads.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4><span class="badge blue">Auxiliary</span> mechanical auxiliary</h4>
+            <p>
+              Mechanical auxiliaries include pumps, compressors, or other mechanically driven equipment not used for generation. Their FAT requirement is relatively shorter: 100% rated power at rated speed R for >= 30 minutes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-05">
+        <h2>5. Special FAT Requirements for DF/GF Engines</h2>
+
+        <p class="lead">
+          <strong>GF only engines</strong> and <strong>DF engines</strong> using <strong>low-pressure methane</strong> require integration testing to verify correct operation of mechanical, hydraulic, and electronic systems in all intended operating modes.
+        </p>
+
+        <div class="grid-3">
+          <div class="mini-card">
+            <h4>Fuel-oil mode and gas mode</h4>
+            <p>
+              DF engines using low-pressure methane should be tested, as applicable, in both <strong>fuel-oil mode</strong> and <strong>gas mode</strong>.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Methane Number</h4>
+            <p>
+              Where applicable, the document requires the <strong>gas methane number</strong> to be recorded and requires demonstration that the engine can achieve the declared power at that methane number.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Scope of integration testing</h4>
+            <p>
+              The scope covers <strong>GF only</strong> engines and <strong>DF</strong> engines using low-pressure methane; testing must cover all intended operating modes.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout danger">
+          <p>
+            It is not sufficient to complete all FAT items in diesel mode and then claim dual-fuel performance is acceptable. Maximum available power in gas mode, combustion stability, methane-number effects, and control logic must all be verified.
+          </p>
+        </div>
+
+        <h3>Gas-fuel fault-scenario test items</h3>
+
+        <ul class="checklist two-col">
+          <li>Ignition failure, such as spark ignition or pilot injection failure</li>
+          <li>Failure of one cylinder unit</li>
+          <li>Gas admission valve failure</li>
+          <li>Combustion failure, such as misfiring, knocking, or exhaust-temperature deviation</li>
+          <li>Abnormal gas pressure</li>
+          <li>Abnormal gas temperature</li>
+        </ul>
+
+        <div class="callout info">
+          <p>
+            These tests may be carried out by simulation or other alternative means, subject to special consideration and agreement by LR.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-06">
+        <h2>6. Requirements for Electronically Controlled Engines</h2>
+
+        <p class="lead">
+          For <strong>electronically controlled engines</strong>, the document requires FAT, integration testing, engine configuration verification, a software quality plan, and software configuration management procedures.
+        </p>
+
+        <ol class="timeline">
+          <li data-step="1">
+            <h4>Carry out FAT according to submission requirements</h4>
+            <p>In accordance with LR Rules Pt 5, Ch 2, 1.4 Submission requirements 1.4.3, electronically controlled engines require submission of FAT-related test data and verification arrangements.</p>
+          </li>
+
+          <li data-step="2">
+            <h4>Integration testing</h4>
+            <p>
+              Confirm that the mechanical, hydraulic, and electronic systems respond as intended in all operating modes.
+            </p>
+          </li>
+
+          <li data-step="3">
+            <h4>Verify engine configuration</h4>
+            <p>Confirm that the actual engine configuration matches the approved documents.</p>
+          </li>
+
+          <li data-step="4">
+            <h4>Confirm software quality and configuration management</h4>
+            <p>
+              Confirm that the approved software quality plan and software configuration management procedures have been implemented.
+            </p>
+          </li>
+        </ol>
+
+        <div class="callout warning">
+          <p>
+            Acceptance of modern marine engines is no longer limited to mechanical performance testing. It also includes <strong>control engineering systems</strong> and <strong>software configuration management</strong>. If the software version, control parameters, or safety logic do not match the approved documents, it may become a class review issue even if the engine itself runs normally.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-07">
+        <h2>7. 11.4 Shipboard Trials Explained</h2>
+
+        <p class="lead">
+          The purpose of shipboard trials is to verify the integration of the engine with the power transmission system, driven machinery, safety systems, control systems, auxiliary systems, engine control systems, and shipboard control systems, as well as items not already covered during FAT.
+        </p>
+
+        <div class="callout info">
+          <p>
+            Shipboard trials are not a repeat of FAT. They confirm that the engine, once installed onboard, works properly and safely under real system boundary conditions.
+          </p>
+        </div>
+
+        <h3>1. Main engines with fixed-pitch propellers or waterjets</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Shipboard test condition</th>
+                <th>Duration</th>
+                <th>Technical meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rated engine speed R</td>
+                <td>At least 4 hours</td>
+                <td>Condition for main engines with fixed-pitch propellers or waterjets; this should not be simplified as 100% MCR power for 4 hours</td>
+              </tr>
+              <tr>
+                <td>Speed corresponding to 1.032R</td>
+                <td>30 min</td>
+                <td>Verify overload / high-speed capability where permitted by engine adjustment</td>
+              </tr>
+              <tr>
+                <td>Approved intermittent overload</td>
+                <td>As agreed</td>
+                <td>Only where approved</td>
+              </tr>
+              <tr>
+                <td>Minimum engine speed</td>
+                <td>To be confirmed</td>
+                <td>Relevant to low-speed manoeuvring capability</td>
+              </tr>
+              <tr>
+                <td>Starting and reversing operation</td>
+                <td>To be demonstrated</td>
+                <td>Verify starting air and reversing capability</td>
+              </tr>
+              <tr>
+                <td>Opposite propeller rotation direction</td>
+                <td>10 min</td>
+                <td>Verify astern or reverse-running capability</td>
+              </tr>
+              <tr>
+                <td>Control, monitoring, alarm, and safety systems</td>
+                <td>To be demonstrated</td>
+                <td>Verify shipboard installation and settings</td>
+              </tr>
+              <tr>
+                <td>Ability to pass through the barred speed range</td>
+                <td>Where applicable</td>
+                <td>Verify safe passage through the barred speed range</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>2. Main engines with controllable-pitch propellers (CPP)</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Shipboard test condition</th>
+                <th>Duration</th>
+                <th>Focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% power</td>
+                <td>>= 4 hours</td>
+                <td>Verify matching of the main engine and CPP at MCR condition</td>
+              </tr>
+              <tr>
+                <td>Approved intermittent overload</td>
+                <td>As agreed</td>
+                <td>Applicable where approved</td>
+              </tr>
+              <tr>
+                <td>Astern pitch manoeuvring</td>
+                <td>To be demonstrated</td>
+                <td>Verify manoeuvring capability</td>
+              </tr>
+              <tr>
+                <td>Control, monitoring, alarm, and safety systems</td>
+                <td>To be demonstrated</td>
+                <td>Verify integration</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout success">
+          <p>
+            CPP installations need to be tested at different pitches. The 100% power test should be carried out at rated speed R using the pitch corresponding to MCR; if 100% cannot be achieved, the test is carried out at the maximum achievable power.
+          </p>
+        </div>
+
+        <h3>3. Generator engines</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Shipboard test condition</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% rated generator electrical power</td>
+                <td>>= 60 min</td>
+              </tr>
+              <tr>
+                <td>110% rated generator electrical power</td>
+                <td>>= 10 min</td>
+              </tr>
+              <tr>
+                <td>Starting operation</td>
+                <td>To be demonstrated</td>
+              </tr>
+              <tr>
+                <td>Control, monitoring, alarm, and safety systems</td>
+                <td>To be demonstrated</td>
+              </tr>
+              <tr>
+                <td>Governor capability to withstand load steps</td>
+                <td>To be demonstrated</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <p>
+            For generator engines, shipboard trials are usually based on the <strong>rated electrical power of the generator</strong>. For <strong>electrical propulsion</strong> arrangements, the rated electrical power requirements of the <strong>electric propulsion motors</strong> must also be considered in accordance with the LR table notes; it is not sufficient to refer only to the generator rating.
+          </p>
+        </div>
+
+        <h3>4. Propulsion engines for PTO generators</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Shipboard test condition</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% engine power MCR at corresponding speed R</td>
+                <td>>= 4 hours</td>
+              </tr>
+              <tr>
+                <td>100% propeller branch power at speed R</td>
+                <td>2 hours</td>
+              </tr>
+              <tr>
+                <td>100% PTO branch power at speed R</td>
+                <td>>= 1 hour</td>
+              </tr>
+              <tr>
+                <td>Control, monitoring, alarm, and safety systems</td>
+                <td>To be demonstrated</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5. Engines for mechanical auxiliaries</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Shipboard test condition</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% engine power MCR at corresponding speed R</td>
+                <td>>= 30 min</td>
+              </tr>
+              <tr>
+                <td>Approved intermittent overload</td>
+                <td>For the approved duration</td>
+              </tr>
+              <tr>
+                <td>Control, monitoring, alarm, and safety systems</td>
+                <td>To be demonstrated</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>6. DF/GF engine shipboard trial focus</h3>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4>Gas pipe leakage and double-wall pipe ventilation verification</h4>
+            <p>
+              After the engine is installed onboard, the gas piping system must undergo leakage testing, and the efficiency of the ventilation arrangement for double-wall gas piping must be verified.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>All applicable operating modes must be tested</h4>
+            <p>
+              DF engine test loads must be run in all applicable operating modes, including gas mode, diesel mode, and any other applicable modes.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Automatic changeover to fuel-oil mode</h4>
+            <p>
+              If the gas fuel system becomes abnormal, it should reliably change back to fuel-oil mode to avoid engine stall or interruption of propulsion / power generation.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Manual fuel changeover</h4>
+            <p>
+              Test manual changeover from diesel mode to gas mode and from gas mode back to diesel mode.
+            </p>
+          </div>
+        </div>
+
+        <h3>7. Barred Speed Range</h3>
+
+        <div class="callout warning">
+          <p>
+            The barred speed range is usually related to <strong>torsional vibration</strong> or shafting resonance. The vessel is not prohibited from passing through the range; it must not remain there for an extended time. Therefore, the control system must allow the main engine to pass through the range safely, quickly, and controllably.
+          </p>
+        </div>
+
+        <ul class="checklist two-col">
+          <li>Both manual and automatic control systems must demonstrate acceleration and deceleration through the barred speed range</li>
+          <li>The passing time must be equal to or less than the time in the approved documents</li>
+          <li>The passing time must be recorded</li>
+          <li>Also applicable when reversing direction, especially during stopping trials</li>
+          <li>Vessel draught and speed must be recorded during demonstration</li>
+          <li>If fitted with CPP, pitch must also be recorded</li>
+          <li>The engine must run steadily at the upper and lower limits of the barred speed range</li>
+          <li>Oscillation of the steady fuel index must be less than 5% of the effective stroke</li>
+        </ul>
+      </section>
+
+      <section class="section-card" id="sec-08">
+        <h2>8. Key Terms and Definitions</h2>
+
+        <p class="lead">
+          The following table summarises the professional terms, abbreviations, symbols, and meanings used in the document.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>English</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>FAT</strong></td>
+                <td>Factory Acceptance Test</td>
+                <td>Factory acceptance test carried out on the manufacturer’s test bed to verify engine performance and safety functions</td>
+              </tr>
+              <tr>
+                <td><strong>Shipboard trials</strong></td>
+                <td>Shipboard trials</td>
+                <td>Shipboard trials verifying integration between the installed engine and ship systems</td>
+              </tr>
+              <tr>
+                <td><strong>MCR</strong></td>
+                <td>Maximum Continuous Rating</td>
+                <td>Maximum continuous rating; the approved maximum power at which the engine can run continuously</td>
+              </tr>
+              <tr>
+                <td><strong>R</strong></td>
+                <td>Rated engine speed</td>
+                <td>Rated speed</td>
+              </tr>
+              <tr>
+                <td><strong>1.032R</strong></td>
+                <td>Speed corresponding to 110% power</td>
+                <td>Engineering approximation for understanding the speed corresponding to 110% power; actual acceptance is based on LR Table 2.11.1 / 2.11.2</td>
+              </tr>
+              <tr>
+                <td><strong>DF engine</strong></td>
+                <td>Dual Fuel engine</td>
+                <td>Dual-fuel engine, normally capable of using fuel oil and gas fuel</td>
+              </tr>
+              <tr>
+                <td><strong>GF engine</strong></td>
+                <td>Gas Fuel engine</td>
+                <td>Gas-fuel engine</td>
+              </tr>
+              <tr>
+                <td><strong>PTO</strong></td>
+                <td>Power Take Off</td>
+                <td>Power take-off from the main engine for generation or other driven equipment</td>
+              </tr>
+              <tr>
+                <td><strong>CPP</strong></td>
+                <td>Controllable Pitch Propeller</td>
+                <td>Controllable-pitch propeller</td>
+              </tr>
+              <tr>
+                <td><strong>FPP</strong></td>
+                <td>Fixed Pitch Propeller</td>
+                <td>Fixed-pitch propeller</td>
+              </tr>
+              <tr>
+                <td><strong>Fuel index</strong></td>
+                <td>Fuel index</td>
+                <td>Fuel-oil / gas-fuel control indicator that can reflect load and fuel delivery</td>
+              </tr>
+              <tr>
+                <td><strong>Methane Number</strong></td>
+                <td>Methane Number</td>
+                <td>Methane number, indicating knock resistance of gas fuel</td>
+              </tr>
+              <tr>
+                <td><strong>Pilot fuel</strong></td>
+                <td>Pilot fuel</td>
+                <td>Pilot fuel used for ignition in gas mode on DF engines</td>
+              </tr>
+              <tr>
+                <td><strong>Common rail</strong></td>
+                <td>Common rail</td>
+                <td>Common-rail system for high-pressure fuel supply and electronically controlled injection</td>
+              </tr>
+              <tr>
+                <td><strong>Barred speed range</strong></td>
+                <td>Barred speed range</td>
+                <td>Barred speed range, usually related to torsional vibration or resonance risk</td>
+              </tr>
+              <tr>
+                <td><strong>Overspeed protection</strong></td>
+                <td>Overspeed protection</td>
+                <td>Overspeed protection preventing engine speed from exceeding safe limits</td>
+              </tr>
+              <tr>
+                <td><strong>Shutdown device</strong></td>
+                <td>Shutdown device</td>
+                <td>Shutdown device that stops the engine under dangerous conditions</td>
+              </tr>
+              <tr>
+                <td><strong>Crankshaft deflection</strong></td>
+                <td>Crankshaft deflection</td>
+                <td>Crankshaft deflection, used to assess crankshaft and main-bearing alignment</td>
+              </tr>
+              <tr>
+                <td><strong>QAM</strong></td>
+                <td>Quality Assurance Scheme for Machinery</td>
+                <td>LR Quality Assurance Scheme for Machinery</td>
+              </tr>
+              <tr>
+                <td><strong>Surveyor</strong></td>
+                <td>LR Surveyor</td>
+                <td>LR Surveyor responsible for witnessing, confirming, and accepting tests</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-09">
+        <h2>9. Technical and Regulatory Implications</h2>
+
+        <p class="lead">
+          The following points summarise how these requirements affect ship design, construction, survey, operation, safety, and compliance.
+        </p>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4>FAT establishes the baseline for class acceptance</h4>
+            <p>
+              The focus of FAT is to confirm that the engine itself achieves approved performance in a controlled environment and to establish baseline data for future operational comparison.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Shipboard trials verify system integration</h4>
+            <p>
+              Shipboard trials focus on how the engine works with the actual ship systems, including propulsion, power generation, control, alarms, safety, gas fuel piping, and ventilation.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>DF/GF engines require higher risk-control attention</h4>
+            <p>
+              The main risks of gas-fuel engines are not only insufficient power, but also flammable gas leakage, abnormal combustion, and control failure.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Electronic control and software are now class review items</h4>
+            <p>
+              Electronically controlled engines must verify the software quality plan, software configuration management, and engine configuration.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout warning">
+          <p>
+            Exhaust emission testing must be carried out in accordance with the applicable <strong>MARPOL (International Convention for the Prevention of Pollution from Ships)</strong> requirements. This means LR class tests and statutory emission requirements may apply at the same time.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-10">
+        <h2>10. Practical Use and Common Pitfalls</h2>
+
+        <p class="lead">
+          This chapter summarises how the requirements may be used by shipyards, class review teams, shipowners, operations managers, port State control, or examination preparation, and highlights common misunderstandings and limitations.
+        </p>
+
+        <h3>1. For engine manufacturers</h3>
+
+        <ul class="checklist two-col">
+          <li>Test procedures agreed by LR</li>
+          <li>Evidence of test-bed load capability</li>
+          <li>Instrument calibration records</li>
+          <li>Run-in records</li>
+          <li>Ambient-condition record sheet</li>
+          <li>Operating-parameter record sheet</li>
+          <li>Safety-protection function test plan</li>
+          <li>Fuel-mode test matrix for DF/GF engines</li>
+          <li>Acceptance protocol / acceptance report</li>
+        </ul>
+
+        <h3>2. For shipyards</h3>
+
+        <ul class="checklist two-col">
+          <li>Main engine, shafting, propeller, or waterjet installation completed</li>
+          <li>Fuel oil, lubricating oil, cooling water, and starting air systems available</li>
+          <li>Gas fuel piping leakage test completed</li>
+          <li>Ventilation efficiency of double-wall gas pipes can be demonstrated</li>
+          <li>Control, monitoring, alarm, and safety systems configured</li>
+          <li>Shipboard trial conditions can achieve the required power and speed</li>
+          <li>Vessel draught, speed, and CPP pitch can be recorded</li>
+          <li>LR Surveyor has agreed the test scope</li>
+        </ul>
+
+        <h3>3. For class review and Surveyors</h3>
+
+        <ul class="checklist two-col">
+          <li>Whether the test scope complies with Table 2.11.1 or Table 2.11.2</li>
+          <li>Whether the overspeed protection setting does not exceed the type-test proven value</li>
+          <li>Whether high-pressure fuel pipe protection is complete</li>
+          <li>Whether hot-surface insulation is effective</li>
+          <li>Whether steady condition is reached during testing</li>
+          <li>Whether MCR / 100% power readings are taken at least twice with an interval of not less than 30 min</li>
+          <li>Whether DF/GF engines complete all applicable mode tests</li>
+          <li>Whether control, alarm, and safety functions operate correctly</li>
+          <li>Whether the barred speed range can be passed through safely</li>
+        </ul>
+
+        <h3>4. Common misunderstandings and points to note</h3>
+
+        <div class="faq">
+          <details open>
+            <summary>FAT and shipboard trials have different purposes</summary>
+            <p>
+              <strong>FAT verifies the engine itself.</strong>
+              <strong>Shipboard trials verify the integration of the engine with ship systems.</strong>
+              A successful FAT does not mean shipboard trials can be omitted, and shipboard trials cannot fully replace FAT unless LR agrees to an equivalent alternative scope.
+            </p>
+          </details>
+
+          <details>
+            <summary>100% power and 110% power should not be confused</summary>
+            <p>
+              100% power normally corresponds to <strong>MCR / rated power</strong>,
+              whereas 110% power is a short-time overload or transient-margin verification. Their purpose, duration, and limits of application are different.
+            </p>
+          </details>
+
+          <details>
+            <summary>DF engines are not tested only in diesel mode</summary>
+            <p>
+              The document allows part of the 110% test to be demonstrated in diesel mode, but DF engines still need load testing in gas mode where required, and shipboard trials must be carried out in all applicable operating modes.
+            </p>
+          </details>
+
+          <details>
+            <summary>Methane number must be recorded</summary>
+            <p>
+              Gas-mode power cannot be separated from fuel quality. The document requires the methane number to be recorded and requires demonstration that the engine can achieve declared power at that methane number.
+            </p>
+          </details>
+
+          <details>
+            <summary>No adjustment during acceptance testing</summary>
+            <p>
+              The “no intervention or adjustment” requirement in 11.2.7 is critical. If fuel settings, control parameters, or mechanical conditions are changed during testing, the acceptance value of the test data is affected.
+            </p>
+          </details>
+
+          <details>
+            <summary>The barred speed range is not just a mark on a drawing</summary>
+            <p>
+              The vessel must demonstrate acceleration and deceleration through the barred speed range and record passing time, ship speed, draught, and CPP pitch where necessary. This is an important onboard verification of shafting vibration safety.
+            </p>
+          </details>
+
+          <details>
+            <summary>Electronically controlled engines require software version control</summary>
+            <p>
+              The software quality plan and configuration management of electronically controlled engines form part of class requirements. In practice, controller software versions, parameter settings, and safety logic should all be traceable.
+            </p>
+          </details>
+        </div>
+
+        <div class="callout danger">
+          <p>
+            This note is based on the LR 2025 document content you provided. Class rules, IMO conventions, MARPOL, and authority requirements may change. For actual design, plan approval, trials, and delivery, always rely on the latest official LR Rules, class review comments, authority requirements, and contractual technical specifications.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-11">
+        <h2>11. Summary and Review Points</h2>
+
+        <p class="lead">
+          The following points are the most useful items from this section for exam review and quick engineering reference.
+        </p>
+
+        <ul class="checklist two-col">
+          <li>This section governs FAT (factory acceptance test) and shipboard trials for marine reciprocating internal combustion engines.</li>
+          <li>The core purpose of FAT is to verify engine performance, safety functions, design limiting values, and baseline data.</li>
+          <li>The core purpose of shipboard trials is to verify integration between the engine and propulsion, generation, control, alarm, safety, fuel, and auxiliary systems.</li>
+          <li>Before testing, safety equipment must be confirmed available, including crankcase explosion protection, overspeed protection, and shutdown functions.</li>
+          <li>The overspeed protection setting must not exceed the overspeed value proven by type testing and must be verified by an LR Surveyor.</li>
+          <li>FAT must record ambient conditions, power, speed, fuel index, gas pressure and temperature, pilot fuel pressure, maximum combustion pressure, exhaust temperature, charge-air parameters, and turbocharger speed where required. Measurements should be taken under steady operating conditions, and MCR / 100% power readings must be taken at least twice with an interval of not less than 30 min.</li>
+          <li>Main propulsion engine FAT normally requires 100% power for >= 60 min. Shipboard trials for main engines must be interpreted by propulsion type: fixed-pitch propeller or waterjet arrangements use rated engine speed R for at least 4 hours, while CPP arrangements use 100% power for >= 4 hours.</li>
+          <li>Generator engines must verify 100% and 110% rated electrical power and confirm governor capability to withstand load steps. For electrical propulsion arrangements, the rated electrical power requirements of the electric propulsion motors must also be considered.</li>
+          <li>DF/GF engines require particular verification of gas mode, diesel mode, fuel changeover, methane number, gas pipe tightness, and double-wall pipe ventilation efficiency.</li>
+          <li>Electronically controlled engines must verify correct integration of mechanical, hydraulic, electronic, and software configuration management aspects.</li>
+          <li>The barred speed range must be safely demonstrated onboard, with passing time, ship speed, draught, and CPP pitch recorded where necessary.</li>
+          <li>Exhaust emission testing must still follow applicable MARPOL requirements; class machinery performance testing alone is not sufficient.</li>
+        </ul>
+
+        <div class="callout success">
+          <p>
+            Quick memory aid: <strong>FAT checks the engine itself; shipboard trials check system integration; DF/GF engines require fuel-mode and gas-safety verification; electronically controlled engines also require software and configuration management.</strong>
+          </p>
+        </div>
+
+      </section>
+
+    </article>
+  </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.en.html"
+      data-share-title="LR-RU-001 Engine FAT and Shipboard Trials Requirements | Reay's Note"
+      data-share-email-body="I found this note on Reay's Maritime Notes and thought it may be useful for you:&#10;&#10;LR-RU-001 Engine FAT and Shipboard Trials Requirements | Reay's Note&#10;https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.en.html"
+      data-share-copy="Copy link"
+      data-share-copied="Copied"
+      data-toast-copied="Link copied to clipboard"
+    >
+      <p class="article-share__label" id="share-end-label">Found it useful? Share it with a colleague</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      const nav = document.querySelector('.toc');
+      const links = Array.from(document.querySelectorAll('.toc a[href^="#sec-"]'));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+      if (!nav || !links.length || !sections.length) return;
+
+      const navList = nav.querySelector('ol');
+      let activeId = '';
+      let ticking = false;
+
+      const keepActiveLinkVisible = (link) => {
+        if (!navList || !link) return;
+
+        const listRect = navList.getBoundingClientRect();
+        const linkRect = link.getBoundingClientRect();
+        const edgePadding = 18;
+        const isLeftHidden = linkRect.left < listRect.left + edgePadding;
+        const isRightHidden = linkRect.right > listRect.right - edgePadding;
+
+        if (!isLeftHidden && !isRightHidden) return;
+
+        const targetLeft = link.offsetLeft + link.offsetWidth / 2 - navList.clientWidth / 2;
+        navList.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: 'auto'
+        });
+      };
+
+      const setActive = (id) => {
+        if (!id || id === activeId) return;
+        activeId = id;
+        let activeLink = null;
+
+        links.forEach((link) => {
+          const isActive = link.getAttribute('href') === `#${id}`;
+          link.classList.toggle('is-active', isActive);
+          if (isActive) activeLink = link;
+        });
+
+        keepActiveLinkVisible(activeLink);
+      };
+
+      const updateActive = () => {
+        ticking = false;
+        const offset = nav.getBoundingClientRect().height + 28;
+        let current = sections[0].id;
+
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top - offset <= 0) {
+            current = section.id;
+          }
+        }
+
+        setActive(current);
+      };
+
+      const requestUpdate = () => {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(updateActive);
+        }
+      };
+
+      links.forEach((link) => {
+        link.addEventListener('click', () => setActive(link.getAttribute('href').slice(1)));
+      });
+
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate);
+      window.addEventListener('hashchange', requestUpdate);
+      updateActive();
+    })();
+  </script>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>LR-RU-001 Engine FAT and Shipboard Trials Requirements | Reay's Note</strong>
+      <span class="small">Prepared by Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        This page is a visual learning note for study, internal training, and survey preparation. It does not represent the official position of Lloyd's Register, IMO, or any other organisation; <span class="disclaimer-tail">actual design, class review, works trial / shipboard trial witnessing, delivery, and operational compliance should always be based on the latest official LR Rules (LR-RU-001), IMO conventions, MARPOL, flag State requirements, and project-specific class review comments.</span>
+      </p>
+      <div class="footer-sources small">
+        <p class="footer-sources__title">References / Source notes</p>
+        <ul class="source-list">
+          <li>Lloyd's Register — Rules and Regulations for the Classification of Ships, July 2025 (LR-RU-001), Part 5 Main and Auxiliary Machinery, Chapter 2 Reciprocating Internal Combustion Engines, Section 11</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

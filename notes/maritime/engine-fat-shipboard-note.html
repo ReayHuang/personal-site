@@ -1,0 +1,2460 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="LR-RU-001, FAT, factory acceptance test, shipboard trials, 船上試俥, 廠試, reciprocating internal combustion engines, MCR, DF engine, GF engine, Lloyd's Register">
+  <meta property="og:title" content="LR-RU-001 引擎廠試與船上試俥要求｜Reay's Note">
+  <meta property="og:description" content="解析 LR-RU-001 Part 5 Ch 2 Section 11 往復式內燃機 FAT 工廠驗收試驗與 Shipboard trials 船上試俥要求，涵蓋試驗範圍、DF／GF 引擎、電子控制與實務查核重點。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.html">
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/engine-fat-shipboard-note/engine-fat-shipboard-note-link-preview-1200.png">
+  <meta property="og:image:alt" content="LR 船級規範：引擎廠試與船上試俥要求 — Reay Huang Maritime Notes">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LR-RU-001 引擎廠試與船上試俥要求｜Reay's Note">
+  <meta name="twitter:description" content="解析 LR-RU-001 Part 5 Ch 2 Section 11 往復式內燃機 FAT 工廠驗收試驗與 Shipboard trials 船上試俥要求，涵蓋試驗範圍、DF／GF 引擎、電子控制與實務查核重點。">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/engine-fat-shipboard-note/engine-fat-shipboard-note-link-preview-1200.png">
+  <link rel="alternate" hreflang="zh-Hant" href="engine-fat-shipboard-note.html">
+  <link rel="alternate" hreflang="en" href="engine-fat-shipboard-note.en.html">
+  <link rel="alternate" hreflang="x-default" href="engine-fat-shipboard-note.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="解析 LR-RU-001 Part 5 Ch 2 Section 11 往復式內燃機 FAT 工廠驗收試驗與 Shipboard trials 船上試俥要求，涵蓋試驗範圍、DF／GF 引擎、電子控制與實務查核重點。">
+  <title>LR-RU-001 引擎廠試與船上試俥要求｜Reay's Note</title>
+
+  <style>
+    :root{
+      --navy:#0b1f3a;
+      --navy-2:#12345a;
+      --blue:#1e63b6;
+      --cyan:#1aa6a6;
+      --teal:#17a398;
+      --sky:#eaf4ff;
+      --bg:#eef4f8;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#64748b;
+      --line:#d9e4ef;
+      --yellow:#fff7d6;
+      --yellow-border:#f2c94c;
+      --red:#fff0f0;
+      --red-border:#ef5350;
+      --green:#ecfdf5;
+      --green-border:#22c55e;
+      --blue-soft:#eef6ff;
+      --blue-border:#3b82f6;
+      --shadow:0 16px 40px rgba(15, 23, 42, .08);
+      --radius:22px;
+      --page-max:1180px;
+      --page-gutter:22px;
+      --card-pad:30px;
+      --font-sans:"Source Sans Pro", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font-sans);
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(26,166,166,.12), transparent 36rem),
+        linear-gradient(180deg,#f8fbff 0%,var(--bg) 100%);
+      line-height:1.75;
+    }
+
+    .note-site-bar{
+      font-family:var(--font-sans);
+    }
+
+    a{color:inherit;text-decoration:none}
+    strong{color:var(--navy)}
+    code{
+      padding:.1rem .35rem;
+      border-radius:.4rem;
+      background:#eef2f7;
+      color:#0f3f66;
+      font-family:"SFMono-Regular",Consolas,monospace;
+      font-size:.92em;
+    }
+
+    .hero{
+      width:100%;
+      color:#fff;
+      background:
+        linear-gradient(90deg, rgba(7,22,45,.96) 0%, rgba(13,58,101,.86) 46%, rgba(20,126,133,.48) 100%),
+        url("../../assets/images/maritime/engine-fat-shipboard-note/engine-fat-shipboard-hero.png") center right / cover no-repeat,
+        linear-gradient(135deg, rgba(7,22,45,.96), rgba(13,58,101,.95) 52%, rgba(20,126,133,.92));
+      padding:56px 22px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero::after{
+      content:none;
+      display:none;
+    }
+
+    .hero-inner{
+      max-width:var(--page-max);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      gap:36px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-copy{
+      padding-inline:var(--card-pad);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.38rem .72rem;
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      backdrop-filter:blur(12px);
+      font-weight:700;
+      font-size:.88rem;
+      letter-spacing:.08em;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:.55rem;
+      height:.55rem;
+      border-radius:999px;
+      background:#3ff0dc;
+      box-shadow:0 0 0 5px rgba(63,240,220,.14);
+    }
+
+    .hero h1{
+      margin:22px 0 14px;
+      font-size:clamp(2rem,4vw,4.2rem);
+      line-height:1.12;
+      letter-spacing:-.04em;
+    }
+
+    .hero .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:0 0 22px;
+      color:#dbeafe;
+      font-size:.95rem;
+    }
+
+    .hero .meta span{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      padding:.3rem .68rem;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+    }
+
+    .hero p:not(.article-share__label):not(.article-meta){
+      max-width:780px;
+      margin:0;
+      color:#e8f2ff;
+      font-size:1.08rem;
+    }
+
+    .hero .article-meta{
+      margin:14px 0 18px;
+      max-width:780px;
+      font-size:14px;
+      font-weight:500;
+      line-height:1.5;
+    }
+
+    .hero .article-share--hero{
+      margin-top:22px;
+    }
+
+    .hero .article-share__label{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.04em;
+      line-height:1;
+    }
+
+    .share-band{
+      max-width:var(--page-max);
+      margin:0 auto;
+      padding:16px var(--card-pad) 32px;
+      border:none;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+      scroll-margin-top:0;
+    }
+
+    .share-band::before{
+      content:none;
+      display:none;
+    }
+
+    .share-band .article-share__label{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.04em;
+      line-height:1;
+    }
+
+    .share-band .article-share--end{
+      margin:0;
+    }
+
+    .site-footer{
+      background:#061b22;
+      color:rgba(255,255,255,.82);
+      padding:36px 0 44px;
+      font-size:14px;
+      line-height:1.7;
+      text-align:left;
+      margin-top:0;
+    }
+
+    .site-footer .container{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 22px;
+    }
+
+    .site-footer strong{
+      color:#fff;
+    }
+
+    .site-footer a{
+      color:#8ffff2;
+    }
+
+    .site-footer .disclaimer{
+      margin:14px 0 0;
+      color:rgba(255,255,255,.62);
+      max-width:760px;
+    }
+
+    .site-footer .small{
+      font-size:13px;
+    }
+
+    .site-footer .footer-sources{
+      margin:18px 0 0;
+      max-width:980px;
+    }
+
+    .site-footer .footer-sources__title{
+      margin:0 0 8px;
+      color:rgba(255,255,255,.82);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .site-footer .source-list{
+      margin:0;
+      padding-left:1.2rem;
+      line-height:1.5;
+    }
+
+    .site-footer .source-list li{
+      color:rgba(255,255,255,.62);
+    }
+
+    @media print{
+      .note-site-bar,
+      .article-share,
+      .share-band{
+        display:none !important;
+      }
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      padding:.72rem 1rem;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.82);
+      background:#ffffff;
+      color:var(--navy);
+      box-shadow:0 12px 30px rgba(0,0,0,.18);
+      transition:.2s ease;
+    }
+
+    .btn.primary,
+    .btn.ghost{
+      background:#ffffff;
+      color:var(--navy);
+      border-color:rgba(255,255,255,.82);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 34px rgba(0,0,0,.18);
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:22px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:.28rem .62rem;
+      border-radius:999px;
+      font-size:.84rem;
+      font-weight:700;
+      color:#eaffff;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.1);
+    }
+
+    .hero-visual{
+      min-height:390px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:32px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.08)),
+        rgba(255,255,255,.06);
+      backdrop-filter:blur(16px);
+      box-shadow:0 20px 60px rgba(0,0,0,.2);
+      padding:24px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-visual::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:999px;
+      background:rgba(63,240,220,.16);
+      right:-80px;
+      top:-70px;
+    }
+
+    .engine-card{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:24px;
+      padding:20px;
+    }
+
+    .engine-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+    }
+
+    .flow{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .flow-step{
+      display:grid;
+      grid-template-columns:46px 1fr;
+      gap:12px;
+      align-items:center;
+      padding:14px;
+      border-radius:18px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .flow-step b{
+      display:grid;
+      place-items:center;
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      color:var(--navy);
+      background:#9ff7ed;
+    }
+
+    .flow-step span{
+      color:#eaf8ff;
+      font-weight:700;
+    }
+
+    .stat-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .stat{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .stat .num{
+      display:block;
+      font-size:1.7rem;
+      font-weight:900;
+      color:#9ff7ed;
+      line-height:1.1;
+    }
+
+    .stat .label{
+      display:block;
+      color:#eaf8ff;
+      font-size:.88rem;
+      margin-top:4px;
+    }
+
+    .page-shell{
+      max-width:var(--page-max);
+      margin:34px auto 70px;
+      padding:0;
+      display:grid;
+      grid-template-columns:280px minmax(0,1fr);
+      gap:26px;
+      align-items:start;
+    }
+
+    .page-shell > *,
+    .toc,
+    .toc *{
+      min-width:0;
+    }
+
+    .toc{
+      position:sticky;
+      top:18px;
+      background:rgba(255,255,255,.86);
+      backdrop-filter:blur(16px);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+      max-height:calc(100vh - 36px);
+      overflow:auto;
+    }
+
+    .toc-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin:0 0 12px;
+      padding-bottom:12px;
+      border-bottom:1px solid var(--line);
+      color:var(--navy);
+      font-weight:900;
+    }
+
+    .toc ol{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:6px;
+      counter-reset:toc;
+    }
+
+    .toc a{
+      display:grid;
+      grid-template-columns:28px 1fr;
+      gap:8px;
+      align-items:start;
+      padding:9px 10px;
+      border-radius:12px;
+      color:#334155;
+      font-size:.92rem;
+      font-weight:700;
+    }
+
+    .toc a::before{
+      counter-increment:toc;
+      content:counter(toc, decimal-leading-zero);
+      display:grid;
+      place-items:center;
+      height:24px;
+      border-radius:8px;
+      color:#0f4b73;
+      background:#e5f6ff;
+      font-size:.72rem;
+      font-weight:900;
+    }
+
+    .toc a:hover{
+      background:#eef6ff;
+      color:var(--navy);
+    }
+
+    .content{
+      display:grid;
+      gap:26px;
+      min-width:0;
+    }
+
+    .section-card{
+      min-width:0;
+      overflow-wrap:anywhere;
+      word-break:normal;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:var(--card-pad);
+      scroll-margin-top:28px;
+    }
+
+    .section-card h2{
+      position:relative;
+      margin:0 0 18px;
+      padding-bottom:14px;
+      color:var(--navy);
+      font-size:clamp(1.45rem,2.2vw,2rem);
+      line-height:1.25;
+      letter-spacing:-.02em;
+    }
+
+    .section-card h2::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:84px;
+      height:4px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--blue),var(--cyan));
+    }
+
+    .section-card h3{
+      margin:28px 0 12px;
+      color:#12345a;
+      font-size:1.2rem;
+    }
+
+    .lead{
+      margin:0 0 18px;
+      color:#475569;
+      font-size:1.02rem;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.3rem;
+      padding:.22rem .55rem;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:900;
+      vertical-align:baseline;
+      white-space:nowrap;
+    }
+
+    .badge.blue{color:#0f4b73;background:#dff2ff}
+    .badge.teal{color:#075e59;background:#d9fbf6}
+    .badge.green{color:#166534;background:#dcfce7}
+    .badge.yellow{color:#854d0e;background:#fef3c7}
+    .badge.red{color:#991b1b;background:#fee2e2}
+    .badge.gray{color:#334155;background:#e2e8f0}
+
+    .callout{
+      position:relative;
+      margin:18px 0;
+      padding:18px 18px 18px 54px;
+      border-radius:18px;
+      border:1px solid;
+    }
+
+    .callout::before{
+      position:absolute;
+      left:18px;
+      top:19px;
+      width:24px;
+      height:24px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      color:#fff;
+      font-size:.85rem;
+      font-weight:900;
+    }
+
+    .callout.info{
+      background:var(--blue-soft);
+      border-color:var(--blue-border);
+    }
+    .callout.info::before{content:"i";background:var(--blue)}
+
+    .callout.warning{
+      background:var(--yellow);
+      border-color:var(--yellow-border);
+    }
+    .callout.warning::before{content:"!";background:#d99400}
+
+    .callout.danger{
+      background:var(--red);
+      border-color:var(--red-border);
+    }
+    .callout.danger::before{content:"!";background:#dc2626}
+
+    .callout.success{
+      background:var(--green);
+      border-color:var(--green-border);
+    }
+    .callout.success::before{content:"✓";background:#16a34a}
+
+    .callout p{
+      margin:.15rem 0;
+    }
+
+    .grid-2,
+    .grid-3{
+      display:grid;
+      gap:16px;
+      margin:18px 0;
+    }
+
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+    .mini-card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-left:6px solid var(--card-accent, var(--cyan));
+      border-radius:18px;
+      background:linear-gradient(180deg,#ffffff,#f8fbff);
+      padding:18px 18px 18px 20px;
+    }
+
+    .mini-card::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:6px;
+      background:var(--card-accent, var(--cyan));
+    }
+
+    .mini-card:nth-child(4n + 1){--card-accent:#1e63b6;}
+    .mini-card:nth-child(4n + 2){--card-accent:#17a398;}
+    .mini-card:nth-child(4n + 3){--card-accent:#f59e0b;}
+    .mini-card:nth-child(4n + 4){--card-accent:#ef5350;}
+
+    .mini-card h4{
+      margin:0 0 8px;
+      color:var(--navy);
+      font-size:1.02rem;
+    }
+
+    .mini-card p{
+      margin:0;
+      color:#475569;
+    }
+
+    .chapter-nav{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .chapter-link{
+      display:grid;
+      grid-template-columns:56px 1fr;
+      gap:14px;
+      align-items:center;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:#f8fbff;
+      transition:.2s ease;
+    }
+
+    .chapter-link:hover{
+      transform:translateY(-2px);
+      border-color:#93c5fd;
+      box-shadow:0 12px 26px rgba(30,99,182,.09);
+    }
+
+    .chapter-link .no{
+      display:grid;
+      place-items:center;
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--navy-2),var(--cyan));
+      color:#fff;
+      font-weight:900;
+    }
+
+    .chapter-link b{
+      display:block;
+      color:var(--navy);
+    }
+
+    .chapter-link small{
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .table-wrap{
+      width:100%;
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid var(--line);
+      margin:18px 0;
+      background:#fff;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:680px;
+    }
+
+    th{
+      background:linear-gradient(135deg,var(--navy),var(--navy-2));
+      color:#fff;
+      text-align:left;
+      padding:13px 14px;
+      font-size:.92rem;
+      line-height:1.5;
+    }
+
+    td{
+      padding:13px 14px;
+      border-top:1px solid var(--line);
+      vertical-align:top;
+      color:#334155;
+    }
+
+    tr:nth-child(even) td{
+      background:#f8fbff;
+    }
+
+    .timeline{
+      list-style:none;
+      margin:20px 0;
+      padding:0;
+      position:relative;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:20px;
+      top:21px;
+      bottom:21px;
+      width:3px;
+      border-radius:999px;
+      background:linear-gradient(var(--blue),var(--cyan));
+    }
+
+    .timeline li{
+      position:relative;
+      display:grid;
+      grid-template-columns:42px minmax(0,1fr);
+      column-gap:16px;
+      row-gap:4px;
+      align-items:start;
+      min-width:0;
+      margin:0 0 18px;
+      padding:0;
+    }
+
+    .timeline li::before{
+      content:attr(data-step);
+      position:relative;
+      z-index:1;
+      grid-column:1;
+      grid-row:1 / span 2;
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:#fff;
+      border:3px solid var(--cyan);
+      color:var(--navy);
+      font-weight:900;
+      box-shadow:0 8px 20px rgba(15,23,42,.08);
+    }
+
+    .timeline h4{
+      grid-column:2;
+      min-width:0;
+      margin:0 0 4px;
+      color:var(--navy);
+      overflow-wrap:anywhere;
+    }
+
+    .timeline p{
+      grid-column:2;
+      min-width:0;
+      margin:0;
+      color:#475569;
+      overflow-wrap:anywhere;
+    }
+
+    .checklist{
+      list-style:none;
+      padding:0;
+      margin:18px 0;
+      display:grid;
+      gap:10px;
+    }
+
+    .checklist.two-col{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .checklist li{
+      position:relative;
+      padding:12px 14px 12px 42px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#f8fbff;
+      color:#334155;
+      font-weight:650;
+    }
+
+    .checklist li::before{
+      content:"✓";
+      position:absolute;
+      left:13px;
+      top:12px;
+      display:grid;
+      place-items:center;
+      width:22px;
+      height:22px;
+      border-radius:8px;
+      background:#d9fbf6;
+      color:#04736c;
+      font-weight:900;
+    }
+
+    .faq{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    details{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#f8fbff;
+      padding:14px 16px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--navy);
+    }
+
+    details p{
+      margin:10px 0 0;
+      color:#475569;
+    }
+
+    .footer-note{
+      color:#64748b;
+      font-size:.9rem;
+      text-align:center;
+      padding:34px 22px 60px;
+    }
+
+    @media (max-width:960px){
+      .hero-inner{
+        grid-template-columns:1fr;
+      }
+
+      .hero-visual{
+        min-height:auto;
+      }
+
+      .page-shell{
+        grid-template-columns:1fr;
+      }
+
+      .toc{
+        position:relative;
+        top:auto;
+        max-height:none;
+      }
+
+      .grid-2,
+      .grid-3,
+      .chapter-nav,
+      .checklist.two-col{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:640px){
+      :root{
+        --page-gutter:16px;
+        --card-pad:22px;
+      }
+
+      .hero{
+        padding:40px var(--page-gutter);
+      }
+
+      .page-shell{
+        padding-inline:var(--page-gutter);
+        margin-top:22px;
+      }
+
+      .share-band{
+        padding-inline:calc(var(--page-gutter) + var(--card-pad));
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+
+
+    /* Horizontal sticky section navigation */
+    html{
+      scroll-padding-top:92px;
+    }
+
+    .toc{
+      position:sticky;
+      top:0;
+      z-index:40;
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      align-items:center;
+      gap:14px;
+      width:100%;
+      max-height:none;
+      margin:0;
+      padding:10px max(16px, calc((100vw - var(--page-max)) / 2 + var(--card-pad)));
+      overflow:visible;
+      border:0;
+      border-bottom:1px solid rgba(217,228,239,.92);
+      border-radius:0;
+      background:rgba(255,255,255,.9);
+      box-shadow:0 12px 28px rgba(15,23,42,.08);
+      backdrop-filter:blur(16px);
+    }
+
+    .toc-title{
+      margin:0;
+      padding:0;
+      border:0;
+      white-space:nowrap;
+      color:var(--navy);
+      font-size:.94rem;
+    }
+
+    .toc-title .badge{
+      display:none;
+    }
+
+    .toc ol{
+      display:flex;
+      gap:8px;
+      min-width:0;
+      margin:0;
+      padding:2px 0;
+      overflow-x:auto;
+      overflow-y:hidden;
+      overscroll-behavior-x:contain;
+      scroll-padding-inline:24px;
+      scrollbar-width:none;
+    }
+
+    .toc ol::-webkit-scrollbar{
+      display:none;
+    }
+
+    .toc li{
+      flex:0 0 auto;
+    }
+
+    .toc a{
+      display:inline-flex;
+      grid-template-columns:none;
+      align-items:center;
+      gap:8px;
+      min-height:38px;
+      padding:7px 12px 7px 8px;
+      border:1px solid #d9e4ef;
+      border-radius:999px;
+      background:#f8fbff;
+      color:#334155;
+      white-space:nowrap;
+      transition:background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+    }
+
+    .toc a::before{
+      width:26px;
+      height:24px;
+      flex:0 0 26px;
+    }
+
+    .toc a:hover{
+      transform:translateY(-1px);
+      text-decoration:none;
+      background:#eef6ff;
+    }
+
+    .toc a.is-active{
+      border-color:rgba(30,99,182,.35);
+      background:linear-gradient(135deg,var(--navy),var(--cyan));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(30,99,182,.22);
+    }
+
+    .toc a.is-active::before{
+      color:var(--navy);
+      background:#ffffff;
+    }
+
+    .page-shell{
+      grid-template-columns:minmax(0,1fr);
+      margin-top:34px;
+    }
+
+    .section-card{
+      scroll-margin-top:96px;
+    }
+
+    @media (max-width:640px){
+      html{
+        scroll-padding-top:112px;
+      }
+
+      .toc{
+        grid-template-columns:1fr;
+        gap:8px;
+        padding:9px var(--page-gutter) 10px;
+      }
+
+      .toc-title{
+        font-size:.86rem;
+      }
+
+      .toc a{
+        min-height:36px;
+        padding:6px 11px 6px 7px;
+        font-size:.86rem;
+      }
+
+      .section-card{
+        scroll-margin-top:116px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="engine-fat-shipboard-note.en.html" lang="en" hreflang="en">EN</a>
+      <a href="engine-fat-shipboard-note.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">LR Rules．引擎廠試與船上試俥．REAY'S NOTE</span>
+
+        <h1>LR 船級規範：引擎廠試與船上試俥要求</h1>
+
+        <p class="article-meta">
+          <span>📅 更新：2026-06-23</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 閱讀約 18 分鐘</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 LR-RU-001 / FAT / 船上試俥 / 往復式內燃機</span>
+        </p>
+
+        <p>
+          本文解析對象為 <strong style="color:#fff;">LR-RU-001《Rules and Regulations for the Classification of Ships》</strong>，
+          Part 5 Main and Auxiliary Machinery，Chapter 2 Reciprocating Internal Combustion Engines，
+          Section 11：Factory acceptance test and shipboard trials of engines。
+          本節主題是船用往復式內燃機在 <strong style="color:#fff;">FAT 工廠驗收試驗</strong> 與
+          <strong style="color:#fff;">Shipboard trials 船上試俥</strong> 階段的驗證要求。
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#sec-04">廠試要求速查</a>
+          <a class="btn ghost" href="#sec-07">船上試俥要求速查</a>
+          <a class="btn ghost" href="#sec-11">跳到複習重點</a>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">FAT</span>
+          <span class="tag">Shipboard Trials</span>
+          <span class="tag">MCR</span>
+          <span class="tag">DF Engine</span>
+          <span class="tag">GF Engine</span>
+          <span class="tag">LR Surveyor</span>
+          <span class="tag">MARPOL</span>
+        </div>
+
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.html"
+          data-share-title="LR-RU-001 引擎廠試與船上試俥要求｜Reay's Note"
+          data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;LR-RU-001 引擎廠試與船上試俥要求｜Reay's Note&#10;https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-hero-label">分享此篇</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="章節連結">
+    <ol>
+      <li><a href="#sec-01">文件主題與背景</a></li>
+      <li><a href="#sec-02">文件結構</a></li>
+      <li><a href="#sec-03">核心內容解析</a></li>
+      <li><a href="#sec-04">FAT 試驗範圍</a></li>
+      <li><a href="#sec-05">DF／GF 引擎特殊要求</a></li>
+      <li><a href="#sec-06">電子控制引擎</a></li>
+      <li><a href="#sec-07">船上試俥解析</a></li>
+      <li><a href="#sec-08">重要術語與定義</a></li>
+      <li><a href="#sec-09">技術／法規意涵</a></li>
+      <li><a href="#sec-10">實務應用與注意事項</a></li>
+      <li><a href="#sec-11">總結與複習重點</a></li>
+    </ol>
+  </nav>
+
+  <main class="page-shell">
+    <article class="content">
+
+      <section class="section-card" id="sec-01">
+        <h2>一、文件主題與背景</h2>
+
+        <p class="lead">
+          這份文件屬於 <strong>Lloyd’s Register（LR）船級規範</strong> 中有關船舶主、輔機械的要求，
+          特別針對 <strong>往復式內燃機 Reciprocating Internal Combustion Engines</strong> 的驗收與試俥程序。
+        </p>
+
+        <div class="callout info">
+          <p>
+            其核心目的不是單純要求「引擎能運轉」，而是要確認引擎本體性能、安全保護、
+            船上系統整合，以及 DF／GF 引擎的燃料模式與故障情境都能被安全處理。
+          </p>
+        </div>
+
+        <div class="chapter-nav">
+          <a class="chapter-link" href="#sec-03">
+            <span class="no">01</span>
+            <span>
+              <b>引擎本體設計性能</b>
+              <small>MCR、額定轉速、110% 超載、燃燒壓力</small>
+            </span>
+          </a>
+
+          <a class="chapter-link" href="#sec-03">
+            <span class="no">02</span>
+            <span>
+              <b>安全保護系統</b>
+              <small>超速保護、停機功能、曲軸箱爆炸防護</small>
+            </span>
+          </a>
+
+          <a class="chapter-link" href="#sec-07">
+            <span class="no">03</span>
+            <span>
+              <b>船上安裝後相容性</b>
+              <small>推進軸系、發電機、PTO、控制系統</small>
+            </span>
+          </a>
+
+          <a class="chapter-link" href="#sec-05">
+            <span class="no">04</span>
+            <span>
+              <b>雙燃料與氣體燃料風險</b>
+              <small>氣體洩漏、點火失敗、燃料切換</small>
+            </span>
+          </a>
+        </div>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4><span class="badge blue">FAT</span> 工廠驗收試驗</h4>
+            <p>
+              主要驗證引擎本體與設計參數，例如功率、防火安排、最大壓力限制、功能性，
+              並建立營運期間後續參考用的基準值。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4><span class="badge teal">Shipboard Trials</span> 船上試俥</h4>
+            <p>
+              主要驗證引擎安裝上船後與推進、發電、控制、安全及輔助系統的整合狀態。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-02">
+        <h2>二、文件結構</h2>
+
+        <p class="lead">
+          本節共分為四大部分，技術邏輯是：
+          <strong>安全前提 → 工廠試驗 → 船上整合試驗 → 特殊燃料與電子控制驗證 → 法規與排放要求</strong>。
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>條文</th>
+                <th>主題</th>
+                <th>主要內容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>11.1 Safety</strong></td>
+                <td>安全要求</td>
+                <td>試驗前安全設備、超速保護設定、低壓氣體燃料管路氣密性</td>
+              </tr>
+              <tr>
+                <td><strong>11.2 General</strong></td>
+                <td>一般要求</td>
+                <td>試驗範圍、LR Surveyor 見證、QAM、試驗台條件、測量項目、不得調整機械</td>
+              </tr>
+              <tr>
+                <td><strong>11.3 Works trials / FAT</strong></td>
+                <td>工廠驗收試驗</td>
+                <td>FAT 目的、環境條件紀錄、運轉參數紀錄、試驗條件</td>
+              </tr>
+              <tr>
+                <td><strong>11.4 Shipboard trials</strong></td>
+                <td>船上試俥</td>
+                <td>船上整合驗證、試驗條件、DF/GF 引擎、燃料切換、禁用轉速範圍</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-03">
+        <h2>三、核心內容解析</h2>
+
+        <p class="lead">
+          本章分別整理 <strong>11.1 Safety</strong>、<strong>11.2 General</strong> 與
+          <strong>11.3 Works trials</strong> 的核心要求。
+        </p>
+
+        <h3>1. 11.1 Safety：試驗前安全條件</h3>
+
+        <div class="callout danger">
+          <p>
+            在任何試驗開始前，製造商或船廠必須提供並確保所有與人員安全相關的設備可用且正常運作。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="mini-card">
+            <h4>Crankcase explosive conditions protection</h4>
+            <p>曲軸箱爆炸危險防護。</p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Overspeed protection</h4>
+            <p>超速保護。</p>
+          </div>
+
+          <div class="mini-card">
+            <h4>Shutdown function</h4>
+            <p>停機保護功能。</p>
+          </div>
+        </div>
+
+        <p>
+          其中 <strong>overspeed protective device（超速保護裝置）</strong> 的設定值，
+          不得高於該型引擎在型式試驗中已證明可接受的超速值，且須由
+          <strong>LR Surveyor（驗船師）</strong> 驗證。
+          這代表超速設定不是製造商可任意設定，而是必須回到已核准的型式試驗依據。
+        </p>
+
+        <div class="callout warning">
+          <p>
+            對使用低壓氣體燃料的引擎，文件要求在啟動前確認
+            <strong>低壓氣體燃料管路氣密</strong>。
+            這是 DF/GF 引擎的重要安全前提，因為低壓甲烷雖壓力較低，但洩漏後仍可能形成可燃混合氣。
+          </p>
+        </div>
+
+        <h3>2. 11.2 General：一般試驗要求</h3>
+
+        <p>
+          本節規定引擎在製造廠試驗台進行試驗時，須由 <strong>Surveyor</strong> 見證，
+          並依 <strong>11.3 Works trials</strong> 的範圍執行。
+          試驗範圍必須在試驗前由 <strong>LR 與製造商協議</strong>。
+        </p>
+
+        <ol class="timeline">
+          <li data-step="1">
+            <h4>同型多台引擎可採品質保證方式</h4>
+            <p>
+              若多台引擎設計相同，且製造商符合
+              <strong>QAM（Quality Assurance Scheme for Machinery，機械品質保證制度）</strong>，
+              可採品質保證方式進行核准。
+            </p>
+          </li>
+
+          <li data-step="2">
+            <h4>正式試驗前必須完成磨合</h4>
+            <p>
+              文件要求引擎在正式測試前，需依製造商規定完成
+              <strong>run-in（磨合運轉）</strong>。
+            </p>
+          </li>
+
+          <li data-step="3">
+            <h4>試驗台與試驗流體必須適當</h4>
+            <p>
+              試驗台必須能提供 Table 2.11.1 所要求的負載。
+              燃油、潤滑油、冷卻水等流體必須清潔，必要時須預熱至建議操作溫度。
+            </p>
+          </li>
+
+          <li data-step="4">
+            <h4>驗收試驗期間不得調整機械</h4>
+            <p>
+              11.2.7 規定，在驗收試驗期間，不得對受測機械進行干預或調整。
+              這是 FAT 的關鍵精神。
+            </p>
+          </li>
+        </ol>
+
+        <h3>3. Surveyor 檢驗項目</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>檢查項目</th>
+                <th>技術目的</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>高壓燃油管外套與洩漏偵測</strong></td>
+                <td>防止高壓燃油噴霧接觸熱表面造成火災</td>
+              </tr>
+              <tr>
+                <td><strong>易燃液體管路接頭遮蔽</strong></td>
+                <td>防止接頭洩漏噴濺至熱表面</td>
+              </tr>
+              <tr>
+                <td><strong>高溫表面絕熱與溫度抽測</strong></td>
+                <td>驗證火災防護措施是否符合型式試驗基準</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <p>
+            高溫表面的溫度抽測應與型式試驗時的相應數據比較；
+            若絕熱措施在型式認可後有修改，LR 可要求更強化的溫度測量。
+            這代表 <strong>型式認可後的設計變更</strong> 不能被忽略。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-04">
+        <h2>四、工廠驗收試驗範圍解析</h2>
+
+        <p class="lead">
+          工廠驗收試驗可以理解為引擎交付前的「基準性能驗證」。
+          重點不是只確認引擎能否啟動，而是依照引擎用途，檢查它在額定功率、短時間超載、部分負載、啟動、停機與保護功能下是否能穩定運轉。
+          不同用途的引擎，例如主推進、發電機、PTO 發電或機械輔機，試驗負載與持續時間也會不同。
+        </p>
+
+        <div class="callout info">
+          <p>
+            <strong>Works trials</strong> 的目的在於驗證設計參數，例如功率、防火與防火災預防安排、
+            核准限制值、功能性，並建立營運期間後續參考用的基準值。
+          </p>
+        </div>
+
+        <h3>1. FAT 必須記錄的環境條件</h3>
+
+        <div class="grid-3">
+          <div class="mini-card">
+            <h4>Ambient air temperature</h4>
+            <p>環境空氣溫度。</p>
+          </div>
+          <div class="mini-card">
+            <h4>Ambient air pressure</h4>
+            <p>環境氣壓。</p>
+          </div>
+          <div class="mini-card">
+            <h4>Atmospheric humidity</h4>
+            <p>大氣濕度。</p>
+          </div>
+        </div>
+
+        <h3>2. FAT 必須記錄的運轉參數</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>類別</th>
+                <th>參數</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>基本輸出</td>
+                <td><strong>Power and speed</strong> 功率與轉速</td>
+              </tr>
+              <tr>
+                <td>燃料控制</td>
+                <td><strong>Fuel index</strong>，含氣體與燃油，或等效讀值</td>
+              </tr>
+              <tr>
+                <td>氣體燃料</td>
+                <td>氣體壓力與溫度</td>
+              </tr>
+              <tr>
+                <td>點火／引燃燃油</td>
+                <td>Pilot fuel 溫度與壓力，或共軌壓力</td>
+              </tr>
+              <tr>
+                <td>燃燒狀態</td>
+                <td>最大燃燒壓力</td>
+              </tr>
+              <tr>
+                <td>排氣狀態</td>
+                <td>渦輪前排氣溫度、各缸排氣溫度或總管溫度</td>
+              </tr>
+              <tr>
+                <td>進氣與增壓</td>
+                <td>掃氣／增壓空氣溫度與壓力</td>
+              </tr>
+              <tr>
+                <td>增壓器</td>
+                <td>B 類與 C 類增壓器轉速</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <p>
+            所有 FAT 試驗條件下的量測，應在 <strong>steady operating conditions（穩定運轉狀態）</strong> 下進行；其中 <strong>MCR／100% power</strong> 的讀值須至少量測兩次，兩次間隔不得少於 <strong>30 分鐘</strong>。這是 11.3.5 對 FAT 報告與 Surveyor 見證的重要驗收要求。
+          </p>
+        </div>
+
+        <h3>3. 主推進引擎：驅動螺槳或噴水推進器</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>試驗條件</th>
+                <th>持續時間</th>
+                <th>重點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>100% power at rated speed R</strong></td>
+                <td>≥ 60 分鐘</td>
+                <td>驗證 MCR 能力</td>
+              </tr>
+              <tr>
+                <td><strong>110% power at 1.032R</strong></td>
+                <td>15 分鐘或達穩定狀態</td>
+                <td>驗證短時間超載能力</td>
+              </tr>
+              <tr>
+                <td>核准間歇超載</td>
+                <td>與製造商協議</td>
+                <td>僅適用已核准者</td>
+              </tr>
+              <tr>
+                <td>90%、75%、50%、25% 功率</td>
+                <td>未指定固定時間</td>
+                <td>引擎轉速依名義螺槳曲線，測試順序由製造商選定</td>
+              </tr>
+              <tr>
+                <td>換向操作</td>
+                <td>視適用情況</td>
+                <td>適用可逆機或相關配置</td>
+              </tr>
+              <tr>
+                <td>調速器與獨立超速保護</td>
+                <td>需測試</td>
+                <td>關聯控制與監測章節</td>
+              </tr>
+              <tr>
+                <td>停機裝置</td>
+                <td>需測試</td>
+                <td>驗證安全停機功能</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout success">
+          <p>
+            <strong>1.032R</strong> 可作為理解 <strong>110% power</strong> 對應轉速的工程近似說明：固定螺距螺槳可用功率約與轉速三次方成正比來輔助理解，因此 110% 功率約對應 1.1 的三次方根，也就是約 1.032 倍額定轉速；實際驗收仍以 <strong>LR Table 2.11.1／2.11.2</strong> 指定條件為準。
+          </p>
+        </div>
+
+        <h3>4. 發電機用引擎</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>試驗條件</th>
+                <th>持續時間</th>
+                <th>重點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% 額定功率、額定轉速 R</td>
+                <td>≥ 60 分鐘</td>
+                <td>驗證連續額定輸出</td>
+              </tr>
+              <tr>
+                <td>110% 功率</td>
+                <td>15 分鐘或達穩定狀態</td>
+                <td>驗證瞬態調速與保護裕度</td>
+              </tr>
+              <tr>
+                <td>75%、50%、25% 與怠速</td>
+                <td>無固定時間</td>
+                <td>驗證負載階段性能</td>
+              </tr>
+              <tr>
+                <td>啟動試驗</td>
+                <td>需執行</td>
+                <td>驗證啟動能力</td>
+              </tr>
+              <tr>
+                <td>調速器與超速保護</td>
+                <td>需執行</td>
+                <td>對發電品質與安全重要</td>
+              </tr>
+              <tr>
+                <td>停機裝置</td>
+                <td>需執行</td>
+                <td>驗證保護邏輯</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warning">
+          <p>
+            發電機用柴油機的 110% 能力與主機不同，其目的在於提供
+            <strong>瞬態調速裕度</strong>，使電力系統保護能在引擎熄火前動作。
+          </p>
+        </div>
+
+        <h3>5. PTO 發電機用推進引擎與機械輔機用引擎</h3>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4><span class="badge teal">PTO</span> 推進引擎</h4>
+            <p>
+              PTO 配置下，引擎同時承擔推進與發電支路負載，因此 FAT 要確認
+              100% 引擎功率、110% 功率、核准間歇超載、90%、75%、50%、25% 部分負載。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4><span class="badge blue">Auxiliary</span> 機械輔機</h4>
+            <p>
+              機械輔機包括泵、壓縮機或其他非發電用途的機械驅動設備。
+              其 FAT 要求相對較短，100% 額定功率、額定轉速 R 為 ≥ 30 分鐘。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-05">
+        <h2>五、DF／GF 引擎在 FAT 中的特殊要求</h2>
+
+        <p class="lead">
+          <strong>GF only engines（純氣體燃料引擎）</strong>，以及使用
+          <strong>低壓甲烷</strong> 的 <strong>DF engines（雙燃料引擎）</strong>，需進行整合測試，以驗證機械、液壓與電子系統在所有預定操作模式下的正確運作。
+        </p>
+
+        <div class="grid-3">
+          <div class="mini-card">
+            <h4>燃油模式與氣體模式</h4>
+            <p>
+              使用低壓甲烷的 DF 引擎應依適用情況在
+              <strong>燃油模式</strong> 與 <strong>氣體模式</strong> 進行測試。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>甲烷數 Methane Number</h4>
+            <p>
+              文件要求在適用時記錄 <strong>gas methane number（氣體甲烷數）</strong>，
+              並證明引擎能在該甲烷數下達到宣告功率。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>整合測試適用範圍</h4>
+            <p>
+              適用對象為 <strong>GF only</strong> 引擎，以及使用低壓甲烷的 <strong>DF</strong> 引擎；測試須涵蓋所有預定操作模式。
+            </p>
+          </div>
+        </div>
+
+        <div class="callout danger">
+          <p>
+            不能只用柴油模式完成所有 FAT 後就宣稱雙燃料性能合格。
+            氣體模式下的最大可用功率、燃燒穩定性、甲烷數影響與控制邏輯都必須被驗證。
+          </p>
+        </div>
+
+        <h3>氣體燃料故障情境測試項目</h3>
+
+        <ul class="checklist two-col">
+          <li>點火失敗，例如火花點火或 pilot injection 失敗</li>
+          <li>單一氣缸單元失效</li>
+          <li>氣體進氣閥失效</li>
+          <li>燃燒失敗，例如 misfiring、knocking、排氣溫度偏差</li>
+          <li>氣體壓力異常</li>
+          <li>氣體溫度異常</li>
+        </ul>
+
+        <div class="callout info">
+          <p>
+            這些測試可透過模擬或其他替代方式執行，但需經 LR 特別考量與同意。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-06">
+        <h2>六、電子控制引擎的要求</h2>
+
+        <p class="lead">
+          對 <strong>electronically controlled engines（電子控制引擎）</strong>，
+          文件要求 FAT、整合測試、引擎配置驗證、軟體品質計畫與軟體組態管理流程。
+        </p>
+
+        <ol class="timeline">
+          <li data-step="1">
+            <h4>依提交要求進行 FAT</h4>
+            <p>依照勞氏規範 Pt 5, Ch 2, 1.4 Submission requirements 1.4.3 的要求，電子控制引擎需提交 FAT 相關試驗資料與驗證安排。</p>
+          </li>
+
+          <li data-step="2">
+            <h4>整合測試</h4>
+            <p>
+              確認機械、液壓與電子系統在所有操作模式下的反應符合預期。
+            </p>
+          </li>
+
+          <li data-step="3">
+            <h4>驗證引擎配置</h4>
+            <p>確認實際引擎配置與核准文件一致。</p>
+          </li>
+
+          <li data-step="4">
+            <h4>確認軟體品質與組態管理</h4>
+            <p>
+              確認已核准的軟體品質計畫與軟體組態管理流程有被執行。
+            </p>
+          </li>
+        </ol>
+
+        <div class="callout warning">
+          <p>
+            現代船用引擎的驗收已不只是機械性能測試，也包含
+            <strong>控制工程系統</strong> 與 <strong>軟體組態管理</strong>。
+            若軟體版本、控制參數或安全邏輯與核准文件不一致，即使機械本體運轉正常，也可能構成船級審查問題。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-07">
+        <h2>七、11.4 Shipboard trials：船上試俥解析</h2>
+
+        <p class="lead">
+          船上試驗的目的在於驗證引擎與動力傳遞系統、被驅動機械、安全系統、控制系統、
+          輔助系統、引擎控制系統與船上控制系統整合，以及 FAT 中尚未處理的項目。
+        </p>
+
+        <div class="callout info">
+          <p>
+            船上試俥不是重做 FAT，而是確認引擎安裝到船上後，在真實系統邊界條件下能正常、安全地工作。
+          </p>
+        </div>
+
+        <h3>1. 固定螺距螺槳或噴水推進器主機</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>船上試驗條件</th>
+                <th>持續時間</th>
+                <th>技術意義</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>額定引擎轉速 R</td>
+                <td>至少 4 小時</td>
+                <td>固定螺距螺槳或噴水推進器主機條件；不得簡化成 100% MCR 功率 4 小時</td>
+              </tr>
+              <tr>
+                <td>1.032R 對應轉速</td>
+                <td>30 分鐘</td>
+                <td>視引擎調整允許，驗證超載／高速能力</td>
+              </tr>
+              <tr>
+                <td>核准間歇超載</td>
+                <td>依協議</td>
+                <td>僅適用已核准情況</td>
+              </tr>
+              <tr>
+                <td>最低引擎轉速</td>
+                <td>需確認</td>
+                <td>關係低速操縱能力</td>
+              </tr>
+              <tr>
+                <td>啟動與換向操作</td>
+                <td>需示範</td>
+                <td>驗證啟動空氣與換向能力</td>
+              </tr>
+              <tr>
+                <td>螺槳反轉方向</td>
+                <td>10 分鐘</td>
+                <td>驗證倒車或反向運轉能力</td>
+              </tr>
+              <tr>
+                <td>控制、監測、警報、安全系統</td>
+                <td>需示範</td>
+                <td>驗證船上安裝與設定</td>
+              </tr>
+              <tr>
+                <td>禁用轉速範圍通過能力</td>
+                <td>視適用</td>
+                <td>驗證可安全通過 barred speed range</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>2. 可變螺距螺槳 CPP 主機</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>船上試驗條件</th>
+                <th>持續時間</th>
+                <th>重點</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% power</td>
+                <td>≥ 4 小時</td>
+                <td>驗證主機與 CPP 在 MCR 條件下配合</td>
+              </tr>
+              <tr>
+                <td>核准間歇超載</td>
+                <td>依協議</td>
+                <td>適用已核准者</td>
+              </tr>
+              <tr>
+                <td>倒車螺距操縱</td>
+                <td>需示範</td>
+                <td>驗證操縱能力</td>
+              </tr>
+              <tr>
+                <td>控制、監測、警報、安全系統</td>
+                <td>需示範</td>
+                <td>驗證整合</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout success">
+          <p>
+            CPP 需以不同螺距進行試驗，100% 功率試驗應在額定轉速 R 下，
+            以 MCR 對應螺距進行；若無法達到 100%，則以最大可達功率進行。
+          </p>
+        </div>
+
+        <h3>3. 發電機用引擎</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>船上試驗條件</th>
+                <th>持續時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% 額定發電機電功率</td>
+                <td>≥ 60 分鐘</td>
+              </tr>
+              <tr>
+                <td>110% 額定發電機電功率</td>
+                <td>≥ 10 分鐘</td>
+              </tr>
+              <tr>
+                <td>啟動操作</td>
+                <td>需示範</td>
+              </tr>
+              <tr>
+                <td>控制、監測、警報、安全系統</td>
+                <td>需示範</td>
+              </tr>
+              <tr>
+                <td>調速器承受負載階躍能力</td>
+                <td>需示範</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info">
+          <p>
+            對發電機用引擎，船上試俥通常以 <strong>發電機額定電功率</strong> 為基準；若屬於 <strong>electrical propulsion（電力推進）</strong> 配置，尚需依 LR 表格註解，考慮 <strong>electric propulsion motors（電力推進馬達）</strong> 的額定電功率要求，不能只用發電機本身額定值一句帶過。
+          </p>
+        </div>
+
+        <h3>4. PTO 發電機用推進引擎</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>船上試驗條件</th>
+                <th>持續時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% 引擎功率 MCR，對應轉速 R</td>
+                <td>≥ 4 小時</td>
+              </tr>
+              <tr>
+                <td>100% 螺槳支路功率，轉速 R</td>
+                <td>2 小時</td>
+              </tr>
+              <tr>
+                <td>100% PTO 支路功率，轉速 R</td>
+                <td>≥ 1 小時</td>
+              </tr>
+              <tr>
+                <td>控制、監測、警報、安全系統</td>
+                <td>需示範</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5. 機械輔機用引擎</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>船上試驗條件</th>
+                <th>持續時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100% 引擎功率 MCR，對應轉速 R</td>
+                <td>≥ 30 分鐘</td>
+              </tr>
+              <tr>
+                <td>核准間歇超載</td>
+                <td>依核准時間</td>
+              </tr>
+              <tr>
+                <td>控制、監測、警報、安全系統</td>
+                <td>需示範</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>6. DF／GF 引擎船上試俥重點</h3>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4>氣體管路洩漏與雙層管通風驗證</h4>
+            <p>
+              引擎安裝上船後，氣體管路系統需進行洩漏試驗，
+              且雙層氣體管路的通風安排效率需被驗證。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>所有適用操作模式都要測試</h4>
+            <p>
+              DF 引擎的試驗負載需在所有適用操作模式下執行，
+              包括 gas mode、diesel mode 與其他適用模式。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>自動切換至燃油模式</h4>
+            <p>
+              氣體燃料系統若出現異常，應能可靠切回燃油模式，
+              避免引擎失速或推進／發電中斷。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>手動燃料切換</h4>
+            <p>
+              測試手動由柴油模式切至氣體模式，以及由氣體模式切回柴油模式。
+            </p>
+          </div>
+        </div>
+
+        <h3>7. 禁用轉速範圍 Barred Speed Range</h3>
+
+        <div class="callout warning">
+          <p>
+            禁用轉速範圍通常與 <strong>扭振 Torsional Vibration</strong> 或軸系共振有關。
+            船舶不是不能經過該範圍，而是不能長時間停留；
+            因此控制系統必須能讓主機安全、快速、可控地通過。
+          </p>
+        </div>
+
+        <ul class="checklist two-col">
+          <li>手動與自動控制系統都要示範可加速與減速通過禁用轉速範圍</li>
+          <li>通過時間必須等於或小於核准文件中的時間</li>
+          <li>通過時間需記錄</li>
+          <li>反轉方向時也適用，特別是停船試驗</li>
+          <li>示範時需記錄船舶吃水與船速</li>
+          <li>若裝有 CPP，還需記錄螺距</li>
+          <li>引擎需在禁用轉速範圍上下邊界穩定運轉</li>
+          <li>穩定 fuel index 的振盪範圍需小於有效行程的 5%</li>
+        </ul>
+      </section>
+
+      <section class="section-card" id="sec-08">
+        <h2>八、重要術語與定義</h2>
+
+        <p class="lead">
+          以下整理文件中的專業名詞、英文縮寫、符號與其意義。
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>術語</th>
+                <th>英文</th>
+                <th>說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>FAT</strong></td>
+                <td>Factory Acceptance Test</td>
+                <td>工廠驗收試驗，於製造廠試驗台驗證引擎性能與安全功能</td>
+              </tr>
+              <tr>
+                <td><strong>Shipboard trials</strong></td>
+                <td>Shipboard trials</td>
+                <td>船上試俥，驗證引擎安裝後與船舶系統整合</td>
+              </tr>
+              <tr>
+                <td><strong>MCR</strong></td>
+                <td>Maximum Continuous Rating</td>
+                <td>最大連續額定功率，引擎可連續運轉的核准最大功率</td>
+              </tr>
+              <tr>
+                <td><strong>R</strong></td>
+                <td>Rated engine speed</td>
+                <td>額定轉速</td>
+              </tr>
+              <tr>
+                <td><strong>1.032R</strong></td>
+                <td>Speed corresponding to 110% power</td>
+                <td>可作為理解 110% power 對應轉速的工程近似說明；實際驗收以 LR Table 2.11.1／2.11.2 為準</td>
+              </tr>
+              <tr>
+                <td><strong>DF engine</strong></td>
+                <td>Dual Fuel engine</td>
+                <td>雙燃料引擎，通常可使用燃油與氣體燃料</td>
+              </tr>
+              <tr>
+                <td><strong>GF engine</strong></td>
+                <td>Gas Fuel engine</td>
+                <td>氣體燃料引擎</td>
+              </tr>
+              <tr>
+                <td><strong>PTO</strong></td>
+                <td>Power Take Off</td>
+                <td>主機取力發電或驅動其他設備</td>
+              </tr>
+              <tr>
+                <td><strong>CPP</strong></td>
+                <td>Controllable Pitch Propeller</td>
+                <td>可變螺距螺槳</td>
+              </tr>
+              <tr>
+                <td><strong>FPP</strong></td>
+                <td>Fixed Pitch Propeller</td>
+                <td>固定螺距螺槳</td>
+              </tr>
+              <tr>
+                <td><strong>Fuel index</strong></td>
+                <td>Fuel index</td>
+                <td>燃油／燃氣控制指標，可反映負荷與供油量</td>
+              </tr>
+              <tr>
+                <td><strong>Methane Number</strong></td>
+                <td>Methane Number</td>
+                <td>甲烷數，表示氣體燃料抗爆震能力</td>
+              </tr>
+              <tr>
+                <td><strong>Pilot fuel</strong></td>
+                <td>Pilot fuel</td>
+                <td>引燃燃油，DF 引擎氣體模式下用於點火</td>
+              </tr>
+              <tr>
+                <td><strong>Common rail</strong></td>
+                <td>Common rail</td>
+                <td>共軌系統，用於高壓燃油供應與電子控制噴射</td>
+              </tr>
+              <tr>
+                <td><strong>Barred speed range</strong></td>
+                <td>Barred speed range</td>
+                <td>禁用轉速範圍，通常與扭振或共振風險相關</td>
+              </tr>
+              <tr>
+                <td><strong>Overspeed protection</strong></td>
+                <td>Overspeed protection</td>
+                <td>超速保護，防止引擎轉速超過安全限制</td>
+              </tr>
+              <tr>
+                <td><strong>Shutdown device</strong></td>
+                <td>Shutdown device</td>
+                <td>停機裝置，於危險狀態下使引擎停機</td>
+              </tr>
+              <tr>
+                <td><strong>Crankshaft deflection</strong></td>
+                <td>Crankshaft deflection</td>
+                <td>曲軸撓度，用於評估曲軸與主軸承對中狀態</td>
+              </tr>
+              <tr>
+                <td><strong>QAM</strong></td>
+                <td>Quality Assurance Scheme for Machinery</td>
+                <td>LR 機械品質保證制度</td>
+              </tr>
+              <tr>
+                <td><strong>Surveyor</strong></td>
+                <td>LR Surveyor</td>
+                <td>LR 驗船師，負責見證、確認與接受試驗</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-09">
+        <h2>九、技術／法規意涵</h2>
+
+        <p class="lead">
+          以下整理這些要求對船舶設計、建造、檢驗、營運、安全與合規的影響。
+        </p>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4>FAT 是船級驗收的基準建立</h4>
+            <p>
+              FAT 的重點是確認引擎本體在受控環境下達到核准性能，
+              並建立日後營運比對用的基準數據。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>船上試俥是系統整合驗證</h4>
+            <p>
+              船上試俥關注的是引擎與船舶實際系統的配合，
+              包括推進、發電、控制、警報、安全、氣體燃料管路與通風。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>DF／GF 引擎的風險控制要求更高</h4>
+            <p>
+              氣體燃料引擎的主要風險不只是功率不足，
+              而是可燃氣體洩漏、異常燃燒與控制失效。
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <h4>電子控制與軟體已成為船級審查項目</h4>
+            <p>
+              電子控制引擎須驗證軟體品質計畫、軟體組態管理與引擎配置。
+            </p>
+          </div>
+        </div>
+
+        <div class="callout warning">
+          <p>
+            排氣排放測試須依適用的
+            <strong>MARPOL（International Convention for the Prevention of Pollution from Ships，防止船舶污染國際公約）</strong>
+            執行。這表示 LR 船級試驗與法定排放要求可能同時存在。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-10">
+        <h2>十、實務應用與易混淆處</h2>
+
+        <p class="lead">
+          本章整理在船廠、船級審查、船東要求、營運管理、港口國管制或考試中可能如何使用，
+          並指出常見誤解與條件限制。
+        </p>
+
+        <h3>1. 對引擎製造商</h3>
+
+        <ul class="checklist two-col">
+          <li>LR 同意的試驗程序</li>
+          <li>試驗台負載能力證明</li>
+          <li>儀器校正紀錄</li>
+          <li>磨合紀錄</li>
+          <li>環境條件紀錄表</li>
+          <li>運轉參數紀錄表</li>
+          <li>安全保護功能測試計畫</li>
+          <li>DF/GF 引擎的燃料模式測試矩陣</li>
+          <li>驗收報告 acceptance protocol</li>
+        </ul>
+
+        <h3>2. 對船廠</h3>
+
+        <ul class="checklist two-col">
+          <li>主機、軸系、螺槳或噴水推進器安裝完成</li>
+          <li>燃油、滑油、冷卻水與啟動空氣系統可用</li>
+          <li>氣體燃料管路已完成洩漏試驗</li>
+          <li>雙層氣體管通風效率可被證明</li>
+          <li>控制、監測、警報與安全系統已完成設定</li>
+          <li>船上試俥條件可達所需功率與轉速</li>
+          <li>船舶吃水、航速與 CPP 螺距可記錄</li>
+          <li>LR Surveyor 已同意試驗範圍</li>
+        </ul>
+
+        <h3>3. 對船級審查與驗船師</h3>
+
+        <ul class="checklist two-col">
+          <li>試驗範圍是否符合 Table 2.11.1 或 Table 2.11.2</li>
+          <li>超速保護設定是否不超過型式試驗證明值</li>
+          <li>高壓燃油管防護是否完整</li>
+          <li>高溫表面絕熱是否有效</li>
+          <li>測試過程是否達穩定狀態</li>
+          <li>MCR／100% power 讀值是否至少量測兩次，且間隔不少於 30 分鐘</li>
+          <li>DF/GF 引擎是否完成所有適用模式測試</li>
+          <li>控制、警報與安全功能是否正確動作</li>
+          <li>禁用轉速範圍是否可安全通過</li>
+        </ul>
+
+        <h3>4. 易混淆或需注意之處</h3>
+
+        <div class="faq">
+          <details open>
+            <summary>FAT 與船上試俥目的不同</summary>
+            <p>
+              <strong>FAT 驗證引擎本體。</strong>
+              <strong>Shipboard trials 驗證引擎與船舶系統整合。</strong>
+              不能因 FAT 合格就省略船上試俥，也不能用船上試俥完全取代 FAT，除非 LR 同意等效替代範圍。
+            </p>
+          </details>
+
+          <details>
+            <summary>100% power 與 110% power 不可混為一談</summary>
+            <p>
+              100% power 通常對應 <strong>MCR／額定功率</strong>，
+              110% power 則是短時間超載或瞬態裕度驗證。其目的、持續時間與適用限制不同。
+            </p>
+          </details>
+
+          <details>
+            <summary>DF 引擎不是只測柴油模式</summary>
+            <p>
+              文件允許部分 110% 試驗在柴油模式展示，
+              但 DF 引擎仍需依要求在氣體模式進行負載測試，
+              且船上試俥需在所有適用操作模式中執行。
+            </p>
+          </details>
+
+          <details>
+            <summary>甲烷數必須記錄</summary>
+            <p>
+              氣體模式功率不能脫離燃料品質討論。
+              文件要求記錄甲烷數，並證明引擎可在該甲烷數下達到宣告功率。
+            </p>
+          </details>
+
+          <details>
+            <summary>驗收試驗期間不得調整</summary>
+            <p>
+              11.2.7 的「不得干預或調整」非常關鍵。
+              若測試中途修改燃油設定、控制參數或機械狀態，試驗數據的驗收意義會受到影響。
+            </p>
+          </details>
+
+          <details>
+            <summary>禁用轉速範圍不是只標在圖紙上</summary>
+            <p>
+              船上必須示範加速、減速通過禁用轉速範圍，
+              並記錄通過時間、船速、吃水與必要時的 CPP 螺距。
+              這是軸系振動安全的重要實船驗證。
+            </p>
+          </details>
+
+          <details>
+            <summary>電子控制引擎要管軟體版本</summary>
+            <p>
+              電子控制引擎的軟體品質計畫與組態管理是船級要求的一部分。
+              實務上，控制器軟體版本、參數設定與安全邏輯都應可追溯。
+            </p>
+          </details>
+        </div>
+
+        <div class="callout danger">
+          <p>
+            本文解析依你提供的 LR 2025 版文件內容。
+            船級規範、IMO 公約、MARPOL 與主管機關要求可能更新，
+            實務設計、審圖、試俥與交船時，仍須以最新正式 LR 規範、
+            船級審查意見、主管機關要求與合約技術規範為準。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card" id="sec-11">
+        <h2>十一、總結與複習重點</h2>
+
+        <p class="lead">
+          以下整理本節最適合考試複習與工程實務快速查閱的重點。
+        </p>
+
+        <ul class="checklist two-col">
+          <li>本節規範船用往復式內燃機的 FAT 工廠驗收試驗與 Shipboard trials 船上試俥。</li>
+          <li>FAT 的核心目的，是驗證引擎本體性能、安全功能、設計限制值與建立基準數據。</li>
+          <li>船上試俥的核心目的，是驗證引擎與推進、發電、控制、警報、安全、燃料與輔助系統的整合。</li>
+          <li>試驗前必須確認安全設備可用，包括曲軸箱爆炸防護、超速保護與停機功能。</li>
+          <li>超速保護設定不得高於型式試驗已證明的超速值，且須由 LR Surveyor 驗證。</li>
+          <li>FAT 中須記錄環境條件、功率、轉速、燃油指數、燃氣壓力與溫度、pilot fuel 壓力、最大燃燒壓力、排氣溫度、增壓參數與必要時的增壓器轉速；量測應在穩定運轉狀態下進行，MCR／100% power 讀值至少量測兩次且間隔不少於 30 分鐘。</li>
+          <li>主推進引擎 FAT 通常需做 100% power ≥ 60 分鐘；船上主機試俥需依推進型式判讀：固定螺距螺槳或噴水推進器為額定引擎轉速 R 至少 4 小時，CPP 則為 100% power ≥ 4 小時。</li>
+          <li>發電機用引擎需驗證 100% 與 110% 額定電功率，並確認調速器承受負載階躍能力；若為電力推進配置，需另依電力推進馬達的額定電功率要求判讀。</li>
+          <li>DF／GF 引擎需特別驗證氣體模式、柴油模式、燃料切換、甲烷數、氣體管路氣密與雙層管通風效率。</li>
+          <li>電子控制引擎需驗證機械、液壓、電子與軟體組態管理的整合正確性。</li>
+          <li>禁用轉速範圍需在船上示範安全通過，並記錄通過時間、船速、吃水與必要時的 CPP 螺距。</li>
+          <li>排氣排放測試仍須依適用的 MARPOL 要求辦理，不能只看船級機械性能試驗。</li>
+        </ul>
+
+        <div class="callout success">
+          <p>
+            快速記憶：<strong>FAT 看引擎本體，船上試俥看系統整合；DF／GF 要看燃料模式與氣體安全；電子控制引擎還要看軟體與組態管理。</strong>
+          </p>
+        </div>
+
+      </section>
+
+    </article>
+  </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.html"
+      data-share-title="LR-RU-001 引擎廠試與船上試俥要求｜Reay's Note"
+      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;LR-RU-001 引擎廠試與船上試俥要求｜Reay's Note&#10;https://reayhuang.com/notes/maritime/engine-fat-shipboard-note.html"
+      data-share-copy="複製連結"
+      data-share-copied="已複製"
+      data-toast-copied="連結已複製到剪貼簿"
+    >
+      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    (() => {
+      const nav = document.querySelector('.toc');
+      const links = Array.from(document.querySelectorAll('.toc a[href^="#sec-"]'));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+      if (!nav || !links.length || !sections.length) return;
+
+      const navList = nav.querySelector('ol');
+      let activeId = '';
+      let ticking = false;
+
+      const keepActiveLinkVisible = (link) => {
+        if (!navList || !link) return;
+
+        const listRect = navList.getBoundingClientRect();
+        const linkRect = link.getBoundingClientRect();
+        const edgePadding = 18;
+        const isLeftHidden = linkRect.left < listRect.left + edgePadding;
+        const isRightHidden = linkRect.right > listRect.right - edgePadding;
+
+        if (!isLeftHidden && !isRightHidden) return;
+
+        const targetLeft = link.offsetLeft + link.offsetWidth / 2 - navList.clientWidth / 2;
+        navList.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: 'auto'
+        });
+      };
+
+      const setActive = (id) => {
+        if (!id || id === activeId) return;
+        activeId = id;
+        let activeLink = null;
+
+        links.forEach((link) => {
+          const isActive = link.getAttribute('href') === `#${id}`;
+          link.classList.toggle('is-active', isActive);
+          if (isActive) activeLink = link;
+        });
+
+        keepActiveLinkVisible(activeLink);
+      };
+
+      const updateActive = () => {
+        ticking = false;
+        const offset = nav.getBoundingClientRect().height + 28;
+        let current = sections[0].id;
+
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top - offset <= 0) {
+            current = section.id;
+          }
+        }
+
+        setActive(current);
+      };
+
+      const requestUpdate = () => {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(updateActive);
+        }
+      };
+
+      links.forEach((link) => {
+        link.addEventListener('click', () => setActive(link.getAttribute('href').slice(1)));
+      });
+
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate);
+      window.addEventListener('hashchange', requestUpdate);
+      updateActive();
+    })();
+  </script>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>LR-RU-001 引擎廠試與船上試俥要求｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        本頁為學習、內訓與驗船準備用途的視覺化整理，不代表 Lloyd's Register、IMO 或其他機構之正式意見；<span class="disclaimer-tail">正式設計、船級審查、廠試／船上試俥見證、交船與營運合規，仍應以 LR 最新正式規範（LR-RU-001）、IMO 公約、MARPOL、船旗國主管機關要求與專案船級審查意見為準。</span>
+      </p>
+      <div class="footer-sources small">
+        <p class="footer-sources__title">References / Source notes</p>
+        <ul class="source-list">
+          <li>Lloyd's Register — Rules and Regulations for the Classification of Ships, July 2025 (LR-RU-001), Part 5 Main and Auxiliary Machinery, Chapter 2 Reciprocating Internal Combustion Engines, Section 11</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
