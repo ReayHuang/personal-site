@@ -671,7 +671,9 @@
 
     .table-wrap{
       width:100%;
-      overflow:auto;
+      overflow-x:auto;
+      overflow-y:hidden;
+      -webkit-overflow-scrolling:touch;
       border-radius:18px;
       border:1px solid var(--line);
       margin:18px 0;
@@ -679,9 +681,9 @@
     }
 
     table{
-      width:100%;
+      width:max-content;
+      min-width:100%;
       border-collapse:collapse;
-      min-width:680px;
     }
 
     th{
@@ -691,6 +693,9 @@
       padding:13px 14px;
       font-size:.92rem;
       line-height:1.5;
+      overflow-wrap:normal;
+      word-break:normal;
+      hyphens:none;
     }
 
     td{
@@ -698,6 +703,9 @@
       border-top:1px solid var(--line);
       vertical-align:top;
       color:#334155;
+      overflow-wrap:normal;
+      word-break:normal;
+      hyphens:none;
     }
 
     tr:nth-child(even) td{
