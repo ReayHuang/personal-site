@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../../assets/css/article-share.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="15 分鐘讀懂 IMO／IACS UR E26・E27／LR 2025 年 7 月船級規則的海事網路韌性架構與實務應用。">
@@ -63,6 +63,7 @@
       --muted: #63777d;
       --radius: 8px;
       --shadow: 0 16px 44px rgba(7, 26, 32, 0.13);
+      --font-sans: "Source Sans Pro", sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -71,9 +72,12 @@
       margin: 0;
       color: var(--ink);
       background: var(--paper);
-      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      font-family: var(--font-sans), "Noto Sans TC", "Microsoft JhengHei", sans-serif;
       line-height: 1.75;
       letter-spacing: 0;
+    }
+    .note-site-bar {
+      font-family: var(--font-sans), "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
