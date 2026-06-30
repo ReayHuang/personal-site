@@ -230,12 +230,19 @@
     .step h3{font-size:16px;margin:0 0 8px;color:#102a43}
     .step p{font-size:13px;color:var(--muted);margin:0}
     .matrix{
-      overflow-x:auto;overflow-y:hidden;padding:0;
+      overflow-x:auto;overflow-y:hidden;
+      -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+    }
+    .card.matrix{
+      padding:0;
+      overflow-x:auto;overflow-y:hidden;
       -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
     }
     .matrix table{width:100%;min-width:900px;border-collapse:separate;border-spacing:0}
     .matrix th,.matrix td{padding:14px 16px;border-bottom:1px solid #e6edf5;text-align:left;vertical-align:top}
     .matrix th{background:#102a43;color:#fff;font-size:14px;letter-spacing:.02em}
+    .matrix thead th:first-child{border-top-left-radius:var(--radius)}
+    .matrix thead th:last-child{border-top-right-radius:var(--radius)}
     .matrix tr:last-child td{border-bottom:none}
     .matrix td:first-child{font-weight:900;color:#102a43;width:24%}
     .chip{
@@ -330,8 +337,12 @@
         margin-top:24px;
       }
       .flow{grid-template-columns:1fr 1fr}
-      .toolbar{grid-template-columns:1fr;top:54px}
+      .toolbar{
+        grid-template-columns:1fr;top:54px;
+        backdrop-filter:none;background:#fff;
+      }
       .filters{justify-content:flex-start}
+      .cert-table th{position:static}
       .hero{
         min-height:0;
         align-items:stretch;
@@ -344,6 +355,7 @@
       .flow{grid-template-columns:1fr}
       .section-head{display:block}
       .card{padding:18px}
+      .card.matrix{padding:0}
       .matrix table{min-width:820px}
       .cert-table{min-width:760px}
     }
@@ -509,7 +521,7 @@
       <div class="toolbar">
         <label class="searchbox">
           <span>⌕</span>
-          <input id="search" type="search" placeholder="Search: e.g. SEEMP, Cargo Ship Safety, MARPOL Annex VI, gas carrier, record book..." />
+          <input id="search" type="text" inputmode="search" enterkeyhint="search" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Search: e.g. SEEMP, Cargo Ship Safety, MARPOL Annex VI, gas carrier, record book..." />
         </label>
         <div class="filters" role="group" aria-label="filters">
           <button class="filter active" data-filter="all">All</button>
@@ -918,38 +930,86 @@
       const tags = item.tags.map(tag => tag.toLowerCase());
       const hasTag = tag => tags.some(t => t.includes(tag));
 
+      if(/eedi technical file/.test(title)) return 'Establishes the energy-efficiency calculation baseline at new-ship design stage so attained EEDI inputs, assumptions, and methodology can be verified by the Administration or class society.';
+      if(/eexi technical file/.test(title)) return 'Establishes the existing energy-efficiency compliance basis for applicable ships, especially existing vessels, so attained EEXI calculations, power limitation, or technical measures can be audited.';
+      if(title === 'technical file') return 'Establishes the NOx emission certification baseline for each marine diesel engine, retaining engine type, ratings, critical components, and settings that affect emissions so the approved state can be judged later.';
+      if(/record book of engine parameters/.test(title)) return 'Tracks post-certification engine parameter adjustments and modifications so changes that could affect NOx emissions are not left unrecorded and compliance is not undermined.';
+      if(/coating technical file/.test(title)) return 'Establishes the full-life maintenance baseline for protective coatings in ballast tanks, double-side skin spaces, or cargo oil tanks so structural corrosion protection remains traceable.';
+      if(/ship construction file/.test(title)) return 'Retains key structural design and construction information so tankers and bulk carriers can reference the original structural safety baseline during operation, surveys, repairs, and modifications.';
+      if(/construction drawings/.test(title)) return 'Ensures traceable as-built structure and arrangement references remain available after delivery for future modifications, surveys, damage assessment, and repair decisions.';
+      if(/alternative design/.test(title)) return 'Documents the safety rationale where alternative design or arrangements do not follow conventional rule layouts, so the Administration can confirm the safety level is not below the intent of the regulations.';
+      if(/ship structure access/.test(title)) return 'Establishes a traceable baseline for structural access and entry arrangements to support ESP and structural survey work.';
+      if(/international oil pollution prevention|\(iopp\)/.test(title)) return 'Establishes the ship\'s baseline compliance qualification for oil-pollution prevention equipment, arrangements, and procedures, confirming it is within the MARPOL Annex I control regime.';
+      if(/oil record book/.test(title)) return 'Makes machinery-space oily waste, residual oil, tanker cargo-oil, and related ballast operations traceable so unlawful discharges are harder to conceal.';
+      if(/sopep|shipboard oil pollution emergency/.test(title)) return 'Enables the ship to follow predefined notification, control, and coordination procedures during an oil-pollution incident to reduce spill consequences.';
+      if(/international sewage pollution prevention|\(ispp\)/.test(title)) return 'Confirms sewage treatment, storage, or discharge arrangements meet the basic requirements of MARPOL Annex IV.';
+      if(/document of approval for the rate of sewage/.test(title)) return 'Prevents untreated sewage from being discharged at an inappropriate rate and ensures the approved rate matches speed, storage, and sea-area conditions.';
+      if(/garbage management plan/.test(title)) return 'Turns garbage classification, collection, storage, handling, and discharge restrictions into onboard procedures the crew can execute.';
+      if(/garbage record book/.test(title)) return 'Creates a formal record chain for garbage handling and discharges so PSC or the Administration can trace Annex V violations.';
+      if(/international air pollution prevention|\(iapp\)/.test(title)) return 'Confirms arrangements for air-pollution sources such as NOx, SOx, ODS, incinerators, and fuel use meet MARPOL Annex VI requirements.';
+      if(/international energy efficiency certificate|\(iee\)/.test(title)) return 'Establishes the certificated baseline for ship energy-efficiency compliance, confirming applicable efficiency surveys have been completed.';
+      if(/seemp|ship energy efficiency management plan/.test(title)) return 'Institutionalises ship energy efficiency and carbon-intensity management so fuel-data collection, CII improvement, and energy management are not ad hoc.';
+      if(/statement of compliance.*fuel oil consumption|operational carbon intensity rating/.test(title)) return 'Confirms annual fuel-consumption data and the operational carbon intensity rating have been verified so operational emissions performance can be tracked year on year.';
+      if(/ballast water record book/.test(title)) return 'Traces ballast uptake, exchange, treatment, and discharge to create an auditable record of invasive-species and water-quality risk.';
+      if(/noxious liquid substances in bulk \(nls certificate\)|\(nls certificate\)/.test(title)) return 'Establishes the baseline compliance threshold for carrying noxious liquid substances in bulk and confirms the ship meets MARPOL Annex II pollution-prevention conditions.';
+      if(/cargo record book/.test(title)) return 'Makes NLS cargo loading and discharge, tank cleaning, residue handling, discharges, and deliveries to reception facilities traceable.';
+      if(/procedures and arrangements manual|\(p&a manual\)/.test(title)) return 'Because each ship\'s tanks, piping, pumps, cleaning, and discharge arrangements differ, defines the approved handling of NLS cargoes and residues in a ship-specific manual.';
+      if(/shipboard marine pollution emergency plan for noxious|emergency plan for noxious liquid/.test(title)) return 'Pre-establishes notification, control, and coordination for NLS leakage, spill, or pollution incidents to reduce consequences.';
+      if(/ozone-depleting/.test(title)) return 'Tracks replenishment, maintenance, discharge, or removal involving ozone-depleting-substance systems so ODS control is backed by records, not just equipment lists.';
+      if(/nitrogen oxides emission/.test(title)) return 'Traces entry to or exit from NOx Tier III control areas and engine status changes to create an auditable record of NOx compliance risk.';
+      if(/hours of rest/.test(title)) return 'Traces fatigue risk and STCW/MLC rest-hour compliance to avoid operational safety risk from overwork.';
+      if(/fuel oil changeover/.test(title)) return 'Controls sulphur fuel-switching risk when entering or leaving an ECA and helps avoid SOx non-compliance from incomplete changeover.';
+      if(/bunker delivery note/.test(title)) return 'Creates a traceability chain for fuel quality and sulphur content so supply, onboard use, and follow-up sampling have an evidence base.';
+      if(/voyage data recorder.*certificate of compliance|certificate of compliance.*voyage data recorder/.test(title)) return 'Confirms the VDR and sensors can still record, retain, and recover data correctly so investigation evidence is reliable.';
+      if(/ais test report/.test(title)) return 'Confirms AIS transmission, reception, identification, and position data remain correct so navigational identification is not misleading.';
+      if(/lrit conformance/.test(title)) return 'Confirms long-range identification and tracking can report position as required to support security, SAR, and Administration monitoring.';
+      if(/noise survey report/.test(title)) return 'Confirms onboard noise meets crew health and living/working environment requirements, not merely as a one-off measurement record.';
+      if(/safety management certificate/.test(title)) return 'Confirms the ship\'s safety management system is actually operated under the company SMS, not that the company merely has a system on paper.';
+      if(title === 'document of compliance') return 'Confirms the company can manage the relevant ship types safely — company-level ISM compliance proof.';
+      if(/continuous synopsis record|\(csr\)/.test(title)) return 'Builds a continuous history of ship identity, ownership, management, and flag changes so the ship\'s background remains transparent.';
+      if(/ship security plan/.test(title)) return 'Institutionalises security threats, security levels, and responses, with auditable security activity records.';
+      if(/international ship security certificate|\(issc\)|interim issc/.test(title)) return 'Confirms ship security arrangements meet SOLAS XI-2 and the ISPS Code — ship-level security compliance proof.';
+      if(/certificates for masters/.test(title)) return 'Confirms crew hold the training, qualifications, and competence required for their ranks, not just headcount.';
+      if(/minimum safe manning/.test(title)) return 'Confirms the ship has sufficient and competent minimum crew for intended operations, not just a headcount list.';
+      if(/bunker oil pollution damage/.test(title)) return 'Ensures victims have an insurable or financially secured source to pursue when bunker oil pollution damage occurs.';
+      if(/removal of wrecks/.test(title)) return 'Ensures coastal States or affected parties have financial security to execute wreck removal when liability arises.';
+      if(/clc 1969/.test(title)) return 'Ensures civil liability cover meeting convention requirements when bulk oil cargo causes pollution damage.';
+      if(/clc 1992/.test(title)) return 'Ensures civil liability cover meeting convention requirements when bulk oil cargo causes pollution damage.';
+      if(/passenger death and personal injury/.test(title)) return 'Ensures financial security for passenger death or personal injury so compensation does not fail after an incident.';
+
       if(/tonnage/.test(title)) return 'Confirms gross and net tonnage as the basis for applicability thresholds, fees, surveys, and certificate requirements.';
       if(/load line/.test(title)) return 'Certifies that freeboard, load line marks, and related watertight safety conditions have been approved under the Load Line regime.';
       if(/exemption/.test(title)) return 'Records the scope, conditions, and legal basis of exemptions granted by the Administration.';
-      if(/coating/.test(title)) return 'Preserves coating specifications, application, inspection, and maintenance data to support structural corrosion control and follow-up surveys.';
-      if(/emergency towing/.test(title)) return 'Provides a ship-specific towing arrangement that can be used immediately in an emergency or blackout situation.';
-      if(/construction drawings|ship construction file|ship structure access|technical file|eedi|eexi|engine parameters/.test(title)) return 'Retains design, construction, modification, or calculation evidence so later surveys, maintenance, and compliance checks remain traceable.';
-      if(/noise/.test(title)) return 'Confirms onboard noise levels are controlled and support compliance with the noise code for crew work and rest areas.';
-      if(/stability|loading information/.test(title)) return 'Gives the master the basis to judge loading, draft, trim, and damage stability and avoid unsafe operational conditions.';
-      if(/damage control/.test(title)) return 'Helps the crew identify watertight subdivisions, closing arrangements, and control measures after flooding or damage.';
-      if(/manoeuvring/.test(title)) return 'Provides bridge personnel with manoeuvring performance, stopping distances, and special propulsion conditions.';
+      if(/emergency towing procedure|emergency towing/.test(title)) return 'Enables external towing to quickly identify available towing points and safety limits when the ship loses power, manoeuvrability, or is in distress.';
+      if(/stability information and loading information/.test(title)) return 'Enables the master to judge intact stability, damage stability, and hull strength across loading conditions.';
+      if(/damage control/.test(title)) return 'Helps the crew quickly understand watertight subdivisions, closing arrangements, and corrective measures during flooding or damage.';
+      if(/manoeuvring booklet/.test(title)) return 'Gives the master the ship\'s actual manoeuvring capability, especially stopping distance, turning performance, and limits when propulsion fails.';
+      if(/maintenance plans/.test(title)) return 'Institutionalises maintenance responsibility for fire protection, firefighting, and related safety equipment so readiness is not left to pre-survey checks alone.';
+      if(/fire safety training manual/.test(title)) return 'Ensures the crew understand fire prevention, firefighting equipment, and emergency action principles so fire response does not depend on individual experience.';
+      if(/fire control plan/.test(title)) return 'Enables ship personnel and shore fire teams to quickly locate fire zones, control stations, detection, and firefighting equipment.';
+      if(/fire safety operational booklet/.test(title)) return 'Standardises fire-risk controls during ship and cargo operations so routine work does not trigger fires.';
+      if(/muster list/.test(title)) return 'Pre-assigns duties for abandonment, fire, and other emergencies so roles are not improvised when an incident occurs.';
+      if(/recovery of persons/.test(title)) return 'Plans person-overboard recovery based on the ship\'s equipment and layout in advance rather than improvising during an incident.';
       if(/maintenance/.test(title)) return 'Defines and records maintenance requirements for key safety systems so equipment remains ready for use.';
-      if(/training|drill|muster|emergency instructions|recovery of persons/.test(title)) return 'Ensures crew understand emergency duties, drills, and response procedures for consistent action in an incident.';
+      if(/onboard training|drill/.test(title)) return 'Ensures crew understand emergency duties, drills, and response procedures for consistent action in an incident.';
       if(/fire/.test(title)) return 'Supports fire prevention, firefighting, and emergency response by making fire arrangements and operating information available onboard.';
       if(/helicopter/.test(title)) return 'Defines safe operation, inspection, and emergency procedures for helicopter facilities and related special operations.';
       if(/lifeboat|life-saving|survival/.test(title)) return 'Confirms life-saving appliances, release/recovery systems, or survival information meet requirements for abandonment and rescue.';
-      if(/radio|ais|vdr|lrit/.test(title)) return 'Demonstrates that communication, identification, recording, or tracking equipment has been tested and supports safe navigation and investigation.';
       if(/charts|nautical publications|iamsar|code of signals/.test(title)) return 'Ensures voyage planning, navigation safety, communications, and SAR information are available in valid onboard form.';
-      if(/pilot ladder|navigational activities/.test(title)) return 'Preserves records of navigation and pilot-transfer operations for onboard management, incident follow-up, and inspection.';
-      if(/cargo|grain|dangerous goods|msds|securing|inf/.test(title)) return 'Ensures cargo information, stowage, securing, or hazard data are known to the ship and reduce cargo-handling and voyage risks.';
-      if(/safety management|document of compliance/.test(title)) return 'Demonstrates that the company and ship SMS are established, implemented, and verified under the ISM Code.';
-      if(/security|issc|csr|synopsis/.test(title)) return 'Maintains ship security and historical ship identity information to support ISPS verification and identification.';
+      if(/pilot ladder/.test(title)) return 'Traces pilot-ladder use, maintenance, and service life to create an auditable record of pilot-transfer safety risk.';
+      if(/navigational activities/.test(title)) return 'Traces navigational activities, incidents, and drills to create an auditable record of voyage safety risk.';
+      if(/cargo securing manual/.test(title)) return 'Prevents non-bulk cargo from shifting due to poor stowage or securing, avoiding hull damage, stability loss, or injury.';
+      if(/material safety data sheets|msds/.test(title)) return 'Ensures the crew know health, fire, spill, and emergency risks before loading oil or oil fuel, not just the cargo name.';
+      if(/cargo|grain|dangerous goods|inf/.test(title)) return 'Ensures cargo information, stowage, securing, or hazard data are known to the ship and reduce cargo-handling and voyage risks.';
       if(/oil pollution|iopp|oil record|sopep|sewage|garbage|air pollution|ozone|nitrogen oxides|fuel oil|bunker delivery|sox|egc|seemp|energy efficiency|carbon intensity/.test(title)) return 'Proves or records pollution prevention, emission control, energy efficiency, and related emergency arrangements under MARPOL.';
       if(/anti-fouling|ballast water|bwms/.test(title)) return 'Controls anti-fouling and ballast water management risks and reduces harmful substances or invasive species impacts.';
-      if(/masters|officers|ratings|hours of rest/.test(title)) return 'Demonstrates seafarer certification and rest-hour compliance under STCW for safe watchkeeping and manning checks.';
       if(/passenger/.test(title)) return 'Covers passenger-ship safety, operating limits, SAR cooperation, or passenger liability arrangements as applicable.';
-      if(/insurance|financial security|liability|wreck|bunker oil/.test(title) || hasTag('liability')) return 'Demonstrates statutory insurance or financial security for pollution, wreck removal, or passenger claims.';
       if(/polar/.test(title)) return 'Confirms polar ship capability, limitations, and operating procedures required under the Polar Code.';
-      if(/gas carrier|chemical|certificate of fitness|nls|procedures and arrangements/.test(title)) return 'Demonstrates that construction, equipment, procedures, and cargo control meet the relevant cargo Code or MARPOL requirements.';
+      if(/gas carrier|chemical|certificate of fitness/.test(title)) return 'Demonstrates that construction, equipment, procedures, and cargo control meet the relevant cargo Code or MARPOL requirements.';
       if(/special purpose|offshore|diving|submersible|dynamically supported|modu|wing-in-ground|high-speed|nuclear/.test(title) || hasTag('special')) return 'Covers special ship types or operations where safety conditions and operating limits must be accepted by the Administration.';
 
       if(hasTag('certificate') || /certificate|statement|declaration|document of approval/.test(title)) return 'Certifies that the ship, equipment, company, or arrangement has been surveyed, approved, or found in compliance by the Administration.';
-      if(hasTag('record') || /record|logbook/.test(title)) return 'Creates a traceable record of operations, tests, discharges, drills, or events for onboard management, audit, and inspection.';
+      if(hasTag('record') || /record|logbook/.test(title)) return 'Creates a traceable record of a specific operation or event so the related risk and compliance status can be reviewed onboard, audited, and inspected.';
       if(hasTag('plan') || /plan|procedure|instructions/.test(title)) return 'Defines the steps crew should follow in normal or emergency situations so onboard practice is consistent and auditable.';
       if(hasTag('manual') || /manual|booklet|file/.test(title)) return 'Places equipment, cargo, safety, or operating information onboard for daily use and inspection.';
       if(hasTag('report') || /report/.test(title)) return 'Retains test, measurement, or compliance assessment results showing that equipment or conditions were verified.';
@@ -996,17 +1056,25 @@
         rows.appendChild(tr);
       });
       empty.style.display = filtered.length ? 'none' : 'block';
+      const tableWrap = rows.closest('.table-wrap');
+      if(tableWrap) void tableWrap.offsetHeight;
+    }
+    let renderQueued = 0;
+    function queueRender(){
+      cancelAnimationFrame(renderQueued);
+      renderQueued = requestAnimationFrame(render);
     }
     document.querySelectorAll('button.filter').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('button.filter').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         activeFilter = btn.dataset.filter;
-        render();
+        queueRender();
       });
     });
-    search.addEventListener('input', render);
-    render();
+    ['input','keyup','change','search'].forEach(evt => search.addEventListener(evt, queueRender));
+    search.addEventListener('compositionend', queueRender);
+    queueRender();
 
     const topNav = document.querySelector('.topnav');
     const navScroller = document.querySelector('.topnav .wrap');

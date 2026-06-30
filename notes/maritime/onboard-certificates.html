@@ -230,12 +230,19 @@
     .step h3{font-size:16px;margin:0 0 8px;color:#102a43}
     .step p{font-size:13px;color:var(--muted);margin:0}
     .matrix{
-      overflow-x:auto;overflow-y:hidden;padding:0;
+      overflow-x:auto;overflow-y:hidden;
+      -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+    }
+    .card.matrix{
+      padding:0;
+      overflow-x:auto;overflow-y:hidden;
       -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
     }
     .matrix table{width:100%;min-width:900px;border-collapse:separate;border-spacing:0}
     .matrix th,.matrix td{padding:14px 16px;border-bottom:1px solid #e6edf5;text-align:left;vertical-align:top}
     .matrix th{background:#102a43;color:#fff;font-size:14px;letter-spacing:.02em}
+    .matrix thead th:first-child{border-top-left-radius:var(--radius)}
+    .matrix thead th:last-child{border-top-right-radius:var(--radius)}
     .matrix tr:last-child td{border-bottom:none}
     .matrix td:first-child{font-weight:900;color:#102a43;width:24%}
     .chip{
@@ -330,8 +337,12 @@
         margin-top:24px;
       }
       .flow{grid-template-columns:1fr 1fr}
-      .toolbar{grid-template-columns:1fr;top:54px}
+      .toolbar{
+        grid-template-columns:1fr;top:54px;
+        backdrop-filter:none;background:#fff;
+      }
       .filters{justify-content:flex-start}
+      .cert-table th{position:static}
       .hero{
         min-height:0;
         align-items:stretch;
@@ -344,6 +355,7 @@
       .flow{grid-template-columns:1fr}
       .section-head{display:block}
       .card{padding:18px}
+      .card.matrix{padding:0}
       .matrix table{min-width:820px}
       .cert-table{min-width:760px}
     }
@@ -509,7 +521,7 @@
       <div class="toolbar">
         <label class="searchbox">
           <span>⌕</span>
-          <input id="search" type="search" placeholder="搜尋：例如 SEEMP、Cargo Ship Safety、MARPOL Annex VI、gas carrier、record book..." />
+          <input id="search" type="text" inputmode="search" enterkeyhint="search" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="搜尋：例如 SEEMP、Cargo Ship Safety、MARPOL Annex VI、gas carrier、record book..." />
         </label>
         <div class="filters" role="group" aria-label="filters">
           <button class="filter active" data-filter="all">全部</button>
@@ -918,38 +930,86 @@
       const tags = item.tags.map(tag => tag.toLowerCase());
       const hasTag = tag => tags.some(t => t.includes(tag));
 
+      if(/eedi technical file/.test(title)) return '建立新船設計階段的能效計算基礎，使 attained EEDI 的輸入資料、假設條件與計算過程可被主管機關或船級社驗證。';
+      if(/eexi technical file/.test(title)) return '建立適用船舶，特別是既有船的現有能效符合性依據，證明 attained EEXI 的計算、限制功率或技術措施可被查核。';
+      if(title === 'technical file') return '建立每台船用柴油機的 NOx 排放認證基準，保存影響排放的引擎型式、額定值、關鍵零件與設定值，使日後可判斷引擎是否仍維持核准狀態。';
+      if(/record book of engine parameters/.test(title)) return '追蹤經認證引擎後續的參數調整與修改歷程，避免影響 NOx 排放的變更未被記錄而破壞符合性。';
+      if(/coating technical file/.test(title)) return '建立壓載艙、雙舷側空間或貨油艙保護塗層的全壽期維護基準，避免結構防蝕狀態無法追溯。';
+      if(/ship construction file/.test(title)) return '保留關鍵結構設計與建造資訊，使油輪、散裝船在營運、檢驗、修理與改裝時能掌握原始結構安全基準。';
+      if(/construction drawings/.test(title)) return '確保船舶完工後仍有可追溯的結構與布置基準，供日後改裝、檢驗、損傷評估與修理判斷使用。';
+      if(/alternative design/.test(title)) return '補足替代設計未完全照傳統條文配置時的安全論證，使主管機關可確認其安全水準不低於規範意圖。';
+      if(/ship structure access/.test(title)) return '建立船體結構檢查通道與進入安排的追溯基準，支援 ESP 與結構檢驗作業。';
+      if(/international oil pollution prevention|\(iopp\)/.test(title)) return '建立船舶在油污染防制設備、布置與程序上的基本合規資格，確認其可進入 MARPOL Annex I 的管制體系。';
+      if(/oil record book/.test(title)) return '讓機艙油污水、殘油、油輪貨油與壓載相關操作具有可追溯性，防止非法排放難以查證。';
+      if(/sopep|shipboard oil pollution emergency/.test(title)) return '讓油污染事故發生時，船上能依預設通報、控制與協調程序降低外洩後果。';
+      if(/international sewage pollution prevention|\(ispp\)/.test(title)) return '確認船舶污水處理、儲存或排放安排符合 MARPOL Annex IV 的基本要求。';
+      if(/document of approval for the rate of sewage/.test(title)) return '避免未處理污水以不當速率排放，確保排放速率與船速、儲存量及海域條件相符。';
+      if(/garbage management plan/.test(title)) return '把垃圾分類、收集、儲存、處理與排放限制轉化為船員可執行的船上管理程序。';
+      if(/garbage record book/.test(title)) return '建立垃圾處理與排放的正式紀錄鏈，讓 PSC 或主管機關能追查是否違反 MARPOL Annex V。';
+      if(/international air pollution prevention|\(iapp\)/.test(title)) return '確認船舶空氣污染來源，如 NOx、SOx、ODS、焚化爐與燃油使用安排，符合 MARPOL Annex VI 要求。';
+      if(/international energy efficiency certificate|\(iee\)/.test(title)) return '建立船舶能源效率符合性的證書化基準，確認船舶已完成適用能效檢驗。';
+      if(/seemp|ship energy efficiency management plan/.test(title)) return '把船舶能源效率與碳強度管理制度化，使燃油資料蒐集、CII 改善與能源管理不只是臨時操作。';
+      if(/statement of compliance.*fuel oil consumption|operational carbon intensity rating/.test(title)) return '確認年度燃油消耗資料與營運碳強度評等已被驗證，讓船舶營運排放表現可被年度追蹤。';
+      if(/ballast water record book/.test(title)) return '追溯壓載水的汲取、交換、處理與排放，建立外來生物與水質風險的可查核紀錄。';
+      if(/noxious liquid substances in bulk \(nls certificate\)|\(nls certificate\)/.test(title)) return '建立船舶載運散裝有毒液體物質的基本合規門檻，確認船舶具備 MARPOL Annex II 要求的防污染條件。';
+      if(/cargo record book/.test(title)) return '讓 NLS 貨物的裝卸、洗艙、殘液處理、排放或交付接收設施等操作具有可追溯性。';
+      if(/procedures and arrangements manual|\(p&a manual\)/.test(title)) return '因各船貨艙、管路、泵浦、洗艙與排放布置不同，需用船舶專屬手冊規範 NLS 貨物與殘液的核准處理方式。';
+      if(/shipboard marine pollution emergency plan for noxious|emergency plan for noxious liquid/.test(title)) return '預先建立 NLS 洩漏、溢出或污染事故的通報、控制與協調架構，降低事故後果。';
+      if(/ozone-depleting/.test(title)) return '追蹤含消耗臭氧層物質系統的補充、維修、排放或移除，避免 ODS 管制流於設備清單而無實際紀錄。';
+      if(/nitrogen oxides emission/.test(title)) return '追溯進出 NOx Tier III 控制區或引擎狀態變更，建立 NOx 排放合規風險的可查核紀錄。';
+      if(/hours of rest/.test(title)) return '追蹤疲勞風險與 STCW／MLC 休息時間符合性，避免過勞造成操作安全風險。';
+      if(/fuel oil changeover/.test(title)) return '控制船舶進出 ECA 時的燃油硫含量切換風險，避免因轉換不完整而違反 SOx 排放要求。';
+      if(/bunker delivery note/.test(title)) return '建立燃油品質與硫含量責任追溯鏈，使燃油供應、船舶使用與後續抽驗有證據基礎。';
+      if(/voyage data recorder.*certificate of compliance|certificate of compliance.*voyage data recorder/.test(title)) return '確認 VDR 與感測器仍能正確記錄、保存並回復資料，使事故調查資料可靠。';
+      if(/ais test report/.test(title)) return '確認 AIS 發送、接收、識別資料與定位資訊仍正常，避免航行識別資訊錯誤。';
+      if(/lrit conformance/.test(title)) return '確認遠距識別與追蹤設備可依規定回報船位，支援保安、搜救與主管機關監控需求。';
+      if(/noise survey report/.test(title)) return '確認船上噪音環境符合船員健康與居住工作環境要求，而非只作為一次性測量紀錄。';
+      if(/safety management certificate/.test(title)) return '確認單艘船舶的安全管理制度已依公司 SMS 實際運作，而不只是公司有制度。';
+      if(title === 'document of compliance') return '確認公司具備管理特定船型的安全管理能力，是公司層級的 ISM 合規證明。';
+      if(/continuous synopsis record|\(csr\)/.test(title)) return '建立船舶身份、船東、管理公司與船旗變更的連續歷史，避免船舶背景不透明。';
+      if(/ship security plan/.test(title)) return '把船舶保全威脅、保全等級與應對措施制度化，並留下保全活動的查核紀錄。';
+      if(/international ship security certificate|\(issc\)|interim issc/.test(title)) return '確認船舶保全安排符合 SOLAS XI-2 與 ISPS Code，是船舶層級的保全合規證明。';
+      if(/certificates for masters/.test(title)) return '確認船員具備其職務所需的訓練、資格與適任能力，避免配員只看人數不看資格。';
+      if(/minimum safe manning/.test(title)) return '確認船舶在預定營運條件下有足夠且適任的最低人力，不只是列出船員人數。';
+      if(/bunker oil pollution damage/.test(title)) return '確保燃油污染損害發生時，受害方有可追索的保險或財務擔保來源。';
+      if(/removal of wrecks/.test(title)) return '確保沉船或殘骸移除責任發生時，沿岸國或受害方有財務擔保可供執行。';
+      if(/clc 1969/.test(title)) return '確保載運散裝油貨船舶發生油污染損害時，有符合公約要求的民事責任保障。';
+      if(/clc 1992/.test(title)) return '確保載運散裝油貨船舶發生油污染損害時，有符合公約要求的民事責任保障。';
+      if(/passenger death and personal injury/.test(title)) return '確保客船乘客死亡或人身傷害責任有財務擔保，避免事故後賠償責任落空。';
+
       if(/tonnage/.test(title)) return '確認船舶總噸位與淨噸位，作為適用門檻、收費、檢驗與證書要求判斷的基礎。';
       if(/load line/.test(title)) return '證明船舶乾舷、載重線標誌與相關水密安全條件已依載重線規定完成核定。';
       if(/exemption/.test(title)) return '記錄主管機關允許船舶免除特定要求的範圍、條件與法定依據。';
-      if(/coating/.test(title)) return '保存保護塗層的規格、施工、檢查與維護資料，支援結構防腐與後續檢驗。';
-      if(/emergency towing/.test(title)) return '讓船舶在失去動力或緊急狀況時，有可立即採用的船舶專屬拖帶安排。';
-      if(/construction drawings|ship construction file|ship structure access|technical file|eedi|eexi|engine parameters/.test(title)) return '保存設計、建造、改裝或計算依據，使後續檢驗、維護與符合性判斷可追溯。';
-      if(/noise/.test(title)) return '確認船上噪音量受控，保障船員工作與休息環境符合噪音規範。';
-      if(/stability|loading information/.test(title)) return '提供船長判斷裝載、吃水、縱傾與破損穩性的依據，避免營運中失去穩性安全。';
-      if(/damage control/.test(title)) return '協助船員在進水或破損時快速判斷水密分隔、關閉裝置與控制措施。';
-      if(/manoeuvring/.test(title)) return '提供船長與駕駛台人員掌握船舶操縱性能、停止距離與特殊推進狀況。';
+      if(/emergency towing procedure|emergency towing/.test(title)) return '讓船舶失去動力、操縱能力或遇險時，外部拖帶可快速掌握船舶可用拖帶點與安全限制。';
+      if(/stability information and loading information/.test(title)) return '讓船長能在不同裝載狀態下判斷完整穩性、破損穩性與船體強度是否安全。';
+      if(/damage control/.test(title)) return '讓船員在進水或破損事故中快速理解水密區劃、關閉裝置與扶正措施。';
+      if(/manoeuvring booklet/.test(title)) return '讓船長掌握本船實際操縱能力，尤其停船距離、迴旋性能與螺槳失效時的操船限制。';
+      if(/maintenance plans/.test(title)) return '將防火、滅火與相關安全設備的維護責任制度化，避免設備只在檢驗前才被動檢查。';
+      if(/fire safety training manual/.test(title)) return '讓船員理解火災預防、滅火設備與緊急行動原則，使消防能力不依賴個人經驗。';
+      if(/fire control plan/.test(title)) return '讓船上人員與岸上消防隊能快速掌握防火分區、控制站、探火與滅火設備位置。';
+      if(/fire safety operational booklet/.test(title)) return '把船舶與貨物操作中的火災風險控制措施標準化，避免日常操作引發火災。';
+      if(/muster list/.test(title)) return '在棄船、火災或其他緊急情況下預先分配職責，避免事故發生時臨時指派。';
+      if(/recovery of persons/.test(title)) return '讓船舶能依本船設備與布置，預先規劃落水人員回收方式，而非事故時臨場嘗試。';
       if(/maintenance/.test(title)) return '規劃與記錄關鍵安全設備的維護要求，確保設備在需要時可正常使用。';
-      if(/training|drill|muster|emergency instructions|recovery of persons/.test(title)) return '讓船員清楚緊急職責、訓練內容與應變程序，提升事故時的反應一致性。';
+      if(/onboard training|drill/.test(title)) return '讓船員清楚緊急職責、訓練內容與應變程序，提升事故時的反應一致性。';
       if(/fire/.test(title)) return '支援防火、滅火與消防應變，確保船上人員能快速取得消防配置與操作資訊。';
       if(/helicopter/.test(title)) return '規範直升機設施的安全操作、檢查與緊急程序，降低特殊作業風險。';
       if(/lifeboat|life-saving|survival/.test(title)) return '確認救生設備、釋放回收系統或求生資訊符合要求，保障棄船與救助能力。';
-      if(/radio|ais|vdr|lrit/.test(title)) return '證明航行通訊、識別、紀錄或追蹤設備經測試並可支援安全航行與事故調查。';
       if(/charts|nautical publications|iamsar|code of signals/.test(title)) return '確保航程規劃、航行安全、通訊與搜救資訊使用的是船上可取得的有效資料。';
-      if(/pilot ladder|navigational activities/.test(title)) return '保存航行與引水相關作業紀錄，提供船上管理、事故追溯與查驗依據。';
-      if(/cargo|grain|dangerous goods|msds|securing|inf/.test(title)) return '確保貨物資訊、積載、繫固或危險性已被船方掌握，降低貨物作業與航行風險。';
-      if(/safety management|document of compliance/.test(title)) return '證明公司與船舶安全管理系統依 ISM Code 建立、執行並經驗證。';
-      if(/security|issc|csr|synopsis/.test(title)) return '維持船舶保安與船舶歷史資料的可查性，支援 ISPS 查驗與船舶識別。';
+      if(/pilot ladder/.test(title)) return '追溯引水梯的使用、維修與服務年限，建立引水轉驳作業安全風險的可查核紀錄。';
+      if(/navigational activities/.test(title)) return '追溯航行活動、事件與演練紀錄，建立航行安全風險的可查核紀錄。';
+      if(/cargo securing manual/.test(title)) return '防止非散裝貨物因積載或繫固不當造成移位、船體損害、穩性惡化或人員危害。';
+      if(/material safety data sheets|msds/.test(title)) return '讓船員在裝載油類或燃油前掌握健康、火災、洩漏與應急風險，而不只知道貨名。';
+      if(/cargo|grain|dangerous goods|inf/.test(title)) return '確保貨物資訊、積載、繫固或危險性已被船方掌握，降低貨物作業與航行風險。';
       if(/oil pollution|iopp|oil record|sopep|sewage|garbage|air pollution|ozone|nitrogen oxides|fuel oil|bunker delivery|sox|egc|seemp|energy efficiency|carbon intensity/.test(title)) return '用來證明或記錄船舶防污染、排放控制、能源效率與相關應急安排符合 MARPOL 要求。';
       if(/anti-fouling|ballast water|bwms/.test(title)) return '控制船體防污系統與壓艙水管理風險，降低有害物質或外來生物造成的環境影響。';
-      if(/masters|officers|ratings|hours of rest/.test(title)) return '證明船員資格與休息時間符合 STCW 要求，支援安全值班與人員適任性查核。';
       if(/passenger/.test(title)) return '針對客船或載客責任確認安全、營運限制、搜救合作或旅客責任保障已備妥。';
-      if(/insurance|financial security|liability|wreck|bunker oil/.test(title) || hasTag('liability')) return '證明船舶對污染、殘骸移除或旅客損害等責任具備法定保險或財務擔保。';
       if(/polar/.test(title)) return '確認船舶在極地水域營運時，具備符合 Polar Code 的船舶能力、限制與操作程序。';
-      if(/gas carrier|chemical|certificate of fitness|nls|procedures and arrangements/.test(title)) return '證明特定貨種船舶的構造、設備、操作程序與貨物控制符合專用 Code 或 MARPOL 要求。';
+      if(/gas carrier|chemical|certificate of fitness/.test(title)) return '證明特定貨種船舶的構造、設備、操作程序與貨物控制符合專用 Code 或 MARPOL 要求。';
       if(/special purpose|offshore|diving|submersible|dynamically supported|modu|wing-in-ground|high-speed|nuclear/.test(title) || hasTag('special')) return '針對特殊船型、特殊作業或非一般營運模式，確認其安全條件與操作限制已被主管機關接受。';
 
       if(hasTag('certificate') || /certificate|statement|declaration|document of approval/.test(title)) return '用來證明船舶、設備、公司或安排已完成主管機關要求的檢驗、核准或符合性確認。';
-      if(hasTag('record') || /record|logbook/.test(title)) return '用來留下操作、測試、排放、訓練或事件的可追溯紀錄，供船上管理、稽核與查驗。';
+      if(hasTag('record') || /record|logbook/.test(title)) return '針對特定作業或事件留下可追溯紀錄，使對應風險與合規狀態可供船上管理、稽核與查驗。';
       if(hasTag('plan') || /plan|procedure|instructions/.test(title)) return '用來規範船員在正常或緊急情況下的操作步驟，確保船上有一致且可查核的做法。';
       if(hasTag('manual') || /manual|booklet|file/.test(title)) return '用來把設備、貨物、安全或操作資訊放在船上，供船員日常執行與查驗時查閱。';
       if(hasTag('report') || /report/.test(title)) return '用來保存測試、測量或符合性評估結果，證明相關設備或狀態曾被確認。';
@@ -996,17 +1056,25 @@
         rows.appendChild(tr);
       });
       empty.style.display = filtered.length ? 'none' : 'block';
+      const tableWrap = rows.closest('.table-wrap');
+      if(tableWrap) void tableWrap.offsetHeight;
+    }
+    let renderQueued = 0;
+    function queueRender(){
+      cancelAnimationFrame(renderQueued);
+      renderQueued = requestAnimationFrame(render);
     }
     document.querySelectorAll('button.filter').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('button.filter').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         activeFilter = btn.dataset.filter;
-        render();
+        queueRender();
       });
     });
-    search.addEventListener('input', render);
-    render();
+    ['input','keyup','change','search'].forEach(evt => search.addEventListener(evt, queueRender));
+    search.addEventListener('compositionend', queueRender);
+    queueRender();
 
     const topNav = document.querySelector('.topnav');
     const navScroller = document.querySelector('.topnav .wrap');
