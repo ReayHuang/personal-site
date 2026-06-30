@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="MSC.1/Circ.1646, on-board certificates, ship documents, PSC, SOLAS, MARPOL, STCW, certificate list">
+  <meta name="description" content="Searchable database of certificates and documents required to be carried on board ships under IMO MSC.1/Circ.1646 (2022), with purpose summaries, applicability notes, and regulatory references.">
+  <meta property="og:title" content="MSC.1/Circ.1646 On-board Certificates and Documents | Reay's Note">
+  <meta property="og:description" content="A practical guide to certificates, manuals, plans, records, reports, and insurance documents required during ship operation, including a searchable database of 127 items and a step-down verification workflow.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/onboard-certificates.en.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/onboard-certificates.en.html">
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/onboard-certificates/onboard-certificates-link-preview.en.png">
+  <meta property="og:image:alt" content="On-board Certificates and Documents Checklist — Reay Huang Maritime note · IMO MSC.1/Circ.1646">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="720">
+  <meta property="og:image:height" content="379">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MSC.1/Circ.1646 On-board Certificates and Documents | Reay's Note">
+  <meta name="twitter:description" content="A practical guide to certificates, manuals, plans, records, reports, and insurance documents required during ship operation, including a searchable database of 127 items and a step-down verification workflow.">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/onboard-certificates/onboard-certificates-link-preview.en.png">
+  <link rel="alternate" hreflang="zh-Hant" href="onboard-certificates.html">
+  <link rel="alternate" hreflang="en" href="onboard-certificates.en.html">
+  <link rel="alternate" hreflang="x-default" href="onboard-certificates.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <title>MSC.1/Circ.1646 On-board Certificates and Documents | Reay's Note</title>
+  <style>
+    :root{
+      --navy:#081b33;
+      --navy2:#0f2e52;
+      --blue:#1d6fd6;
+      --cyan:#11a4d9;
+      --teal:#08a58a;
+      --green:#21a366;
+      --amber:#f6a622;
+      --red:#e5484d;
+      --purple:#7b61ff;
+      --ink:#1d2939;
+      --muted:#667085;
+      --line:#d9e2ec;
+      --soft:#f6f8fb;
+      --soft2:#edf4ff;
+      --white:#ffffff;
+      --radius:20px;
+      --shadow:0 18px 50px rgba(8,27,51,.12);
+      --shadow-sm:0 8px 25px rgba(8,27,51,.09);
+      --mono:"SFMono-Regular","Consolas","Liberation Mono",monospace;
+      --sans:"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 18% 4%, rgba(29,111,214,.13), transparent 32rem),
+        radial-gradient(circle at 95% 12%, rgba(8,165,138,.10), transparent 28rem),
+        linear-gradient(180deg,#f9fbff 0%,#eef4fb 46%,#f7f9fc 100%);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      display:flex;
+      align-items:stretch;
+      min-height:clamp(420px, 48vh, 520px);
+      background:
+        linear-gradient(90deg, rgba(8,27,51,.95) 0%, rgba(8,27,51,.82) 38%, rgba(8,27,51,.45) 68%, rgba(8,27,51,.22) 100%),
+        url("../../assets/images/maritime/onboard-certificates/onboard-certificates-hero.jpg") center right / cover no-repeat,
+        linear-gradient(135deg, rgba(8,27,51,.98), rgba(15,46,82,.96));
+      padding:44px 22px;
+    }
+    .hero::before,
+    .hero::after{
+      content:none;
+      display:none;
+    }
+    .wrap{max-width:1180px;margin:0 auto;position:relative;z-index:1;width:100%}
+    .hero > .wrap{flex:1}
+    .hero-grid{
+      display:block;
+      position:relative;
+      flex:1;
+      min-height:100%;
+      padding-bottom:0;
+    }
+    .hero-grid > div:first-child{
+      max-width:min(760px, calc(100% - 460px));
+      padding-right:12px;
+    }
+    .eyebrow{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:7px 12px;border:1px solid rgba(255,255,255,.22);
+      border-radius:999px;background:rgba(255,255,255,.1);
+      font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+      backdrop-filter: blur(10px);
+    }
+    h1{font-size:clamp(32px,5vw,58px);line-height:1.08;margin:18px 0 16px;letter-spacing:-.045em}
+    .subtitle{max-width:760px;font-size:18px;color:rgba(255,255,255,.84);margin:0 0 24px}
+    .meta{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 0}
+    .pill{
+      display:inline-flex;align-items:center;gap:7px;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);
+      color:rgba(255,255,255,.92);font-size:13px;font-weight:650;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .database-cta{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 16px;border-radius:999px;
+      background:#fff;color:#0f2e52;border:1px solid rgba(255,255,255,.28);
+      font-size:14px;font-weight:900;box-shadow:0 12px 28px rgba(0,0,0,.16);
+      transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+    }
+    .database-cta:hover{background:#edf7ff;transform:translateY(-1px);box-shadow:0 16px 34px rgba(0,0,0,.2)}
+    .hero-card{
+      position:absolute;
+      right:0;
+      bottom:0;
+      width:min(100%,430px);
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:22px;padding:18px;
+      box-shadow:0 25px 70px rgba(0,0,0,.18);
+      backdrop-filter: blur(14px);
+    }
+    .hero-card h2{font-size:17px;margin:0 0 10px;color:#fff}
+    .quick-list{display:grid;gap:9px;margin:0;padding:0;list-style:none}
+    .quick-list li{
+      display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;
+      padding:10px;border-radius:14px;background:rgba(255,255,255,.09);
+    }
+    .quick-list b{display:block;color:#fff;line-height:1.3;font-size:14px}
+    .quick-list span{font-size:12px;color:rgba(255,255,255,.72)}
+    .icon{
+      display:inline-grid;place-items:center;width:28px;height:28px;border-radius:10px;
+      font-size:12px;
+      background:rgba(17,164,217,.22);border:1px solid rgba(255,255,255,.15)
+    }
+    .topnav{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.83);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(13,41,75,.08);
+      box-shadow:0 8px 26px rgba(8,27,51,.05);
+    }
+    .topnav .wrap{
+      display:flex;gap:10px;overflow-x:auto;overflow-y:hidden;
+      padding:12px 22px;scrollbar-width:none;scroll-snap-type:x proximity;
+      -webkit-overflow-scrolling:touch;
+    }
+    .topnav .wrap::-webkit-scrollbar{display:none}
+    .topnav a{
+      flex:0 0 auto;white-space:nowrap;padding:9px 13px;border-radius:999px;
+      color:#17324d;font-size:14px;font-weight:800;
+      scroll-snap-align:center;transition:background .18s ease,color .18s ease,box-shadow .18s ease;
+    }
+    .topnav a:hover{background:#eaf2ff;color:#0b63c7}
+    .topnav a.is-active{
+      background:var(--navy);color:#fff;
+      box-shadow:0 8px 22px rgba(8,27,51,.18);
+    }
+    .topnav a.is-active:hover{background:var(--navy2);color:#fff}
+    main{padding:34px 22px 80px}
+    section{scroll-margin-top:82px;margin:34px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
+    .kicker{color:var(--blue);font-weight:900;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+    h2{font-size:clamp(24px,3vw,34px);line-height:1.2;margin:0;letter-spacing:-.025em;color:#102a43}
+    .lead{color:var(--muted);max-width:780px;margin:9px 0 0}
+    .card{
+      background:rgba(255,255,255,.94);border:1px solid rgba(13,41,75,.09);
+      border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:22px;
+    }
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .stat{
+      position:relative;overflow:hidden;min-height:170px;
+      background:linear-gradient(180deg,#fff,#f7fbff);
+    }
+    .stat::after{
+      content:"";position:absolute;right:-46px;top:-46px;width:110px;height:110px;border-radius:999px;background:rgba(29,111,214,.08)
+    }
+    .stat .num{font-size:34px;line-height:1;font-weight:950;color:#0b63c7;margin-bottom:9px}
+    .stat h3{font-size:17px;margin:0 0 8px;color:#12263a}
+    .stat p{margin:0;color:var(--muted);font-size:14px}
+    .notice{
+      border-left:6px solid var(--blue);
+      background:linear-gradient(90deg,#edf5ff,#fff);
+    }
+    .notice.warn{border-color:var(--amber);background:linear-gradient(90deg,#fff7e6,#fff)}
+    .notice.danger{border-color:var(--red);background:linear-gradient(90deg,#fff1f2,#fff)}
+    .notice.good{border-color:var(--green);background:linear-gradient(90deg,#effaf4,#fff)}
+    .notice h3{margin:0 0 8px;font-size:18px}
+    .notice p{margin:0;color:#475467}
+    .flow{
+      display:grid;grid-template-columns:repeat(6,1fr);gap:12px;
+      counter-reset:step;
+    }
+    .step{
+      position:relative;padding:18px;background:#fff;border:1px solid var(--line);border-radius:18px;min-height:180px;
+    }
+    .step::before{
+      counter-increment:step;content:counter(step);
+      display:grid;place-items:center;width:34px;height:34px;border-radius:12px;
+      background:var(--navy);color:#fff;font-weight:900;margin-bottom:12px;
+    }
+    .step h3{font-size:16px;margin:0 0 8px;color:#102a43}
+    .step p{font-size:13px;color:var(--muted);margin:0}
+    .matrix{
+      overflow-x:auto;overflow-y:hidden;padding:0;
+      -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+    }
+    .matrix table{width:100%;min-width:900px;border-collapse:separate;border-spacing:0}
+    .matrix th,.matrix td{padding:14px 16px;border-bottom:1px solid #e6edf5;text-align:left;vertical-align:top}
+    .matrix th{background:#102a43;color:#fff;font-size:14px;letter-spacing:.02em}
+    .matrix tr:last-child td{border-bottom:none}
+    .matrix td:first-child{font-weight:900;color:#102a43;width:24%}
+    .chip{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:5px 9px;border-radius:999px;font-size:12px;font-weight:850;
+      background:#eef4ff;color:#0b63c7;border:1px solid #d8e8ff;
+      margin:2px 4px 2px 0;
+    }
+    .chip.solas{background:#eef4ff;color:#0b63c7;border-color:#d8e8ff}
+    .chip.marpol{background:#effaf4;color:#067647;border-color:#d4f2df}
+    .chip.stcw{background:#fff7e6;color:#b54708;border-color:#ffe1a6}
+    .chip.bwm{background:#eef9fb;color:#087b86;border-color:#cdeff4}
+    .chip.afs{background:#f0f9ff;color:#026aa2;border-color:#b9e6fe}
+    .chip.liability{background:#f4efff;color:#6941c6;border-color:#e3d8ff}
+    .chip.special{background:#fff1f3;color:#c01048;border-color:#ffd0da}
+    .chip.record{background:#eef9fb;color:#087b86;border-color:#cdeff4}
+    .toolbar{
+      position:sticky;top:60px;z-index:15;
+      display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;
+      padding:14px;margin:0 0 16px;background:rgba(255,255,255,.86);
+      backdrop-filter:blur(18px);border:1px solid rgba(13,41,75,.1);border-radius:22px;box-shadow:var(--shadow-sm);
+    }
+    .searchbox{position:relative}
+    .searchbox input{
+      width:100%;padding:13px 16px 13px 42px;border-radius:15px;border:1px solid #d4dee9;background:#fff;font-size:15px;outline:none;
+    }
+    .searchbox input:focus{border-color:#76a9fa;box-shadow:0 0 0 4px rgba(29,111,214,.12)}
+    .searchbox span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#667085}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    button.filter{
+      border:1px solid #d5e0eb;background:#fff;color:#344054;border-radius:999px;padding:9px 12px;font-weight:900;cursor:pointer;
+    }
+    button.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .table-wrap{
+      overflow:auto;border-radius:22px;border:1px solid rgba(13,41,75,.1);
+      box-shadow:var(--shadow-sm);background:#fff;
+      -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+    }
+    .cert-table{width:100%;border-collapse:collapse;min-width:940px}
+    .cert-table th{position:sticky;top:0;background:#102a43;color:#fff;z-index:2;text-align:left;font-size:13px;letter-spacing:.02em;padding:14px 14px}
+    .cert-table td{padding:14px;border-bottom:1px solid #e7edf4;vertical-align:top;font-size:14px}
+    .cert-table th:first-child,.cert-table td:first-child{min-width:92px}
+    .cert-table tr:hover td{background:#f8fbff}
+    .cert-table .title{font-weight:950;color:#102a43;font-size:15px}
+    .cert-table .title-zh{margin-top:5px;color:#475467;font-size:13px;font-weight:750;line-height:1.45}
+    .cert-table .sub{color:#667085;font-size:12px;margin-top:4px}
+    .cert-table .purpose{font-weight:850;color:#102a43;line-height:1.55;margin-bottom:7px}
+    .cert-table .applicability{color:#475467;line-height:1.55}
+    .summary-label{
+      display:inline-flex;align-items:center;vertical-align:1px;
+      margin-right:6px;padding:2px 7px;border-radius:999px;
+      background:#eaf2ff;color:#0b63c7;border:1px solid #d7e8ff;
+      font-size:11px;font-weight:950;line-height:1.4;
+    }
+    .summary-label.muted{background:#f2f4f7;color:#475467;border-color:#e4e7ec}
+    .cert-table .ref{font-family:var(--mono);font-size:12px;color:#344054;background:#f6f8fb;border:1px solid #e4e7ec;border-radius:10px;padding:8px;display:inline-block;max-width:300px}
+    .section-badge{display:inline-flex;align-items:center;gap:6px;background:#f2f4f7;border:1px solid #e4e7ec;color:#344054;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:850}
+    .section-row td{background:#eaf2ff!important;color:#102a43;font-weight:950;font-size:15px;border-bottom:1px solid #d4e5ff}
+    .empty{display:none;text-align:center;padding:34px;color:#667085;background:#fff;border:1px dashed #cad5e2;border-radius:18px}
+    .legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0 0;color:#667085;font-size:13px}
+    details.accordion{height:100%;background:#fff;border:1px solid #dce6f0;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
+    details.accordion + details.accordion{margin-top:12px}
+    .callout-grid details.accordion + details.accordion{margin-top:0}
+    details.accordion[open]{display:flex;flex-direction:column}
+    details.accordion summary{cursor:pointer;padding:16px 18px;font-weight:950;color:#102a43;background:linear-gradient(90deg,#f7fbff,#fff)}
+    details.accordion .inside{flex:1;padding:0 18px 18px;color:#475467}
+    .callout-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
+    .small-list{margin:10px 0 0;padding-left:1.2em;color:#475467}
+    .small-list li{margin:.35em 0}
+    mark{background:#fff2a8;border-radius:4px;padding:0 2px}
+    .hero .article-share--hero{margin-top:22px}
+    .hero .article-share__label{font-size:11px;font-weight:800;letter-spacing:.04em;line-height:1}
+    .share-band{max-width:1180px;margin:0 auto;padding:16px 22px 32px}
+    .share-band .article-share--end{margin:0;width:100%;justify-content:flex-start;align-items:center}
+    .share-band .article-share__label{font-size:11px;font-weight:800;letter-spacing:.04em;line-height:1;width:auto}
+    .site-footer{background:#061b22;color:rgba(255,255,255,.82);padding:36px 0 44px;font-size:14px;line-height:1.7;text-align:left;margin-top:0}
+    .site-footer .container{max-width:1180px;margin:0 auto;padding:0 22px}
+    .site-footer strong{color:#fff}
+    .site-footer a{color:#8ffff2}
+    .site-footer .disclaimer{margin:14px 0 0;color:rgba(255,255,255,.62);max-width:760px}
+    .site-footer .small{font-size:13px}
+    .site-footer .footer-sources{margin:18px 0 0;max-width:980px}
+    .site-footer .footer-sources__title{margin:0 0 8px;color:rgba(255,255,255,.82);font-size:13px;font-weight:700}
+    .site-footer .source-list{margin:0;padding-left:1.2rem;line-height:1.5}
+    .site-footer .source-list li{color:rgba(255,255,255,.62)}
+    @media (max-width:980px){
+      .grid-4,.grid-3,.grid-2,.callout-grid{grid-template-columns:1fr}
+      .hero-grid > div:first-child{max-width:none;padding-right:0}
+      .hero-card{
+        position:static;
+        width:100%;
+        margin-top:24px;
+      }
+      .flow{grid-template-columns:1fr 1fr}
+      .toolbar{grid-template-columns:1fr;top:54px}
+      .filters{justify-content:flex-start}
+      .hero{
+        min-height:0;
+        align-items:stretch;
+        padding:40px 22px 36px;
+        background-position:72% center;
+      }
+    }
+    @media (max-width:640px){
+      main{padding-inline:14px}.hero{padding-inline:14px}.topnav .wrap{padding-inline:14px}
+      .flow{grid-template-columns:1fr}
+      .section-head{display:block}
+      .card{padding:18px}
+      .matrix table{min-width:820px}
+      .cert-table{min-width:760px}
+    }
+    @media print{
+      body{background:#fff}.note-site-bar,.topnav,.toolbar,.article-share,.share-band{display:none !important}.hero{color:#111;background:#fff;border-bottom:3px solid #111}.hero-card{background:#fff;color:#111;border:1px solid #ccc;box-shadow:none}.pill,.eyebrow{color:#111;border-color:#ccc;background:#fff}.card,.table-wrap{box-shadow:none}.cert-table th{position:static}section{break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Notes</a>
+      <span>|</span>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="onboard-certificates.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="onboard-certificates.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">IMO CIRCULAR NOTE • ON-BOARD CERTIFICATES • REAY'S NOTE</div>
+        <h1>On-board Certificates and Documents</h1>
+        <p class="article-meta">
+          <span>📅 Updated: 2026-06-30</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ About 18 min read</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 MSC.1/Circ.1646 / On-board certificates / PSC / SOLAS / MARPOL</span>
+        </p>
+        <p class="subtitle">A practical index of certificates, manuals, plans, records, reports, and insurance documents normally required on board during ship operation. Based on IMO MSC.1/Circ.1646 (2022), it helps you judge document purpose, ship-type applicability, and inspection focus before going to the source instruments.</p>
+        <div class="meta">
+          <span class="pill">📄 FAL.2/Circ.133</span>
+          <span class="pill">🌱 MEPC.1/Circ.902</span>
+          <span class="pill">🛟 MSC.1/Circ.1646</span>
+          <span class="pill">⚖️ LEG.2/Circ.4</span>
+          <span class="pill">🗓️ 27 Jun 2022 publication</span>
+        </div>
+        <div class="hero-actions">
+          <a class="database-cta" href="#database">Go to certificate database</a>
+        </div>
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/onboard-certificates.en.html"
+          data-share-title="MSC.1/Circ.1646 On-board Certificates and Documents | Reay's Note"
+          data-share-email-body="I thought you might find this useful from Reay's maritime notes:&#10;&#10;MSC.1/Circ.1646 On-board Certificates and Documents | Reay's Note&#10;https://reayhuang.com/notes/maritime/onboard-certificates.en.html"
+          data-share-copy="Copy link"
+          data-share-copied="Copied"
+          data-toast-copied="Link copied to clipboard"
+        >
+          <p class="article-share__label" id="share-hero-label">Share this note</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Key points">
+        <h2>Four principles before you start</h2>
+        <ul class="quick-list">
+          <li><span class="icon">1</span><div><b>Not every item applies to every ship</b><span>Filter by ship type, GT, age, trading pattern, convention status, cargo, and equipment.</span></div></li>
+          <li><span class="icon">2</span><div><b>IMO instruments only</b><span>Flag, class, port, and charterer requirements are outside this list.</span></div></li>
+          <li><span class="icon">3</span><div><b>Electronic certificates and records are acceptable</b><span>They must follow the relevant IMO guidelines and remain accessible onboard.</span></div></li>
+          <li><span class="icon">4</span><div><b>PSC still relies on convention text</b><span>This circular is an index, not a substitute for the underlying instruments.</span></div></li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="topnav" aria-label="page navigation">
+    <div class="wrap">
+      <a href="#overview">Overview</a>
+      <a href="#logic">Workflow</a>
+      <a href="#database">Database</a>
+      <a href="#shiptype">Ship types</a>
+      <a href="#notes">Notes</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="overview">
+      <div class="section-head">
+        <div>
+          <div class="kicker">01 · Overview</div>
+          <h2>What this list is for</h2>
+          <p class="lead">This is IMO's consolidated index of certificates and documents required to be carried on board ships. FAL.2/Circ.133, MEPC.1/Circ.902, MSC.1/Circ.1646, and LEG.2/Circ.4 are issued by different IMO bodies but refer to the same 2022 list. In practice, work through general requirements first, then ship type, cargo, equipment, and record-keeping.</p>
+        </div>
+      </div>
+      <div class="grid-4">
+        <article class="card stat"><div class="num" id="totalCount">--</div><h3>Indexed items</h3><p>Certificates, manuals, plans, records, test reports, and insurance documents.</p></article>
+        <article class="card stat"><div class="num">13</div><h3>Main sections</h3><p>From all ships and passenger/cargo ships to chemical tankers, gas carriers, polar waters, and low-flashpoint fuels.</p></article>
+        <article class="card stat"><div class="num">6+</div><h3>Convention families</h3><p>SOLAS, MARPOL, STCW, BWM, AFS, CLC/Bunkers/WRC, and more.</p></article>
+        <article class="card stat"><div class="num">2022</div><h3>2022 edition</h3><p>Replaces the 2017 circular list and is a useful baseline for document updates.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid-2">
+        <article class="card notice good">
+          <h3>✅ Good uses</h3>
+          <p>Building an onboard certificate index, delivery/redelivery checklists, internal audit prep, and a first-pass review before LR/Flag/ISM/ISPS document checks.</p>
+        </article>
+        <article class="card notice danger">
+          <h3>⚠️ Not a stand-alone compliance basis</h3>
+          <p>Do not use this list alone to judge deficiencies. Always return to the governing convention, code, flag Administration instruction, class rules, PSC practice, and the ship's actual configuration.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="logic">
+      <div class="section-head">
+        <div>
+          <div class="kicker">02 · Practical workflow</div>
+          <h2>Recommended workflow: filter from broad to narrow</h2>
+          <p class="lead">This is not a universal tick-all list. It is a layered filter. The workflow below helps avoid treating non-applicable documents as deficiencies.</p>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="step"><h3>Confirm ship particulars</h3><p>Ship type, GT, trading pattern, convention status, build date, and major conversion dates.</p></div>
+        <div class="step"><h3>Apply general items first</h3><p>Certificates plus safety, pollution-prevention, security, crew, and record-type documents.</p></div>
+        <div class="step"><h3>Add ship-type items</h3><p>Passenger, cargo, tanker, bulk carrier, gas carrier, chemical tanker, and similar types.</p></div>
+        <div class="step"><h3>Add cargo and operation items</h3><p>Dangerous goods, packaged DG, INF, oil/NLS bulk, grain, polar waters.</p></div>
+        <div class="step"><h3>Add equipment-driven items</h3><p>VDR, AIS, LRIT, EGCS, BWMS, incinerator, helicopter facility, low-flashpoint fuel systems.</p></div>
+        <div class="step"><h3>Check form and validity</h3><p>Valid, approved, endorsed, on board, accessible, updated; electronic documents must follow the relevant guidelines.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="kicker">03 · Convention map</div>
+          <h2>Convention map</h2>
+          <p class="lead">Use this map to recognise which regulatory family a document belongs to before you inspect it.</p>
+        </div>
+      </div>
+      <div class="card matrix">
+        <table>
+          <thead><tr><th>Theme</th><th>Typical document types</th><th>Practical inspection focus</th></tr></thead>
+          <tbody>
+            <tr><td>SOLAS Safety</td><td><span class="chip solas">Safety Certificate</span><span class="chip solas">Fire plan</span><span class="chip solas">LSA manual</span><span class="chip record">Test report</span></td><td>Validity, attached forms, onboard availability/posting, equipment test reports, alternative design and exemptions.</td></tr>
+            <tr><td>MARPOL Pollution</td><td><span class="chip marpol">IOPP/IAPP/IEE</span><span class="chip record">Record Book</span><span class="chip marpol">SOPEP/SMPEP</span><span class="chip marpol">SEEMP</span></td><td>GT thresholds, cargo type, emission control areas, BDN/sample retention, CII/EEXI/SEEMP updates.</td></tr>
+            <tr><td>STCW / Crew</td><td><span class="chip stcw">CoC/CoP</span><span class="chip record">Hours of rest</span></td><td>Availability of originals, rank competence, completeness of rest-hour records.</td></tr>
+            <tr><td>Security / ISM</td><td><span class="chip solas">SMC/DOC</span><span class="chip solas">ISSC</span><span class="chip record">Security records</span></td><td>ISM/ISPS certification, CSR continuity, SSP and security record retention.</td></tr>
+            <tr><td>Special operation</td><td><span class="chip special">Polar</span><span class="chip special">IGF</span><span class="chip special">HSC</span><span class="chip special">INF</span></td><td>Applies only to specific ship types, cargoes, or areas and is often missed when operation is occasional.</td></tr>
+            <tr><td>Liability insurance</td><td><span class="chip liability">Bunkers</span><span class="chip liability">WRC</span><span class="chip liability">CLC</span><span class="chip liability">Athens/PAL</span></td><td>GT/passenger/oil thresholds, contracting States, certificate format, and issuing/recognised authority.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="database">
+      <div class="section-head">
+        <div>
+          <div class="kicker">04 · Searchable database</div>
+          <h2>Searchable certificate and document table</h2>
+          <p class="lead">Search by certificate, manual, record, SOLAS, MARPOL, IGF, Polar, BWMS, and more. Use the filter buttons to narrow the list quickly.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <label class="searchbox">
+          <span>⌕</span>
+          <input id="search" type="search" placeholder="Search: e.g. SEEMP, Cargo Ship Safety, MARPOL Annex VI, gas carrier, record book..." />
+        </label>
+        <div class="filters" role="group" aria-label="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="SOLAS">SOLAS</button>
+          <button class="filter" data-filter="MARPOL">MARPOL</button>
+          <button class="filter" data-filter="Record">Records</button>
+          <button class="filter" data-filter="STCW">STCW</button>
+          <button class="filter" data-filter="BWM">BWM/AFS</button>
+          <button class="filter" data-filter="Liability">Insurance</button>
+          <button class="filter" data-filter="Special">Special</button>
+        </div>
+      </div>
+      <div class="legend">
+        <span>Tags:</span>
+        <span class="chip solas">SOLAS</span>
+        <span class="chip marpol">MARPOL</span>
+        <span class="chip stcw">STCW</span>
+        <span class="chip record">Record</span>
+        <span class="chip liability">Liability</span>
+        <span class="chip special">Special</span>
+      </div>
+      <div class="table-wrap" style="margin-top:12px">
+        <table class="cert-table" aria-describedby="certificates table">
+          <thead>
+            <tr>
+              <th style="width:11%">Section</th>
+              <th style="width:31%">Certificate / document</th>
+              <th>Applicability summary</th>
+              <th style="width:22%">Reference</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <div id="empty" class="empty">No matching items. Try another keyword or switch back to All.</div>
+    </section>
+
+    <section id="shiptype">
+      <div class="section-head">
+        <div>
+          <div class="kicker">05 · Ship type reminders</div>
+          <h2>Ship-type and cargo reminders</h2>
+          <p class="lead">The most common mistake is not ignorance of a document, but failing to judge when it actually applies.</p>
+        </div>
+      </div>
+      <div class="callout-grid">
+        <details class="accordion" open><summary>Cargo ships</summary><div class="inside"><ul class="small-list"><li>500 GT and over: Cargo Ship Safety Construction / Equipment, etc.</li><li>300 GT and over with a radio installation: Cargo Ship Safety Radio Certificate.</li><li>Oil tankers and bulk carriers also need ESP, Ship Structure Access Manual, CAS, ODMC, COW, STS, VOC, and related items.</li></ul></div></details>
+        <details class="accordion" open><summary>Passenger ships</summary><div class="inside"><ul class="small-list"><li>In addition to section 1 general items: Passenger Ship Safety Certificate, decision support system, SAR cooperation plan, and operational limitations list.</li><li>Licensed to carry more than 12 passengers: passenger liability insurance certificate.</li></ul></div></details>
+        <details class="accordion"><summary>Oil / chemical / gas tankers</summary><div class="inside"><ul class="small-list"><li>Oil tanker: IOPP, Oil Record Book Part II, SOPEP, COW, STS, ODMC, CLC, and related items.</li><li>Chemical tanker: NLS, Cargo Record Book, P&A Manual, SMPEP, BCH/IBC Certificate of Fitness.</li><li>Gas carrier: GC/IGC Certificate of Fitness, Cargo Operations Manuals, especially ESD and PRV emergency isolating procedures.</li></ul></div></details>
+        <details class="accordion"><summary>New environmental / energy-efficiency documents</summary><div class="inside"><ul class="small-list"><li>SEEMP, IEE, fuel-oil consumption / CII statements, and EEXI Technical Files are common fleet-management focus areas.</li><li>Ships with EGCS need the SOx Emission Compliance Certificate and EGC System Technical Manual.</li></ul></div></details>
+        <details class="accordion"><summary>Special areas and special fuels</summary><div class="inside"><ul class="small-list"><li>Polar waters: Polar Ship Certificate and PWOM.</li><li>Ships using gas or low-flashpoint fuels: IGF Code maintenance, emergency, and operational procedures plus fuel-handling manual.</li></ul></div></details>
+        <details class="accordion"><summary>Record-type documents</summary><div class="inside"><ul class="small-list"><li>Record books must be onboard, readable, up to date, and retained for the required period.</li><li>Common examples: oil/garbage/ballast/cargo record books, hours of rest, VDR/AIS/LRIT test reports, pilot ladder records, and navigational activity records.</li></ul></div></details>
+      </div>
+    </section>
+
+    <section id="notes">
+      <div class="section-head">
+        <div>
+          <div class="kicker">06 · Important notes</div>
+          <h2>Important notes on using this page</h2>
+          <p class="lead">This page is a working visual note, not an official instrument. Formal decisions must follow the latest IMO instruments, flag Administration guidance, class/RO instructions, and the ship's actual configuration.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card notice"><h3>Scope</h3><p>Covers only documents required under IMO instruments to be carried on board. It does not include other organisations, authorities, ports, charterers, or company SMS extras.</p></article>
+        <article class="card notice warn"><h3>Electronic documents</h3><p>Electronic certificates and records must follow the relevant IMO guidelines and remain demonstrable, verifiable, and readable onboard.</p></article>
+        <article class="card notice danger"><h3>PSC / deficiency decisions</h3><p>For PSC or formal deficiency decisions, return to the governing convention, code, flag circular, RO instruction, and specific regulation.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/onboard-certificates.en.html"
+      data-share-title="MSC.1/Circ.1646 On-board Certificates and Documents | Reay's Note"
+      data-share-email-body="I thought you might find this useful from Reay's maritime notes:&#10;&#10;MSC.1/Circ.1646 On-board Certificates and Documents | Reay's Note&#10;https://reayhuang.com/notes/maritime/onboard-certificates.en.html"
+      data-share-copy="Copy link"
+      data-share-copied="Copied"
+      data-toast-copied="Link copied to clipboard"
+    >
+      <p class="article-share__label" id="share-end-label">Found this useful? Share it</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>MSC.1/Circ.1646 On-board Certificates and Documents | Reay's Note</strong>
+      <span class="small">Compiled by Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        This page is a visual working note for learning, internal training, and survey preparation. It does not represent the official position of Lloyd's Register, IMO, or any other body; <span class="disclaimer-tail">formal delivery, PSC inspection, deficiency decisions, and document compliance must still follow the latest IMO instruments, flag Administration instructions, class rules, and the ship's actual configuration.</span>
+      </p>
+      <div class="footer-sources small">
+        <p class="footer-sources__title">References / Source notes</p>
+        <ul class="source-list">
+          <li>IMO FAL.2/Circ.133 · MEPC.1/Circ.902 · MSC.1/Circ.1646 · LEG.2/Circ.4 — List of certificates and documents required to be carried on board ships (2022)</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+  <script>
+    const items = [
+      // Section 1 - All ships
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Tonnage Certificate (1969)', trigger:'Ships whose gross and net tonnage are determined under Tonnage 1969.', ref:'Tonnage 1969, article 7', tags:['Certificate','General']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Load Line Certificate', trigger:'Ships surveyed and marked under the Load Line Convention / 1988 LL Protocol.', ref:'LL 1966 article 16; LL PROT 1988 article 16', tags:['Certificate','General']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Load Line Exemption Certificate', trigger:'Ships granted a Load Line exemption.', ref:'LL 1966 article 16; LL PROT 1988 article 16', tags:['Certificate','General']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Exemption Certificate', trigger:'Where an exemption is granted under SOLAS 1974 or the 1988 SOLAS Protocol, a separate exemption certificate is required.', ref:'SOLAS I/12; SOLAS PROT 1988 I/12', tags:['SOLAS','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Coating Technical File', trigger:'Applies to dedicated seawater ballast tanks on all ships, double-side skin spaces on bulk carriers of 150 m and above, crude oil tanker cargo oil tanks, etc.', ref:'SOLAS II-1/3-2, II-1/3-11; MSC.215(82); MSC.288(87)', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Emergency Towing Procedure', trigger:'All ships must carry a ship-specific emergency towing procedure for emergency use.', ref:'SOLAS II-1/3-4; MSC.1/Circ.1255', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Construction drawings', trigger:'Ships built on or after 1 January 2007 must retain as-built drawings and subsequent structural alteration drawings.', ref:'SOLAS II-1/3-7; MSC/Circ.1135', tags:['SOLAS','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Ship Construction File', trigger:'Applies to oil tankers of 150 m and above and certain bulk carriers of 150 m and above; excludes ore carriers and combination carriers.', ref:'SOLAS II-1/3-10; MSC.1/Circ.1343', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Noise Survey Report', trigger:'New ships of 1,600 GT and above, subject to exclusions; the report must be onboard and available to the crew.', ref:'SOLAS II-1/3-12; Noise Code 4.3', tags:['SOLAS','Report']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Stability information and loading information', trigger:'Passenger ships regardless of size and cargo ships of 24 m and over; includes intact/damage stability and related loading information.', ref:'SOLAS II-1/5, II-1/5-1; LL 1966 reg.10; LL Protocol 1988 reg.10', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Damage control plans and booklets', trigger:'Passenger and cargo ships must display watertight subdivision, openings, closing arrangements, and corrective list information.', ref:'SOLAS II-1/19; MSC.1/Circ.1245; MSC.1/Circ.1570', tags:['SOLAS','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Manoeuvring booklet', trigger:'Trial-recorded stopping time, heading, and distance data must be available to the master or designated personnel.', ref:'SOLAS II-1/28', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Evaluation of the alternative design and arrangements', trigger:'Where alternative design or arrangements are used, an approved copy of the compliance evaluation must be carried.', ref:'SOLAS II-1/55.4.2; II-2/17.4.2; III/38.4.2', tags:['SOLAS','Approval']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Maintenance plans', trigger:'Covers fire protection systems and fire-fighting systems and appliances; additional requirements apply to tankers and large passenger ships.', ref:'SOLAS II-2/14.2.2, II-2/14.3, II-2/14.4', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Onboard training and drills record', trigger:'Fire drills must be conducted and recorded in accordance with SOLAS III/19.3 and III/19.5.', ref:'SOLAS II-2/15.2.2.5', tags:['SOLAS','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Fire safety training manual', trigger:'Prepared in the ship\'s working language and placed in the mess/recreation room or crew accommodation; audio-visual material may replace part of the manual.', ref:'SOLAS II-2/15.2.3', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Fire control plan/booklet', trigger:'Fire control plans/booklets must be displayed, kept up to date, and a weatherproof copy must be available externally for shore firefighting.', ref:'SOLAS II-2/15.2.4; II-2/15.3.2', tags:['SOLAS','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Fire safety operational booklet', trigger:'Provides fire safety information for ship and cargo operations; may be combined with the fire safety training manual.', ref:'SOLAS II-2/16.2', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Operations manual for helicopter facility', trigger:'Where a helicopter facility is provided, an operations manual, risk prevention, procedures, and equipment checklist are required.', ref:'SOLAS II-2/18.8.1', tags:['SOLAS','Manual','Special']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Statement of acceptance for replacement release and retrieval system to existing lifeboat', trigger:'Statement of acceptance when an existing lifeboat on-load release mechanism is replaced with an LSA Code-compliant system.', ref:'SOLAS III/1.5; LSA Code 4.4.7.6; MSC.1/Circ.1392; MSC.1/Circ.1584', tags:['SOLAS','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Muster list and emergency instructions', trigger:'Must be posted conspicuously on the bridge, in the engine room, and in accommodation spaces; passenger ships have language requirements.', ref:'SOLAS III/8; III/37', tags:['SOLAS','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Ship-specific plans and procedures for recovery of persons from the water', trigger:'All ships must carry ship-specific plans and procedures for recovery of persons from the water.', ref:'SOLAS III/17-1; MSC.346(91); MSC.1/Circ.1447', tags:['SOLAS','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Training manual', trigger:'Understandable guidance on lifesaving appliances and survival methods; may be split into volumes or partly replaced by audio-visual material.', ref:'SOLAS III/35', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Radio record', trigger:'Records incidents related to radiocommunication services that are important to safety of life at sea.', ref:'SOLAS IV/17', tags:['SOLAS','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Minimum safe manning document', trigger:'Ships subject to SOLAS chapter I must carry a minimum safe manning document or equivalent issued by the Administration.', ref:'SOLAS V/14.2', tags:['SOLAS','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Voyage data recorder system - certificate of compliance', trigger:'After the annual VDR performance test, the compliance certificate issued by the testing organisation must be kept onboard.', ref:'SOLAS V/18.8', tags:['SOLAS','Report','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'AIS test report', trigger:'AIS annual testing by an approved surveyor/testing/servicing facility; the test report must be kept onboard.', ref:'SOLAS V/18.9; MSC.1/Circ.1252', tags:['SOLAS','Report','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Nautical charts and nautical publications', trigger:'Charts and publications for the intended voyage must be adequate and up to date; ECDIS may satisfy chart carriage requirements.', ref:'SOLAS V/19.2.1.4; V/27', tags:['SOLAS','Navigation']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'LRIT conformance test report', trigger:'After LRIT conformance testing, a test report is issued by the Administration or ASP.', ref:'SOLAS V/19-1; MSC.1/Circ.1307', tags:['SOLAS','Report']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Code of Signals and IAMSAR Manual Volume III', trigger:'Ships fitted with radio installations carry the International Code of Signals; all ships carry the latest IAMSAR Volume III.', ref:'SOLAS V/21', tags:['SOLAS','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Records for pilot ladders used for pilot transfer', trigger:'Pilot ladders must be identifiable and their date of entry into service and repairs recorded.', ref:'SOLAS V/23.2.4', tags:['SOLAS','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Records of navigational activities', trigger:'Ships on international voyages must retain records of navigational activities/incidents, including drills and pre-departure tests.', ref:'SOLAS V/26; V/28.1', tags:['SOLAS','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Cargo Securing Manual', trigger:'Except for solid/liquid bulk cargoes, loading/stowage/securing must follow an Administration-approved Cargo Securing Manual.', ref:'SOLAS VI/5.6; VII/5; MSC.1/Circ.1353/Rev.2', tags:['SOLAS','Manual','Cargo']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Material safety data sheets (MSDS)', trigger:'Ships carrying oil or oil fuel must provide MSDS before bulk oil cargo loading or bunkering.', ref:'SOLAS VI/5-1; MSC.286(86)', tags:['SOLAS','Cargo']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Safety Management Certificate', trigger:'Issued after the ship SMS and company system are verified against the ISM Code.', ref:'SOLAS IX/4; ISM Code 13', tags:['SOLAS','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Document of compliance', trigger:'Issued when the company complies with the ISM Code; a copy must be kept onboard.', ref:'SOLAS IX/4; ISM Code 13', tags:['SOLAS','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Continuous Synopsis Record (CSR)', trigger:'Ships subject to SOLAS chapter I must carry a CSR as the onboard record of ship history.', ref:'SOLAS XI-1/5', tags:['SOLAS','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Ship security plan and associated records', trigger:'An approved SSP must be onboard; records of security training, threats, incidents, security-level changes, and SSAS tests must be retained.', ref:'SOLAS XI-2/9; ISPS Code Part A 9, 10', tags:['SOLAS','Record','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Ship Security Certificate (ISSC) or Interim ISSC', trigger:'Demonstrates compliance with SOLAS XI-2 and ISPS Code Part A; an interim ISSC may be issued.', ref:'SOLAS XI-2/9.1.1; ISPS Code Part A 19', tags:['SOLAS','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Exemption Certificate for UNSP Barges', trigger:'UNSP barges may be granted certain survey and certification exemptions under MARPOL Annexes I/IV/VI.', ref:'MARPOL Annex I 3.7, 9.2; Annex IV 3.2, 7.2; Annex VI 3.4, 8.4; MEPC.1/Circ.892', tags:['MARPOL','Certificate','Special']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Oil Pollution Prevention Certificate (IOPP)', trigger:'Oil tankers of 150 GT and above; other ships of 400 GT and above trading to MARPOL party ports/facilities.', ref:'MARPOL Annex I, regulation 7', tags:['MARPOL','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Oil Record Book', trigger:'Oil tankers of 150 GT and above and other ships of 400 GT and above need Part I; oil tankers also need Part II.', ref:'MARPOL Annex I, regulations 17 and 36', tags:['MARPOL','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Shipboard Oil Pollution Emergency Plan (SOPEP)', trigger:'Oil tankers of 150 GT and above and other ships of 400 GT and above must carry an approved SOPEP.', ref:'MARPOL Annex I, regulation 37; MEPC.54(32); MEPC.86(44)', tags:['MARPOL','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Sewage Pollution Prevention Certificate', trigger:'Ships subject to MARPOL Annex IV and trading to other party ports/facilities.', ref:'MARPOL Annex IV, regulation 5; MEPC/Circ.408', tags:['MARPOL','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Document of approval for the rate of sewage discharge', trigger:'Where untreated sewage in holding tanks is discharged at a moderate rate, the discharge rate must be approved by the Administration.', ref:'MARPOL Annex IV, regulation 11.1.1; MEPC.157(55)', tags:['MARPOL','Approval']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Garbage management plan', trigger:'Ships of 100 GT and above, ships certified to carry 15 or more persons, and fixed/floating platforms need a garbage management plan.', ref:'MARPOL Annex V, regulation 10.2; MEPC.220(63)', tags:['MARPOL','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Garbage Record Book', trigger:'Ships of 400 GT and above, ships certified to carry 15 or more persons trading to other party ports/facilities, and fixed/floating platforms.', ref:'MARPOL Annex V, regulation 10.3', tags:['MARPOL','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'SOx Emission Compliance Certificate and EGC System Technical Manual', trigger:'Ships using an EGC system as an alternative means of compliance with MARPOL Annex VI regulation 14.', ref:'MARPOL Annex VI regulation 4; MEPC.259(68)', tags:['MARPOL','Certificate','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Ship Energy Efficiency Management Plan (SEEMP)', trigger:'Ships of 400 GT and above; ships of 5,000 GT and above must include fuel-data collection/reporting and CII-related content.', ref:'MARPOL Annex VI regulations 5.4.5, 5.4.6, 26, 27, 28; MEPC.346(78)', tags:['MARPOL','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Air Pollution Prevention Certificate (IAPP)', trigger:'International ships of 400 GT and above, and relevant platforms/rigs under MARPOL Annex VI regulation 6.', ref:'MARPOL Annex VI, regulation 6', tags:['MARPOL','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Energy Efficiency Certificate (IEE)', trigger:'Ships of 400 GT and above must be issued following survey before proceeding to another party port/facility.', ref:'MARPOL Annex VI, regulation 6', tags:['MARPOL','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Statement of Compliance - Fuel Oil Consumption Reporting and Operational Carbon Intensity Rating', trigger:'Ships of 5,000 GT and above must report fuel-oil consumption; from 2023, relevant ship types also need a CII rating statement of compliance.', ref:'MARPOL Annex VI, regulations 6, 27 and 28', tags:['MARPOL','Certificate','Report']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Ozone-depleting substances record book', trigger:'Ships subject to MARPOL Annex VI regulation 6.1 with rechargeable ODS systems.', ref:'MARPOL Annex VI, regulation 12.6', tags:['MARPOL','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Logbook or electronic record book - nitrogen oxides emission', trigger:'Applies under MARPOL Annex VI 13.5.1 to marine diesel engines certified Tier II/Tier III or Tier II only; date, time, and position must be recorded when entering/leaving a NOx Tier III ECA or changing status.', ref:'MARPOL Annex VI, regulations 13.5.1 and 13.5.3', tags:['MARPOL','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Fuel oil changeover procedure and logbook', trigger:'Ships using different fuels to meet ECA sulphur limits need a written fuel changeover procedure and record.', ref:'MARPOL Annex VI, regulation 14.6', tags:['MARPOL','Record','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:"Manufacturer's operating manual for incinerators", trigger:'For incinerators installed under MARPOL Annex VI regulation 16.6.1, the manufacturer\'s operating manual must be kept.', ref:'MARPOL Annex VI, regulation 16.7', tags:['MARPOL','Manual']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Bunker delivery note and representative sample', trigger:'Bunker delivery notes and representative samples must be kept onboard under MARPOL Annex VI.', ref:'MARPOL Annex VI, regulations 18.6 and 18.8.1', tags:['MARPOL','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'EEDI Technical File', trigger:'Applies to ship types under MARPOL Annex VI regulation 22.1; includes attained EEDI calculation data and methodology.', ref:'MARPOL Annex VI, regulation 22', tags:['MARPOL','Technical File']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'EEXI Technical File', trigger:'Applies to ship types under MARPOL Annex VI regulation 23.1; includes attained EEXI calculation data and methodology.', ref:'MARPOL Annex VI, regulation 23', tags:['MARPOL','Technical File']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Technical File', trigger:'Each marine diesel engine onboard must have an Administration-approved NOx Technical File kept with the engine for its lifetime.', ref:'NOx Technical Code 2008, paragraph 2.3.4', tags:['MARPOL','Technical File']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Record Book of Engine Parameters', trigger:'Where the Engine Parameter Check method is used, engine adjustments/modifications must be recorded.', ref:'NOx Technical Code 2008, 2.3.7 and 6.2.2.7.1', tags:['MARPOL','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Certificates for masters, officers or ratings', trigger:'Certificates for masters, officers, or ratings must be issued under STCW/STCW-F and originals kept onboard for inspection.', ref:'STCW 1978 article VI, regulation I/2; STCW Code A-I/2; STCW-F 1995', tags:['STCW','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Records of daily hours of rest', trigger:'Daily hours-of-rest records must be kept onboard.', ref:'STCW Code A-VIII/1; IMO/ILO Guidelines', tags:['STCW','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Anti-fouling System Certificate', trigger:'International ships of 400 GT and above, excluding fixed/floating platforms, FSUs, and FPSOs.', ref:'AFS 2001, Annex 4 regulation 2(1)', tags:['AFS','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Declaration on Anti-fouling System', trigger:'International ships of 24 m or more but less than 400 GT need an owner/agent declaration and supporting documents.', ref:'AFS 2001, Annex 4 regulation 5(1)', tags:['AFS','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'International Ballast Water Management Certificate', trigger:'Ships of 400 GT and above subject to BWM 2004, excluding floating platforms, FSUs, and FPSOs.', ref:'BWM 2004, regulation E-2', tags:['BWM','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Ballast Water Management Plan', trigger:'Every ship must have an Administration-approved BWM plan and implement it onboard.', ref:'BWM 2004, regulation B-1; MEPC.127(53); MEPC.306(73)', tags:['BWM','Plan']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Ballast Water Record Book', trigger:'Every ship must have a BWRB, which may be electronic or integrated; kept onboard for at least 2 years and by the company for at least 3 years.', ref:'BWM 2004, regulation B-2', tags:['BWM','Record']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Type Approval Certificate for Ballast Water Management System (BWMS)', trigger:'Ships fitted with a BWMS must carry a copy of the type-approval certificate for onboard inspection.', ref:'BWMS Code MEPC.300(72); MEPC.125(53), MEPC.174(58), MEPC.279(70)', tags:['BWM','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Certificate of insurance or financial security - bunker oil pollution damage', trigger:'Ships of GT greater than 1,000 must demonstrate insurance or financial security under Bunkers 2001.', ref:'Bunkers 2001, article 7', tags:['Liability','Certificate']},
+      {sec:'1 General | Ships subject to relevant conventions', title:'Certificate of insurance or financial security - removal of wrecks', trigger:'Ships of 300 GT and above need a wreck-removal insurance/financial security certificate under Nairobi WRC 2007.', ref:'Nairobi WRC 2007, article 12', tags:['Liability','Certificate']},
+
+      // Section 2 Passenger
+      {sec:'2 Passenger ships', title:'Passenger Ship Safety Certificate', trigger:'Issued to passenger ships complying with SOLAS II-1, II-2, III, IV, V and related requirements; Form P is permanently attached.', ref:'SOLAS I/12; SOLAS PROT 1988 I/12', tags:['SOLAS','Certificate']},
+      {sec:'2 Passenger ships', title:'Decision support system for masters', trigger:'All passenger ships must provide an emergency-management decision support system on the navigation bridge.', ref:'SOLAS III/29', tags:['SOLAS','Special']},
+      {sec:'2 Passenger ships', title:'Search and rescue cooperation plan', trigger:'Passenger ships subject to SOLAS chapter I need a cooperation plan with the appropriate SAR service.', ref:'SOLAS V/7.3', tags:['SOLAS','Plan']},
+      {sec:'2 Passenger ships', title:'List of operational limitations', trigger:'Passenger ships subject to SOLAS chapter I must list all operational limitations, exemptions, and restrictions on area, weather, sea state, load, draft, speed, etc.', ref:'SOLAS V/30', tags:['SOLAS','Plan']},
+      {sec:'2 Passenger ships', title:'Special Trade Passenger Ship Safety Certificate / Space Certificate', trigger:'Issued under the Special Trade Passenger Ships Agreement 1971 and 1973 Protocol.', ref:'STP 71 rule 5; SSTP 73 rule 5', tags:['Certificate','Special']},
+      {sec:'2 Passenger ships', title:'Certificate of insurance or financial security - passenger death and personal injury', trigger:'Ships licensed to carry more than 12 passengers must demonstrate liability insurance or financial security under PAL 1974/2002 Protocol.', ref:'PAL 1974 as modified by PAL PROT 2002 article 4bis; A.988(24)', tags:['Liability','Certificate']},
+
+      // Section 3 Cargo ships
+      {sec:'3 Cargo ships', title:'Cargo Ship Safety Construction Certificate', trigger:'Cargo ships of 500 GT and over, issued after survey confirming structural compliance with SOLAS I/10 and II-1/II-2.', ref:'SOLAS I/12; SOLAS PROT 1988 I/12', tags:['SOLAS','Certificate']},
+      {sec:'3 Cargo ships', title:'Cargo Ship Safety Equipment Certificate', trigger:'Cargo ships of 500 GT and over complying with SOLAS II-1, II-2, III, V equipment requirements; Form E permanently attached.', ref:'SOLAS I/12; SOLAS PROT 1988 I/12', tags:['SOLAS','Certificate']},
+      {sec:'3 Cargo ships', title:'Cargo Ship Safety Radio Certificate', trigger:'Cargo ships of 300 GT and over fitted with a radio installation; Form R permanently attached.', ref:'SOLAS I/12; GMDSS amendments; SOLAS PROT 1988 I/12', tags:['SOLAS','Certificate']},
+      {sec:'3 Cargo ships', title:'Cargo Ship Safety Certificate', trigger:'May replace separate Construction, Equipment, and Radio certificates; Form C permanently attached.', ref:'SOLAS PROT 1988 I/12', tags:['SOLAS','Certificate']},
+      {sec:'3 Cargo ships', title:'Ship Structure Access Manual', trigger:'Oil tankers of 500 GT and over and bulk carriers of 20,000 GT and over built on or after 1 January 2006.', ref:'SOLAS II-1/3-6', tags:['SOLAS','Manual']},
+      {sec:'3 Cargo ships', title:'Cargo Information', trigger:'The shipper must provide cargo information in writing to the master/representative before loading; bulk carriers need cargo density.', ref:'SOLAS VI/2 and XII/10; MSC/Circ.663', tags:['SOLAS','Cargo']},
+      {sec:'3 Cargo ships', title:'Bulk Carrier Booklet', trigger:'Ships loading/discharge solid bulk cargoes need a booklet to avoid excessive hull stresses; may be incorporated into stability information.', ref:'SOLAS VI/7 and XII/8; BLU Code', tags:['SOLAS','Manual','Cargo']},
+      {sec:'3 Cargo ships', title:'Document of authorization for grain carriage and grain loading manual', trigger:'Ships loading grain under the Grain Code need an authorization document and grain loading manual.', ref:'SOLAS VI/9; Grain Code section 3', tags:['SOLAS','Certificate','Cargo']},
+      {sec:'3 Cargo ships', title:'Enhanced survey report file', trigger:'Bulk carriers and oil tankers need a survey report file and supporting documents under the 2011 ESP Code.', ref:'SOLAS XI-1/2; 2011 ESP Code A.1049(27)', tags:['SOLAS','Report','Record']},
+      {sec:'3 Cargo ships', title:'Dedicated Clean Ballast Tank Operation Manual', trigger:'Product carriers of 40,000 DWT and above delivered on or before 1 June 1982 and operating with dedicated clean ballast tanks need an operations manual.', ref:'MARPOL Annex I regulation 18.8; A.495(XII)', tags:['MARPOL','Manual','Cargo']},
+      {sec:'3 Cargo ships', title:'Condition Assessment Scheme (CAS) Statement of Compliance, Final Report and Review Record', trigger:'Oil tankers complying with CAS and passing survey; CAS final report and review record must be kept onboard.', ref:'MARPOL Annex I regulations 20, 21; MEPC.94(46) and amendments', tags:['MARPOL','Certificate','Report']},
+      {sec:'3 Cargo ships', title:'Subdivision and stability information', trigger:'Oil tankers subject to MARPOL Annex I regulation 28 must provide approved loading/cargo distribution and damage stability information.', ref:'MARPOL Annex I, regulation 28', tags:['MARPOL','Manual']},
+      {sec:'3 Cargo ships', title:'Record of oil discharge monitoring and control system for the last ballast voyage', trigger:'Oil tankers of 150 GT and above fitted with ODMC must retain continuous discharge records for at least 3 years.', ref:'MARPOL Annex I, regulation 31', tags:['MARPOL','Record']},
+      {sec:'3 Cargo ships', title:'Oil Discharge Monitoring and Control (ODMC) Operational Manual', trigger:'Oil tankers fitted with an ODMC system need an Administration-approved operations manual.', ref:'MARPOL Annex I regulation 31; A.496(XII); A.586(14); MEPC.108(49)', tags:['MARPOL','Manual']},
+      {sec:'3 Cargo ships', title:'Crude Oil Washing Operation and Equipment Manual (COW Manual)', trigger:'Oil tankers using crude oil washing systems need an Operations and Equipment Manual.', ref:'MARPOL Annex I regulation 35; MEPC.81(43)', tags:['MARPOL','Manual']},
+      {sec:'3 Cargo ships', title:'STS operations plan and records of STS operations', trigger:'Oil tankers involved in STS operations need an approved STS plan; STS records kept for 3 years.', ref:'MARPOL Annex I, regulation 41', tags:['MARPOL','Plan','Record']},
+      {sec:'3 Cargo ships', title:'VOC Management Plan', trigger:'Crude oil tankers subject to MARPOL Annex VI regulation 15.1 need and must implement a VOC Management Plan.', ref:'MARPOL Annex VI, regulation 15.6', tags:['MARPOL','Plan']},
+      {sec:'3 Cargo ships', title:'Document of approval for the stability instrument', trigger:'Ships subject to the IBC/IGC/BCH/GC Codes should be fitted with an approved stability instrument; deadline is the first scheduled renewal survey on or after 1 January 2016, and no later than 1 January 2021; the Administration should issue an approval document.', ref:'IBC 2.2.6; IGC 2.2.6; BCH 2.2.1.2; GC 2.2.4; 2008 IS Code; MSC.1/Circ.1229; MSC.1/Circ.1461', tags:['Certificate','Special']},
+      {sec:'3 Cargo ships', title:'Certificate of insurance or financial security - oil pollution damage (CLC 1969)', trigger:'Ships carrying more than 2,000 tonnes of bulk oil cargo need a CLC 1969 insurance/financial security certificate.', ref:'CLC 1969, article VII', tags:['Liability','Certificate']},
+      {sec:'3 Cargo ships', title:'Certificate of insurance or financial security - oil pollution damage (CLC 1992)', trigger:'Ships carrying more than 2,000 tonnes of bulk oil cargo need a CLC 1992 insurance/financial security certificate.', ref:'CLC 1992, article VII', tags:['Liability','Certificate']},
+
+      // Sections 4-13
+      {sec:'4 NLS bulk | Noxious liquid substances in bulk', title:'International Pollution Prevention Certificate for the Carriage of Noxious Liquid Substances in Bulk (NLS Certificate)', trigger:'Ships carrying NLS in bulk and trading to other MARPOL party ports/terminals; a chemical-tanker fitness certificate may be equivalent.', ref:'MARPOL Annex II, regulation 9', tags:['MARPOL','Certificate','Cargo']},
+      {sec:'4 NLS bulk | Noxious liquid substances in bulk', title:'Cargo Record Book', trigger:'Ships carrying NLS in bulk need a Cargo Record Book, which may be part of the official logbook or an approved electronic record book.', ref:'MARPOL Annex II, regulation 15.1', tags:['MARPOL','Record','Cargo']},
+      {sec:'4 NLS bulk | Noxious liquid substances in bulk', title:'Procedures and Arrangements Manual (P&A Manual)', trigger:'Ships certified to carry NLS in bulk need an Administration-approved P&A Manual.', ref:'MARPOL Annex II, regulation 14; MEPC.18(22); MEPC.62(35)', tags:['MARPOL','Manual','Cargo']},
+      {sec:'4 NLS bulk | Noxious liquid substances in bulk', title:'Shipboard marine pollution emergency plan for noxious liquid substances', trigger:'Ships of 150 GT and above certified to carry NLS in bulk need an approved SMPEP for NLS.', ref:'MARPOL Annex II, regulation 17; MEPC.85(44); MEPC.137(53)', tags:['MARPOL','Plan','Cargo']},
+      {sec:'5 Chemical tanker', title:'Certificate of Fitness for the Carriage of Dangerous Chemicals in Bulk', trigger:'Chemical tankers built before 1 July 1986 and subject to the BCH Code.', ref:'BCH Code, section 1.6', tags:['Special','Certificate','Cargo']},
+      {sec:'5 Chemical tanker', title:'International Certificate of Fitness for the Carriage of Dangerous Chemicals in Bulk', trigger:'Chemical tankers built on or after 1 July 1986 and subject to the IBC Code.', ref:'IBC Code, section 1.5', tags:['Special','Certificate','Cargo']},
+      {sec:'6 Gas carrier', title:'Certificate of Fitness for the Carriage of Liquefied Gases in Bulk', trigger:'Gas carriers subject to the Gas Carrier Code.', ref:'GC Code, section 1.6', tags:['Special','Certificate','Cargo']},
+      {sec:'6 Gas carrier', title:'International Certificate of Fitness for the Carriage of Liquefied Gases in Bulk', trigger:'Gas carriers built on or after 1 July 1986 and subject to the IGC Code.', ref:'IGC Code, section 1.4', tags:['Special','Certificate','Cargo']},
+      {sec:'6 Gas carrier', title:'Cargo Operations Manuals', trigger:'Approved cargo operations manuals, including procedures for ESD systems and PRV emergency isolating operations.', ref:'IGC Code, regulations 18.2.1 and 18.10.3.4', tags:['Special','Manual','Cargo']},
+      {sec:'7 High-speed craft', title:'High-Speed Craft Safety Certificate', trigger:'Craft complying with the 1994 or 2000 HSC Code, issued after initial/renewal survey.', ref:'SOLAS X/3; 1994 HSC Code 1.8; 2000 HSC Code 1.8', tags:['SOLAS','Special','Certificate']},
+      {sec:'7 High-speed craft', title:'Permit to Operate High-Speed Craft', trigger:'High-speed craft meeting HSC Code 1.2.2 to 1.2.7 operational requirements.', ref:'1994 HSC Code 1.9; 2000 HSC Code 1.9', tags:['Special','Certificate']},
+      {sec:'8 Dangerous goods', title:'Document of compliance with the special requirements for ships carrying dangerous goods', trigger:'Ships carrying dangerous goods need documentary evidence of compliance with SOLAS II-2/19; except solid dangerous goods in bulk, certification is not required for class 6.2, class 7, and dangerous goods in limited quantities.', ref:'SOLAS II-2/19.4', tags:['SOLAS','Special','Certificate','Cargo']},
+      {sec:'9 Packaged dangerous goods', title:'Transport information', trigger:'Transport information and container/vehicle packing certificates for packaged dangerous goods must follow the IMDG Code and be available to designated port officials/organisations.', ref:'SOLAS VII/4.1', tags:['SOLAS','Special','Cargo']},
+      {sec:'9 Packaged dangerous goods', title:'Dangerous goods manifest or stowage plan', trigger:'Packaged dangerous goods or solid dangerous goods in bulk require a special list/manifest or stowage plan showing class and location.', ref:'SOLAS VII/4.2 and VII/7-2.2; MARPOL Annex III regulation 4', tags:['SOLAS','MARPOL','Special','Cargo']},
+      {sec:'10 INF cargo | Nuclear fuel / radioactive materials', title:'International Certificate of Fitness for the Carriage of INF Cargo', trigger:'Ships carrying INF cargo must comply with the INF Code and hold a fitness certificate.', ref:'SOLAS VII/16; INF Code MSC.88(71) 1.3', tags:['SOLAS','Special','Certificate','Cargo']},
+      {sec:'11 Nuclear ship', title:'Operating manual for nuclear power plant', trigger:'A complete operating manual for the nuclear power plant must be approved, kept onboard, and kept up to date.', ref:'SOLAS VIII/8', tags:['SOLAS','Special','Manual']},
+      {sec:'11 Nuclear ship', title:'Nuclear Cargo Ship Safety Certificate or Nuclear Passenger Ship Safety Certificate', trigger:'Nuclear ships need the nuclear cargo/passenger safety certificate issued under SOLAS Chapter VIII in place of conventional safety certificates.', ref:'SOLAS VIII/10', tags:['SOLAS','Special','Certificate']},
+      {sec:'12 Polar waters', title:'Polar Ship Certificate', trigger:'Every ship subject to the Polar Code needs a valid Polar Ship Certificate, including equipment supplement records.', ref:'Polar Code Part I-A section 1.3', tags:['Special','Certificate']},
+      {sec:'12 Polar waters', title:'Polar Water Operational Manual (PWOM)', trigger:'Every ship subject to the Polar Code needs a PWOM.', ref:'Polar Code Part I-A section 2.3', tags:['Special','Manual']},
+      {sec:'13 Low-flashpoint fuels', title:'Maintenance procedures, emergency procedures and operational procedures', trigger:'Ships using gases or other low-flashpoint fuels need maintenance data, emergency procedures, operational procedures, and a fuel-handling manual for gas-related installations.', ref:'IGF Code, regulation 18.2', tags:['Special','Manual']},
+
+      // Non mandatory
+      {sec:'Non-mandatory | Other non-mandatory', title:'Special Purpose Ship Safety Certificate', trigger:'Special purpose ships may be certificated under the 1983/2008 SPS Code; validity usually follows SOLAS cargo-ship certificate rules.', ref:'1983 SPS Code; 2008 SPS Code; SOLAS I/12; SOLAS PROT 1988 I/12', tags:['Special','Certificate']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Offshore Supply Vessel Document of Compliance', trigger:'Offshore supply vessels complying with the 2006 Guidelines may be issued a Document of Compliance.', ref:'MSC.235(82); MSC.335(90)', tags:['Special','Certificate']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Certificate of Fitness for Offshore Support Vessels', trigger:'Offshore support vessels subject to the OSV Chemical Code, issued after initial survey and properly endorsed.', ref:'OSV Chemical Code A.1122(30); MARPOL Annex II 11.2', tags:['Special','Certificate','Cargo']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Diving System Safety Certificate', trigger:'Diving systems complying with the Code of Safety for Diving Systems, issued after survey by the Administration or authorised body.', ref:'A.831(19); MSC.185(79) section 1.6', tags:['Special','Certificate']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Safety Compliance Certificate for Passenger Submersible Craft', trigger:'For passenger submersible craft on underwater excursions with passenger compartments near one atmosphere; includes Design and Construction Document.', ref:'MSC/Circ.981; MSC/Circ.1125', tags:['Special','Certificate']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Dynamically Supported Craft Construction and Equipment Certificate', trigger:'Issued after survey under the DSC Code.', ref:'DSC Code A.373(X) section 1.6', tags:['Special','Certificate']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Mobile Offshore Drilling Unit Safety Certificate', trigger:'Issued after survey under the 1979/1989/2009 MODU Code.', ref:'1979 MODU Code 1.6; 1989 MODU Code 1.6; 2009 MODU Code 1.6', tags:['Special','Certificate']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Wing-in-ground Craft Safety Certificate', trigger:'Craft complying with the Guidelines for WIG craft, issued after initial/renewal survey.', ref:'MSC.1/Circ.1592', tags:['Special','Certificate']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Permit to Operate WIG Craft', trigger:'Issued by the Administration to demonstrate compliance with wing-in-ground craft guidelines.', ref:'MSC.1/Circ.1592', tags:['Special','Certificate']},
+      {sec:'Non-mandatory | Other non-mandatory', title:'Noise survey report for existing ships', trigger:'For existing ships to which SOLAS II-1/3-12 does not apply, prepared under the Code on Noise Levels on Board Ships.', ref:'A.468(XII), section 4.3', tags:['SOLAS','Report']}
+    ];
+
+    const titleTranslations = {
+      "International Tonnage Certificate (1969)": "國際噸位證書（1969）",
+      "International Load Line Certificate": "國際載重線證書",
+      "International Load Line Exemption Certificate": "國際載重線免除證書",
+      "Exemption Certificate": "免除證書",
+      "Coating Technical File": "塗層技術檔案",
+      "Emergency Towing Procedure": "緊急拖帶程序",
+      "Construction drawings": "建造圖",
+      "Ship Construction File": "船舶建造檔案",
+      "Noise Survey Report": "噪音測量報告",
+      "Stability information and loading information": "穩性資料與裝載資料",
+      "Damage control plans and booklets": "破損控制圖與手冊",
+      "Manoeuvring booklet": "操縱性能手冊",
+      "Evaluation of the alternative design and arrangements": "替代設計與布置評估文件",
+      "Maintenance plans": "維護計畫",
+      "Onboard training and drills record": "船上訓練與演習紀錄",
+      "Fire safety training manual": "消防安全訓練手冊",
+      "Fire control plan/booklet": "防火控制圖／手冊",
+      "Fire safety operational booklet": "消防安全操作手冊",
+      "Operations manual for helicopter facility": "直升機設施操作手冊",
+      "Statement of acceptance for replacement release and retrieval system to existing lifeboat": "既有救生艇更換釋放與回收系統安裝接受聲明",
+      "Muster list and emergency instructions": "集合部署表與緊急指示",
+      "Ship-specific plans and procedures for recovery of persons from the water": "落水人員回收之船舶專屬計畫與程序",
+      "Training manual": "救生設備訓練手冊",
+      "Radio record": "無線電紀錄",
+      "Minimum safe manning document": "最低安全配員文件",
+      "Voyage data recorder system - certificate of compliance": "航行資料記錄儀系統符合證書",
+      "AIS test report": "AIS 測試報告",
+      "Nautical charts and nautical publications": "航海圖與航海出版品",
+      "LRIT conformance test report": "LRIT 符合性測試報告",
+      "International Code of Signals and IAMSAR Manual Volume III": "國際信號書與 IAMSAR 第 III 卷",
+      "Records for pilot ladders used for pilot transfer": "引水梯紀錄",
+      "Records of navigational activities": "航行活動紀錄",
+      "Cargo Securing Manual": "貨物繫固手冊",
+      "Material safety data sheets (MSDS)": "物質安全資料表",
+      "Safety Management Certificate": "安全管理證書",
+      "Document of compliance": "符合文件（ISM DOC）",
+      "Continuous Synopsis Record (CSR)": "連續概要紀錄",
+      "Ship security plan and associated records": "船舶保全計畫及相關紀錄",
+      "International Ship Security Certificate (ISSC) or Interim ISSC": "國際船舶保全證書或臨時證書",
+      "Exemption Certificate for UNSP Barges": "無人非自航駁船免除證書",
+      "International Oil Pollution Prevention Certificate (IOPP)": "國際防止油污染證書（IOPP）",
+      "Oil Record Book": "油類紀錄簿",
+      "Shipboard Oil Pollution Emergency Plan (SOPEP)": "船上油污染應急計畫（SOPEP）",
+      "International Sewage Pollution Prevention Certificate": "國際防止污水污染證書（ISPP）",
+      "Document of approval for the rate of sewage discharge": "污水排放速率核准文件",
+      "Garbage management plan": "垃圾管理計畫",
+      "Garbage Record Book": "垃圾紀錄簿",
+      "SOx Emission Compliance Certificate and EGC System Technical Manual": "SOx 排放符合證書與廢氣清淨系統技術手冊",
+      "Ship Energy Efficiency Management Plan (SEEMP)": "船舶能源效率管理計畫",
+      "International Air Pollution Prevention Certificate (IAPP)": "國際防止空氣污染證書（IAPP）",
+      "International Energy Efficiency Certificate (IEE)": "國際能源效率證書（IEE）",
+      "Statement of Compliance - Fuel Oil Consumption Reporting and Operational Carbon Intensity Rating": "燃油消耗報告與營運碳強度評等符合聲明",
+      "Ozone-depleting substances record book": "消耗臭氧層物質紀錄簿",
+      "Logbook or electronic record book - nitrogen oxides emission": "氮氧化物排放日誌或電子紀錄簿",
+      "Fuel oil changeover procedure and logbook": "燃油轉換程序與紀錄簿",
+      "Manufacturer's operating manual for incinerators": "焚化爐製造商操作手冊",
+      "Bunker delivery note and representative sample": "燃油交付單與代表樣品",
+      "EEDI Technical File": "EEDI 技術檔案",
+      "EEXI Technical File": "EEXI 技術檔案",
+      "Technical File": "技術檔案（NOx engine Technical File）",
+      "Record Book of Engine Parameters": "引擎參數紀錄簿",
+      "Certificates for masters, officers or ratings": "船長、高級船員或部員證書",
+      "Records of daily hours of rest": "每日休息時數紀錄",
+      "International Anti-fouling System Certificate": "國際防污系統證書",
+      "Declaration on Anti-fouling System": "防污系統聲明",
+      "International Ballast Water Management Certificate": "國際壓載水管理證書",
+      "Ballast Water Management Plan": "壓載水管理計畫",
+      "Ballast Water Record Book": "壓載水紀錄簿",
+      "Type Approval Certificate for Ballast Water Management System (BWMS)": "壓載水管理系統型式認可證書",
+      "Certificate of insurance or financial security - bunker oil pollution damage": "燃油污染損害民事責任保險或其他財務擔保證書",
+      "Certificate of insurance or financial security - removal of wrecks": "沉船移除責任保險或其他財務擔保證書",
+      "Passenger Ship Safety Certificate": "客船安全證書",
+      "Decision support system for masters": "船長決策支援系統",
+      "Search and rescue cooperation plan": "搜救合作計畫",
+      "List of operational limitations": "營運限制清單",
+      "Special Trade Passenger Ship Safety Certificate / Space Certificate": "特殊貿易客船安全證書／空間證書",
+      "Certificate of insurance or financial security - passenger death and personal injury": "乘客死亡與人身傷害責任保險或財務擔保證書",
+      "Cargo Ship Safety Construction Certificate": "貨船安全構造證書",
+      "Cargo Ship Safety Equipment Certificate": "貨船安全設備證書",
+      "Cargo Ship Safety Radio Certificate": "貨船安全無線電證書",
+      "Cargo Ship Safety Certificate": "貨船安全證書",
+      "Ship Structure Access Manual": "船體結構通道手冊",
+      "Cargo Information": "貨物資訊",
+      "Bulk Carrier Booklet": "散裝船手冊",
+      "Document of authorization for grain carriage and grain loading manual": "穀物載運授權文件與穀物裝載手冊",
+      "Enhanced survey report file": "加強檢驗報告檔案",
+      "Dedicated Clean Ballast Tank Operation Manual": "專用清潔壓載艙操作手冊",
+      "Condition Assessment Scheme (CAS) Statement of Compliance, Final Report and Review Record": "CAS 符合聲明、最終報告與審查紀錄",
+      "Subdivision and stability information": "分艙與穩性資料",
+      "Record of oil discharge monitoring and control system for the last ballast voyage": "最近一次壓載航次之油排放監控系統紀錄",
+      "Oil Discharge Monitoring and Control (ODMC) Operational Manual": "油排放監控系統操作手冊",
+      "Crude Oil Washing Operation and Equipment Manual (COW Manual)": "原油洗艙操作與設備手冊",
+      "STS operations plan and records of STS operations": "船對船作業計畫與紀錄",
+      "VOC Management Plan": "揮發性有機化合物管理計畫",
+      "Document of approval for the stability instrument": "穩性計算儀核准文件",
+      "Certificate of insurance or financial security - oil pollution damage (CLC 1969)": "油污染損害民事責任保險或財務擔保證書（CLC 1969）",
+      "Certificate of insurance or financial security - oil pollution damage (CLC 1992)": "油污染損害民事責任保險或財務擔保證書（CLC 1992）",
+      "International Pollution Prevention Certificate for the Carriage of Noxious Liquid Substances in Bulk (NLS Certificate)": "國際防止散裝有毒液體物質污染證書",
+      "Cargo Record Book": "貨物紀錄簿",
+      "Procedures and Arrangements Manual (P&A Manual)": "程序與布置手冊",
+      "Shipboard marine pollution emergency plan for noxious liquid substances": "有毒液體物質船上污染應急計畫",
+      "Certificate of Fitness for the Carriage of Dangerous Chemicals in Bulk": "散裝危險化學品適裝證書",
+      "International Certificate of Fitness for the Carriage of Dangerous Chemicals in Bulk": "國際散裝危險化學品適裝證書",
+      "Certificate of Fitness for the Carriage of Liquefied Gases in Bulk": "散裝液化氣體適裝證書",
+      "International Certificate of Fitness for the Carriage of Liquefied Gases in Bulk": "國際散裝液化氣體適裝證書",
+      "Cargo Operations Manuals": "貨物操作手冊",
+      "High-Speed Craft Safety Certificate": "高速船安全證書",
+      "Permit to Operate High-Speed Craft": "高速船營運許可",
+      "Document of compliance with the special requirements for ships carrying dangerous goods": "載運危險品船舶特殊要求符合文件",
+      "Transport information": "運送資訊",
+      "Dangerous goods manifest or stowage plan": "危險品清單或積載圖",
+      "International Certificate of Fitness for the Carriage of INF Cargo": "INF 貨物國際適裝證書",
+      "Operating manual for nuclear power plant": "核動力裝置操作手冊",
+      "Nuclear Cargo Ship Safety Certificate or Nuclear Passenger Ship Safety Certificate": "核能貨船安全證書或核能客船安全證書",
+      "Polar Ship Certificate": "極地船舶證書",
+      "Polar Water Operational Manual (PWOM)": "極地水域操作手冊",
+      "Maintenance procedures, emergency procedures and operational procedures": "維護、緊急與操作程序",
+      "Special Purpose Ship Safety Certificate": "特殊用途船安全證書",
+      "Offshore Supply Vessel Document of Compliance": "離岸供應船符合文件",
+      "Certificate of Fitness for Offshore Support Vessels": "離岸支援船適裝證書",
+      "Diving System Safety Certificate": "潛水系統安全證書",
+      "Safety Compliance Certificate for Passenger Submersible Craft": "載客潛水器安全符合證書",
+      "Dynamically Supported Craft Construction and Equipment Certificate": "動力支撐艇構造與設備證書",
+      "Mobile Offshore Drilling Unit Safety Certificate": "移動式離岸鑽井單位安全證書",
+      "Wing-in-ground Craft Safety Certificate": "翼地效應載具安全證書",
+      "Permit to Operate WIG Craft": "翼地效應載具營運許可",
+      "Noise survey report for existing ships": "既有船噪音測量報告"
+};
+
+    const rows = document.getElementById('rows');
+    const search = document.getElementById('search');
+    const empty = document.getElementById('empty');
+    const totalCount = document.getElementById('totalCount');
+    let activeFilter = 'all';
+    totalCount.textContent = items.length;
+
+    function tagClass(tag){
+      const t = tag.toLowerCase();
+      if(t.includes('solas')) return 'solas';
+      if(t.includes('marpol')) return 'marpol';
+      if(t.includes('stcw')) return 'stcw';
+      if(t.includes('liability')) return 'liability';
+      if(t.includes('record')) return 'record';
+      if(t.includes('special')) return 'special';
+      if(t.includes('bwm')) return 'bwm';
+      if(t.includes('afs')) return 'afs';
+      return '';
+    }
+    function highlight(text, query){
+      if(!query) return escapeHtml(text);
+      const escaped = escapeHtml(text);
+      const safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return escaped.replace(new RegExp(`(${safe})`, 'ig'), '<mark>$1</mark>');
+    }
+    function escapeHtml(str){
+      return String(str).replace(/[&<>'"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]));
+    }
+    function purposeFor(item){
+      const title = item.title.toLowerCase();
+      const tags = item.tags.map(tag => tag.toLowerCase());
+      const hasTag = tag => tags.some(t => t.includes(tag));
+
+      if(/tonnage/.test(title)) return 'Confirms gross and net tonnage as the basis for applicability thresholds, fees, surveys, and certificate requirements.';
+      if(/load line/.test(title)) return 'Certifies that freeboard, load line marks, and related watertight safety conditions have been approved under the Load Line regime.';
+      if(/exemption/.test(title)) return 'Records the scope, conditions, and legal basis of exemptions granted by the Administration.';
+      if(/coating/.test(title)) return 'Preserves coating specifications, application, inspection, and maintenance data to support structural corrosion control and follow-up surveys.';
+      if(/emergency towing/.test(title)) return 'Provides a ship-specific towing arrangement that can be used immediately in an emergency or blackout situation.';
+      if(/construction drawings|ship construction file|ship structure access|technical file|eedi|eexi|engine parameters/.test(title)) return 'Retains design, construction, modification, or calculation evidence so later surveys, maintenance, and compliance checks remain traceable.';
+      if(/noise/.test(title)) return 'Confirms onboard noise levels are controlled and support compliance with the noise code for crew work and rest areas.';
+      if(/stability|loading information/.test(title)) return 'Gives the master the basis to judge loading, draft, trim, and damage stability and avoid unsafe operational conditions.';
+      if(/damage control/.test(title)) return 'Helps the crew identify watertight subdivisions, closing arrangements, and control measures after flooding or damage.';
+      if(/manoeuvring/.test(title)) return 'Provides bridge personnel with manoeuvring performance, stopping distances, and special propulsion conditions.';
+      if(/maintenance/.test(title)) return 'Defines and records maintenance requirements for key safety systems so equipment remains ready for use.';
+      if(/training|drill|muster|emergency instructions|recovery of persons/.test(title)) return 'Ensures crew understand emergency duties, drills, and response procedures for consistent action in an incident.';
+      if(/fire/.test(title)) return 'Supports fire prevention, firefighting, and emergency response by making fire arrangements and operating information available onboard.';
+      if(/helicopter/.test(title)) return 'Defines safe operation, inspection, and emergency procedures for helicopter facilities and related special operations.';
+      if(/lifeboat|life-saving|survival/.test(title)) return 'Confirms life-saving appliances, release/recovery systems, or survival information meet requirements for abandonment and rescue.';
+      if(/radio|ais|vdr|lrit/.test(title)) return 'Demonstrates that communication, identification, recording, or tracking equipment has been tested and supports safe navigation and investigation.';
+      if(/charts|nautical publications|iamsar|code of signals/.test(title)) return 'Ensures voyage planning, navigation safety, communications, and SAR information are available in valid onboard form.';
+      if(/pilot ladder|navigational activities/.test(title)) return 'Preserves records of navigation and pilot-transfer operations for onboard management, incident follow-up, and inspection.';
+      if(/cargo|grain|dangerous goods|msds|securing|inf/.test(title)) return 'Ensures cargo information, stowage, securing, or hazard data are known to the ship and reduce cargo-handling and voyage risks.';
+      if(/safety management|document of compliance/.test(title)) return 'Demonstrates that the company and ship SMS are established, implemented, and verified under the ISM Code.';
+      if(/security|issc|csr|synopsis/.test(title)) return 'Maintains ship security and historical ship identity information to support ISPS verification and identification.';
+      if(/oil pollution|iopp|oil record|sopep|sewage|garbage|air pollution|ozone|nitrogen oxides|fuel oil|bunker delivery|sox|egc|seemp|energy efficiency|carbon intensity/.test(title)) return 'Proves or records pollution prevention, emission control, energy efficiency, and related emergency arrangements under MARPOL.';
+      if(/anti-fouling|ballast water|bwms/.test(title)) return 'Controls anti-fouling and ballast water management risks and reduces harmful substances or invasive species impacts.';
+      if(/masters|officers|ratings|hours of rest/.test(title)) return 'Demonstrates seafarer certification and rest-hour compliance under STCW for safe watchkeeping and manning checks.';
+      if(/passenger/.test(title)) return 'Covers passenger-ship safety, operating limits, SAR cooperation, or passenger liability arrangements as applicable.';
+      if(/insurance|financial security|liability|wreck|bunker oil/.test(title) || hasTag('liability')) return 'Demonstrates statutory insurance or financial security for pollution, wreck removal, or passenger claims.';
+      if(/polar/.test(title)) return 'Confirms polar ship capability, limitations, and operating procedures required under the Polar Code.';
+      if(/gas carrier|chemical|certificate of fitness|nls|procedures and arrangements/.test(title)) return 'Demonstrates that construction, equipment, procedures, and cargo control meet the relevant cargo Code or MARPOL requirements.';
+      if(/special purpose|offshore|diving|submersible|dynamically supported|modu|wing-in-ground|high-speed|nuclear/.test(title) || hasTag('special')) return 'Covers special ship types or operations where safety conditions and operating limits must be accepted by the Administration.';
+
+      if(hasTag('certificate') || /certificate|statement|declaration|document of approval/.test(title)) return 'Certifies that the ship, equipment, company, or arrangement has been surveyed, approved, or found in compliance by the Administration.';
+      if(hasTag('record') || /record|logbook/.test(title)) return 'Creates a traceable record of operations, tests, discharges, drills, or events for onboard management, audit, and inspection.';
+      if(hasTag('plan') || /plan|procedure|instructions/.test(title)) return 'Defines the steps crew should follow in normal or emergency situations so onboard practice is consistent and auditable.';
+      if(hasTag('manual') || /manual|booklet|file/.test(title)) return 'Places equipment, cargo, safety, or operating information onboard for daily use and inspection.';
+      if(hasTag('report') || /report/.test(title)) return 'Retains test, measurement, or compliance assessment results showing that equipment or conditions were verified.';
+      return 'Provides key onboard information so crew, company, flag State, and inspectors can confirm applicable requirements.';
+    }
+    function titleZhFor(item){
+      return titleTranslations[item.title] || '';
+    }
+    function matchesFilter(item){
+      if(activeFilter === 'all') return true;
+      if(activeFilter === 'Record') return item.tags.some(t => t.toLowerCase().includes('record'));
+      if(activeFilter === 'BWM') return item.tags.some(t => ['bwm','afs'].includes(t.toLowerCase())) || /AFS|BWM|Ballast/i.test(item.title + item.ref);
+      if(activeFilter === 'Liability') return item.tags.some(t => t.toLowerCase().includes('liability'));
+      if(activeFilter === 'Special') return item.tags.some(t => t.toLowerCase().includes('special'));
+      return item.tags.some(t => t.toUpperCase() === activeFilter) || item.ref.toUpperCase().includes(activeFilter);
+    }
+    function render(){
+      const q = search.value.trim();
+      const qLower = q.toLowerCase();
+      const filtered = items.filter(item => {
+        const hay = [item.sec,item.title,titleZhFor(item),purposeFor(item),item.trigger,item.ref,item.tags.join(' ')].join(' ').toLowerCase();
+        return matchesFilter(item) && (!qLower || hay.includes(qLower));
+      });
+      rows.innerHTML = '';
+      let currentSec = '';
+      filtered.forEach(item => {
+        if(item.sec !== currentSec){
+          currentSec = item.sec;
+          const trSec = document.createElement('tr');
+          trSec.className = 'section-row';
+          trSec.innerHTML = `<td colspan="4">${escapeHtml(currentSec)}</td>`;
+          rows.appendChild(trSec);
+        }
+        const tr = document.createElement('tr');
+        const tags = item.tags.map(tag => `<span class="chip ${tagClass(tag)}">${escapeHtml(tag)}</span>`).join('');
+        tr.innerHTML = `
+          <td><span class="section-badge">${highlight(item.sec.split('|')[0], q)}</span></td>
+          <td><div class="title">${highlight(item.title, q)}</div><div class="title-zh">${highlight(titleZhFor(item), q)}</div><div class="sub">${tags}</div></td>
+          <td>
+            <div class="purpose"><span class="summary-label">Purpose</span>${highlight(purposeFor(item), q)}</div>
+            <div class="applicability"><span class="summary-label muted">Applicability</span>${highlight(item.trigger, q)}</div>
+          </td>
+          <td><span class="ref">${highlight(item.ref, q)}</span></td>`;
+        rows.appendChild(tr);
+      });
+      empty.style.display = filtered.length ? 'none' : 'block';
+    }
+    document.querySelectorAll('button.filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('button.filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        render();
+      });
+    });
+    search.addEventListener('input', render);
+    render();
+
+    const topNav = document.querySelector('.topnav');
+    const navScroller = document.querySelector('.topnav .wrap');
+    const navLinks = Array.from(document.querySelectorAll('.topnav a[href^="#"]'));
+    const navTargets = navLinks
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+    let currentNavId = '';
+
+    function setActiveNav(id){
+      if(!id || id === currentNavId) return;
+      currentNavId = id;
+      navLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('is-active', isActive);
+        if(isActive){
+          link.setAttribute('aria-current', 'true');
+          link.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+        }else{
+          link.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function updateActiveNav(){
+      if(!navTargets.length) return;
+      const offset = (topNav?.offsetHeight || 0) + 96;
+      const checkpoint = window.scrollY + offset;
+      const isAtPageEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      let activeTarget = navTargets[0];
+      if(isAtPageEnd){
+        activeTarget = navTargets[navTargets.length - 1];
+      }else{
+        navTargets.forEach(section => {
+          if(section.offsetTop <= checkpoint) activeTarget = section;
+        });
+      }
+      setActiveNav(activeTarget.id);
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const id = link.getAttribute('href').slice(1);
+        setActiveNav(id);
+      });
+    });
+    window.addEventListener('scroll', updateActiveNav, {passive:true});
+    window.addEventListener('resize', updateActiveNav);
+    window.addEventListener('hashchange', updateActiveNav);
+    updateActiveNav();
+  </script>
+</body>
+</html>

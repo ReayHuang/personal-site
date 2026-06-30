@@ -29,6 +29,13 @@
       "zh": "research/index.html"
     },
     {
+      "slug": "onboard-certificates",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/onboard-certificates.en.html",
+      "zh": "notes/maritime/onboard-certificates.html"
+    },
+    {
       "slug": "solas-structure-notes",
       "type": "article",
       "category": "notes",
