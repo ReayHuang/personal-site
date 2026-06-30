@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://reayhuang.com/notes/maritime/onboard-certificates.en.html">
   <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
   <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/onboard-certificates/onboard-certificates-link-preview.en.png">
-  <meta property="og:image:alt" content="On-board Certificates and Documents Checklist — Reay Huang Maritime note · IMO MSC.1/Circ.1646">
+  <meta property="og:image:alt" content="On-board Certificates and Documents Checklist — Reay Huang Maritime Notes · IMO MSC.1/Circ.1646">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="720">
   <meta property="og:image:height" content="379">
@@ -987,7 +987,7 @@
         const tags = item.tags.map(tag => `<span class="chip ${tagClass(tag)}">${escapeHtml(tag)}</span>`).join('');
         tr.innerHTML = `
           <td><span class="section-badge">${highlight(item.sec.split('|')[0], q)}</span></td>
-          <td><div class="title">${highlight(item.title, q)}</div><div class="title-zh">${highlight(titleZhFor(item), q)}</div><div class="sub">${tags}</div></td>
+          <td><div class="title">${highlight(item.title, q)}</div><div class="sub">${tags}</div></td>
           <td>
             <div class="purpose"><span class="summary-label">Purpose</span>${highlight(purposeFor(item), q)}</div>
             <div class="applicability"><span class="summary-label muted">Applicability</span>${highlight(item.trigger, q)}</div>
