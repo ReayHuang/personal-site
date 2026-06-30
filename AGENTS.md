@@ -30,17 +30,20 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 | `research/index.en.html` | Management notes listing (English) |
 | `research/index.html` | Management notes listing (Traditional Chinese) |
 
-**Maritime notes** (`notes/maritime/`)
+**Maritime notes** (`notes/maritime/`) — order matches `notes/index.en.html`
 
 | Slug | English | Traditional Chinese |
 |------|---------|---------------------|
+| Onboard certificates | `onboard-certificates.en.html` | `onboard-certificates.html` |
+| Engine FAT / shipboard trial (LR-RU-001) | `engine-fat-shipboard-note.en.html` | `engine-fat-shipboard-note.html` |
+| LRPF (LR-RU-012) | `lfpf-note.en.html` | `lfpf-note.html` |
 | Tailshaft survey | `tailshaft-survey-notes.en.html` | `tailshaft-survey-notes.html` |
 | Steering gear | `steering-gear-notes.en.html` | `steering-gear-notes.html` |
 | LR BWTS | `lr-bwts-notes.en.html` | `lr-bwts-notes.html` |
 | Maritime cyber resilience | `maritime-cyber-resilience-notes.en.html` | `maritime-cyber-resilience-notes.html` |
 | LR Advisory | `lr-advisory-notes.en.html` | `lr-advisory-notes.html` |
-| SOLAS framework | `solas-structure-notes.en.html` | `solas-structure-notes.html` |
 | MARPOL framework | `marpol-structure-notes.en.html` | `marpol-structure-notes.html` |
+| SOLAS framework | `solas-structure-notes.en.html` | `solas-structure-notes.html` |
 | Explosion protection | `explosion-protection-notes.en.html` | `explosion-protection-notes.html` |
 | LPG fuel | `lpg-fuel-notes.en.html` | `lpg-fuel-notes.html` |
 | New construction PM | `new-construction-pm-notes.en.html` | `new-construction-pm-notes.html` |
@@ -50,6 +53,15 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 | LNG fuel | `lng-fuel-notes.en.html` | `lng-fuel-notes.html` |
 | Methanol fuel | `methanol-fuel-notes.en.html` | `methanol-fuel-notes.html` |
 | MEPC 83 / 84 | `mepc-83-84-visual-notes.en.html` | `mepc-83-84-visual-notes.html` |
+
+**Korean supplementary pages** (`notes/maritime/`) — standalone; not on listing pages or in `i18n/manifest.json`
+
+| Slug | Korean |
+|------|--------|
+| SOLAS framework | `solas-structure-notes.ko.html` |
+| MARPOL framework | `marpol-structure-notes.ko.html` |
+
+These pages include `hreflang` links to EN / 繁中 / ko and use `data-back-to-top-label="맨 위로"` on `<html>`.
 
 **Management notes** (`research/`)
 
@@ -67,9 +79,10 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 - **Default language**: English (`index.html` at site root).
 - **Traditional Chinese**: `index.zh.html` for homepage; other pages use the base filename (e.g. `about.html`, `notes/index.html`).
 - **English content pages**: use the `.en.html` suffix (e.g. `about.en.html`, `notes/index.en.html`).
+- **Korean (optional)**: use the `.ko.html` suffix for standalone article translations; not tracked in `i18n/manifest.json` unless added explicitly.
 - **`x-default` hreflang**: always points to the English version of each page pair.
 - **Language switch**: EN link appears before 繁中 in the header on every page.
-- **Adding content**: create the English page first, add it to the `*.en.html` listing, then add Traditional Chinese if needed.
+- **Adding content**: create the English page first, add it to the `*.en.html` listing, then add Traditional Chinese if needed. Update `i18n/manifest.json` with the new EN/zh pair.
 
 See `README.md` for file naming and listing conventions. For machine-readable locale pairs, see `i18n/manifest.json`.
 
@@ -81,7 +94,30 @@ See `README.md` for file naming and listing conventions. For machine-readable lo
 
 ### Adding content
 
-Copy an existing English HTML file as a template, add a card link on the relevant English listing page (`notes/index.en.html` or `research/index.en.html`), then add a Traditional Chinese version and listing link if needed. See `README.md` for details.
+Copy an existing English HTML file as a template, add a card link on the relevant English listing page (`notes/index.en.html` or `research/index.en.html`), then add a Traditional Chinese version and listing link if needed. Add the EN/zh paths to `i18n/manifest.json`. See `README.md` for details.
+
+### Article page scripts (`</body>`)
+
+Standalone note/article pages under `notes/maritime/` and `research/` also load (after `note-standalone.css` in `<head>`):
+
+1. **`article-share.js`** — LinkedIn / Facebook / copy link / email share buttons (`[data-article-share]`)
+2. **`back-to-top.js`** — fixed “back to top” button; label from `<html lang>` or `data-back-to-top-label`
+
+Listing pages (`notes/index.*`, `research/index.*`) and the site root use **`main.js`** (mobile nav toggle) instead.
+
+### Optional maintainer scripts (`scripts/`)
+
+Not required to run the site. Used occasionally to regenerate assets:
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/generate-homepage-og.py` | Homepage Open Graph preview image |
+| `scripts/generate-explosion-protection-og.py` | Explosion protection note OG image |
+| `scripts/build-onboard-certificates-en.py` | Regenerate English onboard certificates page content |
+
+### Deployment
+
+Production: **Netlify** at `https://reayhuang.com` (static files, no build step). HSTS enabled.
 
 ### Site-wide scripts (`<head>`)
 
