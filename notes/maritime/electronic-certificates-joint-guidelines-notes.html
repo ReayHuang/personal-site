@@ -1,0 +1,2107 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="electronic certificates, FAL-LEG-MEPC-MSC.1/Circ.1, e-certificates, PSC, class society, RO, ISM, 電子證書, 船級, 港口國查驗">
+  <meta property="og:title" content="電子證書聯合指南｜船級與 PSC 實務解析｜Reay's Note">
+  <meta property="og:description" content="FAL-LEG-MEPC-MSC.1/Circ.1 電子證書使用聯合指南深度解析：船級、RO、ISM 與 PSC 實務影響。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/electronic-certificates-joint-guidelines-notes.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/electronic-certificates-joint-guidelines-notes.html">
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/electronic-certificates-joint-guidelines/electronic-certificates-joint-guidelines-link-preview.png">
+  <meta property="og:image:alt" content="船舶電子證書聯合指南 — Reay Huang Maritime Notes · FAL-LEG-MEPC-MSC.1/Circ.1">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="720">
+  <meta property="og:image:height" content="379">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="電子證書聯合指南｜船級與 PSC 實務解析｜Reay's Note">
+  <meta name="twitter:description" content="FAL-LEG-MEPC-MSC.1/Circ.1 電子證書使用聯合指南深度解析：船級、RO、ISM 與 PSC 實務影響。">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/electronic-certificates-joint-guidelines/electronic-certificates-joint-guidelines-link-preview.png">
+  <link rel="alternate" hreflang="zh-Hant" href="electronic-certificates-joint-guidelines-notes.html">
+  <link rel="alternate" hreflang="en" href="electronic-certificates-joint-guidelines-notes.en.html">
+  <link rel="alternate" hreflang="x-default" href="electronic-certificates-joint-guidelines-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="FAL-LEG-MEPC-MSC.1/Circ.1 電子證書使用聯合指南深度解析：船級、RO、ISM 與 PSC 實務影響。">
+  <title>電子證書聯合指南｜船級與 PSC 實務解析｜Reay's Note</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('e-cert-theme');
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = savedTheme || preferredTheme;
+    } catch (_) {}
+  </script>
+  <style>
+    :root {
+      --navy-950: #071b2d;
+      --navy-900: #0a2439;
+      --navy-800: #113651;
+      --navy-700: #184d6d;
+      --teal-700: #087f81;
+      --teal-600: #0b9691;
+      --teal-500: #14aaa1;
+      --teal-100: #d8f4ef;
+      --signal: #f39b4a;
+      --signal-soft: #fff0df;
+      --danger: #bf4a45;
+      --danger-soft: #fff0ef;
+      --ink: #152a3a;
+      --muted: #607383;
+      --line: #dbe4e9;
+      --paper: #f6f8f8;
+      --surface: #ffffff;
+      --surface-raised: #ffffff;
+      --surface-soft: #eef4f4;
+      --hero-ink: #f7fbfb;
+      --shadow-sm: 0 8px 24px rgba(7, 27, 45, .07);
+      --shadow-lg: 0 28px 72px rgba(7, 27, 45, .16);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --sidebar-w: 290px;
+      --topbar-h: 68px;
+      --content-w: 1120px;
+      --layout-max: min(1240px, calc(100vw - 36px));
+      --ease: cubic-bezier(.2, .8, .2, 1);
+      --sans: "Noto Sans TC", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --serif: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    html[data-theme="dark"] {
+      --ink: #e8f1f2;
+      --muted: #a6b7c0;
+      --line: #294454;
+      --paper: #071722;
+      --surface: #0c2231;
+      --surface-raised: #102b3c;
+      --surface-soft: #112d3c;
+      --teal-100: #123f42;
+      --signal-soft: #3e3023;
+      --danger-soft: #3b2528;
+      --shadow-sm: 0 8px 26px rgba(0, 0, 0, .2);
+      --shadow-lg: 0 28px 72px rgba(0, 0, 0, .35);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topbar-h) + 24px); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 82% 4%, rgba(20, 170, 161, .09), transparent 26rem),
+        var(--paper);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    a { color: var(--teal-700); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+    a:hover { color: var(--teal-600); }
+    ::selection { color: var(--navy-950); background: #a8e3dc; }
+
+    .skip-link {
+      position: fixed; z-index: 999; left: 16px; top: -80px;
+      padding: 10px 16px; border-radius: 0 0 10px 10px;
+      color: #fff; background: var(--teal-700); text-decoration: none;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 0; }
+
+    .reading-progress {
+      position: fixed; inset: 0 auto auto 0; z-index: 1000;
+      width: 0; height: 3px; background: linear-gradient(90deg, var(--signal), var(--teal-500));
+      box-shadow: 0 0 14px rgba(20, 170, 161, .55);
+    }
+
+    .topbar {
+      position: fixed; z-index: 90; inset: 0 0 auto 0;
+      height: var(--topbar-h); display: flex; align-items: center; justify-content: space-between;
+      padding: 0 22px; border-bottom: 1px solid rgba(219, 228, 233, .72);
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    }
+    html[data-theme="dark"] .topbar { border-bottom-color: rgba(41, 68, 84, .75); }
+    .topbar__brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark {
+      width: 36px; height: 36px; display: grid; place-items: center; flex: 0 0 auto;
+      color: #fff; border-radius: 11px;
+      background: linear-gradient(145deg, var(--navy-800), var(--teal-600));
+      box-shadow: 0 8px 20px rgba(8, 127, 129, .22);
+    }
+    .brand-mark svg { width: 20px; height: 20px; }
+    .brand-copy { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
+    .brand-copy strong { color: var(--navy-900); font-size: 13px; letter-spacing: .08em; }
+    html[data-theme="dark"] .brand-copy strong { color: var(--ink); }
+    .brand-copy span { color: var(--muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .topbar__actions { display: flex; align-items: center; gap: 8px; }
+    .icon-button {
+      width: 39px; height: 39px; display: inline-grid; place-items: center;
+      border: 1px solid var(--line); border-radius: 11px; background: var(--surface);
+      cursor: pointer; transition: transform .2s var(--ease), border-color .2s ease, background .2s ease;
+    }
+    .icon-button:hover { transform: translateY(-1px); border-color: var(--teal-500); background: var(--surface-soft); }
+    .icon-button:focus-visible, .toc-search:focus-visible { outline: 3px solid rgba(20, 170, 161, .28); outline-offset: 2px; }
+    .icon-button svg { width: 18px; height: 18px; }
+    .menu-button { display: none; }
+    .theme-sun, html[data-theme="light"] .theme-moon { display: none; }
+    html[data-theme="light"] .theme-sun, html[data-theme="dark"] .theme-moon { display: block; }
+
+    .sidebar {
+      position: fixed; z-index: 80; inset: var(--topbar-h) auto 0 0;
+      width: var(--sidebar-w); border-right: 1px solid var(--line); background: var(--surface);
+      overflow: hidden;
+    }
+    .sidebar__inner { height: 100%; display: flex; flex-direction: column; padding: 22px 18px 18px; }
+    .sidebar__label {
+      margin: 0 8px 11px; color: var(--muted); font: 700 10px/1 var(--sans);
+      letter-spacing: .17em; text-transform: uppercase;
+    }
+    .search-wrap { position: relative; margin-bottom: 15px; }
+    .search-wrap svg {
+      position: absolute; left: 12px; top: 50%; width: 16px; height: 16px;
+      color: var(--muted); transform: translateY(-50%); pointer-events: none;
+    }
+    .toc-search {
+      width: 100%; height: 40px; padding: 0 35px 0 37px;
+      color: var(--ink); border: 1px solid var(--line); border-radius: 11px; background: var(--surface-soft);
+      font-size: 13px; outline: none;
+    }
+    .toc-search::placeholder { color: var(--muted); }
+    .search-shortcut {
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 0 5px;
+      font: 10px/18px var(--mono); background: var(--surface);
+    }
+    #TOC { flex: 1; overflow-y: auto; padding: 2px 5px 30px 0; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+    #TOC ul { list-style: none; margin: 0; padding: 0; }
+    #TOC > ul > li { margin: 2px 0; }
+    #TOC li ul { margin: 3px 0 8px 16px; padding-left: 10px; border-left: 1px solid var(--line); }
+    #TOC a {
+      display: block; padding: 7px 9px; color: var(--muted); border-radius: 8px;
+      font-size: 13px; line-height: 1.42; text-decoration: none; transition: color .18s ease, background .18s ease;
+    }
+    #TOC a.toc-split {
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      column-gap: 0.45em;
+      align-items: start;
+    }
+    #TOC .toc-num {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    #TOC .toc-text {
+      min-width: 0;
+    }
+    #TOC > ul > li > a { color: var(--ink); font-weight: 650; }
+    #TOC li li a { padding-block: 5px; font-size: 12px; }
+    #TOC a:hover { color: var(--teal-700); background: var(--surface-soft); }
+    #TOC a.active { color: var(--teal-700); background: var(--teal-100); font-weight: 700; }
+    .toc-hidden { display: none !important; }
+    .sidebar-card {
+      margin-top: 10px; padding: 14px 15px; border: 1px solid var(--line); border-radius: 14px;
+      background: linear-gradient(145deg, var(--surface-soft), var(--surface));
+    }
+    .sidebar-card span { display: block; color: var(--teal-700); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .sidebar-card strong { display: block; margin: 4px 0 2px; color: var(--ink); font: 700 11px/1.45 var(--mono); overflow-wrap: anywhere; }
+    .sidebar-card small { color: var(--muted); font-size: 11px; }
+
+    .page-shell { margin-left: var(--sidebar-w); padding-top: var(--topbar-h); }
+    .hero {
+      position: relative; overflow: hidden; min-height: 560px;
+      padding: clamp(52px, 6vw, 88px) clamp(24px, 5vw, 72px) 42px;
+      color: var(--hero-ink); background:
+        radial-gradient(circle at 76% 18%, rgba(20, 170, 161, .32), transparent 23rem),
+        radial-gradient(circle at 92% 92%, rgba(243, 155, 74, .16), transparent 24rem),
+        linear-gradient(135deg, var(--navy-950), var(--navy-900) 58%, #0b3d4c);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: auto -7% -64% 28%; height: 95%; opacity: .34;
+      border: 1px solid rgba(150, 223, 216, .33); border-radius: 50%; transform: rotate(-7deg);
+      box-shadow: 0 0 0 42px rgba(150, 223, 216, .025), 0 0 0 84px rgba(150, 223, 216, .02);
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; opacity: .075; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(90deg, transparent 20%, #000 100%);
+    }
+    .hero__inner { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; }
+    .hero__grid { display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(330px, .78fr); gap: clamp(34px, 5vw, 76px); align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: #9adbd5; font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--signal); }
+    .hero h1 { max-width: 760px; margin: 0; color: #fff; font-size: clamp(40px, 5.4vw, 74px); line-height: 1.05; letter-spacing: -.04em; }
+    .hero h1 span { display: block; margin-top: 12px; color: #9fe3dc; font-size: .44em; font-weight: 630; line-height: 1.25; letter-spacing: .02em; }
+    .hero__deck { max-width: 720px; margin: 24px 0 0; color: #c8d9df; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.75; }
+    .hero__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .hero__chip { padding: 7px 11px; color: #d9eeee; border: 1px solid rgba(184, 227, 222, .24); border-radius: 999px; background: rgba(255,255,255,.055); font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+    .trust-card { padding: 24px; border: 1px solid rgba(199, 234, 231, .16); border-radius: 24px; background: rgba(7, 27, 45, .44); box-shadow: 0 24px 70px rgba(0, 0, 0, .18); backdrop-filter: blur(14px); }
+    .trust-card__head { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+    .trust-card__head span { display: block; color: #9adbd5; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .trust-card__head strong { display: block; margin-top: 6px; color: #fff; font-size: 17px; }
+    .trust-chain { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .trust-step { position: relative; min-height: 79px; padding: 13px 13px 12px 43px; border: 1px solid rgba(255,255,255,.1); border-radius: 13px; background: rgba(255,255,255,.055); }
+    .trust-step b { position: absolute; left: 13px; top: 13px; display: grid; place-items: center; width: 21px; height: 21px; color: var(--navy-950); border-radius: 7px; background: var(--signal); font: 800 10px/1 var(--mono); }
+    .trust-step strong { display: block; color: #fff; font-size: 13px; line-height: 1.35; }
+    .trust-step small { display: block; margin-top: 5px; color: #a9c1ca; font-size: 10px; line-height: 1.45; }
+    .hero-metrics { position: relative; z-index: 1; max-width: 1240px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 46px auto 0; border-top: 1px solid rgba(255,255,255,.15); }
+    .metric { padding: 22px 22px 6px 0; }
+    .metric + .metric { padding-left: 22px; border-left: 1px solid rgba(255,255,255,.15); }
+    .metric strong { display: block; color: #fff; font-size: 29px; line-height: 1.1; letter-spacing: -.03em; }
+    .metric span { display: block; margin-top: 7px; color: #9eb6c0; font-size: 11px; line-height: 1.4; }
+
+    .content-area { max-width: var(--layout-max); margin: 0 auto; padding: 34px clamp(18px, 2.5vw, 36px) 90px; }
+
+    .article {
+      width: 100%; color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      background: var(--surface); box-shadow: var(--shadow-sm); padding: clamp(28px, 3.5vw, 52px);
+    }
+    .article > :first-child { margin-top: 0; }
+    .article > :last-child { margin-bottom: 0; }
+    .article p, .article li { color: var(--ink); }
+    .article p { margin: 1.05em 0; }
+    .article h2, .article h3, .article h4 { position: relative; color: var(--navy-900); font-family: var(--sans); scroll-margin-top: calc(var(--topbar-h) + 22px); }
+    html[data-theme="dark"] .article h2,
+    html[data-theme="dark"] .article h3,
+    html[data-theme="dark"] .article h4 { color: var(--ink); }
+    .article h2 {
+      margin: 2.35em 0 .9em; padding: 0 52px 18px 0; border-bottom: 1px solid var(--line);
+      font-size: clamp(26px, 3.1vw, 38px); line-height: 1.25; letter-spacing: -.025em;
+    }
+    .article h2::before {
+      content: "SECTION"; display: block; margin-bottom: 9px; color: var(--teal-600);
+      font: 800 10px/1 var(--sans); letter-spacing: .17em;
+    }
+    .article h2.core-heading::before { content: "EXECUTIVE BRIEF"; color: var(--signal); }
+    .article h3 { margin: 2.15em 0 .75em; padding-left: 16px; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.35; }
+    .article h3::before { content: ""; position: absolute; left: 0; top: .15em; bottom: .12em; width: 4px; border-radius: 4px; background: linear-gradient(var(--teal-500), var(--teal-700)); }
+    .article h4 { margin: 1.85em 0 .65em; color: var(--teal-700); font-size: 18px; line-height: 1.4; }
+    .article h4::before { content: ""; display: inline-block; width: 7px; height: 7px; margin: 0 9px 2px 0; border-radius: 2px; background: var(--signal); transform: rotate(45deg); }
+    .heading-anchor {
+      position: absolute; right: 0; top: .05em; display: grid; place-items: center; width: 34px; height: 34px;
+      color: var(--muted); border: 1px solid transparent; border-radius: 9px; opacity: 0;
+      text-decoration: none; transition: opacity .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .article h2:hover .heading-anchor, .article h3:hover .heading-anchor, .article h4:hover .heading-anchor, .heading-anchor:focus { opacity: 1; }
+    .heading-anchor:hover { color: var(--teal-700); border-color: var(--line); background: var(--surface-soft); }
+    .heading-anchor svg { width: 15px; height: 15px; }
+
+    .article strong { color: var(--navy-900); font-weight: 750; }
+    html[data-theme="dark"] .article strong { color: #f3f8f8; }
+    .article em { color: var(--teal-700); }
+    .article code { padding: .15em .38em; color: var(--navy-800); border: 1px solid var(--line); border-radius: 5px; background: var(--surface-soft); font: .9em/1.4 var(--mono); }
+    .article a { font-weight: 650; overflow-wrap: anywhere; }
+    .article a[target="_blank"]::after { content: "↗"; display: inline-block; margin-left: 3px; font-size: .75em; text-decoration: none; }
+    .article ul, .article ol { margin: 1em 0 1.35em; padding-left: 1.5em; }
+    .article li { margin: .42em 0; padding-left: .25em; }
+    .article ul li::marker { color: var(--teal-600); }
+    .article ol li::marker { color: var(--teal-700); font-weight: 800; }
+    .article hr { height: 1px; margin: 3.2em 0; border: 0; background: linear-gradient(90deg, transparent, var(--line) 12%, var(--line) 88%, transparent); }
+    .article blockquote {
+      position: relative; margin: 1.7em 0; padding: 23px 24px 23px 63px; overflow: hidden;
+      color: #eaf6f5; border: 0; border-radius: 17px;
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-800)); box-shadow: var(--shadow-sm);
+    }
+    .article blockquote::before {
+      content: ""; position: absolute; left: 23px; top: 24px; width: 20px; height: 24px;
+      background: linear-gradient(145deg, var(--signal), #ffc183);
+      clip-path: polygon(0 0, 100% 0, 100% 52%, 45% 100%, 45% 52%, 0 52%);
+    }
+    .article blockquote::after { content: ""; position: absolute; right: -35px; bottom: -55px; width: 150px; height: 150px; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; }
+    .article blockquote p { position: relative; z-index: 1; margin: 0; color: inherit; font-size: 16px; font-weight: 650; line-height: 1.75; }
+    .article blockquote strong { color: #fff; }
+
+    .table-wrap { width: 100%; margin: 1.55em 0 2em; overflow-x: auto; border: 1px solid var(--line); border-radius: 15px; box-shadow: 0 8px 22px rgba(7,27,45,.04); }
+    .article table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 14px; line-height: 1.55; }
+    .article col { width: auto !important; }
+    .article thead { background: var(--navy-900); }
+    .article th { padding: 13px 15px; color: #fff; border-right: 1px solid rgba(255,255,255,.12); font-size: 12px; font-weight: 750; letter-spacing: .02em; text-align: left; vertical-align: top; }
+    .article th:last-child { border-right: 0; }
+    .article td { padding: 13px 15px; border-top: 1px solid var(--line); vertical-align: top; }
+    .article tbody tr:nth-child(even) { background: var(--surface-soft); }
+    .article tbody tr:hover { background: var(--teal-100); }
+    .article th:first-child, .article td:first-child { width: auto; min-width: 0; }
+    .article td:first-child { color: var(--navy-900); font-weight: 700; }
+    html[data-theme="dark"] .article td:first-child { color: #eef8f7; }
+    .table-wrap::after { content: ""; }
+
+    .article .risk-heading { color: var(--danger); }
+    .article .risk-heading::before { background: var(--danger); }
+    .article .risk-table { border-color: color-mix(in srgb, var(--danger) 35%, var(--line)); }
+    .practical-note {
+      margin-top: 2em !important; padding: 22px 24px 22px 56px; border: 1px solid #efc38f;
+      border-radius: 15px; background: var(--signal-soft);
+    }
+    .practical-note::before { content: "!"; float: left; display: grid; place-items: center; width: 25px; height: 25px; margin-left: -38px; color: #fff; border-radius: 50%; background: var(--signal); font-weight: 900; }
+    .summary-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; padding-left: 0 !important; counter-reset: summary; list-style: none; }
+    .summary-list li { position: relative; min-height: 64px; margin: 0; padding: 13px 12px 13px 48px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-soft); counter-increment: summary; }
+    .summary-list li::before { content: counter(summary, decimal-leading-zero); position: absolute; left: 13px; top: 14px; color: var(--teal-600); font: 800 12px/1.5 var(--mono); }
+
+    .page-footer { max-width: 100%; margin: 34px auto 0; padding: 20px 0 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.7; }
+    .page-footer__row { display: flex; justify-content: space-between; gap: 20px; }
+    .page-footer strong { color: var(--ink); }
+    .back-to-top {
+      position: fixed; z-index: 70; right: 22px; bottom: 22px; display: grid; place-items: center;
+      width: 44px; height: 44px; color: #fff; border: 0; border-radius: 14px; background: var(--teal-700);
+      box-shadow: 0 14px 30px rgba(8, 127, 129, .28); cursor: pointer;
+      opacity: 0; visibility: hidden; transform: translateY(12px); transition: all .25s var(--ease);
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: var(--teal-600); transform: translateY(-2px); }
+    .back-to-top svg { width: 18px; height: 18px; }
+    .sidebar-overlay { display: none; }
+
+    @media (min-width: 1101px) {
+      :root { --layout-max: min(1240px, calc(100vw - var(--sidebar-w) - 40px)); }
+    }
+    @media (max-width: 1100px) {
+      .menu-button { display: inline-grid; }
+      .sidebar { transform: translateX(-102%); box-shadow: var(--shadow-lg); transition: transform .3s var(--ease); }
+      body.menu-open .sidebar { transform: translateX(0); }
+      .sidebar-overlay { position: fixed; z-index: 75; inset: var(--topbar-h) 0 0; display: block; background: rgba(4, 20, 31, .48); opacity: 0; visibility: hidden; transition: all .25s ease; }
+      body.menu-open .sidebar-overlay { opacity: 1; visibility: visible; }
+      .page-shell { margin-left: 0; }
+    }
+    @media (max-width: 820px) {
+      :root { --layout-max: 100%; }
+      .hero { min-height: auto; padding-inline: 24px; }
+      .hero__grid { grid-template-columns: 1fr; }
+      .hero__deck { font-size: 16px; }
+      .trust-card { max-width: 610px; }
+      .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 34px; }
+      .metric { padding: 20px 12px 10px 0; }
+      .metric + .metric { padding-left: 0; border-left: 0; }
+      .metric:nth-child(even) {
+        padding-left: 16px;
+        border-left: 1px solid rgba(255,255,255,.15);
+      }
+      .metric:nth-child(odd) { padding-left: 0; }
+      .metric:nth-child(n+3) {
+        border-top: 1px solid rgba(255,255,255,.15);
+        padding-top: 20px;
+      }
+      .content-area { padding: 18px 8px 52px; }
+      .article { border-radius: 16px; }
+      .summary-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      :root { --topbar-h: 62px; }
+      .topbar { padding-inline: 13px; }
+      .brand-copy span { display: none; }
+      .brand-copy strong { font-size: 11px; }
+      .print-button { display: none; }
+      .hero { padding: 46px 19px 31px; }
+      .hero h1 { font-size: clamp(36px, 10.5vw, 48px); }
+      .hero h1 span { font-size: .45em; }
+      .hero__chips { margin-top: 22px; }
+      .trust-card { padding: 18px; }
+      .trust-chain { grid-template-columns: 1fr; }
+      .trust-step { min-height: 68px; }
+      .hero-metrics { grid-template-columns: 1fr 1fr; }
+      .metric { padding: 18px 12px 8px 0; }
+      .metric + .metric { padding-left: 0; border-left: 0; }
+      .metric:nth-child(even) {
+        padding-left: 14px;
+        border-left: 1px solid rgba(255,255,255,.15);
+      }
+      .metric:nth-child(odd) { padding-left: 0; }
+      .metric:nth-child(n+3) { padding-top: 18px; }
+      .metric strong { font-size: 24px; }
+      .content-area { padding: 10px 0 36px; }
+      .article {
+        padding: 18px 16px;
+        border-radius: 0;
+        border-inline: 0;
+        box-shadow: none;
+      }
+      .article h2 { padding-right: 38px; font-size: 27px; }
+      .article h3 { font-size: 21px; }
+      .article blockquote { padding: 20px 18px 20px 48px; }
+      .article blockquote::before { left: 17px; top: 21px; width: 17px; height: 21px; }
+      .article ul, .article ol { padding-left: 1.28em; }
+      .page-footer__row { flex-direction: column; gap: 5px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+
+    @media print {
+      :root { --ink: #172a37; --muted: #5e707d; --line: #ccd6dc; --surface: #fff; --surface-soft: #f3f6f7; --paper: #fff; }
+      @page { size: A4; margin: 17mm 15mm 18mm; }
+      body { background: #fff; font-size: 10.2pt; }
+      .topbar, .sidebar, .sidebar-overlay, .reading-progress, .back-to-top { display: none !important; }
+      .page-shell { margin: 0; padding: 0; }
+      .hero { min-height: 0; margin: 0 0 12mm; padding: 18mm 15mm; border-radius: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .hero__grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 35pt; }
+      .hero__deck { font-size: 12pt; }
+      .trust-card { display: none; }
+      .hero-metrics { margin-top: 12mm; }
+      .content-area { max-width: none; padding: 0; }
+      .article { padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+      .article h2 { break-after: avoid; font-size: 22pt; }
+      .article h3 { break-after: avoid; font-size: 15pt; }
+      .article h4 { break-after: avoid; }
+      .article p, .article li { orphans: 3; widows: 3; }
+      .table-wrap { overflow: visible; break-inside: avoid; box-shadow: none; }
+      .article table { min-width: 0; font-size: 8.5pt; }
+      .article th, .article td { padding: 7px 8px; }
+      .article blockquote { break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .heading-anchor { display: none; }
+      .page-footer { max-width: none; }
+      a { color: inherit; text-decoration: none; }
+      .article a[target="_blank"]::after { content: ""; }
+    }
+
+    /* --- Site integration (Reay Huang personal site) --- */
+    :root { --site-bar-h: 48px; }
+    .note-site-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 110; }
+    .reading-progress { top: var(--site-bar-h); }
+    .topbar { top: var(--site-bar-h); }
+    .sidebar { inset: calc(var(--site-bar-h) + var(--topbar-h)) auto 0 0; }
+    .sidebar-overlay { inset: calc(var(--site-bar-h) + var(--topbar-h)) 0 0; }
+    .page-shell { padding-top: calc(var(--site-bar-h) + var(--topbar-h)); }
+    html { scroll-padding-top: calc(var(--site-bar-h) + var(--topbar-h) + 24px); }
+    .hero .article-meta { margin: 18px 0 0; max-width: 760px; }
+    .hero .article-share--hero { margin-top: 24px; }
+    .hero .article-share__label { color: #c8f0f4; }
+    .share-band {
+      max-width: var(--layout-max);
+      margin: 0 auto;
+      padding: 28px clamp(18px, 2.5vw, 36px) 0;
+    }
+    footer.site-footer {
+      background: #061b22; color: rgba(255, 255, 255, 0.82);
+      padding: 36px clamp(18px, 2.5vw, 36px) 44px; font-size: 14px; line-height: 1.7;
+      text-align: left; margin: 34px 0 0;
+    }
+    footer.site-footer .container { max-width: var(--layout-max); margin: 0 auto; padding: 0; }
+    footer.site-footer strong { color: #fff; }
+    footer.site-footer a { color: #8ffff2; }
+    footer.site-footer .disclaimer { margin: 14px 0 0; color: rgba(255, 255, 255, 0.62); max-width: 760px; }
+    footer.site-footer .small { font-size: 13px; }
+    .back-to-top { display: none !important; }
+    @media (max-width: 680px) {
+      .note-site-bar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 8px 12px;
+        gap: 10px 14px;
+        font-size: 12px;
+      }
+      .note-site-bar::-webkit-scrollbar { display: none; }
+      .note-site-bar__nav {
+        flex-wrap: nowrap;
+        gap: 10px 14px;
+      }
+      .note-site-bar .note-lang-switch {
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+    }
+    @media (max-width: 560px) {
+      .topbar .brand-mark { width: 30px; height: 30px; border-radius: 9px; }
+      .topbar .brand-mark svg { width: 16px; height: 16px; }
+      .topbar .icon-button { width: 34px; height: 34px; border-radius: 9px; }
+      .topbar__brand { gap: 8px; }
+      .topbar__actions { gap: 6px; }
+      .topbar .brand-copy strong {
+        font-size: 10px;
+        letter-spacing: 0.05em;
+        line-height: 1.2;
+      }
+    }
+    @media (max-width: 980px) {
+      .share-band { padding-inline: 12px; }
+      footer.site-footer { padding-inline: 12px; }
+    }
+    @media (max-width: 560px) {
+      .share-band { padding-inline: 12px; }
+      footer.site-footer { padding-inline: 16px; }
+    }
+    @media print {
+      .note-site-bar, .article-share, .share-band, footer.site-footer { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="electronic-certificates-joint-guidelines-notes.en.html" lang="en" hreflang="en" onclick="window.location.href=this.href; return false;">EN</a>
+      <a href="electronic-certificates-joint-guidelines-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v15M8.5 6.5h7M5 11l7 7 7-7M5 11H2.8c.2 5 4.2 9 9.2 9s9-4 9.2-9H19"/>
+        </svg>
+      </div>
+      <div class="brand-copy">
+        <strong>MARITIME REGULATORY BRIEF</strong>
+        <span>Electronic certificates · Class · RO · PSC</span>
+      </div>
+    </div>
+    <div class="topbar__actions">
+      <button class="icon-button print-button" id="print-button" type="button" title="列印／另存 PDF" aria-label="列印或另存為 PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8V3h10v5M7 17H5a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3h-2"/><path d="M7 14h10v7H7z"/><path d="M18 11h.01"/></svg>
+      </button>
+      <button class="icon-button" id="theme-button" type="button" title="切換明暗模式" aria-label="切換明暗模式">
+        <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+      </button>
+      <button class="icon-button menu-button" id="menu-button" type="button" title="開啟文件目錄" aria-label="開啟文件目錄" aria-controls="sidebar" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="文件目錄">
+    <div class="sidebar__inner">
+      <p class="sidebar__label">Document map</p>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input class="toc-search" id="toc-search" type="search" placeholder="搜尋章節…" aria-label="搜尋章節">
+        <span class="search-shortcut" aria-hidden="true">/</span>
+      </div>
+      <nav id="TOC" role="doc-toc">
+        <ul>
+        <li><a href="#核心結論" id="toc-核心結論">核心結論</a></li>
+        <li><a href="#一文件主題與背景"
+        id="toc-一文件主題與背景">一、文件主題與背景</a>
+        <ul>
+        <li><a href="#文件基本資料" id="toc-文件基本資料">1.1
+        文件基本資料</a></li>
+        <li><a href="#文件產生的原因" id="toc-文件產生的原因">1.2
+        文件產生的原因</a></li>
+        <li><a href="#文件的法律定位" id="toc-文件的法律定位">1.3
+        文件的法律定位</a></li>
+        </ul></li>
+        <li><a href="#二文件結構"
+        id="toc-二文件結構">二、文件結構</a></li>
+        <li><a href="#三核心內容解析"
+        id="toc-三核心內容解析">三、核心內容解析</a>
+        <ul>
+        <li><a href="#適用範圍" id="toc-適用範圍">3.1 適用範圍</a></li>
+        <li><a href="#電子證書不等於掃描檔"
+        id="toc-電子證書不等於掃描檔">3.2 電子證書不等於掃描檔</a></li>
+        <li><a href="#五項最低必要特徵" id="toc-五項最低必要特徵">3.3
+        五項最低必要特徵</a></li>
+        <li><a href="#驗證網站與資安要求"
+        id="toc-驗證網站與資安要求">3.4 驗證網站與資安要求</a></li>
+        <li><a href="#驗證的真正含義" id="toc-驗證的真正含義">3.5
+        驗證的真正含義</a></li>
+        <li><a href="#船上必須具備驗證說明"
+        id="toc-船上必須具備驗證說明">3.6 船上必須具備驗證說明</a></li>
+        <li><a href="#海員電子證書的特別要求"
+        id="toc-海員電子證書的特別要求">3.7
+        海員電子證書的特別要求</a></li>
+        <li><a href="#通知與-gisis" id="toc-通知與-gisis">3.8 通知與
+        GISIS</a></li>
+        <li><a href="#接受電子證書是有條件接受"
+        id="toc-接受電子證書是有條件接受">3.9
+        接受電子證書是「有條件接受」</a></li>
+        <li><a href="#納入-ism-safety-management-system"
+        id="toc-納入-ism-safety-management-system">3.10 納入 ISM Safety
+        Management System</a></li>
+        <li><a href="#資安反詐欺及營運持續性"
+        id="toc-資安反詐欺及營運持續性">3.11
+        資安、反詐欺及營運持續性</a></li>
+        <li><a href="#海員個資與儲存位置"
+        id="toc-海員個資與儲存位置">3.12 海員個資與儲存位置</a></li>
+        </ul></li>
+        <li><a href="#四重要術語與定義"
+        id="toc-四重要術語與定義">四、重要術語與定義</a></li>
+        <li><a href="#五船級社與-ro-的實務影響"
+        id="toc-五船級社與-ro-的實務影響">五、船級社與 RO 的實務影響</a>
+        <ul>
+        <li><a href="#必須先區分船級證書與法定證書"
+        id="toc-必須先區分船級證書與法定證書">5.1
+        必須先區分「船級證書」與「法定證書」</a></li>
+        <li><a href="#旗國授權矩陣必須明確"
+        id="toc-旗國授權矩陣必須明確">5.2 旗國授權矩陣必須明確</a></li>
+        <li><a href="#船級社電子證書平台的最低要求"
+        id="toc-船級社電子證書平台的最低要求">5.3
+        船級社電子證書平台的最低要求</a></li>
+        <li><a href="#驗船師簽發程序會受到影響"
+        id="toc-驗船師簽發程序會受到影響">5.4
+        驗船師簽發程序會受到影響</a></li>
+        <li><a href="#ro-的責任風險" id="toc-ro-的責任風險">5.5 RO
+        的責任風險</a></li>
+        <li><a href="#船級ism-稽核重點" id="toc-船級ism-稽核重點">5.6
+        船級／ISM 稽核重點</a></li>
+        </ul></li>
+        <li><a href="#六psc-實務影響" id="toc-六psc-實務影響">六、PSC
+        實務影響</a>
+        <ul>
+        <li><a href="#電子證書會成為-psc-初始查驗的一部分"
+        id="toc-電子證書會成為-psc-初始查驗的一部分">6.1 電子證書會成為
+        PSC 初始查驗的一部分</a></li>
+        <li><a href="#psc-不應只因沒有紙本開缺失"
+        id="toc-psc-不應只因沒有紙本開缺失">6.2 PSC
+        不應只因「沒有紙本」開缺失</a></li>
+        <li><a href="#可能引起-psc-缺失的情況"
+        id="toc-可能引起-psc-缺失的情況">6.3 可能引起 PSC
+        缺失的情況</a></li>
+        <li><a href="#驗證失敗不一定立即等於扣船"
+        id="toc-驗證失敗不一定立即等於扣船">6.4
+        驗證失敗不一定立即等於扣船</a></li>
+        <li><a href="#電子證書有效不代表船舶不會被深入檢查"
+        id="toc-電子證書有效不代表船舶不會被深入檢查">6.5
+        電子證書有效，不代表船舶不會被深入檢查</a></li>
+        </ul></li>
+        <li><a href="#七船上建議準備的電子證書-psc-套件"
+        id="toc-七船上建議準備的電子證書-psc-套件">七、船上建議準備的「電子證書
+        PSC 套件」</a></li>
+        <li><a href="#八建議的船上-psc-操作流程"
+        id="toc-八建議的船上-psc-操作流程">八、建議的船上 PSC
+        操作流程</a>
+        <ul>
+        <li><a href="#登輪前" id="toc-登輪前">登輪前</a></li>
+        <li><a href="#psco-要求證書時" id="toc-psco-要求證書時">PSCO
+        要求證書時</a></li>
+        <li><a href="#驗證網站無法使用時"
+        id="toc-驗證網站無法使用時">驗證網站無法使用時</a></li>
+        </ul></li>
+        <li><a href="#九易混淆或需注意之處"
+        id="toc-九易混淆或需注意之處">九、易混淆或需注意之處</a>
+        <ul>
+        <li><a href="#電子證書與掃描紙本不同"
+        id="toc-電子證書與掃描紙本不同">9.1
+        電子證書與掃描紙本不同</a></li>
+        <li><a href="#電子簽章與簽名圖片不同"
+        id="toc-電子簽章與簽名圖片不同">9.2
+        電子簽章與簽名圖片不同</a></li>
+        <li><a href="#qr-code-不是證書本身"
+        id="toc-qr-code-不是證書本身">9.3 QR code 不是證書本身</a></li>
+        <li><a href="#列印版不宜單獨當作電子正本"
+        id="toc-列印版不宜單獨當作電子正本">9.4
+        列印版不宜單獨當作電子正本</a></li>
+        <li><a href="#gisis-不是個別證書資料庫的完全替代品"
+        id="toc-gisis-不是個別證書資料庫的完全替代品">9.5 GISIS
+        不是個別證書資料庫的完全替代品</a></li>
+        <li><a href="#船級社有電子系統不等於旗國已授權"
+        id="toc-船級社有電子系統不等於旗國已授權">9.6
+        船級社有電子系統，不等於旗國已授權</a></li>
+        <li><a href="#持續可驗證不代表只依賴單一網站"
+        id="toc-持續可驗證不代表只依賴單一網站">9.7
+        「持續可驗證」不代表只依賴單一網站</a></li>
+        </ul></li>
+        <li><a href="#十總結與複習重點"
+        id="toc-十總結與複習重點">十、總結與複習重點</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-card">
+        <span>Primary reference</span>
+        <strong>FAL-LEG-MEPC-MSC.1/Circ.1</strong>
+        <small>Issued 1 June 2026</small>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <div class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero__inner">
+        <div class="hero__grid">
+          <div>
+            <p class="eyebrow">FAL-LEG-MEPC-MSC.1/Circ.1 · 電子證書 · Reay's Note</p>
+            <h1 id="page-title">電子證書聯合指南<span>船級、RO 與 PSC 實務影響深度解析</span></h1>
+            <p class="article-meta">
+              <span>📅 更新：2026-07-11</span>
+              <span class="article-meta__sep" aria-hidden="true">·</span>
+              <span>⏱ 閱讀約 20 分鐘</span>
+              <span class="article-meta__sep" aria-hidden="true">·</span>
+              <span>🏷 FAL-LEG-MEPC-MSC.1/Circ.1 / 電子證書 / PSC / ISM</span>
+            </p>
+            <p class="hero__deck">一份從「電子檔」走向「可信任、可驗證、可持續使用」的實務導航，串連旗國授權、電子簽章、ISM 文件管制與港口國查驗。</p>
+            <div class="hero__chips" aria-label="主題標籤">
+              <span class="hero__chip">FAL</span><span class="hero__chip">LEG</span><span class="hero__chip">MEPC</span><span class="hero__chip">MSC</span><span class="hero__chip">CLASS / RO</span><span class="hero__chip">PSC</span>
+            </div>
+          </div>
+          <div class="trust-card" aria-label="電子證書信任鏈">
+            <div class="trust-card__head"><div><span>Compliance architecture</span><strong>電子證書信任鏈</strong></div></div>
+            <div class="trust-chain">
+              <div class="trust-step"><b>01</b><strong>旗國授權</strong><small>Authority &amp; scope</small></div>
+              <div class="trust-step"><b>02</b><strong>合格電子格式</strong><small>Required form &amp; content</small></div>
+              <div class="trust-step"><b>03</b><strong>防竄改與簽章</strong><small>Integrity &amp; signature</small></div>
+              <div class="trust-step"><b>04</b><strong>唯一追蹤號碼</strong><small>UTN &amp; version identity</small></div>
+              <div class="trust-step"><b>05</b><strong>持續可驗證</strong><small>Availability &amp; recovery</small></div>
+              <div class="trust-step"><b>06</b><strong>SMS 與 PSC</strong><small>Control &amp; acceptance</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-metrics" aria-label="文件摘要數據">
+          <div class="metric"><strong>4</strong><span>IMO 委員會共同核准</span></div>
+          <div class="metric"><strong>5</strong><span>電子證書最低必要特徵</span></div>
+          <div class="metric"><strong>10</strong><span>指南正式章節架構</span></div>
+          <div class="metric"><strong>1</strong><span>船岸一致的信任鏈</span></div>
+        </div>
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/electronic-certificates-joint-guidelines-notes.html"
+          data-share-title="電子證書聯合指南｜船級與 PSC 實務解析｜Reay's Note"
+          data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;電子證書聯合指南｜船級與 PSC 實務解析｜Reay's Note&#10;https://reayhuang.com/notes/maritime/electronic-certificates-joint-guidelines-notes.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-hero-label">分享此篇</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+    </section>
+
+    <main class="content-area" id="main-content">
+      <article class="article" id="article">
+        <h2 id="核心結論">核心結論</h2>
+        <p>這份
+        <strong>FAL-LEG-MEPC-MSC.1/Circ.1《電子證書使用聯合指南》</strong>的核心，不只是允許船上用
+        PDF 取代紙本，而是建立一條完整的電子證書信任鏈：</p>
+        <blockquote>
+        <p><strong>旗國主管機關授權 → 合格電子格式 → 防竄改及電子簽章 →
+        唯一追蹤號碼 → 持續可用的驗證機制 → 船上 SMS 文件管制 → PSC
+        接受與查驗</strong></p>
+        </blockquote>
+        <p>其中任何一個環節失效，例如旗國未授權、證書版本過期、驗證網站無法使用、船上沒有驗證說明或船員不會操作，都可能使原本合法的電子證書在
+        PSC 現場產生合規風險。</p>
+        <hr />
+        <h2 id="一文件主題與背景">一、文件主題與背景</h2>
+        <h3 id="文件基本資料">1.1 文件基本資料</h3>
+        <table>
+        <colgroup>
+        <col style="width: 6.5em" />
+        <col />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th>項目</th>
+        <th>內容</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>文件名稱</td>
+        <td><strong>Joint Guidelines for the Use of Electronic
+        Certificates</strong></td>
+        </tr>
+        <tr class="even">
+        <td>中文名稱</td>
+        <td><strong>電子證書使用聯合指南</strong></td>
+        </tr>
+        <tr class="odd">
+        <td>文件編號</td>
+        <td><strong>FAL-LEG-MEPC-MSC.1/Circ.1</strong></td>
+        </tr>
+        <tr class="even">
+        <td>發布日期</td>
+        <td><strong>2026 年 6 月 1 日</strong></td>
+        </tr>
+        <tr class="odd">
+        <td>核准機構</td>
+        <td>FAL、LEG、MSC、MEPC 四個 IMO 委員會</td>
+        </tr>
+        <tr class="even">
+        <td>適用對象</td>
+        <td>旗國主管機關、RO、船級社、PSC、船東、船舶管理公司、船員、代理、vetting
+        company 等</td>
+        </tr>
+        <tr class="odd">
+        <td>主要範圍</td>
+        <td>船舶法定電子證書及<strong>海員電子證書</strong></td>
+        </tr>
+        <tr class="even">
+        <td>被撤銷文件</td>
+        <td><strong>FAL.5/Circ.39/Rev.2</strong>及<strong>MSC.1/Circ.1665</strong></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>本文件將原本較偏向船舶電子證書的 FAL
+        指南，以及專門處理海員電子證書的 MSC 指南，整合成一份跨
+        <strong>FAL、LEG、MEPC、MSC</strong> 的聯合文件。</p>
+        <p>IMO
+        官方資料亦將本通函列為現行電子證書聯合指南，並說明電子證書若符合
+        IMO
+        指南、驗證網站要求且船上具備驗證說明，原則上應被視為與傳統紙本證書等效。(<a
+        href="https://www.imo.org/en/OurWork/Facilitation/Pages/DeclarationsCertificates-default.aspx">International
+        Maritime Organization</a>)</p>
+        <hr />
+        <h3 id="文件產生的原因">1.2 文件產生的原因</h3>
+        <p>文件指出傳統紙本證書及早期電子證書使用上曾出現數種問題：</p>
+        <ol type="1">
+        <li><strong>PSC
+        或其他利害關係人質疑電子證書有效性</strong>。</li>
+        <li>船長與船員須額外聯絡公司、旗國或船級社說明。</li>
+        <li>紙本證書可能尚未送達船上。</li>
+        <li>紙本證書可能遺失、毀損或遭竄改。</li>
+        <li>海員證書種類多、更新頻繁，紙本管理負擔大。</li>
+        <li>不同旗國、RO、船級社的驗證方式不一致。</li>
+        <li>電子證書涉及伺服器、網路、電子簽章及個人資料，必須處理資安與隱私問題。</li>
+        </ol>
+        <p>因此，本指南不是單純規定「可以電子化」，而是試圖建立各國及各組織都能辨認的<strong>最低共同特徵</strong>。</p>
+        <hr />
+        <h3 id="文件的法律定位">1.3 文件的法律定位</h3>
+        <p>本文件屬於 IMO
+        <strong>Circular／Guidelines（通函／指南）</strong>，不是直接修改
+        SOLAS、MARPOL、STCW 或其他公約正文的修正案。</p>
+        <p>文件大量使用：</p>
+        <ul>
+        <li><strong>should</strong>：應當、建議採行；</li>
+        <li><strong>are invited to</strong>：邀請會員國採行；</li>
+        <li><strong>are urged to</strong>：敦促會員國採行。</li>
+        </ul>
+        <p>因此，它的實際執行力主要來自：</p>
+        <ol type="1">
+        <li><strong>旗國國內法及行政規則</strong>；</li>
+        <li>旗國對 RO／船級社的授權；</li>
+        <li>IMO 公約中證書攜帶與查驗的要求；</li>
+        <li>ISM Code 納入公司的安全管理制度；</li>
+        <li>PSC 區域備忘錄及港口國主管機關的執行程序。</li>
+        </ol>
+        <p>文件第 3
+        段也明確要求會員國在必要時建立適當國內法制，確保電子證書可以合法使用及接受。換言之，<strong>IMO
+        指南本身不是任何 PDF 都可被接受的通行證</strong>。</p>
+        <hr />
+        <h2 id="二文件結構">二、文件結構</h2>
+        <table>
+        <colgroup>
+        <col style="width: 3.5em" />
+        <col style="width: 22%" />
+        <col />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th>章節</th>
+        <th>主題</th>
+        <th>主要功能</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>1</td>
+        <td>Introduction</td>
+        <td>說明紙本與電子證書問題</td>
+        </tr>
+        <tr class="even">
+        <td>2</td>
+        <td>Purpose</td>
+        <td>確定適用範圍及排除項目</td>
+        </tr>
+        <tr class="odd">
+        <td>3</td>
+        <td>Definitions</td>
+        <td>定義電子證書、電子簽章、UTN、驗證等</td>
+        </tr>
+        <tr class="even">
+        <td>4</td>
+        <td>Features</td>
+        <td>規定電子證書最低必要特徵</td>
+        </tr>
+        <tr class="odd">
+        <td>5</td>
+        <td>Verification</td>
+        <td>建立電子證書驗證機制</td>
+        </tr>
+        <tr class="even">
+        <td>6</td>
+        <td>Notifications</td>
+        <td>要求旗國透過 GISIS 提供資訊</td>
+        </tr>
+        <tr class="odd">
+        <td>7</td>
+        <td>Acceptance</td>
+        <td>要求 PSC 等利害關係人接受合格電子證書</td>
+        </tr>
+        <tr class="even">
+        <td>8</td>
+        <td>Implementation</td>
+        <td>規定實施程序及 SMS 管理</td>
+        </tr>
+        <tr class="odd">
+        <td>9</td>
+        <td>Security assurance</td>
+        <td>規定防詐欺、資安及資料交換控制</td>
+        </tr>
+        <tr class="even">
+        <td>10</td>
+        <td>Location and privacy</td>
+        <td>處理海員證書儲存位置及個資隱私</td>
+        </tr>
+        </tbody>
+        </table>
+        <hr />
+        <h2 id="三核心內容解析">三、核心內容解析</h2>
+        <h3 id="適用範圍">3.1 適用範圍</h3>
+        <p>指南適用於為證明符合 IMO 要求而簽發的各類電子證書，包括：</p>
+        <ul>
+        <li>船舶法定證書；</li>
+        <li>船級相關電子證書；</li>
+        <li>由旗國或其授權 RO 簽發的證書；</li>
+        <li>海員適任證書及其他 STCW 相關電子證明；</li>
+        <li>電子證書的列印版本。</li>
+        </ul>
+        <p>但不適用於：</p>
+        <ul>
+        <li>船上出版品；</li>
+        <li>操作手冊；</li>
+        <li>指示文件；</li>
+        <li>用來持續記錄船舶操作的 logbook／record book。</li>
+        </ul>
+        <p>因此，<strong>電子油料紀錄簿、電子垃圾紀錄簿、電子壓載水紀錄簿等，不因本指南而自動合規</strong>，仍須適用其各自的公約、決議及旗國核准要求。</p>
+        <hr />
+        <h3 id="電子證書不等於掃描檔">3.2 電子證書不等於掃描檔</h3>
+        <p>指南所稱的 <strong>Electronic
+        certificate（電子證書）</strong>，必須是由主管機關建立或核准格式所簽發的正式電子資料，並能讓預定查驗者正常閱讀。</p>
+        <p>因此，下列文件不可直接視為合格電子證書：</p>
+        <ul>
+        <li>紙本證書掃描成的普通 PDF；</li>
+        <li>手機拍攝的證書照片；</li>
+        <li>沒有電子簽章的電子檔；</li>
+        <li>可任意修改內容的 Word 或 PDF；</li>
+        <li>未經旗國授權，由公司自行製作的證明；</li>
+        <li>僅有船級社 Logo，但無法在線驗證的檔案。</li>
+        </ul>
+        <p>真正的電子證書必須同時具備<strong>簽發權限、資料完整性、可驗證性及有效狀態</strong>。</p>
+        <hr />
+        <h3 id="五項最低必要特徵">3.3 五項最低必要特徵</h3>
+        <p>第 4.1 節規定電子證書應符合以下五項要求：</p>
+        <h4 id="格式與內容正確">1. 格式與內容正確</h4>
+        <p>電子證書的格式、欄位及內容必須符合相關國際公約要求，包括：</p>
+        <ul>
+        <li>證書名稱；</li>
+        <li>船名及 IMO Number；</li>
+        <li>船籍港及旗國；</li>
+        <li>總噸位、船型等適用資料；</li>
+        <li>簽發日期；</li>
+        <li>有效期限；</li>
+        <li>年度、中期、定期檢驗的 endorsement；</li>
+        <li>豁免、限制或附加條件。</li>
+        </ul>
+        <p>電子化不可以改變公約原本要求的內容。</p>
+        <h4 id="防止未授權修改">2. 防止未授權修改</h4>
+        <p>證書必須受到保護，只有簽發者或主管機關授權人員才能：</p>
+        <ul>
+        <li>修改；</li>
+        <li>更正；</li>
+        <li>展期；</li>
+        <li>加註 endorsement；</li>
+        <li>重新簽發；</li>
+        <li>撤銷或失效處理。</li>
+        </ul>
+        <p>下載 PDF 後可以自行修改文字的文件，原則上不符合要求。</p>
+        <h4 id="具有唯一追蹤號碼">3. 具有唯一追蹤號碼</h4>
+        <p>每份證書須有 <strong>Unique Tracking
+        Number，UTN（唯一追蹤號碼）</strong>，用以區別同一主管機關所簽發的不同電子證書。</p>
+        <p>UTN 的作用包括：</p>
+        <ul>
+        <li>查詢證書真偽；</li>
+        <li>比對版本；</li>
+        <li>確認是否撤銷；</li>
+        <li>確認最新 endorsement；</li>
+        <li>防止不同船舶或不同證書混用。</li>
+        </ul>
+        <h4 id="明確顯示簽發來源">4. 明確顯示簽發來源</h4>
+        <p>查驗者應能立即辨識：</p>
+        <ul>
+        <li>旗國主管機關；</li>
+        <li>簽發 RO 或船級社；</li>
+        <li>簽發人員；</li>
+        <li>簽發權限；</li>
+        <li>證書是否代表旗國簽發。</li>
+        </ul>
+        <h4 id="包含電子簽章">5. 包含電子簽章</h4>
+        <p>證書必須有 <strong>Electronic
+        signature（電子簽章）</strong>，用於驗證簽發者及內容真實性。</p>
+        <p>必須注意，證書上顯示一張簽名圖片，不一定等於有效電子簽章。真正的電子簽章通常包含可由
+        PDF reader 或驗證平台查驗的密碼學資訊。</p>
+        <hr />
+        <h3 id="驗證網站與資安要求">3.4 驗證網站與資安要求</h3>
+        <p>若主管機關使用網站提供電子證書查閱或驗證，網站應具備：</p>
+        <ul>
+        <li><strong>Access control（存取控制）</strong>；</li>
+        <li>防止未授權查詢或修改；</li>
+        <li>防止詐欺及偽造；</li>
+        <li>抵抗 cyberattack（網路攻擊）；</li>
+        <li>系統備援；</li>
+        <li>災害復原能力；</li>
+        <li>持續服務能力。</li>
+        </ul>
+        <p>文件腳註提及 <strong>ISO/IEC 27000
+        系列資訊安全管理標準</strong>，但這是示例，不代表所有系統只要取得
+        ISO 27001
+        證書即自動符合本指南。主管機關仍須核准整體簽發、儲存及驗證程序。</p>
+        <hr />
+        <h3 id="驗證的真正含義">3.5 驗證的真正含義</h3>
+        <p>指南所稱
+        <strong>Verification（驗證）</strong>，不是只看文件表面，而是透過可靠、安全且持續可用的程序，確認：</p>
+        <ol type="1">
+        <li>證書確由合法簽發者簽發；</li>
+        <li>證書內容未被修改；</li>
+        <li>證書仍在有效期內；</li>
+        <li>證書尚未被撤銷或取代；</li>
+        <li>endorsement 為最新狀態；</li>
+        <li>證書與該船、設備或海員相符。</li>
+        </ol>
+        <p>因此，PSC 掃描 QR code
+        後看到網頁，並不代表驗證已完成；仍須比較網頁資料、電子檔及船舶實際資料是否一致。</p>
+        <hr />
+        <h3 id="船上必須具備驗證說明">3.6 船上必須具備驗證說明</h3>
+        <p>第 5.1
+        節要求，船上應有電子證書的驗證說明，包括必要時確認週期性
+        endorsement 的方法。</p>
+        <p>最低限度應讓船長或負責船員知道：</p>
+        <ul>
+        <li>電子證書存放位置；</li>
+        <li>如何開啟檔案；</li>
+        <li>如何查看電子簽章；</li>
+        <li>UTN 在哪裡；</li>
+        <li>QR code 如何使用；</li>
+        <li>驗證網站或應用程式；</li>
+        <li>如何確認最新 endorsement；</li>
+        <li>驗證失敗時聯絡誰；</li>
+        <li>網路中斷時的替代措施。</li>
+        </ul>
+        <p>「證書放在公司雲端，需要時再問岸上」通常不足以證明船上已具備有效控制。</p>
+        <hr />
+        <h3 id="海員電子證書的特別要求">3.7 海員電子證書的特別要求</h3>
+        <p>海員電子證書涉及 STCW
+        適任資格及個人資料，因此有額外要求：</p>
+        <h4 id="驗證可使用的方式">驗證可使用的方式</h4>
+        <p>可包括：</p>
+        <ul>
+        <li>經核准的應用程式；</li>
+        <li>核准的儲存資料；</li>
+        <li>UTN；</li>
+        <li>海員識別號碼；</li>
+        <li>QR code；</li>
+        <li>上述方式的組合；</li>
+        <li>主管機關核准的其他方式。</li>
+        </ul>
+        <h4 id="船員持有的最低資料">船員持有的最低資料</h4>
+        <p>若完整資料存放於遠端伺服器，海員仍須持有足以啟動驗證程序的最低資料，例如：</p>
+        <ul>
+        <li>姓名；</li>
+        <li>證書號碼；</li>
+        <li>海員識別號碼；</li>
+        <li>QR code；</li>
+        <li>UTN；</li>
+        <li>主管機關指定的查詢資料。</li>
+        </ul>
+        <h4 id="原本證書的法律效果">原本證書的法律效果</h4>
+        <p>只要海員持有真實且有效的電子證書，並符合相關條件，應視為已在船持有
+        <strong>original certificate（正本證書）</strong>。</p>
+        <p>這是本指南的重要突破：海員不再必然需要持有傳統紙本正本。</p>
+        <hr />
+        <h3 id="通知與-gisis">3.8 通知與 GISIS</h3>
+        <p>決定使用電子證書的主管機關，應透過 <strong>GISIS Survey and
+        Certification
+        Module（全球整合航運資訊系統之檢驗與發證模組）</strong>，提供：</p>
+        <ul>
+        <li>採用電子證書的資訊；</li>
+        <li>電子證書類別；</li>
+        <li>驗證網站；</li>
+        <li>相關驗證資料。</li>
+        </ul>
+        <p>IMO 官方說明，GISIS
+        可提供旗國電子證書資訊及真實性驗證連結。(<a
+        href="https://www.imo.org/en/OurWork/Facilitation/Pages/DeclarationsCertificates-default.aspx">International
+        Maritime Organization</a>)</p>
+        <p>但必須注意：</p>
+        <blockquote>
+        <p><strong>GISIS
+        主要證明某旗國或證書類別採用電子證書，不一定直接證明某一張個別證書目前有效。</strong></p>
+        </blockquote>
+        <p>個別證書狀態仍應透過旗國或簽發 RO 的驗證系統確認。</p>
+        <hr />
+        <h3 id="接受電子證書是有條件接受">3.9
+        接受電子證書是「有條件接受」</h3>
+        <p>第 7 節要求所有利害關係人，包括 PSCO，接受具備第 4
+        節特徵的電子證書。</p>
+        <p>因此 PSC 不應僅因以下理由拒絕證書：</p>
+        <ul>
+        <li>沒有濕簽；</li>
+        <li>沒有浮水印紙；</li>
+        <li>沒有鋼印；</li>
+        <li>沒有紙本正本；</li>
+        <li>證書僅以合格電子檔呈現。</li>
+        </ul>
+        <p>但接受的前提是：</p>
+        <ul>
+        <li>旗國允許該證書電子化；</li>
+        <li>電子證書具有必要特徵；</li>
+        <li>能夠完成驗證；</li>
+        <li>證書內容及日期正確；</li>
+        <li>船上具有驗證說明。</li>
+        </ul>
+        <p>IMO 2025 年 PSC
+        程序已明確把「有效證書」定義為可以由締約國或其 RO
+        以<strong>電子或紙本方式</strong>簽發，且日期、內容及船舶實際狀況均相符的證書。</p>
+        <hr />
+        <h3 id="納入-ism-safety-management-system">3.10 納入 ISM Safety
+        Management System</h3>
+        <p>第 8.2 節要求船東、營運人及船員，依 <strong>ISM Code 第 11
+        節文件管制</strong>管理電子證書。</p>
+        <p>ISM Code 第 11 節的核心要求是：</p>
+        <ul>
+        <li>有效文件應存在於所有需要的位置；</li>
+        <li>文件變更須經授權人員審查與核准；</li>
+        <li>過期文件須迅速移除。</li>
+        </ul>
+        <p>轉換成電子證書管理，就是：</p>
+        <table>
+        <thead>
+        <tr class="header">
+        <th>ISM 要求</th>
+        <th>電子證書實務</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>有效文件可取得</td>
+        <td>船上須能立即開啟最新電子證書</td>
+        </tr>
+        <tr class="even">
+        <td>變更經核准</td>
+        <td>endorsement、展期及更正須由授權簽發者完成</td>
+        </tr>
+        <tr class="odd">
+        <td>移除過期版本</td>
+        <td>舊證書、舊 endorsement 不得與最新版本混用</td>
+        </tr>
+        <tr class="even">
+        <td>文件識別</td>
+        <td>應以證書號碼、UTN、版次及日期管理</td>
+        </tr>
+        <tr class="odd">
+        <td>船岸一致</td>
+        <td>公司系統與船上檔案須同步</td>
+        </tr>
+        <tr class="even">
+        <td>人員熟悉</td>
+        <td>船員須知道如何展示及驗證</td>
+        </tr>
+        </tbody>
+        </table>
+        <hr />
+        <h3 id="資安反詐欺及營運持續性">3.11
+        資安、反詐欺及營運持續性</h3>
+        <p>第 9 節要求主管機關核准：</p>
+        <ul>
+        <li>簽發程序；</li>
+        <li>儲存程序；</li>
+        <li>驗證程序；</li>
+        <li>資料交換程序；</li>
+        <li>防止詐欺及資安事件的措施。</li>
+        </ul>
+        <p>因此，電子證書系統的控制範圍不只 PDF 本身，也包括：</p>
+        <ul>
+        <li>帳號權限；</li>
+        <li>簽章金鑰；</li>
+        <li>憑證管理；</li>
+        <li>伺服器；</li>
+        <li>API；</li>
+        <li>電子郵件通知；</li>
+        <li>下載連結；</li>
+        <li>驗證網站；</li>
+        <li>系統日誌；</li>
+        <li>備份與災害復原；</li>
+        <li>撤銷及重新簽發程序。</li>
+        </ul>
+        <hr />
+        <h3 id="海員個資與儲存位置">3.12 海員個資與儲存位置</h3>
+        <p>海員電子證書的實體資料儲存位置應由主管機關決定。</p>
+        <p>指南建議主要資料存放於：</p>
+        <ul>
+        <li>主管機關控制的伺服器；或</li>
+        <li>經主管機關核准的伺服器。</li>
+        </ul>
+        <p>同時必須符合旗國個人資料與隱私法律。第三方，例如公司、代理、租家或
+        vetting company，可以在不違反隱私規定的前提下取得必要資料。</p>
+        <p>這表示驗證系統必須在兩個目標間取得平衡：</p>
+        <ul>
+        <li><strong>讓 PSC、公司及其他合法查驗者容易驗證</strong>；</li>
+        <li><strong>避免海員個資對任何人無限制公開</strong>。</li>
+        </ul>
+        <hr />
+        <h2 id="四重要術語與定義">四、重要術語與定義</h2>
+        <table>
+        <colgroup>
+        <col style="width: 31%" />
+        <col style="width: 41%" />
+        <col style="width: 26%" />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th>術語</th>
+        <th>中文解釋</th>
+        <th>實務重點</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td><strong>Administration</strong></td>
+        <td>旗國主管機關</td>
+        <td>最終決定是否採用及接受電子證書</td>
+        </tr>
+        <tr class="even">
+        <td><strong>RO</strong></td>
+        <td>Recognized Organization，認可組織</td>
+        <td>受旗國授權執行法定檢驗及簽發證書</td>
+        </tr>
+        <tr class="odd">
+        <td><strong>Classification Society</strong></td>
+        <td>船級社</td>
+        <td>執行船級業務；受旗國授權時亦可作為 RO</td>
+        </tr>
+        <tr class="even">
+        <td><strong>PSCO</strong></td>
+        <td>Port State Control Officer，港口國管制官員</td>
+        <td>查驗證書、船況及船員資格</td>
+        </tr>
+        <tr class="odd">
+        <td><strong>Electronic certificate</strong></td>
+        <td>電子證書</td>
+        <td>主管機關核准格式的正式證書</td>
+        </tr>
+        <tr class="even">
+        <td><strong>Electronic signature</strong></td>
+        <td>電子簽章</td>
+        <td>驗證簽發者及文件內容</td>
+        </tr>
+        <tr class="odd">
+        <td><strong>UTN</strong></td>
+        <td>唯一追蹤號碼</td>
+        <td>用於識別及驗證個別證書</td>
+        </tr>
+        <tr class="even">
+        <td><strong>Verification</strong></td>
+        <td>驗證</td>
+        <td>確認真實性、完整性及有效狀態</td>
+        </tr>
+        <tr class="odd">
+        <td><strong>Endorsement</strong></td>
+        <td>簽註／簽證</td>
+        <td>證明年度、中期或其他定期檢驗完成</td>
+        </tr>
+        <tr class="even">
+        <td><strong>Printed version</strong></td>
+        <td>電子證書列印版</td>
+        <td>電子證書產生的紙本版本，不宜自動視為獨立正本</td>
+        </tr>
+        </tbody>
+        </table>
+        <hr />
+        <h2 id="五船級社與-ro-的實務影響">五、船級社與 RO
+        的實務影響</h2>
+        <h3 id="必須先區分船級證書與法定證書">5.1
+        必須先區分「船級證書」與「法定證書」</h3>
+        <p>船級社通常具有兩種不同身分：</p>
+        <h4 id="船級身分">船級身分</h4>
+        <p>依船級規範執行：</p>
+        <ul>
+        <li>入級；</li>
+        <li>船體及機械檢驗；</li>
+        <li>船級符號；</li>
+        <li>船級條件；</li>
+        <li>船級證書。</li>
+        </ul>
+        <h4 id="ro-身分">RO 身分</h4>
+        <p>受旗國授權執行：</p>
+        <ul>
+        <li>SOLAS 證書；</li>
+        <li>MARPOL 證書；</li>
+        <li>Load Line 證書；</li>
+        <li>ISM／ISPS 證書；</li>
+        <li>BWM、AFS 等法定證書；</li>
+        <li>法定 endorsement。</li>
+        </ul>
+        <p>IACS
+        說明船級社的基本角色是制定及執行船舶設計、建造、維護及檢驗的技術要求；Tokyo
+        MOU 則將 RO
+        定義為代表旗國執行法定檢驗並簽發或簽註法定證書的組織。(<a
+        href="https://iacs.org.uk/membership/role-of-class"
+        title="Role of Class - Safer and Cleaner Shipping - IACS">Safer
+        and Cleaner Shipping - IACS</a>)</p>
+        <p>因此：</p>
+        <blockquote>
+        <p>同一份電子系統可以同時管理船級與法定證書，但兩者的法律來源、簽發權限及
+        PSC 後果不同。</p>
+        </blockquote>
+        <hr />
+        <h3 id="旗國授權矩陣必須明確">5.2 旗國授權矩陣必須明確</h3>
+        <p>船級社不能因自身已有電子證書平台，就自動對所有旗國及所有證書簽發電子版本。</p>
+        <p>應建立：</p>
+        <blockquote>
+        <p><strong>旗國 × 證書類別 × 證書狀態 × 簽發權限</strong></p>
+        </blockquote>
+        <p>例如：</p>
+        <table>
+        <colgroup>
+        <col style="width: 51%" />
+        <col style="width: 48%" />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th>檢查項目</th>
+        <th>可能差異</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>旗國是否接受 e-cert</td>
+        <td>不同旗國政策可能不同</td>
+        </tr>
+        <tr class="even">
+        <td>可電子化證書類別</td>
+        <td>部分旗國可能只授權特定證書</td>
+        </tr>
+        <tr class="odd">
+        <td>Interim certificate</td>
+        <td>可能有不同程序</td>
+        </tr>
+        <tr class="even">
+        <td>Short-term certificate</td>
+        <td>可能受旗國個別限制</td>
+        </tr>
+        <tr class="odd">
+        <td>Extension</td>
+        <td>通常須特別旗國核准</td>
+        </tr>
+        <tr class="even">
+        <td>Manual endorsement</td>
+        <td>是否允許船上或驗船師離線簽註</td>
+        </tr>
+        <tr class="odd">
+        <td>海員證書</td>
+        <td>通常由旗國本人系統管理，不一定由船級社簽發</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>ABS
+        的電子證書操作說明也把確認旗國是否接受電子證書列為實施的第一步。(<a
+        href="https://ww2.eagle.org/en/rules-and-resources/e-certificate-online-database.html"
+        title="E-Certificates">Eagle</a>)</p>
+        <hr />
+        <h3 id="船級社電子證書平台的最低要求">5.3
+        船級社電子證書平台的最低要求</h3>
+        <p>RO／船級社的平台至少應具備：</p>
+        <ol type="1">
+        <li><strong>UTN 或同等唯一識別碼</strong>；</li>
+        <li>數位簽章；</li>
+        <li>防竄改 PDF；</li>
+        <li>公開或可合理取得的驗證介面；</li>
+        <li>即時有效狀態；</li>
+        <li>endorsement history；</li>
+        <li>撤銷及取代狀態；</li>
+        <li>船名、IMO Number、證書號碼交叉查詢；</li>
+        <li>系統可用性監控；</li>
+        <li>備援及災害復原；</li>
+        <li>稽核紀錄；</li>
+        <li>24 小時緊急支援聯絡方式。</li>
+        </ol>
+        <p>DNV、LR、ABS 及 ClassNK 的現行平台均採用
+        UTN、數位簽章、線上資料庫、QR code
+        或船舶識別資料等方式提供第三方驗證。(<a
+        href="https://www.dnv.com/maritime/electronic-certificates/"
+        title="Introduction">DNV</a>)</p>
+        <hr />
+        <h3 id="驗船師簽發程序會受到影響">5.4
+        驗船師簽發程序會受到影響</h3>
+        <p>完成檢驗後，驗船師或簽發單位不能只將證書上傳到公司系統就結案，還應確認：</p>
+        <ul>
+        <li>證書已正式簽發；</li>
+        <li>電子簽章有效；</li>
+        <li>UTN 已生成；</li>
+        <li>有效日期正確；</li>
+        <li>endorsement 正確；</li>
+        <li>驗證平台已同步；</li>
+        <li>舊版本已作廢；</li>
+        <li>船方已收到或可取得最新版本；</li>
+        <li>臨時或短期證書狀態清楚；</li>
+        <li>需要時已附旗國授權或 declaration letter。</li>
+        </ul>
+        <p>尤其在年度或中期檢驗完成後，若平台已更新但船上仍保留舊
+        PDF，會造成「平台資料與船上文件不一致」。</p>
+        <hr />
+        <h3 id="ro-的責任風險">5.5 RO 的責任風險</h3>
+        <p>電子化不會減少 RO 對法定證書的責任。</p>
+        <p>可能涉及 RO 責任的情況包括：</p>
+        <ul>
+        <li>未經旗國授權簽發電子法定證書；</li>
+        <li>錯誤延長證書有效期；</li>
+        <li>endorsement 日期錯誤；</li>
+        <li>船舶資料錯置；</li>
+        <li>已撤銷證書仍顯示有效；</li>
+        <li>系統中存在兩份互相衝突的有效版本；</li>
+        <li>簽發或展期違反公約限制；</li>
+        <li>應由 RO 完成的證書控制發生重大錯誤。</li>
+        </ul>
+        <p>Tokyo MOU 的 RO 責任判定原則特別涵蓋由 RO
+        簽發或簽註的法定證書，以及違反公約限制而不當簽發或延長證書的情況；但實際歸責仍須依個案、最後檢驗者及缺失性質判定。</p>
+        <hr />
+        <h3 id="船級ism-稽核重點">5.6 船級／ISM 稽核重點</h3>
+        <p>在 ISM
+        稽核中，電子證書通常會被視為文件及資料管制的一部分。稽核時可能查看：</p>
+        <ul>
+        <li>公司是否有電子證書程序；</li>
+        <li>誰負責下載及更新；</li>
+        <li>船岸資料是否一致；</li>
+        <li>是否定期檢查到期日；</li>
+        <li>舊版本是否移除；</li>
+        <li>船員是否接受 familiarization；</li>
+        <li>驗證平台中斷時的應變；</li>
+        <li>電子檔是否定期備份；</li>
+        <li>電子郵件或 portal access 變更是否受控；</li>
+        <li>是否定期抽查電子簽章及 UTN；</li>
+        <li>是否有網路釣魚、假 QR code 或假證書通報程序。</li>
+        </ul>
+        <hr />
+        <h2 id="六psc-實務影響">六、PSC 實務影響</h2>
+        <h3 id="電子證書會成為-psc-初始查驗的一部分">6.1 電子證書會成為
+        PSC 初始查驗的一部分</h3>
+        <p>Paris MoU 說明，PSC
+        登輪通常首先檢查船上證書及文件，並依船況、設備及船員整體情形決定是否進行更詳細檢查。(<a
+        href="https://parismou.org/PMoU-Procedures/Library/types-inspection"
+        title="Types of Inspection | Paris MoU">parismou.org</a>)</p>
+        <p>電子證書下，PSCO 的基本查驗流程大致如下：</p>
+        <h4
+        id="步驟一確認證書是否應在船">步驟一：確認證書是否應在船</h4>
+        <p>PSCO 先確認：</p>
+        <ul>
+        <li>船型；</li>
+        <li>總噸位；</li>
+        <li>航區；</li>
+        <li>旗國；</li>
+        <li>適用公約；</li>
+        <li>應持有的證書種類。</li>
+        </ul>
+        <h4 id="步驟二確認簽發權限">步驟二：確認簽發權限</h4>
+        <p>檢查：</p>
+        <ul>
+        <li>旗國是否採用電子證書；</li>
+        <li>簽發者是否為旗國或其 RO；</li>
+        <li>該 RO 是否獲授權簽發該類證書；</li>
+        <li>GISIS 或旗國公告是否有相關資料。</li>
+        </ul>
+        <h4
+        id="步驟三檢查電子檔表面資訊">步驟三：檢查電子檔表面資訊</h4>
+        <p>包括：</p>
+        <ul>
+        <li>船名；</li>
+        <li>IMO Number；</li>
+        <li>Official Number；</li>
+        <li>證書號碼；</li>
+        <li>簽發日期；</li>
+        <li>到期日；</li>
+        <li>endorsement；</li>
+        <li>電子簽章；</li>
+        <li>UTN；</li>
+        <li>QR code；</li>
+        <li>簽發來源。</li>
+        </ul>
+        <h4
+        id="步驟四執行線上或電子驗證">步驟四：執行線上或電子驗證</h4>
+        <p>依船上說明：</p>
+        <ul>
+        <li>掃描 QR code；</li>
+        <li>輸入 UTN；</li>
+        <li>輸入 IMO Number；</li>
+        <li>檢查 PDF 電子簽章；</li>
+        <li>比對平台資料；</li>
+        <li>確認證書未被撤銷或取代。</li>
+        </ul>
+        <h4 id="步驟五比對船舶實況">步驟五：比對船舶實況</h4>
+        <p>即使電子證書真實，PSCO 仍會確認：</p>
+        <ul>
+        <li>船況是否與證書相符；</li>
+        <li>設備是否存在且可用；</li>
+        <li>船員人數及資格是否符合；</li>
+        <li>endorsement 是否反映最新檢驗；</li>
+        <li>限制條件是否遵守。</li>
+        </ul>
+        <hr />
+        <h3 id="psc-不應只因沒有紙本開缺失">6.2 PSC
+        不應只因「沒有紙本」開缺失</h3>
+        <p>只要證書：</p>
+        <ul>
+        <li>符合本指南；</li>
+        <li>由合法主管機關或 RO 簽發；</li>
+        <li>可完成驗證；</li>
+        <li>船上有驗證說明；</li>
+        <li>日期及內容有效；</li>
+        </ul>
+        <p>PSCO 原則上應接受。</p>
+        <p>IMO《2025 年 PSC
+        程序》明確承認有效證書可以電子或紙本方式簽發。</p>
+        <p>因此，下列情況本身不應構成缺失：</p>
+        <ul>
+        <li>沒有紙本正本；</li>
+        <li>船長只能在電腦或平板展示正式電子證書；</li>
+        <li>電子證書沒有手寫簽名；</li>
+        <li>電子檔以數位簽章取代鋼印。</li>
+        </ul>
+        <hr />
+        <h3 id="可能引起-psc-缺失的情況">6.3 可能引起 PSC
+        缺失的情況</h3>
+        <h4 id="高風險情況">高風險情況</h4>
+        <table>
+        <colgroup>
+        <col style="width: 47%" />
+        <col style="width: 52%" />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th>問題</th>
+        <th>PSC 可能關注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>電子證書已過期</td>
+        <td>無有效證書</td>
+        </tr>
+        <tr class="even">
+        <td>平台顯示 revoked／invalid</td>
+        <td>證書無效或遭撤銷</td>
+        </tr>
+        <tr class="odd">
+        <td>IMO Number 不符</td>
+        <td>證書可能錯船或偽造</td>
+        </tr>
+        <tr class="even">
+        <td>endorsement 未更新</td>
+        <td>定期檢驗狀態不明</td>
+        </tr>
+        <tr class="odd">
+        <td>旗國未授權該類 e-cert</td>
+        <td>簽發形式可能不被接受</td>
+        </tr>
+        <tr class="even">
+        <td>電子簽章顯示已修改</td>
+        <td>文件完整性失效</td>
+        </tr>
+        <tr class="odd">
+        <td>UTN 無法查到</td>
+        <td>無法確認真實性</td>
+        </tr>
+        <tr class="even">
+        <td>船上只有截圖或照片</td>
+        <td>可能不是正式電子證書</td>
+        </tr>
+        <tr class="odd">
+        <td>QR code 指向可疑網站</td>
+        <td>詐欺或網路安全風險</td>
+        </tr>
+        <tr class="even">
+        <td>多份證書版本互相衝突</td>
+        <td>文件管制失效</td>
+        </tr>
+        <tr class="odd">
+        <td>船員無法說明驗證方式</td>
+        <td>SMS／familiarization 問題</td>
+        </tr>
+        <tr class="even">
+        <td>伺服器長時間無法使用且無替代方案</td>
+        <td>持續驗證能力不足</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>Tokyo MOU 於 2025
+        年年報中特別提及偽造船籍及證書案件增加，並同意研議更有效的處理措施，顯示未來
+        PSCO 對電子證書真實性查驗很可能更加重視。</p>
+        <hr />
+        <h3 id="驗證失敗不一定立即等於扣船">6.4
+        驗證失敗不一定立即等於扣船</h3>
+        <p>應區分三種情況：</p>
+        <h4 id="情況一技術性暫時問題">情況一：技術性暫時問題</h4>
+        <p>例如：</p>
+        <ul>
+        <li>港內網路不良；</li>
+        <li>驗證網站短暫維護；</li>
+        <li>QR code reader 無法使用。</li>
+        </ul>
+        <p>若船上仍有：</p>
+        <ul>
+        <li>有效數位簽章的電子檔；</li>
+        <li>UTN；</li>
+        <li>旗國／RO 聯絡方式；</li>
+        <li>其他驗證入口；</li>
+        <li>足夠證據證明證書有效；</li>
+        </ul>
+        <p>通常應先採取替代驗證。</p>
+        <h4 id="情況二文件管制缺失">情況二：文件管制缺失</h4>
+        <p>例如：</p>
+        <ul>
+        <li>船上保留舊版本；</li>
+        <li>最新 endorsement 未下載；</li>
+        <li>船員不熟悉程序；</li>
+        <li>驗證說明缺漏。</li>
+        </ul>
+        <p>這可能形成文件或 ISM 相關 deficiency，但不一定單獨達到
+        detention 程度。</p>
+        <h4
+        id="情況三無有效證書或證書明顯無效">情況三：無有效證書或證書明顯無效</h4>
+        <p>例如：</p>
+        <ul>
+        <li>過期；</li>
+        <li>撤銷；</li>
+        <li>偽造；</li>
+        <li>錯船；</li>
+        <li>未經授權簽發；</li>
+        <li>不當展期；</li>
+        <li>關鍵法定證書完全無法證明有效。</li>
+        </ul>
+        <p>IMO PSC
+        程序指出，若船舶沒有有效證書，或證書與船舶實況不符，可形成進一步詳細檢查的依據；缺少公約要求的有效證書亦可能支持
+        detention，但最終仍取決於證書種類、缺失嚴重度及港口國判斷。(<a
+        href="https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/AssemblyDocuments/A.1206%2834%29.pdf"
+        title="A 1206 34">wwwcdn.imo.org</a>)</p>
+        <hr />
+        <h3 id="電子證書有效不代表船舶不會被深入檢查">6.5
+        電子證書有效，不代表船舶不會被深入檢查</h3>
+        <p>有效證書只證明證書本身符合形式及有效性要求。</p>
+        <p>若 PSCO 發現：</p>
+        <ul>
+        <li>消防設備失效；</li>
+        <li>救生設備與 Record of Equipment 不符；</li>
+        <li>船員不熟悉操作；</li>
+        <li>船體或機械狀況明顯不良；</li>
+        <li>污染防制設備無法正常運作；</li>
+        <li>證書內容與船況不符；</li>
+        </ul>
+        <p>仍可形成 <strong>clear
+        grounds（明確理由）</strong>，進行更詳細檢查。</p>
+        <p>因此電子證書不是對船況的絕對保證，也不限制 PSC
+        對實際合規狀態的查驗。(<a
+        href="https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/AssemblyDocuments/A.1206%2834%29.pdf"
+        title="A 1206 34">wwwcdn.imo.org</a>)</p>
+        <hr />
+        <h2
+        id="七船上建議準備的電子證書-psc-套件">七、船上建議準備的「電子證書
+        PSC 套件」</h2>
+        <p>船上至少應保持下列資料：</p>
+        <table>
+        <colgroup>
+        <col style="width: 6.5em" />
+        <col />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th>項目</th>
+        <th>建議內容</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>正式電子證書</td>
+        <td>原始簽發 PDF，不是截圖</td>
+        </tr>
+        <tr class="even">
+        <td>最新 endorsement</td>
+        <td>確認年度／中期檢驗已更新</td>
+        </tr>
+        <tr class="odd">
+        <td>UTN 清單</td>
+        <td>可快速對應各證書</td>
+        </tr>
+        <tr class="even">
+        <td>驗證說明</td>
+        <td>最好有英文版</td>
+        </tr>
+        <tr class="odd">
+        <td>QR／驗證入口</td>
+        <td>定期測試是否有效</td>
+        </tr>
+        <tr class="even">
+        <td>旗國授權資料</td>
+        <td>Marine Notice、Circular 或 Declaration Letter</td>
+        </tr>
+        <tr class="odd">
+        <td>RO 聯絡方式</td>
+        <td>24 小時緊急聯絡資訊</td>
+        </tr>
+        <tr class="even">
+        <td>離線備份</td>
+        <td>船上電腦及獨立儲存媒體</td>
+        </tr>
+        <tr class="odd">
+        <td>紙本參考件</td>
+        <td>可供快速查閱，但不取代正式電子檔</td>
+        </tr>
+        <tr class="even">
+        <td>SMS 程序</td>
+        <td>包含更新、備份、過期移除及驗證失敗處理</td>
+        </tr>
+        <tr class="odd">
+        <td>訓練紀錄</td>
+        <td>船長及指定船員熟悉操作</td>
+        </tr>
+        <tr class="even">
+        <td>證書到期表</td>
+        <td>同時管理到期日及 endorsement due date</td>
+        </tr>
+        </tbody>
+        </table>
+        <hr />
+        <h2 id="八建議的船上-psc-操作流程">八、建議的船上 PSC
+        操作流程</h2>
+        <h3 id="登輪前">登輪前</h3>
+        <ol type="1">
+        <li>檢查所有法定證書到期日。</li>
+        <li>確認年度／中期 endorsement 已完成。</li>
+        <li>抽查每份證書 UTN。</li>
+        <li>測試 QR code 及驗證網站。</li>
+        <li>確認船上與公司版本一致。</li>
+        <li>移除過期或被取代版本。</li>
+        <li>準備旗國及 RO 電子證書說明。</li>
+        <li>指定一名船員負責操作。</li>
+        </ol>
+        <h3 id="psco-要求證書時">PSCO 要求證書時</h3>
+        <ol type="1">
+        <li>先提供證書清單。</li>
+        <li>在船上電腦開啟正式 PDF。</li>
+        <li>顯示電子簽章、UTN 及 endorsement。</li>
+        <li>依驗證說明開啟官方網站。</li>
+        <li>比對網站與證書資料。</li>
+        <li>必要時提供紙本列印件方便閱讀。</li>
+        <li>不要只提供手機照片、電子郵件截圖或不明網路連結。</li>
+        </ol>
+        <h3 id="驗證網站無法使用時">驗證網站無法使用時</h3>
+        <ol type="1">
+        <li>保留錯誤畫面或時間紀錄。</li>
+        <li>改用另一網路或裝置。</li>
+        <li>檢查 PDF 數位簽章。</li>
+        <li>使用替代驗證入口。</li>
+        <li>聯絡公司 DPA、旗國或 RO。</li>
+        <li>提供旗國 Marine Notice 或 RO declaration。</li>
+        <li>記錄採取的處理措施。</li>
+        </ol>
+        <hr />
+        <h2 id="九易混淆或需注意之處">九、易混淆或需注意之處</h2>
+        <h3 id="電子證書與掃描紙本不同">9.1 電子證書與掃描紙本不同</h3>
+        <p>掃描紙本通常只能證明有人曾持有某張紙，不能證明：</p>
+        <ul>
+        <li>現在仍有效；</li>
+        <li>未被撤銷；</li>
+        <li>未被修改；</li>
+        <li>是最新版本。</li>
+        </ul>
+        <hr />
+        <h3 id="電子簽章與簽名圖片不同">9.2 電子簽章與簽名圖片不同</h3>
+        <p>簽名圖片容易複製貼上。</p>
+        <p>有效電子簽章應能：</p>
+        <ul>
+        <li>驗證簽發者；</li>
+        <li>顯示簽章有效狀態；</li>
+        <li>偵測文件簽章後是否被修改。</li>
+        </ul>
+        <hr />
+        <h3 id="qr-code-不是證書本身">9.3 QR code 不是證書本身</h3>
+        <p>QR code 只是驗證入口。即使 QR code 可開啟網頁，也須確認：</p>
+        <ul>
+        <li>網域是否為官方；</li>
+        <li>HTTPS 憑證是否正常；</li>
+        <li>網頁資料是否與證書一致；</li>
+        <li>證書狀態是否有效。</li>
+        </ul>
+        <hr />
+        <h3 id="列印版不宜單獨當作電子正本">9.4
+        列印版不宜單獨當作電子正本</h3>
+        <p>列印件可供快速查閱，但紙張本身通常不能保留完整數位簽章資訊。</p>
+        <p>除非旗國另有明確規定，船上最好同時保存：</p>
+        <ul>
+        <li>原始電子檔；</li>
+        <li>可驗證 UTN；</li>
+        <li>驗證說明。</li>
+        </ul>
+        <p>ABS
+        現行說明也指出，正式有效者是電子形式的證書，紙本列印件主要作為參考。(<a
+        href="https://ww2.eagle.org/en/rules-and-resources/e-certificate-online-database.html"
+        title="E-Certificates">Eagle</a>)</p>
+        <hr />
+        <h3 id="gisis-不是個別證書資料庫的完全替代品">9.5 GISIS
+        不是個別證書資料庫的完全替代品</h3>
+        <p>GISIS
+        可確認旗國電子證書政策及相關驗證入口，但個別證書是否：</p>
+        <ul>
+        <li>有效；</li>
+        <li>續期；</li>
+        <li>撤銷；</li>
+        <li>被新版本取代；</li>
+        </ul>
+        <p>仍須查詢實際簽發系統。</p>
+        <hr />
+        <h3 id="船級社有電子系統不等於旗國已授權">9.6
+        船級社有電子系統，不等於旗國已授權</h3>
+        <p>必須分別確認：</p>
+        <ul>
+        <li>船級證書可否電子化；</li>
+        <li>法定證書是否有旗國授權；</li>
+        <li>該證書類別是否包含在授權範圍；</li>
+        <li>endorsement、展期及臨時證書是否另有規定。</li>
+        </ul>
+        <hr />
+        <h3 id="持續可驗證不代表只依賴單一網站">9.7
+        「持續可驗證」不代表只依賴單一網站</h3>
+        <p>若唯一驗證網站故障，且沒有：</p>
+        <ul>
+        <li>備援站；</li>
+        <li>數位簽章；</li>
+        <li>聯絡查證；</li>
+        <li>離線驗證；</li>
+        <li>災害復原；</li>
+        </ul>
+        <p>便可能不符合可靠及持續可用的概念。</p>
+        <hr />
+        <h2 id="十總結與複習重點">十、總結與複習重點</h2>
+        <ol type="1">
+        <li><strong>本指南整合船舶電子證書與海員電子證書要求。</strong></li>
+        <li><strong>電子證書不是普通 PDF 或紙本掃描檔。</strong></li>
+        <li>合格電子證書至少要有：
+        <strong>正確格式、防竄改、UTN、明確簽發來源及電子簽章。</strong></li>
+        <li><strong>PSC
+        應接受符合條件的電子證書，不應僅因缺少紙本而拒絕。</strong></li>
+        <li>接受不是無條件，仍須確認旗國授權、證書有效及可驗證。</li>
+        <li>電子證書必須納入 <strong>ISM Code 第 11
+        節文件管制</strong>。</li>
+        <li>船級社作為 RO 時，須依旗國授權簽發法定電子證書。</li>
+        <li>驗證平台必須具備資安、備援、防詐欺及持續服務能力。</li>
+        <li>船上應保存正式電子檔、驗證說明、UTN、最新 endorsement
+        及備援資料。</li>
+        <li>電子證書有效並不妨礙 PSC
+        因船況或操作缺失進行更詳細檢查。</li>
+        </ol>
+        <p><strong>實務提醒：</strong>本文件及相關 IMO、旗國、船級社與
+        PSC
+        規定仍可能更新。實際簽發、驗證、展期、接受或缺失判定，應以最新
+        IMO 正式文件、旗國 Marine Notice、RO 授權及相關 PSC MoU
+        程序為準。本解析供學習與初步合規規劃使用，不能取代旗國決定、船級正式審查、PSCO
+        現場專業判斷或法律意見。</p>
+      </article>
+
+    </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/electronic-certificates-joint-guidelines-notes.html"
+      data-share-title="電子證書聯合指南｜船級與 PSC 實務解析｜Reay's Note"
+      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;電子證書聯合指南｜船級與 PSC 實務解析｜Reay's Note&#10;https://reayhuang.com/notes/maritime/electronic-certificates-joint-guidelines-notes.html"
+      data-share-copy="複製連結"
+      data-share-copied="已複製"
+      data-toast-copied="連結已複製到剪貼簿"
+    >
+      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>電子證書聯合指南｜船級與 PSC 實務解析｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note</span>
+      <p class="disclaimer small">
+        本頁為學習、內訓與驗船準備用途的視覺化整理，不代表 Lloyd's Register、IMO 或其他機構之正式意見；<span class="disclaimer-tail">正式簽發、驗證、展期、PSC 接受或缺失判定，仍應以最新 IMO 正式文件、旗國 Marine Notice、RO 授權及相關 PSC MoU 程序為準。</span>
+      </p>
+    </div>
+  </footer>
+  </div>
+
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const body = document.body;
+      const article = document.getElementById('article');
+      const progress = document.getElementById('reading-progress');
+      const backToTop = document.getElementById('back-to-top'); // removed — site uses back-to-top.js
+      const themeButton = document.getElementById('theme-button');
+      const menuButton = document.getElementById('menu-button');
+      const overlay = document.getElementById('sidebar-overlay');
+      const search = document.getElementById('toc-search');
+      const toc = document.getElementById('TOC');
+
+      const siteBar = document.querySelector('.note-site-bar');
+      const syncChromeHeights = () => {
+        if (!siteBar) return;
+        root.style.setProperty('--site-bar-h', `${siteBar.offsetHeight}px`);
+      };
+      syncChromeHeights();
+      window.addEventListener('resize', syncChromeHeights);
+      window.addEventListener('load', syncChromeHeights);
+      if (document.fonts?.ready) document.fonts.ready.then(syncChromeHeights);
+
+      const closeMenu = () => {
+        body.classList.remove('menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', '開啟文件目錄');
+      };
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = body.classList.toggle('menu-open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? '關閉文件目錄' : '開啟文件目錄');
+      });
+      overlay.addEventListener('click', closeMenu);
+      window.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMenu();
+        if (event.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) {
+          event.preventDefault();
+          search.focus();
+        }
+      });
+
+      themeButton.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('e-cert-theme', next); } catch (_) {}
+      });
+      document.getElementById('print-button').addEventListener('click', () => window.print());
+      if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      const updateScroll = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+        progress.style.width = (ratio * 100) + '%';
+        if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 700);
+      };
+      updateScroll();
+      window.addEventListener('scroll', updateScroll, { passive: true });
+      window.addEventListener('resize', updateScroll);
+
+      article.querySelectorAll('table').forEach(table => {
+        if (table.parentElement.classList.contains('table-wrap')) return;
+        const wrap = document.createElement('div');
+        wrap.className = 'table-wrap';
+        table.parentNode.insertBefore(wrap, table);
+        wrap.appendChild(table);
+      });
+
+      const linkIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.1-1.1"/></svg>';
+      const headings = [...article.querySelectorAll('h2[id], h3[id], h4[id]')];
+      headings.forEach(heading => {
+        const anchor = document.createElement('a');
+        anchor.className = 'heading-anchor';
+        anchor.href = '#' + heading.id;
+        anchor.setAttribute('aria-label', '連結至：' + heading.textContent);
+        anchor.title = '複製／開啟此章節連結';
+        anchor.innerHTML = linkIcon;
+        heading.appendChild(anchor);
+        if (heading.textContent.trim() === '核心結論') heading.classList.add('core-heading');
+        if (/高風險/.test(heading.textContent)) {
+          heading.classList.add('risk-heading');
+          const table = heading.nextElementSibling?.classList.contains('table-wrap') ? heading.nextElementSibling : null;
+          if (table) table.classList.add('risk-table');
+        }
+      });
+
+      article.querySelectorAll('a[href^="http"]').forEach(link => {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      });
+
+      const articleParagraphs = article.querySelectorAll('p');
+      const lastParagraph = articleParagraphs[articleParagraphs.length - 1];
+      if (lastParagraph && lastParagraph.textContent.trim().startsWith('實務提醒')) lastParagraph.classList.add('practical-note');
+      const summaryHeading = headings.find(h => h.textContent.includes('總結與複習重點'));
+      if (summaryHeading) {
+        let node = summaryHeading.nextElementSibling;
+        while (node && node.tagName === 'HR') node = node.nextElementSibling;
+        if (node && node.tagName === 'OL') node.classList.add('summary-list');
+      }
+
+      const formatTocLabel = link => {
+        const text = link.textContent.replace(/\s+/g, ' ').trim();
+        const numeric = text.match(/^(\d+(?:\.\d+)*)\s+(.+)$/);
+        if (numeric) {
+          link.classList.add('toc-split');
+          link.innerHTML = `<span class="toc-num">${numeric[1]}</span><span class="toc-text">${numeric[2]}</span>`;
+          return;
+        }
+        const chapter = text.match(/^([一二三四五六七八九十]+、)\s*(.+)$/);
+        if (chapter) {
+          link.classList.add('toc-split');
+          link.innerHTML = `<span class="toc-num">${chapter[1]}</span><span class="toc-text">${chapter[2]}</span>`;
+        }
+      };
+      toc.querySelectorAll('a[href^="#"]').forEach(formatTocLabel);
+
+      const tocLinks = [...toc.querySelectorAll('a[href^="#"]')];
+      const linkById = new Map(tocLinks.map(link => [decodeURIComponent(link.getAttribute('href').slice(1)), link]));
+      const observer = new IntersectionObserver(entries => {
+        const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (!visible.length) return;
+        tocLinks.forEach(link => link.classList.remove('active'));
+        const active = linkById.get(visible[0].target.id);
+        if (active) {
+          active.classList.add('active');
+          active.scrollIntoView({ block: 'nearest' });
+        }
+      }, { rootMargin: '-15% 0px -72% 0px', threshold: [0, 1] });
+      headings.forEach(heading => observer.observe(heading));
+      tocLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+      const normalize = value => value.trim().toLocaleLowerCase('zh-Hant');
+      const filterList = (list, query) => {
+        [...list.children].forEach(item => {
+          const ownLink = item.querySelector(':scope > a');
+          const nested = item.querySelector(':scope > ul');
+          if (nested) filterList(nested, query);
+          const ownMatch = !query || (ownLink && normalize(ownLink.textContent).includes(query));
+          const childMatch = nested && [...nested.children].some(child => !child.classList.contains('toc-hidden'));
+          item.classList.toggle('toc-hidden', !(ownMatch || childMatch));
+        });
+      };
+      search.addEventListener('input', () => {
+        const query = normalize(search.value);
+        const rootList = toc.querySelector(':scope > ul');
+        if (rootList) filterList(rootList, query);
+      });
+    })();
+  </script>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+</body>
+</html>
