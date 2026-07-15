@@ -1,0 +1,3736 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="Wind Shield, Bow Wind Cover, container ship, air resistance, 貨櫃船, 導風罩, 風阻, 空氣動力, MOL, JMU">
+  <meta name="description" content="從風阻原理、風洞試驗、實船大數據與造船廠技術報告，解析大型貨櫃船船艏 Wind Shield（Bow Wind Shield／Bow Wind Cover）的節能效益、設計限制與實務意義。">
+  <meta property="og:title" content="船舶防風罩為何做得更大風阻反而更低？｜Reay's Note">
+  <meta property="og:description" content="從風洞試驗、實船驗證到 24,000 TEU 新造船，完整解析貨櫃船船艏導風罩的原理與效益。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.html">
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/container-ship-wind-shield/wind-shield-link-preview.zh.png">
+  <meta property="og:image:alt" content="船舶防風罩為何做得更大風阻反而更低？｜Reay Huang Maritime Notes">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="720">
+  <meta property="og:image:height" content="405">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="船舶防風罩為何做得更大風阻反而更低？｜Reay's Note">
+  <meta name="twitter:description" content="從風洞試驗、實船驗證到 24,000 TEU 新造船，完整解析貨櫃船船艏導風罩的原理與效益。">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/container-ship-wind-shield/wind-shield-link-preview.zh.png">
+  <meta name="twitter:image:alt" content="船舶防風罩為何做得更大風阻反而更低？｜Reay Huang Maritime Notes">
+  <link rel="alternate" hreflang="en" href="container-ship-wind-shield-notes.en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="container-ship-wind-shield-notes.html">
+  <link rel="alternate" hreflang="x-default" href="container-ship-wind-shield-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
+  <title>船舶防風罩為何做得更大風阻反而更低？｜Reay's Note</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "船舶防風罩為何做得更大風阻反而更低？",
+    "alternativeHeadline": "從風洞試驗、實船大數據到 24,000 TEU 新造船的技術解析",
+    "description": "解析大型貨櫃船船艏 Wind Shield 的空氣動力原理、研究證據、節能效益、附加功能與設計限制。",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-07-15",
+    "dateModified": "2026-07-15",
+    "author": {
+      "@type": "Person",
+      "name": "Reay Huang"
+    },
+    "citation": [
+      "https://doi.org/10.14856/conf.21.0_159",
+      "https://doi.org/10.14856/conf.23.0_433",
+      "https://www.mol.co.jp/en/pr/2017/17034.html",
+      "https://www.mol.co.jp/en/pr/2019/19075.html",
+      "https://www.jmuc.co.jp/rd/technical-review/assets/VOL15_c1_24000teu_containership.pdf"
+    ]
+  }
+  </script>
+  <style>
+    /* =========================================================
+       基本變數
+       ========================================================= */
+    :root {
+      --navy-950: #04111f;
+      --navy-900: #071b2e;
+      --navy-850: #09243b;
+      --navy-800: #0c2e49;
+      --blue-700: #075e9b;
+      --blue-600: #087bbd;
+      --blue-500: #0d9ad1;
+      --cyan-400: #39d5e8;
+      --cyan-300: #77e8f3;
+      --teal-500: #14a88b;
+      --green-500: #21a875;
+      --magenta-500: #cf2378;
+      --orange-500: #f4873b;
+      --red-500: #e45757;
+
+      --ink: #10263a;
+      --ink-soft: #31495d;
+      --muted: #5a7081;
+      --paper: #f4f8fb;
+      --paper-blue: #edf5fa;
+      --white: #ffffff;
+      --line: #d8e3eb;
+      --line-dark: rgba(255, 255, 255, 0.14);
+
+      --shadow-sm: 0 8px 24px rgba(6, 31, 51, 0.08);
+      --shadow-md: 0 18px 50px rgba(6, 31, 51, 0.12);
+      --shadow-lg: 0 28px 80px rgba(3, 18, 31, 0.22);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+
+      --content-width: 1180px;
+      --reading-width: 820px;
+    }
+
+    /* =========================================================
+       重設與排版
+       ========================================================= */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 12%, rgba(57, 213, 232, 0.08), transparent 28rem),
+        linear-gradient(180deg, #f8fbfd 0%, var(--paper) 100%);
+      font-family:
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        "Heiti TC",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--blue-700);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--magenta-500);
+    }
+
+    strong {
+      color: var(--navy-900);
+    }
+
+    code {
+      padding: 0.1em 0.35em;
+      border-radius: 6px;
+      background: #eaf1f5;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    .wrap {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .reading-wrap {
+      width: min(var(--reading-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 9999;
+      top: 12px;
+      left: 12px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      color: var(--white);
+      background: var(--magenta-500);
+      transform: translateY(-160%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .scroll-progress {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        var(--cyan-400),
+        var(--blue-500),
+        var(--magenta-500)
+      );
+      box-shadow: 0 0 16px rgba(57, 213, 232, 0.6);
+    }
+
+    /* =========================================================
+       頁首導覽
+       ========================================================= */
+    .article-chapter-nav {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      border-bottom: 1px solid rgba(216, 227, 235, 0.8);
+      background: rgba(248, 251, 253, 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy-900);
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--white);
+      background:
+        linear-gradient(145deg, var(--blue-600), var(--cyan-400));
+      box-shadow: 0 8px 18px rgba(8, 123, 189, 0.25);
+    }
+
+    .brand-mark svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .brand-title {
+      display: block;
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 9px 12px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 800;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.09);
+    }
+
+    .mobile-nav {
+      position: relative;
+      display: none;
+    }
+
+    .mobile-nav summary {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--navy-900);
+      background: var(--white);
+      cursor: pointer;
+      list-style: none;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mobile-nav summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-nav summary::before {
+      content: "☰";
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .mobile-nav[open] summary::before {
+      content: "×";
+      font-size: 1.65rem;
+    }
+
+    .mobile-nav summary:focus-visible,
+    .table-scroll:focus-visible,
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--cyan-400);
+      outline-offset: 3px;
+    }
+
+    .mobile-nav-panel {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: min(78vw, 300px);
+      margin: 0;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-md);
+      list-style: none;
+    }
+
+    .mobile-nav-panel a {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      padding: 10px 13px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-weight: 850;
+    }
+
+    .mobile-nav-panel a:hover,
+    .mobile-nav-panel a.active {
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.09);
+    }
+
+    /* =========================================================
+       Hero
+       ========================================================= */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 82% 15%, rgba(57, 213, 232, 0.22), transparent 26rem),
+        radial-gradient(circle at 12% 82%, rgba(207, 35, 120, 0.13), transparent 25rem),
+        linear-gradient(135deg, var(--navy-950), var(--navy-800));
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.13;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 86%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      min-height: 680px;
+      padding-block: 72px 84px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(460px, 0.98fr);
+      align-items: center;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      padding: 8px 13px;
+      border: 1px solid rgba(119, 232, 243, 0.26);
+      border-radius: 999px;
+      color: var(--cyan-300);
+      background: rgba(57, 213, 232, 0.08);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan-400);
+      box-shadow: 0 0 14px rgba(57, 213, 232, 0.9);
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 1.11;
+      letter-spacing: -0.04em;
+    }
+
+    .hero h1 span {
+      color: var(--cyan-300);
+    }
+
+    .hero-lead {
+      max-width: 700px;
+      margin: 26px 0 0;
+      color: rgba(239, 249, 255, 0.84);
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      line-height: 1.85;
+    }
+
+    .hero-lead strong {
+      color: var(--white);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 18px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      text-decoration: none;
+      font-weight: 900;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--navy-950);
+      background: linear-gradient(135deg, var(--cyan-300), var(--cyan-400));
+      box-shadow: 0 12px 30px rgba(57, 213, 232, 0.22);
+    }
+
+    .button-primary:hover {
+      color: var(--navy-950);
+      box-shadow: 0 15px 36px rgba(57, 213, 232, 0.32);
+    }
+
+    .button-secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .button-secondary:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-top: 30px;
+      color: rgba(226, 242, 250, 0.68);
+      font-size: 0.84rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-meta span::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan-400);
+    }
+
+    .hero-visual {
+      position: relative;
+      margin: 0;
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-visual-stack {
+      display: grid;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .hero-photo {
+      position: relative;
+      margin: 0;
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+
+    .hero-photo figcaption,
+    .hero-visual figcaption {
+      padding: 12px 8px 2px;
+      color: rgba(227, 243, 250, 0.65);
+      font-size: 0.76rem;
+      text-align: center;
+    }
+
+    .hero-photo figcaption a {
+      color: var(--cyan-300);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .hero-photo figcaption a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      border-radius: 22px;
+    }
+
+    /* =========================================================
+       核心數據
+       ========================================================= */
+    .metric-band {
+      position: relative;
+      z-index: 5;
+      margin-top: -42px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .metric-card {
+      min-height: 208px;
+      padding: 25px;
+      border: 1px solid rgba(216, 227, 235, 0.9);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-md);
+    }
+
+    .metric-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.09);
+      font-size: 0.75rem;
+      font-weight: 900;
+    }
+
+    .metric-number {
+      display: block;
+      margin-top: 16px;
+      color: var(--navy-900);
+      font-size: clamp(2.25rem, 4vw, 3.35rem);
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .metric-number small {
+      font-size: 0.42em;
+      letter-spacing: 0;
+    }
+
+    .metric-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .metric-card:nth-child(1) {
+      border-top: 4px solid var(--cyan-400);
+    }
+
+    .metric-card:nth-child(2) {
+      border-top: 4px solid var(--green-500);
+    }
+
+    .metric-card:nth-child(3) {
+      border-top: 4px solid var(--magenta-500);
+    }
+
+    .metric-card:nth-child(4) {
+      border-top: 4px solid var(--orange-500);
+    }
+
+    /* =========================================================
+       通用章節
+       ========================================================= */
+    .section {
+      padding-block: 56px;
+    }
+
+    .section-compact {
+      padding-block: 40px;
+    }
+
+    .section-alt {
+      background:
+        linear-gradient(180deg, rgba(237, 245, 250, 0.8), rgba(244, 248, 251, 0.35));
+      border-block: 1px solid rgba(216, 227, 235, 0.75);
+    }
+
+    .section-dark {
+      color: rgba(239, 248, 252, 0.86);
+      background:
+        radial-gradient(circle at 90% 5%, rgba(57, 213, 232, 0.12), transparent 28rem),
+        linear-gradient(145deg, var(--navy-950), var(--navy-850));
+    }
+
+    .section-dark h2,
+    .section-dark h3,
+    .section-dark strong {
+      color: var(--white);
+    }
+
+    .section-dark .section-intro,
+    .section-dark p {
+      color: rgba(225, 240, 247, 0.76);
+    }
+
+    .section-head {
+      max-width: 830px;
+      margin-bottom: 28px;
+    }
+
+    .section-head.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--blue-600);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-dark .kicker {
+      color: var(--cyan-300);
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy-900);
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: var(--navy-900);
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .section-intro {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .example-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 0 0 28px;
+    }
+
+    .example-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .example-gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      object-position: center top;
+      background: #e8eef3;
+    }
+
+    .example-gallery figure:nth-child(2) img {
+      object-position: center bottom;
+    }
+
+    .example-gallery figure:nth-child(3) img {
+      object-fit: contain;
+      object-position: center;
+      background: #f4f8fb;
+    }
+
+    .example-gallery figcaption {
+      padding: 12px 14px 14px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.55;
+      border-top: 1px solid var(--line);
+    }
+
+    .example-gallery figcaption a {
+      color: var(--blue-700);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .example-gallery figcaption a:hover {
+      color: var(--magenta-500);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 860px) {
+      .example-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .example-gallery img {
+        height: 260px;
+      }
+    }
+
+    .prose p {
+      margin: 0 0 1.25em;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lead-quote {
+      margin: 0;
+      padding: 28px 30px;
+      border-left: 5px solid var(--cyan-400);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      color: var(--navy-900);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 850;
+      line-height: 1.75;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr);
+      gap: 42px;
+      align-items: start;
+    }
+
+    .two-col > *,
+    .three-col > *,
+    .constraint-grid > *,
+    .conclusion-points > * {
+      min-width: 0;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .cite {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.55em;
+      height: 1.55em;
+      margin-left: 0.18em;
+      border-radius: 999px;
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.1);
+      text-decoration: none;
+      font-size: 0.68em;
+      font-weight: 950;
+      vertical-align: super;
+    }
+
+    .cite:hover {
+      color: var(--white);
+      background: var(--magenta-500);
+    }
+
+    /* =========================================================
+       公式與術語
+       ========================================================= */
+    .formula-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .formula-top {
+      padding: 24px 28px;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, var(--blue-700), var(--blue-500));
+    }
+
+    .formula-top small {
+      display: block;
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .equation {
+      overflow-x: auto;
+      padding: 8px 2px 2px;
+      line-height: 1.2;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .equation .katex {
+      color: #fff;
+      font-size: clamp(1.35rem, 3.2vw, 2.05rem);
+    }
+
+    .equation .katex-display {
+      margin: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .formula-list dt {
+      color: var(--blue-700);
+      font-family: "KaTeX_Main", "STIX Two Text", "Cambria Math", "Times New Roman", serif;
+      font-size: 1.12rem;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .formula-body {
+      padding: 26px 28px;
+    }
+
+    .formula-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .formula-list div {
+      display: grid;
+      grid-template-columns: 60px minmax(0, 1fr);
+      gap: 12px;
+      align-items: baseline;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .formula-list div:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .formula-list dd {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .term-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+    }
+
+    .term-card b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue-700);
+    }
+
+    .term-card span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* =========================================================
+       示意圖
+       ========================================================= */
+    .diagram-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .diagram-card svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .diagram-caption {
+      padding: 18px 24px 22px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    /* =========================================================
+       卡片
+       ========================================================= */
+    .info-card {
+      height: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      color: var(--white);
+      background: linear-gradient(145deg, var(--blue-600), var(--cyan-400));
+    }
+
+    .info-card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 27px;
+      margin-bottom: 13px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.09);
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .tag-green {
+      color: #117153;
+      background: rgba(33, 168, 117, 0.1);
+    }
+
+    .tag-orange {
+      color: #a3541c;
+      background: rgba(244, 135, 59, 0.12);
+    }
+
+    .tag-magenta {
+      color: #a8175f;
+      background: rgba(207, 35, 120, 0.1);
+    }
+
+    /* =========================================================
+       驗證流程
+       ========================================================= */
+    .process-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .process-grid::before {
+      content: "";
+      position: absolute;
+      top: 37px;
+      left: 11%;
+      right: 11%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan-400), var(--magenta-500));
+      opacity: 0.38;
+    }
+
+    .process-step {
+      position: relative;
+      z-index: 1;
+      padding: 0 14px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border: 7px solid var(--paper);
+      border-radius: 50%;
+      color: var(--white);
+      background: linear-gradient(145deg, var(--blue-700), var(--cyan-400));
+      box-shadow: 0 10px 25px rgba(8, 123, 189, 0.22);
+      font-size: 1.25rem;
+      font-weight: 950;
+    }
+
+    .process-step h3 {
+      font-size: 1.05rem;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       研究表格
+       ========================================================= */
+    .table-shell {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-scroll-hint {
+      display: none;
+      margin: 0;
+      padding: 11px 16px;
+      color: var(--blue-700);
+      border-bottom: 1px solid var(--line);
+      background: #f4f9fc;
+      font-size: 0.82rem;
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .evidence-table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .evidence-table th,
+    .evidence-table td {
+      padding: 20px 18px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .evidence-table th {
+      color: var(--white);
+      background: var(--navy-850);
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+    }
+
+    .evidence-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .evidence-table tbody tr:hover {
+      background: #f7fbfd;
+    }
+
+    .evidence-table td {
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .evidence-table td:first-child strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .evidence-table .result {
+      color: var(--navy-900);
+      font-weight: 800;
+    }
+
+    .evidence-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .badge-model {
+      color: #096f83;
+      background: rgba(57, 213, 232, 0.16);
+    }
+
+    .badge-service {
+      color: #157052;
+      background: rgba(33, 168, 117, 0.13);
+    }
+
+    .badge-design {
+      color: #a8175f;
+      background: rgba(207, 35, 120, 0.11);
+    }
+
+    .badge-yard {
+      color: #9b511d;
+      background: rgba(244, 135, 59, 0.14);
+    }
+
+    .table-note {
+      margin: 0;
+      padding: 17px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #f8fbfd;
+      font-size: 0.82rem;
+    }
+
+    /* =========================================================
+       數據判讀
+       ========================================================= */
+    .math-box {
+      padding: 30px;
+      border: 1px solid rgba(57, 213, 232, 0.25);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .math-equation {
+      overflow-x: auto;
+      margin: 16px 0;
+      padding: 19px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      color: var(--cyan-300);
+      background: rgba(3, 18, 31, 0.42);
+      font-family: "STIX Two Text", "Cambria Math", "Times New Roman", serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-style: italic;
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .bar-demo {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr) 72px;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .bar-label {
+      color: rgba(239, 248, 252, 0.78);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .bar-track {
+      position: relative;
+      overflow: hidden;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--cyan-400), var(--blue-500));
+    }
+
+    .bar-fill.air {
+      width: 10%;
+      min-width: 34px;
+      background: linear-gradient(90deg, var(--orange-500), var(--magenta-500));
+    }
+
+    .bar-fill.saved {
+      width: 2%;
+      min-width: 12px;
+      background: var(--green-500);
+    }
+
+    .bar-value {
+      color: var(--white);
+      font-size: 0.84rem;
+      font-weight: 900;
+      text-align: right;
+    }
+
+    /* =========================================================
+       提示與警告
+       ========================================================= */
+    .callout {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+      padding: 24px;
+      border: 1px solid rgba(8, 123, 189, 0.2);
+      border-radius: var(--radius-md);
+      background: rgba(8, 123, 189, 0.06);
+    }
+
+    .callout.warning {
+      border-color: rgba(244, 135, 59, 0.26);
+      background: rgba(244, 135, 59, 0.08);
+    }
+
+    .callout-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--white);
+      background: var(--blue-600);
+    }
+
+    .callout.warning .callout-icon {
+      background: var(--orange-500);
+    }
+
+    .callout h3 {
+      margin-bottom: 7px;
+      font-size: 1rem;
+    }
+
+    .callout p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* =========================================================
+       限制與注意事項
+       ========================================================= */
+    .constraint-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .constraint-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px 26px 26px 31px;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .constraint-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      background: linear-gradient(var(--cyan-400), var(--magenta-500));
+    }
+
+    .constraint-card p {
+      margin: 0;
+      font-size: 0.88rem;
+    }
+
+    /* =========================================================
+       術語表
+       ========================================================= */
+    .glossary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 0;
+    }
+
+    .glossary > div {
+      padding: 21px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+    }
+
+    .glossary dt {
+      color: var(--blue-700);
+      font-weight: 950;
+    }
+
+    .glossary dd {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* =========================================================
+       結論
+       ========================================================= */
+    .conclusion-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 46px;
+      border-radius: var(--radius-lg);
+      color: var(--white);
+      background:
+        radial-gradient(circle at 88% 14%, rgba(57, 213, 232, 0.24), transparent 18rem),
+        linear-gradient(135deg, var(--blue-700), var(--navy-900));
+      box-shadow: var(--shadow-lg);
+    }
+
+    .conclusion-panel::after {
+      content: "CᴅA";
+      position: absolute;
+      right: 24px;
+      bottom: -46px;
+      color: rgba(255,255,255,0.055);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 10rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .conclusion-panel h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      color: var(--white);
+    }
+
+    .conclusion-panel p {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
+      margin: 22px 0 0;
+      color: rgba(240, 249, 253, 0.84);
+      font-size: 1.04rem;
+    }
+
+    .conclusion-points {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .conclusion-point {
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .conclusion-point b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--cyan-300);
+      font-size: 1.08rem;
+    }
+
+    .conclusion-point span {
+      color: rgba(239, 248, 252, 0.75);
+      font-size: 0.82rem;
+    }
+
+    /* =========================================================
+       資料來源
+       ========================================================= */
+    .sources-list {
+      display: grid;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: source;
+    }
+
+    .source-item {
+      position: relative;
+      padding: 23px 24px 23px 72px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      counter-increment: source;
+    }
+
+    .source-item::before {
+      content: counter(source);
+      position: absolute;
+      top: 23px;
+      left: 23px;
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--blue-600);
+      font-size: 0.78rem;
+      font-weight: 950;
+    }
+
+    .source-item strong {
+      display: block;
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
+
+    .source-item p {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+
+    .source-item a {
+      font-size: 0.82rem;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+    /* =========================================================
+       響應式
+       ========================================================= */
+    @media (max-width: 1040px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy {
+        max-width: 830px;
+      }
+
+      .hero-visual,
+      .hero-visual-stack {
+        width: min(760px, 100%);
+        margin-inline: auto;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .three-col {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 35px;
+      }
+
+      .process-grid::before {
+        display: none;
+      }
+
+      .conclusion-points {
+        grid-template-columns: 1fr;
+      }
+
+      .table-scroll-hint {
+        display: block;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .constraint-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap,
+      .reading-wrap {
+        width: min(100% - 26px, var(--content-width));
+      }
+
+      .nav {
+        min-height: 66px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .hero-grid {
+        padding-block: 56px 74px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.05rem, 9.5vw, 2.8rem);
+        line-height: 1.14;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .metric-band {
+        margin-top: -30px;
+      }
+
+      .metric-grid,
+      .term-grid,
+      .glossary,
+      .process-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .metric-card {
+        min-height: auto;
+      }
+
+      .section {
+        padding-block: 40px;
+      }
+
+      .section-compact {
+        padding-block: 32px;
+      }
+
+      .bar-row {
+        grid-template-columns: 1fr 58px;
+      }
+
+      .bar-label {
+        grid-column: 1 / -1;
+      }
+
+      .conclusion-panel {
+        padding: 32px 24px;
+      }
+
+      .lead-quote,
+      .formula-top,
+      .formula-body,
+      .info-card,
+      .math-box,
+      .constraint-card {
+        padding-inline: 22px;
+      }
+
+      .table-scroll-hint {
+        display: none;
+      }
+
+      .table-scroll {
+        overflow: visible;
+      }
+
+      .evidence-table,
+      .evidence-table tbody,
+      .evidence-table tr,
+      .evidence-table td {
+        width: 100%;
+        display: block;
+      }
+
+      .evidence-table {
+        min-width: 0;
+      }
+
+      .evidence-table thead {
+        display: none;
+      }
+
+      .evidence-table tr {
+        padding: 20px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .evidence-table tbody tr:last-child {
+        border-bottom: 0;
+      }
+
+      .evidence-table td {
+        padding: 0 0 18px;
+        border: 0;
+      }
+
+      .evidence-table td:last-child {
+        padding-bottom: 0;
+      }
+
+      .evidence-table td::before {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--blue-700);
+        font-size: 0.72rem;
+        font-weight: 950;
+        letter-spacing: 0.06em;
+      }
+
+      .evidence-table td:nth-child(1)::before {
+        content: "證據類型";
+      }
+
+      .evidence-table td:nth-child(2)::before {
+        content: "對象與方法";
+      }
+
+      .evidence-table td:nth-child(3)::before {
+        content: "公開結果";
+      }
+
+      .evidence-table td:nth-child(4)::before {
+        content: "專業判讀";
+      }
+
+      .source-item {
+        padding: 66px 20px 22px;
+      }
+
+      .source-item::before {
+        top: 20px;
+        left: 20px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .wrap,
+      .reading-wrap {
+        width: min(100% - 22px, var(--content-width));
+      }
+
+      .brand-title {
+        font-size: 0.92rem;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero-grid {
+        padding-block: 48px 66px;
+      }
+
+      .hero-lead {
+        font-size: 1rem;
+        line-height: 1.78;
+      }
+
+      .hero-meta {
+        gap: 8px 14px;
+      }
+
+      .callout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .callout-icon {
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+    /* =========================================================
+       減少動態效果偏好
+       ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    /* =========================================================
+       列印
+       ========================================================= */
+    @media print {
+      body {
+        color: #000;
+        background: #fff;
+        font-size: 10.5pt;
+      }
+
+      .article-chapter-nav,
+      .scroll-progress,
+
+      .hero,
+      .section-dark,
+      .conclusion-panel {
+        color: #000;
+        background: #fff !important;
+      }
+
+      .hero {
+        border-bottom: 2px solid #000;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding-block: 30px;
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1,
+      .hero h1 span,
+      .section-dark h2,
+      .section-dark h3,
+      .section-dark strong,
+      .conclusion-panel h2 {
+        color: #000 !important;
+      }
+
+      .hero-lead,
+      .hero-meta,
+      .section-dark p,
+      .conclusion-panel p {
+        color: #222 !important;
+      }
+
+      .hero-visual,
+      .hero-photo {
+        display: none;
+      }
+
+      .metric-band {
+        margin-top: 20px;
+      }
+
+      .metric-card,
+      .info-card,
+      .formula-card,
+      .table-shell,
+      .source-item,
+      .lead-quote {
+        box-shadow: none;
+      }
+
+      .section {
+        padding-block: 35px;
+      }
+
+      a {
+        color: #000;
+      }
+
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        word-break: break-all;
+      }
+
+      .source-item,
+      .metric-card,
+      .info-card {
+        break-inside: avoid;
+      }
+    }
+  
+    /* Site chrome + article share / footer overrides */
+    .note-site-bar { position: relative; z-index: 1200; }
+
+    .article-chapter-nav {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      border-bottom: 1px solid rgba(216, 227, 235, 0.8);
+      background: rgba(248, 251, 253, 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .article-chapter-nav .nav {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .article-chapter-nav .nav-label {
+      color: var(--navy-900);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .hero .article-meta {
+      margin-top: 18px;
+      margin-bottom: 18px;
+      color: rgba(226, 242, 250, 0.78);
+    }
+
+    .hero .article-meta__sep {
+      color: rgba(226, 242, 250, 0.35);
+    }
+
+    .hero .article-share--hero {
+      margin-top: 22px;
+    }
+
+    .hero .article-share__label {
+      color: rgba(227, 243, 250, 0.78);
+    }
+
+    .share-band {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 28px 20px 8px;
+    }
+
+    .share-band .article-share--end {
+      margin: 0;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .share-band .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--ink-soft);
+    }
+
+    footer.site-footer {
+      padding: 42px 0 48px;
+      color: rgba(229, 241, 247, 0.72);
+      background: var(--navy-950);
+      margin-top: 24px;
+    }
+
+    footer.site-footer .container {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    footer.site-footer strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    footer.site-footer .small {
+      font-size: 13px;
+    }
+
+    footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 850px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 860px) {
+      .article-chapter-nav .nav-label {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .share-band,
+      footer.site-footer .container {
+        width: min(100% - 26px, var(--content-width));
+        padding-inline: 0;
+      }
+    }
+
+    @media print {
+      .note-site-bar,
+      .article-chapter-nav,
+      .article-share,
+      .share-band,
+      footer.site-footer {
+        display: none !important;
+      }
+    }
+</style>
+</head>
+
+<body>
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="語言選擇">
+      <a href="container-ship-wind-shield-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="container-ship-wind-shield-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">跳至正文</a>
+
+  <nav class="article-chapter-nav" aria-label="文章章節">
+    <div class="wrap nav">
+      <span class="nav-label">文章章節</span>
+      <ul class="nav-links">
+        <li><a href="#principle">作用原理</a></li>
+        <li><a href="#evidence">研究證據</a></li>
+        <li><a href="#interpretation">數據判讀</a></li>
+        <li><a href="#constraints">設計限制</a></li>
+        <li><a href="#references">資料來源</a></li>
+      </ul>
+      <details class="mobile-nav">
+        <summary aria-label="開啟文章章節選單">
+          <span class="visually-hidden">文章章節</span>
+        </summary>
+        <ul class="mobile-nav-panel">
+          <li><a href="#principle">作用原理</a></li>
+          <li><a href="#evidence">研究證據</a></li>
+          <li><a href="#interpretation">數據判讀</a></li>
+          <li><a href="#constraints">設計限制</a></li>
+          <li><a href="#references">資料來源</a></li>
+        </ul>
+      </details>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            貨櫃船空氣動力技術 · REAY'S NOTE
+          </div>
+
+          <h1>
+            船舶<span>防風罩</span>為何做得更大風阻反而更低？
+          </h1>
+
+          <p class="article-meta">
+            <span>📅 更新：2026-07-15</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 閱讀約 18 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 Wind Shield / 貨櫃船 / 風阻 / 空氣動力</span>
+          </p>
+
+          <p class="hero-lead">
+            大型船艏導風罩並不是單純增加一面迎風牆，而是為貨櫃堆疊建立
+            <strong>平順的空氣動力前緣</strong>。本文從風阻公式、風洞試驗、
+            實船營運大數據及造船廠技術報告，解析其真實效益與適用限制。
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#evidence">
+              查看研究證據
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <a class="button button-secondary" href="#key-numbers">
+              先看核心數字
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span>風洞模型試驗</span>
+            <span>實船大數據驗證</span>
+            <span>24,000 TEU 新造船案例</span>
+          </div>
+
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.html"
+            data-share-title="船舶防風罩為何做得更大風阻反而更低？｜Reay's Note"
+            data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船舶防風罩為何做得更大風阻反而更低？｜Reay's Note&#10;https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.html"
+            data-share-copy="複製連結"
+            data-share-copied="已複製"
+            data-toast-copied="連結已複製到剪貼簿"
+          >
+            <p class="article-share__label" id="share-hero-label">分享此篇</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div>
+
+        </div>
+
+        <div class="hero-visual-stack">
+          <figure class="hero-photo">
+            <img
+              src="../../assets/images/maritime/container-ship-wind-shield/one-bow-wind-shield.png"
+              alt="Ocean Network Express 大型貨櫃船船艏 Bow Wind Shield 實景"
+              width="479"
+              height="271"
+              loading="eager"
+              decoding="async"
+            >
+            <figcaption>
+              實船案例｜Photo:
+              <a
+                href="https://x.com/OceanNetworkExp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >@OceanNetworkExp</a>
+            </figcaption>
+          </figure>
+
+          <figure class="hero-visual">
+          <!-- 原創示意圖：不代表特定船型之 CFD 結果 -->
+          <svg
+            viewBox="0 0 760 540"
+            role="img"
+            aria-labelledby="heroSvgTitle heroSvgDesc"
+          >
+            <title id="heroSvgTitle">貨櫃船船艏導風罩與氣流示意圖</title>
+            <desc id="heroSvgDesc">
+              一艘側視貨櫃船，船艏設置弧形 Wind Shield，
+              氣流被平順地導向貨櫃上方。
+            </desc>
+
+            <defs>
+              <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0c3554"/>
+                <stop offset="100%" stop-color="#071b2e"/>
+              </linearGradient>
+
+              <linearGradient id="heroSea" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#087bbd"/>
+                <stop offset="100%" stop-color="#16b9d4"/>
+              </linearGradient>
+
+              <linearGradient id="heroHull" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#20384b"/>
+                <stop offset="55%" stop-color="#0b2031"/>
+                <stop offset="56%" stop-color="#cf2378"/>
+                <stop offset="100%" stop-color="#851548"/>
+              </linearGradient>
+
+              <linearGradient id="heroShield" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#cfe5ef"/>
+              </linearGradient>
+
+              <filter id="heroShadow" x="-20%" y="-20%" width="140%" height="160%">
+                <feDropShadow
+                  dx="0"
+                  dy="12"
+                  stdDeviation="12"
+                  flood-color="#000000"
+                  flood-opacity="0.28"
+                />
+              </filter>
+
+              <marker
+                id="heroArrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M0 0L10 5L0 10Z" fill="#77e8f3"/>
+              </marker>
+            </defs>
+
+            <rect width="760" height="540" rx="24" fill="url(#heroSky)"/>
+
+            <!-- 遠方海平面 -->
+            <path
+              d="M0 398C100 386 166 410 264 400C371 389 438 414 548 399C633 387 690 398 760 392V540H0Z"
+              fill="url(#heroSea)"
+              opacity="0.78"
+            />
+
+            <path
+              d="M0 422C109 406 186 432 285 420C407 405 482 435 592 419C665 409 715 414 760 409"
+              fill="none"
+              stroke="#77e8f3"
+              stroke-width="3"
+              opacity="0.45"
+            />
+
+            <!-- 氣流 -->
+            <g
+              fill="none"
+              stroke="#77e8f3"
+              stroke-width="4"
+              stroke-linecap="round"
+              marker-end="url(#heroArrow)"
+              opacity="0.85"
+            >
+              <path d="M34 172C117 168 143 160 183 135C243 98 346 97 468 107"/>
+              <path d="M22 220C103 218 141 209 180 183C251 136 358 135 505 148"/>
+              <path d="M28 270C104 269 144 261 177 237C242 190 367 184 538 202"/>
+              <path d="M38 320C104 320 140 312 167 294C219 260 346 248 566 268"/>
+            </g>
+
+            <!-- 船體 -->
+            <g filter="url(#heroShadow)">
+              <path
+                d="M112 342L648 342L628 415C622 438 601 453 577 453H207C175 453 149 440 133 415L93 353Z"
+                fill="url(#heroHull)"
+              />
+
+              <path
+                d="M101 350L652 350"
+                stroke="#f2f8fb"
+                stroke-width="5"
+                opacity="0.85"
+              />
+
+              <!-- 貨櫃 -->
+              <g stroke="#071b2e" stroke-width="3">
+                <rect x="218" y="222" width="74" height="55" rx="3" fill="#d95643"/>
+                <rect x="294" y="222" width="74" height="55" rx="3" fill="#168f77"/>
+                <rect x="370" y="222" width="74" height="55" rx="3" fill="#d99f2b"/>
+                <rect x="446" y="222" width="74" height="55" rx="3" fill="#3476b9"/>
+
+                <rect x="218" y="279" width="74" height="55" rx="3" fill="#3476b9"/>
+                <rect x="294" y="279" width="74" height="55" rx="3" fill="#d99f2b"/>
+                <rect x="370" y="279" width="74" height="55" rx="3" fill="#cc3f78"/>
+                <rect x="446" y="279" width="74" height="55" rx="3" fill="#168f77"/>
+
+                <rect x="258" y="165" width="74" height="55" rx="3" fill="#cc3f78"/>
+                <rect x="334" y="165" width="74" height="55" rx="3" fill="#3476b9"/>
+                <rect x="410" y="165" width="74" height="55" rx="3" fill="#d95643"/>
+              </g>
+
+              <!-- 上層建築 -->
+              <path
+                d="M533 244H618L636 342H520Z"
+                fill="#edf6fa"
+                stroke="#a9c7d5"
+                stroke-width="3"
+              />
+
+              <rect x="546" y="261" width="59" height="16" rx="3" fill="#15354c"/>
+              <rect x="550" y="291" width="11" height="8" rx="2" fill="#0d7ca6"/>
+              <rect x="568" y="291" width="11" height="8" rx="2" fill="#0d7ca6"/>
+              <rect x="586" y="291" width="11" height="8" rx="2" fill="#0d7ca6"/>
+
+              <path d="M575 244V202" stroke="#dcecf3" stroke-width="5"/>
+              <path d="M575 204L594 214" stroke="#dcecf3" stroke-width="4"/>
+
+              <!-- Wind Shield -->
+              <path
+                d="M148 340
+                   C151 278 163 226 199 183
+                   C219 159 240 146 260 139
+                   L260 342Z"
+                fill="url(#heroShield)"
+                stroke="#9dbfce"
+                stroke-width="4"
+              />
+
+              <path
+                d="M158 331C163 274 176 226 207 190"
+                fill="none"
+                stroke="#ffffff"
+                stroke-width="7"
+                opacity="0.7"
+              />
+            </g>
+
+            <!-- 標示 -->
+            <g font-family="sans-serif">
+              <rect
+                x="74"
+                y="72"
+                width="175"
+                height="42"
+                rx="12"
+                fill="#071b2e"
+                stroke="#39d5e8"
+                stroke-opacity="0.55"
+              />
+              <text
+                x="161"
+                y="99"
+                fill="#77e8f3"
+                font-size="18"
+                font-weight="700"
+                text-anchor="middle"
+              >
+                平順導引相對風
+              </text>
+
+              <path
+                d="M202 154L160 116"
+                stroke="#77e8f3"
+                stroke-width="2"
+                stroke-dasharray="5 5"
+              />
+
+              <rect
+                x="90"
+                y="374"
+                width="188"
+                height="44"
+                rx="12"
+                fill="#ffffff"
+                opacity="0.94"
+              />
+              <text
+                x="184"
+                y="402"
+                fill="#075e9b"
+                font-size="18"
+                font-weight="800"
+                text-anchor="middle"
+              >
+                Bow Wind Shield
+              </text>
+
+              <path
+                d="M201 372L209 325"
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-dasharray="5 5"
+              />
+
+              <rect
+                x="310"
+                y="95"
+                width="150"
+                height="38"
+                rx="11"
+                fill="#071b2e"
+                stroke="#ffffff"
+                stroke-opacity="0.2"
+              />
+              <text
+                x="385"
+                y="120"
+                fill="#ffffff"
+                font-size="16"
+                font-weight="700"
+                text-anchor="middle"
+              >
+                貨櫃堆疊區
+              </text>
+            </g>
+          </svg>
+
+          <figcaption>
+            原理示意圖，非特定船型之 CFD 計算結果，實際流場依船型、貨櫃配置及風向而異。
+          </figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 核心數據 -->
+    <section class="metric-band" id="key-numbers" aria-labelledby="metrics-title">
+      <div class="wrap">
+        <h2 id="metrics-title" style="position:absolute;left:-9999px;">
+          Wind Shield 核心研究數據
+        </h2>
+
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span class="metric-label">風洞試驗</span>
+            <span class="metric-number">≈20<small>%</small></span>
+            <p>
+              在特定研究船型、相對風向約 20°的條件下，
+              船艏 Wind Shield 單獨降低的<strong>風壓阻力</strong>。
+              <a class="cite" href="#ref-1" aria-label="參考資料 1">1</a>
+            </p>
+          </article>
+
+          <article class="metric-card">
+            <span class="metric-label">實船驗證</span>
+            <span class="metric-number">≈2<small>%</small></span>
+            <p>
+              MOL MARVEL 於約 17 kn 航行時，
+              相較無風防同型船所確認的平均 CO₂ 改善。
+              <a class="cite" href="#ref-2" aria-label="參考資料 2">2</a>
+              <a class="cite" href="#ref-3" aria-label="參考資料 3">3</a>
+            </p>
+          </article>
+
+          <article class="metric-card">
+            <span class="metric-label">ULCV 最佳化設計</span>
+            <span class="metric-number">2–4<small>%</small></span>
+            <p>
+              MOL 與 Samsung Heavy Industries 針對超大型貨櫃船
+              Bow Wind-Shield 所提出的 CO₂減排預估。
+              <a class="cite" href="#ref-4" aria-label="參考資料 4">4</a>
+            </p>
+          </article>
+
+          <article class="metric-card">
+            <span class="metric-label">新造船整合效益</span>
+            <span class="metric-number">風阻＋裝載</span>
+            <p>
+              JMU 24,000 TEU 船型以 Bow Wind Cover 降低風壓阻力，
+              並容許於船艏係泊甲板上方配置貨櫃。
+              <a class="cite" href="#ref-5" aria-label="參考資料 5">5</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 一句話說明 -->
+    <section class="section section-compact">
+      <div class="reading-wrap">
+        <blockquote class="lead-quote">
+          Wind Shield 的設計邏輯，是以一個較平順、可控制的曲面，
+          取代氣動外形很差的第一排垂直貨櫃牆；
+          即使投影面積可能略為增加，只要整體阻力係數下降得更多，
+          船舶總風阻仍可降低。
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 原理 -->
+    <section class="section section-alt" id="principle">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">01 · Fundamental principle</span>
+          <h2>Wind Shield 是什麼？</h2>
+          <p class="section-intro">
+            船艏 Wind Shield 又可能稱為
+            <strong>Bow Wind Shield、Bow Wind-Shield、Windshield</strong>
+            或 <strong>Bow Wind Cover</strong>。它位於最前方甲板貨櫃之前，
+            作用類似大型導流罩，讓相對風較平順地向上及向兩舷流動。
+          </p>
+        </header>
+
+        <div class="example-gallery" aria-label="實船 Wind Shield 案例">
+          <figure>
+            <img
+              src="../../assets/images/maritime/container-ship-wind-shield/wind-shield-shipsmonthly.png"
+              alt="CMA CGM MARCO POLO 船艏 Windshield 實景"
+              width="670"
+              height="858"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              CMA CGM MARCO POLO 船艏 Windshield｜Source:
+              <a href="https://shipsmonthly.com/" target="_blank" rel="noopener noreferrer">shipsmonthly.com</a>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../assets/images/maritime/container-ship-wind-shield/wind-shield-cmacgm.png"
+              alt="CMA CGM RUNDALE 船艏導風罩與一體化上層建築"
+              width="524"
+              height="656"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              CMA CGM RUNDALE 實船案例｜Source:
+              <a href="https://www.instagram.com/cmacgm/" target="_blank" rel="noopener noreferrer">IG: cmacgm</a>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../assets/images/maritime/container-ship-wind-shield/wind-shield-evergreen.png"
+              alt="Evergreen 貨櫃船 Wind Shield 與節能設計示意"
+              width="738"
+              height="418"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              Evergreen 新造船技術示意｜Source:
+              <a href="https://www.evergreen-marine.com/" target="_blank" rel="noopener noreferrer">Evergreen website</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="two-col">
+          <div class="prose">
+            <p>
+              現代大型貨櫃船的甲板貨櫃堆疊高、排列寬，第一排貨櫃面向來流時，
+              形成接近垂直的巨大鈍體。氣流撞擊貨櫃前壁後會產生
+              <strong>高壓停滯區、氣流分離、渦流及低壓尾流</strong>，
+              因而形成明顯的壓力阻力。
+            </p>
+
+            <p>
+              Wind Shield 將原本突然出現的貨櫃前壁，改造成具有曲率或斜度的
+              <strong>Leading Edge（前緣）</strong>。空氣不必在第一排貨櫃前方
+              突然停止，而能逐漸轉向，減少氣流分離與不規則壓力分布。
+            </p>
+
+            <p>
+              因此，Wind Shield 不應只被視為一個獨立構件，而應把它與
+              <strong>甲板貨櫃堆疊、上層建築及船體水面以上部分</strong>
+              視為同一個空氣動力系統。
+            </p>
+
+            <div class="term-grid">
+              <div class="term-card">
+                <b>Bluff Body｜鈍體</b>
+                <span>
+                  前緣較方正、氣流容易分離的物體；貨櫃堆疊即具有典型鈍體特性。
+                </span>
+              </div>
+
+              <div class="term-card">
+                <b>Streamlining｜流線化</b>
+                <span>
+                  透過外形平滑與連續化，降低壓力突變、流動分離及尾流規模。
+                </span>
+              </div>
+
+              <div class="term-card">
+                <b>Apparent Wind｜視風／相對風</b>
+                <span>
+                  船上實際感受到的風，由船速與自然風向量合成而成。
+                </span>
+              </div>
+
+              <div class="term-card">
+                <b>Pressure Drag｜壓力阻力</b>
+                <span>
+                  物體前後壓力分布不對稱所形成的阻力，是鈍體風阻的重要來源。
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="formula-card" aria-label="風阻基本公式">
+            <div class="formula-top">
+              <small>簡化空氣阻力公式</small>
+              <div
+                class="equation"
+                data-katex="F_D = \tfrac{1}{2}\,\rho_{\mathrm{air}}\,V_{\mathrm{rel}}^{2}\,C_{D}\,A"
+                aria-label="空氣阻力 F 下標 D，等於二分之一乘以空氣密度 rho air、相對風速 V rel 的平方、阻力係數 C 下標 D 與參考面積 A"
+              >F<sub>D</sub> = ½ ρ<sub>air</sub> V<sub>rel</sub><sup>2</sup> C<sub>D</sub> A</div>
+            </div>
+
+            <div class="formula-body">
+              <dl class="formula-list">
+                <div>
+                  <dt>F<sub>D</sub></dt>
+                  <dd>船舶水面以上部分所受的空氣阻力。</dd>
+                </div>
+                <div>
+                  <dt>ρ<sub>air</sub></dt>
+                  <dd>空氣密度。</dd>
+                </div>
+                <div>
+                  <dt>V<sub>rel</sub></dt>
+                  <dd>船舶與空氣之間的相對風速。</dd>
+                </div>
+                <div>
+                  <dt>C<sub>D</sub></dt>
+                  <dd>與外形、風向及流動分離相關的阻力係數。</dd>
+                </div>
+                <div>
+                  <dt>A</dt>
+                  <dd>用於無因次化的迎風參考投影面積。</dd>
+                </div>
+              </dl>
+
+              <div class="callout" style="margin-top:24px;">
+                <div class="callout-icon" aria-hidden="true">✓</div>
+                <div>
+                  <h3>真正需要比較的是有效阻力面積</h3>
+                  <p>
+                    Wind Shield 可能使 <strong>A</strong> 略為增加，
+                    但若能使 <strong>C<sub>D</sub></strong> 顯著降低，
+                    整體的 <strong>C<sub>D</sub>A</strong> 仍會下降。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 氣流比較 -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">02 · Airflow comparison</span>
+          <h2>無導風罩與有導風罩的氣流差異</h2>
+          <p class="section-intro">
+            下圖是原理示意，不是特定船型的 CFD 結果。
+            實際流場會受到貨櫃堆高、貨櫃缺箱、風向角、船速及上層建築配置影響。
+          </p>
+        </header>
+
+        <figure class="diagram-card">
+          <svg
+            viewBox="0 0 1120 430"
+            role="img"
+            aria-labelledby="flowTitle flowDesc"
+          >
+            <title id="flowTitle">貨櫃船有無 Wind Shield 的氣流比較</title>
+            <desc id="flowDesc">
+              左側為氣流直接撞擊第一排貨櫃，形成高壓區和渦流；
+              右側為氣流沿弧形導風罩越過貨櫃。
+            </desc>
+
+            <defs>
+              <linearGradient id="panelBg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f8fbfd"/>
+                <stop offset="100%" stop-color="#edf5fa"/>
+              </linearGradient>
+
+              <linearGradient id="pressureGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#e45757" stop-opacity="0.78"/>
+                <stop offset="100%" stop-color="#e45757" stop-opacity="0"/>
+              </linearGradient>
+
+              <marker
+                id="blueArrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M0 0L10 5L0 10Z" fill="#087bbd"/>
+              </marker>
+
+              <marker
+                id="cyanArrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M0 0L10 5L0 10Z" fill="#14a88b"/>
+              </marker>
+            </defs>
+
+            <!-- 面板背景 -->
+            <rect x="20" y="20" width="520" height="390" rx="24" fill="url(#panelBg)" stroke="#d8e3eb"/>
+            <rect x="580" y="20" width="520" height="390" rx="24" fill="url(#panelBg)" stroke="#d8e3eb"/>
+
+            <!-- 左：無風防 -->
+            <g font-family="sans-serif">
+              <rect x="42" y="42" width="124" height="34" rx="17" fill="#e45757" opacity="0.12"/>
+              <text x="104" y="65" fill="#b73535" font-size="16" font-weight="800" text-anchor="middle">
+                無 Wind Shield
+              </text>
+
+              <!-- 船體及貨櫃 -->
+              <path d="M120 323H473L446 364H158Z" fill="#163149"/>
+              <rect x="302" y="167" width="112" height="154" rx="3" fill="#ca5848" stroke="#8f352d" stroke-width="3"/>
+              <rect x="416" y="198" width="80" height="123" rx="3" fill="#3476b9" stroke="#22527f" stroke-width="3"/>
+
+              <!-- 壓力區 -->
+              <ellipse cx="272" cy="244" rx="65" ry="100" fill="url(#pressureGrad)"/>
+
+              <!-- 入流 -->
+              <g
+                fill="none"
+                stroke="#087bbd"
+                stroke-width="4"
+                stroke-linecap="round"
+                marker-end="url(#blueArrow)"
+              >
+                <path d="M65 175H278"/>
+                <path d="M65 220H278"/>
+                <path d="M65 265H278"/>
+                <path d="M65 310H278"/>
+              </g>
+
+              <!-- 渦流 -->
+              <g fill="none" stroke="#cf2378" stroke-width="4" stroke-linecap="round">
+                <path d="M333 138C415 105 487 141 464 184C443 222 381 194 408 163"/>
+                <path d="M429 154C483 121 521 153 503 187"/>
+              </g>
+
+              <text x="267" y="133" fill="#b73535" font-size="15" font-weight="800" text-anchor="middle">
+                高壓停滯區
+              </text>
+              <text x="437" y="110" fill="#a8175f" font-size="15" font-weight="800" text-anchor="middle">
+                分離與渦流
+              </text>
+              <text x="280" y="390" fill="#5a7081" font-size="15" font-weight="700" text-anchor="middle">
+                氣流直接撞擊第一排垂直貨櫃牆
+              </text>
+            </g>
+
+            <!-- 右：有風防 -->
+            <g font-family="sans-serif">
+              <rect x="602" y="42" width="124" height="34" rx="17" fill="#14a88b" opacity="0.13"/>
+              <text x="664" y="65" fill="#117153" font-size="16" font-weight="800" text-anchor="middle">
+                有 Wind Shield
+              </text>
+
+              <!-- 船體及貨櫃 -->
+              <path d="M680 323H1033L1006 364H718Z" fill="#163149"/>
+              <rect x="862" y="167" width="112" height="154" rx="3" fill="#ca5848" stroke="#8f352d" stroke-width="3"/>
+              <rect x="976" y="198" width="42" height="123" rx="3" fill="#3476b9" stroke="#22527f" stroke-width="3"/>
+
+              <!-- 弧形導風罩 -->
+              <path
+                d="M755 322C758 257 772 198 817 154C833 138 850 127 868 119V322Z"
+                fill="#ffffff"
+                stroke="#87aebf"
+                stroke-width="4"
+              />
+
+              <!-- 平順氣流 -->
+              <g
+                fill="none"
+                stroke="#14a88b"
+                stroke-width="4"
+                stroke-linecap="round"
+                marker-end="url(#cyanArrow)"
+              >
+                <path d="M625 174C711 174 737 165 770 135C808 100 874 97 985 109"/>
+                <path d="M625 220C710 220 746 207 778 177C818 140 897 139 1012 153"/>
+                <path d="M625 266C712 266 752 250 784 221C824 184 905 182 1025 198"/>
+                <path d="M625 310C710 310 754 298 786 273C829 240 914 234 1032 252"/>
+              </g>
+
+              <text x="838" y="92" fill="#117153" font-size="15" font-weight="800" text-anchor="middle">
+                平順轉向
+              </text>
+              <text x="786" y="345" fill="#075e9b" font-size="15" font-weight="800" text-anchor="middle">
+                導風罩
+              </text>
+              <text x="840" y="390" fill="#5a7081" font-size="15" font-weight="700" text-anchor="middle">
+                氣流被導向貨櫃上方與船舶兩舷
+              </text>
+            </g>
+          </svg>
+
+          <figcaption class="diagram-caption">
+            原理上，Wind Shield 的重點不是「把風完全擋住」，
+            而是降低氣流突然撞擊及分離所造成的壓力阻力。
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 效益來源 -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">03 · Mechanisms of benefit</span>
+          <h2>Wind Shield 的效益如何形成？</h2>
+        </header>
+
+        <div class="three-col">
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 8C8 8 9 5 14 5C18 5 20 7 21 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 12C8 12 10 10 14 10C18 10 20 12 21 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 16C8 16 10 15 14 15C18 15 20 17 21 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="tag">空氣動力效益</span>
+            <h3>降低第一排貨櫃的直接撞風</h3>
+            <p>
+              將停滯高壓區由不規則的貨櫃端面，轉移到曲率較平順、
+              外形可控制的導風罩表面。
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 17C7 12 9 9 13 7C16 5 19 5 21 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M15 3L21 5L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="tag tag-green">流場改善</span>
+            <h3>減少氣流分離與大型渦流</h3>
+            <p>
+              氣流較平順地越過貨櫃區，有助於縮小強烈分離、
+              不穩定尾流及貨櫃間隙中的亂流。
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 19H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 16V9L12 5L17 9V16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M9 16L12 12L15 16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="tag tag-orange">結構附加效益</span>
+            <h3>提供船艏綠水防護</h3>
+            <p>
+              MOL 的開發資料指出，該構件亦預期可在惡劣海象中，
+              保護船艏甲板免受 Green Water 大量上甲板影響。
+              <a class="cite" href="#ref-6" aria-label="參考資料 6">6</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 驗證流程 -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">04 · Verification process</span>
+          <h2>造船工程如何確認 Wind Shield 有效？</h2>
+          <p class="section-intro">
+            單靠外觀看不出是否節能。專業設計通常需要經過
+            數值分析、模型試驗、結構與船級審查，以及實船營運驗證。
+          </p>
+        </header>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <div class="step-number">1</div>
+            <h3>CFD 數值分析</h3>
+            <p>
+              比較不同曲率、高度、寬度、貨櫃排列及風向角下的壓力與流場。
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">2</div>
+            <h3>風洞模型試驗</h3>
+            <p>
+              量測軸向風力、橫向力與偏航力矩，並觀察氣流分離及渦流。
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">3</div>
+            <h3>結構與船級審查</h3>
+            <p>
+              確認構件可承受風載、波浪衝擊、振動、疲勞及甲板操作要求。
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">4</div>
+            <h3>實船大數據驗證</h3>
+            <p>
+              排除海浪、船底污損、排水量、潮流及舵角等干擾後比較性能。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 研究證據 -->
+    <section class="section section-alt" id="evidence">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">05 · Published evidence</span>
+          <h2>公開研究與造船廠資料整理</h2>
+          <p class="section-intro">
+            現有證據包含風洞模型、實船監測、超大型貨櫃船設計 AIP，
+            以及實際新造船的造船廠技術說明。不同資料的百分比基準不同，
+            不可直接混為同一種節能率。
+          </p>
+        </header>
+
+        <div class="table-shell">
+          <p class="table-scroll-hint" id="tableScrollHint">
+            ← 可左右滑動查看完整資料 →
+          </p>
+          <div
+            class="table-scroll"
+            tabindex="0"
+            role="region"
+            aria-label="公開研究與造船廠資料比較表"
+            aria-describedby="tableScrollHint"
+          >
+            <table class="evidence-table">
+              <caption class="visually-hidden">
+                Wind Shield 公開研究、實船營運、設計認可與造船廠技術報告比較
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">證據類型</th>
+                  <th scope="col">對象與方法</th>
+                  <th scope="col">公開結果</th>
+                  <th scope="col">專業判讀</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="evidence-badge badge-model">風洞模型</span>
+                    <strong>2015 年日本船舶海洋工學會</strong>
+                  </td>
+                  <td>
+                    以 6,700 TEU 等級貨櫃船為對象，使用約 1/250 模型；
+                    風洞設定風速 15 m/s，測試 0～180°相對風向，
+                    每 10°量測一次。
+                  </td>
+                  <td class="result">
+                    相對風向約 20°時，船艏風防單獨使風壓阻力降低約 20%。
+                    結合船尾貨櫃排列及頂層隅切約可達 30%；
+                    再配合船側間隙風防可達約 50%。
+                    <a class="cite" href="#ref-1" aria-label="參考資料 1">1</a>
+                  </td>
+                  <td>
+                    20%、30%及50%指的是<strong>空氣風壓阻力</strong>，不是整艘船燃油消耗。研究估算於北太平洋、17&nbsp;kn 航速下，船艏風防約可帶來全年約 2%燃油改善；全套措施可超過 5%。
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="evidence-badge badge-service">實船營運</span>
+                    <strong>2016 論文／2017 MOL 公告</strong>
+                  </td>
+                  <td>
+                    6,700 TEU 的 MOL MARVEL 安裝馬蹄形 Wind Shield，
+                    使用每分鐘 Fleet Monitor 資料，
+                    並與無風防同型姊妹船比較。
+                  </td>
+                  <td class="result">
+                    航路平均改善估計約 2%，與風洞及風況統計所得約 1.6%
+                    的預估接近；MOL 官方並確認在約 17 kn 下，
+                    平均 CO₂改善約 2%。
+                    <a class="cite" href="#ref-2" aria-label="參考資料 2">2</a>
+                    <a class="cite" href="#ref-3" aria-label="參考資料 3">3</a>
+                  </td>
+                  <td>
+                    這是目前最具代表性的<strong>實船營運證據</strong>。
+                    分析中特別處理波浪、排水量、潮流、舵角、
+                    船底狀態及個船差異等干擾因素。
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="evidence-badge badge-design">AIP 設計</span>
+                    <strong>2019 MOL／Samsung Heavy Industries</strong>
+                  </td>
+                  <td>
+                    針對 Ultra-Large Container Carrier，
+                    共同開發最佳化 Bow Wind-Shield，
+                    並由當時的 DNV GL 核發
+                    AIP（Approval in Principle，原則性認可）。
+                  </td>
+                  <td class="result">
+                    官方資料預期，針對超大型貨櫃船最佳化後，
+                    CO₂減排效果約為 2～4%。
+                    <a class="cite" href="#ref-4" aria-label="參考資料 4">4</a>
+                  </td>
+                  <td>
+                    此數字屬於設計階段預估，不等同所有航線及海況下的
+                    實船保證值。AIP 表示概念與基本設計原則獲得認可，
+                    並非完整建造與營運性能保證。
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="evidence-badge badge-yard">造船廠技術報告</span>
+                    <strong>2024 JMU 24,000 TEU</strong>
+                  </td>
+                  <td>
+                    JMU 於 ONE INNOVATION 技術介紹中，
+                    說明船艏設有 Bow Wind Cover。
+                    該系列船由今治造船與 JMU 共同設計及建造。
+                  </td>
+                  <td class="result">
+                    造船廠明確說明其用途為降低風壓阻力，
+                    同時使船艏係泊甲板上方也能配置貨櫃，
+                    改善裝載性能。
+                    <a class="cite" href="#ref-5" aria-label="參考資料 5">5</a>
+                  </td>
+                  <td>
+                    這證明新世代大型導風罩不只追求節能，
+                    也可能是<strong>風阻、係泊甲板保護與貨櫃裝載配置</strong>
+                    的整合設計。該報告沒有公布風罩單獨的節能百分比。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="table-note">
+            注意：各研究的船型、貨櫃配置、風向分布、航線、航速與分析基準不同，
+            數字應在原研究條件內理解，不宜直接套用至其他船舶。
+          </p>
+        </div>
+
+        <div class="callout warning">
+          <div class="callout-icon" aria-hidden="true">!</div>
+          <div>
+            <h3>不可把整船 EEDI 改善全部歸因於 Wind Shield</h3>
+            <p>
+              JMU 同一份 24,000 TEU 技術資料亦說明該船整體 EEDI
+              較基準線降低超過 60%，但那是水下船型、主機、
+              推進器周圍節能裝置、運航速度最佳化等多項設計的綜合成果，
+              不能視為 Wind Shield 單獨貢獻。
+              <a class="cite" href="#ref-5" aria-label="參考資料 5">5</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 20% 與 2% 的差異 -->
+    <section class="section section-dark" id="interpretation">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">06 · Correct interpretation</span>
+          <h2>為什麼研究同時出現 20%與2%？</h2>
+          <p class="section-intro">
+            因為兩個百分比的分母不同：
+            <strong>20%通常是空氣風阻本身的降低率</strong>，
+            而<strong>2%通常是整船推進功率、燃油或 CO₂的改善率</strong>。
+          </p>
+        </header>
+
+        <div class="two-col">
+          <div class="math-box">
+            <h3>簡化關係式</h3>
+
+            <div class="math-equation">
+              ΔR<sub>T</sub> / R<sub>T</sub>
+              ≈
+              (R<sub>air</sub> / R<sub>T</sub>)
+              ×
+              (ΔR<sub>air</sub> / R<sub>air</sub>)
+            </div>
+
+            <p>
+              假設某一航行條件下，空氣阻力占整體阻力的 10%，
+              而 Wind Shield 將空氣阻力降低 20%，則：
+            </p>
+
+            <div class="math-equation">
+              10% × 20% = 2%
+            </div>
+
+            <p>
+              在維持相同航速且阻力變化不大的條件下，
+              整船功率與燃油改善量可能約為 2%。
+              這只是用來解釋比例關係的示例，並非所有船舶的固定阻力分配。
+            </p>
+          </div>
+
+          <div>
+            <div class="bar-demo" aria-label="阻力比例示意">
+              <div class="bar-row">
+                <div class="bar-label">原始整船總阻力</div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width:100%;"></div>
+                </div>
+                <div class="bar-value">100</div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">其中空氣阻力</div>
+                <div class="bar-track">
+                  <div class="bar-fill air"></div>
+                </div>
+                <div class="bar-value">10</div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">空氣阻力降低 20%</div>
+                <div class="bar-track">
+                  <div class="bar-fill saved"></div>
+                </div>
+                <div class="bar-value">−2</div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">改善後總阻力</div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width:98%;"></div>
+                </div>
+                <div class="bar-value">98</div>
+              </div>
+            </div>
+
+            <div
+              class="callout"
+              style="
+                margin-top:30px;
+                border-color:rgba(57,213,232,.23);
+                background:rgba(57,213,232,.07);
+              "
+            >
+              <div
+                class="callout-icon"
+                aria-hidden="true"
+                style="background:var(--teal-500);"
+              >
+                i
+              </div>
+              <div>
+                <h3>風越強，效益越容易被量測</h3>
+                <p>
+                  風阻與相對風速平方成正比。
+                  實船研究亦指出，在較高相對風速時，
+                  Wind Shield 的節能效果較容易從波浪及其他干擾中辨識。
+                  <a class="cite" href="#ref-2" aria-label="參考資料 2">2</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 附加效益 -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">07 · Additional value</span>
+          <h2>除節能之外，還有哪些實務效益？</h2>
+        </header>
+
+        <div class="three-col">
+          <article class="info-card">
+            <span class="tag tag-green">研究直接支持</span>
+            <h3>惡劣海象下的船艏防護</h3>
+            <p>
+              MOL 開發案的風防依波浪衝擊壓力要求設計，
+              並預期可降低 Green Water 對船艏甲板機械、
+              前部貨櫃及相關設備的直接影響。
+              <a class="cite" href="#ref-1" aria-label="參考資料 1">1</a>
+              <a class="cite" href="#ref-6" aria-label="參考資料 6">6</a>
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="tag tag-orange">造船廠實例</span>
+            <h3>改善貨櫃裝載配置</h3>
+            <p>
+              JMU 的 24,000 TEU 船型將 Bow Wind Cover
+              與船艏空間配置整合，使係泊甲板上方亦能配置貨櫃，
+              增加可利用裝載空間。
+              <a class="cite" href="#ref-5" aria-label="參考資料 5">5</a>
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="tag tag-magenta">營運意義</span>
+            <h3>改善強逆風下的航速維持能力</h3>
+            <p>
+              風洞研究指出，大型貨櫃船在強烈艏斜風下，
+              風壓阻力可能占無風平水總阻力的明顯比例；
+              降低此部分阻力，有助於燃油控制與航班時程維持。
+              <a class="cite" href="#ref-1" aria-label="參考資料 1">1</a>
+            </p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <div class="callout-icon" aria-hidden="true">※</div>
+          <div>
+            <h3>可能降低前排貨櫃局部風壓，但不能直接免除繫固計算</h3>
+            <p>
+              從流場機理判斷，導風罩會遮蔽最前排貨櫃並改變局部壓力分布；
+              然而貨櫃、Twistlock、Lashing Rod 及角柱受力仍須依實際裝載狀態、
+              設計風載及最新船級規範正式計算，不可僅因裝有 Wind Shield
+              就任意折減繫固設計載荷。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 設計限制 -->
+    <section class="section section-dark" id="constraints">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">08 · Design constraints</span>
+          <h2>Wind Shield 並不是越大越好</h2>
+          <p class="section-intro">
+            導風罩尺寸必須在氣動效益、結構重量、波浪衝擊、
+            操縱安全、視線、裝卸與係泊操作之間取得平衡。
+          </p>
+        </header>
+
+        <div class="constraint-grid">
+          <article class="constraint-card">
+            <h3>結構強度與波浪衝擊</h3>
+            <p>
+              船艏是上浪與衝擊壓力較敏感的區域。
+              導風罩需評估板厚、扶強材、支撐結構、局部屈曲、
+              疲勞及 Green Water 衝擊載荷。
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>重量與重心</h3>
+            <p>
+              大型高位結構會增加空船重量並影響垂向重心。
+              2015 年研究比較封閉圓頂式與馬蹄形開放式設計，
+              發現兩者風阻差異不大，因此可利用開放式結構降低重量。
+              <a class="cite" href="#ref-1" aria-label="參考資料 1">1</a>
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>側風力與偏航力矩</h3>
+            <p>
+              該風洞研究的特定構型未顯示橫向力及偏航力矩發生大幅改變；
+              但這不代表所有船型皆相同。新設計仍須測試多個風向角，
+              特別是靠離港與低速操縱條件。
+              <a class="cite" href="#ref-1" aria-label="參考資料 1">1</a>
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>貨櫃配置敏感性</h3>
+            <p>
+              導風罩通常依典型貨櫃堆高與排列最佳化。
+              當實際航次出現缺箱、前低後高、左右不對稱或特殊貨櫃時，
+              氣動效益可能與設計狀態不同。
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>船橋視線與設備配置</h3>
+            <p>
+              設計必須兼顧駕駛台視線、航行燈、雷達及感測器視域，
+              並避免妨礙錨機、絞纜機、導纜孔、通道與緊急操作空間。
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>生命週期維護</h3>
+            <p>
+              需考慮腐蝕防護、排水、檢查通道、焊縫疲勞、
+              風致振動、噪音及塗裝維修。節油收益應與建造及維護成本共同評估。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 容易誤解 -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">09 · Common misunderstandings</span>
+          <h2>常見誤解與正確判讀</h2>
+        </header>
+
+        <div class="three-col">
+          <article class="info-card">
+            <span class="tag">誤解一</span>
+            <h3>「迎風面積增加，風阻一定增加」</h3>
+            <p>
+              不完整。阻力同時受投影面積與阻力係數影響。
+              若流線化使阻力係數下降幅度大於面積增加幅度，
+              總風阻仍可下降。
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="tag">誤解二</span>
+            <h3>「風阻降低20%，燃油就降低20%」</h3>
+            <p>
+              錯誤。20%通常只針對空氣阻力；
+              主機仍需克服水下摩擦阻力、興波阻力、
+              附體阻力及波浪附加阻力。
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="tag">誤解三</span>
+            <h3>「AIP 等於實船節能保證」</h3>
+            <p>
+              錯誤。AIP 是原則性認可，
+              表示概念設計在特定審查範圍內具可行性，
+              並不取代完整船級審查或實船性能驗證。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 術語 -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">10 · Technical glossary</span>
+          <h2>重要術語</h2>
+        </header>
+
+        <dl class="glossary">
+          <div>
+            <dt>AWA｜Apparent Wind Angle</dt>
+            <dd>
+              視風角／相對風向角。通常以船艏方向為基準，
+              表示船上感受到的來風方向。
+            </dd>
+          </div>
+
+          <div>
+            <dt>AWS｜Apparent Wind Speed</dt>
+            <dd>
+              視風速／相對風速，由自然風與船速向量合成，
+              是風壓計算的重要輸入。
+            </dd>
+          </div>
+
+          <div>
+            <dt>CFD｜Computational Fluid Dynamics</dt>
+            <dd>
+              計算流體力學，利用數值方法分析船體周圍的速度、
+              壓力、分離與渦流。
+            </dd>
+          </div>
+
+          <div>
+            <dt>C<sub>X</sub>／C<sub>FX</sub></dt>
+            <dd>
+              船舶前進方向的無因次風力或風阻係數；
+              不同研究的符號與正負方向定義可能不同。
+            </dd>
+          </div>
+
+          <div>
+            <dt>AIP｜Approval in Principle</dt>
+            <dd>
+              原則性認可。船級協會對新概念或基本設計進行初步技術審查，
+              不等於完整船級核准。
+            </dd>
+          </div>
+
+          <div>
+            <dt>Green Water</dt>
+            <dd>
+              大量實體海水越過船艏或舷牆進入露天甲板，
+              可能對設備、結構及貨物造成衝擊。
+            </dd>
+          </div>
+
+          <div>
+            <dt>EEDI｜Energy Efficiency Design Index</dt>
+            <dd>
+              船舶能效設計指數，用於衡量新船設計階段的理論 CO₂運輸效率。
+            </dd>
+          </div>
+
+          <div>
+            <dt>ULCV｜Ultra-Large Container Vessel</dt>
+            <dd>
+              超大型貨櫃船。實務上並非只有單一全球統一的 TEU 分界，
+              通常泛指現代最大級遠洋貨櫃船。
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 結論 -->
+    <section class="section">
+      <div class="wrap">
+        <div class="conclusion-panel">
+          <span class="kicker" style="color:var(--cyan-300);">
+            Engineering conclusion
+          </span>
+
+          <h2>
+            Wind Shield 不是額外增加的「風牆」，
+            而是貨櫃船水面以上外形的空氣動力前緣。
+          </h2>
+
+          <p>
+            目前公開資料最合理的綜合判讀是：
+            在特定風向下，船艏 Wind Shield 可使空氣風壓阻力降低約 20%；
+            對整艘船而言，已有 6,700 TEU 實船於約 17 kn 下確認
+            平均 CO₂改善約 2%。針對超大型貨櫃船最佳化的設計，
+            官方預估約為 2～4%，但仍須依航線風況、貨櫃配置及實船條件驗證。
+          </p>
+
+          <div class="conclusion-points">
+            <div class="conclusion-point">
+              <b>≈20%</b>
+              <span>特定風洞條件下的空氣風壓阻力降低率</span>
+            </div>
+
+            <div class="conclusion-point">
+              <b>≈2%</b>
+              <span>MOL MARVEL 實船平均 CO₂改善結果</span>
+            </div>
+
+            <div class="conclusion-point">
+              <b>2～4%</b>
+              <span>超大型貨櫃船最佳化設計的官方預估值</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 參考資料 -->
+    <section class="section section-alt" id="references">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">References</span>
+          <h2>研究報告與官方資料</h2>
+          <p class="section-intro">
+            以下以學術論文、船公司官方發布及造船廠技術報告為主，
+            方便進一步核對原始條件與研究方法。
+          </p>
+        </header>
+
+        <ol class="sources-list">
+          <li class="source-item" id="ref-1">
+            <strong>
+              Development of Energy-saving Windshield for Large Container Ship
+              ／大型コンテナ船の省エネ船首風防の開発
+            </strong>
+            <p>
+              日本船舶海洋工學會講演會論文集，第21號，2015，
+              pp.159–162。包含風洞模型、風向角比較、
+              風阻降低率與北太平洋航線節能估算。
+            </p>
+            <a
+              href="https://doi.org/10.14856/conf.21.0_159"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              開啟 J-STAGE／DOI
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-2">
+            <strong>
+              Big Data Analysis Methods for Proving Energy-Saving Effects
+              of Windshield on a Container Ship
+              ／コンテナ船船首風防の実海域省エネ効果解析
+            </strong>
+            <p>
+              日本船舶海洋工學會講演會論文集，第23號，2016，
+              pp.433–436。利用 MOL MARVEL 與姊妹船的每分鐘營運資料，
+              分析船艏風防的實海域效益。
+            </p>
+            <a
+              href="https://doi.org/10.14856/conf.23.0_433"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              開啟 J-STAGE／DOI
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-3">
+            <strong>
+              MOL Confirms 2% in Average CO₂ Reduction
+              with Windshield Installed on Bow of Containership
+            </strong>
+            <p>
+              Mitsui O.S.K. Lines 官方新聞稿，2017年5月30日。
+              說明實船於約17 kn航行時，平均 CO₂排放改善約2%。
+            </p>
+            <a
+              href="https://www.mol.co.jp/en/pr/2017/17034.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              開啟 MOL 官方資料
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-4">
+            <strong>
+              MOL Earns AIP for Design of Bow Wind-Shield,
+              Ultra-large Containership
+            </strong>
+            <p>
+              MOL 與 Samsung Heavy Industries 共同開發，
+              2019年取得 DNV GL AIP；官方預估超大型貨櫃船
+              CO₂減排約2～4%。
+            </p>
+            <a
+              href="https://www.mol.co.jp/en/pr/2019/19075.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              開啟 MOL 官方資料
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-5">
+            <strong>
+              JMU Technical Review No.15：
+              24,000 TEU Container Ship — ONE INNOVATION
+            </strong>
+            <p>
+              Japan Marine United，2024年2月。
+              說明 Bow Wind Cover 用於降低風壓阻力，
+              並使船艏係泊甲板上方得以配置貨櫃。
+            </p>
+            <a
+              href="https://www.jmuc.co.jp/rd/technical-review/assets/VOL15_c1_24000teu_containership.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              開啟 JMU 技術報告 PDF
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-6">
+            <strong>
+              New Energy-saving Windshield Installed on
+              Containership MOL MARVEL for Demonstration Test
+            </strong>
+            <p>
+              MOL 官方新聞稿，2015年9月3日。
+              說明馬蹄形設計、合作研究單位、結構強度要求、
+              年平均節能預估及 Green Water 防護目的。
+            </p>
+            <a
+              href="https://www.mol.co.jp/en/pr/2015/15053.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              開啟 MOL 官方資料
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.html"
+      data-share-title="船舶防風罩為何做得更大風阻反而更低？｜Reay's Note"
+      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船舶防風罩為何做得更大風阻反而更低？｜Reay's Note&#10;https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.html"
+      data-share-copy="複製連結"
+      data-share-copied="已複製"
+      data-toast-copied="連結已複製到剪貼簿"
+    >
+      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>貨櫃船 Wind Shield 技術解析｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note · 資料整理日期：2026-07-15</span>
+      <p class="disclaimer small">
+        本頁為學習、內訓與初步技術理解用途的視覺化整理，不代表船廠、船公司、船級協會、IMO 或其他機構之正式意見；
+        <span class="disclaimer-tail">不能取代船廠正式設計計算、CFD／風洞試驗、船級協會審查、專業工程判斷或營運安全決策。實際設計與法規適用，應以最新 IMO 公約、主管機關公告及相關船級規範為準。</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const progress = document.getElementById("scrollProgress");
+      const mobileNav = document.querySelector(".mobile-nav");
+      const navLinks = Array.from(
+        document.querySelectorAll(".nav-links a, .mobile-nav-panel a")
+      );
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (mobileNav) {
+            mobileNav.open = false;
+          }
+        });
+      });
+
+      const updateScrollUI = () => {
+        const scrollTop =
+          window.scrollY ||
+          document.documentElement.scrollTop ||
+          0;
+
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+
+        const percentage =
+          scrollHeight > 0
+            ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100))
+            : 0;
+
+        if (progress) {
+          progress.style.width = `${percentage}%`;
+        }
+      };
+
+      window.addEventListener("scroll", updateScrollUI, { passive: true });
+      window.addEventListener("resize", updateScrollUI);
+      updateScrollUI();
+
+      if ("IntersectionObserver" in window && navLinks.length > 0) {
+        const sectionMap = new Map();
+
+        navLinks.forEach((link) => {
+          const selector = link.getAttribute("href");
+
+          if (selector && selector.startsWith("#")) {
+            const section = document.querySelector(selector);
+
+            if (section) {
+              sectionMap.set(section, link);
+            }
+          }
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const link = sectionMap.get(entry.target);
+
+              if (!link) {
+                return;
+              }
+
+              if (entry.isIntersecting) {
+                navLinks.forEach((item) => item.classList.remove("active"));
+                link.classList.add("active");
+              }
+            });
+          },
+          {
+            root: null,
+            rootMargin: "-22% 0px -62% 0px",
+            threshold: 0
+          }
+        );
+
+        sectionMap.forEach((link, section) => {
+          observer.observe(section);
+        });
+      }
+    })();
+  </script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const renderKatexTargets = () => {
+        if (typeof katex === "undefined") return;
+
+        document.querySelectorAll("[data-katex]").forEach((el) => {
+          const tex = el.getAttribute("data-katex");
+          if (!tex) return;
+
+          katex.render(tex, el, {
+            displayMode: true,
+            throwOnError: false,
+            strict: "ignore"
+          });
+        });
+      };
+
+      if (typeof katex !== "undefined") {
+        renderKatexTargets();
+      } else {
+        const katexScript = document.querySelector('script[src*="katex.min.js"]');
+        if (katexScript) {
+          katexScript.addEventListener("load", renderKatexTargets);
+        }
+      }
+    });
+  </script>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+</body>
+</html>

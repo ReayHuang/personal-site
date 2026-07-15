@@ -29,6 +29,13 @@
       "zh": "research/index.html"
     },
     {
+      "slug": "container-ship-wind-shield-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/container-ship-wind-shield-notes.en.html",
+      "zh": "notes/maritime/container-ship-wind-shield-notes.html"
+    },
+    {
       "slug": "onboard-certificates",
       "type": "article",
       "category": "notes",

@@ -1,0 +1,3703 @@
+<!DOCTYPE html>
+<html lang="en" data-back-to-top-label="Back to top">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00A99D">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="Wind Shield, Bow Wind Shield, Bow Wind Cover, container ship, aerodynamic drag, apparent wind, wind tunnel testing, green water, MOL, JMU">
+  <meta name="description" content="An engineering review of bow Wind Shields (Bow Wind Shields / Bow Wind Covers) for large container ships, covering aerodynamic drag, wind tunnel testing, full-scale operational data, energy-saving performance, design constraints, and practical implications.">
+  <meta property="og:title" content="Container-Ship Wind Shields: How Can a Larger Bow Shield Reduce Drag? | Reay's Note">
+  <meta property="og:description" content="A complete engineering review of container-ship bow Wind Shields, from wind tunnel testing and full-scale validation to 24,000 TEU newbuilds.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.en.html">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.en.html">
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/container-ship-wind-shield/wind-shield-link-preview.en.png">
+  <meta property="og:image:alt" content="Container-Ship Wind Shields: How Can a Larger Shield Reduce Drag? | Reay Huang Maritime Notes">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="720">
+  <meta property="og:image:height" content="405">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Container-Ship Wind Shields: How Can a Larger Bow Shield Reduce Drag? | Reay's Note">
+  <meta name="twitter:description" content="A complete engineering review of container-ship bow Wind Shields, from wind tunnel testing and full-scale validation to 24,000 TEU newbuilds.">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/container-ship-wind-shield/wind-shield-link-preview.en.png">
+  <meta name="twitter:image:alt" content="Container-Ship Wind Shields: How Can a Larger Shield Reduce Drag? | Reay Huang Maritime Notes">
+  <link rel="alternate" hreflang="en" href="container-ship-wind-shield-notes.en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="container-ship-wind-shield-notes.html">
+  <link rel="alternate" hreflang="x-default" href="container-ship-wind-shield-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
+  <title>Container-Ship Wind Shields: How Can a Larger Bow Shield Reduce Drag? | Reay's Note</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Container-Ship Wind Shields: How Can a Larger Bow Shield Reduce Drag?",
+    "alternativeHeadline": "An engineering review from wind tunnel testing and full-scale operational data to 24,000 TEU newbuilds",
+    "description": "An engineering review of the aerodynamics, published evidence, energy-saving performance, additional functions, and design constraints of bow Wind Shields for large container ships.",
+    "inLanguage": "en",
+    "datePublished": "2026-07-15",
+    "dateModified": "2026-07-15",
+    "author": {
+      "@type": "Person",
+      "name": "Reay Huang"
+    },
+    "citation": [
+      "https://doi.org/10.14856/conf.21.0_159",
+      "https://doi.org/10.14856/conf.23.0_433",
+      "https://www.mol.co.jp/en/pr/2017/17034.html",
+      "https://www.mol.co.jp/en/pr/2019/19075.html",
+      "https://www.jmuc.co.jp/rd/technical-review/assets/VOL15_c1_24000teu_containership.pdf"
+    ]
+  }
+  </script>
+  <style>
+    /* Section styles */
+    :root {
+      --navy-950: #04111f;
+      --navy-900: #071b2e;
+      --navy-850: #09243b;
+      --navy-800: #0c2e49;
+      --blue-700: #075e9b;
+      --blue-600: #087bbd;
+      --blue-500: #0d9ad1;
+      --cyan-400: #39d5e8;
+      --cyan-300: #77e8f3;
+      --teal-500: #14a88b;
+      --green-500: #21a875;
+      --magenta-500: #cf2378;
+      --orange-500: #f4873b;
+      --red-500: #e45757;
+
+      --ink: #10263a;
+      --ink-soft: #31495d;
+      --muted: #5a7081;
+      --paper: #f4f8fb;
+      --paper-blue: #edf5fa;
+      --white: #ffffff;
+      --line: #d8e3eb;
+      --line-dark: rgba(255, 255, 255, 0.14);
+
+      --shadow-sm: 0 8px 24px rgba(6, 31, 51, 0.08);
+      --shadow-md: 0 18px 50px rgba(6, 31, 51, 0.12);
+      --shadow-lg: 0 28px 80px rgba(3, 18, 31, 0.22);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+
+      --content-width: 1180px;
+      --reading-width: 820px;
+    }
+
+    /* Section styles */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 12%, rgba(57, 213, 232, 0.08), transparent 28rem),
+        linear-gradient(180deg, #f8fbfd 0%, var(--paper) 100%);
+      font-family:
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        "Heiti TC",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--blue-700);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--magenta-500);
+    }
+
+    strong {
+      color: var(--navy-900);
+    }
+
+    code {
+      padding: 0.1em 0.35em;
+      border-radius: 6px;
+      background: #eaf1f5;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    .wrap {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .reading-wrap {
+      width: min(var(--reading-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 9999;
+      top: 12px;
+      left: 12px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      color: var(--white);
+      background: var(--magenta-500);
+      transform: translateY(-160%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .scroll-progress {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        var(--cyan-400),
+        var(--blue-500),
+        var(--magenta-500)
+      );
+      box-shadow: 0 0 16px rgba(57, 213, 232, 0.6);
+    }
+
+    /* Section styles */
+    .article-chapter-nav {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      border-bottom: 1px solid rgba(216, 227, 235, 0.8);
+      background: rgba(248, 251, 253, 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy-900);
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--white);
+      background:
+        linear-gradient(145deg, var(--blue-600), var(--cyan-400));
+      box-shadow: 0 8px 18px rgba(8, 123, 189, 0.25);
+    }
+
+    .brand-mark svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .brand-title {
+      display: block;
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 9px 12px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 800;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.09);
+    }
+
+    .mobile-nav {
+      position: relative;
+      display: none;
+    }
+
+    .mobile-nav summary {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--navy-900);
+      background: var(--white);
+      cursor: pointer;
+      list-style: none;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mobile-nav summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-nav summary::before {
+      content: "☰";
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .mobile-nav[open] summary::before {
+      content: "×";
+      font-size: 1.65rem;
+    }
+
+    .mobile-nav summary:focus-visible,
+    .table-scroll:focus-visible,
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--cyan-400);
+      outline-offset: 3px;
+    }
+
+    .mobile-nav-panel {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: min(78vw, 300px);
+      margin: 0;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-md);
+      list-style: none;
+    }
+
+    .mobile-nav-panel a {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      padding: 10px 13px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-weight: 850;
+    }
+
+    .mobile-nav-panel a:hover,
+    .mobile-nav-panel a.active {
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.09);
+    }
+
+    /* =========================================================
+       Hero
+       ========================================================= */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 82% 15%, rgba(57, 213, 232, 0.22), transparent 26rem),
+        radial-gradient(circle at 12% 82%, rgba(207, 35, 120, 0.13), transparent 25rem),
+        linear-gradient(135deg, var(--navy-950), var(--navy-800));
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.13;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 86%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      min-height: 680px;
+      padding-block: 72px 84px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(460px, 0.98fr);
+      align-items: center;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      padding: 8px 13px;
+      border: 1px solid rgba(119, 232, 243, 0.26);
+      border-radius: 999px;
+      color: var(--cyan-300);
+      background: rgba(57, 213, 232, 0.08);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan-400);
+      box-shadow: 0 0 14px rgba(57, 213, 232, 0.9);
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 1.11;
+      letter-spacing: -0.04em;
+    }
+
+    .hero h1 span {
+      color: var(--cyan-300);
+    }
+
+    .hero-lead {
+      max-width: 700px;
+      margin: 26px 0 0;
+      color: rgba(239, 249, 255, 0.84);
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      line-height: 1.85;
+    }
+
+    .hero-lead strong {
+      color: var(--white);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 18px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      text-decoration: none;
+      font-weight: 900;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--navy-950);
+      background: linear-gradient(135deg, var(--cyan-300), var(--cyan-400));
+      box-shadow: 0 12px 30px rgba(57, 213, 232, 0.22);
+    }
+
+    .button-primary:hover {
+      color: var(--navy-950);
+      box-shadow: 0 15px 36px rgba(57, 213, 232, 0.32);
+    }
+
+    .button-secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .button-secondary:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-top: 30px;
+      color: rgba(226, 242, 250, 0.68);
+      font-size: 0.84rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-meta span::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan-400);
+    }
+
+    .hero-visual {
+      position: relative;
+      margin: 0;
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-visual-stack {
+      display: grid;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .hero-photo {
+      position: relative;
+      margin: 0;
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+
+    .hero-photo figcaption,
+    .hero-visual figcaption {
+      padding: 12px 8px 2px;
+      color: rgba(227, 243, 250, 0.65);
+      font-size: 0.76rem;
+      text-align: center;
+    }
+
+    .hero-photo figcaption a {
+      color: var(--cyan-300);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .hero-photo figcaption a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      border-radius: 22px;
+    }
+
+    /* Section styles */
+    .metric-band {
+      position: relative;
+      z-index: 5;
+      margin-top: -42px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .metric-card {
+      min-height: 208px;
+      padding: 25px;
+      border: 1px solid rgba(216, 227, 235, 0.9);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-md);
+    }
+
+    .metric-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.09);
+      font-size: 0.75rem;
+      font-weight: 900;
+    }
+
+    .metric-number {
+      display: block;
+      margin-top: 16px;
+      color: var(--navy-900);
+      font-size: clamp(2.25rem, 4vw, 3.35rem);
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .metric-number small {
+      font-size: 0.42em;
+      letter-spacing: 0;
+    }
+
+    .metric-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .metric-card:nth-child(1) {
+      border-top: 4px solid var(--cyan-400);
+    }
+
+    .metric-card:nth-child(2) {
+      border-top: 4px solid var(--green-500);
+    }
+
+    .metric-card:nth-child(3) {
+      border-top: 4px solid var(--magenta-500);
+    }
+
+    .metric-card:nth-child(4) {
+      border-top: 4px solid var(--orange-500);
+    }
+
+    /* Section styles */
+    .section {
+      padding-block: 56px;
+    }
+
+    .section-compact {
+      padding-block: 40px;
+    }
+
+    .section-alt {
+      background:
+        linear-gradient(180deg, rgba(237, 245, 250, 0.8), rgba(244, 248, 251, 0.35));
+      border-block: 1px solid rgba(216, 227, 235, 0.75);
+    }
+
+    .section-dark {
+      color: rgba(239, 248, 252, 0.86);
+      background:
+        radial-gradient(circle at 90% 5%, rgba(57, 213, 232, 0.12), transparent 28rem),
+        linear-gradient(145deg, var(--navy-950), var(--navy-850));
+    }
+
+    .section-dark h2,
+    .section-dark h3,
+    .section-dark strong {
+      color: var(--white);
+    }
+
+    .section-dark .section-intro,
+    .section-dark p {
+      color: rgba(225, 240, 247, 0.76);
+    }
+
+    .section-head {
+      max-width: 830px;
+      margin-bottom: 28px;
+    }
+
+    .section-head.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--blue-600);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-dark .kicker {
+      color: var(--cyan-300);
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy-900);
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: var(--navy-900);
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .section-intro {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .example-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 0 0 28px;
+    }
+
+    .example-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .example-gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      object-position: center top;
+      background: #e8eef3;
+    }
+
+    .example-gallery figure:nth-child(2) img {
+      object-position: center bottom;
+    }
+
+    .example-gallery figure:nth-child(3) img {
+      object-fit: contain;
+      object-position: center;
+      background: #f4f8fb;
+    }
+
+    .example-gallery figcaption {
+      padding: 12px 14px 14px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.55;
+      border-top: 1px solid var(--line);
+    }
+
+    .example-gallery figcaption a {
+      color: var(--blue-700);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .example-gallery figcaption a:hover {
+      color: var(--magenta-500);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 860px) {
+      .example-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .example-gallery img {
+        height: 260px;
+      }
+    }
+
+    .prose p {
+      margin: 0 0 1.25em;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lead-quote {
+      margin: 0;
+      padding: 28px 30px;
+      border-left: 5px solid var(--cyan-400);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      color: var(--navy-900);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 850;
+      line-height: 1.75;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr);
+      gap: 42px;
+      align-items: start;
+    }
+
+    .two-col > *,
+    .three-col > *,
+    .constraint-grid > *,
+    .conclusion-points > * {
+      min-width: 0;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .cite {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.55em;
+      height: 1.55em;
+      margin-left: 0.18em;
+      border-radius: 999px;
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.1);
+      text-decoration: none;
+      font-size: 0.68em;
+      font-weight: 950;
+      vertical-align: super;
+    }
+
+    .cite:hover {
+      color: var(--white);
+      background: var(--magenta-500);
+    }
+
+    /* Section styles */
+    .formula-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .formula-top {
+      padding: 24px 28px;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, var(--blue-700), var(--blue-500));
+    }
+
+    .formula-top small {
+      display: block;
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .equation {
+      overflow-x: auto;
+      padding: 8px 2px 2px;
+      line-height: 1.2;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .equation .katex {
+      color: #fff;
+      font-size: clamp(1.35rem, 3.2vw, 2.05rem);
+    }
+
+    .equation .katex-display {
+      margin: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .formula-list dt {
+      color: var(--blue-700);
+      font-family: "KaTeX_Main", "STIX Two Text", "Cambria Math", "Times New Roman", serif;
+      font-size: 1.12rem;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .formula-body {
+      padding: 26px 28px;
+    }
+
+    .formula-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .formula-list div {
+      display: grid;
+      grid-template-columns: 60px minmax(0, 1fr);
+      gap: 12px;
+      align-items: baseline;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .formula-list div:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .formula-list dd {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .term-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+    }
+
+    .term-card b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue-700);
+    }
+
+    .term-card span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* Section styles */
+    .diagram-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .diagram-card svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .diagram-caption {
+      padding: 18px 24px 22px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    /* Section styles */
+    .info-card {
+      height: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      color: var(--white);
+      background: linear-gradient(145deg, var(--blue-600), var(--cyan-400));
+    }
+
+    .info-card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 27px;
+      margin-bottom: 13px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: var(--blue-700);
+      background: rgba(8, 123, 189, 0.09);
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .tag-green {
+      color: #117153;
+      background: rgba(33, 168, 117, 0.1);
+    }
+
+    .tag-orange {
+      color: #a3541c;
+      background: rgba(244, 135, 59, 0.12);
+    }
+
+    .tag-magenta {
+      color: #a8175f;
+      background: rgba(207, 35, 120, 0.1);
+    }
+
+    /* Section styles */
+    .process-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .process-grid::before {
+      content: "";
+      position: absolute;
+      top: 37px;
+      left: 11%;
+      right: 11%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan-400), var(--magenta-500));
+      opacity: 0.38;
+    }
+
+    .process-step {
+      position: relative;
+      z-index: 1;
+      padding: 0 14px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border: 7px solid var(--paper);
+      border-radius: 50%;
+      color: var(--white);
+      background: linear-gradient(145deg, var(--blue-700), var(--cyan-400));
+      box-shadow: 0 10px 25px rgba(8, 123, 189, 0.22);
+      font-size: 1.25rem;
+      font-weight: 950;
+    }
+
+    .process-step h3 {
+      font-size: 1.05rem;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.65;
+    }
+
+    /* Section styles */
+    .table-shell {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-scroll-hint {
+      display: none;
+      margin: 0;
+      padding: 11px 16px;
+      color: var(--blue-700);
+      border-bottom: 1px solid var(--line);
+      background: #f4f9fc;
+      font-size: 0.82rem;
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .evidence-table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .evidence-table th,
+    .evidence-table td {
+      padding: 20px 18px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .evidence-table th {
+      color: var(--white);
+      background: var(--navy-850);
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+    }
+
+    .evidence-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .evidence-table tbody tr:hover {
+      background: #f7fbfd;
+    }
+
+    .evidence-table td {
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .evidence-table td:first-child strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .evidence-table .result {
+      color: var(--navy-900);
+      font-weight: 800;
+    }
+
+    .evidence-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .badge-model {
+      color: #096f83;
+      background: rgba(57, 213, 232, 0.16);
+    }
+
+    .badge-service {
+      color: #157052;
+      background: rgba(33, 168, 117, 0.13);
+    }
+
+    .badge-design {
+      color: #a8175f;
+      background: rgba(207, 35, 120, 0.11);
+    }
+
+    .badge-yard {
+      color: #9b511d;
+      background: rgba(244, 135, 59, 0.14);
+    }
+
+    .table-note {
+      margin: 0;
+      padding: 17px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #f8fbfd;
+      font-size: 0.82rem;
+    }
+
+    /* =========================================================
+       Interpreting the data
+       ========================================================= */
+    .math-box {
+      padding: 30px;
+      border: 1px solid rgba(57, 213, 232, 0.25);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .math-equation {
+      overflow-x: auto;
+      margin: 16px 0;
+      padding: 19px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      color: var(--cyan-300);
+      background: rgba(3, 18, 31, 0.42);
+      font-family: "STIX Two Text", "Cambria Math", "Times New Roman", serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-style: italic;
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .bar-demo {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr) 72px;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .bar-label {
+      color: rgba(239, 248, 252, 0.78);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .bar-track {
+      position: relative;
+      overflow: hidden;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--cyan-400), var(--blue-500));
+    }
+
+    .bar-fill.air {
+      width: 10%;
+      min-width: 34px;
+      background: linear-gradient(90deg, var(--orange-500), var(--magenta-500));
+    }
+
+    .bar-fill.saved {
+      width: 2%;
+      min-width: 12px;
+      background: var(--green-500);
+    }
+
+    .bar-value {
+      color: var(--white);
+      font-size: 0.84rem;
+      font-weight: 900;
+      text-align: right;
+    }
+
+    /* Section styles */
+    .callout {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+      padding: 24px;
+      border: 1px solid rgba(8, 123, 189, 0.2);
+      border-radius: var(--radius-md);
+      background: rgba(8, 123, 189, 0.06);
+    }
+
+    .callout.warning {
+      border-color: rgba(244, 135, 59, 0.26);
+      background: rgba(244, 135, 59, 0.08);
+    }
+
+    .callout-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--white);
+      background: var(--blue-600);
+    }
+
+    .callout.warning .callout-icon {
+      background: var(--orange-500);
+    }
+
+    .callout h3 {
+      margin-bottom: 7px;
+      font-size: 1rem;
+    }
+
+    .callout p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* Section styles */
+    .constraint-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .constraint-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px 26px 26px 31px;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .constraint-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      background: linear-gradient(var(--cyan-400), var(--magenta-500));
+    }
+
+    .constraint-card p {
+      margin: 0;
+      font-size: 0.88rem;
+    }
+
+    /* Section styles */
+    .glossary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 0;
+    }
+
+    .glossary > div {
+      padding: 21px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+    }
+
+    .glossary dt {
+      color: var(--blue-700);
+      font-weight: 950;
+    }
+
+    .glossary dd {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* Section styles */
+    .conclusion-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 46px;
+      border-radius: var(--radius-lg);
+      color: var(--white);
+      background:
+        radial-gradient(circle at 88% 14%, rgba(57, 213, 232, 0.24), transparent 18rem),
+        linear-gradient(135deg, var(--blue-700), var(--navy-900));
+      box-shadow: var(--shadow-lg);
+    }
+
+    .conclusion-panel::after {
+      content: "CᴅA";
+      position: absolute;
+      right: 24px;
+      bottom: -46px;
+      color: rgba(255,255,255,0.055);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 10rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .conclusion-panel h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      color: var(--white);
+    }
+
+    .conclusion-panel p {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
+      margin: 22px 0 0;
+      color: rgba(240, 249, 253, 0.84);
+      font-size: 1.04rem;
+    }
+
+    .conclusion-points {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .conclusion-point {
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .conclusion-point b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--cyan-300);
+      font-size: 1.08rem;
+    }
+
+    .conclusion-point span {
+      color: rgba(239, 248, 252, 0.75);
+      font-size: 0.82rem;
+    }
+
+    /* =========================================================
+       References
+       ========================================================= */
+    .sources-list {
+      display: grid;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: source;
+    }
+
+    .source-item {
+      position: relative;
+      padding: 23px 24px 23px 72px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      counter-increment: source;
+    }
+
+    .source-item::before {
+      content: counter(source);
+      position: absolute;
+      top: 23px;
+      left: 23px;
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--blue-600);
+      font-size: 0.78rem;
+      font-weight: 950;
+    }
+
+    .source-item strong {
+      display: block;
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
+
+    .source-item p {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+
+    .source-item a {
+      font-size: 0.82rem;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+    /* Section styles */
+    @media (max-width: 1040px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy {
+        max-width: 830px;
+      }
+
+      .hero-visual,
+      .hero-visual-stack {
+        width: min(760px, 100%);
+        margin-inline: auto;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .three-col {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 35px;
+      }
+
+      .process-grid::before {
+        display: none;
+      }
+
+      .conclusion-points {
+        grid-template-columns: 1fr;
+      }
+
+      .table-scroll-hint {
+        display: block;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .constraint-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap,
+      .reading-wrap {
+        width: min(100% - 26px, var(--content-width));
+      }
+
+      .nav {
+        min-height: 66px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .hero-grid {
+        padding-block: 56px 74px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.05rem, 9.5vw, 2.8rem);
+        line-height: 1.14;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .metric-band {
+        margin-top: -30px;
+      }
+
+      .metric-grid,
+      .term-grid,
+      .glossary,
+      .process-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .metric-card {
+        min-height: auto;
+      }
+
+      .section {
+        padding-block: 40px;
+      }
+
+      .section-compact {
+        padding-block: 32px;
+      }
+
+      .bar-row {
+        grid-template-columns: 1fr 58px;
+      }
+
+      .bar-label {
+        grid-column: 1 / -1;
+      }
+
+      .conclusion-panel {
+        padding: 32px 24px;
+      }
+
+      .lead-quote,
+      .formula-top,
+      .formula-body,
+      .info-card,
+      .math-box,
+      .constraint-card {
+        padding-inline: 22px;
+      }
+
+      .table-scroll-hint {
+        display: none;
+      }
+
+      .table-scroll {
+        overflow: visible;
+      }
+
+      .evidence-table,
+      .evidence-table tbody,
+      .evidence-table tr,
+      .evidence-table td {
+        width: 100%;
+        display: block;
+      }
+
+      .evidence-table {
+        min-width: 0;
+      }
+
+      .evidence-table thead {
+        display: none;
+      }
+
+      .evidence-table tr {
+        padding: 20px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .evidence-table tbody tr:last-child {
+        border-bottom: 0;
+      }
+
+      .evidence-table td {
+        padding: 0 0 18px;
+        border: 0;
+      }
+
+      .evidence-table td:last-child {
+        padding-bottom: 0;
+      }
+
+      .evidence-table td::before {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--blue-700);
+        font-size: 0.72rem;
+        font-weight: 950;
+        letter-spacing: 0.06em;
+      }
+
+      .evidence-table td:nth-child(1)::before {
+        content: "Evidence type";
+      }
+
+      .evidence-table td:nth-child(2)::before {
+        content: "Subject and method";
+      }
+
+      .evidence-table td:nth-child(3)::before {
+        content: "Published result";
+      }
+
+      .evidence-table td:nth-child(4)::before {
+        content: "Engineering interpretation";
+      }
+
+      .source-item {
+        padding: 66px 20px 22px;
+      }
+
+      .source-item::before {
+        top: 20px;
+        left: 20px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .wrap,
+      .reading-wrap {
+        width: min(100% - 22px, var(--content-width));
+      }
+
+      .brand-title {
+        font-size: 0.92rem;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero-grid {
+        padding-block: 48px 66px;
+      }
+
+      .hero-lead {
+        font-size: 1rem;
+        line-height: 1.78;
+      }
+
+      .hero-meta {
+        gap: 8px 14px;
+      }
+
+      .callout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .callout-icon {
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+    /* Section styles */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    /* Section styles */
+    @media print {
+      body {
+        color: #000;
+        background: #fff;
+        font-size: 10.5pt;
+      }
+
+      .article-chapter-nav,
+      .scroll-progress,
+
+      .hero,
+      .section-dark,
+      .conclusion-panel {
+        color: #000;
+        background: #fff !important;
+      }
+
+      .hero {
+        border-bottom: 2px solid #000;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding-block: 30px;
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1,
+      .hero h1 span,
+      .section-dark h2,
+      .section-dark h3,
+      .section-dark strong,
+      .conclusion-panel h2 {
+        color: #000 !important;
+      }
+
+      .hero-lead,
+      .hero-meta,
+      .section-dark p,
+      .conclusion-panel p {
+        color: #222 !important;
+      }
+
+      .hero-visual,
+      .hero-photo {
+        display: none;
+      }
+
+      .metric-band {
+        margin-top: 20px;
+      }
+
+      .metric-card,
+      .info-card,
+      .formula-card,
+      .table-shell,
+      .source-item,
+      .lead-quote {
+        box-shadow: none;
+      }
+
+      .section {
+        padding-block: 35px;
+      }
+
+      a {
+        color: #000;
+      }
+
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        word-break: break-all;
+      }
+
+      .source-item,
+      .metric-card,
+      .info-card {
+        break-inside: avoid;
+      }
+    }
+  
+    /* Site chrome + article share / footer overrides */
+    .note-site-bar { position: relative; z-index: 1200; }
+
+    .article-chapter-nav {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      border-bottom: 1px solid rgba(216, 227, 235, 0.8);
+      background: rgba(248, 251, 253, 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .article-chapter-nav .nav {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .article-chapter-nav .nav-label {
+      color: var(--navy-900);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .hero .article-meta {
+      margin-top: 18px;
+      margin-bottom: 18px;
+      color: rgba(226, 242, 250, 0.78);
+    }
+
+    .hero .article-meta__sep {
+      color: rgba(226, 242, 250, 0.35);
+    }
+
+    .hero .article-share--hero {
+      margin-top: 22px;
+    }
+
+    .hero .article-share__label {
+      color: rgba(227, 243, 250, 0.78);
+    }
+
+    .share-band {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 28px 20px 8px;
+    }
+
+    .share-band .article-share--end {
+      margin: 0;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .share-band .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--ink-soft);
+    }
+
+    footer.site-footer {
+      padding: 42px 0 48px;
+      color: rgba(229, 241, 247, 0.72);
+      background: var(--navy-950);
+      margin-top: 24px;
+    }
+
+    footer.site-footer .container {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    footer.site-footer strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    footer.site-footer .small {
+      font-size: 13px;
+    }
+
+    footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 850px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 860px) {
+      .article-chapter-nav .nav-label {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .share-band,
+      footer.site-footer .container {
+        width: min(100% - 26px, var(--content-width));
+        padding-inline: 0;
+      }
+    }
+
+    @media print {
+      .note-site-bar,
+      .article-chapter-nav,
+      .article-share,
+      .share-band,
+      footer.site-footer {
+        display: none !important;
+      }
+    }
+</style>
+</head>
+
+<body>
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Notes</a>
+      <span>|</span>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="container-ship-wind-shield-notes.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="container-ship-wind-shield-notes.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="article-chapter-nav" aria-label="Article sections">
+    <div class="wrap nav">
+      <span class="nav-label">Article sections</span>
+      <ul class="nav-links">
+        <li><a href="#principle">How it works</a></li>
+        <li><a href="#evidence">Published evidence</a></li>
+        <li><a href="#interpretation">Interpreting the data</a></li>
+        <li><a href="#constraints">Design constraints</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <details class="mobile-nav">
+        <summary aria-label="Open article sections menu">
+          <span class="visually-hidden">Article sections</span>
+        </summary>
+        <ul class="mobile-nav-panel">
+          <li><a href="#principle">How it works</a></li>
+          <li><a href="#evidence">Published evidence</a></li>
+          <li><a href="#interpretation">Interpreting the data</a></li>
+          <li><a href="#constraints">Design constraints</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </details>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            CONTAINER-SHIP AERODYNAMICS · REAY'S NOTE
+          </div>
+
+          <h1>
+            Container-Ship <span>Wind Shields</span><br>
+            How Can a Larger Shield Reduce Drag?
+          </h1>
+
+          <p class="article-meta">
+            <span>📅 Updated: 2026-07-15</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 18 min read</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 Wind Shield / Container ship / Aerodynamic drag / Aerodynamics</span>
+          </p>
+
+          <p class="hero-lead">
+            A large bow Wind Shield does not simply add another wall facing the wind. It creates a
+            <strong>smooth aerodynamic leading edge</strong> for the container stacks. Drawing on the drag equation, wind tunnel testing,
+            full-scale operational data, and shipyard technical reports, this article examines its actual benefits and practical limitations.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#evidence">
+              View the evidence
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <a class="button button-secondary" href="#key-numbers">
+              See the key figures first
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span>Wind tunnel model testing</span>
+            <span>Full-scale data validation</span>
+            <span>24,000 TEU newbuild case study</span>
+          </div>
+
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.en.html"
+            data-share-title="Container-Ship Wind Shields: How Can a Larger Bow Shield Reduce Drag? | Reay's Note"
+            data-share-email-body="I found this article in Reay's Maritime Notes and thought you might find it useful:&#10;&#10;Container-Ship Wind Shields: How Can a Larger Bow Shield Reduce Drag? | Reay's Note&#10;https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.en.html"
+            data-share-copy="Copy link"
+            data-share-copied="Copied"
+            data-toast-copied="Link copied to clipboard"
+          >
+            <p class="article-share__label" id="share-hero-label">Share this article</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div>
+
+        </div>
+
+        <div class="hero-visual-stack">
+          <figure class="hero-photo">
+            <img
+              src="../../assets/images/maritime/container-ship-wind-shield/one-bow-wind-shield.png"
+              alt="Bow Wind Shield on a large Ocean Network Express container ship"
+              width="479"
+              height="271"
+              loading="eager"
+              decoding="async"
+            >
+            <figcaption>
+              Full-scale example | Photo:
+              <a
+                href="https://x.com/OceanNetworkExp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >@OceanNetworkExp</a>
+            </figcaption>
+          </figure>
+
+          <figure class="hero-visual">
+          <!-- Illustration element -->
+          <svg
+            viewBox="0 0 760 540"
+            role="img"
+            aria-labelledby="heroSvgTitle heroSvgDesc"
+          >
+            <title id="heroSvgTitle">Container-ship bow Wind Shield and airflow schematic</title>
+            <desc id="heroSvgDesc">
+              A side view of a container ship fitted with a curved bow Wind Shield,
+              with airflow smoothly directed over the container stacks.
+            </desc>
+
+            <defs>
+              <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0c3554"/>
+                <stop offset="100%" stop-color="#071b2e"/>
+              </linearGradient>
+
+              <linearGradient id="heroSea" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#087bbd"/>
+                <stop offset="100%" stop-color="#16b9d4"/>
+              </linearGradient>
+
+              <linearGradient id="heroHull" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#20384b"/>
+                <stop offset="55%" stop-color="#0b2031"/>
+                <stop offset="56%" stop-color="#cf2378"/>
+                <stop offset="100%" stop-color="#851548"/>
+              </linearGradient>
+
+              <linearGradient id="heroShield" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#cfe5ef"/>
+              </linearGradient>
+
+              <filter id="heroShadow" x="-20%" y="-20%" width="140%" height="160%">
+                <feDropShadow
+                  dx="0"
+                  dy="12"
+                  stdDeviation="12"
+                  flood-color="#000000"
+                  flood-opacity="0.28"
+                />
+              </filter>
+
+              <marker
+                id="heroArrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M0 0L10 5L0 10Z" fill="#77e8f3"/>
+              </marker>
+            </defs>
+
+            <rect width="760" height="540" rx="24" fill="url(#heroSky)"/>
+
+            <!-- Illustration element -->
+            <path
+              d="M0 398C100 386 166 410 264 400C371 389 438 414 548 399C633 387 690 398 760 392V540H0Z"
+              fill="url(#heroSea)"
+              opacity="0.78"
+            />
+
+            <path
+              d="M0 422C109 406 186 432 285 420C407 405 482 435 592 419C665 409 715 414 760 409"
+              fill="none"
+              stroke="#77e8f3"
+              stroke-width="3"
+              opacity="0.45"
+            />
+
+            <!-- Illustration element -->
+            <g
+              fill="none"
+              stroke="#77e8f3"
+              stroke-width="4"
+              stroke-linecap="round"
+              marker-end="url(#heroArrow)"
+              opacity="0.85"
+            >
+              <path d="M34 172C117 168 143 160 183 135C243 98 346 97 468 107"/>
+              <path d="M22 220C103 218 141 209 180 183C251 136 358 135 505 148"/>
+              <path d="M28 270C104 269 144 261 177 237C242 190 367 184 538 202"/>
+              <path d="M38 320C104 320 140 312 167 294C219 260 346 248 566 268"/>
+            </g>
+
+            <!-- Illustration element -->
+            <g filter="url(#heroShadow)">
+              <path
+                d="M112 342L648 342L628 415C622 438 601 453 577 453H207C175 453 149 440 133 415L93 353Z"
+                fill="url(#heroHull)"
+              />
+
+              <path
+                d="M101 350L652 350"
+                stroke="#f2f8fb"
+                stroke-width="5"
+                opacity="0.85"
+              />
+
+              <!-- Illustration element -->
+              <g stroke="#071b2e" stroke-width="3">
+                <rect x="218" y="222" width="74" height="55" rx="3" fill="#d95643"/>
+                <rect x="294" y="222" width="74" height="55" rx="3" fill="#168f77"/>
+                <rect x="370" y="222" width="74" height="55" rx="3" fill="#d99f2b"/>
+                <rect x="446" y="222" width="74" height="55" rx="3" fill="#3476b9"/>
+
+                <rect x="218" y="279" width="74" height="55" rx="3" fill="#3476b9"/>
+                <rect x="294" y="279" width="74" height="55" rx="3" fill="#d99f2b"/>
+                <rect x="370" y="279" width="74" height="55" rx="3" fill="#cc3f78"/>
+                <rect x="446" y="279" width="74" height="55" rx="3" fill="#168f77"/>
+
+                <rect x="258" y="165" width="74" height="55" rx="3" fill="#cc3f78"/>
+                <rect x="334" y="165" width="74" height="55" rx="3" fill="#3476b9"/>
+                <rect x="410" y="165" width="74" height="55" rx="3" fill="#d95643"/>
+              </g>
+
+              <!-- Illustration element -->
+              <path
+                d="M533 244H618L636 342H520Z"
+                fill="#edf6fa"
+                stroke="#a9c7d5"
+                stroke-width="3"
+              />
+
+              <rect x="546" y="261" width="59" height="16" rx="3" fill="#15354c"/>
+              <rect x="550" y="291" width="11" height="8" rx="2" fill="#0d7ca6"/>
+              <rect x="568" y="291" width="11" height="8" rx="2" fill="#0d7ca6"/>
+              <rect x="586" y="291" width="11" height="8" rx="2" fill="#0d7ca6"/>
+
+              <path d="M575 244V202" stroke="#dcecf3" stroke-width="5"/>
+              <path d="M575 204L594 214" stroke="#dcecf3" stroke-width="4"/>
+
+              <!-- Wind Shield -->
+              <path
+                d="M148 340
+                   C151 278 163 226 199 183
+                   C219 159 240 146 260 139
+                   L260 342Z"
+                fill="url(#heroShield)"
+                stroke="#9dbfce"
+                stroke-width="4"
+              />
+
+              <path
+                d="M158 331C163 274 176 226 207 190"
+                fill="none"
+                stroke="#ffffff"
+                stroke-width="7"
+                opacity="0.7"
+              />
+            </g>
+
+            <!-- Illustration element -->
+            <g font-family="sans-serif">
+              <rect
+                x="74"
+                y="72"
+                width="175"
+                height="42"
+                rx="12"
+                fill="#071b2e"
+                stroke="#39d5e8"
+                stroke-opacity="0.55"
+              />
+              <text
+                x="161"
+                y="99"
+                fill="#77e8f3"
+                font-size="18"
+                font-weight="700"
+                text-anchor="middle"
+              >
+                Smooth apparent-wind flow
+              </text>
+
+              <path
+                d="M202 154L160 116"
+                stroke="#77e8f3"
+                stroke-width="2"
+                stroke-dasharray="5 5"
+              />
+
+              <rect
+                x="90"
+                y="374"
+                width="188"
+                height="44"
+                rx="12"
+                fill="#ffffff"
+                opacity="0.94"
+              />
+              <text
+                x="184"
+                y="402"
+                fill="#075e9b"
+                font-size="18"
+                font-weight="800"
+                text-anchor="middle"
+              >
+                Bow Wind Shield
+              </text>
+
+              <path
+                d="M201 372L209 325"
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-dasharray="5 5"
+              />
+
+              <rect
+                x="310"
+                y="95"
+                width="150"
+                height="38"
+                rx="11"
+                fill="#071b2e"
+                stroke="#ffffff"
+                stroke-opacity="0.2"
+              />
+              <text
+                x="385"
+                y="120"
+                fill="#ffffff"
+                font-size="16"
+                font-weight="700"
+                text-anchor="middle"
+              >
+                Container stacks
+              </text>
+            </g>
+          </svg>
+
+          <figcaption>
+            Conceptual schematic, not a CFD result for a specific ship. The actual flow field depends on hull form, container arrangement, and wind direction.
+          </figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="metric-band" id="key-numbers" aria-labelledby="metrics-title">
+      <div class="wrap">
+        <h2 id="metrics-title" style="position:absolute;left:-9999px;">
+          Key Wind Shield research findings
+        </h2>
+
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span class="metric-label">Wind tunnel test</span>
+            <span class="metric-number">≈20<small>%</small></span>
+            <p>
+              For the ship configuration studied at an apparent wind angle of about 20°, the bow Wind Shield alone reduced
+              <strong>aerodynamic pressure drag</strong>.
+              <a class="cite" href="#ref-1" aria-label="Reference 1">1</a>
+            </p>
+          </article>
+
+          <article class="metric-card">
+            <span class="metric-label">Full-scale validation</span>
+            <span class="metric-number">≈2<small>%</small></span>
+            <p>
+              For MOL MARVEL operating at about 17 kn, the confirmed average
+              CO₂ reduction relative to a sister ship without a Wind Shield was approximately 2%.
+              <a class="cite" href="#ref-2" aria-label="Reference 2">2</a>
+              <a class="cite" href="#ref-3" aria-label="Reference 3">3</a>
+            </p>
+          </article>
+
+          <article class="metric-card">
+            <span class="metric-label">Optimized ULCV design</span>
+            <span class="metric-number">2–4<small>%</small></span>
+            <p>
+              MOL and Samsung Heavy Industries estimated the CO₂ reduction from an optimized
+              Bow Wind-Shield for an ultra-large container ship.
+              <a class="cite" href="#ref-4" aria-label="Reference 4">4</a>
+            </p>
+          </article>
+
+          <article class="metric-card">
+            <span class="metric-label">Integrated newbuild benefits</span>
+            <span class="metric-number">Drag + stowage</span>
+            <p>
+              The Bow Wind Cover on JMU's 24,000 TEU design reduces aerodynamic pressure drag
+              and permits containers to be stowed above the forward mooring deck.
+              <a class="cite" href="#ref-5" aria-label="Reference 5">5</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section section-compact">
+      <div class="reading-wrap">
+        <blockquote class="lead-quote">
+          The design logic of a Wind Shield is to replace the aerodynamically poor
+          vertical wall formed by the first container row with a smoother, controllable curved surface.
+          Even if the projected area increases slightly, the ship's total aerodynamic drag can still fall
+          provided that the overall drag coefficient decreases by a greater proportion.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section section-alt" id="principle">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">01 · Fundamental principle</span>
+          <h2>What Is a Wind Shield?</h2>
+          <p class="section-intro">
+            A bow Wind Shield may also be called a
+            <strong>Bow Wind Shield, Bow Wind-Shield, or Windshield</strong>
+            or <strong>Bow Wind Cover</strong>. Located ahead of the foremost deck containers,
+            it acts as a large fairing that guides apparent wind smoothly upward and toward both sides of the ship.
+          </p>
+        </header>
+
+        <div class="example-gallery" aria-label="Full-scale Wind Shield examples">
+          <figure>
+            <img
+              src="../../assets/images/maritime/container-ship-wind-shield/wind-shield-shipsmonthly.png"
+              alt="Bow Windshield on CMA CGM MARCO POLO"
+              width="670"
+              height="858"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              Bow Windshield on CMA CGM MARCO POLO | Source:
+              <a href="https://shipsmonthly.com/" target="_blank" rel="noopener noreferrer">shipsmonthly.com</a>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../assets/images/maritime/container-ship-wind-shield/wind-shield-cmacgm.png"
+              alt="Bow Wind Shield and integrated superstructure on CMA CGM RUNDALE"
+              width="524"
+              height="656"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              CMA CGM RUNDALE full-scale example | Source:
+              <a href="https://www.instagram.com/cmacgm/" target="_blank" rel="noopener noreferrer">IG: cmacgm</a>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="../../assets/images/maritime/container-ship-wind-shield/wind-shield-evergreen.png"
+              alt="Evergreen container-ship Wind Shield and energy-saving design"
+              width="738"
+              height="418"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              Evergreen newbuild technology illustration | Source:
+              <a href="https://www.evergreen-marine.com/" target="_blank" rel="noopener noreferrer">Evergreen website</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="two-col">
+          <div class="prose">
+            <p>
+              Modern large container ships carry tall, wide deck-container stacks. When the first row faces the incoming flow,
+              it forms an enormous, nearly vertical bluff body. Air striking the forward container faces creates
+              <strong>a high-pressure stagnation region, flow separation, vortices, and a low-pressure wake</strong>,
+              resulting in substantial pressure drag.
+            </p>
+
+            <p>
+              A Wind Shield transforms the abrupt forward container face into a curved or inclined
+              <strong>leading edge</strong>. Instead of stopping abruptly ahead of the first container row,
+              the air turns progressively, reducing flow separation and irregular pressure distributions.
+            </p>
+
+            <p>
+              A Wind Shield should therefore not be treated as an isolated component. It should be considered together with the
+              <strong>deck-container stacks, superstructure, and the above-water hull</strong>
+              as a single aerodynamic system.
+            </p>
+
+            <div class="term-grid">
+              <div class="term-card">
+                <b>Bluff Body</b>
+                <span>
+                  A body with a relatively square leading edge that readily causes flow separation; container stacks are typical bluff bodies.
+                </span>
+              </div>
+
+              <div class="term-card">
+                <b>Streamlining</b>
+                <span>
+                  Using smooth, continuous geometry to reduce abrupt pressure changes, flow separation, and wake size.
+                </span>
+              </div>
+
+              <div class="term-card">
+                <b>Apparent Wind</b>
+                <span>
+                  The wind experienced aboard the ship, resulting from the vector combination of ship speed and true wind.
+                </span>
+              </div>
+
+              <div class="term-card">
+                <b>Pressure Drag</b>
+                <span>
+                  Drag caused by an asymmetric pressure distribution between the front and rear of a body; a major component of bluff-body aerodynamic drag.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="formula-card" aria-label="Basic aerodynamic drag equation">
+            <div class="formula-top">
+              <small>Simplified aerodynamic drag equation</small>
+              <div
+                class="equation"
+                data-katex="F_D = \tfrac{1}{2}\,\rho_{\mathrm{air}}\,V_{\mathrm{rel}}^{2}\,C_{D}\,A"
+                aria-label="F sub D equals one-half rho air times V rel squared times C sub D times A"
+              >F<sub>D</sub> = ½ ρ<sub>air</sub> V<sub>rel</sub><sup>2</sup> C<sub>D</sub> A</div>
+            </div>
+
+            <div class="formula-body">
+              <dl class="formula-list">
+                <div>
+                  <dt>F<sub>D</sub></dt>
+                  <dd>Aerodynamic drag acting on the ship's above-water portion.</dd>
+                </div>
+                <div>
+                  <dt>ρ<sub>air</sub></dt>
+                  <dd>Air density.</dd>
+                </div>
+                <div>
+                  <dt>V<sub>rel</sub></dt>
+                  <dd>Relative wind speed between the ship and the air.</dd>
+                </div>
+                <div>
+                  <dt>C<sub>D</sub></dt>
+                  <dd>Drag coefficient associated with geometry, wind direction, and flow separation.</dd>
+                </div>
+                <div>
+                  <dt>A</dt>
+                  <dd>Projected frontal reference area used for nondimensionalization.</dd>
+                </div>
+              </dl>
+
+              <div class="callout" style="margin-top:24px;">
+                <div class="callout-icon" aria-hidden="true">✓</div>
+                <div>
+                  <h3>Compare the effective drag area</h3>
+                  <p>
+                    A Wind Shield may slightly increase <strong>A</strong>,
+                    but if it substantially reduces <strong>C<sub>D</sub></strong>,
+                    the overall <strong>C<sub>D</sub>A</strong> still decreases.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">02 · Airflow comparison</span>
+          <h2>Airflow With and Without a Wind Shield</h2>
+          <p class="section-intro">
+            The figure below is a conceptual illustration, not a CFD result for a particular ship.
+            The actual flow field is affected by stack height, missing containers, wind angle, ship speed, and superstructure arrangement.
+          </p>
+        </header>
+
+        <figure class="diagram-card">
+          <svg
+            viewBox="0 0 1120 430"
+            role="img"
+            aria-labelledby="flowTitle flowDesc"
+          >
+            <title id="flowTitle">Airflow comparison for a container ship with and without a Wind Shield</title>
+            <desc id="flowDesc">
+              On the left, airflow strikes the first container row directly, producing a high-pressure region and vortices;
+              on the right, airflow follows the curved Wind Shield over the containers.
+            </desc>
+
+            <defs>
+              <linearGradient id="panelBg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f8fbfd"/>
+                <stop offset="100%" stop-color="#edf5fa"/>
+              </linearGradient>
+
+              <linearGradient id="pressureGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#e45757" stop-opacity="0.78"/>
+                <stop offset="100%" stop-color="#e45757" stop-opacity="0"/>
+              </linearGradient>
+
+              <marker
+                id="blueArrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M0 0L10 5L0 10Z" fill="#087bbd"/>
+              </marker>
+
+              <marker
+                id="cyanArrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M0 0L10 5L0 10Z" fill="#14a88b"/>
+              </marker>
+            </defs>
+
+            <!-- Illustration element -->
+            <rect x="20" y="20" width="520" height="390" rx="24" fill="url(#panelBg)" stroke="#d8e3eb"/>
+            <rect x="580" y="20" width="520" height="390" rx="24" fill="url(#panelBg)" stroke="#d8e3eb"/>
+
+            <!-- Illustration element -->
+            <g font-family="sans-serif">
+              <rect x="42" y="42" width="124" height="34" rx="17" fill="#e45757" opacity="0.12"/>
+              <text x="104" y="65" fill="#b73535" font-size="16" font-weight="800" text-anchor="middle">
+                Without Wind Shield
+              </text>
+
+              <!-- Illustration element -->
+              <path d="M120 323H473L446 364H158Z" fill="#163149"/>
+              <rect x="302" y="167" width="112" height="154" rx="3" fill="#ca5848" stroke="#8f352d" stroke-width="3"/>
+              <rect x="416" y="198" width="80" height="123" rx="3" fill="#3476b9" stroke="#22527f" stroke-width="3"/>
+
+              <!-- Illustration element -->
+              <ellipse cx="272" cy="244" rx="65" ry="100" fill="url(#pressureGrad)"/>
+
+              <!-- Illustration element -->
+              <g
+                fill="none"
+                stroke="#087bbd"
+                stroke-width="4"
+                stroke-linecap="round"
+                marker-end="url(#blueArrow)"
+              >
+                <path d="M65 175H278"/>
+                <path d="M65 220H278"/>
+                <path d="M65 265H278"/>
+                <path d="M65 310H278"/>
+              </g>
+
+              <!-- Illustration element -->
+              <g fill="none" stroke="#cf2378" stroke-width="4" stroke-linecap="round">
+                <path d="M333 138C415 105 487 141 464 184C443 222 381 194 408 163"/>
+                <path d="M429 154C483 121 521 153 503 187"/>
+              </g>
+
+              <text x="267" y="133" fill="#b73535" font-size="15" font-weight="800" text-anchor="middle">
+                High-pressure stagnation
+              </text>
+              <text x="437" y="110" fill="#a8175f" font-size="15" font-weight="800" text-anchor="middle">
+                Separation and vortices
+              </text>
+              <text x="280" y="390" fill="#5a7081" font-size="15" font-weight="700" text-anchor="middle">
+                Flow strikes the first vertical container wall
+              </text>
+            </g>
+
+            <!-- Illustration element -->
+            <g font-family="sans-serif">
+              <rect x="602" y="42" width="124" height="34" rx="17" fill="#14a88b" opacity="0.13"/>
+              <text x="664" y="65" fill="#117153" font-size="16" font-weight="800" text-anchor="middle">
+                With Wind Shield
+              </text>
+
+              <!-- Illustration element -->
+              <path d="M680 323H1033L1006 364H718Z" fill="#163149"/>
+              <rect x="862" y="167" width="112" height="154" rx="3" fill="#ca5848" stroke="#8f352d" stroke-width="3"/>
+              <rect x="976" y="198" width="42" height="123" rx="3" fill="#3476b9" stroke="#22527f" stroke-width="3"/>
+
+              <!-- Illustration element -->
+              <path
+                d="M755 322C758 257 772 198 817 154C833 138 850 127 868 119V322Z"
+                fill="#ffffff"
+                stroke="#87aebf"
+                stroke-width="4"
+              />
+
+              <!-- Illustration element -->
+              <g
+                fill="none"
+                stroke="#14a88b"
+                stroke-width="4"
+                stroke-linecap="round"
+                marker-end="url(#cyanArrow)"
+              >
+                <path d="M625 174C711 174 737 165 770 135C808 100 874 97 985 109"/>
+                <path d="M625 220C710 220 746 207 778 177C818 140 897 139 1012 153"/>
+                <path d="M625 266C712 266 752 250 784 221C824 184 905 182 1025 198"/>
+                <path d="M625 310C710 310 754 298 786 273C829 240 914 234 1032 252"/>
+              </g>
+
+              <text x="838" y="92" fill="#117153" font-size="15" font-weight="800" text-anchor="middle">
+                Smooth turning
+              </text>
+              <text x="786" y="345" fill="#075e9b" font-size="15" font-weight="800" text-anchor="middle">
+                Wind Shield
+              </text>
+              <text x="840" y="390" fill="#5a7081" font-size="15" font-weight="700" text-anchor="middle">
+                Flow is directed over and around the containers
+              </text>
+            </g>
+          </svg>
+
+          <figcaption class="diagram-caption">
+            The purpose of a Wind Shield is not to “block the wind completely,”
+            but to reduce pressure drag caused by abrupt impingement and flow separation.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">03 · Mechanisms of benefit</span>
+          <h2>How Does a Wind Shield Deliver Benefits?</h2>
+        </header>
+
+        <div class="three-col">
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 8C8 8 9 5 14 5C18 5 20 7 21 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 12C8 12 10 10 14 10C18 10 20 12 21 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 16C8 16 10 15 14 15C18 15 20 17 21 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="tag">Aerodynamic benefit</span>
+            <h3>Reduce direct wind impact on the first container row</h3>
+            <p>
+              The high-pressure stagnation region is transferred from irregular container end faces to the smoother,
+              controllable curved surface of the Wind Shield.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 17C7 12 9 9 13 7C16 5 19 5 21 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M15 3L21 5L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="tag tag-green">Flow-field improvement</span>
+            <h3>Reduce flow separation and large vortices</h3>
+            <p>
+              Smoother flow over the container region helps reduce severe separation,
+              unsteady wakes, and turbulence in gaps between containers.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 19H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 16V9L12 5L17 9V16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M9 16L12 12L15 16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="tag tag-orange">Additional structural benefit</span>
+            <h3>Provide bow protection from green water</h3>
+            <p>
+              MOL's development information states that the structure is also expected to protect the foredeck
+              from green water in severe sea conditions.
+              <a class="cite" href="#ref-6" aria-label="Reference 6">6</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">04 · Verification process</span>
+          <h2>How Is Wind Shield Performance Verified?</h2>
+          <p class="section-intro">
+            Energy savings cannot be established from appearance alone. A professional design normally requires
+            numerical analysis, model testing, structural and class review, and full-scale operational validation.
+          </p>
+        </header>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <div class="step-number">1</div>
+            <h3>CFD analysis</h3>
+            <p>
+              Compare pressure distributions and flow fields for different curvatures, heights, widths, container arrangements, and wind angles.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">2</div>
+            <h3>Wind tunnel model testing</h3>
+            <p>
+              Measure axial wind force, lateral force, and yaw moment, while observing flow separation and vortices.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">3</div>
+            <h3>Structural and class review</h3>
+            <p>
+              Confirm that the structure can withstand wind loads, wave impact, vibration, fatigue, and deck-operation requirements.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">4</div>
+            <h3>Full-scale data validation</h3>
+            <p>
+              Compare performance after accounting for waves, hull fouling, displacement, currents, rudder angle, and other confounding factors.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Published evidence -->
+    <section class="section section-alt" id="evidence">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">05 · Published evidence</span>
+          <h2>Published Research and Shipyard Data</h2>
+          <p class="section-intro">
+            Available evidence includes wind tunnel models, full-scale monitoring, an AIP for an ultra-large container-ship design,
+            and shipyard technical descriptions of actual newbuilds. The percentages use different baselines
+            and must not be treated as the same type of energy-saving rate.
+          </p>
+        </header>
+
+        <div class="table-shell">
+          <p class="table-scroll-hint" id="tableScrollHint">
+            ← Scroll horizontally to view the full table →
+          </p>
+          <div
+            class="table-scroll"
+            tabindex="0"
+            role="region"
+            aria-label="Comparison of published research and shipyard data"
+            aria-describedby="tableScrollHint"
+          >
+            <table class="evidence-table">
+              <caption class="visually-hidden">
+                Comparison of published Wind Shield research, full-scale operations, design approval, and shipyard technical reports
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Evidence type</th>
+                  <th scope="col">Subject and method</th>
+                  <th scope="col">Published result</th>
+                  <th scope="col">Engineering interpretation</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="evidence-badge badge-model">Wind tunnel model</span>
+                    <strong>2015 Japan Society of Naval Architects and Ocean Engineers</strong>
+                  </td>
+                  <td>
+                    A roughly 1/250-scale model of a 6,700 TEU-class container ship was tested;
+                    the wind tunnel speed was 15 m/s, with apparent wind angles from 0° to 180°
+                    measured at 10° intervals.
+                  </td>
+                  <td class="result">
+                    At an apparent wind angle of about 20°, the bow Wind Shield alone reduced aerodynamic pressure drag by approximately 20%.
+                    Combined with aft-container arrangement and chamfered upper corners, the reduction reached about 30%;
+                    adding shields over side gaps increased it to about 50%.
+                    <a class="cite" href="#ref-1" aria-label="Reference 1">1</a>
+                  </td>
+                  <td>
+                    The 20%, 30%, and 50% figures refer to <strong>aerodynamic pressure drag</strong>, not whole-ship fuel consumption. For North Pacific service at 17&nbsp;kn, the study estimated that the bow Wind Shield alone could yield approximately 2% annual fuel savings, while the complete package could exceed 5%.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="evidence-badge badge-service">Full-scale operation</span>
+                    <strong>2016 paper / 2017 MOL release</strong>
+                  </td>
+                  <td>
+                    The 6,700 TEU MOL MARVEL was fitted with a horseshoe-shaped Wind Shield.
+                    Minute-by-minute Fleet Monitor data were used
+                    and compared with a sister ship without a Wind Shield.
+                  </td>
+                  <td class="result">
+                    The route-average energy-saving effect was estimated at about 2%, close to the 1.6% estimate
+                    derived from wind tunnel results and wind statistics. MOL also confirmed that, at about 17 kn,
+                    CO₂ emissions were reduced by approximately 2% on average.
+                    <a class="cite" href="#ref-2" aria-label="Reference 2">2</a>
+                    <a class="cite" href="#ref-3" aria-label="Reference 3">3</a>
+                  </td>
+                  <td>
+                    This remains the most representative <strong>full-scale operational evidence</strong> available.
+                    The analysis specifically accounted for waves, displacement, currents, rudder angle,
+                    hull condition, ship-to-ship differences, and other confounding factors.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="evidence-badge badge-design">AIP design</span>
+                    <strong>2019 MOL / Samsung Heavy Industries</strong>
+                  </td>
+                  <td>
+                    An optimized Bow Wind-Shield was jointly developed
+                    for an ultra-large container carrier,
+                    and DNV GL issued an
+                    AIP (Approval in Principle).
+                  </td>
+                  <td class="result">
+                    According to the official release, an optimized ultra-large container-ship design
+                    was expected to reduce CO₂ emissions by approximately 2–4%.
+                    <a class="cite" href="#ref-4" aria-label="Reference 4">4</a>
+                  </td>
+                  <td>
+                    This is a design-stage estimate, not a guaranteed full-scale value for every route and sea condition.
+                    An AIP indicates acceptance of the concept and its basic design principles;
+                    it is not a guarantee of complete construction compliance or operational performance.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="evidence-badge badge-yard">Shipyard technical report</span>
+                    <strong>2024 JMU 24,000 TEU</strong>
+                  </td>
+                  <td>
+                    In its technical description of ONE INNOVATION,
+                    JMU states that the bow is fitted with a Bow Wind Cover.
+                    The series was jointly designed and built by Imabari Shipbuilding and JMU.
+                  </td>
+                  <td class="result">
+                    The shipyard explicitly states that the cover reduces aerodynamic pressure drag
+                    while allowing containers to be stowed above the forward mooring deck,
+                    improving stowage performance.
+                    <a class="cite" href="#ref-5" aria-label="Reference 5">5</a>
+                  </td>
+                  <td>
+                    This demonstrates that a new-generation large Wind Shield can provide more than energy savings;
+                    it can integrate <strong>aerodynamic drag reduction, mooring-deck protection, and container stowage</strong>
+                    into one design. The report does not publish a stand-alone energy-saving percentage for the cover.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="table-note">
+            Note: The studies differ in ship type, container arrangement, wind distribution, route, speed, and analytical baseline.
+            Their figures should be interpreted within the original test conditions and not applied directly to other ships.
+          </p>
+        </div>
+
+        <div class="callout warning">
+          <div class="callout-icon" aria-hidden="true">!</div>
+          <div>
+            <h3>Do not attribute the entire EEDI improvement to the Wind Shield</h3>
+            <p>
+              The same JMU technical report states that the 24,000 TEU ship's overall EEDI
+              is more than 60% below the reference line. That improvement combines the underwater hull form, main engine,
+              energy-saving devices around the propeller, optimized operating speed, and other design measures;
+              it cannot be treated as the Wind Shield's contribution alone.
+              <a class="cite" href="#ref-5" aria-label="Reference 5">5</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section section-dark" id="interpretation">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">06 · Correct interpretation</span>
+          <h2>Why Do Studies Report Both 20% and 2%?</h2>
+          <p class="section-intro">
+            Because the two percentages use different denominators:
+            <strong>20% usually refers to the reduction in aerodynamic drag itself</strong>,
+            whereas <strong>2% usually refers to a reduction in whole-ship propulsion power demand, fuel consumption, or CO₂ emissions</strong>.
+          </p>
+        </header>
+
+        <div class="two-col">
+          <div class="math-box">
+            <h3>Simplified relationship</h3>
+
+            <div class="math-equation">
+              ΔR<sub>T</sub> / R<sub>T</sub>
+              ≈
+              (R<sub>air</sub> / R<sub>T</sub>)
+              ×
+              (ΔR<sub>air</sub> / R<sub>air</sub>)
+            </div>
+
+            <p>
+              Assume that aerodynamic drag accounts for 10% of total resistance under a particular operating condition
+              and the Wind Shield reduces aerodynamic drag by 20%. Then:
+            </p>
+
+            <div class="math-equation">
+              10% × 20% = 2%
+            </div>
+
+            <p>
+              At the same ship speed, and provided other resistance components remain broadly unchanged,
+              whole-ship power demand and fuel consumption may decrease by approximately 2%.
+              This example only illustrates the proportional relationship; it is not a fixed resistance breakdown for all ships.
+            </p>
+          </div>
+
+          <div>
+            <div class="bar-demo" aria-label="Illustrative resistance proportions">
+              <div class="bar-row">
+                <div class="bar-label">Original total resistance</div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width:100%;"></div>
+                </div>
+                <div class="bar-value">100</div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Aerodynamic-drag component</div>
+                <div class="bar-track">
+                  <div class="bar-fill air"></div>
+                </div>
+                <div class="bar-value">10</div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">20% reduction in aerodynamic drag</div>
+                <div class="bar-track">
+                  <div class="bar-fill saved"></div>
+                </div>
+                <div class="bar-value">−2</div>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-label">Improved total resistance</div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width:98%;"></div>
+                </div>
+                <div class="bar-value">98</div>
+              </div>
+            </div>
+
+            <div
+              class="callout"
+              style="
+                margin-top:30px;
+                border-color:rgba(57,213,232,.23);
+                background:rgba(57,213,232,.07);
+              "
+            >
+              <div
+                class="callout-icon"
+                aria-hidden="true"
+                style="background:var(--teal-500);"
+              >
+                i
+              </div>
+              <div>
+                <h3>The stronger the wind, the easier the benefit is to measure</h3>
+                <p>
+                  Aerodynamic drag is proportional to the square of apparent wind speed.
+                  The full-scale study also found that at higher apparent wind speeds,
+                  the Wind Shield's energy-saving effect is easier to distinguish from waves and other confounding influences.
+                  <a class="cite" href="#ref-2" aria-label="Reference 2">2</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">07 · Additional value</span>
+          <h2>What Practical Benefits Extend Beyond Energy Savings?</h2>
+        </header>
+
+        <div class="three-col">
+          <article class="info-card">
+            <span class="tag tag-green">Directly supported by research</span>
+            <h3>Bow protection in severe seas</h3>
+            <p>
+              The Wind Shield in MOL's development project was designed for wave-impact pressure
+              and was expected to reduce the direct effects of green water on forward-deck machinery,
+              forward containers, and associated equipment.
+              <a class="cite" href="#ref-1" aria-label="Reference 1">1</a>
+              <a class="cite" href="#ref-6" aria-label="Reference 6">6</a>
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="tag tag-orange">Shipyard example</span>
+            <h3>Improve container stowage</h3>
+            <p>
+              JMU's 24,000 TEU design integrates the Bow Wind Cover
+              into the forward-deck arrangement, allowing containers to be stowed above the mooring deck
+              and increasing usable stowage space.
+              <a class="cite" href="#ref-5" aria-label="Reference 5">5</a>
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="tag tag-magenta">Operational significance</span>
+            <h3>Improve speed-keeping in strong headwinds</h3>
+            <p>
+              Wind tunnel research indicates that in strong bow-quartering winds,
+              aerodynamic pressure drag can represent a significant fraction of a large container ship's calm-water resistance in still air.
+              Reducing this component helps control fuel consumption and maintain schedule reliability.
+              <a class="cite" href="#ref-1" aria-label="Reference 1">1</a>
+            </p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <div class="callout-icon" aria-hidden="true">※</div>
+          <div>
+            <h3>Local wind pressure on forward containers may decrease, but securing calculations remain mandatory</h3>
+            <p>
+              From the flow-field mechanism, a Wind Shield shelters the foremost containers and changes local pressure distributions.
+              Nevertheless, loads on containers, twistlocks, lashing rods, and corner posts must still be formally calculated for the actual loading condition,
+              design wind loads, and latest class rules. Fitting a Wind Shield alone does not justify
+              an arbitrary reduction in securing design loads.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design constraints -->
+    <section class="section section-dark" id="constraints">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">08 · Design constraints</span>
+          <h2>A Larger Wind Shield Is Not Always Better</h2>
+          <p class="section-intro">
+            Wind Shield dimensions must balance aerodynamic benefit, structural weight, wave impact,
+            maneuvering safety, visibility, cargo handling, and mooring operations.
+          </p>
+        </header>
+
+        <div class="constraint-grid">
+          <article class="constraint-card">
+            <h3>Structural strength and wave impact</h3>
+            <p>
+              The bow is particularly sensitive to shipped water and impact pressure.
+              The Wind Shield requires assessment of plate thickness, stiffeners, supporting structure, local buckling,
+              fatigue, and green-water impact loads.
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>Weight and center of gravity</h3>
+            <p>
+              A large structure high on the ship increases lightship weight and affects the vertical center of gravity.
+              The 2015 study compared a closed dome with an open horseshoe-shaped design
+              and found little difference in aerodynamic drag, allowing the open structure to reduce weight.
+              <a class="cite" href="#ref-1" aria-label="Reference 1">1</a>
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>Lateral wind force and yaw moment</h3>
+            <p>
+              The specific configuration in the wind tunnel study did not show large changes in lateral force or yaw moment.
+              This does not mean every ship behaves the same way. New designs must still be tested over multiple wind angles,
+              particularly for port approach, departure, and low-speed maneuvering.
+              <a class="cite" href="#ref-1" aria-label="Reference 1">1</a>
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>Sensitivity to container arrangement</h3>
+            <p>
+              Wind Shields are normally optimized for a representative container stack height and arrangement.
+              When an actual voyage has missing boxes, lower forward stacks, port-starboard asymmetry, or special containers,
+              the aerodynamic benefit may differ from the design condition.
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>Bridge visibility and equipment arrangement</h3>
+            <p>
+              The design must preserve bridge sightlines, navigation-light sectors, and radar/sensor fields of view,
+              while avoiding interference with windlasses, mooring winches, fairleads, access routes, and emergency working space.
+            </p>
+          </article>
+
+          <article class="constraint-card">
+            <h3>Life-cycle maintenance</h3>
+            <p>
+              Corrosion protection, drainage, inspection access, weld fatigue,
+              wind-induced vibration, noise, and coating maintenance must be considered. Fuel savings should be assessed against construction and maintenance costs.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">09 · Common misunderstandings</span>
+          <h2>Common Misunderstandings and Correct Interpretation</h2>
+        </header>
+
+        <div class="three-col">
+          <article class="info-card">
+            <span class="tag">Misunderstanding 1</span>
+            <h3>“A larger frontal area always increases drag”</h3>
+            <p>
+              Incomplete. Drag depends on both projected area and drag coefficient.
+              If streamlining reduces the drag coefficient by more than the projected area increases,
+              total aerodynamic drag can still decrease.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="tag">Misunderstanding 2</span>
+            <h3>“A 20% drag reduction means 20% fuel savings”</h3>
+            <p>
+              Incorrect. The 20% figure normally applies only to aerodynamic drag.
+              The main engine must still overcome underwater frictional resistance, wave-making resistance,
+              appendage resistance, and added resistance in waves.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="tag">Misunderstanding 3</span>
+            <h3>“An AIP guarantees full-scale energy savings”</h3>
+            <p>
+              Incorrect. An AIP is an Approval in Principle,
+              indicating that a concept design is feasible within a defined review scope.
+              It does not replace complete class review or full-scale performance validation.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">10 · Technical glossary</span>
+          <h2>Key Terms</h2>
+        </header>
+
+        <dl class="glossary">
+          <div>
+            <dt>AWA | Apparent Wind Angle</dt>
+            <dd>
+              Apparent wind angle, usually referenced to the ship's heading,
+              indicating the direction from which the wind is experienced aboard.
+            </dd>
+          </div>
+
+          <div>
+            <dt>AWS | Apparent Wind Speed</dt>
+            <dd>
+              Apparent wind speed, formed by the vector combination of true wind and ship speed,
+              and a key input to aerodynamic-load calculations.
+            </dd>
+          </div>
+
+          <div>
+            <dt>CFD | Computational Fluid Dynamics</dt>
+            <dd>
+              Computational fluid dynamics: numerical analysis of velocity,
+              pressure, separation, and vortices around a ship.
+            </dd>
+          </div>
+
+          <div>
+            <dt>C<sub>X</sub> / C<sub>FX</sub></dt>
+            <dd>
+              A nondimensional wind-force or aerodynamic-drag coefficient in the ship's longitudinal direction;
+              symbols and sign conventions may differ among studies.
+            </dd>
+          </div>
+
+          <div>
+            <dt>AIP | Approval in Principle</dt>
+            <dd>
+              Approval in Principle: a preliminary technical review by a classification society of a new concept or basic design;
+              it is not equivalent to full class approval.
+            </dd>
+          </div>
+
+          <div>
+            <dt>Green Water</dt>
+            <dd>
+              A substantial mass of seawater shipped over the bow or bulwark onto an exposed deck,
+              potentially imposing impact loads on equipment, structures, and cargo.
+            </dd>
+          </div>
+
+          <div>
+            <dt>EEDI | Energy Efficiency Design Index</dt>
+            <dd>
+              The Energy Efficiency Design Index, used to quantify design CO₂ emissions per unit of transport work under specified reference conditions.
+            </dd>
+          </div>
+
+          <div>
+            <dt>ULCV | Ultra-Large Container Vessel</dt>
+            <dd>
+              Ultra-large container vessel. There is no single globally uniform TEU threshold in practice;
+              the term generally refers to the largest modern ocean-going container ships.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section">
+      <div class="wrap">
+        <div class="conclusion-panel">
+          <span class="kicker" style="color:var(--cyan-300);">
+            Engineering conclusion
+          </span>
+
+          <h2>
+            A Wind Shield is not an added “wind wall”;
+            it is the aerodynamic leading edge of a container ship's above-water form.
+          </h2>
+
+          <p>
+            The most reasonable synthesis of the published evidence is as follows:
+            at certain wind angles, a bow Wind Shield can reduce aerodynamic pressure drag by approximately 20%.
+            At whole-ship level, a 6,700 TEU ship has demonstrated an average reduction in CO₂ emissions
+            of approximately 2% at about 17 kn. For optimized ultra-large container-ship designs,
+            official estimates are approximately 2–4%, but verification remains dependent on route wind conditions, container arrangement, and actual operating conditions.
+          </p>
+
+          <div class="conclusion-points">
+            <div class="conclusion-point">
+              <b>≈20%</b>
+              <span>Reduction in aerodynamic pressure drag under specific wind tunnel conditions</span>
+            </div>
+
+            <div class="conclusion-point">
+              <b>≈2%</b>
+              <span>Average full-scale reduction in CO₂ emissions measured on MOL MARVEL</span>
+            </div>
+
+            <div class="conclusion-point">
+              <b>2–4%</b>
+              <span>Official estimate for an optimized ultra-large container-ship design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration element -->
+    <section class="section section-alt" id="references">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="kicker">References</span>
+          <h2>Research Papers and Official Sources</h2>
+          <p class="section-intro">
+            The sources below prioritize academic papers, official shipping-company releases, and shipyard technical reports,
+            allowing the original conditions and research methods to be checked.
+          </p>
+        </header>
+
+        <ol class="sources-list">
+          <li class="source-item" id="ref-1">
+            <strong>
+              Development of Energy-saving Windshield for Large Container Ship
+              / 大型コンテナ船の省エネ船首風防の開発
+            </strong>
+            <p>
+              Conference Proceedings of the Japan Society of Naval Architects and Ocean Engineers, No. 21, 2015,
+              pp. 159–162. Covers the wind tunnel model, comparisons across wind angles,
+              drag-reduction rates, and estimated energy savings on a North Pacific route.
+            </p>
+            <a
+              href="https://doi.org/10.14856/conf.21.0_159"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open J-STAGE / DOI
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-2">
+            <strong>
+              Big Data Analysis Methods for Proving Energy-Saving Effects
+              of Windshield on a Container Ship
+              / コンテナ船船首風防の実海域省エネ効果解析
+            </strong>
+            <p>
+              Conference Proceedings of the Japan Society of Naval Architects and Ocean Engineers, No. 23, 2016,
+              pp. 433–436. Uses minute-by-minute operational data from MOL MARVEL and a sister ship
+              to analyze the bow Wind Shield's performance in actual service.
+            </p>
+            <a
+              href="https://doi.org/10.14856/conf.23.0_433"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open J-STAGE / DOI
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-3">
+            <strong>
+              MOL Confirms 2% in Average CO₂ Reduction
+              with Windshield Installed on Bow of Containership
+            </strong>
+            <p>
+              Mitsui O.S.K. Lines official press release, May 30, 2017.
+              Reports an average reduction in CO₂ emissions of approximately 2% at about 17 kn in full-scale operation.
+            </p>
+            <a
+              href="https://www.mol.co.jp/en/pr/2017/17034.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the official MOL release
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-4">
+            <strong>
+              MOL Earns AIP for Design of Bow Wind-Shield,
+              Ultra-large Containership
+            </strong>
+            <p>
+              Jointly developed by MOL and Samsung Heavy Industries;
+              received DNV GL AIP in 2019. The official estimate for an ultra-large container ship
+              is an approximately 2–4% reduction in CO₂ emissions.
+            </p>
+            <a
+              href="https://www.mol.co.jp/en/pr/2019/19075.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the official MOL release
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-5">
+            <strong>
+              JMU Technical Review No. 15:
+              24,000 TEU Container Ship — ONE INNOVATION
+            </strong>
+            <p>
+              Japan Marine United, February 2024.
+              Explains that the Bow Wind Cover reduces aerodynamic pressure drag
+              and allows containers to be stowed above the forward mooring deck.
+            </p>
+            <a
+              href="https://www.jmuc.co.jp/rd/technical-review/assets/VOL15_c1_24000teu_containership.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the JMU technical report (PDF)
+            </a>
+          </li>
+
+          <li class="source-item" id="ref-6">
+            <strong>
+              New Energy-saving Windshield Installed on
+              Containership MOL MARVEL for Demonstration Test
+            </strong>
+            <p>
+              MOL official press release, September 3, 2015.
+              Describes the horseshoe-shaped design, research partners, structural-strength requirements,
+              estimated annual energy savings, and the intended protection against green water.
+            </p>
+            <a
+              href="https://www.mol.co.jp/en/pr/2015/15053.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the official MOL release
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.en.html"
+      data-share-title="Container-Ship Wind Shields: How Can a Larger Bow Shield Reduce Drag? | Reay's Note"
+      data-share-email-body="I found this article in Reay's Maritime Notes and thought you might find it useful:&#10;&#10;Container-Ship Wind Shields: How Can a Larger Bow Shield Reduce Drag? | Reay's Note&#10;https://reayhuang.com/notes/maritime/container-ship-wind-shield-notes.en.html"
+      data-share-copy="Copy link"
+      data-share-copied="Copied"
+      data-toast-copied="Link copied to clipboard"
+    >
+      <p class="article-share__label" id="share-end-label">Found this useful? Share it with a colleague</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <footer class="footer site-footer">
+    <div class="container">
+      <strong>Container-Ship Wind Shield Engineering Review | Reay's Note</strong>
+      <span class="small">Prepared by Reay Huang · Maritime Survey / Learning Note · Compiled: 2026-07-15</span>
+      <p class="disclaimer small">
+        This visual summary is intended for learning, internal training, and preliminary technical understanding. It does not represent the official views of any shipyard, shipping company, classification society, the IMO, or any other organization.
+        <span class="disclaimer-tail">It does not replace formal shipyard design calculations, CFD or wind tunnel testing, class review, professional engineering judgment, or operational safety decisions. Actual design and regulatory applicability must be determined from the latest IMO conventions, competent-authority notices, and applicable class rules.</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const progress = document.getElementById("scrollProgress");
+      const mobileNav = document.querySelector(".mobile-nav");
+      const navLinks = Array.from(
+        document.querySelectorAll(".nav-links a, .mobile-nav-panel a")
+      );
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (mobileNav) {
+            mobileNav.open = false;
+          }
+        });
+      });
+
+      const updateScrollUI = () => {
+        const scrollTop =
+          window.scrollY ||
+          document.documentElement.scrollTop ||
+          0;
+
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+
+        const percentage =
+          scrollHeight > 0
+            ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100))
+            : 0;
+
+        if (progress) {
+          progress.style.width = `${percentage}%`;
+        }
+      };
+
+      window.addEventListener("scroll", updateScrollUI, { passive: true });
+      window.addEventListener("resize", updateScrollUI);
+      updateScrollUI();
+
+      if ("IntersectionObserver" in window && navLinks.length > 0) {
+        const sectionMap = new Map();
+
+        navLinks.forEach((link) => {
+          const selector = link.getAttribute("href");
+
+          if (selector && selector.startsWith("#")) {
+            const section = document.querySelector(selector);
+
+            if (section) {
+              sectionMap.set(section, link);
+            }
+          }
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const link = sectionMap.get(entry.target);
+
+              if (!link) {
+                return;
+              }
+
+              if (entry.isIntersecting) {
+                navLinks.forEach((item) => item.classList.remove("active"));
+                link.classList.add("active");
+              }
+            });
+          },
+          {
+            root: null,
+            rootMargin: "-22% 0px -62% 0px",
+            threshold: 0
+          }
+        );
+
+        sectionMap.forEach((link, section) => {
+          observer.observe(section);
+        });
+      }
+    })();
+  </script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const renderKatexTargets = () => {
+        if (typeof katex === "undefined") return;
+
+        document.querySelectorAll("[data-katex]").forEach((el) => {
+          const tex = el.getAttribute("data-katex");
+          if (!tex) return;
+
+          katex.render(tex, el, {
+            displayMode: true,
+            throwOnError: false,
+            strict: "ignore"
+          });
+        });
+      };
+
+      if (typeof katex !== "undefined") {
+        renderKatexTargets();
+      } else {
+        const katexScript = document.querySelector('script[src*="katex.min.js"]');
+        if (katexScript) {
+          katexScript.addEventListener("load", renderKatexTargets);
+        }
+      }
+    });
+  </script>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+</body>
+</html>
