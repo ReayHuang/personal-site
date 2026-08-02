@@ -524,6 +524,37 @@ a.card:focus-visible {
   color: var(--lr-muted);
 }
 
+.card--preview {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card__preview {
+  border-bottom: 1px solid var(--border);
+  line-height: 0;
+}
+
+.card__preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card--preview .meta,
+.card--preview h3,
+.card--preview > p:not(.meta) {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.card--preview .meta {
+  padding-top: 1.25rem;
+}
+
+.card--preview > p:last-child {
+  padding-bottom: 1.5rem;
+}
+
 /* 首頁精選文章（index.html / index.zh.html） */
 .home-with-featured .value-strip {
   margin-bottom: 0;

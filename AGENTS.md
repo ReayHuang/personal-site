@@ -34,7 +34,10 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 
 | Slug | English | Traditional Chinese |
 |------|---------|---------------------|
+| Ammonia fuel | `ammonia-fuel-surveyor-notes.en.html` | `ammonia-fuel-surveyor-notes.html` |
+| Future IMO/ILO container ships (2026) | `future-imo-ilo-container-ships-2026.en.html` | `future-imo-ilo-container-ships-2026.html` |
 | Container ship Wind Shield | `container-ship-wind-shield-notes.en.html` | `container-ship-wind-shield-notes.html` |
+| Electronic certificates (joint guidelines) | `electronic-certificates-joint-guidelines-notes.en.html` | `electronic-certificates-joint-guidelines-notes.html` |
 | Onboard certificates | `onboard-certificates.en.html` | `onboard-certificates.html` |
 | Engine FAT / shipboard trial (LR-RU-001) | `engine-fat-shipboard-note.en.html` | `engine-fat-shipboard-note.html` |
 | LRPF (LR-RU-012) | `lfpf-note.en.html` | `lfpf-note.html` |

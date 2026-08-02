@@ -1,0 +1,2319 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light" data-back-to-top-label="回到頂部">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" hreflang="en" href="ammonia-fuel-surveyor-notes.en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="ammonia-fuel-surveyor-notes.html">
+  <link rel="alternate" hreflang="x-default" href="ammonia-fuel-surveyor-notes.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記｜Reay Huang Maritime Notes</title>
+  <meta name="description" content="以驗船師視角整理 Lloyd’s Register《Fuel for Thought: Ammonia》，涵蓋氨的毒性、材料相容性、SCC、加注風險、IGF/IGC Code、FuelEU、生命週期排放、引擎與燃料供應系統。">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="氨燃料, ammonia fuel, 船舶脫碳, 驗船師, IGF Code, IGC Code, FuelEU Maritime, SCC, 氨燃料供應系統">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#070d19">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/ammonia-fuel-surveyor-notes.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:title" content="氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記">
+  <meta property="og:description" content="以驗船師視角整理 Lloyd’s Register《Fuel for Thought: Ammonia》，涵蓋氨的毒性、材料相容性、SCC、加注風險、IGF/IGC Code、FuelEU、生命週期排放、引擎與燃料供應系統。">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/ammonia-fuel-surveyor-notes.html">
+  <meta property="article:published_time" content="2026-08-02T13:30:00+09:00">
+  <meta property="article:modified_time" content="2026-08-02T13:30:00+09:00">
+  <meta property="article:author" content="Reay Huang">
+  <meta property="article:section" content="Maritime Alternative Fuels">
+  <meta property="article:tag" content="Ammonia">
+  <meta property="article:tag" content="Marine Fuel">
+  <meta property="article:tag" content="Ship Survey">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記">
+  <meta name="twitter:description" content="以驗船師視角整理 Lloyd’s Register《Fuel for Thought: Ammonia》，涵蓋氨的毒性、材料相容性、SCC、加注風險、IGF/IGC Code、FuelEU、生命週期排放、引擎與燃料供應系統。">
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/ammonia-fuel-surveyor-notes/ammonia-fuel-surveyor-notes-link-preview.png">
+  <meta property="og:image:alt" content="氨燃料船舶：從安全到系統核准的驗船師筆記">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="535">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/ammonia-fuel-surveyor-notes/ammonia-fuel-surveyor-notes-link-preview.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記","description":"以驗船師視角整理 Lloyd’s Register《Fuel for Thought: Ammonia》，涵蓋氨的毒性、材料相容性、SCC、加注風險、IGF/IGC Code、FuelEU、生命週期排放、引擎與燃料供應系統。","image":"https://reayhuang.com/assets/images/maritime/ammonia-fuel-surveyor-notes/ammonia-fuel-surveyor-notes-link-preview.png","author":{"@type":"Person","name":"Reay Huang"},"publisher":{"@type":"Person","name":"Reay Huang"},"datePublished":"2026-08-02","dateModified":"2026-08-02","inLanguage":"zh-Hant","mainEntityOfPage":"https://reayhuang.com/notes/maritime/ammonia-fuel-surveyor-notes.html","about":["Ammonia as marine fuel","Alternative fuels","Maritime decarbonisation","IGF Code","IGC Code","Marine surveying"],"isBasedOn":{"@type":"Report","name":"Fuel for Thought: Ammonia","datePublished":"2024-03-21","url":"https://www.lr.org/en/knowledge/research-reports/2024/fuel-for-thought-ammonia-report/","publisher":{"@type":"Organization","name":"Lloyd's Register"}}}</script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f2f3f6;
+      --surface: #ffffff;
+      --surface-soft: #f7f7f8;
+      --surface-strong: #e9eaed;
+      --ink: #070d19;
+      --muted: #535a74;
+      --navy: #070d19;
+      --navy-2: #151d31;
+      --teal: #008c82;
+      --teal-2: #00a99d;
+      --aqua: #00c5b7;
+      --magenta: #00a99d;
+      --orange: #657089;
+      --line: #dbdcdf;
+      --shadow: 0 16px 48px rgba(7, 13, 25, .10);
+      --shadow-soft: 0 8px 24px rgba(7, 13, 25, .07);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --content: 760px;
+      --sidebar: 292px;
+      --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --font-serif: ui-serif, Georgia, "Noto Serif TC", "Songti TC", serif;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #070d19;
+      --surface: #111827;
+      --surface-soft: #182135;
+      --surface-strong: #222c42;
+      --ink: #f4f5f7;
+      --muted: #b3b7c2;
+      --navy: #030712;
+      --navy-2: #0d1526;
+      --teal: #00c5b7;
+      --teal-2: #35d8cc;
+      --aqua: #65e3da;
+      --magenta: #00a99d;
+      --orange: #aeb5c5;
+      --line: #30394d;
+      --shadow: 0 18px 58px rgba(0, 0, 0, .28);
+      --shadow-soft: 0 8px 28px rgba(0, 0, 0, .22);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(0,197,183,.09), transparent 30rem),
+        radial-gradient(circle at 90% 24%, rgba(83,90,116,.07), transparent 34rem),
+        var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.82;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--teal); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+    a:hover { color: var(--magenta); }
+    img, svg { max-width: 100%; display: block; }
+    button { font: inherit; }
+
+    .skip-link {
+      position: fixed; left: 1rem; top: -5rem; z-index: 9999;
+      padding: .7rem 1rem; border-radius: 10px; background: var(--surface); color: var(--ink);
+      box-shadow: var(--shadow); transition: top .2s ease;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .reading-progress {
+      position: fixed; inset: 0 0 auto 0; height: 4px; z-index: 2000;
+      background: transparent;
+    }
+    .reading-progress > span {
+      display: block; width: 0; height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--magenta));
+      box-shadow: 0 0 12px rgba(0,197,183,.42);
+    }
+
+    .hero {
+      position: relative; overflow: hidden; color: #f3fbfc;
+      background:
+        linear-gradient(90deg, rgba(7,13,25,.99) 0%, rgba(7,13,25,.96) 34%, rgba(7,13,25,.78) 55%, rgba(7,13,25,.22) 82%, rgba(7,13,25,.08) 100%),
+        url("../../assets/images/maritime/ammonia-fuel-surveyor-notes/hero-ammonia-molecular.png") center center / cover no-repeat,
+        var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, black, transparent 86%);
+    }
+    .hero-inner {
+      position: relative; width: min(1180px, calc(100% - 2rem)); margin: 0 auto;
+      padding: clamp(4.8rem, 8vw, 8rem) 0 clamp(4rem, 7vw, 6.5rem);
+      display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center;
+      min-height: clamp(680px, 56.25vw, 820px);
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1.2rem;
+      color: var(--aqua); font-weight: 800; font-size: .78rem; letter-spacing: .13em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: currentColor; border-radius: 99px; }
+    .hero h1 {
+      margin: 0; max-width: 15ch; color: white;
+      font-size: clamp(2.6rem, 6vw, 5.15rem); line-height: 1.06; letter-spacing: -.055em;
+      text-wrap: balance;
+    }
+    .hero h1 em { color: var(--aqua); font-style: normal; }
+    .hero-deck {
+      max-width: 62ch; margin: 1.45rem 0 0; color: rgba(239,251,252,.84);
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.75;
+    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.75rem; }
+    .meta-chip {
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .55rem .8rem; border: 1px solid rgba(255,255,255,.16); border-radius: 999px;
+      background: rgba(255,255,255,.07); color: rgba(255,255,255,.88); font-size: .84rem;
+    }
+    .meta-chip-link { text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+    .meta-chip-link:hover { color: white; background: rgba(0,197,183,.18); border-color: var(--aqua); }
+    .meta-chip svg { width: 15px; height: 15px; }
+
+    .intro-shell { width: min(1180px, calc(100% - 2rem)); margin: -2.6rem auto 0; position: relative; z-index: 5; }
+    .intro-card {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem;
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .intro-card h2 { margin: 0 0 .75rem; font-size: clamp(1.45rem, 2.8vw, 2rem); letter-spacing: -.035em; line-height: 1.25; }
+    .intro-card p { margin: 0; color: var(--muted); }
+    .author-card {
+      display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: center;
+      padding: 1rem; border-radius: 15px; background: var(--surface-soft); border: 1px solid var(--line);
+    }
+    .author-avatar {
+      width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
+      background: linear-gradient(145deg, var(--teal), var(--navy)); color: white; font-weight: 900; letter-spacing: -.03em;
+    }
+    .author-card strong { display: block; line-height: 1.25; }
+    .author-card span { display: block; color: var(--muted); font-size: .86rem; margin-top: .25rem; line-height: 1.45; }
+
+    .key-grid {
+      width: min(1180px, calc(100% - 2rem)); margin: 2rem auto 0;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    }
+    .key-card {
+      padding: 1.25rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-soft);
+    }
+    .key-no { color: var(--magenta); font-weight: 900; font-size: .76rem; letter-spacing: .1em; }
+    .key-card h3 { margin: .45rem 0 .45rem; font-size: 1.02rem; line-height: 1.4; }
+    .key-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.65; }
+
+    .layout {
+      width: min(1180px, calc(100% - 2rem)); margin: 3.2rem auto 5rem;
+      display: grid; grid-template-columns: var(--sidebar) minmax(0, var(--content)); gap: clamp(2rem, 5vw, 5rem); justify-content: center; align-items: start;
+    }
+    .sidebar { position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow: auto; scrollbar-width: thin; }
+    .toc-box {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-soft); overflow: hidden;
+    }
+    .toc-head {
+      display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+      padding: 1rem 1rem .85rem; border-bottom: 1px solid var(--line);
+    }
+    .toc-head strong { font-size: .88rem; letter-spacing: .06em; text-transform: uppercase; }
+    .toc-toggle { display: none; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+    .toc-list { list-style: none; padding: .65rem; margin: 0; }
+    .toc-list li { margin: 0; }
+    .toc-list a {
+      display: block; padding: .45rem .65rem; border-radius: 9px; color: var(--muted); text-decoration: none; font-size: .82rem; line-height: 1.45;
+      border-left: 2px solid transparent; transition: .18s ease;
+    }
+    .toc-list .toc-subsection a { padding-left: 1rem; font-size: .78rem; }
+    .toc-list a:hover { color: var(--ink); background: var(--surface-soft); }
+    .toc-list a.active { color: var(--teal); background: color-mix(in srgb, var(--teal) 9%, var(--surface)); border-left-color: var(--teal); font-weight: 750; }
+    .sidebar-note {
+      margin-top: 1rem; padding: 1rem; border-radius: 14px; color: var(--muted); background: var(--surface-soft); border: 1px solid var(--line); font-size: .78rem; line-height: 1.55;
+    }
+
+    .content { min-width: 0; }
+    .source-banner {
+      display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;
+      margin-bottom: 2rem; padding: 1.15rem 1.25rem; border-radius: 15px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--teal) 10%, var(--surface)), var(--surface));
+      border: 1px solid color-mix(in srgb, var(--teal) 35%, var(--line));
+    }
+    .source-icon {
+      width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; color: white;
+      background: linear-gradient(145deg, var(--teal), var(--navy-2));
+    }
+    .source-banner strong { display: block; margin-bottom: .2rem; }
+    .source-banner p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.65; }
+
+    .article-body { counter-reset: figure; }
+    .article-section {
+      margin: 0 0 2.2rem; padding: clamp(1.45rem, 3.2vw, 2.4rem);
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-soft);
+    }
+    .article-section > h1:first-child {
+      position: relative; margin: -.2rem 0 1.65rem; padding-bottom: 1rem;
+      color: var(--navy-2); font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.18; letter-spacing: -.045em;
+      border-bottom: 1px solid var(--line);
+    }
+    html[data-theme="dark"] .article-section > h1:first-child { color: var(--ink); }
+    .article-section > h1:first-child::before {
+      content: ""; position: absolute; left: 0; bottom: -1px; width: 78px; height: 3px; border-radius: 99px;
+      background: linear-gradient(90deg, var(--teal), var(--magenta));
+    }
+    .article-section h2 {
+      position: relative; margin: 2.65rem 0 1.15rem; padding: .82rem 1rem .82rem 1.15rem;
+      font-size: clamp(1.35rem, 2.7vw, 1.8rem); line-height: 1.3; letter-spacing: -.03em;
+      color: var(--ink); background: linear-gradient(90deg, color-mix(in srgb, var(--teal) 11%, var(--surface)), color-mix(in srgb, var(--teal) 3%, var(--surface)) 72%, transparent);
+      border-left: 4px solid var(--aqua); border-radius: 0 12px 12px 0; scroll-margin-top: 28px;
+    }
+    .article-section > h2:first-child { margin-top: 0; }
+    .article-section h3 { position: relative; margin: 2rem 0 .72rem; padding-left: .85rem; font-size: 1.16rem; line-height: 1.4; color: var(--navy-2); }
+    .article-section h3::before { content: ""; position: absolute; left: 0; top: .15em; bottom: .15em; width: 3px; border-radius: 99px; background: color-mix(in srgb, var(--teal) 72%, var(--line)); }
+    html[data-theme="dark"] .article-section h3 { color: var(--aqua); }
+    .article-section h4 { display: inline-flex; margin: 1.55rem 0 .55rem; padding: .24rem .58rem; border-radius: 7px; background: color-mix(in srgb, var(--teal) 8%, var(--surface)); font-size: 1rem; color: var(--teal); }
+    .article-section p { max-width: 70ch; margin: .82rem 0 1.2rem; line-height: 1.9; }
+    .article-section > h2 + p, .article-section > h3 + p { font-size: 1.015rem; }
+    .article-section ul, .article-section ol { margin: .8rem 0 1.35rem; padding-left: 1.45rem; }
+    .article-section > ul:not(.check-list), .article-section > ol {
+      padding: .9rem 1.1rem .9rem 2.55rem; border: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+      border-radius: 12px; background: color-mix(in srgb, var(--surface-soft) 72%, var(--surface));
+    }
+    .article-section li { margin: .48rem 0; padding-left: .22rem; line-height: 1.72; }
+    .article-section li + li { margin-top: .58rem; }
+    .article-section li::marker { color: var(--teal); font-weight: 800; }
+    .article-section strong { color: color-mix(in srgb, var(--ink) 90%, var(--teal)); font-weight: 780; }
+    .article-section > hr { height: 1px; margin: 2.4rem 0 .4rem; border: 0; background: linear-gradient(90deg, var(--line), transparent); }
+
+    .heading-anchor {
+      margin-left: .45rem; color: var(--muted); opacity: 0; text-decoration: none; font-size: .7em; vertical-align: .08em;
+      transition: opacity .18s ease, color .18s ease;
+    }
+    h1:hover .heading-anchor, h2:hover .heading-anchor, h3:hover .heading-anchor, h4:hover .heading-anchor,
+    .heading-anchor:focus { opacity: 1; color: var(--teal); }
+
+    .note-callout {
+      position: relative; margin: 1.4rem 0; padding: 1rem 1.15rem 1rem 1.3rem;
+      border: 1px solid color-mix(in srgb, var(--teal) 36%, var(--line)); border-left: 4px solid var(--teal); border-radius: 0 13px 13px 0;
+      background: color-mix(in srgb, var(--teal) 7%, var(--surface)); color: var(--muted);
+    }
+    .note-callout p:last-child { margin-bottom: 0; }
+
+    .table-wrap {
+      margin: 1.25rem 0 1.65rem; overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+      scrollbar-width: thin;
+    }
+    .table-wrap:focus { outline: 3px solid color-mix(in srgb, var(--teal) 28%, transparent); outline-offset: 2px; }
+    .data-table { width: 100%; min-width: 620px; border-collapse: separate; border-spacing: 0; font-size: .86rem; line-height: 1.55; }
+    .data-table th, .data-table td { padding: .82rem .9rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .data-table th { position: sticky; top: 0; color: white; background: var(--navy-2); font-size: .78rem; letter-spacing: .02em; }
+    .data-table tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-soft) 66%, transparent); }
+    .data-table tbody tr:hover td { background: color-mix(in srgb, var(--teal) 7%, var(--surface)); }
+    .data-table tr:last-child td { border-bottom: 0; }
+
+    .code-block {
+      margin: 1rem 0 1.4rem; padding: 1.05rem 1.15rem; overflow-x: auto; border-radius: 14px;
+      color: #f4f5f7; background: #070d19; border: 1px solid rgba(0,197,183,.18); box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+    }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .88em; }
+
+    .surveyor-section {
+      background:
+        linear-gradient(150deg, color-mix(in srgb, var(--teal) 8%, var(--surface)), var(--surface) 55%),
+        var(--surface);
+      border-color: color-mix(in srgb, var(--teal) 42%, var(--line));
+    }
+    .surveyor-section > h1:first-child { color: var(--teal); }
+    .check-list { list-style: none; padding-left: 0 !important; display: grid; gap: .55rem; }
+    .check-list li { position: relative; padding: .72rem .82rem .72rem 2.35rem; margin: 0; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); }
+    .check-list li::before {
+      content: "✓"; position: absolute; left: .82rem; top: .72rem; width: 1.05rem; height: 1.05rem; border-radius: 50%;
+      display: grid; place-items: center; color: white; background: var(--teal); font-size: .68rem; font-weight: 900;
+    }
+    .closing-section { text-align: center; background: linear-gradient(145deg, var(--navy), var(--navy-2)); color: #e9f7f8; border-color: transparent; }
+    .closing-section > h1:first-child { color: white; border-bottom-color: rgba(255,255,255,.12); }
+    .closing-section > h1:first-child::before { left: 50%; transform: translateX(-50%); }
+    .closing-section p { font-family: var(--font-serif); font-size: clamp(1.2rem, 2.5vw, 1.5rem); line-height: 1.75; }
+    .closing-card {
+      margin-top: 2rem; padding: clamp(1.35rem, 3vw, 2rem); text-align: center; border-radius: 16px;
+      color: #e9f7f8; background: linear-gradient(145deg, var(--navy), var(--navy-2)); border: 1px solid rgba(255,255,255,.08);
+    }
+    .closing-card h2 { margin-top: 0; color: white; }
+    .closing-card p { margin-bottom: 0; font-family: var(--font-serif); font-size: clamp(1.16rem, 2.4vw, 1.46rem); line-height: 1.75; }
+    .closing-card strong { color: white; }
+    .glossary-section .data-table td:first-child { font-weight: 800; color: var(--teal); white-space: nowrap; }
+
+    .article-footer {
+      margin-top: 2.2rem; padding: 1.4rem; border: 1px solid var(--line); border-radius: 16px; background: var(--surface-soft);
+    }
+    .article-footer h2 { margin: 0 0 .55rem; font-size: 1.15rem; }
+    .article-footer p { margin: .4rem 0; color: var(--muted); font-size: .86rem; }
+    .article-footer .footer-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      min-height: 42px; padding: .62rem .9rem; border-radius: 11px; border: 1px solid var(--line);
+      background: var(--surface); color: var(--ink); text-decoration: none; cursor: pointer; font-weight: 750; font-size: .84rem;
+    }
+    .btn:hover { border-color: var(--teal); color: var(--teal); }
+    .btn-primary { color: white; background: var(--teal); border-color: var(--teal); }
+    .btn-primary:hover { color: white; background: var(--teal-2); border-color: var(--teal-2); }
+    .btn svg { width: 17px; height: 17px; }
+
+    .site-footer {
+      padding: 2.4rem 1rem 3rem; text-align: center; color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line);
+    }
+    .site-footer strong { color: var(--ink); }
+
+    .back-top {
+      position: fixed; right: 1rem; bottom: 1rem; z-index: 800;
+      width: 46px; height: 46px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      box-shadow: var(--shadow-soft); display: grid; place-items: center; cursor: pointer;
+      opacity: 0; transform: translateY(12px); pointer-events: none; transition: .2s ease;
+    }
+    .back-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .back-top svg { width: 21px; height: 21px; }
+
+    .section-preview-trigger, .section-preview-sheet { display: none; }
+    .section-preview-sheet[hidden] { display: none !important; }
+    body.section-preview-open { overflow: hidden; }
+
+    :focus-visible { outline: 3px solid color-mix(in srgb, var(--teal) 38%, transparent); outline-offset: 3px; }
+
+    @media (max-width: 980px) {
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(7,13,25,.97), rgba(7,13,25,.84)),
+          url("../../assets/images/maritime/ammonia-fuel-surveyor-notes/hero-ammonia-molecular.png") 64% center / cover no-repeat,
+          var(--navy);
+      }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero h1 { max-width: 17ch; }
+      .intro-card { grid-template-columns: 1fr; }
+      .key-grid { grid-template-columns: repeat(2, 1fr); }
+      .layout { grid-template-columns: 1fr; gap: 1.25rem; }
+      .sidebar { position: relative; top: auto; max-height: none; overflow: visible; }
+      .toc-head { cursor: pointer; }
+      .toc-toggle { display: inline-grid; place-items: center; }
+      .toc-list { display: none; max-height: 60vh; overflow: auto; }
+      .toc-box.open .toc-list { display: block; }
+      .sidebar-note { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .hero-inner, .intro-shell, .key-grid, .layout { width: min(100% - 1.1rem, 1180px); }
+      .hero-inner { padding-top: clamp(2.2rem, 6vw, 3.2rem); }
+      .hero h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); }
+      .key-grid { grid-template-columns: 1fr; }
+      .article-section { padding: 1.25rem; border-radius: 15px; }
+      .article-section > h1:first-child { font-size: 1.8rem; }
+      .article-section h2 { margin: 2.05rem 0 .9rem; padding: .72rem .72rem .72rem .85rem; border-left-width: 3px; border-radius: 0 10px 10px 0; }
+      .article-section h3 { margin-top: 1.65rem; }
+      .article-section p { line-height: 1.82; }
+      .article-section > ul:not(.check-list), .article-section > ol { padding: .75rem .8rem .75rem 2.15rem; }
+      .source-banner { grid-template-columns: 1fr; }
+      .source-icon { display: none; }
+      .sidebar { display: none; }
+
+      .section-preview-trigger {
+        position: sticky; top: 0; z-index: 1400;
+        width: 100%; margin: 0; border-radius: 0; border-left: 0; border-right: 0;
+        min-height: 58px; padding: .55rem .75rem .65rem; border-top: 0;
+        border-bottom: 1px solid rgba(0,197,183,.38);
+        display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .65rem;
+        color: white; background: rgba(7,13,25,.94); box-shadow: 0 8px 24px rgba(7,13,25,.22);
+        backdrop-filter: blur(16px); cursor: pointer; overflow: hidden; text-align: left;
+      }
+      .section-preview-trigger > svg { width: 21px; height: 21px; color: var(--aqua); }
+      .section-preview-trigger-copy { min-width: 0; line-height: 1.15; }
+      .section-preview-trigger-copy small { display: block; color: rgba(255,255,255,.62); font-size: .64rem; letter-spacing: .08em; margin-bottom: .18rem; }
+      .section-preview-trigger-copy strong { display: block; overflow: hidden; color: white; font-size: .78rem; white-space: nowrap; text-overflow: ellipsis; }
+      .section-preview-percent { color: var(--aqua); font-size: .74rem; font-weight: 850; font-variant-numeric: tabular-nums; }
+      .section-preview-meter { position: absolute; inset: auto 0 0; height: 3px; background: rgba(255,255,255,.10); }
+      .section-preview-meter > span { display: block; width: 0; height: 100%; background: var(--aqua); transition: width .12s linear; }
+
+      .section-preview-sheet:not([hidden]) { display: block; position: fixed; inset: 0; z-index: 2400; }
+      .section-preview-backdrop { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(3,7,18,.58); opacity: 0; transition: opacity .22s ease; cursor: pointer; }
+      .section-preview-panel {
+        position: absolute; inset: auto 0 0; max-height: min(78vh, 720px); padding-bottom: env(safe-area-inset-bottom);
+        display: flex; flex-direction: column; color: var(--ink); background: var(--surface);
+        border: 1px solid var(--line); border-bottom: 0; border-radius: 24px 24px 0 0;
+        box-shadow: 0 -20px 60px rgba(7,13,25,.24); transform: translateY(102%); transition: transform .24s ease;
+      }
+      .section-preview-sheet.open .section-preview-backdrop { opacity: 1; }
+      .section-preview-sheet.open .section-preview-panel { transform: translateY(0); }
+      .section-preview-handle { width: 42px; height: 4px; margin: .65rem auto .35rem; border-radius: 99px; background: var(--line); }
+      .section-preview-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .55rem 1rem .75rem; border-bottom: 1px solid var(--line); }
+      .section-preview-head h2 { margin: 0; font-size: 1.05rem; }
+      .section-preview-close { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); background: var(--surface-soft); cursor: pointer; }
+      .section-preview-close svg { width: 19px; height: 19px; }
+      .section-preview-current { margin: .75rem 1rem .3rem; padding: .7rem .8rem; border-radius: 12px; background: color-mix(in srgb, var(--teal) 9%, var(--surface)); color: var(--muted); font-size: .76rem; line-height: 1.4; }
+      .section-preview-current strong { color: var(--teal); }
+      .section-preview-nav { min-height: 0; overflow: auto; overscroll-behavior: contain; padding: .35rem .75rem 1.25rem; }
+      .section-preview-list { list-style: none; margin: 0; padding: 0; }
+      .section-preview-list li { margin: 0; }
+      .section-preview-list a { display: block; padding: .72rem .8rem; border-left: 3px solid transparent; border-radius: 10px; color: var(--muted); text-decoration: none; font-size: .86rem; line-height: 1.35; }
+      .section-preview-list .toc-subsection a { padding-left: 1.45rem; font-size: .8rem; }
+      .section-preview-list a.active { color: var(--ink); background: color-mix(in srgb, var(--teal) 10%, var(--surface)); border-left-color: var(--aqua); font-weight: 800; }
+    }
+
+    @media print {
+      :root { --bg: #fff; --surface: #fff; --ink: #111; --muted: #444; --line: #bbb; }
+      body { background: #fff; font-size: 11pt; line-height: 1.55; }
+      .note-site-bar, .reading-progress, .sidebar, .back-top, .footer-actions, .section-preview-trigger, .section-preview-sheet, .article-share, .share-band, footer.site-footer { display: none !important; }
+      .hero { background: #fff; color: #111; border: 0; }
+      .hero::before { display: none; }
+      .hero-inner { display: block; width: 100%; padding: 1rem 0 1.5rem; }
+      .hero h1, .hero h1 em { color: #111; max-width: none; font-size: 28pt; }
+      .hero-deck, .meta-chip { color: #333; }
+      .hero-meta { gap: .25rem; }
+      .meta-chip { background: #fff; border-color: #aaa; }
+      .intro-shell, .key-grid, .layout { width: 100%; margin-left: 0; margin-right: 0; }
+      .intro-shell { margin-top: 0; }
+      .intro-card, .key-card, .article-section, .article-footer { box-shadow: none; break-inside: avoid; }
+      .key-grid { grid-template-columns: repeat(2, 1fr); }
+      .layout { display: block; margin-top: 1.5rem; }
+      .article-section { border-radius: 0; margin-bottom: 1rem; padding: 1rem 0; border-width: 1px 0 0; }
+      .table-wrap { overflow: visible; }
+      .data-table { min-width: 0; font-size: 8.5pt; }
+      a { color: #111; text-decoration: none; }
+      .heading-anchor { display: none; }
+      .site-footer { border-top: 1px solid #aaa; }
+      @page { margin: 16mm; }
+    }
+
+    .note-site-bar { position: relative; z-index: 1200; }
+    .hero .article-meta { margin: 18px 0 18px; max-width: 790px; color: rgba(243, 251, 252, 0.78); }
+    .hero .article-meta__sep { color: rgba(243, 251, 252, 0.35); }
+    .hero .article-share--hero { margin-top: 1.25rem; }
+    .hero .article-share__label { color: rgba(243, 251, 252, 0.78); font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+    .share-band { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; padding: 28px 0 0; }
+    .share-band .article-share--end { margin: 0; width: 100%; justify-content: flex-start; align-items: center; }
+    .share-band .article-share__label { font-size: 11px; font-weight: 800; letter-spacing: .04em; color: var(--muted); }
+    footer.site-footer { padding: 38px 0 46px; color: rgba(255,255,255,.78); background: #041b2d; margin-top: 34px; text-align: left; border-top: 0; }
+    footer.site-footer .site-footer-inner { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
+    footer.site-footer strong { color: #fff; display: block; margin-bottom: 6px; }
+    footer.site-footer .small { font-size: 13px; color: rgba(255,255,255,.62); }
+    footer.site-footer .disclaimer { margin: 14px 0 0; color: rgba(255,255,255,.62); max-width: 760px; font-size: 13px; line-height: 1.7; }
+    footer.site-footer a { color: #8ff7f1; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="ammonia-fuel-surveyor-notes.en.html" lang="en" hreflang="en">EN</a>
+      <a href="ammonia-fuel-surveyor-notes.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <button class="section-preview-trigger" id="sectionPreviewTrigger" type="button" aria-haspopup="dialog" aria-controls="sectionPreviewSheet" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+      <span class="section-preview-trigger-copy"><small>段落預覽</small><strong id="sectionPreviewLabel">文件摘要</strong></span>
+      <span class="section-preview-percent" id="sectionPreviewPercent">0%</span>
+      <span class="section-preview-meter" aria-hidden="true"><span id="sectionPreviewMeter"></span></span>
+    </button>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Surveyor’s Technical Reading Note</div>
+          <h1 id="page-title">氨燃料船舶：<em>從安全到系統核准</em>的驗船師筆記</h1>
+          <p class="article-meta">
+            <span>📅 更新：2026-08-02</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 閱讀約 25 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 Fuel for Thought / 氨燃料 / IGF Code</span>
+          </p>
+          <p class="hero-deck">以驗船師的實務視角，整理 Lloyd’s Register《Fuel for Thought: Ammonia》：不只看引擎是否能燒氨，更關注儲存、管路、材料、通風、偵測、加注、排氣處理，以及整套系統能否被安全地設計、建造、測試與操作。</p>
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/ammonia-fuel-surveyor-notes.html"
+            data-share-title="氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記｜Reay's Note"
+            data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記｜Reay's Note&#10;https://reayhuang.com/notes/maritime/ammonia-fuel-surveyor-notes.html"
+            data-share-copy="複製連結"
+            data-share-copied="已複製"
+            data-toast-copied="連結已複製到剪貼簿"
+          >
+            <p class="article-share__label" id="share-hero-label">分享此篇</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="intro-shell" aria-labelledby="surveyor-intro-title">
+      <div class="intro-card">
+        <div>
+          <h2 id="surveyor-intro-title">為什麼要用「驗船師視角」閱讀氨燃料？</h2>
+          <p>替代燃料的討論很容易集中在燃燒效率或碳排數字；但在實船上，安全成立與否往往取決於數十個彼此連動的細節。本文將原報告內容轉為工程化閱讀架構，聚焦毒性風險、材料相容性、SCC、危險區域、雙層管路、氮氣吹除、氨釋放緩解、SCR 與船員操作，讓讀者能從「概念可行」進一步理解到「系統如何被核准與驗證」。</p>
+        </div>
+        <div class="author-card" aria-label="作者資訊">
+          <div class="author-avatar" aria-hidden="true">RH</div>
+          <div><strong>Reay Huang</strong><span>Marine &amp; Offshore Surveyor<br>Maritime technical notes and field observations</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="key-grid" aria-label="四個核心閱讀重點">
+      <article class="key-card"><div class="key-no">01 / LIFECYCLE</div><h3>不含碳，不等於零排放</h3><p>船上燃燒不直接產生 CO₂，但灰氨、藍氨與綠氨的 Well-to-Wake 結果差異極大。</p></article>
+      <article class="key-card"><div class="key-no">02 / SAFETY</div><h3>毒性是設計主軸</h3><p>氨的危險不只在燃爆，還包括吸入、腐蝕、低溫閃蒸氣雲與事故影響超出船界。</p></article>
+      <article class="key-card"><div class="key-no">03 / SYSTEM</div><h3>主機只是整套系統的一部分</h3><p>儲槽、FSS、FVU、DBB、通風、偵測、吹除、回收與排氣後處理必須一起成立。</p></article>
+      <article class="key-card"><div class="key-no">04 / READINESS</div><h3>TRL 以外還要看 IRL 與 CRL</h3><p>投資可行性、法規框架、港口能力與社會接受度，都可能比引擎成熟度更晚到位。</p></article>
+    </section>
+
+    <div class="layout">
+      <aside class="sidebar" aria-label="文章目錄">
+        <nav class="toc-box" id="tocBox">
+          <div class="toc-head" id="tocHead"><strong>Contents</strong><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="tocList">展開</button></div>
+          <ol class="toc-list" id="tocList"><li class="toc-subsection"><a href="#executive-summary">文件摘要</a></li>
+<li class="toc-chapter"><a href="#chapter-1">第 1 章：介紹</a></li>
+<li class="toc-subsection"><a href="#section-1-1">1.1 海事脫碳與氨燃料的定位</a></li>
+<li class="toc-subsection"><a href="#section-1-2">1.2 氨基本資料</a></li>
+<li class="toc-subsection"><a href="#section-1-3">1.3 物理與燃燒性質</a></li>
+<li class="toc-subsection"><a href="#section-1-4">1.4 能源密度比較</a></li>
+<li class="toc-subsection"><a href="#section-1-5">1.5 採用氨作為船用燃料的主要考量</a></li>
+<li class="toc-subsection"><a href="#section-1-6">1.6 氨燃料成熟度：TRL、IRL、CRL</a></li>
+<li class="toc-chapter"><a href="#chapter-2">第 2 章：安全</a></li>
+<li class="toc-subsection"><a href="#section-2-1">2.1 一般安全與毒性</a></li>
+<li class="toc-subsection"><a href="#section-2-2">2.2 健康與燃爆危害</a></li>
+<li class="toc-subsection"><a href="#section-2-3">2.3 危險區域分類</a></li>
+<li class="toc-subsection"><a href="#section-2-4">2.4 材料相容性</a></li>
+<li class="toc-subsection"><a href="#section-2-5">2.5 海事安全法規</a></li>
+<li class="toc-subsection"><a href="#section-2-6">2.6 氨燃料加注</a></li>
+<li class="toc-subsection"><a href="#section-2-7">2.7 燃料品質與規格</a></li>
+<li class="toc-subsection"><a href="#section-2-8">2.8 商業級氨物性範例</a></li>
+<li class="toc-chapter"><a href="#chapter-3">第 3 章：採用氨燃料的驅動因素</a></li>
+<li class="toc-subsection"><a href="#section-3-1">3.1 歐盟法規</a></li>
+<li class="toc-subsection"><a href="#section-3-2">3.2 IMO GHG 策略與生命週期分析</a></li>
+<li class="toc-subsection"><a href="#section-3-3">3.3 灰氨、藍氨與綠氨的生命週期差異</a></li>
+<li class="toc-subsection"><a href="#section-3-4">3.4 船東需求與市場興趣</a></li>
+<li class="toc-subsection"><a href="#section-3-5">3.5 氨運輸需求</a></li>
+<li class="toc-subsection"><a href="#section-3-6">3.6 船用燃料需求與 Ammonia Ready</a></li>
+<li class="toc-subsection"><a href="#section-3-7">3.7 技術經濟因素</a></li>
+<li class="toc-subsection"><a href="#section-3-8">3.8 年度燃料成本預測</a></li>
+<li class="toc-chapter"><a href="#chapter-4">第 4 章：氨的生產與供應</a></li>
+<li class="toc-subsection"><a href="#section-4-1">4.1 供應條件</a></li>
+<li class="toc-subsection"><a href="#section-4-2">4.2 需求與產能預測</a></li>
+<li class="toc-subsection"><a href="#section-4-3">4.3 代表性低碳氨專案</a></li>
+<li class="toc-subsection"><a href="#section-4-4">4.4 再生氨里程碑</a></li>
+<li class="toc-chapter"><a href="#chapter-5">第 5 章：技術成熟度</a></li>
+<li class="toc-subsection"><a href="#section-5-1">5.1 技術核准與專案</a></li>
+<li class="toc-subsection"><a href="#section-5-2">5.2 LR 氨專案清單（2019–2023）</a></li>
+<li class="toc-subsection"><a href="#section-5-3">5.3 船用引擎與改裝</a></li>
+<li class="toc-subsection"><a href="#section-5-4">5.4 氨燃料儲存與供應系統</a></li>
+<li class="toc-subsection"><a href="#section-5-5">5.5 儲槽型式與配置</a></li>
+<li class="toc-subsection"><a href="#section-5-6">5.6 船上燃料供應系統</a></li>
+<li class="toc-subsection"><a href="#section-5-7">5.7 氮氣供應與吹除</a></li>
+<li class="toc-subsection"><a href="#section-5-8">5.8 排氣排放與後處理</a></li>
+<li class="toc-subsection"><a href="#section-5-9">5.9 氨裂解器與燃料電池</a></li>
+<li class="toc-subsection"><a href="#section-5-10">5.10 LR 規則與符號</a></li>
+<li class="toc-chapter"><a href="#chapter-6">第 6 章：總結</a></li>
+<li class="toc-chapter"><a href="#chapter-7">第 7 章：附錄</a></li>
+<li class="toc-subsection"><a href="#section-7-1">7.1 技術成熟度 TRL</a></li>
+<li class="toc-subsection"><a href="#section-7-2">7.2 投資成熟度 IRL</a></li>
+<li class="toc-subsection"><a href="#section-7-3">7.3 社群成熟度 CRL</a></li>
+<li class="toc-subsection"><a href="#section-7-4">7.4 氨的顏色分類</a></li>
+<li class="toc-chapter"><a href="#surveyor-checkpoints">驗船師實務閱讀重點</a></li>
+<li class="toc-subsection"><a href="#section-103">A. 圖面與風險文件</a></li>
+<li class="toc-subsection"><a href="#section-104">B. 儲槽與材料</a></li>
+<li class="toc-subsection"><a href="#section-105">C. 管路與閥件</a></li>
+<li class="toc-subsection"><a href="#section-106">D. 通風與氣體偵測</a></li>
+<li class="toc-subsection"><a href="#section-107">E. 加注系統</a></li>
+<li class="toc-subsection"><a href="#section-108">F. 主機與排氣後處理</a></li>
+<li class="toc-subsection"><a href="#section-109">G. 船員與操作</a></li>
+<li class="toc-chapter"><a href="#glossary">關鍵縮寫</a></li>
+<li class="toc-subsection"><a href="#conclusion">一句話結論</a></li></ol>
+        </nav>
+        <div class="sidebar-note"><strong>閱讀提醒</strong><br>本頁依 2024 年原報告整理。報告內的法規草案、訂單、技術時程與成本預測，應視為發布當時的狀態。</div>
+      </aside>
+
+      <article class="content" aria-label="氨燃料技術筆記正文">
+        <div class="source-banner" id="report-source">
+          <div class="source-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 16h6M9 8h2"/></svg>
+          </div>
+          <div>
+            <strong>原始報告與使用範圍</strong>
+            <p>本文依 Lloyd’s Register 於 2024 年 3 月 21 日發布的研究報告 <a href="https://www.lr.org/en/knowledge/research-reports/2024/fuel-for-thought-ammonia-report/" target="_blank" rel="noopener noreferrer"><em>Fuel for Thought: Ammonia</em>（LR 官方原文）</a>整理，以繁體中文重述報告的技術脈絡與數據。本文為個人研讀與技術交流筆記，不代表 Lloyd’s Register 官方立場，也不構成船級核准、法規解釋或特定專案建議。</p>
+          </div>
+        </div>
+
+        <div class="article-body"><section aria-labelledby="executive-summary" class="article-section summary-section"><h2 class="heading-level-2" id="executive-summary">文件摘要<a aria-label="連結到「文件摘要」" class="heading-anchor" href="#executive-summary">#</a></h2><p>氨（NH₃）因分子中<strong>不含碳原子</strong>，在船上燃燒時理論上不直接產生 CO₂，因此被視為深海航運邁向零碳或近零碳的重要候選燃料。不過，氨燃料的實際氣候效益取決於其<strong>生產路徑、能源來源、碳捕集效率、引燃油比例、氨逃逸及 N₂O 排放</strong>。</p><p>報告的核心判斷如下：</p><ol>
+<li><p><strong>氨的船用技術正在接近商業化，但不是只有引擎成熟度問題。</strong></p>
+<ul>
+<li>還必須同時考慮技術成熟度（TRL）、投資成熟度（IRL）及社會／社群接受度（CRL）。</li>
+<li>投資條件與公眾安全接受度仍是主要瓶頸。</li>
+</ul>
+</li>
+<li><p><strong>安全是氨燃料設計的首要議題。</strong></p>
+<ul>
+<li>氨具高度毒性、腐蝕性，液氨洩漏後可能形成貼近甲板或工作區域的重氣雲。</li>
+<li>燃料系統需採用洩漏偵測、雙層管路、通風、惰化／氮氣吹除及氨釋放緩解系統。</li>
+</ul>
+</li>
+<li><p><strong>真正具脫碳價值的是低生命週期排放的氨。</strong></p>
+<ul>
+<li>灰氨由化石燃料製氫，生命週期排放高，不適合作為脫碳燃料。</li>
+<li>藍氨的效益高度取決於碳捕集與生命週期計算方法。</li>
+<li>綠氨必須依賴再生電力、綠氫與 Haber–Bosch 製程。</li>
+</ul>
+</li>
+<li><p><strong>供應量、價格與跨產業競爭將決定實際採用速度。</strong></p>
+<ul>
+<li>航運將與肥料、發電、化學工業及氫載體市場競爭低碳氨。</li>
+<li>綠氨預期仍有明顯價格溢價。</li>
+</ul>
+</li>
+<li><p><strong>船上應用不只涉及主機。</strong></p>
+<ul>
+<li>還包含儲槽、燃料供應系統、燃料閥組、氮氣系統、通風、排氣後處理、緊急切斷、氨回收與船員訓練。</li>
+</ul>
+</li>
+</ol><hr/></section><section aria-labelledby="chapter-1" class="article-section chapter-section"><h1 class="heading-level-1" id="chapter-1">第 1 章：介紹<a aria-label="連結到「第 1 章：介紹」" class="heading-anchor" href="#chapter-1">#</a></h1><h2 class="heading-level-2" id="section-1-1">1.1 海事脫碳與氨燃料的定位<a aria-label="連結到「1.1 海事脫碳與氨燃料的定位」" class="heading-anchor" href="#section-1-1">#</a></h2><p>航運歷史上的推進轉型，例如風帆轉蒸汽、蒸汽轉柴油，均經歷數十年至數百年；目前的能源轉型不同之處在於，它不只由技術或經濟推動，更受到環境、政策、監管與社會壓力驅動。</p><p>LR 將氨列為可能支援未來零 CO₂ 排放船舶的主要燃料之一，理由包括：</p><ul>
+<li>氨分子不含碳。</li>
+<li>全球已有成熟的工業生產與海運經驗。</li>
+<li>可作為氫載體。</li>
+<li>相較液氫較容易大規模運輸與儲存。</li>
+<li>引擎、燃料供應系統及安全技術正在快速發展。</li>
+</ul><p>原報告指出，全球氨年產量約 <strong>1.8 億噸</strong>，其中大部分直接用於肥料製造；每年約有 <strong>2,000 萬噸</strong>透過海運交易，因此既有碼頭、儲存與裝卸經驗可作為未來船用燃料供應鏈的基礎。</p><h2 class="heading-level-2" id="section-1-2">1.2 氨基本資料<a aria-label="連結到「1.2 氨基本資料」" class="heading-anchor" href="#section-1-2">#</a></h2><h3 class="heading-level-3" id="section-05">化學式<a aria-label="連結到「化學式」" class="heading-anchor" href="#section-05">#</a></h3><pre class="code-block"><code class="language-text">N₂ + 3H₂ = 2NH₃
+</code></pre><h3 class="heading-level-3" id="section-06">基本特性<a aria-label="連結到「基本特性」" class="heading-anchor" href="#section-06">#</a></h3><ul>
+<li>常溫常壓下為<strong>無色透明氣體</strong>。</li>
+<li>氣味強烈且刺鼻。</li>
+<li>可被水吸收，具腐蝕性。</li>
+<li>可能嚴重傷害眼睛、喉嚨及肺部。</li>
+<li>常溫氨蒸氣比空氣輕；但壓縮液氨洩漏並閃蒸時，可能形成<strong>比空氣重的低溫氣雲</strong>。</li>
+</ul><h3 class="heading-level-3" id="section-07">現有用途與排放<a aria-label="連結到「現有用途與排放」" class="heading-anchor" href="#section-07">#</a></h3><ul>
+<li>約 <strong>70%</strong> 的氨用於肥料產業。</li>
+<li>超過一半的現有產量集中在中國、美國、印度及俄羅斯。</li>
+<li>現有製程主要使用：<ul>
+<li>煤氣化：約 26%。</li>
+<li>天然氣蒸汽甲烷重組（SMR）：約 73%。</li>
+</ul>
+</li>
+<li>報告估計，氨生產每年排放約 <strong>4.5 億噸 CO₂</strong>，約占人為排放 <strong>1.3%</strong>，並為化學產業最大的排放來源。</li>
+</ul><h3 class="heading-level-3" id="section-08">需求預測<a aria-label="連結到「需求預測」" class="heading-anchor" href="#section-08">#</a></h3><p>報告引用 IRENA 預測：</p><ul>
+<li>全球氨需求可能由 2020 年的 <strong>1.83 億噸</strong>增至 2050 年的 <strong>6.88 億噸</strong>。</li>
+<li>其中約 <strong>1.97 億噸</strong>可能來自海事燃料。</li>
+<li>約 <strong>1.27 億噸</strong>可能作為氫載體，用於化學與工業部門。</li>
+</ul><h2 class="heading-level-2" id="section-1-3">1.3 物理與燃燒性質<a aria-label="連結到「1.3 物理與燃燒性質」" class="heading-anchor" href="#section-1-3">#</a></h2><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>性質</th>
+<th style="text-align:right">數值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自燃溫度</td>
+<td style="text-align:right">651°C</td>
+</tr>
+<tr>
+<td>分子量</td>
+<td style="text-align:right">17.0 g/mol</td>
+</tr>
+<tr>
+<td>爆炸上限</td>
+<td style="text-align:right">28%</td>
+</tr>
+<tr>
+<td>爆炸下限</td>
+<td style="text-align:right">15%</td>
+</tr>
+<tr>
+<td>低位發熱量</td>
+<td style="text-align:right">18.8 MJ/kg</td>
+</tr>
+<tr>
+<td>液態密度</td>
+<td style="text-align:right">原報告第 6 頁列 680 kg/m³（-33°C、1 bar）</td>
+</tr>
+<tr>
+<td>沸點</td>
+<td style="text-align:right">-33.3°C（1 bar）</td>
+</tr>
+<tr>
+<td>硫</td>
+<td style="text-align:right">無</td>
+</tr>
+<tr>
+<td>碳</td>
+<td style="text-align:right">無</td>
+</tr>
+</tbody>
+</table></div><blockquote class="note-callout">
+<p><strong>原文數據差異</strong>：報告第 6 頁將液氨密度列為 680 kg/m³，第 7 頁能源密度比較表則列為 696 kg/m³。本文保留兩者，不自行統一。</p>
+</blockquote><h2 class="heading-level-2" id="section-1-4">1.4 能源密度比較<a aria-label="連結到「1.4 能源密度比較」" class="heading-anchor" href="#section-1-4">#</a></h2><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>燃料</th>
+<th style="text-align:right">密度 kg/m³</th>
+<th style="text-align:right">儲存溫度</th>
+<th style="text-align:right">儲存壓力 barg</th>
+<th style="text-align:right">LHV MJ/kg</th>
+<th style="text-align:right">體積能量密度 GJ/m³</th>
+<th style="text-align:right">相對 MGO 體積需求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>液氨</td>
+<td style="text-align:right">696</td>
+<td style="text-align:right">-33°C</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">18.8</td>
+<td style="text-align:right">13.1</td>
+<td style="text-align:right">2.94 倍</td>
+</tr>
+<tr>
+<td>甲醇</td>
+<td style="text-align:right">790</td>
+<td style="text-align:right">常溫</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">19.9</td>
+<td style="text-align:right">15.7</td>
+<td style="text-align:right">2.44 倍</td>
+</tr>
+<tr>
+<td>LNG</td>
+<td style="text-align:right">450</td>
+<td style="text-align:right">-162°C</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">48</td>
+<td style="text-align:right">21.6</td>
+<td style="text-align:right">1.78 倍</td>
+</tr>
+<tr>
+<td>液氫</td>
+<td style="text-align:right">70.8</td>
+<td style="text-align:right">-253°C</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">119.93</td>
+<td style="text-align:right">8.49</td>
+<td style="text-align:right">4.52 倍</td>
+</tr>
+<tr>
+<td>氣態氫 350 bar</td>
+<td style="text-align:right">23.35</td>
+<td style="text-align:right">25°C</td>
+<td style="text-align:right">350</td>
+<td style="text-align:right">119.93</td>
+<td style="text-align:right">2.8</td>
+<td style="text-align:right">13.73 倍</td>
+</tr>
+<tr>
+<td>氣態氫 700 bar</td>
+<td style="text-align:right">38.25</td>
+<td style="text-align:right">25°C</td>
+<td style="text-align:right">700</td>
+<td style="text-align:right">119.93</td>
+<td style="text-align:right">4.59</td>
+<td style="text-align:right">8.38 倍</td>
+</tr>
+</tbody>
+</table></div><p>液氨的質量能量密度低於 LNG 與氫，但體積能量密度高於液氫及高壓氣態氫。以相同能量計算，液氨約需 MGO <strong>2.8–2.94 倍</strong>的儲存容積。</p><h2 class="heading-level-2" id="section-1-5">1.5 採用氨作為船用燃料的主要考量<a aria-label="連結到「1.5 採用氨作為船用燃料的主要考量」" class="heading-anchor" href="#section-1-5">#</a></h2><h3 class="heading-level-3" id="section-12">社會接受度<a aria-label="連結到「社會接受度」" class="heading-anchor" href="#section-12">#</a></h3><ul>
+<li>有機會降低海事產業環境影響。</li>
+<li>必須以生命週期分析確認實際減排效果。</li>
+<li>若社會接受度改變，可能形成擱淺資產。</li>
+<li>事故影響可能超出船舶與港口邊界。</li>
+<li>社會對減排的急迫需求，也可能提高安全決策壓力。</li>
+<li>市場遊說可能造成互相矛盾或混亂的資訊環境。</li>
+</ul><h3 class="heading-level-3" id="section-13">安全操作與基礎設施<a aria-label="連結到「安全操作與基礎設施」" class="heading-anchor" href="#section-13">#</a></h3><ul>
+<li>可借用既有工業與海運液氨經驗。</li>
+<li>風險原則上可透過設計、管制與監測降低。</li>
+<li>必須評估對人員、水域及環境的毒性影響。</li>
+<li>目前船用加注基礎設施不足。</li>
+<li>船員、港口、船廠及岸上人員需要新的訓練與能力。</li>
+<li>法規框架仍在發展中。</li>
+</ul><h3 class="heading-level-3" id="section-14">可擴展性<a aria-label="連結到「可擴展性」" class="heading-anchor" href="#section-14">#</a></h3><ul>
+<li>氨比液氫更適合充當能源載體。</li>
+<li>已有大規模生產基礎，但必須轉向低碳製程。</li>
+<li>上游技術較成熟，下游船用技術仍在發展。</li>
+<li>可同時運輸氨貨物並將貨物作燃料使用。</li>
+<li>有潛力大規模達成近零 GHG 燃料供應。</li>
+<li>仍需面對其他產業競爭、船廠產能及技術能力限制。</li>
+</ul><h2 class="heading-level-2" id="section-1-6">1.6 氨燃料成熟度：TRL、IRL、CRL<a aria-label="連結到「1.6 氨燃料成熟度：TRL、IRL、CRL」" class="heading-anchor" href="#section-1-6">#</a></h2><p>LR Maritime Decarbonisation Hub 使用三種成熟度評估：</p><ul>
+<li><strong>TRL（Technology Readiness Level）</strong>：技術成熟度，1–9 級。</li>
+<li><strong>IRL（Investment Readiness Level）</strong>：投資成熟度，1–6 級。</li>
+<li><strong>CRL（Community Readiness Level）</strong>：社群／社會成熟度，1–6 級。</li>
+</ul><p>報告對綠氨與藍氨的整體判斷是：</p><ul>
+<li>生產、供應、船上儲存及燃燒技術正在進步。</li>
+<li>投資商業條件仍普遍不足。</li>
+<li>由於毒性與事故後果，社會接受度偏低。</li>
+<li>因此不能只看引擎 TRL，還要同時評估供應鏈、港口、法規、商業案例與公眾安全框架。</li>
+</ul><hr/></section><section aria-labelledby="chapter-2" class="article-section chapter-section"><h1 class="heading-level-1" id="chapter-2">第 2 章：安全<a aria-label="連結到「第 2 章：安全」" class="heading-anchor" href="#chapter-2">#</a></h1><h2 class="heading-level-2" id="section-2-1">2.1 一般安全與毒性<a aria-label="連結到「2.1 一般安全與毒性」" class="heading-anchor" href="#section-2-1">#</a></h2><p>LR Maritime Decarbonisation Hub 與 Maersk Mc-Kinney Møller Center for Zero Carbon Shipping 的研究提出下列高優先度建議：</p><ol>
+<li><strong>降低儲存溫度</strong>，以降低氨燃料安全風險。</li>
+<li>將燃料準備室分隔為兩個以上空間，將可能洩漏的設備群分開。</li>
+<li>限制、監控進入氨設備空間的人員，以及停留時間。</li>
+<li>將通風排出口布置於安全位置，與船員可接近區域充分隔離。</li>
+<li>安裝多個、不同原理的氨偵測器。</li>
+</ol><h3 class="heading-level-3" id="section-18">人因工程<a aria-label="連結到「人因工程」" class="heading-anchor" href="#section-18">#</a></h3><p>船舶設計與公司安全管理系統應納入：</p><ul>
+<li>人體工學與設備可操作性。</li>
+<li>新增或修訂的工作程序。</li>
+<li>溝通與協調要求。</li>
+<li>能力與訓練要求。</li>
+<li>緊急應變安排。</li>
+<li>維修與操作程序的變更管理。</li>
+<li>人員角色、責任、編制及與其他組織的介面。</li>
+</ul><h2 class="heading-level-2" id="section-2-2">2.2 健康與燃爆危害<a aria-label="連結到「2.2 健康與燃爆危害」" class="heading-anchor" href="#section-2-2">#</a></h2><h3 class="heading-level-3" id="section-20">健康危害<a aria-label="連結到「健康危害」" class="heading-anchor" href="#section-20">#</a></h3><p>氨可刺激或灼傷：</p><ul>
+<li>皮膚。</li>
+<li>口腔。</li>
+<li>喉嚨。</li>
+<li>肺部。</li>
+<li>眼睛。</li>
+</ul><p>危害程度取決於：</p><ul>
+<li>暴露濃度。</li>
+<li>暴露時間。</li>
+</ul><p>高濃度吸入可能嚴重損傷肺部並致死；濃氨水接觸皮膚可造成嚴重化學灼傷，接觸眼睛可能造成不可逆傷害。</p><h3 class="heading-level-3" id="section-21">無水氨（Anhydrous Ammonia）<a aria-label="連結到「無水氨（Anhydrous Ammonia）」" class="heading-anchor" href="#section-21">#</a></h3><ul>
+<li>不含水的液化氨可稱為無水氨。</li>
+<li>氨與水高度互溶，可形成氫氧化銨溶液。</li>
+<li>氨水仍可能形成有毒氣氛，並在特定條件下具有可燃性。</li>
+</ul><h3 class="heading-level-3" id="section-22">洩漏氣雲<a aria-label="連結到「洩漏氣雲」" class="heading-anchor" href="#section-22">#</a></h3><ul>
+<li>常溫氨蒸氣比空氣輕。</li>
+<li>壓縮液氨釋放時會閃蒸並降溫。</li>
+<li>所形成的氣霧／氣雲可能比空氣重，沿甲板、走道或低處擴散。</li>
+</ul><h2 class="heading-level-2" id="section-2-3">2.3 危險區域分類<a aria-label="連結到「2.3 危險區域分類」" class="heading-anchor" href="#section-2-3">#</a></h2><p>報告依 IGF Code 概念列出：</p><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>區域</th>
+<th>典型位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hazardous Zone 0</strong></td>
+<td>燃料槽內部、洩壓或透氣管內部、持續存在氨的管路與設備內部</td>
+</tr>
+<tr>
+<td><strong>Hazardous Zone 1</strong></td>
+<td>Tank Connection Space、燃料準備室、燃料儲存艙、隔離空艙，以及可能發生洩漏的封閉或半封閉空間</td>
+</tr>
+<tr>
+<td><strong>Hazardous Zone 2</strong></td>
+<td>距離開放式或半封閉 Zone 1 空間周圍 1.5 m 內區域</td>
+</tr>
+</tbody>
+</table></div><blockquote class="note-callout">
+<p>氨同時具有毒性與可燃性，因此實際設計除防爆區域外，還需建立 <strong>toxic area plan（有毒區域圖）</strong>。</p>
+</blockquote><h2 class="heading-level-2" id="section-2-4">2.4 材料相容性<a aria-label="連結到「2.4 材料相容性」" class="heading-anchor" href="#section-2-4">#</a></h2><h3 class="heading-level-3" id="section-25">不宜直接接觸氨的金屬<a aria-label="連結到「不宜直接接觸氨的金屬」" class="heading-anchor" href="#section-25">#</a></h3><p>報告指出，下列材料不應用於直接接觸氨的儲槽、管路、閥件、配件及設備：</p><ul>
+<li>汞。</li>
+<li>銅。</li>
+<li>銅合金。</li>
+<li>鋅。</li>
+</ul><h3 class="heading-level-3" id="section-26">沉積與堵塞風險<a aria-label="連結到「沉積與堵塞風險」" class="heading-anchor" href="#section-26">#</a></h3><p>在特定條件下，氨、水與 CO₂ 接觸可能形成：</p><ul>
+<li>碳酸銨。</li>
+<li>碳酸氫銨。</li>
+</ul><p>可能造成設備、元件及管路的堵塞、損傷與劣化。</p><h3 class="heading-level-3" id="section-27">應力腐蝕裂紋（SCC）<a aria-label="連結到「應力腐蝕裂紋（SCC）」" class="heading-anchor" href="#section-27">#</a></h3><p>SCC 可能發生於同時承受拉應力與腐蝕介質的構件。</p><p>可能受影響材料包括：</p><ul>
+<li>無水氨環境中的碳鋼。</li>
+<li>高鎳含量鋼材。</li>
+<li>氨水環境中的銅及部分銅合金。</li>
+</ul><p>設計時必須評估：</p><ul>
+<li>加注系統。</li>
+<li>燃料圍護系統。</li>
+<li>燃料供應系統。</li>
+<li>發電／推進系統。</li>
+</ul><p>IGC Code 17.12 允許在氨中保持少量水分的條件下使用碳鋼，以降低 SCC 風險。</p><h3 class="heading-level-3" id="section-28">非金屬材料<a aria-label="連結到「非金屬材料」" class="heading-anchor" href="#section-28">#</a></h3><p>塑膠、彈性體與密封材料對氨的相容性不同，必須由製造商依實際：</p><ul>
+<li>溫度。</li>
+<li>壓力。</li>
+<li>氨純度。</li>
+<li>水分含量。</li>
+<li>使用時間。</li>
+</ul><p>確認其適用性。</p><h2 class="heading-level-2" id="section-2-5">2.5 海事安全法規<a aria-label="連結到「2.5 海事安全法規」" class="heading-anchor" href="#section-2-5">#</a></h2><blockquote class="note-callout">
+<p>以下內容為 2024 年原報告法規時點。</p>
+</blockquote><p>IMO 對氨燃料的法規發展分為兩條路徑：</p><ol>
+<li><strong>以氨貨物作為燃料的氣體運輸船。</strong></li>
+<li><strong>專門加注氨作燃料的非氣體運輸船。</strong></li>
+</ol><h3 class="heading-level-3" id="section-30">氣體運輸船使用氨貨物作燃料<a aria-label="連結到「氣體運輸船使用氨貨物作燃料」" class="heading-anchor" href="#section-30">#</a></h3><ul>
+<li>當時 IGC Code 16.9.2 禁止以有毒貨物作燃料，因此限制氨貨物作為燃料。</li>
+<li>CCC 9 已認定該文字阻礙氨燃料發展。</li>
+<li>報告指出，IMO 正研擬修訂，使載運氨的氣體船在達到與天然氣相等安全水準時，可使用氨貨物作燃料。</li>
+<li>對氣體船與非氣體船的差異之一，可能在於雙層管路適用範圍：<ul>
+<li>非氣體運輸船可能要求更全面的雙層管路。</li>
+<li>氣體運輸船可能僅在貨物區域外要求。</li>
+</ul>
+</li>
+</ul><h3 class="heading-level-3" id="section-31">非氣體運輸船使用氨作燃料<a aria-label="連結到「非氣體運輸船使用氨作燃料」" class="heading-anchor" href="#section-31">#</a></h3><p>LR 於 2023 年 7 月發布非氣體運輸船使用氨作燃料的規則，採 IGF Code 所允許的替代設計與風險基礎途徑。</p><p>相關核准架構包括：</p><ul>
+<li>SOLAS II-1/55。</li>
+<li>IGF Code。</li>
+<li>IMO MSC.1/Circ.1455《替代設計與等效核准指南》。</li>
+<li>LR Risk-Based Certification（RBC）程序。</li>
+</ul><p>RBC 可用於：</p><ul>
+<li>新穎設計。</li>
+<li>替代設計。</li>
+<li>非傳統燃料系統。</li>
+<li>SOLAS 船舶及部分非 SOLAS 專案。</li>
+</ul><h2 class="heading-level-2" id="section-2-6">2.6 氨燃料加注<a aria-label="連結到「2.6 氨燃料加注」" class="heading-anchor" href="#section-2-6">#</a></h2><p>氨可採以下形式交付：</p><ul>
+<li>全冷凍液化。</li>
+<li>半冷凍液化。</li>
+<li>加壓液化。</li>
+</ul><h3 class="heading-level-3" id="section-33">加注站設計重點<a aria-label="連結到「加注站設計重點」" class="heading-anchor" href="#section-33">#</a></h3><ul>
+<li>風險評估需考慮「合理可預見的最嚴重洩漏情境」。</li>
+<li>建立船舶有毒區域圖。</li>
+<li>非有毒區進入有毒區時可能需要氣閘（airlock）。</li>
+<li>加注站可採開放式、半封閉式或封閉式設計。</li>
+<li>封閉及半封閉加注站與相鄰空間間應保持氣密。</li>
+<li>滴盤不得直接排舷外。</li>
+<li>自動關斷閥應能立即關閉，並具遠端操作功能。</li>
+<li>關閥動作不得造成危險瞬間超壓。</li>
+</ul><h3 class="heading-level-3" id="section-34">HAZID／QRA 研究結論<a aria-label="連結到「HAZID／QRA 研究結論」" class="heading-anchor" href="#section-34">#</a></h3><p>LR 為 Yara Clean Ammonia Australia 與 Pilbara Ports 進行的研究指出，在 Dampier 與 Port Hedland 錨地進行船對船氨加注，在指定假設下可達可接受風險水準。</p><p>建議包括：</p><ul>
+<li>增設超壓保護。</li>
+<li>增設氣體偵測器。</li>
+<li>加注船與受油船進行相容性評估。</li>
+</ul><p>不確定因素包括：</p><ul>
+<li>加注位置。</li>
+<li>受油船實際設計。</li>
+<li>相容性評估新增發現。</li>
+<li>氨知識缺口。</li>
+<li>氨洩漏至水面的毒性擴散模型限制。</li>
+</ul><blockquote class="note-callout">
+<p>報告特別提醒：該研究的假設與風險結果僅適用於特定專案，其他船型與港口仍需進行個案評估。</p>
+</blockquote><h2 class="heading-level-2" id="section-2-7">2.7 燃料品質與規格<a aria-label="連結到「2.7 燃料品質與規格」" class="heading-anchor" href="#section-2-7">#</a></h2><h3 class="heading-level-3" id="section-36">現有無水氨等級<a aria-label="連結到「現有無水氨等級」" class="heading-anchor" href="#section-36">#</a></h3><ul>
+<li>商業級：通常約 99.5%。</li>
+<li>冷凍級。</li>
+<li>高純度級：最高約 99.995%。</li>
+</ul><p>報告認為，<strong>商業級氨可能可供氨雙燃料引擎使用</strong>，但仍需控制水分、油分、氧氣、氮氣、硫及顆粒。</p><h3 class="heading-level-3" id="section-37">水分與 SCC<a aria-label="連結到「水分與 SCC」" class="heading-anchor" href="#section-37">#</a></h3><ul>
+<li>氨容易吸水，進入後不易移除。</li>
+<li>少量水分可降低 SCC 風險。</li>
+<li>報告列出的初步範圍為 <strong>0.1–0.5 mass%</strong>。</li>
+</ul><h3 class="heading-level-3" id="section-38">燃燒後排放<a aria-label="連結到「燃燒後排放」" class="heading-anchor" href="#section-38">#</a></h3><p>低品質或不完全燃燒可能造成：</p><ul>
+<li>未燃氨／氨逃逸（NH₃ slip）。</li>
+<li>NOx。</li>
+<li>N₂O。</li>
+</ul><h3 class="heading-level-3" id="section-39">MAN ES 初步燃料規格<a aria-label="連結到「MAN ES 初步燃料規格」" class="heading-anchor" href="#section-39">#</a></h3><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>項目</th>
+<th>單位</th>
+<th>限制</th>
+<th style="text-align:right">數值</th>
+<th>測試方法／備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>氨</td>
+<td>mass%</td>
+<td>最低</td>
+<td style="text-align:right">99.5</td>
+<td>待定</td>
+</tr>
+<tr>
+<td>水</td>
+<td>mass%</td>
+<td>最低</td>
+<td style="text-align:right">0.1</td>
+<td>ISO 7105</td>
+</tr>
+<tr>
+<td>水</td>
+<td>mass%</td>
+<td>最高</td>
+<td style="text-align:right">0.5</td>
+<td>ISO 7105</td>
+</tr>
+<tr>
+<td>油</td>
+<td>mass%</td>
+<td>最高</td>
+<td style="text-align:right">0.4</td>
+<td>ISO 7106</td>
+</tr>
+<tr>
+<td>氧</td>
+<td>mass%</td>
+<td>最高</td>
+<td style="text-align:right">待定</td>
+<td>待定</td>
+</tr>
+<tr>
+<td>氮</td>
+<td>mass%</td>
+<td>最高</td>
+<td style="text-align:right">0.3</td>
+<td>待定</td>
+</tr>
+<tr>
+<td>硫</td>
+<td>mass%</td>
+<td>最高</td>
+<td style="text-align:right">待定</td>
+<td>需符合 MARPOL</td>
+</tr>
+<tr>
+<td>顆粒</td>
+<td>—</td>
+<td>最高</td>
+<td style="text-align:right">見備註</td>
+<td>建議船舶燃料槽至引擎間過濾至 10 μm</td>
+</tr>
+</tbody>
+</table></div><p>顆粒可能來自：</p><ul>
+<li>氨生產觸媒碎屑。</li>
+<li>運輸與物流過程。</li>
+<li>儲槽或管路污染物。</li>
+</ul><h2 class="heading-level-2" id="section-2-8">2.8 商業級氨物性範例<a aria-label="連結到「2.8 商業級氨物性範例」" class="heading-anchor" href="#section-2-8">#</a></h2><p>報告引用 CF Industries 規格：</p><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>性質</th>
+<th>數值／描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理狀態</td>
+<td>氣體；加壓時為液體</td>
+</tr>
+<tr>
+<td>外觀／顏色</td>
+<td>無色</td>
+</tr>
+<tr>
+<td>氣味閾值</td>
+<td>刺鼻，約 5 ppm</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>&gt;12（100% v/v）</td>
+</tr>
+<tr>
+<td>熔點</td>
+<td>-78°C @ 1013 hPa</td>
+</tr>
+<tr>
+<td>沸點</td>
+<td>-33°C @ 1013 hPa</td>
+</tr>
+<tr>
+<td>臨界溫度</td>
+<td>132.41°C</td>
+</tr>
+<tr>
+<td>自燃溫度</td>
+<td>651.1°C</td>
+</tr>
+<tr>
+<td>分解溫度</td>
+<td>450°C</td>
+</tr>
+<tr>
+<td>爆炸範圍</td>
+<td>16%–25%</td>
+</tr>
+<tr>
+<td>蒸氣壓</td>
+<td>原報告列 861 hPa @ 20°C</td>
+</tr>
+</tbody>
+</table></div><hr/></section><section aria-labelledby="chapter-3" class="article-section chapter-section"><h1 class="heading-level-1" id="chapter-3">第 3 章：採用氨燃料的驅動因素<a aria-label="連結到「第 3 章：採用氨燃料的驅動因素」" class="heading-anchor" href="#chapter-3">#</a></h1><h2 class="heading-level-2" id="section-3-1">3.1 歐盟法規<a aria-label="連結到「3.1 歐盟法規」" class="heading-anchor" href="#section-3-1">#</a></h2><p>航運需注意 EU Fit for 55 中五項主要制度：</p><ol>
+<li>EU MRV 修訂。</li>
+<li>EU ETS 修訂。</li>
+<li>FuelEU Maritime。</li>
+<li>Alternative Fuels Infrastructure Regulation（AFIR）。</li>
+<li>Renewable Energy Directive III（RED III）。</li>
+</ol><h3 class="heading-level-3" id="section-43">EU ETS<a aria-label="連結到「EU ETS」" class="heading-anchor" href="#section-43">#</a></h3><p>原報告指出，自 2024 年 1 月 1 日起，進出 EEA 港口且總噸位 5,000 GT 以上的客船與貨船納入 EU ETS。</p><p>涵蓋範圍：</p><ul>
+<li>EEA 內航程：100% 排放。</li>
+<li>EEA 港內排放：100%。</li>
+<li>EEA 與第三國間航程：50%。</li>
+</ul><p>納入氣體：</p><ul>
+<li>CO₂。</li>
+<li>CH₄。</li>
+<li>N₂O。</li>
+</ul><p>履約比例：</p><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>排放年度</th>
+<th style="text-align:right">應繳交配額比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024</td>
+<td style="text-align:right">40%</td>
+</tr>
+<tr>
+<td>2025</td>
+<td style="text-align:right">70%</td>
+</tr>
+<tr>
+<td>2026 起</td>
+<td style="text-align:right">100%</td>
+</tr>
+</tbody>
+</table></div><h3 class="heading-level-3" id="section-44">FuelEU Maritime<a aria-label="連結到「FuelEU Maritime」" class="heading-anchor" href="#section-44">#</a></h3><p>FuelEU Maritime 自 2025 年起要求船上所使用能源的 GHG 強度逐步下降。</p><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>年份</th>
+<th style="text-align:right">相較 2020 年基準的減量要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025</td>
+<td style="text-align:right">-2%</td>
+</tr>
+<tr>
+<td>2030</td>
+<td style="text-align:right">-6%</td>
+</tr>
+<tr>
+<td>2035</td>
+<td style="text-align:right">-14.5%</td>
+</tr>
+<tr>
+<td>2040</td>
+<td style="text-align:right">-31%</td>
+</tr>
+<tr>
+<td>2045</td>
+<td style="text-align:right">-62%</td>
+</tr>
+<tr>
+<td>2050</td>
+<td style="text-align:right">-80%</td>
+</tr>
+</tbody>
+</table></div><p>另自 2030 年起，貨櫃船與客船將面臨港內零排放相關要求。</p><p>船舶需另行建立 FuelEU Monitoring Plan，記錄：</p><ul>
+<li>能源使用量。</li>
+<li>燃料種類。</li>
+<li>排放因子。</li>
+<li>監測與計算方式。</li>
+</ul><h3 class="heading-level-3" id="section-45">Pooling<a aria-label="連結到「Pooling」" class="heading-anchor" href="#section-45">#</a></h3><p>Pooling 允許多艘船共用合規盈餘與赤字，可能涵蓋：</p><ul>
+<li>同一船隊。</li>
+<li>同一公司。</li>
+<li>不同公司間的船舶池。</li>
+</ul><p>其目的在於鼓勵新造低排放船，而不是只對既有船進行小幅效率改善。報告舉例指出，一艘使用低 GHG 燃料的船可能為整個船池降低 FuelEU 罰款風險。</p><h3 class="heading-level-3" id="section-46">FuelEU 氨排放因子<a aria-label="連結到「FuelEU 氨排放因子」" class="heading-anchor" href="#section-46">#</a></h3><p>報告指出，FuelEU Maritime 對 e-ammonia 提供 <strong>0.0186</strong> 的排放因子，但原文未在該段進一步展開單位與適用條件。</p><h2 class="heading-level-2" id="section-3-2">3.2 IMO GHG 策略與生命週期分析<a aria-label="連結到「3.2 IMO GHG 策略與生命週期分析」" class="heading-anchor" href="#section-3-2">#</a></h2><p>原報告引用 IMO 2023 GHG Strategy：</p><ul>
+<li>約 2050 年達成淨零 GHG 排放。</li>
+<li>2030 年總 GHG 排放降低約 20–30%。</li>
+<li>2040 年降低約 70–80%。</li>
+<li>碳強度較 2008 年降低 40%。</li>
+</ul><p>IMO 已建立燃料生命週期分析指南，可計算：</p><ul>
+<li><strong>Well-to-Tank（WtT）</strong>：生產與供應階段。</li>
+<li><strong>Tank-to-Wake（TtW）</strong>：船上使用階段。</li>
+<li><strong>Well-to-Wake（WtW）</strong>：全生命週期。</li>
+</ul><h2 class="heading-level-2" id="section-3-3">3.3 灰氨、藍氨與綠氨的生命週期差異<a aria-label="連結到「3.3 灰氨、藍氨與綠氨的生命週期差異」" class="heading-anchor" href="#section-3-3">#</a></h2><h3 class="heading-level-3" id="section-49">灰氨<a aria-label="連結到「灰氨」" class="heading-anchor" href="#section-49">#</a></h3><ul>
+<li>以天然氣或煤製氫。</li>
+<li>未進行有效碳捕集。</li>
+<li>生產階段 CO₂ 排放高。</li>
+<li>報告認為不適合作為低碳海事燃料。</li>
+</ul><h3 class="heading-level-3" id="section-50">藍氨<a aria-label="連結到「藍氨」" class="heading-anchor" href="#section-50">#</a></h3><ul>
+<li>通常以天然氣製氫。</li>
+<li>對製氫與 Haber–Bosch 過程排放進行 CCS／CCUS。</li>
+<li>實際效益取決於捕集率、甲烷上游排放、能源來源及法規預設因子。</li>
+<li>報告認為，依當時 IMO 與 FuelEU 的預設因子，藍氨未必具顯著 WtW 優勢。</li>
+</ul><h3 class="heading-level-3" id="section-51">綠氨／e-ammonia<a aria-label="連結到「綠氨／e-ammonia」" class="heading-anchor" href="#section-51">#</a></h3><ul>
+<li>以再生電力進行水電解製氫。</li>
+<li>空氣分離取得氮。</li>
+<li>使用再生能源驅動 Haber–Bosch 製程。</li>
+<li>船東仍需取得可驗證、可追溯的綠氨供應。</li>
+</ul><h3 class="heading-level-3" id="section-52">船上排放仍需考慮<a aria-label="連結到「船上排放仍需考慮」" class="heading-anchor" href="#section-52">#</a></h3><p>即使燃燒不直接產生 CO₂，仍需計算：</p><ul>
+<li>引燃油比例。</li>
+<li>引燃油本身排放。</li>
+<li>NH₃ slip。</li>
+<li>NOx。</li>
+<li>N₂O。</li>
+</ul><p>報告引用專家估計，引燃油可能至少約占 <strong>5%</strong>，低負荷時可能提高至 <strong>15%</strong>。</p><h2 class="heading-level-2" id="section-3-4">3.4 船東需求與市場興趣<a aria-label="連結到「3.4 船東需求與市場興趣」" class="heading-anchor" href="#section-3-4">#</a></h2><p>氨在海事市場的成長可分為：</p><ol>
+<li><strong>氨作為能源載體的海運需求增加。</strong></li>
+<li><strong>氨直接作為船舶燃料的需求增加。</strong></li>
+</ol><p>氨相較氫較適合跨洋運輸，因此未來氨運輸船可能同時成為使用貨物作燃料的候選船型。</p><h2 class="heading-level-2" id="section-3-5">3.5 氨運輸需求<a aria-label="連結到「3.5 氨運輸需求」" class="heading-anchor" href="#section-3-5">#</a></h2><p>報告引用的市場假設包括：</p><ul>
+<li>日本規劃於 2050 年使用 3,000 萬噸燃料氨。</li>
+<li>荷蘭與德國提出大型氨裂解設施，以供應進口氫需求。</li>
+<li>University of Manchester Tyndall Centre 的研究認為，至 2030 年前，每年可能需建造約 20 艘大型氨運輸船。</li>
+<li>LR 依日本混燒需求估計，2030 年可能需要約 130 艘 VLAC。</li>
+</ul><h3 class="heading-level-3" id="section-55">現有船隊限制<a aria-label="連結到「現有船隊限制」" class="heading-anchor" href="#section-55">#</a></h3><ul>
+<li>現有多為中小型 LPG／氨兼用船。</li>
+<li>大型 VLGC 若原設計未考慮氨，可能因鋼材降伏強度與結構設計限制，不能滿載氨。</li>
+<li>可能只能部分裝載，或需改造貨物處理系統及加強結構。</li>
+<li>部分碼頭要求提供最近三種貨物（L3C），若近期載運氨，後續可能不接受 LPG，原因是氨會長時間殘留於鋼結構。</li>
+</ul><h2 class="heading-level-2" id="section-3-6">3.6 船用燃料需求與 Ammonia Ready<a aria-label="連結到「3.6 船用燃料需求與 Ammonia Ready」" class="heading-anchor" href="#section-3-6">#</a></h2><p>截至原報告時點，尚無商業船舶正式以氨燃料投入營運，但早期訂單已出現，包括：</p><ul>
+<li>Exmar LPG 的兩艘 LPG／氨運輸船。</li>
+<li>Newcastlemax 散裝船系列。</li>
+<li>小型貨櫃支線船。</li>
+</ul><p>IRENA 預測 2050 年海事部門可能消耗 <strong>1.97 億噸氨燃料</strong>。</p><h3 class="heading-level-3" id="section-57">原報告統計：Ammonia Ready 船舶<a aria-label="連結到「原報告統計：Ammonia Ready 船舶」" class="heading-anchor" href="#section-57">#</a></h3><ul>
+<li>營運中：約 60 艘。</li>
+<li>訂單：約 213 艘。</li>
+<li>約 102 艘訂單具三燃料選項。</li>
+<li>24 艘 Ammonia Ready 貨櫃船亦可使用柴油或甲醇。</li>
+</ul><h3 class="heading-level-3" id="section-58">依船型分布<a aria-label="連結到「依船型分布」" class="heading-anchor" href="#section-58">#</a></h3><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>船型</th>
+<th style="text-align:right">合計</th>
+<th style="text-align:right">現有船</th>
+<th style="text-align:right">訂單</th>
+<th style="text-align:right">比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>散裝船</td>
+<td style="text-align:right">43</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">35</td>
+<td style="text-align:right">15.8%</td>
+</tr>
+<tr>
+<td>一般貨船</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">1.8%</td>
+</tr>
+<tr>
+<td>貨櫃船</td>
+<td style="text-align:right">91</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">88</td>
+<td style="text-align:right">33.3%</td>
+</tr>
+<tr>
+<td>LNG／LPG 船</td>
+<td style="text-align:right">31</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">23</td>
+<td style="text-align:right">11.4%</td>
+</tr>
+<tr>
+<td>原油／成品油輪</td>
+<td style="text-align:right">49</td>
+<td style="text-align:right">38</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">17.9%</td>
+</tr>
+<tr>
+<td>離岸支援船</td>
+<td style="text-align:right">16</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">12</td>
+<td style="text-align:right">5.9%</td>
+</tr>
+<tr>
+<td>PCC／Ro-Ro</td>
+<td style="text-align:right">38</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">38</td>
+<td style="text-align:right">13.9%</td>
+</tr>
+</tbody>
+</table></div><h3 class="heading-level-3" id="section-59">新造船 Ammonia Ready 設計組合<a aria-label="連結到「新造船 Ammonia Ready 設計組合」" class="heading-anchor" href="#section-59">#</a></h3><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>設計組合</th>
+<th style="text-align:right">比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>柴油＋Ammonia Ready</td>
+<td style="text-align:right">29.6%</td>
+</tr>
+<tr>
+<td>LNG capable＋Ammonia Ready</td>
+<td style="text-align:right">29.1%</td>
+</tr>
+<tr>
+<td>LNG capable＋Methanol Ready＋Ammonia Ready</td>
+<td style="text-align:right">11.7%</td>
+</tr>
+<tr>
+<td>Methanol capable＋Ammonia Ready</td>
+<td style="text-align:right">11.3%</td>
+</tr>
+<tr>
+<td>LPG capable＋Ammonia Ready</td>
+<td style="text-align:right">7.5%</td>
+</tr>
+<tr>
+<td>電池＋Ammonia Ready</td>
+<td style="text-align:right">5.2%</td>
+</tr>
+<tr>
+<td>LNG Ready＋Ammonia Ready</td>
+<td style="text-align:right">3.3%</td>
+</tr>
+<tr>
+<td>其他組合</td>
+<td style="text-align:right">餘額</td>
+</tr>
+</tbody>
+</table></div><h2 class="heading-level-2" id="section-3-7">3.7 技術經濟因素<a aria-label="連結到「3.7 技術經濟因素」" class="heading-anchor" href="#section-3-7">#</a></h2><p>兩項主要挑戰：</p><ol>
+<li>如何將有限的綠色能源分配給航運。</li>
+<li>如何建立可驗證的綠氨供應鏈。</li>
+</ol><p>綠氨成本包括：</p><ul>
+<li>綠氫生產成本。</li>
+<li>再生電力成本。</li>
+<li>Haber–Bosch 製程能源。</li>
+<li>儲存、碼頭與物流基礎設施。</li>
+<li>認證與追溯成本。</li>
+</ul><p>報告引用 2022 年 EMSA 研究，配置 10–16 MW 二衝程引擎的船舶改裝氨燃料，總改裝成本約 <strong>1,000–1,300 萬美元</strong>，但實際值取決於：</p><ul>
+<li>船型與尺寸。</li>
+<li>原引擎型式。</li>
+<li>改裝數量與範圍。</li>
+</ul><h2 class="heading-level-2" id="section-3-8">3.8 年度燃料成本預測<a aria-label="連結到「3.8 年度燃料成本預測」" class="heading-anchor" href="#section-3-8">#</a></h2><p>模型假設：</p><ul>
+<li>低氨價：655 美元／噸。</li>
+<li>高氨價：1,200 美元／噸。</li>
+<li>低碳稅：100 美元／噸 CO₂。</li>
+<li>高碳稅：350 美元／噸 CO₂。</li>
+<li>未計入雙燃料引擎至少 5% 的引燃油消耗。</li>
+</ul><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>船型</th>
+<th style="text-align:right">低成本情境：VLSFO 反而較貴</th>
+<th style="text-align:right">高成本情境：氨較貴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大型貨櫃船</td>
+<td style="text-align:right">1,370 萬美元／年</td>
+<td style="text-align:right">9,810 萬美元／年</td>
+</tr>
+<tr>
+<td>大型散裝船</td>
+<td style="text-align:right">350 萬美元／年</td>
+<td style="text-align:right">2,550 萬美元／年</td>
+</tr>
+<tr>
+<td>VLCC</td>
+<td style="text-align:right">250 萬美元／年</td>
+<td style="text-align:right">3,700 萬美元／年</td>
+</tr>
+<tr>
+<td>郵輪</td>
+<td style="text-align:right">1,810 萬美元／年</td>
+<td style="text-align:right">1.295 億美元／年</td>
+</tr>
+</tbody>
+</table></div><h3 class="heading-level-3" id="section-62">降低成本差距的方式<a aria-label="連結到「降低成本差距的方式」" class="heading-anchor" href="#section-62">#</a></h3><ul>
+<li>在具補貼優勢的地區加注，例如美國 IRA 政策環境。</li>
+<li>初期先使用藍氨，再逐步轉向綠氨。</li>
+<li>差價合約（Contract for Difference）。</li>
+<li>碳抵換。</li>
+<li>FuelEU Pooling。</li>
+<li>由租家分擔部分綠色燃料成本。</li>
+</ul><hr/></section><section aria-labelledby="chapter-4" class="article-section chapter-section"><h1 class="heading-level-1" id="chapter-4">第 4 章：氨的生產與供應<a aria-label="連結到「第 4 章：氨的生產與供應」" class="heading-anchor" href="#chapter-4">#</a></h1><h2 class="heading-level-2" id="section-4-1">4.1 供應條件<a aria-label="連結到「4.1 供應條件」" class="heading-anchor" href="#section-4-1">#</a></h2><p>氨能否成為船用燃料，取決於：</p><ul>
+<li>是否有足夠的近零或淨零排放氨。</li>
+<li>能否在主要航線與港口取得。</li>
+<li>單位能量成本是否具競爭力。</li>
+<li>是否有足夠再生電力與綠氫。</li>
+</ul><p>現有肥料與化學工業用氨多由天然氣製造且未捕集碳，從生命週期角度並不適合作為低碳燃料。</p><h3 class="heading-level-3" id="section-65">原報告產能資料<a aria-label="連結到「原報告產能資料」" class="heading-anchor" href="#section-65">#</a></h3><ul>
+<li>全球既有氨產能：約 2.3 億噸／年。</li>
+<li>當時實際營運的低碳氨：約 650 萬噸／年。</li>
+<li>AEA 追蹤的已公告與營運低碳氨專案：超過 2.45 億噸／年。</li>
+<li>2025 年預計上線：超過 2,400 萬噸／年。</li>
+<li>2030 年預計：接近 1 億噸／年。</li>
+<li>AEA 追蹤項目中，再生氨占比超過 80%。</li>
+</ul><p>新產能多分布於：</p><ul>
+<li>澳洲。</li>
+<li>中東。</li>
+<li>非洲。</li>
+<li>北美。</li>
+</ul><h2 class="heading-level-2" id="section-4-2">4.2 需求與產能預測<a aria-label="連結到「4.2 需求與產能預測」" class="heading-anchor" href="#section-4-2">#</a></h2><p>MPP 與 AEA 的情境：</p><ul>
+<li>2030 年可能有 40–140 座再生氨工廠。</li>
+<li>2030 年再生氨產量可能達 2,000 萬噸／年。</li>
+<li>2050 年可能有約 1,000 座工廠。</li>
+<li>2050 年再生氨產量可能達 8.3 億噸／年。</li>
+</ul><h3 class="heading-level-3" id="section-2050">2050 年氨需求範圍<a aria-label="連結到「2050 年氨需求範圍」" class="heading-anchor" href="#section-2050">#</a></h3><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>用途</th>
+<th style="text-align:right">預測需求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>肥料及既有工業用途</td>
+<td style="text-align:right">2.10–2.50 億噸／年</td>
+</tr>
+<tr>
+<td>航運燃料</td>
+<td style="text-align:right">2.95–6.70 億噸／年</td>
+</tr>
+<tr>
+<td>發電</td>
+<td style="text-align:right">3,500 萬–1.05 億噸／年</td>
+</tr>
+<tr>
+<td>氫載體</td>
+<td style="text-align:right">0–1.10 億噸／年</td>
+</tr>
+<tr>
+<td>合計</td>
+<td style="text-align:right">約 5.40–11.40 億噸／年</td>
+</tr>
+</tbody>
+</table></div><h2 class="heading-level-2" id="section-4-3">4.3 代表性低碳氨專案<a aria-label="連結到「4.3 代表性低碳氨專案」" class="heading-anchor" href="#section-4-3">#</a></h2><ul>
+<li><strong>Yara</strong>：成立清潔氨事業，並與 Azane Fuel Solutions 合作氨加注船與供應。</li>
+<li><strong>Mitsui＋CF Industries</strong>：利用既有產能生產藍氨與綠氨，並規劃美國墨西哥灣岸藍氨設施。</li>
+<li><strong>Casale＋Clariant</strong>：開發提高藍氨製程效率的合成觸媒。</li>
+<li><strong>Saudi Aramco／SABIC</strong>：以 Jafurah 氣田與 CCS 建立藍氨出口樞紐。</li>
+<li><strong>Woodside（澳洲）</strong>：規劃利用再生氫生產出口用氨。</li>
+<li><strong>Grannus（美國）</strong>：發展結合合成氣與 CCS 的藍氨製程。</li>
+<li><strong>Meridian／Woodside／Mitsui（紐西蘭）</strong>：Southern Green Hydrogen Project，目標年產 50 萬噸綠氨。</li>
+<li><strong>Unigel（巴西）</strong>：規劃年產 1 萬噸氫及 6 萬噸綠氨。</li>
+</ul><h2 class="heading-level-2" id="section-4-4">4.4 再生氨里程碑<a aria-label="連結到「4.4 再生氨里程碑」" class="heading-anchor" href="#section-4-4">#</a></h2><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>年份</th>
+<th style="text-align:right">近零排放氨供應占比</th>
+<th style="text-align:right">近零排放氨產量</th>
+<th style="text-align:right">綠氨工廠</th>
+<th style="text-align:right">電解槽容量</th>
+<th style="text-align:right">藍氨工廠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025</td>
+<td style="text-align:right">1%</td>
+<td style="text-align:right">200 萬噸</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">2–3 GW</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>2030</td>
+<td style="text-align:right">20–42%</td>
+<td style="text-align:right">5,000–12,000 萬噸</td>
+<td style="text-align:right">40–140</td>
+<td style="text-align:right">70–210 GW</td>
+<td style="text-align:right">15–25</td>
+</tr>
+<tr>
+<td>2040</td>
+<td style="text-align:right">88–100%</td>
+<td style="text-align:right">4.2–6.6 億噸</td>
+<td style="text-align:right">400–840</td>
+<td style="text-align:right">590–1,190 GW</td>
+<td style="text-align:right">25–180</td>
+</tr>
+<tr>
+<td>2050</td>
+<td style="text-align:right">97–100%</td>
+<td style="text-align:right">5.6–8.3 億噸</td>
+<td style="text-align:right">560–1,090</td>
+<td style="text-align:right">780–1,500 GW</td>
+<td style="text-align:right">25–210</td>
+</tr>
+</tbody>
+</table></div><hr/></section><section aria-labelledby="chapter-5" class="article-section chapter-section"><h1 class="heading-level-1" id="chapter-5">第 5 章：技術成熟度<a aria-label="連結到「第 5 章：技術成熟度」" class="heading-anchor" href="#chapter-5">#</a></h1><h2 class="heading-level-2" id="section-5-1">5.1 技術核准與專案<a aria-label="連結到「5.1 技術核准與專案」" class="heading-anchor" href="#section-5-1">#</a></h2><p>LR 參與的工作包括：</p><ul>
+<li>船舶概念設計。</li>
+<li>氨燃料引擎 AiP。</li>
+<li>燃料供應系統 AiP。</li>
+<li>Novel Technology Evaluation。</li>
+<li>HAZID、HAZOP、QRA。</li>
+<li>Risk-Based Certification。</li>
+</ul><h3 class="heading-level-3" id="section-46-2">Exmar 46,000 m³ MGC<a aria-label="連結到「Exmar 46,000 m³ MGC」" class="heading-anchor" href="#section-46-2">#</a></h3><p>2023 年 9 月，LR 對 Exmar 的 46,000 m³ 氨燃料中型氣體運輸船核發 AiP：</p><ul>
+<li>船舶設計：HD Hyundai Mipo。</li>
+<li>主機：WinGD 氨雙燃料二衝程引擎。</li>
+<li>氨燃料供應系統：Wärtsilä Gas Solutions。</li>
+</ul><h3 class="heading-level-3" id="section-73">Amogy 氨裂解發電系統<a aria-label="連結到「Amogy 氨裂解發電系統」" class="heading-anchor" href="#section-73">#</a></h3><p>2024 年 2 月，LR 對 Amogy 氨轉電力系統之零件測試計畫核發可行性聲明。該系統將液氨裂解為氫，再供燃料電池使用。</p><h2 class="heading-level-2" id="section-5-2">5.2 LR 氨專案清單（2019–2023）<a aria-label="連結到「5.2 LR 氨專案清單（2019–2023）」" class="heading-anchor" href="#section-5-2">#</a></h2><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>年份</th>
+<th>專案</th>
+<th>狀態</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019</td>
+<td>C-Future 23,000 TEU 零碳氨燃料概念船</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>180,000 DWT 零碳氨燃料散裝船概念設計</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>91,000 m³ 氨燃料 VLGC</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>88,000 m³ 氨燃料 VLGC</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>13,000 TEU LNG Fuelled＋Ammonia Ready</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>88,000 DWT 氨燃料散裝船</td>
+<td>進行中</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>210,000 DWT Newcastlemax 氨燃料散裝船</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>16,000 TEU 氨燃料 ULCS</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>5,900 TEU Ammonia Ready 貨櫃船 HAZID</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>210,000 DWT Ammonia Ready 散裝船</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>16,000 TEU 氨燃料貨櫃船</td>
+<td>進行中</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>氨燃料 Aframax 油輪與風險評估</td>
+<td>進行中</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>氨燃料 VLCC 與 Suezmax</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Ammonia Ready VLCC</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>氨燃料 MR 油輪</td>
+<td>進行中</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>86K 氨運輸船／氨燃料</td>
+<td>完成</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>46K LPG／氨運輸船／氨燃料</td>
+<td>進行中</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>氨 FSRU 設計</td>
+<td>進行中</td>
+</tr>
+</tbody>
+</table></div><h2 class="heading-level-2" id="section-5-3">5.3 船用引擎與改裝<a aria-label="連結到「5.3 船用引擎與改裝」" class="heading-anchor" href="#section-5-3">#</a></h2><p>氨燃燒的主要技術難題是：</p><ul>
+<li>點火性差。</li>
+<li>燃燒速度慢。</li>
+<li>穩定燃燒困難。</li>
+<li>需要引燃燃料。</li>
+<li>易產生 NOx、N₂O 與 NH₃ slip。</li>
+</ul><p>若使用傳統柴油或燃油作引燃油，將降低整體減排效果，因此長期可能需要使用可持續引燃燃料。</p><h3 class="heading-level-3" id="section-76">二衝程引擎<a aria-label="連結到「二衝程引擎」" class="heading-anchor" href="#section-76">#</a></h3><h4 class="heading-level-4" id="section-77">WinGD X-DF-A<a aria-label="連結到「WinGD X-DF-A」" class="heading-anchor" href="#section-77">#</a></h4><ul>
+<li>原報告預計 2025 年交付。</li>
+<li>已取得 Exmar 氨運輸船與 Bocimar 210,000 DWT 散裝船訂單。</li>
+<li>LR 已對其概念核發 AiP。</li>
+<li>採氨噴射＋引燃油。</li>
+<li>引擎可達 IMO NOx Tier II。</li>
+<li>達 Tier III 需 SCR。</li>
+</ul><h4 class="heading-level-4" id="section-78">MAN Energy Solutions<a aria-label="連結到「MAN Energy Solutions」" class="heading-anchor" href="#section-78">#</a></h4><ul>
+<li>於哥本哈根進行專用單缸測試。</li>
+<li>原報告指出第一款可能為 60 缸徑引擎。</li>
+<li>模組化設計亦支援既有引擎改裝為氨／柴油雙燃料。</li>
+<li>測試場址靠近市區，氨槽車供應與加注安全本身亦成為測試時程因素。</li>
+</ul><h3 class="heading-level-3" id="section-79">四衝程引擎<a aria-label="連結到「四衝程引擎」" class="heading-anchor" href="#section-79">#</a></h3><h4 class="heading-level-4" id="section-25-2">Wärtsilä 25<a aria-label="連結到「Wärtsilä 25」" class="heading-anchor" href="#section-25-2">#</a></h4><ul>
+<li>報告稱氨版本已商業化提供。</li>
+<li>基於既有 Wärtsilä 25 平台。</li>
+<li>Viridis Bulk Carriers 已簽署使用意向書。</li>
+<li>Wärtsilä 亦曾展示以約 70% 氨混燒的引擎概念。</li>
+</ul><h2 class="heading-level-2" id="section-5-4">5.4 氨燃料儲存與供應系統<a aria-label="連結到「5.4 氨燃料儲存與供應系統」" class="heading-anchor" href="#section-5-4">#</a></h2><p>完整系統通常包括：</p><ol>
+<li>加注站與燃料儲槽。</li>
+<li>氨燃料供應系統（FSS）。</li>
+<li>燃料閥組（FVU／fuel valve train）。</li>
+<li>氨管路系統。</li>
+<li>透氣系統。</li>
+<li>通風系統。</li>
+<li>氮氣供應系統。</li>
+<li>氨釋放緩解系統。</li>
+</ol><p>其中最關鍵的是<strong>氨釋放緩解系統</strong>，其目的在於將任何氨釋放處理至安全濃度，而不是直接排放至大氣。</p><h2 class="heading-level-2" id="section-5-5">5.5 儲槽型式與配置<a aria-label="連結到「5.5 儲槽型式與配置」" class="heading-anchor" href="#section-5-5">#</a></h2><p>氨通常在約 -33°C 儲存為液體。</p><h3 class="heading-level-3" id="section-83">可採用的槽型<a aria-label="連結到「可採用的槽型」" class="heading-anchor" href="#section-83">#</a></h3><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>槽型</th>
+<th>特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMO Type A</td>
+<td>非加壓稜柱型；需完整次屏障；常用於 LNG 與其他氣體貨物；需考慮防晃設計</td>
+</tr>
+<tr>
+<td>IMO Type B</td>
+<td>非加壓球形；採部分次屏障</td>
+</tr>
+<tr>
+<td>IMO Type C</td>
+<td>加壓槽；常用於小型船或甲板安裝；通常不需次屏障；可承受較高壓力</td>
+</tr>
+<tr>
+<td>Membrane</td>
+<td>經適當材料與設計調整後可用於氨</td>
+</tr>
+</tbody>
+</table></div><h3 class="heading-level-3" id="section-84">設計重點<a aria-label="連結到「設計重點」" class="heading-anchor" href="#section-84">#</a></h3><ul>
+<li>防止航行與碰撞造成機械損傷。</li>
+<li>評估各液位下的衝擊與晃蕩載荷。</li>
+<li>選用不易發生 SCC 的材料。</li>
+<li>Type C 以外獨立槽與薄膜槽通常需次屏障。</li>
+<li>所有槽接頭、法蘭、閥件與配件應置於 <strong>Tank Connection Space（TCS）</strong>。</li>
+<li>氨燃料管路需設次屏障／雙層管路。</li>
+<li>管路應遠離船側。</li>
+<li>因氨具毒性，不允許直接向大氣排放，需設蒸氣回流或處理管路。</li>
+</ul><h2 class="heading-level-2" id="section-5-6">5.6 船上燃料供應系統<a aria-label="連結到「5.6 船上燃料供應系統」" class="heading-anchor" href="#section-5-6">#</a></h2><p>典型設備包括：</p><ul>
+<li>低壓泵。</li>
+<li>流量計。</li>
+<li>熱交換器。</li>
+<li>高壓泵。</li>
+<li>雙聯過濾器。</li>
+<li>手動閥。</li>
+<li>Master Fuel Valve。</li>
+<li>Double Block and Bleed（DBB）閥。</li>
+<li>二通閥。</li>
+<li>保壓與吹除閥。</li>
+<li>遠端控制閥。</li>
+<li>Catch Tank。</li>
+<li>Purge Tank。</li>
+<li>氮氣供應。</li>
+<li>氨蒸氣處理系統。</li>
+</ul><p>報告中的典型高壓供應壓力約 <strong>85 bar</strong>，但實際值依引擎製造商規格決定。</p><h3 class="heading-level-3" id="section-86">FVU 功能<a aria-label="連結到「FVU 功能」" class="heading-anchor" href="#section-86">#</a></h3><p>FVU 通常布置於機艙外，主要功能：</p><ul>
+<li>安全隔離氨供應。</li>
+<li>執行 block and bleed。</li>
+<li>控制回流至氨／氮分離或處理系統。</li>
+<li>緊急關斷。</li>
+</ul><p>關斷閥需：</p><ul>
+<li>可遠端操作。</li>
+<li>可自動操作。</li>
+<li>能從設備空間外接近或操作。</li>
+</ul><h2 class="heading-level-2" id="section-5-7">5.7 氮氣供應與吹除<a aria-label="連結到「5.7 氮氣供應與吹除」" class="heading-anchor" href="#section-5-7">#</a></h2><p>由於氨不能直接排放至大氣，燃料系統需配置氮氣系統。</p><h3 class="heading-level-3" id="section-88">啟動前<a aria-label="連結到「啟動前」" class="heading-anchor" href="#section-88">#</a></h3><ul>
+<li>進行系統氣密性測試。</li>
+<li>確認管路與設備無洩漏。</li>
+</ul><h3 class="heading-level-3" id="section-89">停機後或緊急狀況<a aria-label="連結到「停機後或緊急狀況」" class="heading-anchor" href="#section-89">#</a></h3><ul>
+<li>以氮氣吹除氨管路。</li>
+<li>將氨與氮氣導入 Purge Tank 或處理系統。</li>
+<li>不得將未處理氨直接排放至機艙或大氣。</li>
+</ul><h2 class="heading-level-2" id="section-5-8">5.8 排氣排放與後處理<a aria-label="連結到「5.8 排氣排放與後處理」" class="heading-anchor" href="#section-5-8">#</a></h2><h3 class="heading-level-3" id="section-91">NOx<a aria-label="連結到「NOx」" class="heading-anchor" href="#section-91">#</a></h3><p>氨含有燃料氮，燃燒可能增加 NOx。部分氨引擎即使符合 Tier II，也可能需要 SCR；Tier III 通常更需要 SCR。</p><h3 class="heading-level-3" id="section-92">氨逃逸<a aria-label="連結到「氨逃逸」" class="heading-anchor" href="#section-92">#</a></h3><p>SCR 原本即以氨或尿素作為還原劑，因此：</p><ul>
+<li>使用氨燃料可能降低額外尿素需求。</li>
+<li>SCR 亦可協助處理部分未燃氨。</li>
+</ul><h3 class="heading-level-3" id="section-93">N₂O<a aria-label="連結到「N₂O」" class="heading-anchor" href="#section-93">#</a></h3><ul>
+<li>大氣壽命：約 114 年。</li>
+<li>100 年全球暖化潛勢：265。</li>
+<li>排放量與引擎型式及燃燒技術有關。</li>
+<li>若引擎控制無法將其降至可接受程度，需增加專用觸媒。</li>
+</ul><h2 class="heading-level-2" id="section-5-9">5.9 氨裂解器與燃料電池<a aria-label="連結到「5.9 氨裂解器與燃料電池」" class="heading-anchor" href="#section-5-9">#</a></h2><p>氨可作為氫載體，經裂解後產生氫，再供燃料電池使用。</p><p>報告列舉：</p><ul>
+<li>ShipFC：評估高溫氨燃料電池。</li>
+<li>Alma Clean Power：燃料電池供應商。</li>
+<li>Fraunhofer IMM：開發去除污染物與未燃氨的觸媒。</li>
+<li>H2Site、Amogy：推進氨裂解與商業化。</li>
+</ul><h2 class="heading-level-2" id="section-5-10">5.10 LR 規則與符號<a aria-label="連結到「5.10 LR 規則與符號」" class="heading-anchor" href="#section-5-10">#</a></h2><p>LR 已在低閃點燃料規則 Appendix LR2 中建立：</p><ul>
+<li>氨燃料船規則。</li>
+<li>Ammonia Ready 符號。</li>
+<li>船舶設計與配置要求。</li>
+<li>加注要求。</li>
+<li>安全系統。</li>
+<li>控制與監測系統。</li>
+</ul><p>原報告引用版本：</p><ul>
+<li><em>Rules and Regulations for the Classification of Ships using Gases or other Low-flashpoint Fuels, July 2023</em>。</li>
+</ul><hr/></section><section aria-labelledby="chapter-6" class="article-section chapter-section"><h1 class="heading-level-1" id="chapter-6">第 6 章：總結<a aria-label="連結到「第 6 章：總結」" class="heading-anchor" href="#chapter-6">#</a></h1><p>LR 對氨燃料的整體結論可整理為：</p><ol>
+<li><strong>引擎與船舶技術已從概念階段逐步進入實船訂單與安裝階段。</strong></li>
+<li><strong>低碳氨供應鏈正同步發展，但供應量與價格仍不確定。</strong></li>
+<li><strong>低碳氨的成本取決於再生電力、綠氫及 CCS。</strong></li>
+<li><strong>生命週期分析將直接決定合規價值與投資可行性。</strong></li>
+<li><strong>安全挑戰重大，尤其是毒性、洩漏擴散、材料相容性與人因工程。</strong></li>
+<li><strong>HAZID、HAZOP、QRA、AiP 與風險基礎認證是早期專案不可或缺的工具。</strong></li>
+<li><strong>氨可能成為深海航運重要的無碳分子燃料，但成功採用必須同時解決技術、投資、法規、供應與社會接受度。</strong></li>
+</ol><hr/></section><section aria-labelledby="chapter-7" class="article-section chapter-section"><h1 class="heading-level-1" id="chapter-7">第 7 章：附錄<a aria-label="連結到「第 7 章：附錄」" class="heading-anchor" href="#chapter-7">#</a></h1><h2 class="heading-level-2" id="section-7-1">7.1 技術成熟度 TRL<a aria-label="連結到「7.1 技術成熟度 TRL」" class="heading-anchor" href="#section-7-1">#</a></h2><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align:right">等級</th>
+<th>階段</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>Idea</td>
+<td>觀察到基本原理</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>Concept</td>
+<td>形成技術概念</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>Feasibility</td>
+<td>初步評估可行性與技術</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>Validation</td>
+<td>整合原型於測試環境驗證</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>Prototype</td>
+<td>原型於使用者環境測試</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>Product</td>
+<td>前量產產品</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td>Pilot</td>
+<td>小規模示範生產</td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td>Market Introduction</td>
+<td>製造、測試、驗證及資格確認完成</td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td>Market Growth</td>
+<td>產品與生產全面營運</td>
+</tr>
+</tbody>
+</table></div><h2 class="heading-level-2" id="section-7-2">7.2 投資成熟度 IRL<a aria-label="連結到「7.2 投資成熟度 IRL」" class="heading-anchor" href="#section-7-2">#</a></h2><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align:right">等級</th>
+<th>階段</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>Idea</td>
+<td>假設性商業提案</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>Trial</td>
+<td>小規模商業試驗</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>Scale-up</td>
+<td>商業規模擴大</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>Adoption</td>
+<td>多項商業應用</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>Growth</td>
+<td>市場競爭推動廣泛發展</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>Bankable Asset</td>
+<td>可融資資產類別</td>
+</tr>
+</tbody>
+</table></div><h2 class="heading-level-2" id="section-7-3">7.3 社群成熟度 CRL<a aria-label="連結到「7.3 社群成熟度 CRL」" class="heading-anchor" href="#section-7-3">#</a></h2><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align:right">等級</th>
+<th>階段</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>Challenge</td>
+<td>確認社會問題、可能方案及影響</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>Testing</td>
+<td>與利害關係人初步測試方案</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>Validation</td>
+<td>由相關利害關係人驗證方案</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>Piloting</td>
+<td>在相關環境中示範並取得回饋</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>Planning</td>
+<td>完成社會適應計畫與資格確認</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>Proven Solution</td>
+<td>實際方案已在相關環境證明可行</td>
+</tr>
+</tbody>
+</table></div><h2 class="heading-level-2" id="section-7-4">7.4 氨的顏色分類<a aria-label="連結到「7.4 氨的顏色分類」" class="heading-anchor" href="#section-7-4">#</a></h2><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>顏色</th>
+<th>其他名稱</th>
+<th>生產方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>黑氨</td>
+<td>—</td>
+<td>以煤作為原料</td>
+</tr>
+<tr>
+<td>棕氨</td>
+<td>—</td>
+<td>與黑氨相同，名稱可互換</td>
+</tr>
+<tr>
+<td>灰氨</td>
+<td>—</td>
+<td>以天然氣等化石燃料製氫，CO₂ 未受控制排放</td>
+</tr>
+<tr>
+<td>藍氨</td>
+<td>—</td>
+<td>天然氣製氫並配合 CCS，大幅降低直接 CO₂ 排放</td>
+</tr>
+<tr>
+<td>綠氨</td>
+<td>e-ammonia</td>
+<td>以風力、太陽能等再生電力製氫，並以再生能源完成製氨</td>
+</tr>
+<tr>
+<td>粉紅氨</td>
+<td>紅氨</td>
+<td>使用核能生產</td>
+</tr>
+<tr>
+<td>黃氨</td>
+<td>—</td>
+<td>製程類似綠氨，但使用國家電網電力</td>
+</tr>
+</tbody>
+</table></div><hr/></section><section aria-labelledby="surveyor-checkpoints" class="article-section chapter-section surveyor-section accent-section"><h1 class="heading-level-1" id="surveyor-checkpoints">驗船師實務閱讀重點<a aria-label="連結到「驗船師實務閱讀重點」" class="heading-anchor" href="#surveyor-checkpoints">#</a></h1><blockquote class="note-callout">
+<p>本節為依原報告各章內容整理的檢查思路，不取代 LR Rules、IGF Code、IGC Code、核准圖面、製造商文件或專案 HAZID／HAZOP 結論。</p>
+</blockquote><h2 class="heading-level-2" id="section-103">A. 圖面與風險文件<a aria-label="連結到「A. 圖面與風險文件」" class="heading-anchor" href="#section-103">#</a></h2><ul class="check-list">
+<li>Alternative Design／RBC 適用範圍是否明確。</li>
+<li>HAZID、HAZOP、QRA 是否涵蓋毒性與燃爆雙重風險。</li>
+<li>是否定義合理可預見最嚴重洩漏情境。</li>
+<li>Toxic Area Plan 與 Hazardous Area Plan 是否一致。</li>
+<li>Escape、muster、air intake、vent outlet 是否避開氨擴散區。</li>
+</ul><h2 class="heading-level-2" id="section-104">B. 儲槽與材料<a aria-label="連結到「B. 儲槽與材料」" class="heading-anchor" href="#section-104">#</a></h2><ul class="check-list">
+<li>儲槽型式、設計壓力、最低設計溫度。</li>
+<li>次屏障與洩漏偵測安排。</li>
+<li>TCS 的氣密、排水、通風與偵測。</li>
+<li>鋼材 SCC 評估。</li>
+<li>銅、銅合金、鋅等禁用材料排除。</li>
+<li>墊片、O-ring、sealant 的製造商相容性證明。</li>
+</ul><h2 class="heading-level-2" id="section-105">C. 管路與閥件<a aria-label="連結到「C. 管路與閥件」" class="heading-anchor" href="#section-105">#</a></h2><ul class="check-list">
+<li>雙層管路／次屏障完整性。</li>
+<li>DBB 閥配置。</li>
+<li>Master Fuel Valve 與 ESD 邏輯。</li>
+<li>遠端關斷位置是否可於安全區操作。</li>
+<li>吹除、回流、catch tank、purge tank 流向是否正確。</li>
+<li>壓力釋放不得直接造成有毒排放。</li>
+</ul><h2 class="heading-level-2" id="section-106">D. 通風與氣體偵測<a aria-label="連結到「D. 通風與氣體偵測」" class="heading-anchor" href="#section-106">#</a></h2><ul class="check-list">
+<li>燃料準備室是否適當分隔。</li>
+<li>是否採用不同原理的多重偵測器。</li>
+<li>偵測器位置是否涵蓋高處與可能形成重氣雲的低處。</li>
+<li>通風排出口是否遠離人員區、進氣口與逃生路線。</li>
+<li>警報、通風、ESD 與機器停機連鎖是否經功能試驗。</li>
+</ul><h2 class="heading-level-2" id="section-107">E. 加注系統<a aria-label="連結到「E. 加注系統」" class="heading-anchor" href="#section-107">#</a></h2><ul class="check-list">
+<li>船岸／船船相容性評估。</li>
+<li>加注接頭、ERC／ESD、乾式接頭與滴盤。</li>
+<li>超壓與液封風險。</li>
+<li>排液、洩放與殘液處理方式。</li>
+<li>閉式或半閉式加注站的氣密性。</li>
+<li>加注前、中、後氮氣吹除與氣密試驗。</li>
+</ul><h2 class="heading-level-2" id="section-108">F. 主機與排氣後處理<a aria-label="連結到「F. 主機與排氣後處理」" class="heading-anchor" href="#section-108">#</a></h2><ul class="check-list">
+<li>氨模式切換條件。</li>
+<li>最低引燃油比例及低負荷限制。</li>
+<li>NOx、NH₃ slip、N₂O 控制策略。</li>
+<li>SCR 適用於 Tier II／III 的實際認證配置。</li>
+<li>異常燃燒、misfire、knocking 或燃燒不穩定的保護邏輯。</li>
+</ul><h2 class="heading-level-2" id="section-109">G. 船員與操作<a aria-label="連結到「G. 船員與操作」" class="heading-anchor" href="#section-109">#</a></h2><ul class="check-list">
+<li>氨專用 PPE 與逃生呼吸設備。</li>
+<li>洩漏、暴露、洗消與醫療程序。</li>
+<li>進入氨設備空間的時間與權限控制。</li>
+<li>船員訓練、演習及緊急應變。</li>
+<li>船舶 SMS、維修程序與 Permit to Work 是否更新。</li>
+</ul><hr/></section><section aria-labelledby="glossary" class="article-section chapter-section glossary-section"><h1 class="heading-level-1" id="glossary">關鍵縮寫<a aria-label="連結到「關鍵縮寫」" class="heading-anchor" href="#glossary">#</a></h1><div aria-label="可水平捲動的資料表" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+<thead>
+<tr>
+<th>縮寫</th>
+<th>英文</th>
+<th>中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AEA</td>
+<td>Ammonia Energy Association</td>
+<td>氨能源協會</td>
+</tr>
+<tr>
+<td>AFIR</td>
+<td>Alternative Fuels Infrastructure Regulation</td>
+<td>替代燃料基礎設施法規</td>
+</tr>
+<tr>
+<td>AiP</td>
+<td>Approval in Principle</td>
+<td>原則性認可</td>
+</tr>
+<tr>
+<td>ARMS</td>
+<td>Ammonia Release Mitigation System</td>
+<td>氨釋放緩解系統</td>
+</tr>
+<tr>
+<td>CCC</td>
+<td>Sub-Committee on Carriage of Cargoes and Containers</td>
+<td>IMO 貨物與貨櫃運輸次委員會</td>
+</tr>
+<tr>
+<td>CCS</td>
+<td>Carbon Capture and Storage</td>
+<td>碳捕集與封存</td>
+</tr>
+<tr>
+<td>CRL</td>
+<td>Community Readiness Level</td>
+<td>社群成熟度</td>
+</tr>
+<tr>
+<td>DBB</td>
+<td>Double Block and Bleed</td>
+<td>雙重隔離與洩放</td>
+</tr>
+<tr>
+<td>ESD</td>
+<td>Emergency Shutdown</td>
+<td>緊急停機／緊急關斷</td>
+</tr>
+<tr>
+<td>FSS</td>
+<td>Fuel Supply System</td>
+<td>燃料供應系統</td>
+</tr>
+<tr>
+<td>FVU</td>
+<td>Fuel Valve Unit</td>
+<td>燃料閥組</td>
+</tr>
+<tr>
+<td>HAZID</td>
+<td>Hazard Identification</td>
+<td>危害辨識</td>
+</tr>
+<tr>
+<td>HAZOP</td>
+<td>Hazard and Operability Study</td>
+<td>危害與可操作性分析</td>
+</tr>
+<tr>
+<td>IGC Code</td>
+<td>International Code for the Construction and Equipment of Ships Carrying Liquefied Gases in Bulk</td>
+<td>國際散裝運輸液化氣體船舶構造與設備章程</td>
+</tr>
+<tr>
+<td>IGF Code</td>
+<td>International Code of Safety for Ships using Gases or other Low-flashpoint Fuels</td>
+<td>使用氣體或其他低閃點燃料船舶國際安全章程</td>
+</tr>
+<tr>
+<td>IRL</td>
+<td>Investment Readiness Level</td>
+<td>投資成熟度</td>
+</tr>
+<tr>
+<td>LCA</td>
+<td>Lifecycle Assessment</td>
+<td>生命週期評估</td>
+</tr>
+<tr>
+<td>LHV</td>
+<td>Lower Heating Value</td>
+<td>低位發熱量</td>
+</tr>
+<tr>
+<td>RBC</td>
+<td>Risk-Based Certification</td>
+<td>風險基礎認證</td>
+</tr>
+<tr>
+<td>SCC</td>
+<td>Stress Corrosion Cracking</td>
+<td>應力腐蝕裂紋</td>
+</tr>
+<tr>
+<td>SCR</td>
+<td>Selective Catalytic Reduction</td>
+<td>選擇性觸媒還原</td>
+</tr>
+<tr>
+<td>TCS</td>
+<td>Tank Connection Space</td>
+<td>儲槽連接空間</td>
+</tr>
+<tr>
+<td>TRL</td>
+<td>Technology Readiness Level</td>
+<td>技術成熟度</td>
+</tr>
+<tr>
+<td>WtT</td>
+<td>Well-to-Tank</td>
+<td>井到槽／生產供應階段</td>
+</tr>
+<tr>
+<td>WtW</td>
+<td>Well-to-Wake</td>
+<td>井到尾流／全生命週期</td>
+</tr>
+</tbody>
+</table></div><hr/><div aria-labelledby="conclusion" class="closing-card"><h2 class="heading-level-2" id="conclusion">一句話結論<a aria-label="連結到「一句話結論」" class="heading-anchor" href="#conclusion">#</a></h2><p><strong>氨不是「只要換一具引擎」就能導入的燃料，而是一套必須同時處理毒性、材料、儲存、加注、通風、氮氣吹除、排氣後處理、生命週期認證與低碳供應鏈的完整船舶能源系統。</strong></p></div></section></div>
+
+        <section class="article-footer" aria-labelledby="source-title">
+          <h2 id="source-title">資料來源與著作權說明</h2>
+          <p><strong>主要來源：</strong>Lloyd’s Register, <a href="https://www.lr.org/en/knowledge/research-reports/2024/fuel-for-thought-ammonia-report/" target="_blank" rel="noopener noreferrer"><em>Fuel for Thought: Ammonia</em></a>, Research report, 21 March 2024。</p>
+          <p>原報告的文字、圖表與品牌權利屬原權利人所有。本頁採摘要、重述與個人專業導讀方式呈現，未重製原報告圖片；引用原始資料時，請以 LR 官方版本為準。</p>
+          <div class="footer-actions">
+            <a class="btn btn-primary" href="https://www.lr.org/en/knowledge/research-reports/2024/fuel-for-thought-ammonia-report/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14L21 3"/><path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"/></svg>
+              查看 LR 原始報告
+            </a>
+
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/ammonia-fuel-surveyor-notes.html"
+      data-share-title="氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記｜Reay's Note"
+      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記｜Reay's Note&#10;https://reayhuang.com/notes/maritime/ammonia-fuel-surveyor-notes.html"
+      data-share-copy="複製連結"
+      data-share-copied="已複製"
+      data-toast-copied="連結已複製到剪貼簿"
+    >
+      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="source">
+    <div class="site-footer-inner">
+      <strong>氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note · 資料整理日期：2026-08-02</span>
+      <p class="disclaimer small">
+        本頁為個人專業學習、技術交流與檢驗準備用途，不代表 Lloyd's Register、IMO、任何船旗國主管機關或雇主之正式立場。
+        正式設計、圖審、法定檢驗、入級與營運合規，仍應以最新正式決議、Circular、Code、船旗國指示及專案審查意見為準。
+      </p>
+      <p class="small" style="margin-top:12px">
+        主要參考：<a href="https://www.lr.org/en/knowledge/research-reports/2024/fuel-for-thought-ammonia-report/" target="_blank" rel="noopener noreferrer">Lloyd's Register — Fuel for Thought: Ammonia (2024)</a>
+      </p>
+    </div>
+  </footer>
+
+
+  <div class="section-preview-sheet" id="sectionPreviewSheet" hidden>
+    <button class="section-preview-backdrop" type="button" aria-label="關閉段落預覽" data-preview-close></button>
+    <section class="section-preview-panel" role="dialog" aria-modal="true" aria-labelledby="sectionPreviewTitle">
+      <div class="section-preview-handle" aria-hidden="true"></div>
+      <div class="section-preview-head">
+        <h2 id="sectionPreviewTitle">文章段落</h2>
+        <button class="section-preview-close" id="sectionPreviewClose" type="button" aria-label="關閉段落預覽" data-preview-close>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="section-preview-current">目前閱讀：<strong id="sectionPreviewCurrent">文件摘要</strong></div>
+      <nav class="section-preview-nav" id="sectionPreviewNav" aria-label="手機段落預覽"></nav>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const progress = document.getElementById('readingProgress');
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const printButton = document.getElementById('printPage');
+      const tocBox = document.getElementById('tocBox');
+      const tocHead = document.getElementById('tocHead');
+      const tocToggle = tocHead?.querySelector('.toc-toggle');
+      const tocLinks = [...document.querySelectorAll('.toc-list a')];
+      const sectionPreviewTrigger = document.getElementById('sectionPreviewTrigger');
+      const sectionPreviewSheet = document.getElementById('sectionPreviewSheet');
+      const sectionPreviewClose = document.getElementById('sectionPreviewClose');
+      const sectionPreviewLabel = document.getElementById('sectionPreviewLabel');
+      const sectionPreviewCurrent = document.getElementById('sectionPreviewCurrent');
+      const sectionPreviewPercent = document.getElementById('sectionPreviewPercent');
+      const sectionPreviewMeter = document.getElementById('sectionPreviewMeter');
+      const sectionPreviewNav = document.getElementById('sectionPreviewNav');
+      const sourceTocList = document.querySelector('.toc-list');
+      const mobileTocList = sourceTocList?.cloneNode(true);
+      if (mobileTocList && sectionPreviewNav) {
+        mobileTocList.className = 'section-preview-list';
+        sectionPreviewNav.appendChild(mobileTocList);
+      }
+      const mobileTocLinks = [...(mobileTocList?.querySelectorAll('a') || [])];
+      let sectionPreviewHideTimer;
+
+      const savedTheme = localStorage.getItem('rh-theme');
+      const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+      const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+      setTheme(initialTheme);
+
+      function setTheme(theme) {
+        root.dataset.theme = theme;
+        root.style.colorScheme = theme;
+        localStorage.setItem('rh-theme', theme);
+        themeToggle?.setAttribute('aria-label', theme === 'dark' ? '切換淺色模式' : '切換深色模式');
+        themeToggle?.setAttribute('title', theme === 'dark' ? '切換淺色模式' : '切換深色模式');
+        if (themeIcon) {
+          themeIcon.innerHTML = theme === 'dark'
+            ? '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>'
+            : '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>';
+        }
+      }
+
+      themeToggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+      printButton?.addEventListener('click', () => window.print());
+
+      function setActiveSection(href) {
+        const matchingLink = tocLinks.find(link => link.getAttribute('href') === href);
+        const label = matchingLink?.textContent.trim() || '文件摘要';
+        [...tocLinks, ...mobileTocLinks].forEach(link => link.classList.toggle('active', link.getAttribute('href') === href));
+        if (sectionPreviewLabel) sectionPreviewLabel.textContent = label;
+        if (sectionPreviewCurrent) sectionPreviewCurrent.textContent = label;
+      }
+
+      function openSectionPreview() {
+        if (!sectionPreviewSheet || window.innerWidth > 640) return;
+        clearTimeout(sectionPreviewHideTimer);
+        sectionPreviewSheet.hidden = false;
+        sectionPreviewTrigger?.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('section-preview-open');
+        requestAnimationFrame(() => {
+          sectionPreviewSheet.classList.add('open');
+          sectionPreviewClose?.focus();
+          mobileTocLinks.find(link => link.classList.contains('active'))?.scrollIntoView({ block: 'center' });
+        });
+      }
+
+      function closeSectionPreview(restoreFocus = true) {
+        if (!sectionPreviewSheet || sectionPreviewSheet.hidden) return;
+        sectionPreviewSheet.classList.remove('open');
+        sectionPreviewTrigger?.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('section-preview-open');
+        sectionPreviewHideTimer = setTimeout(() => { sectionPreviewSheet.hidden = true; }, 240);
+        if (restoreFocus) sectionPreviewTrigger?.focus();
+      }
+
+      sectionPreviewTrigger?.addEventListener('click', openSectionPreview);
+      sectionPreviewSheet?.querySelectorAll('[data-preview-close]').forEach(button => button.addEventListener('click', () => closeSectionPreview()));
+      mobileTocLinks.forEach(link => link.addEventListener('click', () => closeSectionPreview(false)));
+      sectionPreviewSheet?.addEventListener('keydown', event => {
+        if (event.key === 'Escape') { closeSectionPreview(); return; }
+        if (event.key !== 'Tab') return;
+        const focusable = [...sectionPreviewSheet.querySelectorAll('button, a[href]')].filter(element => !element.hidden);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      });
+
+      function updateScroll() {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+        progress.style.width = `${ratio * 100}%`;
+        const percent = Math.round(ratio * 100);
+        if (sectionPreviewPercent) sectionPreviewPercent.textContent = `${percent}%`;
+        if (sectionPreviewMeter) sectionPreviewMeter.style.width = `${ratio * 100}%`;
+      }
+      updateScroll();
+      window.addEventListener('scroll', updateScroll, { passive: true });
+      window.addEventListener('resize', updateScroll);
+
+      const sections = tocLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+      const observer = new IntersectionObserver(entries => {
+        const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        setActiveSection(`#${visible.target.id}`);
+      }, { rootMargin: '-18% 0px -72% 0px', threshold: [0, .05, .2, .6] });
+      sections.forEach(s => observer.observe(s));
+      setActiveSection(location.hash && tocLinks.some(link => link.getAttribute('href') === location.hash) ? location.hash : tocLinks[0]?.getAttribute('href'));
+
+      tocHead?.addEventListener('click', () => {
+        if (window.innerWidth > 980) return;
+        const open = tocBox.classList.toggle('open');
+        tocToggle?.setAttribute('aria-expanded', String(open));
+        if (tocToggle) tocToggle.textContent = open ? '收合' : '展開';
+      });
+      tocLinks.forEach(link => link.addEventListener('click', () => {
+        if (window.innerWidth <= 980) { tocBox.classList.remove('open'); tocToggle?.setAttribute('aria-expanded', 'false'); if (tocToggle) tocToggle.textContent = '展開'; }
+      }));
+      window.addEventListener('resize', () => { if (window.innerWidth > 640) closeSectionPreview(false); });
+    })();
+  </script>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+</body>
+</html>
