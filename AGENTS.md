@@ -67,14 +67,17 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 
 These pages include `hreflang` links to EN / 繁中 / ko and use `data-back-to-top-label="맨 위로"` on `<html>`.
 
-**Management notes** (`research/`)
+**Management notes** (`research/`) — order matches `research/index.en.html`
 
 | Slug | English | Traditional Chinese |
 |------|---------|---------------------|
+| Owned vs chartered container ships | `owned-vs-chartered-container-ships.en.html` | `owned-vs-chartered-container-ships.html` |
 | Fleet spares thesis | `fleet-spares-thesis-notes.en.html` | `fleet-spares-thesis-notes.html` |
 | 5S study | `5s-study-notes.en.html` | `5s-study-notes.html` |
 | Business statistics | `stats-business-application.en.html` | `stats-business-application.html` |
 | SBC demand classification | `sbc-demand-classification.en.html` | `sbc-demand-classification.html` |
+
+Link preview images for listing/homepage cards live in `assets/images/research/` — e.g. `owned-vs-chartered-linkedin-preview-1200.png` (繁中) and `owned-vs-chartered-linkedin-preview.en-1200.png` (EN). Hero backgrounds for standalone research articles use optimized `.webp` / `.jpg` pairs (plus `-mobile` variants for narrow viewports), e.g. `hero-owned-vs-chartered-fleet-strategy.webp`.
 
 ### Internationalization
 
@@ -99,6 +102,8 @@ See `README.md` for file naming and listing conventions. For machine-readable lo
 ### Adding content
 
 Copy an existing English HTML file as a template, add a card link on the relevant English listing page (`notes/index.en.html` or `research/index.en.html`), then add a Traditional Chinese version and listing link if needed. Add the EN/zh paths to `i18n/manifest.json`. See `README.md` for details.
+
+For recent articles, use `card card--preview` on listing pages and the homepage “Latest content” section, with a `card__preview` `<img>` pointing at the locale-specific LinkedIn preview PNG (see Management notes asset naming above).
 
 ### Article page scripts (`</body>`)
 

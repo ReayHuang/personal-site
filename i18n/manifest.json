@@ -216,6 +216,13 @@
       "category": "research",
       "en": "research/fleet-spares-thesis-notes.en.html",
       "zh": "research/fleet-spares-thesis-notes.html"
+    },
+    {
+      "slug": "owned-vs-chartered-container-ships",
+      "type": "article",
+      "category": "research",
+      "en": "research/owned-vs-chartered-container-ships.en.html",
+      "zh": "research/owned-vs-chartered-container-ships.html"
     }
   ]
 }

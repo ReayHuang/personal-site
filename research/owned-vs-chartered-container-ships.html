@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../assets/js/gtag-config.js"></script>
+  <script src="../assets/js/copy-source-attribution.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>航運公司為什麼有些船自己買、有些船用租的？｜Reay's Note</title>
+  <link rel="stylesheet" href="../assets/css/note-standalone.css" />
+  <link rel="stylesheet" href="../assets/css/article-share.css" />
+  <meta name="description" content="從第一性原理理解貨櫃航運公司的自有船、期租船與光船租賃：比較控制權、現金流、長期成本、殘值、技術與市場風險，並以長榮、陽明、萬海公開船隊資料說明不同船隊結構。">
+  <meta name="author" content="Reay Huang">
+  <meta name="keywords" content="自有船, 租賃船, 期租船, 光船租賃, 貨櫃航運, 船隊策略, Evergreen, Yang Ming, Wan Hai, CapEx, OpEx, IFRS 16, container shipping">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#07304f">
+  <link rel="canonical" href="https://reayhuang.com/research/owned-vs-chartered-container-ships.html">
+  <link rel="alternate" hreflang="zh-Hant" href="owned-vs-chartered-container-ships.html" />
+  <link rel="alternate" hreflang="en" href="owned-vs-chartered-container-ships.en.html" />
+  <link rel="alternate" hreflang="x-default" href="owned-vs-chartered-container-ships.en.html" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:title" content="航運公司為什麼有些船自己買、有些船用租的？">
+  <meta property="og:description" content="用一篇文章理解自有船與租入船背後的經營、財務與風險分配邏輯，並觀察長榮、陽明與萬海目前公開的船隊結構。">
+  <meta property="og:url" content="https://reayhuang.com/research/owned-vs-chartered-container-ships.html">
+  <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
+  <meta property="og:image" content="https://reayhuang.com/assets/images/research/owned-vs-chartered-linkedin-preview-1200.png" />
+  <meta property="og:image:alt" content="航運公司為什麼有些船自己買、有些船用租的？｜Reay's Note" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="537" />
+  <meta property="article:published_time" content="2026-08-03T18:00:00+09:00">
+  <meta property="article:modified_time" content="2026-08-03T18:00:00+09:00">
+  <meta property="article:author" content="Reay Huang">
+  <meta property="article:section" content="Container Shipping Management">
+  <meta property="article:tag" content="Container Shipping">
+  <meta property="article:tag" content="Fleet Strategy">
+  <meta property="article:tag" content="Ship Chartering">
+  <meta property="article:tag" content="Maritime Finance">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="航運公司為什麼有些船自己買、有些船用租的？">
+  <meta name="twitter:description" content="從航運公司的經營目的出發，理解自有船與租入船的成本、控制、風險與彈性。">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/research/owned-vs-chartered-linkedin-preview-1200.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "航運公司為什麼有些船自己買、有些船用租的？",
+    "alternativeHeadline": "從貨櫃航運的經營邏輯，看長榮、陽明與萬海的船隊選擇",
+    "description": "從第一性原理理解貨櫃航運公司的自有船、期租船與光船租賃，並以長榮、陽明、萬海公開船隊資料說明不同船隊結構。",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "inLanguage": "zh-Hant",
+    "mainEntityOfPage": "https://reayhuang.com/research/owned-vs-chartered-container-ships.html",
+    "author": {
+      "@type": "Person",
+      "name": "Reay Huang",
+      "jobTitle": "Marine Surveyor",
+      "url": "https://reayhuang.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Reay Huang Maritime Notes",
+      "url": "https://reayhuang.com/"
+    },
+    "about": [
+      "Container shipping",
+      "Owned vessels",
+      "Time charter",
+      "Bareboat charter",
+      "Fleet strategy",
+      "Maritime finance",
+      "Evergreen Marine",
+      "Yang Ming Marine Transport",
+      "Wan Hai Lines"
+    ],
+    "citation": [
+      "https://www.bimco.org/contractual-affairs/bimco-contracts/contracts/barecon-2017/",
+      "https://www.ifrs.org/-/media/feature/meetings/2019/september/ifric/ap3-definition-of-a-lease-shipping-contract-ifrs-16.pdf",
+      "https://www.itf-oecd.org/impact-mega-ships",
+      "https://doi.org/10.1186/s41072-024-00169-w",
+      "https://doi.org/10.1016/j.trd.2021.102948",
+      "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-16-leases/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f2f6f8;
+      --paper: #ffffff;
+      --paper-soft: #edf5f7;
+      --paper-warm: #fbf7ef;
+      --ink: #173247;
+      --ink-strong: #092337;
+      --muted: #627889;
+      --line: #d8e4ea;
+      --navy: #07304f;
+      --navy-deep: #041d31;
+      --blue: #0b6f9e;
+      --cyan: #00a7b5;
+      --teal: #118d85;
+      --green: #2c9961;
+      --amber: #c97a12;
+      --gold: #b78b3e;
+      --red: #cc5555;
+      --purple: #665ac7;
+      --soft-blue: #ebf6fb;
+      --soft-cyan: #e9fbfc;
+      --soft-green: #eaf7ef;
+      --soft-amber: #fff5e4;
+      --soft-red: #fff0ef;
+      --shadow-sm: 0 8px 22px rgba(4, 29, 49, .07);
+      --shadow-md: 0 16px 38px rgba(4, 29, 49, .10);
+      --shadow-lg: 0 26px 70px rgba(4, 29, 49, .16);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+      --container: 1120px;
+      --header-h: 72px;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #071522;
+      --paper: #0d2130;
+      --paper-soft: #102b3c;
+      --paper-warm: #272315;
+      --ink: #d6e5ee;
+      --ink-strong: #f2f8fb;
+      --muted: #9bb1bf;
+      --line: #234154;
+      --navy: #0c4667;
+      --navy-deep: #05131f;
+      --blue: #52b5e4;
+      --cyan: #37c9d2;
+      --teal: #50bdb4;
+      --green: #65c98f;
+      --amber: #e6aa50;
+      --gold: #d2ad64;
+      --red: #ef8888;
+      --purple: #9c91f2;
+      --soft-blue: #102d3e;
+      --soft-cyan: #0c3137;
+      --soft-green: #123328;
+      --soft-amber: #342815;
+      --soft-red: #351d20;
+      --shadow-sm: 0 8px 22px rgba(0, 0, 0, .18);
+      --shadow-md: 0 16px 38px rgba(0, 0, 0, .23);
+      --shadow-lg: 0 26px 70px rgba(0, 0, 0, .32);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 20px); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(0, 167, 181, .08), transparent 27rem),
+        radial-gradient(circle at 92% 13%, rgba(201, 122, 18, .07), transparent 24rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-size: 17px;
+      line-height: 1.82;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--blue); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+    a:hover { color: var(--cyan); }
+    img, svg { max-width: 100%; }
+    button, input { font: inherit; }
+    h1, h2, h3, h4 { color: var(--ink-strong); line-height: 1.3; letter-spacing: -.025em; }
+    h1, h2, h3, p { margin-top: 0; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--ink-strong); }
+    small { font-size: .78em; }
+    ::selection { color: #fff; background: var(--blue); }
+
+    .container { width: min(var(--container), calc(100% - 32px)); margin-inline: auto; }
+    .skip-link {
+      position: fixed; z-index: 9999; top: 10px; left: 10px; padding: .7rem 1rem;
+      color: #fff; background: var(--navy-deep); border-radius: 10px;
+      transform: translateY(-150%); transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .reading-progress { position: fixed; z-index: 999; top: 0; left: 0; width: 100%; height: 3px; background: transparent; }
+    .reading-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--cyan), var(--amber)); }
+
+    .site-header {
+      position: sticky; z-index: 90; top: 0; height: var(--header-h);
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      backdrop-filter: blur(18px) saturate(140%);
+    }
+    .site-nav { display: flex; align-items: center; justify-content: space-between; height: 100%; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; gap: .8rem; color: var(--ink-strong); text-decoration: none; min-width: 0; }
+    .brand-mark {
+      display: grid; place-items: center; flex: 0 0 42px; width: 42px; height: 42px;
+      color: #fff; font-weight: 850; letter-spacing: -.04em; border-radius: 13px;
+      background: linear-gradient(145deg, var(--navy), var(--cyan)); box-shadow: var(--shadow-sm);
+    }
+    .brand-title, .brand-subtitle { display: block; white-space: nowrap; }
+    .brand-title { font-size: .98rem; font-weight: 800; line-height: 1.15; }
+    .brand-subtitle { margin-top: .16rem; color: var(--muted); font-size: .69rem; line-height: 1.1; letter-spacing: .035em; }
+    .nav-links { display: flex; align-items: center; gap: .45rem; }
+    .nav-links > a { padding: .48rem .65rem; color: var(--muted); font-size: .86rem; font-weight: 680; text-decoration: none; border-radius: 9px; }
+    .nav-links > a:hover { color: var(--ink-strong); background: var(--paper-soft); }
+    .icon-btn {
+      display: grid; place-items: center; width: 38px; height: 38px; padding: 0;
+      color: var(--ink); border: 1px solid var(--line); border-radius: 11px; background: var(--paper); cursor: pointer;
+    }
+    .icon-btn:hover { border-color: var(--cyan); transform: translateY(-1px); }
+    .icon-btn svg { width: 18px; height: 18px; }
+
+    .hero {
+      position: relative; overflow: hidden; color: #eaf6fb;
+      background-image:
+        linear-gradient(90deg, rgba(2, 18, 31, .96) 0%, rgba(2, 23, 39, .88) 34%, rgba(2, 23, 39, .38) 56%, rgba(2, 23, 39, .04) 78%),
+        url("../assets/images/research/hero-owned-vs-chartered-fleet-strategy.jpg");
+      background-position: center, center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @supports (background-image: image-set(url("test.webp") type("image/webp"))) {
+      .hero {
+        background-image:
+          linear-gradient(90deg, rgba(2, 18, 31, .96) 0%, rgba(2, 23, 39, .88) 34%, rgba(2, 23, 39, .38) 56%, rgba(2, 23, 39, .04) 78%),
+          image-set(
+            url("../assets/images/research/hero-owned-vs-chartered-fleet-strategy.webp") type("image/webp"),
+            url("../assets/images/research/hero-owned-vs-chartered-fleet-strategy.jpg") type("image/jpeg")
+          );
+      }
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: auto 0 0; height: 38%; pointer-events: none;
+      background: linear-gradient(to top, rgba(2, 18, 31, .58), transparent);
+    }
+    .hero-inner { position: relative; z-index: 1; min-height: 640px; padding: 74px 0 82px; }
+    .hero-copy { width: min(720px, 60%); }
+    .eyebrow { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1.2rem; color: #8be3e8; font-size: .78rem; font-weight: 820; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: linear-gradient(90deg, var(--cyan), var(--amber)); }
+    .hero h1 { max-width: 800px; margin-bottom: 1.35rem; color: #fff; font-size: clamp(2.65rem, 5vw, 5rem); font-weight: 860; line-height: 1.08; letter-spacing: -.055em; }
+    .hero h1 em { color: inherit; font-family: inherit; font-style: normal; font-weight: inherit; }
+    .hero-lead { max-width: 780px; margin-bottom: 1.55rem; color: #c4dbe7; font-size: clamp(1.05rem, 1.55vw, 1.25rem); line-height: 1.75; }
+    .hero-thesis { max-width: 720px; margin: 0 0 1.6rem; padding: 1rem 1.15rem; border-left: 3px solid var(--amber); color: #f5ead7; background: rgba(4, 25, 41, .38); border-radius: 0 13px 13px 0; }
+    .hero-thesis strong { color: #f4c06a; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .meta-chip { display: inline-flex; align-items: center; gap: .42rem; padding: .5rem .72rem; color: #cde1ea; font-size: .78rem; font-weight: 700; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(255,255,255,.07); }
+
+    .trust-strip { position: relative; z-index: 4; margin-top: -38px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--paper); box-shadow: var(--shadow-md); }
+    .trust-item { padding: 1.25rem 1.3rem; border-right: 1px solid var(--line); }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item small { display: block; color: var(--blue); font-size: .66rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .trust-item strong { display: block; margin-top: .25rem; font-size: .95rem; }
+
+    .intro-card { margin-top: 34px; padding: 1.55rem 1.7rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--paper); box-shadow: var(--shadow-sm); }
+    .intro-card-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: start; }
+    .intro-card h2 { margin-bottom: .65rem; font-size: 1.35rem; }
+    .intro-card p { color: var(--muted); }
+    .focus-box { padding: 1rem 1.1rem; border-radius: 15px; background: var(--soft-amber); }
+    .focus-box small { display: block; margin-bottom: .3rem; color: var(--amber); font-size: .67rem; font-weight: 850; letter-spacing: .11em; }
+    .focus-box strong { font-size: .95rem; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 44px;
+      margin: 44px auto 70px;
+    }
+    .sidebar, .article { min-width: 0; }
+    .sidebar { position: relative; }
+    .toc { position: sticky; top: calc(var(--header-h) + 26px); max-height: calc(100vh - var(--header-h) - 52px); overflow: auto; padding: 1.1rem; border: 1px solid var(--line); border-radius: 17px; background: color-mix(in srgb, var(--paper) 92%, transparent); box-shadow: var(--shadow-sm); }
+    .toc-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: .75rem; color: var(--ink-strong); font-size: .78rem; font-weight: 850; letter-spacing: .08em; }
+    .toc-title span { color: var(--muted); font-size: .62rem; }
+    .toc nav { display: grid; gap: .2rem; }
+    .toc a { display: block; padding: .45rem .55rem; color: var(--muted); font-size: .77rem; font-weight: 650; line-height: 1.45; text-decoration: none; border-left: 2px solid transparent; border-radius: 7px; }
+    .toc a:hover { color: var(--ink-strong); background: var(--paper-soft); }
+    .toc a.active { color: var(--blue); border-left-color: var(--cyan); background: var(--soft-blue); }
+    .sidebar-note { margin-top: 1rem; padding: .9rem 1rem; color: var(--muted); font-size: .72rem; line-height: 1.55; border: 1px dashed var(--line); border-radius: 13px; }
+
+    .article { min-width: 0; }
+    .article-section { scroll-margin-top: calc(var(--header-h) + 24px); margin-bottom: 1.2rem; padding: 2rem 2.1rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--paper); box-shadow: var(--shadow-sm); }
+    .section-kicker { display: inline-flex; align-items: center; gap: .45rem; margin-bottom: .62rem; color: var(--blue); font-size: .68rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .section-kicker::before { content: ""; width: 23px; height: 2px; background: currentColor; }
+    .article-section h2 { display: flex; align-items: baseline; gap: .4rem; margin-bottom: .85rem; font-size: clamp(1.65rem, 3vw, 2.15rem); }
+    .article-section h3 { margin: 1.6rem 0 .6rem; font-size: 1.2rem; }
+    .heading-anchor { opacity: 0; color: var(--muted); font-size: .8em; text-decoration: none; transition: opacity .2s ease; }
+    .article-section h2:hover .heading-anchor { opacity: 1; }
+    .section-lead { margin-bottom: 1.3rem; color: var(--muted); font-size: 1.05rem; line-height: 1.8; }
+    .article-section p { margin-bottom: 1.05rem; }
+    .article-section ul { margin: .7rem 0 1.2rem; padding-left: 1.3rem; }
+    .article-section li { margin-bottom: .48rem; }
+    .source-ref { font-size: .68em; font-weight: 800; vertical-align: super; text-decoration: none; }
+
+    .thesis-box { margin: 1.2rem 0; padding: 1.25rem 1.3rem; border-left: 4px solid var(--cyan); border-radius: 0 16px 16px 0; background: var(--soft-cyan); }
+    .thesis-box small { display: block; margin-bottom: .28rem; color: var(--teal); font-weight: 850; letter-spacing: .1em; }
+    .thesis-box strong { display: block; font-size: 1.12rem; line-height: 1.65; }
+    .callout { margin: 1.2rem 0; padding: 1.15rem 1.25rem; border-radius: 16px; border: 1px solid var(--line); }
+    .callout.info { background: var(--soft-blue); }
+    .callout.warn { background: var(--soft-amber); }
+    .callout strong { display: block; margin-bottom: .32rem; }
+    .callout p { color: var(--muted); font-size: .92rem; }
+
+    .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem; margin: 1.2rem 0; }
+    .role-card { padding: 1.1rem; border: 1px solid var(--line); border-radius: 16px; background: var(--paper-soft); }
+    .role-no { display: grid; place-items: center; width: 34px; height: 34px; margin-bottom: .65rem; color: #fff; font-weight: 850; border-radius: 11px; background: var(--navy); }
+    .role-card h3 { margin: 0 0 .35rem; font-size: 1rem; }
+    .role-card p { color: var(--muted); font-size: .84rem; line-height: 1.6; }
+
+    .model-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .85rem; margin-top: 1.1rem; }
+    .model-card { position: relative; overflow: hidden; padding: 1.2rem; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); }
+    .model-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--cyan); }
+    .model-card:nth-child(2)::before { background: var(--amber); }
+    .model-card:nth-child(3)::before { background: var(--purple); }
+    .model-card:nth-child(4)::before { background: var(--green); }
+    .model-card small { color: var(--muted); font-weight: 800; letter-spacing: .08em; }
+    .model-card h3 { margin: .35rem 0 .45rem; font-size: 1.05rem; }
+    .model-card p { color: var(--muted); font-size: .86rem; line-height: 1.65; }
+
+    .reason-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .9rem; margin-top: 1.1rem; }
+    .reason-card { padding: 1.25rem; border: 1px solid var(--line); border-radius: 17px; background: var(--paper-soft); }
+    .reason-card .reason-head { display: flex; align-items: center; gap: .7rem; margin-bottom: .55rem; }
+    .reason-icon { display: grid; place-items: center; flex: 0 0 39px; width: 39px; height: 39px; color: #fff; font-size: .85rem; font-weight: 850; border-radius: 12px; background: linear-gradient(145deg, var(--navy), var(--blue)); }
+    .charter-reasons .reason-icon { background: linear-gradient(145deg, #8c4f08, var(--amber)); }
+    .reason-card h3 { margin: 0; font-size: 1.05rem; }
+    .reason-card p { color: var(--muted); font-size: .87rem; line-height: 1.68; }
+
+    .table-wrap { overflow-x: auto; margin: 1.25rem 0; border: 1px solid var(--line); border-radius: 16px; }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; font-size: .88rem; background: var(--paper); }
+    caption { padding: .8rem 1rem; color: var(--muted); font-size: .75rem; text-align: left; background: var(--paper-soft); }
+    th, td { padding: .9rem .95rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    thead th { color: var(--ink-strong); font-size: .76rem; letter-spacing: .035em; background: var(--paper-soft); }
+    tbody th { color: var(--ink-strong); font-weight: 760; }
+    tr:last-child th, tr:last-child td { border-bottom: 0; }
+    td.good { color: var(--green); font-weight: 730; }
+    td.risk { color: var(--amber); font-weight: 730; }
+
+    .term-glossary { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin: 1.1rem 0 .75rem; }
+    .term-glossary > div { padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 15px; background: var(--paper-soft); }
+    .term-glossary dt { margin-bottom: .35rem; color: var(--ink-strong); font-weight: 840; }
+    .term-glossary dt span { display: inline-block; margin-right: .4rem; color: var(--blue); font-size: .76rem; letter-spacing: .07em; }
+    .term-glossary dd { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.7; }
+    .term-caveat { margin: 0 0 1.1rem; padding: .8rem 1rem; color: var(--muted); font-size: .82rem; border-left: 3px solid var(--blue); background: var(--soft-blue); border-radius: 0 12px 12px 0; }
+    .term-caveat strong { color: var(--ink-strong); }
+
+    .finance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 1.1rem; }
+    .finance-card { padding: 1.2rem; border-radius: 17px; border: 1px solid var(--line); }
+    .finance-card:first-child { background: var(--soft-cyan); }
+    .finance-card:last-child { background: var(--soft-amber); }
+    .finance-card small { display: block; color: var(--muted); font-weight: 850; letter-spacing: .09em; }
+    .finance-card h3 { margin: .35rem 0 .5rem; }
+    .finance-card ul { margin-bottom: 0; font-size: .88rem; }
+    .fixed-payment { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .8rem; margin: 1.2rem 0; padding: 1.15rem; border-radius: 16px; background: var(--navy-deep); color: #d9edf5; }
+    .fixed-payment div { text-align: center; }
+    .fixed-payment small { display: block; color: #8eb7c9; font-weight: 750; letter-spacing: .08em; }
+    .fixed-payment strong { color: #fff; }
+    .fixed-payment .operator { color: #78dce3; font-size: 1.4rem; font-weight: 850; }
+
+    .logic-list { display: grid; gap: .8rem; margin-top: 1.1rem; }
+    .logic-item { display: grid; grid-template-columns: 50px 1fr; gap: .9rem; padding: 1.05rem; border: 1px solid var(--line); border-radius: 16px; background: var(--paper-soft); }
+    .logic-no { display: grid; place-items: center; width: 46px; height: 46px; color: #fff; font-size: .88rem; font-weight: 850; border-radius: 14px; background: var(--navy); }
+    .logic-item h3 { margin: .05rem 0 .28rem; font-size: 1.02rem; }
+    .logic-item p { color: var(--muted); font-size: .86rem; line-height: 1.65; }
+
+    .size-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.2rem; }
+    .size-card { overflow: hidden; border: 1px solid var(--line); border-radius: 19px; background: var(--paper); }
+    .size-head { padding: 1.2rem; color: #fff; background: linear-gradient(135deg, var(--navy), var(--blue)); }
+    .size-card.mega .size-head { background: linear-gradient(135deg, #62410e, var(--amber)); }
+    .size-head small { display: block; color: rgba(255,255,255,.72); font-weight: 820; letter-spacing: .09em; }
+    .size-head strong { display: block; margin-top: .22rem; color: #fff; font-size: 1.45rem; }
+    .size-body { padding: 1.15rem; }
+    .size-body ul { margin: 0; font-size: .86rem; }
+    .network-note { margin-top: 1rem; padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 17px; background: var(--paper-warm); }
+    .network-note strong { display: block; margin-bottom: .3rem; }
+    .network-note p { color: var(--muted); font-size: .9rem; }
+
+    .snapshot-note { margin: 1rem 0 1.15rem; padding: .9rem 1rem; color: var(--muted); font-size: .8rem; border: 1px dashed var(--line); border-radius: 13px; }
+    .company-grid { display: grid; gap: 1rem; }
+    .company-card { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); }
+    .company-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 1.3rem; border-bottom: 1px solid var(--line); background: var(--paper-soft); }
+    .company-name small { display: block; color: var(--muted); font-size: .68rem; font-weight: 780; letter-spacing: .09em; }
+    .company-name h3 { margin: .2rem 0 0; font-size: 1.3rem; }
+    .snapshot-badge { padding: .42rem .62rem; color: var(--blue); font-size: .68rem; font-weight: 800; border: 1px solid color-mix(in srgb, var(--blue) 30%, var(--line)); border-radius: 999px; background: var(--soft-blue); white-space: nowrap; }
+    .company-body { padding: 1.25rem 1.3rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .7rem; margin-bottom: 1rem; }
+    .stat-box { padding: .85rem; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+    .stat-box small { display: block; color: var(--muted); font-size: .66rem; font-weight: 760; }
+    .stat-box strong { display: block; margin-top: .15rem; font-size: 1.05rem; }
+    .bar-group { display: grid; gap: .62rem; margin: 1rem 0; }
+    .bar-row { display: grid; grid-template-columns: 118px 1fr 58px; align-items: center; gap: .65rem; font-size: .78rem; }
+    .bar-label { color: var(--muted); font-weight: 700; }
+    .bar-track { display: flex; overflow: hidden; height: 12px; border-radius: 999px; background: var(--paper-soft); }
+    .bar-owned { height: 100%; background: linear-gradient(90deg, var(--navy), var(--cyan)); }
+    .bar-chartered { height: 100%; background: linear-gradient(90deg, #a85e0c, var(--amber)); }
+    .bar-value { color: var(--ink-strong); font-weight: 780; text-align: right; }
+    .company-reading { padding: .9rem 1rem; border-left: 3px solid var(--cyan); border-radius: 0 13px 13px 0; background: var(--soft-cyan); }
+    .company-reading strong { display: block; margin-bottom: .25rem; }
+    .company-reading p { color: var(--muted); font-size: .87rem; }
+    .company-card.yangming .company-reading { border-left-color: var(--blue); background: var(--soft-blue); }
+    .company-card.wanhai .company-reading { border-left-color: var(--amber); background: var(--soft-amber); }
+
+    .myth-grid { display: grid; gap: .8rem; margin-top: 1rem; }
+    .myth { display: grid; grid-template-columns: 34px 1fr; gap: .8rem; padding: 1rem; border: 1px solid var(--line); border-radius: 15px; background: var(--paper-soft); }
+    .myth-mark { display: grid; place-items: center; width: 32px; height: 32px; color: #fff; font-weight: 900; border-radius: 50%; background: var(--red); }
+    .myth strong { display: block; margin-bottom: .22rem; }
+    .myth p { color: var(--muted); font-size: .85rem; line-height: 1.62; }
+
+    .closing-section { color: #e6f3f8; background: linear-gradient(145deg, var(--navy-deep), #07506a); }
+    .closing-section h2, .closing-section strong { color: #fff; }
+    .closing-section .section-kicker { color: #78dce3; }
+    .closing-section p { color: #c3dae5; }
+    .closing-lines { display: grid; gap: .65rem; margin: 1.25rem 0; }
+    .closing-line { padding: .9rem 1rem; border-left: 3px solid var(--cyan); border-radius: 0 13px 13px 0; background: rgba(255,255,255,.07); }
+    .closing-line:nth-child(2) { border-left-color: var(--amber); }
+    .closing-line:nth-child(3) { border-left-color: #8d84ef; }
+
+    .sources { padding-left: 1.2rem; }
+    .sources li { margin-bottom: .85rem; color: var(--muted); font-size: .84rem; line-height: 1.65; }
+    .sources a { overflow-wrap: anywhere; }
+    .source-type { display: inline-block; margin-right: .35rem; padding: .14rem .38rem; color: var(--blue); font-size: .62rem; font-weight: 850; border-radius: 6px; background: var(--soft-blue); }
+
+    .hero-meta { display: none; }
+
+    .article-meta {
+      margin: 0 0 1.35rem;
+    }
+
+    .article-share--hero {
+      margin-top: 1.35rem;
+    }
+
+    .article-share--hero .article-share__label {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .article-share--hero .share-btn {
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.08);
+      color: #eaf6fb;
+    }
+
+    .article-share--hero .share-btn:hover {
+      border-color: rgba(255, 255, 255, 0.42);
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+    }
+
+    #share {
+      padding: 0 0 1.2rem;
+    }
+
+    #share .share-end-panel {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    #share .article-share {
+      justify-content: flex-start;
+      align-items: center;
+      gap: 12px 16px;
+    }
+
+    .footer-band {
+      border-top: 3px solid #00c5b7;
+      background: linear-gradient(180deg, #070d19 0%, #041725 100%);
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .footer {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .footer__brand {
+      margin: 0 0 10px;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .share-panel { display: none; }
+
+    .site-footer { display: none; }
+
+    .author-card { display: grid; grid-template-columns: 66px 1fr; gap: 1rem; align-items: center; padding: 1.3rem; color: #eaf4f8; border-radius: 20px; background: linear-gradient(135deg, #092b42, #0b6277); box-shadow: var(--shadow-md); }
+    .author-mark { display: grid; place-items: center; width: 62px; height: 62px; color: #fff; font-size: 1.2rem; font-weight: 850; border: 1px solid rgba(255,255,255,.24); border-radius: 19px; background: rgba(255,255,255,.09); }
+    .author-card h2 { margin: 0 0 .28rem; color: #fff; font-size: 1.1rem; }
+    .author-card p { color: #c5dbe4; font-size: .84rem; line-height: 1.65; }
+
+    .site-footer { display: none; }
+
+    .back-top { display: none; }
+    .toast { display: none; }
+
+    @media (max-width: 1040px) {
+      .hero-inner { min-height: 0; padding: 64px 0 90px; }
+      .hero-copy { width: min(680px, 68%); }
+      .layout { grid-template-columns: minmax(0, 1fr); min-width: 0; }
+      .sidebar { position: sticky; min-width: 0; width: 100%; max-width: 100%; z-index: 50; top: 0; margin: 0 -4px; }
+      .toc { display: flex; min-width: 0; width: 100%; max-width: 100%; align-items: center; gap: .8rem; max-height: none; overflow-x: auto; padding: .7rem .8rem; border-radius: 14px; }
+      .toc-title { flex: 0 0 auto; margin: 0; }
+      .toc-title span, .sidebar-note { display: none; }
+      .toc nav { display: flex; min-width: max-content; flex: 0 0 auto; gap: .2rem; }
+      .toc a { white-space: nowrap; border-left: 0; border-bottom: 2px solid transparent; }
+      .toc a.active { border-bottom-color: var(--cyan); }
+    }
+
+    @media (max-width: 780px) {
+      :root { --header-h: 64px; }
+      body { font-size: 16px; }
+      .container { width: min(100% - 24px, var(--container)); }
+      .brand-subtitle, .nav-links > a { display: none; }
+      .brand-mark { width: 38px; height: 38px; flex-basis: 38px; }
+      .hero {
+        background-image:
+          linear-gradient(90deg, rgba(2, 18, 31, .96), rgba(2, 23, 39, .76)),
+          url("../assets/images/research/hero-owned-vs-chartered-fleet-strategy-mobile.jpg");
+        background-position: center, 67% center;
+      }
+      @supports (background-image: image-set(url("test.webp") type("image/webp"))) {
+        .hero {
+          background-image:
+            linear-gradient(90deg, rgba(2, 18, 31, .96), rgba(2, 23, 39, .76)),
+            image-set(
+              url("../assets/images/research/hero-owned-vs-chartered-fleet-strategy-mobile.webp") type("image/webp"),
+              url("../assets/images/research/hero-owned-vs-chartered-fleet-strategy-mobile.jpg") type("image/jpeg")
+            );
+        }
+      }
+      .hero h1 { font-size: clamp(2.45rem, 12vw, 3.8rem); }
+      .hero-inner { padding-top: 50px; }
+      .hero-copy { width: 100%; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item { border-bottom: 1px solid var(--line); }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(3), .trust-item:nth-child(4) { border-bottom: 0; }
+      .intro-card-grid, .role-grid, .model-grid, .reason-grid, .term-glossary, .finance-grid, .size-grid { grid-template-columns: 1fr; }
+      .article-section { padding: 1.45rem 1.25rem; border-radius: 17px; }
+      .fixed-payment { grid-template-columns: 1fr; }
+      .fixed-payment .operator { transform: rotate(90deg); }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .bar-row { grid-template-columns: 98px 1fr 52px; }
+      .share-panel { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 520px) {
+      .trust-grid { grid-template-columns: 1fr; }
+      .trust-item { border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .trust-item:last-child { border-bottom: 0 !important; }
+      .article-section h2 { display: block; }
+      .heading-anchor { display: none; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .company-head { align-items: flex-start; flex-direction: column; }
+      .bar-row { grid-template-columns: 1fr; gap: .28rem; }
+      .bar-value { text-align: left; }
+      .author-card { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+
+    @media print {
+      :root { --bg: #fff; --paper: #fff; --paper-soft: #fff; --paper-warm: #fff; --ink: #222; --ink-strong: #000; --muted: #444; --line: #bbb; }
+      body { background: #fff; font-size: 10.5pt; line-height: 1.55; }
+      .reading-progress, .note-site-bar, .sidebar, .share-panel, .site-footer, .back-top, .toast { display: none !important; }
+      .hero { color: #111; background: #fff; }
+      .hero::after { display: none; }
+      .hero-inner { display: block; min-height: 0; padding: 1rem 0 1.5rem; }
+      .hero h1, .hero h1 em { max-width: none; color: #111; font-size: 28pt; }
+      .hero-lead, .hero-thesis, .article-meta { color: #333; }
+      .hero-thesis { border-color: #aaa; background: #fff; }
+      .footer-band { color: #111; background: #fff; border-top-color: #aaa; }
+      .footer { color: #444; }
+      .footer__brand, .footer strong, .footer p { color: #111; }
+      .trust-strip { margin-top: 0; }
+      .trust-grid, .intro-card, .article-section, .author-card { box-shadow: none; }
+      .layout { display: block; margin: 1rem 0; }
+      .article-section { break-inside: avoid; margin-bottom: .7rem; padding: 1rem 0; border-width: 1px 0 0; border-radius: 0; }
+      .closing-section { color: #111; background: #fff; }
+      .closing-section h2, .closing-section strong, .closing-section p { color: #111; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0; font-size: 7.5pt; }
+      .author-card { color: #111; background: #fff; border: 1px solid #aaa; }
+      .author-card h2, .author-card p { color: #111; }
+      .site-footer { display: none !important; }
+      a { color: #111; text-decoration: none; }
+      @page { margin: 15mm; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="index.html">← 管理筆記</a>
+      <span>|</span>
+      <a href="../index.zh.html">首頁</a>
+      <a href="../about.html">關於我</a>
+      <a href="../notes/index.html">海事筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="owned-vs-chartered-container-ships.en.html" lang="en" hreflang="en">EN</a>
+      <a href="owned-vs-chartered-container-ships.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <header class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Container Shipping · Fleet Structure</div>
+          <h1>航運公司為什麼<br>有些船<em>自己買</em>，<br>有些船用租的？</h1>
+          <p class="article-meta">
+            <span>📅 更新：2026-08-03</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span id="readingTime">⏱ 閱讀約 20 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 海運經營 / 船隊策略 / 租船</span>
+          </p>
+          <p class="hero-lead">從貨櫃航運的經營目的出發，理解自有船、期租船與光船租賃背後的控制權、現金流、長期成本與風險分配，並觀察長榮、陽明與萬海目前公開的船隊結構。</p>
+          <div class="hero-thesis"><strong>本文的核心：</strong>航運公司不是為了擁有船而經營，而是為了用適當的運力提供可靠服務並賺取合理報酬。自有與租賃，是不同的工具與風險配置。</div>
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/research/owned-vs-chartered-container-ships.html"
+            data-share-title="航運公司為什麼有些船自己買、有些船用租的？｜Reay's Note"
+            data-share-email-body="我在 Reay 的管理筆記看到這篇，覺得可能對你有幫助：&#10;&#10;航運公司為什麼有些船自己買、有些船用租的？｜Reay's Note&#10;https://reayhuang.com/research/owned-vs-chartered-container-ships.html"
+            data-share-copy="複製連結"
+            data-share-copied="已複製"
+            data-toast-copied="連結已複製到剪貼簿"
+          >
+            <p class="article-share__label" id="share-hero-label">分享此篇</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <section class="trust-strip" aria-label="文章特色">
+      <div class="container trust-grid">
+        <div class="trust-item"><small>01 · FIRST PRINCIPLES</small><strong>從航商真正賣什麼開始</strong></div>
+        <div class="trust-item"><small>02 · OPERATIONS</small><strong>拆解控制權與船期需求</strong></div>
+        <div class="trust-item"><small>03 · FINANCE</small><strong>辨別現金流與會計差異</strong></div>
+        <div class="trust-item"><small>04 · TAIWAN CASES</small><strong>長榮、陽明、萬海公開快照</strong></div>
+      </div>
+    </section>
+
+    <section class="container intro-card" aria-label="閱讀定位">
+      <div class="intro-card-grid">
+        <div>
+          <h2>這不是一篇「哪一種比較好」的投資建議</h2>
+          <p>本文的目的，是協助一般讀者與業內人士理解航運公司如何看待船舶這項生產工具：為什麼核心運力可能選擇自有，為什麼新增、短期或不確定的需求可能使用租船，以及兩種方式如何分配成本、控制與風險。</p>
+        </div>
+        <div class="focus-box"><small>ARTICLE FOCUS</small><strong>介紹現況、解釋思考邏輯、避免把自有率直接當成公司優劣排名。</strong></div>
+      </div>
+    </section>
+
+    <div class="container layout">
+      <aside class="sidebar" aria-label="文章目錄">
+        <div class="toc">
+          <div class="toc-title">CONTENTS <span>12 sections</span></div>
+          <nav>
+            <a href="#first-principles">01 第一性原理</a>
+            <a href="#three-roles">02 三個不同角色</a>
+            <a href="#charter-types">03 租船形式</a>
+            <a href="#why-own">04 為什麼自有</a>
+            <a href="#why-charter">05 為什麼租入</a>
+            <a href="#comparison">06 優缺點比較</a>
+            <a href="#finance">07 財務角度</a>
+            <a href="#decision-logic">08 實際判斷因素</a>
+            <a href="#ship-size">09 船型大小</a>
+            <a href="#taiwan-carriers">10 台灣三航商</a>
+            <a href="#misunderstandings">11 常見誤解</a>
+            <a href="#conclusion">12 結語</a>
+          </nav>
+        </div>
+        <div class="sidebar-note">船隊資料會隨新船交付、退租與出售持續變動。本文在每家公司卡片中標示資料截點。</div>
+      </aside>
+
+      <article class="article">
+        <section class="article-section" id="first-principles">
+          <span class="section-kicker">01 · First principles</span>
+          <h2>航運公司真正需要的不是船，而是運力<a class="heading-anchor" href="#first-principles" aria-label="連結到第一性原理">#</a></h2>
+          <p class="section-lead">貨主不會因為船舶登記在航運公司名下，就自動願意支付更高運費；客戶購買的是可被履行的運輸承諾。</p>
+          <p>貨櫃航運公司的核心目的，是把貨櫃由起運地運送到目的地，維持固定班次、控制成本，並讓每一段航線產生合理收益。貨主真正關心的是：</p>
+          <ul>
+            <li>需要出貨時能不能取得艙位；</li>
+            <li>船期是否穩定、轉運是否銜接；</li>
+            <li>貨物能否安全送達；</li>
+            <li>異常事件是否有人處理；</li>
+            <li>整體服務價格是否合理。</li>
+          </ul>
+          <p>因此，貨櫃航商的產品不是單獨一艘船，而是由船舶、貨櫃、碼頭、轉運港、支線網路、內陸運輸與資訊系統共同形成的定期運輸服務。</p>
+          <div class="thesis-box"><small>THE KEY IDEA</small><strong>船舶是航商最昂貴、使用期最長、也最難快速調整的生產工具之一；自有或租賃，是取得這項工具的兩種方式。</strong></div>
+          <p>只要一艘租入船能符合航線、船期、性能與技術要求，它就可以和自有船一樣掛入航商的服務網路。這也是為什麼從岸上看見船身的大型品牌字樣，並不能直接判斷那艘船的法律所有人。</p>
+        </section>
+
+        <section class="article-section" id="three-roles">
+          <span class="section-kicker">02 · Ownership & control</span>
+          <h2>先分清楚：誰擁有、誰管理、誰使用？<a class="heading-anchor" href="#three-roles" aria-label="連結到三個角色">#</a></h2>
+          <p class="section-lead">理解租船的第一步，是把船舶所有權、技術管理與商業使用拆開。</p>
+          <div class="role-grid">
+            <div class="role-card"><div class="role-no">01</div><h3>船舶所有人</h3><p>持有法律所有權，承擔船價、殘值與資產處分風險；可能是航商，也可能是專業船東或融資架構中的資產公司。</p></div>
+            <div class="role-card"><div class="role-no">02</div><h3>技術管理者</h3><p>負責船員、維修、備件、保險、船級、塢修與基本適航狀態；可以由船東自管，也可以委託船舶管理公司。</p></div>
+            <div class="role-card"><div class="role-no">03</div><h3>商業營運者</h3><p>決定船舶放在哪條航線、承運什麼貨、如何配置艙位與港口；船身品牌通常反映的是這個角色。</p></div>
+          </div>
+          <p>三個角色可能集中在同一家公司，也可能分屬不同企業。期租船最典型的情況，就是船東保留所有權與技術管理，航商取得商業使用權。</p>
+          <div class="callout info"><strong>閱讀船隊資料時的重要提醒</strong><p>「Operated fleet」通常代表航商正在商業營運的船舶，不等於全部由航商持有；「Owned fleet」才是法律上或集團合併口徑下的自有船。</p></div>
+        </section>
+
+        <section class="article-section" id="charter-types">
+          <span class="section-kicker">03 · Charter structures</span>
+          <h2>租船並不是只有一種<a class="heading-anchor" href="#charter-types" aria-label="連結到租船形式">#</a></h2>
+          <p class="section-lead">期租、光船租賃、航次租船與艙位合作，代表完全不同的控制權與責任分配。</p>
+          <div class="model-grid">
+            <div class="model-card"><small>OWNED VESSEL</small><h3>自有船</h3><p>航商持有船舶資產，並自行或委託管理船員、維修與法規事務；商業調度也由航商掌握。</p></div>
+            <div class="model-card"><small>TIME CHARTER</small><h3>期租船</h3><p>船東通常負責船員與技術管理，承租航商支付每日租金，並安排航線、貨物、燃油與航次營運。</p></div>
+            <div class="model-card"><small>BAREBOAT CHARTER</small><h3>光船租賃</h3><p>承租人取得船舶的占有與完整控制，通常負責船員、維修、保險及營運支出，經濟上接近自有船。<a class="source-ref" href="#source-1">[1]</a></p></div>
+            <div class="model-card"><small>SLOT / VSA</small><h3>艙位租用與船舶共享</h3><p>航商不必取得整艘船，只購買或交換特定航線的艙位，用較少資產擴大服務網路。</p></div>
+          </div>
+          <p>本文談「租入船」時，主要指貨櫃班輪公司常用的 <strong>Time Charter 期租船</strong>。實際責任仍由 charter party 決定，不能只靠名詞判斷。</p>
+        </section>
+
+        <section class="article-section" id="why-own">
+          <span class="section-kicker">04 · Why own vessels</span>
+          <h2>航運公司為什麼選擇自有船？<a class="heading-anchor" href="#why-own" aria-label="連結到自有船原因">#</a></h2>
+          <p class="section-lead">自有船最核心的價值，不只是帳面上擁有資產，而是對長期運力、船舶規格與資產處分擁有較高控制。</p>
+          <div class="reason-grid">
+            <div class="reason-card"><div class="reason-head"><span class="reason-icon">01</span><h3>掌握核心航線運力</h3></div><p>班輪服務需要多艘船依固定週期輪流靠港。自有船不會因租約到期而被船東收回，也較不容易在市場緊張時被迫接受高價續租。</p></div>
+            <div class="reason-card"><div class="reason-head"><span class="reason-icon">02</span><h3>長期高使用率下可能較省</h3></div><p>租金通常包含船東的資金成本、折舊、船員、維修、保險、風險溢價與利潤。若航商能長期充分使用船舶，自有可能降低平均運力成本。</p></div>
+            <div class="reason-card"><div class="reason-head"><span class="reason-icon">03</span><h3>自行決定船舶規格</h3></div><p>自有新造船可由航商決定容量、航速、主機、燃料、冷凍櫃插座、節能設備、岸電與未來改裝空間，並建立船隊標準化。</p></div>
+            <div class="reason-card"><div class="reason-head"><span class="reason-icon">04</span><h3>保留殘值與資產選擇</h3></div><p>自有船可以出售、出租、抵押融資、售後回租或最終拆解；船價上升時航商可以取得資產增值，但船價下跌也由自己承擔。</p></div>
+          </div>
+          <div class="callout warn"><strong>自有船不一定比較便宜</strong><p>只有在買入價格、融資成本、利用率、維護能力、技術壽命與殘值都合理時，自有船才可能展現長期成本優勢。</p></div>
+        </section>
+
+        <section class="article-section" id="why-charter">
+          <span class="section-kicker">05 · Why charter vessels</span>
+          <h2>航運公司為什麼選擇租入船？<a class="heading-anchor" href="#why-charter" aria-label="連結到租入船原因">#</a></h2>
+          <p class="section-lead">租船的價值，是在不等待新造船交付的情況下取得運力，並把部分資產與技術風險留給專業船東。</p>
+          <div class="reason-grid charter-reasons">
+            <div class="reason-card"><div class="reason-head"><span class="reason-icon">01</span><h3>快速增加或補充運力</h3></div><p>新航線、旺季、繞航、港口壅塞、塢修替代船或聯盟調整，都可能突然需要更多船。租入現成船舶通常比訂造新船更快。</p></div>
+            <div class="reason-card"><div class="reason-head"><span class="reason-icon">02</span><h3>降低初期資金需求</h3></div><p>航商以每日租金取得船舶使用權，能保留現金投入貨櫃、碼頭、倉儲、資訊系統、內陸物流與日常營運資金。</p></div>
+            <div class="reason-card"><div class="reason-head"><span class="reason-icon">03</span><h3>降低船價與殘值曝險</h3></div><p>租約結束後，船舶二手價格、船齡折價、拆船價值與技術淘汰通常由船東承擔，航商可重新選擇下一代船型。</p></div>
+            <div class="reason-card"><div class="reason-head"><span class="reason-icon">04</span><h3>借用專業船東的管理能力</h3></div><p>期租船通常由船東負責船員、維修、船級、塢修與保險，航商可以把更多資源放在航線、貨源、定價與客戶服務。</p></div>
+          </div>
+          <div class="thesis-box"><small>ANOTHER WAY TO SEE IT</small><strong>租船不只是租一艘設備，也是購買進入市場的時間，以及租約結束後重新選擇的可能性。</strong></div>
+          <p>不過，租船只移轉部分技術與資產風險。船舶故障造成的跳港、轉運失敗、客戶索賠與船期混亂，未必能由 off-hire 停租機制完整補償。</p>
+        </section>
+
+        <section class="article-section" id="comparison">
+          <span class="section-kicker">06 · Side-by-side</span>
+          <h2>自有船與租入船的優缺點比較<a class="heading-anchor" href="#comparison" aria-label="連結到比較表">#</a></h2>
+          <div class="table-wrap">
+            <table>
+              <caption>比較的是經濟與營運特性；實際責任仍須依租約、融資及公司架構判斷。</caption>
+              <thead><tr><th>比較項目</th><th>自有船</th><th>租入船</th></tr></thead>
+              <tbody>
+                <tr><th>前期資金</th><td class="risk">高，需要購船款、造船分期或融資</td><td class="good">相對較低，但可能有押金與保證</td></tr>
+                <tr><th>取得速度</th><td>新造船交期長，二手船受市場供應限制</td><td class="good">市場有船時可較快投入航線</td></tr>
+                <tr><th>長期成本</th><td class="good">高利用率且買價合理時可能較低</td><td>租金包含船東成本、風險與利潤</td></tr>
+                <tr><th>核心運力控制</th><td class="good">較高，不受租約到期影響</td><td class="risk">受船東履約、租期及續租市場影響</td></tr>
+                <tr><th>船舶規格</th><td class="good">可自行設計與標準化</td><td>多數情況接受既有規格</td></tr>
+                <tr><th>技術管理</th><td>由航商或其船管公司承擔</td><td class="good">期租通常由船東負責</td></tr>
+                <tr><th>船價與殘值</th><td class="risk">享有上漲，也承擔下跌與減值</td><td class="good">通常由船東承擔</td></tr>
+                <tr><th>技術過時</th><td class="risk">資產可能在壽命結束前落後</td><td class="good">租約到期後可換船</td></tr>
+                <tr><th>市場縮減</th><td class="risk">需出售、出租或閒置，調整較慢</td><td class="good">租約到期可還船</td></tr>
+                <tr><th>租船市場上漲</th><td class="good">自有成本相對穩定</td><td class="risk">續租或替代船成本可能大增</td></tr>
+                <tr><th>租船市場下跌</th><td>無法直接享受更低租金</td><td class="good">短租到期後可重新議價</td></tr>
+                <tr><th>資產升值</th><td class="good">航商享有</td><td>航商不直接享有</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>研究顯示，主要貨櫃航商在船型、船齡與租期上採取不同組合，COVID-19衝擊期間也以不同方式調整租船政策；這支持一個基本觀察：船隊結構與公司的航線、資金、歷史訂單及市場位置高度相關，沒有適用所有航商的固定比例。<a class="source-ref" href="#source-4">[4]</a></p>
+        </section>
+
+        <section class="article-section" id="finance">
+          <span class="section-kicker">07 · Financial view</span>
+          <h2>財務上不只是 CapEx 與 OpEx<a class="heading-anchor" href="#finance" aria-label="連結到財務角度">#</a></h2>
+          <p class="section-lead">買船通常形成資產；租船通常按日支付租金。但真正重要的是未來固定付款、現金流承受力與風險由誰承擔。</p>
+          <dl class="term-glossary" aria-label="CapEx 與 OpEx 專有名詞說明">
+            <div>
+              <dt><span>CAPEX</span>Capital Expenditure｜資本支出</dt>
+              <dd>用於取得、建造或重大改善可長期使用的資產，例如購船或新造船。支出通常先認列為資產，再於使用期間透過折舊或攤銷分期反映成本。</dd>
+            </div>
+            <div>
+              <dt><span>OPEX</span>Operating Expenditure｜營運支出</dt>
+              <dd>為維持日常營運而發生的費用，例如船員、維修、保險與一般管理支出，通常在發生期間列為費用。</dd>
+            </div>
+          </dl>
+          <p class="term-caveat"><strong>閱讀提醒：</strong>CapEx 與 OpEx 描述的是支出與會計處理方式；租船是否形成使用權資產及租賃負債，仍須依合約內容與 IFRS 16 判斷。</p>
+          <div class="finance-grid">
+            <div class="finance-card"><small>OWNED VESSEL</small><h3>自有船的財務特性</h3><ul><li>船舶資產、折舊與可能的減值；</li><li>造船分期款、貸款本金與利息；</li><li>船員、維修、保險與塢修現金支出；</li><li>最終出售或拆解的殘值。</li></ul></div>
+            <div class="finance-card"><small>CHARTERED VESSEL</small><h3>期租船的財務特性</h3><ul><li>按日或按期支付 hire；</li><li>市場低迷時租金通常仍須支付；</li><li>長租可能形成多年固定承諾；</li><li>租期結束後通常沒有船舶殘值。</li></ul></div>
+          </div>
+          <div class="fixed-payment" aria-label="固定付款比較"><div><small>OWNED</small><strong>貸款＋船舶營運費</strong></div><div class="operator">↔</div><div><small>CHARTERED</small><strong>租金＋航次營運費</strong></div></div>
+          <h3>為什麼租船不一定是純 OpEx？</h3>
+          <div class="callout info">
+            <strong>IFRS 16《租賃》是什麼？</strong>
+            <p>IFRS 16 是國際會計準則理事會（IASB）發布的租賃會計準則，自 2019 年 1 月 1 日起生效。其核心是：承租人對大多數租期超過 12 個月、且標的資產並非低價值的租賃，應在資產負債表同時認列「使用權資產」與「租賃負債」，呈現使用資產的權利與未來租金義務。<a class="source-ref" href="#source-9">[9]</a></p>
+          </div>
+          <p>依 IFRS 16，若合約涉及一艘特定、可辨認的船，承租人取得主要經濟利益，並有權決定船舶如何及為何使用，合約可能包含租賃，承租人需要認列使用權資產與租賃負債。即使船東仍負責操作與維修，也不必然改變這項判斷。<a class="source-ref" href="#source-2">[2]</a></p>
+          <div class="callout info"><strong>更接近經營實質的問題</strong><p>與其只問「這是 CapEx 還是 OpEx」，更應問：未來每年有多少不可避免的付款？運價下降或裝載不足時，公司仍能不能支付？</p></div>
+        </section>
+
+        <section class="article-section" id="decision-logic">
+          <span class="section-kicker">08 · Decision logic</span>
+          <h2>航運公司實際會考慮什麼？<a class="heading-anchor" href="#decision-logic" aria-label="連結到判斷因素">#</a></h2>
+          <p class="section-lead">航商不是固定偏好買船或租船，而是把貨量、船價、租金、融資、技術與船東品質放在同一個決策中。</p>
+          <div class="logic-list">
+            <div class="logic-item"><div class="logic-no">01</div><div><h3>貨量與航線能見度</h3><p>成熟、長期且不可中斷的核心航線，更重視穩定運力；季節性、新市場或短期貨量則更重視租約結束後的調整能力。</p></div></div>
+            <div class="logic-item"><div class="logic-no">02</div><div><h3>船價與租金的相對位置</h3><p>航運市場高度週期化。船價高、租金低時與船價低、租金高時，可能導向完全不同的選擇；同一家航商在不同年份也會改變做法。</p></div></div>
+            <div class="logic-item"><div class="logic-no">03</div><div><h3>現金與融資能力</h3><p>自有船占用更多前期資金；租船保留現金，但高價長租同樣可能成為沉重固定付款。資產輕不等於沒有槓桿風險。</p></div></div>
+            <div class="logic-item"><div class="logic-no">04</div><div><h3>船舶可靠性與管理能力</h3><p>自有船要求航商具備船員、維修、備件、船級與塢修管理能力；租入船則要審查船東的技術、財務、PSC、性能與履約紀錄。</p></div></div>
+            <div class="logic-item"><div class="logic-no">05</div><div><h3>燃料、減碳與改裝風險</h3><p>自有船可主導主機、雙燃料、岸電與改裝；租船可降低長期押錯技術的風險，卻也可能因船東與承租人的投資誘因不同而延後節能改善。</p></div></div>
+            <div class="logic-item"><div class="logic-no">06</div><div><h3>租約期限與退出條件</h3><p>一年期與十年期租船是不同產品。真正決定彈性的，是租期、延長權、購買權、提前還船條件與租約到期分布，而不是「租船」兩個字。</p></div></div>
+          </div>
+          <p>關於減碳誘因，一項貨櫃航運研究指出，在其樣本與模型中，租船所造成的船東—承租人誘因分離，與較高碳排放相關；這不代表所有租船必然較差，而是說明燃油受益者與設備投資者若不同，節能投資的責任與回收機制便特別重要。<a class="source-ref" href="#source-5">[5]</a></p>
+        </section>
+
+        <section class="article-section" id="ship-size">
+          <span class="section-kicker">09 · Vessel size</span>
+          <h2>13,000–16,000 TEU 與 20,000 TEU 以上，思考方式不同<a class="heading-anchor" href="#ship-size" aria-label="連結到船型大小">#</a></h2>
+          <p class="section-lead">船型大小會影響航線適配、港口限制、裝載難度與資產轉用能力，因此也會改變自有與租賃的判斷。</p>
+          <div class="size-grid">
+            <div class="size-card"><div class="size-head"><small>FLEXIBLE MAINLINE TONNAGE</small><strong>13,000–16,000 TEU</strong></div><div class="size-body"><ul><li>已有明顯規模經濟；</li><li>可部署於多條東西向主幹航線；</li><li>港口覆蓋通常比超大型船更廣；</li><li>裝載與轉用彈性相對較高；</li><li>可能成為大型航商的通用遠洋主力。</li></ul></div></div>
+            <div class="size-card mega"><div class="size-head"><small>ULTRA LARGE CONTAINER VESSEL</small><strong>20,000 TEU 以上</strong></div><div class="size-body"><ul><li>高裝載率下可攤薄海上單位成本；</li><li>更依賴亞洲—歐洲等高密度主幹航線；</li><li>需要深水港、大型橋吊與足夠堆場；</li><li>會增加轉運、支線與陸側尖峰壓力；</li><li>航線與港口不適配時較難重新部署。</li></ul></div></div>
+          </div>
+          <div class="network-note"><strong>超大型船不是單純放大版的中大型船</strong><p>ITF／OECD指出，船舶大型化的新增成本節省會逐步縮小，部分壓力則轉移至港口、碼頭、支線與陸側物流。超大型船的經濟性必須由整條航線網路共同支撐。<a class="source-ref" href="#source-3">[3]</a></p></div>
+          <p>因此，無論航商是自有或長期租入 20,000 TEU 以上船舶，只要承諾期間很長，就同樣承擔該船型與少數主幹航線高度綁定的風險。</p>
+        </section>
+
+        <section class="article-section" id="taiwan-carriers">
+          <span class="section-kicker">10 · Taiwan carrier snapshots</span>
+          <h2>長榮、陽明與萬海目前公開的船隊結構<a class="heading-anchor" href="#taiwan-carriers" aria-label="連結到台灣三航商">#</a></h2>
+          <p class="section-lead">三家公司呈現不同的自有與租入組合，但資料截點、合併口徑與船隊變動速度不同，適合用來理解結構，不宜直接當成同步排名。</p>
+          <div class="snapshot-note">資料口徑：長榮採 2026 年 1 月 Alphaliner 公開轉引；陽明採公司 2026 年第二季法說；萬海採公司 2025 年度法說。船舶會隨交付、退租與出售持續變動。</div>
+
+          <div class="company-grid">
+            <section class="company-card evergreen" aria-label="長榮船隊公開快照">
+              <div class="company-head"><div class="company-name"><small>EVERGREEN GROUP · ALPHALINER-REPORTED</small><h3>長榮：自有為主、租入補充</h3></div><span class="snapshot-badge">2026-01 快照</span></div>
+              <div class="company-body">
+                <div class="stats-grid">
+                  <div class="stat-box"><small>營運船舶</small><strong>239 艘</strong></div>
+                  <div class="stat-box"><small>自有船</small><strong>162 艘</strong></div>
+                  <div class="stat-box"><small>租入船</small><strong>77 艘</strong></div>
+                  <div class="stat-box"><small>總運力</small><strong>約 195.8 萬 TEU</strong></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-row"><span class="bar-label">按船舶艘數</span><span class="bar-track" aria-label="自有約68%，租入約32%"><span class="bar-owned" style="width:67.8%"></span><span class="bar-chartered" style="width:32.2%"></span></span><span class="bar-value">68 / 32</span></div>
+                </div>
+                <div class="company-reading"><strong>如何閱讀這個結構？</strong><p>長榮以大量自有船建立長期核心運力，但 77 艘租入船仍是一個相當大的補充船隊，顯示大型資產型航商同樣會使用租船滿足船型、航線與交付時程需求。數據為 Alphaliner 口徑的公開轉引。<a class="source-ref" href="#source-8">[8]</a></p></div>
+              </div>
+            </section>
+
+            <section class="company-card yangming" aria-label="陽明船隊公開快照">
+              <div class="company-head"><div class="company-name"><small>YANG MING · OFFICIAL INVESTOR PRESENTATION</small><h3>陽明：按容量接近自有與租入各半</h3></div><span class="snapshot-badge">2026-Q2 官方</span></div>
+              <div class="company-body">
+                <div class="stats-grid">
+                  <div class="stat-box"><small>營運船舶</small><strong>97 艘</strong></div>
+                  <div class="stat-box"><small>自有船</small><strong>63 艘</strong></div>
+                  <div class="stat-box"><small>租入船</small><strong>34 艘</strong></div>
+                  <div class="stat-box"><small>總運力</small><strong>741,970 TEU</strong></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-row"><span class="bar-label">按船舶艘數</span><span class="bar-track" aria-label="自有65%，租入35%"><span class="bar-owned" style="width:65%"></span><span class="bar-chartered" style="width:35%"></span></span><span class="bar-value">65 / 35</span></div>
+                  <div class="bar-row"><span class="bar-label">按 TEU 容量</span><span class="bar-track" aria-label="自有51%，租入49%"><span class="bar-owned" style="width:51.2%"></span><span class="bar-chartered" style="width:48.8%"></span></span><span class="bar-value">51 / 49</span></div>
+                </div>
+                <div class="company-reading"><strong>為什麼艘數與容量比例不同？</strong><p>陽明自有船按艘數約占 65%，但按容量僅約 51%，表示租入船的平均容量較大。這正好說明比較自有率不能只看船舶數量，也要看 TEU 與船型分布。<a class="source-ref" href="#source-6">[6]</a></p></div>
+              </div>
+            </section>
+
+            <section class="company-card wanhai" aria-label="萬海船隊公開快照">
+              <div class="company-head"><div class="company-name"><small>WAN HAI · OFFICIAL FY2025 UPDATE</small><h3>萬海：2025 年末呈現全部自有船</h3></div><span class="snapshot-badge">2025 年末官方</span></div>
+              <div class="company-body">
+                <div class="stats-grid">
+                  <div class="stat-box"><small>營運船舶</small><strong>116 艘</strong></div>
+                  <div class="stat-box"><small>自有船</small><strong>116 艘</strong></div>
+                  <div class="stat-box"><small>租入船</small><strong>0 艘</strong></div>
+                  <div class="stat-box"><small>總運力</small><strong>572,701 TEU</strong></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-row"><span class="bar-label">按船舶艘數</span><span class="bar-track" aria-label="自有100%，租入0%"><span class="bar-owned" style="width:100%"></span></span><span class="bar-value">100 / 0</span></div>
+                </div>
+                <div class="company-reading"><strong>這代表萬海從不租船嗎？</strong><p>不是。萬海 2024 年末仍有 4 艘租入船；隨新造船交付與租約退出，2025 年末形成 100% 自有的時間點快照。它反映當期船隊更新結果，不代表永久不再使用租船。<a class="source-ref" href="#source-7">[7]</a></p></div>
+              </div>
+            </section>
+          </div>
+
+          <h3>三種結構可以怎麼理解？</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>航商</th><th>公開快照呈現的特徵</th><th>適合的基本解讀</th></tr></thead>
+              <tbody>
+                <tr><th>長榮</th><td>自有為主，仍保有相當數量租入船</td><td>以自有資產支撐全球網路，同時利用租船補充船型與時程。</td></tr>
+                <tr><th>陽明</th><td>按容量接近自有、租入各半</td><td>混合船隊特徵明顯；看艘數與看 TEU 會得到不同印象。</td></tr>
+                <tr><th>萬海</th><td>2025 年末全部為自有船</td><td>新船交付與退租造成的高度自有化快照，不宜視為永遠不租船。</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>這三種結構不能直接排名好壞。它們是公司規模、遠洋與區域航線比例、歷史訂單、租約到期、船齡、資金與過去船價／租金週期共同形成的結果。</p>
+        </section>
+
+        <section class="article-section" id="misunderstandings">
+          <span class="section-kicker">11 · Common misunderstandings</span>
+          <h2>閱讀航商船隊資料時的常見誤解<a class="heading-anchor" href="#misunderstandings" aria-label="連結到常見誤解">#</a></h2>
+          <div class="myth-grid">
+            <div class="myth"><div class="myth-mark">×</div><div><strong>只看船舶艘數</strong><p>一艘 24,000 TEU 船與一艘 2,000 TEU 船的運力差異巨大。應同時看艘數、TEU、船型與航線用途。</p></div></div>
+            <div class="myth"><div class="myth-mark">×</div><div><strong>把租船全部視為短期運力</strong><p>租期可能只有數月，也可能長達十年。長期租船可以鎖定運力，但退出彈性未必高。</p></div></div>
+            <div class="myth"><div class="myth-mark">×</div><div><strong>認為租船風險全部由船東承擔</strong><p>船東主要承擔資產與技術責任；航商仍承擔租金、燃油、船期、客戶與替代船風險。</p></div></div>
+            <div class="myth"><div class="myth-mark">×</div><div><strong>認為自有率愈高，公司一定愈好</strong><p>高自有率帶來控制與殘值，也帶來資本占用、船價、技術過時與市場縮減風險。</p></div></div>
+            <div class="myth"><div class="myth-mark">×</div><div><strong>認為租入船多就是資金不足</strong><p>大型、資金雄厚的航商同樣大量使用租船，因為租船也具有速度、船型補充與風險管理功能。</p></div></div>
+          </div>
+        </section>
+
+        <section class="article-section closing-section" id="conclusion">
+          <span class="section-kicker">12 · Conclusion</span>
+          <h2>自有船買的是控制，租入船買的是時間與彈性<a class="heading-anchor" href="#conclusion" aria-label="連結到結語">#</a></h2>
+          <p>從第一性原理來看，航運公司不是以「船舶所有權最大化」為經營目的，而是要以適當成本取得足夠、可靠且可部署的運力。</p>
+          <div class="closing-lines">
+            <div class="closing-line"><strong>自有船：</strong>以較高資金與資產風險，換取長期運力控制、規格主導、船隊標準化與殘值。</div>
+            <div class="closing-line"><strong>租入船：</strong>以租金與船東風險溢價，換取較快的運力取得、較低初期資金需求，以及租約結束後重新選擇的可能性。</div>
+            <div class="closing-line"><strong>真正的判斷：</strong>貨量需要多久、船舶承諾多久、公司能承受什麼固定付款，以及哪些風險適合由航商或專業船東承擔。</div>
+          </div>
+          <p>長榮、陽明與萬海目前的公開快照，正好呈現三種不同位置：長榮自有為主並以租船補充；陽明在運力上接近自有與租入並重；萬海則在 2025 年末呈現全部自有。這些差異不是簡單的優劣，而是各家公司歷史、航線、資金、船型與市場時點共同形成的結果。</p>
+        </section>
+
+        <section class="article-section" id="sources">
+          <span class="section-kicker">Sources & methodology</span>
+          <h2>資料來源與閱讀界線</h2>
+          <p class="section-lead">優先採用公司官方資料、國際組織、會計準則機構及同儕審查研究；長榮自有／租入快照因官方頁面未直接分列，採 Alphaliner 資料的業界媒體公開轉引。</p>
+          <ol class="sources">
+            <li id="source-1"><span class="source-type">OFFICIAL</span><strong>BIMCO, BARECON 2017.</strong> 光船租賃下的占有、控制與營運責任說明。<br><a href="https://www.bimco.org/contractual-affairs/bimco-contracts/contracts/barecon-2017/" target="_blank" rel="noopener noreferrer">BIMCO contract overview</a></li>
+            <li id="source-2"><span class="source-type">ACCOUNTING</span><strong>IFRS Interpretations Committee, Definition of a Lease—Shipping Contract (IFRS 16).</strong> 特定船舶、經濟利益與使用控制權的判斷。<br><a href="https://www.ifrs.org/-/media/feature/meetings/2019/september/ifric/ap3-definition-of-a-lease-shipping-contract-ifrs-16.pdf" target="_blank" rel="noopener noreferrer">IFRS shipping contract paper</a></li>
+            <li id="source-3"><span class="source-type">OECD / ITF</span><strong>The Impact of Mega-Ships.</strong> 超大型貨櫃船的海上規模經濟、港口與供應鏈外部成本。<br><a href="https://www.itf-oecd.org/impact-mega-ships" target="_blank" rel="noopener noreferrer">International Transport Forum</a></li>
+            <li id="source-4"><span class="source-type">RESEARCH</span><strong>D’agostini, E., Jo, S. & Attard, M. (2024).</strong> “Chartering policies and operational efficiency of shipping lines: exploring strategic changes in response to the COVID-19 pandemic.” <em>Journal of Shipping and Trade</em>, 9, 18.<br><a href="https://doi.org/10.1186/s41072-024-00169-w" target="_blank" rel="noopener noreferrer">DOI: 10.1186/s41072-024-00169-w</a></li>
+            <li id="source-5"><span class="source-type">RESEARCH</span><strong>Dirzka, C. & Acciaro, M. (2021).</strong> “Principal-agent problems in decarbonizing container shipping: A panel data analysis.” <em>Transportation Research Part D</em>, 98, 102948.<br><a href="https://doi.org/10.1016/j.trd.2021.102948" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.trd.2021.102948</a></li>
+            <li id="source-6"><span class="source-type">COMPANY</span><strong>Yang Ming Marine Transport, 2026-Q2 Investor Conference.</strong> 97 艘、63 艘自有、34 艘租入；總運力 741,970 TEU。<br><a href="https://esg.yangming.com/upload/investors_information_files/twL_investors_information_26F17_38w53MTnWQ.pdf" target="_blank" rel="noopener noreferrer">陽明 2026 年第二季法人說明會</a></li>
+            <li id="source-7"><span class="source-type">COMPANY</span><strong>Wan Hai Lines, Fiscal Year 2025 Update.</strong> 2025 年末 116 艘營運船舶、全部為自有船，總運力 572,701 TEU。<br><a href="https://tw.wanhai.com/FileView?file_name=229827.pdf&amp;file_num=67073&amp;file_path=tw_files" target="_blank" rel="noopener noreferrer">萬海 2025 年度法人說明會</a></li>
+            <li id="source-8"><span class="source-type">INDUSTRY DATA</span><strong>Alphaliner data, reported by gCaptain (2026-01-28).</strong> 長榮集團 239 艘、162 艘自有、77 艘租入，總運力約 195.8 萬 TEU。<br><a href="https://gcaptain.com/evergreen-orders-23-new-containerships-in-1-47-billion-fleet-expansion/" target="_blank" rel="noopener noreferrer">gCaptain report citing Alphaliner</a></li>
+            <li id="source-9"><span class="source-type">ACCOUNTING</span><strong>IFRS Foundation, IFRS 16 Leases.</strong> 承租人單一會計模式、使用權資產與租賃負債的官方概述。<br><a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-16-leases/" target="_blank" rel="noopener noreferrer">IFRS 16 official overview</a></li>
+          </ol>
+          <div class="callout warn"><strong>資料更新提醒</strong><p>船隊資料是動態資訊。本文的數字只代表標示日期的公開快照；閱讀者在引用時，應同時保留資料日期與口徑。</p></div>
+        </section>
+
+        <section id="share" aria-label="分享文章">
+          <div class="share-end-panel">
+            <div
+              class="article-share article-share--end"
+              data-article-share
+              data-share-url="https://reayhuang.com/research/owned-vs-chartered-container-ships.html"
+              data-share-title="航運公司為什麼有些船自己買、有些船用租的？｜Reay's Note"
+              data-share-email-body="我在 Reay 的管理筆記看到這篇，覺得可能對你有幫助：&#10;&#10;航運公司為什麼有些船自己買、有些船用租的？｜Reay's Note&#10;https://reayhuang.com/research/owned-vs-chartered-container-ships.html"
+              data-share-copy="複製連結"
+              data-share-copied="已複製"
+              data-toast-copied="連結已複製到剪貼簿"
+            >
+              <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+              <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="author-card" aria-label="作者資訊">
+          <div class="author-mark" aria-hidden="true">RH</div>
+          <div><h2>Reay Huang · Marine Surveyor · PMP®</h2><p>以船上輪機、船隊技術管理、新造船現場檢驗與專案管理視角，整理可閱讀、可查核、可延伸思考的海事法規、工程與航運管理筆記。</p></div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer-band">
+    <div class="footer">
+      <p class="footer__brand">Reay Huang Maritime Notes</p>
+      <p><strong>資料來源與免責聲明：</strong>本頁供個人專業學習與產業交流，不構成投資、會計、法律、租船或船隊採購建議，也不代表 Lloyd's Register 或任何雇主、船級協會、航運公司或資料提供者的正式立場。實際契約、會計與營運判斷，仍應依個案條款與最新正式資料確認。</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const progress = document.getElementById('readingProgress');
+      const updateScroll = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = `${max > 0 ? (scrollTop / max) * 100 : 0}%`;
+      };
+      window.addEventListener('scroll', updateScroll, { passive: true });
+      updateScroll();
+
+      const tocLinks = [...document.querySelectorAll('.toc a[href^="#"]')];
+      const sections = tocLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+      const toc = document.querySelector('.toc');
+      const narrowToc = window.matchMedia('(max-width: 1040px)');
+      let activeTocId = '';
+      const setActive = (id) => {
+        if (!id || id === activeTocId) return;
+        activeTocId = id;
+        let activeLink = null;
+        tocLinks.forEach(link => {
+          const isActive = link.getAttribute('href') === `#${id}`;
+          link.classList.toggle('active', isActive);
+          if (isActive) activeLink = link;
+        });
+
+        if (activeLink && narrowToc.matches) {
+          const tocRect = toc.getBoundingClientRect();
+          const linkRect = activeLink.getBoundingClientRect();
+          const centeredLeft = toc.scrollLeft + linkRect.left - tocRect.left - (toc.clientWidth - linkRect.width) / 2;
+          toc.scrollTo({ left: Math.max(0, centeredLeft), behavior: 'smooth' });
+        }
+      };
+      const hashSection = location.hash ? document.querySelector(location.hash) : null;
+      if (hashSection && sections.includes(hashSection)) setActive(hashSection.id);
+      else if (sections[0]) setActive(sections[0].id);
+
+      let tocScrollTicking = false;
+      const syncTocToScroll = () => {
+        if (tocScrollTicking) return;
+        tocScrollTicking = true;
+        window.requestAnimationFrame(() => {
+          const marker = narrowToc.matches
+            ? Math.max(toc.getBoundingClientRect().height + 24, window.innerHeight * .25)
+            : window.innerHeight * .28;
+          let currentSection = sections[0];
+          sections.forEach(section => {
+            if (section.getBoundingClientRect().top <= marker) currentSection = section;
+          });
+          if (currentSection) setActive(currentSection.id);
+          tocScrollTicking = false;
+        });
+      };
+      window.addEventListener('scroll', syncTocToScroll, { passive: true });
+      window.addEventListener('resize', syncTocToScroll);
+      syncTocToScroll();
+
+      const articleText = document.querySelector('.article').innerText.replace(/\s+/g, '');
+      const minutes = Math.max(8, Math.round(articleText.length / 520));
+      document.getElementById('readingTime').textContent = `⏱ 閱讀約 ${minutes} 分鐘`;
+    })();
+  </script>
+  <script src="../assets/js/article-share.js"></script>
+  <script src="../assets/js/back-to-top.js"></script>
+</body>
+</html>
