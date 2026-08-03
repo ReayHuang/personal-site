@@ -314,12 +314,93 @@
       scrollbar-width: thin;
     }
     .table-wrap:focus { outline: 3px solid color-mix(in srgb, var(--teal) 28%, transparent); outline-offset: 2px; }
-    .data-table { width: 100%; min-width: 620px; border-collapse: separate; border-spacing: 0; font-size: .86rem; line-height: 1.55; }
+    .data-table { width: 100%; min-width: 0; border-collapse: separate; border-spacing: 0; font-size: .86rem; line-height: 1.55; }
+    .table-wrap--wide .data-table { min-width: 620px; }
     .data-table th, .data-table td { padding: .82rem .9rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
     .data-table th { position: sticky; top: 0; color: white; background: var(--navy-2); font-size: .78rem; letter-spacing: .02em; }
     .data-table tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-soft) 66%, transparent); }
     .data-table tbody tr:hover td { background: color-mix(in srgb, var(--teal) 7%, var(--surface)); }
     .data-table tr:last-child td { border-bottom: 0; }
+
+    @media (max-width: 1024px) {
+      .table-wrap:not(.table-wrap--wide) { overflow-x: visible; }
+      .table-wrap:not(.table-wrap--wide) .data-table {
+        table-layout: fixed;
+        font-size: clamp(.72rem, 1.8vw, .82rem);
+      }
+      .table-wrap:not(.table-wrap--wide) .data-table th,
+      .table-wrap:not(.table-wrap--wide) .data-table td {
+        padding: .58rem .5rem;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .table-wrap--wide .data-table {
+        min-width: 580px;
+        font-size: .74rem;
+      }
+      .table-wrap--wide .data-table th,
+      .table-wrap--wide .data-table td {
+        padding: .58rem .42rem;
+      }
+      .glossary-section .data-table td:first-child { white-space: normal; }
+    }
+
+    @media (max-width: 640px) {
+      .table-wrap:not(.table-wrap--wide) .data-table:has(thead th:nth-child(2):last-child) thead { display: none; }
+      .table-wrap:not(.table-wrap--wide) .data-table:has(thead th:nth-child(2):last-child) tbody tr {
+        display: block;
+        border-bottom: 1px solid var(--line);
+      }
+      .table-wrap:not(.table-wrap--wide) .data-table:has(thead th:nth-child(2):last-child) tbody tr:last-child { border-bottom: 0; }
+      .table-wrap:not(.table-wrap--wide) .data-table:has(thead th:nth-child(2):last-child) td {
+        display: block;
+        padding: .55rem .75rem;
+        border-bottom: 0;
+        text-align: left !important;
+      }
+      .table-wrap:not(.table-wrap--wide) .data-table:has(thead th:nth-child(2):last-child) td:first-child {
+        padding-bottom: .2rem;
+        font-weight: 700;
+        color: var(--teal);
+        background: transparent !important;
+      }
+      .table-wrap:not(.table-wrap--wide) .data-table:has(thead th:nth-child(2):last-child) td:last-child {
+        padding-top: 0;
+        padding-bottom: .65rem;
+      }
+
+      .table-wrap:not(.table-wrap--wide) .data-table.table--stacked thead { display: none; }
+      .table-wrap:not(.table-wrap--wide) .data-table.table--stacked tbody tr {
+        display: block;
+        margin-bottom: .65rem;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        overflow: hidden;
+      }
+      .table-wrap:not(.table-wrap--wide) .data-table.table--stacked tbody tr:last-child { margin-bottom: 0; }
+      .table-wrap:not(.table-wrap--wide) .data-table.table--stacked td {
+        display: grid;
+        grid-template-columns: minmax(6.5rem, 38%) minmax(0, 1fr);
+        gap: .35rem .65rem;
+        padding: .6rem .75rem;
+        border-bottom: 1px solid var(--line);
+        text-align: left !important;
+      }
+      .table-wrap:not(.table-wrap--wide) .data-table.table--stacked td:last-child { border-bottom: 0; }
+      .table-wrap:not(.table-wrap--wide) .data-table.table--stacked td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        font-size: .68rem;
+        letter-spacing: .03em;
+        text-transform: uppercase;
+        color: var(--teal);
+      }
+      .table-wrap:not(.table-wrap--wide) .data-table.table--stacked td:first-child {
+        font-weight: 800;
+        background: color-mix(in srgb, var(--teal) 6%, var(--surface)) !important;
+      }
+      .glossary-section .data-table.table--stacked td:first-child { white-space: normal; }
+    }
 
     .code-block {
       margin: 1rem 0 1.4rem; padding: 1.05rem 1.15rem; overflow-x: auto; border-radius: 14px;
@@ -766,7 +847,7 @@
 </tbody>
 </table></div><blockquote class="note-callout">
 <p><strong>Differences in original text data</strong>: The report lists liquid ammonia density as 680 kg/m³ on page 6 and the energy density comparison table on page 7 lists it as 696 kg/m³. This article retains both and does not unify them on its own.</p>
-</blockquote><h2 class="heading-level-2" id="section-1-4">1.4 Energy density comparison<a aria-label="Link to this section" class="heading-anchor" href="#section-1-4">#</a></h2><div aria-label="Horizontally scrollable data table" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+</blockquote><h2 class="heading-level-2" id="section-1-4">1.4 Energy density comparison<a aria-label="Link to this section" class="heading-anchor" href="#section-1-4">#</a></h2><div aria-label="Horizontally scrollable data table" class="table-wrap table-wrap--wide" role="region" tabindex="0"><table class="data-table">
 <thead>
 <tr>
 <th>Fuel</th>
@@ -1002,7 +1083,7 @@
 <li>Unburned ammonia/ammonia slip (NH₃ slip).</li>
 <li>NOx.</li>
 <li>N₂O.</li>
-</ul><h3 class="heading-level-3" id="section-39">Preliminary MAN ES fuel specification<a aria-label="Link to this section" class="heading-anchor" href="#section-39">#</a></h3><div aria-label="Horizontally scrollable data table" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+</ul><h3 class="heading-level-3" id="section-39">Preliminary MAN ES fuel specification<a aria-label="Link to this section" class="heading-anchor" href="#section-39">#</a></h3><div aria-label="Horizontally scrollable data table" class="table-wrap table-wrap--wide" role="region" tabindex="0"><table class="data-table">
 <thead>
 <tr>
 <th>Item</th>
@@ -1474,7 +1555,7 @@
 <li><strong>Grannus (USA)</strong>: Developing a blue ammonia production process combining syngas and CCS.</li>
 <li><strong>Meridian/Woodside/Mitsui (New Zealand)</strong>: Southern Green Hydrogen Project, with a target annual production of 500,000 tonnes of green ammonia.</li>
 <li><strong>Unigel (Brazil)</strong>: Planned annual production of 10,000 tonnes of hydrogen and 60,000 tonnes of green ammonia.</li>
-</ul><h2 class="heading-level-2" id="section-4-4">4.4 Milestones for renewable ammonia<a aria-label="Link to this section" class="heading-anchor" href="#section-4-4">#</a></h2><div aria-label="Horizontally scrollable data table" class="table-wrap" role="region" tabindex="0"><table class="data-table">
+</ul><h2 class="heading-level-2" id="section-4-4">4.4 Milestones for renewable ammonia<a aria-label="Link to this section" class="heading-anchor" href="#section-4-4">#</a></h2><div aria-label="Horizontally scrollable data table" class="table-wrap table-wrap--wide" role="region" tabindex="0"><table class="data-table">
 <thead>
 <tr>
 <th>Year</th>
@@ -2207,6 +2288,17 @@
       }
       const mobileTocLinks = [...(mobileTocList?.querySelectorAll('a') || [])];
       let sectionPreviewHideTimer;
+
+      document.querySelectorAll('.table-wrap:not(.table-wrap--wide) .data-table').forEach(table => {
+        const headers = [...table.querySelectorAll('thead th')].map(th => th.textContent.trim());
+        if (headers.length < 3) return;
+        table.classList.add('table--stacked');
+        table.querySelectorAll('tbody tr').forEach(row => {
+          row.querySelectorAll('td').forEach((td, index) => {
+            if (headers[index]) td.setAttribute('data-label', headers[index]);
+          });
+        });
+      });
 
       const savedTheme = localStorage.getItem('rh-theme');
       const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
