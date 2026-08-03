@@ -408,6 +408,11 @@
         background: transparent;
         border-radius: 0;
       }
+      .table-wrap:not(.table-wrap--wide):has(.data-table:not(.table--stacked)) {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 14px;
+      }
       .table-wrap:not(.table-wrap--wide) .data-table { width: 100%; max-width: 100%; }
     }
 
