@@ -223,6 +223,13 @@
       "category": "research",
       "en": "research/owned-vs-chartered-container-ships.en.html",
       "zh": "research/owned-vs-chartered-container-ships.html"
+    },
+    {
+      "slug": "digital-ship-management-report",
+      "type": "article",
+      "category": "research",
+      "en": "research/digital-ship-management-report.en.html",
+      "zh": "research/digital-ship-management-report.html"
     }
   ]
 }
