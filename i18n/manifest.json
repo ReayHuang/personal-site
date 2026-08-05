@@ -50,13 +50,6 @@
       "zh": "notes/maritime/container-ship-wind-shield-notes.html"
     },
     {
-      "slug": "onboard-certificates",
-      "type": "article",
-      "category": "notes",
-      "en": "notes/maritime/onboard-certificates.en.html",
-      "zh": "notes/maritime/onboard-certificates.html"
-    },
-    {
       "slug": "electronic-certificates-joint-guidelines-notes",
       "type": "article",
       "category": "notes",
@@ -64,11 +57,60 @@
       "zh": "notes/maritime/electronic-certificates-joint-guidelines-notes.html"
     },
     {
-      "slug": "solas-structure-notes",
+      "slug": "onboard-certificates",
       "type": "article",
       "category": "notes",
-      "en": "notes/maritime/solas-structure-notes.en.html",
-      "zh": "notes/maritime/solas-structure-notes.html"
+      "en": "notes/maritime/onboard-certificates.en.html",
+      "zh": "notes/maritime/onboard-certificates.html"
+    },
+    {
+      "slug": "engine-fat-shipboard-note",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/engine-fat-shipboard-note.en.html",
+      "zh": "notes/maritime/engine-fat-shipboard-note.html"
+    },
+    {
+      "slug": "lfpf-note",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/lfpf-note.en.html",
+      "zh": "notes/maritime/lfpf-note.html"
+    },
+    {
+      "slug": "tailshaft-survey-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/tailshaft-survey-notes.en.html",
+      "zh": "notes/maritime/tailshaft-survey-notes.html"
+    },
+    {
+      "slug": "steering-gear-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/steering-gear-notes.en.html",
+      "zh": "notes/maritime/steering-gear-notes.html"
+    },
+    {
+      "slug": "lr-bwts-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/lr-bwts-notes.en.html",
+      "zh": "notes/maritime/lr-bwts-notes.html"
+    },
+    {
+      "slug": "maritime-cyber-resilience-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/maritime-cyber-resilience-notes.en.html",
+      "zh": "notes/maritime/maritime-cyber-resilience-notes.html"
+    },
+    {
+      "slug": "lr-advisory-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/lr-advisory-notes.en.html",
+      "zh": "notes/maritime/lr-advisory-notes.html"
     },
     {
       "slug": "marpol-structure-notes",
@@ -76,6 +118,13 @@
       "category": "notes",
       "en": "notes/maritime/marpol-structure-notes.en.html",
       "zh": "notes/maritime/marpol-structure-notes.html"
+    },
+    {
+      "slug": "solas-structure-notes",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/solas-structure-notes.en.html",
+      "zh": "notes/maritime/solas-structure-notes.html"
     },
     {
       "slug": "explosion-protection-notes",
@@ -141,53 +190,25 @@
       "zh": "notes/maritime/mepc-83-84-visual-notes.html"
     },
     {
-      "slug": "lr-bwts-notes",
+      "slug": "digital-ship-management-report",
       "type": "article",
-      "category": "notes",
-      "en": "notes/maritime/lr-bwts-notes.en.html",
-      "zh": "notes/maritime/lr-bwts-notes.html"
+      "category": "research",
+      "en": "research/digital-ship-management-report.en.html",
+      "zh": "research/digital-ship-management-report.html"
     },
     {
-      "slug": "steering-gear-notes",
+      "slug": "owned-vs-chartered-container-ships",
       "type": "article",
-      "category": "notes",
-      "en": "notes/maritime/steering-gear-notes.en.html",
-      "zh": "notes/maritime/steering-gear-notes.html"
+      "category": "research",
+      "en": "research/owned-vs-chartered-container-ships.en.html",
+      "zh": "research/owned-vs-chartered-container-ships.html"
     },
     {
-      "slug": "tailshaft-survey-notes",
+      "slug": "fleet-spares-thesis-notes",
       "type": "article",
-      "category": "notes",
-      "en": "notes/maritime/tailshaft-survey-notes.en.html",
-      "zh": "notes/maritime/tailshaft-survey-notes.html"
-    },
-    {
-      "slug": "engine-fat-shipboard-note",
-      "type": "article",
-      "category": "notes",
-      "en": "notes/maritime/engine-fat-shipboard-note.en.html",
-      "zh": "notes/maritime/engine-fat-shipboard-note.html"
-    },
-    {
-      "slug": "lfpf-note",
-      "type": "article",
-      "category": "notes",
-      "en": "notes/maritime/lfpf-note.en.html",
-      "zh": "notes/maritime/lfpf-note.html"
-    },
-    {
-      "slug": "lr-advisory-notes",
-      "type": "article",
-      "category": "notes",
-      "en": "notes/maritime/lr-advisory-notes.en.html",
-      "zh": "notes/maritime/lr-advisory-notes.html"
-    },
-    {
-      "slug": "maritime-cyber-resilience-notes",
-      "type": "article",
-      "category": "notes",
-      "en": "notes/maritime/maritime-cyber-resilience-notes.en.html",
-      "zh": "notes/maritime/maritime-cyber-resilience-notes.html"
+      "category": "research",
+      "en": "research/fleet-spares-thesis-notes.en.html",
+      "zh": "research/fleet-spares-thesis-notes.html"
     },
     {
       "slug": "5s-study-notes",
@@ -209,27 +230,6 @@
       "category": "research",
       "en": "research/sbc-demand-classification.en.html",
       "zh": "research/sbc-demand-classification.html"
-    },
-    {
-      "slug": "fleet-spares-thesis-notes",
-      "type": "article",
-      "category": "research",
-      "en": "research/fleet-spares-thesis-notes.en.html",
-      "zh": "research/fleet-spares-thesis-notes.html"
-    },
-    {
-      "slug": "owned-vs-chartered-container-ships",
-      "type": "article",
-      "category": "research",
-      "en": "research/owned-vs-chartered-container-ships.en.html",
-      "zh": "research/owned-vs-chartered-container-ships.html"
-    },
-    {
-      "slug": "digital-ship-management-report",
-      "type": "article",
-      "category": "research",
-      "en": "research/digital-ship-management-report.en.html",
-      "zh": "research/digital-ship-management-report.html"
     }
   ]
 }

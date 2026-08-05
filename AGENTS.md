@@ -71,13 +71,14 @@ These pages include `hreflang` links to EN / 繁中 / ko and use `data-back-to-t
 
 | Slug | English | Traditional Chinese |
 |------|---------|---------------------|
+| Digital ship management report | `digital-ship-management-report.en.html` | `digital-ship-management-report.html` |
 | Owned vs chartered container ships | `owned-vs-chartered-container-ships.en.html` | `owned-vs-chartered-container-ships.html` |
 | Fleet spares thesis | `fleet-spares-thesis-notes.en.html` | `fleet-spares-thesis-notes.html` |
 | 5S study | `5s-study-notes.en.html` | `5s-study-notes.html` |
 | Business statistics | `stats-business-application.en.html` | `stats-business-application.html` |
 | SBC demand classification | `sbc-demand-classification.en.html` | `sbc-demand-classification.html` |
 
-Link preview images for listing/homepage cards live in `assets/images/research/` — e.g. `owned-vs-chartered-linkedin-preview-1200.png` (繁中) and `owned-vs-chartered-linkedin-preview.en-1200.png` (EN). Hero backgrounds for standalone research articles use optimized `.webp` / `.jpg` pairs (plus `-mobile` variants for narrow viewports), e.g. `hero-owned-vs-chartered-fleet-strategy.webp`.
+Link preview images for listing/homepage cards live in `assets/images/research/` — e.g. `digital-ship-management-linkedin-preview-1200.png` (繁中) and `digital-ship-management-linkedin-preview.en-1200.png` (EN). Hero backgrounds for standalone research articles use optimized `.webp` / `.jpg` pairs (plus `-mobile` variants for narrow viewports), e.g. `hero-digital-ship-management.jpg`, `hero-owned-vs-chartered-fleet-strategy.webp`.
 
 ### Internationalization
 
