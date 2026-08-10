@@ -870,6 +870,8 @@
     }
     .status {
       display: inline-block;
+      max-width: 100%;
+      box-sizing: border-box;
       margin-bottom: 7px;
       padding: 4px 8px;
       border-radius: 999px;
@@ -877,7 +879,10 @@
       color: var(--green);
       font-size: .72rem;
       font-weight: 850;
-      white-space: nowrap;
+      line-height: 1.25;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
     .status.blue { background: var(--blue-soft); color: var(--ocean); }
     .status.gold { background: var(--amber-soft); color: var(--amber); }
