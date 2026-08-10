@@ -1,0 +1,2430 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-back-to-top-label="Back to top">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" hreflang="en" href="can-drones-replace-ship-surveyors.en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="can-drones-replace-ship-surveyors.html">
+  <link rel="alternate" hreflang="x-default" href="can-drones-replace-ship-surveyors.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO: canonical and Open Graph metadata -->
+  <title>Can Drones Replace Class Surveyors? A Shipowner’s Guide to Remote Inspection Techniques (RIT) | Reay Huang Maritime Notes</title>
+  <meta name="description" content="A practical guide for shipowners, ship managers and operators on how Remote Inspection Techniques (RIT)—including drones, ROVs, crawlers and UT—are changing close-up surveys, access costs, safety, data traceability and classification survey workflows.">
+  <meta name="author" content="Reay Huang">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#0b2239">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.en.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:title" content="Can Drones Replace Class Surveyors?">
+  <meta property="og:description" content="What shipowners and operators should know about Remote Inspection Techniques (RIT): where they save time and cost, what they cannot replace, and how far major classification societies have progressed.">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.en.html">
+  <meta property="article:published_time" content="2026-08-10T00:00:00+09:00">
+  <meta property="article:modified_time" content="2026-08-10T00:00:00+09:00">
+  <meta property="article:author" content="Reay Huang">
+  <meta property="article:section" content="Maritime Technology">
+  <meta property="article:tag" content="Remote Inspection Techniques">
+  <meta property="article:tag" content="Ship Survey">
+  <meta property="article:tag" content="Drone Inspection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Can Drones Replace Class Surveyors?">
+  <meta name="twitter:description" content="A ship-management and survey-practice perspective on the value, limitations and classification-society adoption of RIT.">
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/can-drones-replace-ship-surveyors/can-drones-replace-ship-surveyors-link-preview.en.jpg">
+  <meta property="og:image:alt" content="Can Drones Replace Class Surveyors? | Reay's Note">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/can-drones-replace-ship-surveyors/can-drones-replace-ship-surveyors-link-preview.en.jpg">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f8fb;
+      --surface: #ffffff;
+      --surface-2: #edf4f7;
+      --surface-3: #e4eef3;
+      --ink: #12263a;
+      --ink-strong: #071a2c;
+      --muted: #5c7083;
+      --border: #d7e2e9;
+      --navy: #0b2239;
+      --navy-2: #153b58;
+      --ocean: #0b7285;
+      --teal: #0f8b8d;
+      --teal-soft: #dff4f2;
+      --blue-soft: #e5efff;
+      --amber: #c47b15;
+      --amber-soft: #fff3d9;
+      --red: #b94343;
+      --red-soft: #fff0ef;
+      --green: #287a5a;
+      --green-soft: #e5f5ec;
+      --shadow-sm: 0 8px 24px rgba(8, 35, 55, .07);
+      --shadow-lg: 0 24px 70px rgba(6, 27, 43, .15);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --max: 1240px;
+      --article: 920px;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --serif: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #07131f;
+      --surface: #0d1e2c;
+      --surface-2: #112737;
+      --surface-3: #183244;
+      --ink: #dbe9f2;
+      --ink-strong: #f5fbff;
+      --muted: #9db2c1;
+      --border: #294354;
+      --navy: #071723;
+      --navy-2: #12364e;
+      --ocean: #4db2c0;
+      --teal: #63c6c3;
+      --teal-soft: #123b3c;
+      --blue-soft: #142e4e;
+      --amber: #efb85b;
+      --amber-soft: #3d2d13;
+      --red: #ef8780;
+      --red-soft: #3b2224;
+      --green: #74c59e;
+      --green-soft: #17372a;
+      --shadow-sm: 0 8px 24px rgba(0, 0, 0, .18);
+      --shadow-lg: 0 24px 70px rgba(0, 0, 0, .28);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.86;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--ocean); text-underline-offset: 3px; }
+    a:hover { color: var(--teal); }
+    img, svg { max-width: 100%; }
+    button { font: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -80px;
+      z-index: 9999;
+      padding: .65rem 1rem;
+      border-radius: 8px;
+      background: var(--ink-strong);
+      color: var(--surface);
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .reading-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 9998;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), #52c6ca, var(--amber));
+      box-shadow: 0 1px 8px rgba(15, 139, 141, .35);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(61, 190, 196, .2), transparent 24%),
+        radial-gradient(circle at 18% 16%, rgba(255, 194, 90, .13), transparent 26%),
+        linear-gradient(145deg, #071b2d 0%, #0b2e48 57%, #0a5b68 130%);
+      color: #f5fbff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+    .hero-inner {
+      position: relative;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(68px, 8vw, 116px) 0 clamp(58px, 7vw, 94px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      align-items: center;
+      gap: clamp(30px, 6vw, 78px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #9ce1e3;
+      font-size: .78rem;
+      font-weight: 820;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: currentColor; }
+    .hero h1 {
+      max-width: 900px;
+      margin: 0;
+      color: #fff;
+      font-size: clamp(2.45rem, 6vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .hero .article-meta {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: rgba(203, 224, 234, 0.82);
+    }
+    .hero .article-meta__sep {
+      color: rgba(255, 255, 255, 0.32);
+    }
+    .hero-subtitle {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: #cbe0ea;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      line-height: 1.75;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 28px;
+      color: #bcd3df;
+      font-size: .88rem;
+    }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .hero-tag {
+      padding: 6px 11px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: #e7f5f7;
+      font-size: .78rem;
+      line-height: 1.2;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+    }
+    .visual-card {
+      position: relative;
+      width: min(100%, 410px);
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 30px;
+      background: #071b2d;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+    }
+    .visual-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), inset 0 -70px 90px rgba(5,21,34,.1);
+    }
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .ship-grid {
+      position: absolute;
+      inset: 14% 10% 16%;
+      border: 1px solid rgba(160,225,228,.25);
+      background:
+        linear-gradient(rgba(148,221,224,.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,221,224,.13) 1px, transparent 1px);
+      background-size: 28px 28px;
+      transform: perspective(650px) rotateX(58deg) rotateZ(-7deg);
+      transform-origin: 50% 80%;
+    }
+    .drone-orbit {
+      position: absolute;
+      left: 50%;
+      top: 43%;
+      width: 190px;
+      height: 190px;
+      transform: translate(-50%, -50%);
+      border: 1px dashed rgba(152,225,228,.4);
+      border-radius: 50%;
+    }
+    .drone-icon {
+      position: absolute;
+      left: 50%;
+      top: 41%;
+      width: 128px;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 18px 22px rgba(0,0,0,.32));
+    }
+    .scan-line {
+      position: absolute;
+      left: 50%;
+      top: 54%;
+      width: 100px;
+      height: 150px;
+      transform: translateX(-50%);
+      clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
+      background: linear-gradient(to bottom, rgba(92,231,225,.42), rgba(92,231,225,0));
+      opacity: .8;
+    }
+    .visual-label {
+      position: absolute;
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 11px;
+      background: rgba(5, 26, 42, .7);
+      color: #dff7f8;
+      font-size: .72rem;
+      line-height: 1.25;
+      box-shadow: 0 8px 22px rgba(0,0,0,.2);
+    }
+    .visual-label.one { top: 13%; right: 8%; }
+    .visual-label.two { bottom: 19%; left: 5%; }
+    .visual-label.three { bottom: 7%; right: 7%; }
+    .pulse-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: #66e4df;
+      box-shadow: 0 0 0 6px rgba(102,228,223,.12);
+    }
+
+    .mobile-toc,
+    .mobile-guide { display: none; }
+    .page-shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(34px, 4vw, 58px) 0 76px;
+      display: grid;
+      grid-template-columns: 228px minmax(0, 1fr);
+      align-items: start;
+      gap: clamp(28px, 4vw, 52px);
+    }
+    .toc {
+      position: sticky;
+      top: 24px;
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      padding: 20px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: color-mix(in srgb, var(--surface) 90%, transparent);
+      box-shadow: var(--shadow-sm);
+    }
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: .82rem;
+      color: var(--muted);
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; }
+    .toc li { counter-increment: toc; }
+    .toc a {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: 5px;
+      padding: 7px 4px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .83rem;
+      line-height: 1.45;
+      transition: color .2s ease, transform .2s ease;
+    }
+    .toc a::before { content: counter(toc, decimal-leading-zero); color: var(--ocean); font-variant-numeric: tabular-nums; }
+    .toc a:hover, .toc a.active { color: var(--ink-strong); transform: translateX(2px); }
+
+    article {
+      min-width: 0;
+      width: min(100%, var(--article));
+    }
+    article > *:first-child { margin-top: 0; }
+    article h2, article h3 { scroll-margin-top: 24px; text-wrap: balance; }
+    article h2 {
+      position: relative;
+      margin: 64px 0 21px;
+      padding-top: 13px;
+      color: var(--ink-strong);
+      font-size: clamp(1.75rem, 3.4vw, 2.45rem);
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+    article h2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 62px;
+      height: 4px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--teal), var(--amber));
+    }
+    article h3 {
+      margin: 32px 0 13px;
+      color: var(--ink-strong);
+      font-size: 1.28rem;
+      line-height: 1.4;
+    }
+    article p { margin: 0 0 1.2em; }
+    article strong { color: var(--ink-strong); }
+    article ul, article ol { padding-left: 1.35rem; }
+    article li + li { margin-top: .4rem; }
+
+    .article-figure {
+      margin: 30px 0 36px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .article-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--navy);
+    }
+    .article-figure figcaption {
+      padding: 13px 17px 15px;
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.55;
+    }
+
+    .lede {
+      margin: 0 0 30px;
+      color: var(--ink-strong);
+      font-family: var(--serif);
+      font-size: clamp(1.22rem, 2.3vw, 1.55rem);
+      line-height: 1.72;
+    }
+    .dek {
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .summary-panel {
+      margin: 30px 0 40px;
+      padding: clamp(22px, 4vw, 34px);
+      border: 1px solid color-mix(in srgb, var(--teal) 30%, var(--border));
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--teal-soft) 82%, var(--surface)), var(--surface));
+      box-shadow: var(--shadow-sm);
+    }
+    .summary-panel .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--ocean);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .summary-panel h2 {
+      margin: 0 0 14px;
+      padding: 0;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+    .summary-panel h2::before { display: none; }
+    .summary-panel p:last-child { margin-bottom: 0; }
+
+    .takeaway-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 26px 0 34px;
+    }
+    .takeaway {
+      min-height: 165px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .takeaway .num {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      background: var(--blue-soft);
+      color: var(--ocean);
+      font-size: .82rem;
+      font-weight: 850;
+    }
+    .takeaway h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .takeaway p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.65; }
+
+    .quote {
+      position: relative;
+      margin: 29px 0;
+      padding: 26px 28px 26px 30px;
+      border-left: 5px solid var(--teal);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      color: var(--ink-strong);
+      font-family: var(--serif);
+      font-size: clamp(1.18rem, 2.4vw, 1.48rem);
+      line-height: 1.7;
+    }
+    .quote small {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: .78rem;
+    }
+
+    .note, .warning, .manager-note {
+      margin: 26px 0;
+      padding: 19px 20px;
+      border-radius: var(--radius-md);
+      font-size: .93rem;
+      line-height: 1.72;
+    }
+    .note { border: 1px solid #b9d8ef; background: var(--blue-soft); }
+    .warning { border: 1px solid color-mix(in srgb, var(--amber) 40%, var(--border)); background: var(--amber-soft); }
+    .manager-note { border: 1px solid color-mix(in srgb, var(--green) 35%, var(--border)); background: var(--green-soft); }
+    .callout-title { display: block; margin-bottom: 4px; color: var(--ink-strong); font-weight: 820; }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      margin: 28px 0 38px;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(var(--teal), var(--amber));
+    }
+    .timeline-item {
+      position: relative;
+      padding: 19px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 26px;
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 1px var(--teal);
+    }
+    .timeline-year { color: var(--ocean); font-size: .8rem; font-weight: 850; letter-spacing: .08em; }
+    .timeline-item h3 { margin: 2px 0 6px; font-size: 1.04rem; }
+    .timeline-item p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 25px 0 35px;
+    }
+    .compare-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .compare-card.rit { border-top: 5px solid var(--teal); }
+    .compare-card.remote { border-top: 5px solid var(--amber); }
+    .compare-card h3 { margin: 0 0 13px; }
+    .compare-card p { color: var(--muted); font-size: .92rem; }
+    .compare-card ul { margin-bottom: 0; font-size: .9rem; }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 28px 0 38px;
+    }
+    .tech-card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    .tech-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 15px;
+      border-radius: 14px;
+      background: var(--teal-soft);
+      color: var(--ocean);
+      font-weight: 900;
+    }
+    .tech-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    .tech-card p { margin: 0; color: var(--muted); font-size: .89rem; }
+
+    .scenario {
+      margin: 30px 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .scenario-head {
+      padding: 24px 26px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: #ecf8fb;
+    }
+    .scenario-head small { color: #9ed9dc; font-weight: 820; letter-spacing: .1em; text-transform: uppercase; }
+    .scenario-head h3 { margin: 7px 0 0; color: #fff; font-size: 1.38rem; }
+    .scenario-body { padding: 8px 26px 25px; }
+    .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+    .steps li {
+      position: relative;
+      min-height: 74px;
+      margin: 0;
+      padding: 22px 0 22px 62px;
+      border-bottom: 1px solid var(--border);
+      counter-increment: step;
+    }
+    .steps li:last-child { border-bottom: 0; }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 20px;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--teal-soft);
+      color: var(--ocean);
+      font-size: .84rem;
+      font-weight: 900;
+    }
+    .steps strong { display: block; margin-bottom: 2px; }
+    .steps span { display: block; color: var(--muted); font-size: .89rem; line-height: 1.6; }
+
+    .logic-banner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: var(--ink-strong);
+      color: #fff;
+      font-size: clamp(1.15rem, 3vw, 1.55rem);
+      font-weight: 850;
+      letter-spacing: .025em;
+      text-align: center;
+    }
+    .logic-banner span:not(:last-child)::after { content: "≠"; margin-left: 10px; color: #69d5d3; }
+
+    .funnel {
+      display: grid;
+      gap: 10px;
+      margin: 30px auto 40px;
+      max-width: 690px;
+    }
+    .funnel-step {
+      width: var(--w);
+      max-width: 100%;
+      margin-inline: auto;
+      padding: 14px 20px;
+      border: 1px solid color-mix(in srgb, var(--teal) 35%, var(--border));
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--surface), var(--surface-2));
+      color: var(--ink-strong);
+      font-weight: 760;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .funnel-arrow { text-align: center; color: var(--teal); line-height: 1; font-size: 1.2rem; }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 26px 0 35px;
+    }
+    .value-card {
+      padding: 21px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    .value-card h3 { margin: 0 0 8px; font-size: 1rem; }
+    .value-card p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+    .limits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 25px 0 35px;
+    }
+    .limit {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .limit .mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--red-soft);
+      color: var(--red);
+      font-weight: 900;
+    }
+    .limit h3 { margin: 0 0 4px; font-size: .98rem; }
+    .limit p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.58; }
+
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 8px;
+      margin: 28px 0 35px;
+    }
+    .stack-item {
+      min-height: 112px;
+      display: grid;
+      place-items: center;
+      padding: 11px 7px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--ink-strong);
+      font-size: .78rem;
+      font-weight: 780;
+      line-height: 1.35;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .stack-item:last-child { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .stack-arrow { display: none; }
+
+    .table-wrap {
+      margin: 24px 0 34px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    table {
+      width: 100%;
+      min-width: 0;
+      table-layout: fixed;
+      border-collapse: collapse;
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+    caption {
+      padding: 16px 18px;
+      color: var(--muted);
+      text-align: left;
+      font-size: .8rem;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      text-align: left;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: var(--navy);
+      color: #edf8fb;
+      font-size: .78rem;
+      letter-spacing: .025em;
+    }
+    tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: var(--surface-2); }
+    th:nth-child(1), td:nth-child(1) {
+      width: 13%;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    th:nth-child(2), td:nth-child(2) { width: 22%; }
+    th:nth-child(3), td:nth-child(3) { width: 22%; }
+    th:nth-child(4), td:nth-child(4) { width: 19%; }
+    th:nth-child(5), td:nth-child(5) { width: 24%; }
+    .class-name {
+      color: var(--ink-strong);
+      font-size: .9rem;
+      font-weight: 860;
+      white-space: normal;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .status {
+      display: inline-block;
+      margin-bottom: 7px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .status.blue { background: var(--blue-soft); color: var(--ocean); }
+    .status.gold { background: var(--amber-soft); color: var(--amber); }
+    .table-mobile-hint {
+      display: none;
+      color: var(--ocean);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin: 28px 0 38px;
+      padding: 0;
+      list-style: none;
+      counter-reset: check;
+    }
+    .checklist li {
+      position: relative;
+      margin: 0;
+      padding: 19px 20px 19px 62px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--surface);
+      counter-increment: check;
+    }
+    .checklist li::before {
+      content: counter(check, decimal-leading-zero);
+      position: absolute;
+      left: 18px;
+      top: 19px;
+      color: var(--teal);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+    }
+    .checklist strong { display: block; }
+    .checklist span { color: var(--muted); font-size: .88rem; }
+
+    .answer-grid {
+      display: grid;
+      gap: 12px;
+      margin: 28px 0 36px;
+    }
+    .answer-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 140px;
+      gap: 20px;
+      align-items: center;
+      padding: 19px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .answer-row strong { line-height: 1.5; }
+    .verdict {
+      justify-self: end;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 900;
+      text-align: center;
+    }
+    .verdict.caution { background: var(--amber-soft); color: var(--amber); }
+    .verdict.no { background: var(--red-soft); color: var(--red); }
+
+    .faq { margin-top: 26px; }
+    details {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    details:first-child { border-radius: var(--radius-md) var(--radius-md) 0 0; }
+    details:last-child { border-bottom: 0; border-radius: 0 0 var(--radius-md) var(--radius-md); }
+    summary {
+      position: relative;
+      padding: 19px 48px 19px 20px;
+      color: var(--ink-strong);
+      font-weight: 780;
+      cursor: pointer;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal);
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+    details[open] summary::after { content: "−"; }
+    details .faq-body { padding: 0 20px 20px; color: var(--muted); font-size: .91rem; }
+    details .faq-body p:last-child { margin-bottom: 0; }
+
+    .references {
+      margin: 30px 0 0;
+      padding: 22px 24px 22px 44px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      font-size: .8rem;
+      line-height: 1.62;
+    }
+    .references li { padding-left: 5px; }
+    .source-type {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: var(--blue-soft);
+      color: var(--ocean);
+      font-size: .66rem;
+      font-weight: 850;
+      vertical-align: .08em;
+    }
+    .source-type.media { background: var(--amber-soft); color: var(--amber); }
+    sup.cite a {
+      padding: 0 2px;
+      color: var(--ocean);
+      font-size: .72em;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .author-card {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 58px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .author-avatar {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 850;
+    }
+    .author-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+    .author-card p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+    .footer {
+      padding: 34px 16px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      text-align: center;
+      font-size: .76rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 54px 0 48px;
+      }
+      .hero-visual { min-height: 300px; }
+      .visual-card { max-width: 350px; }
+      .page-shell {
+        display: block;
+        width: min(var(--max), calc(100% - 24px));
+        padding-top: 32px;
+      }
+      .toc { display: none; }
+      article { width: 100%; margin-inline: auto; }
+      .mobile-toc {
+        display: block;
+        width: min(var(--article), 100%);
+        margin: 0 auto 28px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface);
+      }
+      .mobile-toc summary { padding: 15px 48px 15px 18px; }
+      .mobile-toc nav { padding: 0 20px 16px; }
+      .mobile-toc ol { margin: 0; padding-left: 1.15rem; font-size: .86rem; }
+      .stack { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .table-mobile-hint { display: none; }
+      .table-wrap { overflow-x: hidden; }
+      .table-wrap table {
+        min-width: 0;
+        table-layout: fixed;
+        font-size: .71rem;
+        line-height: 1.42;
+      }
+      .table-wrap caption { padding: 11px 10px; font-size: .7rem; }
+      .table-wrap th,
+      .table-wrap td {
+        padding: 10px 8px;
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+      .table-wrap th { font-size: .68rem; letter-spacing: 0; }
+      .table-wrap th:nth-child(1), .table-wrap td:nth-child(1) {
+        width: 11%;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+      .table-wrap th:nth-child(2), .table-wrap td:nth-child(2) { width: 22%; }
+      .table-wrap th:nth-child(3), .table-wrap td:nth-child(3) { width: 22%; }
+      .table-wrap th:nth-child(4), .table-wrap td:nth-child(4) { width: 20%; }
+      .table-wrap th:nth-child(5), .table-wrap td:nth-child(5) { width: 25%; }
+      .table-wrap .class-name {
+        font-size: .77rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+      .table-wrap .status {
+        max-width: 100%;
+        padding: 3px 5px;
+        font-size: .62rem;
+        line-height: 1.25;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      .hero-inner, .page-shell { width: min(100% - 24px, var(--max)); }
+      .hero-inner { gap: 24px; padding: 44px 0 38px; }
+      .hero h1 { font-size: clamp(2.15rem, 11vw, 3.5rem); }
+      .hero-visual { min-height: 270px; }
+      .visual-card { width: 290px; }
+      .drone-icon { width: 105px; }
+      .takeaway-grid, .compare-grid, .tech-grid, .limits-grid { grid-template-columns: 1fr; }
+      .value-grid { grid-template-columns: 1fr; }
+      .stack { grid-template-columns: 1fr; gap: 24px; }
+      .stack-item { min-height: auto; padding: 15px; position: relative; }
+      .stack-item:not(:last-child)::after {
+        content: "↓";
+        position: absolute;
+        left: 50%;
+        bottom: -22px;
+        transform: translateX(-50%);
+        color: var(--blue);
+        font-size: 1.05rem;
+        font-weight: 900;
+      }
+      .answer-row { grid-template-columns: 1fr; gap: 10px; }
+      .verdict { justify-self: start; }
+      .author-card { grid-template-columns: 1fr; text-align: center; }
+      .author-avatar { margin-inline: auto; }
+      article h2 { margin-top: 54px; }
+      .table-wrap { overflow-x: auto; }
+      .table-wrap table {
+        min-width: 780px;
+        table-layout: auto;
+        font-size: .78rem;
+      }
+      .table-wrap th,
+      .table-wrap td { width: auto !important; padding: 13px 12px; }
+      .table-mobile-hint {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        margin: 12px 14px 8px;
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        box-shadow: var(--shadow-sm);
+      }
+      .table-wrap th:first-child,
+      .table-wrap td:first-child {
+        position: sticky;
+        left: 0;
+        width: 1%;
+        max-width: 4.75rem;
+        padding-left: 10px;
+        padding-right: 8px;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+      .table-wrap th:first-child { z-index: 4; background: var(--navy); }
+      .table-wrap td:first-child {
+        z-index: 1;
+        background: var(--surface);
+        box-shadow: 8px 0 14px rgba(8, 35, 55, .06);
+      }
+      .table-wrap .class-name {
+        display: inline-block;
+        max-width: 4.5rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+
+      .mobile-guide { display: block; }
+      .mobile-guide-toggle {
+        position: fixed;
+        right: auto;
+        bottom: calc(14px + env(safe-area-inset-bottom));
+        left: 14px;
+        z-index: 1002;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        min-height: 48px;
+        padding: 9px 13px 9px 11px;
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 999px;
+        background: var(--navy);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(8, 35, 55, .3);
+        font: inherit;
+        font-size: .82rem;
+        font-weight: 800;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(18px);
+        transition: opacity .22s ease, transform .22s ease, background .2s ease;
+      }
+      .mobile-guide.is-visible .mobile-guide-toggle {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .mobile-guide-toggle:focus-visible,
+      .mobile-guide-close:focus-visible,
+      .mobile-guide-panel a:focus-visible {
+        outline: 3px solid rgba(29, 166, 168, .38);
+        outline-offset: 3px;
+      }
+      .mobile-guide-icon {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.12);
+        font-size: 1rem;
+        line-height: 1;
+      }
+      .mobile-guide-current {
+        padding-left: 8px;
+        border-left: 1px solid rgba(255,255,255,.24);
+        color: #9ce0df;
+        font-size: .7rem;
+        font-weight: 750;
+      }
+      .mobile-guide-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(3, 18, 30, .56);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .24s ease;
+      }
+      .mobile-guide-panel {
+        position: fixed;
+        right: 10px;
+        bottom: calc(10px + env(safe-area-inset-bottom));
+        left: 10px;
+        z-index: 1001;
+        max-height: min(72vh, 590px);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        background: var(--surface);
+        box-shadow: 0 24px 70px rgba(3, 18, 30, .32);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(calc(100% + 32px));
+        transition: opacity .24s ease, transform .28s cubic-bezier(.2,.8,.2,1);
+      }
+      .mobile-guide.is-open .mobile-guide-overlay {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .mobile-guide.is-open .mobile-guide-panel {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .mobile-guide.is-open .mobile-guide-toggle { opacity: 0; pointer-events: none; }
+      .mobile-guide-panel::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 4px;
+        margin: 9px auto 2px;
+        border-radius: 999px;
+        background: var(--border);
+      }
+      .mobile-guide-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 10px 16px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      .mobile-guide-head h2 {
+        margin: 0;
+        font-size: 1rem;
+      }
+      .mobile-guide-head p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: .72rem;
+      }
+      .mobile-guide-close {
+        flex: 0 0 auto;
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--surface-2);
+        color: var(--ink-strong);
+        font: inherit;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .mobile-guide-panel nav {
+        max-height: calc(min(72vh, 590px) - 78px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 8px 10px 16px;
+      }
+      .mobile-guide-panel ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: mobile-guide;
+      }
+      .mobile-guide-panel li { counter-increment: mobile-guide; }
+      .mobile-guide-panel a {
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        gap: 8px;
+        align-items: center;
+        padding: 11px 10px;
+        border-radius: 11px;
+        color: var(--ink);
+        text-decoration: none;
+        font-size: .86rem;
+        line-height: 1.35;
+      }
+      .mobile-guide-panel a::before {
+        content: counter(mobile-guide, decimal-leading-zero);
+        color: var(--teal);
+        font-size: .68rem;
+        font-weight: 850;
+        letter-spacing: .05em;
+      }
+      .mobile-guide-panel a.active {
+        background: var(--blue-soft);
+        color: var(--ocean);
+        font-weight: 800;
+      }
+      body.mobile-guide-open { overflow: hidden; }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --surface: #fff;
+        --surface-2: #f6f6f6;
+        --ink: #111;
+        --ink-strong: #000;
+        --muted: #444;
+        --border: #ccc;
+      }
+      body { font-size: 11pt; line-height: 1.55; }
+      .reading-progress, .toc, .mobile-toc, .mobile-guide, .hero-visual, .note-site-bar, .article-share, .share-band, footer.site-footer { display: none !important; }
+      .hero { background: #fff; color: #111; border-bottom: 2px solid #111; }
+      .hero-inner { display: block; padding: 32px 0; }
+      .hero h1, .hero-subtitle, .hero-meta { color: #111; }
+      .hero-tag { color: #111; border-color: #aaa; }
+      .page-shell { display: block; padding-top: 25px; }
+      article { width: 100%; max-width: none; }
+      a { color: inherit; text-decoration: none; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; overflow-wrap: anywhere; }
+      .takeaway, .compare-card, .tech-card, .scenario, .table-wrap, .author-card { box-shadow: none; break-inside: avoid; }
+      h2, h3 { break-after: avoid; }
+      table { min-width: 0; font-size: 7.5pt; }
+      th { position: static; background: #eee; color: #111; }
+      .footer, footer.site-footer { display: none !important; }
+    }
+
+
+    /* Site chrome: share + footer */
+    .hero .article-share--hero { margin-top: 22px; }
+    .hero .article-share__label {
+      color: rgba(231, 245, 247, .82);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .share-band {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 0;
+    }
+    .share-band .article-share--end {
+      margin: 0;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .share-band .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--muted);
+    }
+    footer.site-footer {
+      padding: 38px 0 46px;
+      color: rgba(255,255,255,.78);
+      background: #041b2d;
+      margin-top: 34px;
+      text-align: left;
+      border-top: 0;
+    }
+    footer.site-footer .site-footer-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+    footer.site-footer strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 6px;
+    }
+    footer.site-footer .small {
+      font-size: 13px;
+      color: rgba(255,255,255,.62);
+    }
+    footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: rgba(255,255,255,.62);
+      max-width: 760px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    footer.site-footer .disclaimer strong {
+      color: rgba(255,255,255,.82);
+      font-weight: 700;
+    }
+    footer.site-footer a { color: #8ff7f1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Can Drones Replace Class Surveyors? A Shipowner’s Guide to Remote Inspection Techniques",
+    "alternativeHeadline": "What Shipowners and Operators Should Know About Remote Inspection Techniques",
+    "description": "A practical guide for shipowners, ship managers and operators on how Remote Inspection Techniques (RIT) are changing close-up surveys, access costs, safety, data traceability and classification survey workflows.",
+    "inLanguage": "en",
+    "datePublished": "2026-08-10",
+    "dateModified": "2026-08-10",
+    "image": "https://reayhuang.com/assets/images/maritime/can-drones-replace-ship-surveyors/can-drones-replace-ship-surveyors-link-preview.en.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Reay Huang",
+      "url": "https://reayhuang.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Reay Huang Maritime Notes",
+      "url": "https://reayhuang.com/"
+    },
+    "mainEntityOfPage": "https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.en.html",
+    "keywords": [
+      "Remote Inspection Techniques",
+      "RIT",
+      "Drone Inspection",
+      "Ship Survey",
+      "Classification Society",
+      "Close-up Survey",
+      "Ultrasonic Thickness Measurement"
+    ],
+    "proficiencyLevel": "Intermediate",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Shipowners, ship managers, technical superintendents, masters, chief engineers and ship operators"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between RIT and a remote survey?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A remote survey concerns whether the surveyor is physically on board; RIT concerns how the surveyor obtains inspection evidence from difficult-to-access locations. When RIT is used, the surveyor may still be on board to witness the inspection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can drones completely replace close-up surveys?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Where classification-society and flag Administration requirements, survey scope, image quality and service-supplier qualifications are satisfied, RIT may provide an alternative means of access for parts of a close-up survey. If cracks, abnormal deformation, substantial corrosion or insufficient evidence are found, direct human access, UT or other NDT may still be required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should a shipowner do first when considering RIT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "During survey planning, first confirm the applicable scope, flag Administration requirements, recognised or approved service supplier, inspection plan, data-traceability method and contingency arrangements for conventional access or NDT if an abnormality is found with the vessel’s classification society."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to article</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.en.html">← Maritime Notes</a>
+      <span>|</span>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.en.html">About</a>
+      <a href="../../research/index.en.html">Management Notes</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="can-drones-replace-ship-surveyors.en.html" lang="en" hreflang="en" aria-current="true">EN</a>
+      <a href="can-drones-replace-ship-surveyors.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Maritime Technology · Ship Survey</p>
+        <h1>Can Drones Replace<br>Class Surveyors?</h1>
+        <p class="article-meta">
+          <span>📅 Updated: 2026-08-10</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 18 min read</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 RIT / Drones / Remote Inspection</span>
+        </p>
+        <p class="hero-subtitle">
+          Traditionally, reaching many difficult locations on board has required considerable time, labour and expense to erect scaffolding
+          so that a surveyor could get close enough to inspect them. As drones and Remote Inspection Techniques (RIT) mature, can these conventional means of access be fundamentally changed?
+        </p>
+        <div class="hero-tags" aria-label="Article tags">
+          <span class="hero-tag">Remote Inspection Techniques (RIT)</span>
+          <span class="hero-tag">Drones / ROVs / Crawlers</span>
+          <span class="hero-tag">Close-up Survey</span>
+          <span class="hero-tag">Classification Survey</span>
+        </div>
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.en.html"
+          data-share-title="Can Drones Replace Class Surveyors? | Reay's Note"
+          data-share-email-body="I found this article in Reay's Maritime Notes and thought it might be useful to you:&#10;&#10;Can Drones Replace Class Surveyors? | Reay's Note&#10;https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.en.html"
+          data-share-copy="Copy link"
+          data-share-copied="Copied"
+          data-toast-copied="Link copied to clipboard"
+        >
+          <p class="article-share__label" id="share-hero-label">Share this article</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-card">
+          <picture>
+            <source
+              srcset="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-human-technology-collaboration-square-v2.webp"
+              type="image/webp"
+            >
+            <img
+              class="hero-image"
+              src="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-human-technology-collaboration-square-v2.jpg"
+              width="1254"
+              height="1254"
+              decoding="async"
+              fetchpriority="high"
+              alt="An inspection operator in white coveralls monitors a drone survey by tablet inside a bulk carrier cargo hold"
+            >
+          </picture>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <details class="mobile-toc">
+    <summary>Open table of contents</summary>
+    <nav aria-label="Mobile table of contents">
+      <ol>
+        <li><a href="#why-now">Why does RIT matter now?</a></li>
+        <li><a href="#rit-vs-remote">RIT is not a remote survey</a></li>
+        <li><a href="#what-replaced">What do drones actually replace?</a></li>
+        <li><a href="#capabilities">What can RIT do today?</a></li>
+        <li><a href="#crack-scenario">After a suspected crack is found</a></li>
+        <li><a href="#inspection-funnel">RIT as an inspection funnel</a></li>
+        <li><a href="#owner-value">Where do shipowners save?</a></li>
+        <li><a href="#limitations">Limitations that cannot be ignored</a></li>
+        <li><a href="#data">The greatest challenge is data</a></li>
+        <li><a href="#class-status">How far have class societies progressed?</a></li>
+        <li><a href="#readiness">Management readiness checklist</a></li>
+        <li><a href="#conclusion">The final answer</a></li>
+      </ol>
+    </nav>
+  </details>
+
+  <div class="mobile-guide" id="mobileGuide">
+    <button
+      class="mobile-guide-toggle"
+      id="mobileGuideToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobileGuidePanel"
+    >
+      <span class="mobile-guide-icon" aria-hidden="true">☰</span>
+      <span>Article guide</span>
+      <span class="mobile-guide-current" id="mobileGuideCurrent">Section 1</span>
+    </button>
+    <div class="mobile-guide-overlay" id="mobileGuideOverlay" aria-hidden="true"></div>
+    <section
+      class="mobile-guide-panel"
+      id="mobileGuidePanel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobileGuideTitle"
+      aria-hidden="true"
+      inert
+    >
+      <div class="mobile-guide-head">
+        <div>
+          <h2 id="mobileGuideTitle">Article sections</h2>
+          <p>Preview sections and jump quickly</p>
+        </div>
+        <button class="mobile-guide-close" id="mobileGuideClose" type="button" aria-label="Close article guide">×</button>
+      </div>
+      <nav aria-label="Floating article section guide">
+        <ol>
+          <li><a href="#why-now">Why does RIT matter now?</a></li>
+          <li><a href="#rit-vs-remote">RIT is not a remote survey</a></li>
+          <li><a href="#what-replaced">What do drones actually replace?</a></li>
+          <li><a href="#capabilities">What can RIT do today?</a></li>
+          <li><a href="#crack-scenario">After a suspected crack is found</a></li>
+          <li><a href="#inspection-funnel">RIT as an inspection funnel</a></li>
+          <li><a href="#owner-value">Where do shipowners save?</a></li>
+          <li><a href="#limitations">Limitations that cannot be ignored</a></li>
+          <li><a href="#data">The greatest challenge is data</a></li>
+          <li><a href="#class-status">How far have class societies progressed?</a></li>
+          <li><a href="#readiness">Management readiness checklist</a></li>
+          <li><a href="#conclusion">The final answer</a></li>
+        </ol>
+      </nav>
+    </section>
+  </div>
+
+  <main class="page-shell" id="main-content">
+    <aside class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#why-now">Why does RIT matter now?</a></li>
+        <li><a href="#rit-vs-remote">RIT is not a remote survey</a></li>
+        <li><a href="#what-replaced">What do drones actually replace?</a></li>
+        <li><a href="#capabilities">What can RIT do today?</a></li>
+        <li><a href="#crack-scenario">After a suspected crack is found</a></li>
+        <li><a href="#inspection-funnel">RIT as an inspection funnel</a></li>
+        <li><a href="#owner-value">Where do shipowners save?</a></li>
+        <li><a href="#limitations">Limitations that cannot be ignored</a></li>
+        <li><a href="#data">The greatest challenge is data</a></li>
+        <li><a href="#class-status">How far have class societies progressed?</a></li>
+        <li><a href="#readiness">Management readiness checklist</a></li>
+        <li><a href="#conclusion">The final answer</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <p class="lede">
+        A bulk carrier is approaching its special survey. Conventionally, obtaining a clear view of frames, brackets and connections high in the cargo hold
+        may require the shipowner to arrange scaffolding, mobile elevating work platforms or rope access—or to send personnel into areas exposed to working-at-height and enclosed-space hazards.
+        How much would the survey workflow change if a drone could first deliver the images directly to the class surveyor?
+      </p>
+      <p class="dek">
+        This is not a drone product review. It approaches RIT from ship-management and operational decision-making perspectives to answer five practical questions:
+        what RIT can replace, where shipowners can save, what happens after a defect is found, how far major classification societies have progressed, and how to prepare for the next survey.
+      </p>
+
+      <section class="summary-panel" aria-labelledby="executive-summary">
+        <span class="label">Executive Summary</span>
+        <h2 id="executive-summary">The conclusion first</h2>
+        <p>
+          <strong>Drones will not directly replace class surveyors.</strong> What they replace first are certain physical means of access, such as scaffolding erected solely for inspection, rafting, mobile elevating work platforms, rope access and repeated tank or hold entry.
+          Whether the resulting survey evidence is accepted still depends on the applicable rules, image and measurement quality, location traceability, a recognised or approved service supplier, and the attending surveyor’s professional judgement.
+        </p>
+      </section>
+
+      <div class="takeaway-grid" aria-label="Four key takeaways">
+        <section class="takeaway">
+          <span class="num">01</span>
+          <h3>Physical access is what changes</h3>
+          <p>RIT changes how a surveyor obtains evidence; it does not remove classification or statutory requirements, or professional responsibility.</p>
+        </section>
+        <section class="takeaway">
+          <span class="num">02</span>
+          <h3>The greatest value is targeted inspection</h3>
+          <p>Use RIT to screen a wide area first, then concentrate direct close-up examination, UT and NDT on genuinely suspect locations.</p>
+        </section>
+        <section class="takeaway">
+          <span class="num">03</span>
+          <h3>The greatest limitation is evidence quality</h3>
+          <p>Seeing corrosion is not the same as measuring remaining thickness; capturing an anomaly is not the same as completing assessment and acceptance.</p>
+        </section>
+        <section class="takeaway">
+          <span class="num">04</span>
+          <h3>Data traceability is the next frontier</h3>
+          <p>Future competition will be about more than who flies the best drone; it will be about who produces locatable, repeatable and auditable data.</p>
+        </section>
+      </div>
+
+      <section id="why-now">
+        <h2>1. Why should ship managers pay attention now?</h2>
+        <p>
+          RIT did not appear in 2026. IACS had already issued Recommendation 42 as industry guidance on the use of Remote Inspection Techniques for surveys,
+          while major classification societies established rules, service-supplier approval and practical implementation procedures around 2018–2019.<sup class="cite"><a href="#ref-4">[4]</a></sup>
+        </p>
+        <p>
+          The major turning point came in May 2026, when IMO’s Maritime Safety Committee at MSC 111 adopted amendments to the 2011 ESP Code
+          introducing provisions for the use of RIT in close-up surveys of existing bulk carriers and oil tankers, and approved the associated guidelines. The amendments are scheduled to enter into force on <strong>1 January 2028</strong>.<sup class="cite"><a href="#ref-1">[1]</a></sup>
+          This gives established classification-society practice a clearer and more consistent IMO ESP regulatory framework.
+        </p>
+
+        <div class="timeline" aria-label="RIT regulatory and implementation timeline">
+          <section class="timeline-item">
+            <span class="timeline-year">2016</span>
+            <h3>IACS Recommendation 42 Rev.2</h3>
+            <p>Established a key industry benchmark for RIT surveys, covering acceptability, planning, equipment and reporting of results.</p>
+          </section>
+          <section class="timeline-item">
+            <span class="timeline-year">2018–2019</span>
+            <h3>Major class societies formalise RIT</h3>
+            <p>ClassNK issued guidance on drones in class surveys, while LR, DNV and others established RIT service-supplier approval categories and procedures.</p>
+          </section>
+          <section class="timeline-item">
+            <span class="timeline-year">2025</span>
+            <h3>MSC 110 approves draft ESP Code amendments</h3>
+            <p>IMO explicitly recognised drones, ROVs and crawlers as RIT platforms supporting close-up surveys and UT.<sup class="cite"><a href="#ref-2">[2]</a></sup></p>
+          </section>
+          <section class="timeline-item">
+            <span class="timeline-year">2026</span>
+            <h3>MSC 111 formally adopts the amendments</h3>
+            <p>The RIT provisions for the ESP Code were adopted and the associated guidelines approved, with entry into force set for 2028.</p>
+          </section>
+          <section class="timeline-item">
+            <span class="timeline-year">2028</span>
+            <h3>New framework enters into force</h3>
+            <p>RIT moves into a clearer international framework for existing bulk carriers and oil tankers subject to the ESP Code.</p>
+          </section>
+        </div>
+
+        <div class="manager-note">
+          <span class="callout-title">What this means for management</span>
+          The period from 2026 to 2028 is not a reason to wait for the rules to take effect. It is the time to establish supplier arrangements, survey plans, compartment drawings, data-management processes and contingency access arrangements.
+        </div>
+      </section>
+
+      <section id="rit-vs-remote">
+        <h2>2. First, a distinction: RIT is not a remote survey</h2>
+        <p>
+          The terms are often used interchangeably, but they have different management and accountability implications. ABS explains the distinction clearly:
+          a remote survey concerns whether the surveyor is physically present, whereas RIT concerns how the surveyor obtains inspection information from difficult-to-access areas.<sup class="cite"><a href="#ref-6">[6]</a></sup>
+        </p>
+
+        <div class="compare-grid">
+          <section class="compare-card remote">
+            <h3>Remote Survey</h3>
+            <p><strong>Core question:</strong> Is the surveyor physically on board?</p>
+            <ul>
+              <li>The surveyor may be ashore</li>
+              <li>Verification is performed through live video, photographs, recorded video, documents or digital records</li>
+              <li>Only certain survey items are eligible, generally subject to case-by-case review</li>
+            </ul>
+          </section>
+          <section class="compare-card rit">
+            <h3>RIT | Remote Inspection Techniques</h3>
+            <p><strong>Core question:</strong> How does the surveyor access the inspection location?</p>
+            <ul>
+              <li>The surveyor may still be on board to witness the inspection</li>
+              <li>Evidence is obtained using drones, ROVs, wall-climbing robots or crawlers</li>
+              <li>The focus is on replacing certain forms of direct physical access</li>
+            </ul>
+          </section>
+        </div>
+
+        <blockquote class="quote">
+          Remote inspection does not necessarily remove the surveyor; it changes how the surveyor obtains evidence.
+          <small>The essence of RIT is not “viewing from a distance”, but whether the evidence is sufficient to satisfy the original survey requirements.</small>
+        </blockquote>
+      </section>
+
+      <section id="what-replaced">
+        <h2>3. So, what can drones actually replace?</h2>
+        <p>
+          The title asks whether drones can replace class surveyors, but the more precise question is:
+          <strong>Can drones, ROVs or crawlers replace some of the costly, high-risk access arrangements made solely to obtain evidence?</strong>
+        </p>
+        <p>Within a suitable survey scope, RIT may reduce or replace:</p>
+        <ul>
+          <li>some scaffolding and working platforms erected solely for visual examination;</li>
+          <li>some use of mobile elevating work platforms, rafting and rope access;</li>
+          <li>unnecessary work at height and repeated entry into enclosed spaces;</li>
+          <li>diver exposure during certain underwater examinations; and</li>
+          <li>some UT work at elevated or difficult-to-access locations.</li>
+        </ul>
+
+        <div class="warning">
+          <span class="callout-title">Do not treat “no scaffolding required” as a guarantee</span>
+          Scaffolding and direct human access may still be unavoidable if repairs, detailed NDT, crack confirmation or deformation measurements are subsequently required, or if the RIT evidence is insufficient.
+          A more accurate statement is: <strong>RIT can reduce temporary access equipment installed solely for inspection.</strong>
+        </div>
+      </section>
+
+      <section id="capabilities">
+        <h2>4. What can RIT actually do today?</h2>
+        <p>
+          RIT is not a single piece of equipment. It is a combination of platform, sensors, procedures, personnel qualifications and surveyor acceptance.
+          ABS publicly identifies general visual examination, close-up visual examination and ultrasonic thickness measurement (UT) among the applicable tasks;
+          DNV, LR, KR and others have also established corresponding service-supplier and witnessing requirements.<sup class="cite"><a href="#ref-5">[5]</a></sup><sup class="cite"><a href="#ref-6">[6]</a></sup><sup class="cite"><a href="#ref-7">[7]</a></sup>
+        </p>
+
+        <div class="tech-grid">
+          <section class="tech-card">
+            <div class="tech-icon">UAV</div>
+            <h3>Drone / UAV</h3>
+            <p>Suited to visual examination and close-up surveys of cargo holds, ballast tanks, elevated frames, brackets, web frames, deck undersides and difficult-to-access corners.</p>
+          </section>
+          <section class="tech-card">
+            <div class="tech-icon">ROV</div>
+            <h3>Remotely Operated Vehicle (ROV)</h3>
+            <p>Suited to underwater hull, rudder, propeller and sea-chest examinations. Whether it may replace particular diving or dry-dock items remains subject to the rules and survey scope.</p>
+          </section>
+          <section class="tech-card">
+            <div class="tech-icon">CR</div>
+            <h3>Wall-climbing robots / crawlers</h3>
+            <p>Can use magnetic wheels to travel over steel plate or structural surfaces while carrying cameras or UT probes to support elevated or continuous thickness measurement.</p>
+          </section>
+          <section class="tech-card">
+            <div class="tech-icon">3D</div>
+            <h3>LiDAR / SLAM / 3D modelling</h3>
+            <p>Helps locate flight paths and anomalies, linking images and UT readings to structural models to improve traceability and later comparison.</p>
+          </section>
+        </div>
+
+        <div class="note">
+          <span class="callout-title">The most important technical distinction</span>
+          <strong>Seeing corrosion is not the same as knowing the remaining plate thickness.</strong> Visual evidence, UT measurements, NDT confirmation and structural assessment are distinct levels of evidence.
+        </div>
+      </section>
+
+      <section id="crack-scenario">
+        <h2>5. Practical scenario: what happens when a drone finds a suspected crack?</h2>
+        <p>
+          Imagine a bulk carrier undergoing a special survey. A drone reaches an upper bracket on the port side of No. 3 cargo hold,
+          and a suspected linear indication appears in the image. The survey is not complete; the real assessment has only just begun.
+        </p>
+
+        <figure class="article-figure">
+          <picture>
+            <source
+              srcset="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-suspected-crack-v3.webp"
+              type="image/webp"
+            >
+            <img
+              src="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-suspected-crack-v3.jpg"
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+              alt="An inspection drone illuminates a suspected linear indication at an upper bracket and frame connection inside a bulk carrier cargo hold"
+            >
+          </picture>
+          <figcaption>
+            Drone imagery can help locate a suspected anomaly, but a linear indication may also be caused by a shadow, rust streak or coating crack.
+            Determining whether it is a structural crack still requires improved visual evidence and, where necessary, direct close-up examination and NDT. Illustration generated by AI.
+          </figcaption>
+        </figure>
+
+        <section class="scenario">
+          <div class="scenario-head">
+            <small>Practical Scenario</small>
+            <h3>Bulk carrier · Special survey · Suspected crack at a frame connection</h3>
+          </div>
+          <div class="scenario-body">
+            <ol class="steps">
+              <li>
+                <strong>Confirm the exact location</strong>
+                <span>No. 3 cargo hold, port side, frame number, upper bracket, forward or aft face. Without location traceability, even a clear image loses much of its survey value.</span>
+              </li>
+              <li>
+                <strong>Improve the visual evidence</strong>
+                <span>Request a closer view, different angles, additional lighting, another flight, continuous video and a scale reference.</span>
+              </li>
+              <li>
+                <strong>Determine whether visual evidence alone is conclusive</strong>
+                <span>Distinguish shadows, rust streaks, coating cracks and contamination from a genuine structural crack.</span>
+              </li>
+              <li>
+                <strong>Escalate the examination</strong>
+                <span>Arrange direct close-up examination, UT, MPI/PT, dimensional measurement or other NDT as required.</span>
+              </li>
+              <li>
+                <strong>Class surveyor makes the classification decision</strong>
+                <span>Decide whether to accept the condition, require repair, extend the examination, monitor it, or require conventional access.</span>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <div class="logic-banner" aria-label="The distinction between detection, assessment and acceptance">
+          <span>Detection</span><span>Assessment</span><span>Acceptance</span>
+        </div>
+
+        <p>
+          KR’s 2025 RIT guidance explicitly states that RIT is a tool to assist the attending surveyor. If the surveyor is not satisfied with the results, conventional methods may still be required;
+          after a defect or corrosion is found, other methods may also be needed to determine the extent of assessment and repair.<sup class="cite"><a href="#ref-13">[13]</a></sup>
+        </p>
+      </section>
+
+      <section id="inspection-funnel">
+        <h2>6. RIT is better understood as an “inspection funnel”</h2>
+        <p>
+          For management, the most useful model is not “drones replace every manual inspection”, but a survey designed as a funnel:
+          use technology to cover a wide area quickly, then progressively narrow the focus to locations that genuinely require direct close-up examination and measurement.
+        </p>
+
+        <div class="funnel" aria-label="RIT inspection funnel">
+          <div class="funnel-step" style="--w:100%">Broad area of hull structure</div>
+          <div class="funnel-arrow">↓</div>
+          <div class="funnel-step" style="--w:88%">Drone / ROV / crawler screening</div>
+          <div class="funnel-arrow">↓</div>
+          <div class="funnel-step" style="--w:72%">Identify suspect areas</div>
+          <div class="funnel-arrow">↓</div>
+          <div class="funnel-step" style="--w:56%">Targeted close-up survey / UT / NDT</div>
+          <div class="funnel-arrow">↓</div>
+          <div class="funnel-step" style="--w:40%">Surveyor assessment</div>
+        </div>
+
+        <blockquote class="quote">
+          RIT’s greatest value may not be eliminating direct human inspection, but making it more targeted.
+        </blockquote>
+      </section>
+
+      <section id="owner-value">
+        <h2>7. Where can shipowners actually save?</h2>
+        <p>
+          For a ship manager or technical superintendent, the commercial value of RIT is not usually “buying a drone”.
+          It lies in shortening preparation, reducing access-equipment arrangements, lowering personnel exposure and minimising operational disruption caused by waiting and repeated entry.
+          DNV publicly states that, where conditions are met, RIT may avoid rafting, mobile elevating work platforms or scaffolding while still delivering data quality equivalent to conventional inspection.<sup class="cite"><a href="#ref-5">[5]</a></sup>
+        </p>
+
+        <figure class="article-figure">
+          <picture>
+            <source
+              srcset="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-access-cost-drone.webp"
+              type="image/webp"
+            >
+            <img
+              src="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-access-cost-drone.jpg"
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+              alt="Some scaffolding remains in a bulk carrier cargo hold while an inspection drone visually examines structural frames and brackets"
+            >
+          </picture>
+          <figcaption>
+            RIT does not guarantee the complete elimination of scaffolding. Its value is in reducing temporary access equipment erected solely to obtain visual evidence
+            and concentrating direct close-up examination on locations that genuinely require confirmation. Illustration generated by AI.
+          </figcaption>
+        </figure>
+
+        <div class="value-grid">
+          <section class="value-card">
+            <h3>A. Access costs</h3>
+            <p>Scaffolding, rafting, mobile elevating work platforms, rope access, temporary access equipment and the costs of erection, removal and coordination.</p>
+          </section>
+          <section class="value-card">
+            <h3>B. Time and operational disruption</h3>
+            <p>Time spent on survey preparation, waiting, shipyard scheduling, off-hire risk and repeated examinations.</p>
+          </section>
+          <section class="value-card">
+            <h3>C. Exposure to safety risks</h3>
+            <p>Personnel exposure to work at height, enclosed spaces, falling objects, slippery environments, hazardous gases and underwater work.</p>
+          </section>
+        </div>
+
+        <blockquote class="quote">
+          The greatest saving may come not from the drone itself, but from everything that no longer needs to be built simply to “get a person close enough”.
+        </blockquote>
+
+        <div class="warning">
+          <span class="callout-title">Avoid overmarketing cost figures</span>
+          Vessel type, compartment condition, survey scope, port and shipyard conditions vary widely. Unless supported by a specific case study, claims of a fixed “40% or 50% saving” are not appropriate.
+          Management should compare complete survey solutions, not merely the drone’s daily rate.
+        </div>
+      </section>
+
+      <section id="limitations">
+        <h2>8. Limitations that drone sales presentations rarely emphasise</h2>
+        <p>
+          The risks of RIT do not arise only from flight failure. A greater risk is having data that appears useful but does not constitute sufficient evidence. If management focuses only on flight speed and image resolution,
+          it may overlook the following factors that directly affect acceptance of survey evidence.
+        </p>
+
+        <div class="limits-grid">
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>Lighting and shadows</h3><p>Corrosion, shadows, oil contamination and suspected crack indications can be confused; high resolution does not guarantee adequate lighting or viewing angles.</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>Visual blind spots</h3><p>Bracket backs, stiffener connections, complex intersections and areas behind obstructions may not be fully covered.</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>Surface condition</h3><p>Heavy scale, mud, water, oil, salt deposits or uncleaned surfaces may make structural assessment from images impracticable.</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>Hazardous areas</h3><p>Batteries, motors and electronics may present ignition sources. Gas-free status, Ex suitability and onboard hazardous-area requirements must be considered.</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>Positioning and coverage</h3><p>GPS and magnetic compasses may be disrupted inside enclosed steel spaces. It must be demonstrated that the planned flight path and structures to be inspected have been fully covered, without omissions.</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>Measurement gap</h3><p>A visual finding is not a measurement of plate thickness, crack depth or deformation. UT, NDT or direct human access remains necessary where required.</p></div>
+          </section>
+        </div>
+
+        <div class="manager-note">
+          <span class="callout-title">A sound RIT plan must include contingencies</span>
+          Do not assume the inspection will find nothing. The plan should state in advance how additional flights, direct close-up examination, UT/NDT, scaffolding or other means of access will be provided if a suspect area is identified.
+        </div>
+      </section>
+
+      <section id="data">
+        <h2>9. The greatest challenge may be data, not the drone</h2>
+        <p>
+          A single compartment inspection may produce thousands of photographs, hours of video, LiDAR point clouds and large volumes of UT readings.
+          But unless each data point can be tied to a frame, face, elevation and survey event, more data simply becomes harder to manage.
+        </p>
+
+        <figure class="article-figure">
+          <picture>
+            <source
+              srcset="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-data-traceability.webp"
+              type="image/webp"
+            >
+            <img
+              src="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-data-traceability.jpg"
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+              alt="Drone inspection imagery, a cargo-hold LiDAR point cloud and a 3D structural model linked to the same defect location"
+            >
+          </picture>
+          <figcaption>
+            Valuable RIT data must link source imagery, point clouds and 3D structural models back to the same frame, structural member and defect location
+            to support later comparison, audit and surveyor judgement. Illustration generated by AI.
+          </figcaption>
+        </figure>
+
+        <p>Reusable RIT systems should progressively integrate:</p>
+        <div class="stack" aria-label="Future RIT data technology stack">
+          <div class="stack-item">Drone / robot</div>
+          <div class="stack-item">Camera / UT</div>
+          <div class="stack-item">LiDAR / SLAM</div>
+          <div class="stack-item">3D structural model</div>
+          <div class="stack-item">Defect location</div>
+          <div class="stack-item">AI-assisted review</div>
+          <div class="stack-item">Surveyor verification</div>
+        </div>
+
+        <p>
+          BV issued its NI693 RIT guidance in 2025 and publicly expanded its own network of RIT centres and trained surveyors in 2026.
+          Its published technology direction also includes LiDAR, AI and 3D inspection data.<sup class="cite"><a href="#ref-8">[8]</a></sup><sup class="cite"><a href="#ref-9">[9]</a></sup>
+          This suggests that the next stage of competition will move from “can the platform get inside?” to “can the data be located, compared, audited and converted into asset-integrity information?”
+        </p>
+
+        <blockquote class="quote">
+          What will matter in the future is not only who has the best drone, but who can build the most reliable, traceable and repeatable inspection dataset.
+        </blockquote>
+      </section>
+
+      <section id="class-status">
+        <h2>10. How far have major classification societies progressed with RIT?</h2>
+        <p>
+          The following is not an official ranking, nor does it imply that any classification society will automatically accept RIT for every vessel type, under every flag Administration, or for every survey item.
+          It is an assessment of “publicly visible implementation maturity”, based on verifiable rules and guidance, approved service suppliers, cases and deployment information available as of August 2026.
+          Actual acceptance remains subject to confirmation by the vessel’s classification society, flag Administration, attending surveyor and the applicable scope.
+        </p>
+
+        <div class="table-wrap" role="region" aria-label="Comparison of RIT implementation maturity among major classification societies" tabindex="0">
+          <div class="table-mobile-hint" aria-hidden="true">↔ Swipe horizontally for the full comparison</div>
+          <table>
+            <caption>Compiled from public information. “Maturity assessment” reflects the author’s practical interpretation of public evidence, not an official classification-society rating.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Classification society</th>
+                <th scope="col">Published framework / rules</th>
+                <th scope="col">Public evidence of implementation</th>
+                <th scope="col">Maturity assessment</th>
+                <th scope="col">Practical implication for management</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="class-name">Bureau Veritas</span></td>
+                <td>NI693 “Remote Inspection Techniques” was issued in 2025 and linked to the rules for steel ships and the service-supplier framework.<sup class="cite"><a href="#ref-8">[8]</a></sup></td>
+                <td>In 2026, BV reported approximately seven RIT centres and more than 15 qualified drone surveyors, with plans to expand to 16 centres and more than 40 surveyors by year-end. These figures were published by BV.<sup class="cite"><a href="#ref-9">[9]</a></sup></td>
+                <td><span class="status">Active public deployment</span><br>Shows a move from third-party tools toward an in-house surveyor network and an AI/LiDAR/3D data ecosystem.</td>
+                <td>Large fleet operators can ask whether a nearby RIT centre exists, what vessel types it specialises in, which data-delivery formats are available and whether AI/3D extensions are offered.</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">DNV</span></td>
+                <td>Established an approved service-supplier procedure in 2019, allowing drones, crawlers and ROVs as alternative means of access for close-up surveys.<sup class="cite"><a href="#ref-5">[5]</a></sup></td>
+                <td>Publicly states that the attending surveyor may witness through live imagery and that data quality must be equivalent to conventional inspection; in 2025, DNV reported growing use of drone close-up surveys and UT on bulk carriers.<sup class="cite"><a href="#ref-16">[16]</a></sup></td>
+                <td><span class="status">Mature operations</span><br>RIT has entered a formalised alternative survey process and is no longer merely a proof of concept.</td>
+                <td>A proposal should clearly address supplier approval, live imagery, lighting, resolution, survey scope, and acceptance under ESP and by the flag Administration.</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">ABS</span></td>
+                <td>The current public framework covers general visual examination, close-up visual examination and UT using platforms including UAVs, ROVs and crawlers; data must be provided by an ABS recognised service supplier.<sup class="cite"><a href="#ref-6">[6]</a></sup></td>
+                <td>Requires the shipowner and supplier to submit an inspection plan and verify the certificate scope against the platform, payload, asset type and survey task.</td>
+                <td><span class="status">Highly formalised</span><br>A clear quality-assurance chain links equipment, supplier, task scope and inspection plan.</td>
+                <td>Do not merely ask whether the supplier is “ABS recognised”. Verify that the certificate covers the specific platform, payload, vessel type and survey task.</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">Lloyd’s Register</span></td>
+                <td>Established an RIT service-supplier category for close-up surveys in 2019, covering UAVs, drones, robotic arms, ROVs, crawlers and wall-climbing robots.<sup class="cite"><a href="#ref-7">[7]</a></sup></td>
+                <td>If thickness measurement is also performed, the corresponding approval as a thickness-measurement service supplier is required.</td>
+                <td><span class="status blue">Mature, with case-by-case acceptance</span><br>The framework is established; actual acceptance emphasises survey scope, supplier qualification and surveyor judgement.</td>
+                <td>Before submitting the survey proposal, confirm the recognised scope for close-up survey and thickness measurement with the local LR office. Do not treat the two approvals as interchangeable.</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">Korean Register</span></td>
+                <td>The “2025 RIT Guidance” explicitly addresses recognised suppliers, inspection plans, risk assessments, flight plans, data review, reporting and contingency arrangements.<sup class="cite"><a href="#ref-13">[13]</a></sup></td>
+                <td>A 2020 public case involved drones and wall-climbing robots performing hull examination and thickness measurement on a bulk carrier without scaffolding.<sup class="cite"><a href="#ref-14">[14]</a></sup></td>
+                <td><span class="status">Comprehensive technical guidance</span><br>Provides specific requirements for operating processes, hazardous areas, image quality and conditions requiring additional conventional examination.</td>
+                <td>KR’s guidance is a useful reference for developing a shipowner’s RIT application checklist and onboard preparation plan.</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">ClassNK</span></td>
+                <td>Issued the “Guidelines for Use of Drones in Class Surveys” in 2018, covering applicability, safe operation and supplier requirements.<sup class="cite"><a href="#ref-11">[11]</a></sup></td>
+                <td>Its current approved-supplier database still lists companies with valid certificates for close-up surveys using RIT.<sup class="cite"><a href="#ref-12">[12]</a></sup></td>
+                <td><span class="status blue">Mature framework</span><br>Rules and supplier arrangements are verifiable; public information reveals less about fleet-wide deployment or the scale of AI/3D expansion.</td>
+                <td>For Japanese and Asian fleets, certificate limitations can be checked directly in NK’s supplier database and declared in advance through survey-planning questionnaires.</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">RINA</span></td>
+                <td>Has capabilities for drone-based remote inspection and remote surveys, although public materials sometimes cover both concepts and must be read with that distinction in mind.</td>
+                <td>A 2020 public case on an ESP bulk carrier combined drone close-up surveys of ballast tanks and cargo holds with remote statutory and classification surveys.<sup class="cite"><a href="#ref-15">[15]</a></sup></td>
+                <td><span class="status gold">Proven cases, less visible scale</span><br>Capabilities and cases are verifiable, but public information on the current scale of its structural RIT network is less explicit than BV’s.</td>
+                <td>A proposal should first clarify whether it involves RIT, a remote survey or both, and confirm flag Administration authorisation and any relevant class notation or eligibility requirements.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <span class="callout-title">Overall assessment</span>
+          The industry has moved beyond asking whether drones can be used for surveys. Major classification societies generally have rules or guidance, recognised or approved service suppliers, inspection plans and mechanisms for surveyor acceptance.
+          The real competition now is: <strong>how much conventional access can be safely replaced, and whether the data can become a reusable asset-integrity record.</strong>
+        </div>
+      </section>
+
+      <section id="readiness">
+        <h2>11. RIT readiness checklist for shipowners and ship managers</h2>
+        <p>
+          The most important management decision is not whether to buy a drone, but whether the next survey contains a scope suited to RIT
+          and whether review, supplier arrangements, drawings and contingency plans can be prepared in advance.
+        </p>
+
+        <ol class="checklist">
+          <li><strong>First confirm with class: is RIT acceptable for this survey item?</strong><span>Confirm vessel type, age, survey type, close-up / overall / UT scope and known defects.</span></li>
+          <li><strong>Confirm flag Administration requirements</strong><span>Particularly for ESP, statutory surveys or transitional arrangements. Do not assume class acceptance automatically means flag acceptance.</span></li>
+          <li><strong>Verify the service supplier’s certificate scope</strong><span>Check the platform, payload, vessel type, UT/NDT qualifications and certificate validity—not merely the supplier’s marketing.</span></li>
+          <li><strong>Prepare locatable structural information</strong><span>General arrangement, tank and hold plans, frame numbering, structural drawings, hazardous-area plans and inspection routes.</span></li>
+          <li><strong>Define the evidence standard</strong><span>Resolution, lighting, distance, angle, live imagery, recording, scale reference, location marking and data-delivery format.</span></li>
+          <li><strong>Plan hazardous-area and HSE controls</strong><span>Gas-free status, ignition sources, batteries, falling objects, collision, communication failure, launch and recovery areas, and simultaneous operations.</span></li>
+          <li><strong>Define escalation criteria in advance</strong><span>Specify when a suspected crack indication, substantial corrosion, deformation or inadequate imagery will trigger close-up examination, UT, NDT or scaffolding.</span></li>
+          <li><strong>Integrate the data into long-term asset management</strong><span>Require frame-level traceability, naming conventions, version control and baseline data suitable for comparison at the next survey.</span></li>
+        </ol>
+
+        <div class="manager-note">
+          <span class="callout-title">The most practical question</span>
+          A mature RIT proposal must explain more than how the drone will fly. It must answer clearly: <strong>what happens next if it finds a problem?</strong>
+        </div>
+      </section>
+
+      <section id="conclusion">
+        <h2>12. The final answer: can drones replace class surveyors?</h2>
+
+        <div class="answer-grid">
+          <div class="answer-row">
+            <strong>Can they replace some hazardous physical means of access?</strong>
+            <span class="verdict">Yes—and it is already happening</span>
+          </div>
+          <div class="answer-row">
+            <strong>Can they reduce some scaffolding, rafting, rope-access or diving work?</strong>
+            <span class="verdict">Yes, for a suitable survey scope</span>
+          </div>
+          <div class="answer-row">
+            <strong>Can they perform close-up visual surveys and even UT?</strong>
+            <span class="verdict caution">Yes, subject to conditions</span>
+          </div>
+          <div class="answer-row">
+            <strong>Can they replace the class surveyor’s judgement and responsibility?</strong>
+            <span class="verdict no">No</span>
+          </div>
+        </div>
+
+        <p>
+          RIT is moving from an “alternative technology” into the normal toolbox of classification surveys. What it is most likely to change is not whether the surveyor exists,
+          but whether the surveyor must personally enter every hazardous, expensive or difficult-to-access location solely to obtain evidence.
+        </p>
+
+        <blockquote class="quote">
+          The future of ship survey may not be a world without surveyors. It is more likely to be a world in which surveyors no longer needlessly place themselves in hazardous locations simply to obtain evidence.
+        </blockquote>
+
+        <p>
+          The real future competition will therefore not simply be <strong>drones versus people</strong>. It will be between
+          <strong>conventional, physical-access-based surveys</strong> and <strong>data-driven, targeted, technology-assisted surveys</strong>.
+          For the foreseeable future, surveyor judgement will remain at the centre of the decision.
+        </p>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Can the crew take drone footage themselves and submit it to class for acceptance?</summary>
+            <div class="faq-body">
+              <p>Clear imagery alone does not guarantee acceptance. The classification society’s acceptance, the service supplier’s recognition or approval, operator qualifications, inspection plan, live witnessing, location traceability and data integrity normally still need to be confirmed. Requirements may also differ by survey item and flag Administration.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Does RIT mean nobody needs to enter a ballast tank or cargo hold?</summary>
+            <div class="faq-body">
+              <p>Not necessarily. RIT can reduce personnel entry and access at height, but space preparation, atmosphere testing, launch and recovery, equipment control, additional examination, UT/NDT, repair and confirmation may still require entry. A mature solution reduces unnecessary exposure; it does not guarantee zero entry.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Can drone-based UT completely replace conventional thickness-measurement firms?</summary>
+            <div class="faq-body">
+              <p>Such a general conclusion is not currently justified. Drones or crawlers carrying UT equipment can obtain measurements in specific scenarios, but the measurement-point scope, coupling quality, surface preparation, calibration, approval or recognition status, representativeness and rule requirements remain subject to case-by-case confirmation. Some classification societies also require separate supplier approvals for RIT and thickness measurement.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Which classification society has the most mature RIT capability?</summary>
+            <div class="faq-body">
+              <p>No single ranking fits every situation. In 2026, BV publicly demonstrated an active in-house network and AI/3D integration; DNV, ABS, LR, KR, ClassNK and RINA also have established frameworks or cases. For a shipowner, the key question is not brand ranking but whether the society can accept RIT for the specific vessel type, flag Administration, survey scope, location and supplier arrangements.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="sources">
+        <h2>Sources and further reading</h2>
+        <p>
+          This article relies primarily on official IMO, IACS and classification-society materials, supplemented by established maritime media for public cases and deployment information.
+          Sources were verified on 10 August 2026.
+        </p>
+        <ol class="references">
+          <li id="ref-1"><span class="source-type">Class society / IMO meeting summary</span><a href="https://www.dnv.com/news/2026/imo-mcs-111-new-mass-code-adopted/" target="_blank" rel="noopener noreferrer">DNV — IMO MSC 111: New MASS Code adopted</a> (adoption of the ESP Code RIT amendments and 2028 entry-into-force information).</li>
+          <li id="ref-2"><span class="source-type">Official IMO source</span><a href="https://www.imo.org/en/mediacentre/meetingsummaries/pages/msc-110th-session.aspx" target="_blank" rel="noopener noreferrer">IMO — Maritime Safety Committee, 110th session</a> (RIT, drones, ROVs, crawlers, close-up surveys and UT).</li>
+          <li id="ref-3"><span class="source-type">Official IMO source</span><a href="https://www.imo.org/en/mediacentre/meetingsummaries/pages/sdc-12.aspx" target="_blank" rel="noopener noreferrer">IMO — SDC 12 Meeting Summary</a> (RIT guidelines for ESP surveys).</li>
+          <li id="ref-4"><span class="source-type">Official IACS source</span><a href="https://iacs.org.uk/resolutions/recommendations/41-60/rec-42-rev2-cln" target="_blank" rel="noopener noreferrer">IACS Recommendation 42 — Guidelines for Use of Remote Inspection Techniques for Surveys</a>.</li>
+          <li id="ref-5"><span class="source-type">Official DNV source</span><a href="https://www.dnv.com/news/2019/survey-by-remote-inspection-techniques-use-of-approved-service-suppliers-144572/" target="_blank" rel="noopener noreferrer">DNV — Survey by RIT: use of approved service suppliers</a>.</li>
+          <li id="ref-6"><span class="source-type">Official ABS source</span><a href="https://ww2.eagle.org/en/innovation-and-technology/technology-advancements/remote-inspection-techniques.html" target="_blank" rel="noopener noreferrer">ABS — Remote Inspection Techniques</a> (the distinction between RIT and remote surveys, general visual examination, close-up survey, UT, suppliers and inspection plans).</li>
+          <li id="ref-7"><span class="source-type">Official LR source</span><a href="https://www.lr.org/en/knowledge/class-news/26-18/" target="_blank" rel="noopener noreferrer">Lloyd’s Register — Service Supplier category for close-up surveys using RIT</a>.</li>
+          <li id="ref-8"><span class="source-type">Official BV source</span><a href="https://marine-offshore.bureauveritas.com/ni693-remote-inspection-techniques" target="_blank" rel="noopener noreferrer">Bureau Veritas — NI693 Remote Inspection Techniques</a>.</li>
+          <li id="ref-9"><span class="source-type">Official BV source</span><a href="https://marine-offshore.bureauveritas.com/newsroom/bureau-veritas-showcases-next-generation-remote-inspection-posidonia-launch-athens-survey" target="_blank" rel="noopener noreferrer">Bureau Veritas — Athens RIT center and 2026 network expansion</a>. Network and staffing figures were published by BV.</li>
+          <li id="ref-10"><span class="source-type media">Industry media</span><a href="https://maritime-executive.com/index.php/corporate/bureau-veritas-showcases-next-generation-remote-inspection-at-posidonia" target="_blank" rel="noopener noreferrer">The Maritime Executive — BV next-generation remote inspection at Posidonia</a> (republished corporate announcement / supplementary coverage).</li>
+          <li id="ref-11"><span class="source-type">Official ClassNK source</span><a href="https://www.classnk.or.jp/hp/en/hp_news.aspx?id=2800&amp;layout=1&amp;type=press_release" target="_blank" rel="noopener noreferrer">ClassNK — Guidelines for Use of Drones in Class Surveys</a>.</li>
+          <li id="ref-12"><span class="source-type">Official ClassNK source</span><a href="https://www.classnk.or.jp/appr_list/service_detail.aspx?id=75810&amp;lang=en" target="_blank" rel="noopener noreferrer">ClassNK — Approved Service Supplier: Close-up survey using RIT</a> (current database example).</li>
+          <li id="ref-13"><span class="source-type">Official KR source</span><a href="https://www.krs.co.kr/KRRules/KRRules2026/data/data_other/ENGLISH/Guidance%20for%20Remote%20Inspection%20Techniques_2025.pdf" target="_blank" rel="noopener noreferrer">Korean Register — Guidance for Remote Inspection Techniques 2025</a>.</li>
+          <li id="ref-14"><span class="source-type media">Industry media</span><a href="https://www.seatrade-maritime.com/regulations/kr-conducts-first-drone-and-crawler-hull-survey-without-scaffolds" target="_blank" rel="noopener noreferrer">Seatrade Maritime — KR drone and crawler hull survey without scaffolds</a>.</li>
+          <li id="ref-15"><span class="source-type">Official RINA source</span><a href="https://www.rina.org/en/media/press/2020/06/10/first-remote-surveys" target="_blank" rel="noopener noreferrer">RINA — Statutory and class surveys using remote technologies on an ESP bulk carrier</a>.</li>
+          <li id="ref-16"><span class="source-type">Official DNV source</span><a href="https://www.dnv.com/expert-story/maritime-impact/how-new-rules-and-tools-are-reshaping-bulk-carrier-safety-and-efficiency/" target="_blank" rel="noopener noreferrer">DNV — How new rules and tools are reshaping bulk carrier safety and efficiency</a> (2025 trends in drone close-up surveys and UT).</li>
+        </ol>
+      </section>
+
+      <section class="author-card" aria-label="Author information">
+        <div class="author-avatar" aria-hidden="true">RH</div>
+        <div>
+          <h3>Reay Huang</h3>
+          <p>Practical notes on marine engineering, classification surveys and ship management, focused on how regulations translate into field decisions rather than stopping at rule summaries.</p>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.en.html"
+      data-share-title="Can Drones Replace Class Surveyors? | Reay's Note"
+      data-share-email-body="I found this article in Reay's Maritime Notes and thought it might be useful to you:&#10;&#10;Can Drones Replace Class Surveyors? | Reay's Note&#10;https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.en.html"
+      data-share-copy="Copy link"
+      data-share-copied="Copied"
+      data-toast-copied="Link copied to clipboard"
+    >
+      <p class="article-share__label" id="share-end-label">Found this useful? Share it with a colleague</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="source">
+    <div class="site-footer-inner">
+      <strong>Can Drones Replace Class Surveyors? | Reay's Note</strong>
+      <span class="small">Compiled by Reay Huang · Maritime Survey / Learning Note · Sources reviewed: 2026-08-10</span>
+      <p class="disclaimer small">
+        <strong>Professional disclaimer:</strong> This article is compiled from public information for general technical and management reference only. It does not constitute classification, statutory survey, flag Administration or safe-working approval for any specific vessel.
+        The actual applicability of RIT should be confirmed by the shipowner or management company with the vessel’s classification society, flag Administration, attending surveyor and recognised or approved service supplier, taking account of the vessel’s condition and survey scope.
+        The views expressed do not represent any employer, classification society or regulatory authority.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const progress = document.getElementById('readingProgress');
+      const updateProgress = function () {
+        const doc = document.documentElement;
+        const scrollable = doc.scrollHeight - doc.clientHeight;
+        const ratio = scrollable > 0 ? doc.scrollTop / scrollable : 0;
+        progress.style.width = Math.min(100, Math.max(0, ratio * 100)) + '%';
+      };
+      document.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      const links = Array.from(document.querySelectorAll('.toc a'));
+      const sections = links
+        .map(function (link) { return document.querySelector(link.getAttribute('href')); })
+        .filter(Boolean);
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          const visible = entries
+            .filter(function (entry) { return entry.isIntersecting; })
+            .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+          if (!visible.length) return;
+          const id = '#' + visible[0].target.id;
+          links.forEach(function (link) {
+            link.classList.toggle('active', link.getAttribute('href') === id);
+          });
+        }, { rootMargin: '-18% 0px -72% 0px', threshold: 0 });
+        sections.forEach(function (section) { observer.observe(section); });
+      }
+
+      const mobileGuide = document.getElementById('mobileGuide');
+      const mobileGuideToggle = document.getElementById('mobileGuideToggle');
+      const mobileGuidePanel = document.getElementById('mobileGuidePanel');
+      const mobileGuideOverlay = document.getElementById('mobileGuideOverlay');
+      const mobileGuideClose = document.getElementById('mobileGuideClose');
+      const mobileGuideCurrent = document.getElementById('mobileGuideCurrent');
+      const mobileGuideLinks = Array.from(document.querySelectorAll('.mobile-guide-panel a'));
+
+      const setGuideOpen = function (isOpen, restoreFocus) {
+        mobileGuide.classList.toggle('is-open', isOpen);
+        document.body.classList.toggle('mobile-guide-open', isOpen);
+        mobileGuideToggle.setAttribute('aria-expanded', String(isOpen));
+        mobileGuidePanel.setAttribute('aria-hidden', String(!isOpen));
+        mobileGuidePanel.inert = !isOpen;
+        if (isOpen) {
+          mobileGuideClose.focus();
+        } else if (restoreFocus) {
+          mobileGuideToggle.focus();
+        }
+      };
+
+      const updateGuideVisibility = function () {
+        const shouldShow = window.innerWidth <= 700 && window.scrollY > 280;
+        mobileGuide.classList.toggle('is-visible', shouldShow);
+        if (!shouldShow && mobileGuide.classList.contains('is-open')) {
+          setGuideOpen(false, false);
+        }
+      };
+
+      const updateGuideCurrent = function () {
+        let currentIndex = 0;
+        const readingLine = window.innerHeight * .28;
+        sections.forEach(function (section, index) {
+          if (section.getBoundingClientRect().top <= readingLine) currentIndex = index;
+        });
+        const currentId = sections[currentIndex] ? '#' + sections[currentIndex].id : '';
+        mobileGuideCurrent.textContent = 'Section ' + (currentIndex + 1);
+        mobileGuideLinks.forEach(function (link) {
+          const isActive = link.getAttribute('href') === currentId;
+          link.classList.toggle('active', isActive);
+          if (isActive) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+      };
+
+      mobileGuideToggle.addEventListener('click', function () { setGuideOpen(true, false); });
+      mobileGuideClose.addEventListener('click', function () { setGuideOpen(false, true); });
+      mobileGuideOverlay.addEventListener('click', function () { setGuideOpen(false, true); });
+      mobileGuideLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          const targetId = link.getAttribute('href');
+          const target = document.querySelector(targetId);
+          setGuideOpen(false, false);
+          if (!target) return;
+          window.requestAnimationFrame(function () {
+            history.pushState(null, '', targetId);
+            target.scrollIntoView({
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+              block: 'start'
+            });
+          });
+        });
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && mobileGuide.classList.contains('is-open')) {
+          setGuideOpen(false, true);
+        }
+      });
+      document.addEventListener('scroll', function () {
+        updateGuideVisibility();
+        updateGuideCurrent();
+      }, { passive: true });
+      window.addEventListener('resize', function () {
+        updateGuideVisibility();
+        updateGuideCurrent();
+      });
+      updateGuideVisibility();
+      updateGuideCurrent();
+    }());
+  </script>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+</body>
+</html>

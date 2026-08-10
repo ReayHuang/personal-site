@@ -1,0 +1,2430 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light" data-back-to-top-label="回到頂部">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" hreflang="en" href="can-drones-replace-ship-surveyors.en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="can-drones-replace-ship-surveyors.html">
+  <link rel="alternate" hreflang="x-default" href="can-drones-replace-ship-surveyors.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO：請依實際發布網址與封面圖路徑調整 canonical / og:image -->
+  <title>無人機能取代船級社驗船師嗎？船東與船舶管理者必懂的 RIT 遠端檢查技術｜Reay Huang Maritime Notes</title>
+  <meta name="description" content="從船東、船舶管理者與操作人員的角度，解析遠端檢查技術（RIT）如何運用無人機、ROV、爬壁機器人與 UT，改變近觀檢驗、成本、安全、資料追溯與船級社驗船流程。">
+  <meta name="author" content="Reay Huang">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#0b2239">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:title" content="無人機能取代船級社驗船師嗎？">
+  <meta property="og:description" content="船東與船舶營運者應該了解的遠端檢查技術（RIT）：能省下什麼、不能取代什麼，以及主要船級社做到哪裡。">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.html">
+  <meta property="article:published_time" content="2026-08-10T00:00:00+09:00">
+  <meta property="article:modified_time" content="2026-08-10T00:00:00+09:00">
+  <meta property="article:author" content="Reay Huang">
+  <meta property="article:section" content="Maritime Technology">
+  <meta property="article:tag" content="Remote Inspection Techniques">
+  <meta property="article:tag" content="Ship Survey">
+  <meta property="article:tag" content="Drone Inspection">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="無人機能取代船級社驗船師嗎？">
+  <meta name="twitter:description" content="從船舶管理與實際驗船角度，理解 RIT 的價值、限制與船級社採用程度。">
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/can-drones-replace-ship-surveyors/can-drones-replace-ship-surveyors-link-preview.jpg">
+  <meta property="og:image:alt" content="無人機能取代船級社驗船師嗎？｜Reay's Note">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/can-drones-replace-ship-surveyors/can-drones-replace-ship-surveyors-link-preview.jpg">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f8fb;
+      --surface: #ffffff;
+      --surface-2: #edf4f7;
+      --surface-3: #e4eef3;
+      --ink: #12263a;
+      --ink-strong: #071a2c;
+      --muted: #5c7083;
+      --border: #d7e2e9;
+      --navy: #0b2239;
+      --navy-2: #153b58;
+      --ocean: #0b7285;
+      --teal: #0f8b8d;
+      --teal-soft: #dff4f2;
+      --blue-soft: #e5efff;
+      --amber: #c47b15;
+      --amber-soft: #fff3d9;
+      --red: #b94343;
+      --red-soft: #fff0ef;
+      --green: #287a5a;
+      --green-soft: #e5f5ec;
+      --shadow-sm: 0 8px 24px rgba(8, 35, 55, .07);
+      --shadow-lg: 0 24px 70px rgba(6, 27, 43, .15);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --max: 1240px;
+      --article: 920px;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --serif: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #07131f;
+      --surface: #0d1e2c;
+      --surface-2: #112737;
+      --surface-3: #183244;
+      --ink: #dbe9f2;
+      --ink-strong: #f5fbff;
+      --muted: #9db2c1;
+      --border: #294354;
+      --navy: #071723;
+      --navy-2: #12364e;
+      --ocean: #4db2c0;
+      --teal: #63c6c3;
+      --teal-soft: #123b3c;
+      --blue-soft: #142e4e;
+      --amber: #efb85b;
+      --amber-soft: #3d2d13;
+      --red: #ef8780;
+      --red-soft: #3b2224;
+      --green: #74c59e;
+      --green-soft: #17372a;
+      --shadow-sm: 0 8px 24px rgba(0, 0, 0, .18);
+      --shadow-lg: 0 24px 70px rgba(0, 0, 0, .28);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.86;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--ocean); text-underline-offset: 3px; }
+    a:hover { color: var(--teal); }
+    img, svg { max-width: 100%; }
+    button { font: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -80px;
+      z-index: 9999;
+      padding: .65rem 1rem;
+      border-radius: 8px;
+      background: var(--ink-strong);
+      color: var(--surface);
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .reading-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 9998;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), #52c6ca, var(--amber));
+      box-shadow: 0 1px 8px rgba(15, 139, 141, .35);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(61, 190, 196, .2), transparent 24%),
+        radial-gradient(circle at 18% 16%, rgba(255, 194, 90, .13), transparent 26%),
+        linear-gradient(145deg, #071b2d 0%, #0b2e48 57%, #0a5b68 130%);
+      color: #f5fbff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+    .hero-inner {
+      position: relative;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(68px, 8vw, 116px) 0 clamp(58px, 7vw, 94px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      align-items: center;
+      gap: clamp(30px, 6vw, 78px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #9ce1e3;
+      font-size: .78rem;
+      font-weight: 820;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: currentColor; }
+    .hero h1 {
+      max-width: 900px;
+      margin: 0;
+      color: #fff;
+      font-size: clamp(2.45rem, 6vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .hero .article-meta {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: rgba(203, 224, 234, 0.82);
+    }
+    .hero .article-meta__sep {
+      color: rgba(255, 255, 255, 0.32);
+    }
+    .hero-subtitle {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: #cbe0ea;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      line-height: 1.75;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 28px;
+      color: #bcd3df;
+      font-size: .88rem;
+    }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .hero-tag {
+      padding: 6px 11px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: #e7f5f7;
+      font-size: .78rem;
+      line-height: 1.2;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+    }
+    .visual-card {
+      position: relative;
+      width: min(100%, 410px);
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 30px;
+      background: #071b2d;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+    }
+    .visual-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), inset 0 -70px 90px rgba(5,21,34,.1);
+    }
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .ship-grid {
+      position: absolute;
+      inset: 14% 10% 16%;
+      border: 1px solid rgba(160,225,228,.25);
+      background:
+        linear-gradient(rgba(148,221,224,.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,221,224,.13) 1px, transparent 1px);
+      background-size: 28px 28px;
+      transform: perspective(650px) rotateX(58deg) rotateZ(-7deg);
+      transform-origin: 50% 80%;
+    }
+    .drone-orbit {
+      position: absolute;
+      left: 50%;
+      top: 43%;
+      width: 190px;
+      height: 190px;
+      transform: translate(-50%, -50%);
+      border: 1px dashed rgba(152,225,228,.4);
+      border-radius: 50%;
+    }
+    .drone-icon {
+      position: absolute;
+      left: 50%;
+      top: 41%;
+      width: 128px;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 18px 22px rgba(0,0,0,.32));
+    }
+    .scan-line {
+      position: absolute;
+      left: 50%;
+      top: 54%;
+      width: 100px;
+      height: 150px;
+      transform: translateX(-50%);
+      clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
+      background: linear-gradient(to bottom, rgba(92,231,225,.42), rgba(92,231,225,0));
+      opacity: .8;
+    }
+    .visual-label {
+      position: absolute;
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 11px;
+      background: rgba(5, 26, 42, .7);
+      color: #dff7f8;
+      font-size: .72rem;
+      line-height: 1.25;
+      box-shadow: 0 8px 22px rgba(0,0,0,.2);
+    }
+    .visual-label.one { top: 13%; right: 8%; }
+    .visual-label.two { bottom: 19%; left: 5%; }
+    .visual-label.three { bottom: 7%; right: 7%; }
+    .pulse-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: #66e4df;
+      box-shadow: 0 0 0 6px rgba(102,228,223,.12);
+    }
+
+    .mobile-toc,
+    .mobile-guide { display: none; }
+    .page-shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(34px, 4vw, 58px) 0 76px;
+      display: grid;
+      grid-template-columns: 228px minmax(0, 1fr);
+      align-items: start;
+      gap: clamp(28px, 4vw, 52px);
+    }
+    .toc {
+      position: sticky;
+      top: 24px;
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      padding: 20px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: color-mix(in srgb, var(--surface) 90%, transparent);
+      box-shadow: var(--shadow-sm);
+    }
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: .82rem;
+      color: var(--muted);
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; }
+    .toc li { counter-increment: toc; }
+    .toc a {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: 5px;
+      padding: 7px 4px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .83rem;
+      line-height: 1.45;
+      transition: color .2s ease, transform .2s ease;
+    }
+    .toc a::before { content: counter(toc, decimal-leading-zero); color: var(--ocean); font-variant-numeric: tabular-nums; }
+    .toc a:hover, .toc a.active { color: var(--ink-strong); transform: translateX(2px); }
+
+    article {
+      min-width: 0;
+      width: min(100%, var(--article));
+    }
+    article > *:first-child { margin-top: 0; }
+    article h2, article h3 { scroll-margin-top: 24px; text-wrap: balance; }
+    article h2 {
+      position: relative;
+      margin: 64px 0 21px;
+      padding-top: 13px;
+      color: var(--ink-strong);
+      font-size: clamp(1.75rem, 3.4vw, 2.45rem);
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+    article h2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 62px;
+      height: 4px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--teal), var(--amber));
+    }
+    article h3 {
+      margin: 32px 0 13px;
+      color: var(--ink-strong);
+      font-size: 1.28rem;
+      line-height: 1.4;
+    }
+    article p { margin: 0 0 1.2em; }
+    article strong { color: var(--ink-strong); }
+    article ul, article ol { padding-left: 1.35rem; }
+    article li + li { margin-top: .4rem; }
+
+    .article-figure {
+      margin: 30px 0 36px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .article-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--navy);
+    }
+    .article-figure figcaption {
+      padding: 13px 17px 15px;
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.55;
+    }
+
+    .lede {
+      margin: 0 0 30px;
+      color: var(--ink-strong);
+      font-family: var(--serif);
+      font-size: clamp(1.22rem, 2.3vw, 1.55rem);
+      line-height: 1.72;
+    }
+    .dek {
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .summary-panel {
+      margin: 30px 0 40px;
+      padding: clamp(22px, 4vw, 34px);
+      border: 1px solid color-mix(in srgb, var(--teal) 30%, var(--border));
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--teal-soft) 82%, var(--surface)), var(--surface));
+      box-shadow: var(--shadow-sm);
+    }
+    .summary-panel .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--ocean);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .summary-panel h2 {
+      margin: 0 0 14px;
+      padding: 0;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+    .summary-panel h2::before { display: none; }
+    .summary-panel p:last-child { margin-bottom: 0; }
+
+    .takeaway-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 26px 0 34px;
+    }
+    .takeaway {
+      min-height: 165px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .takeaway .num {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      background: var(--blue-soft);
+      color: var(--ocean);
+      font-size: .82rem;
+      font-weight: 850;
+    }
+    .takeaway h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .takeaway p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.65; }
+
+    .quote {
+      position: relative;
+      margin: 29px 0;
+      padding: 26px 28px 26px 30px;
+      border-left: 5px solid var(--teal);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      color: var(--ink-strong);
+      font-family: var(--serif);
+      font-size: clamp(1.18rem, 2.4vw, 1.48rem);
+      line-height: 1.7;
+    }
+    .quote small {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: .78rem;
+    }
+
+    .note, .warning, .manager-note {
+      margin: 26px 0;
+      padding: 19px 20px;
+      border-radius: var(--radius-md);
+      font-size: .93rem;
+      line-height: 1.72;
+    }
+    .note { border: 1px solid #b9d8ef; background: var(--blue-soft); }
+    .warning { border: 1px solid color-mix(in srgb, var(--amber) 40%, var(--border)); background: var(--amber-soft); }
+    .manager-note { border: 1px solid color-mix(in srgb, var(--green) 35%, var(--border)); background: var(--green-soft); }
+    .callout-title { display: block; margin-bottom: 4px; color: var(--ink-strong); font-weight: 820; }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      margin: 28px 0 38px;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(var(--teal), var(--amber));
+    }
+    .timeline-item {
+      position: relative;
+      padding: 19px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 26px;
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 1px var(--teal);
+    }
+    .timeline-year { color: var(--ocean); font-size: .8rem; font-weight: 850; letter-spacing: .08em; }
+    .timeline-item h3 { margin: 2px 0 6px; font-size: 1.04rem; }
+    .timeline-item p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 25px 0 35px;
+    }
+    .compare-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .compare-card.rit { border-top: 5px solid var(--teal); }
+    .compare-card.remote { border-top: 5px solid var(--amber); }
+    .compare-card h3 { margin: 0 0 13px; }
+    .compare-card p { color: var(--muted); font-size: .92rem; }
+    .compare-card ul { margin-bottom: 0; font-size: .9rem; }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 28px 0 38px;
+    }
+    .tech-card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    .tech-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 15px;
+      border-radius: 14px;
+      background: var(--teal-soft);
+      color: var(--ocean);
+      font-weight: 900;
+    }
+    .tech-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    .tech-card p { margin: 0; color: var(--muted); font-size: .89rem; }
+
+    .scenario {
+      margin: 30px 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .scenario-head {
+      padding: 24px 26px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: #ecf8fb;
+    }
+    .scenario-head small { color: #9ed9dc; font-weight: 820; letter-spacing: .1em; text-transform: uppercase; }
+    .scenario-head h3 { margin: 7px 0 0; color: #fff; font-size: 1.38rem; }
+    .scenario-body { padding: 8px 26px 25px; }
+    .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+    .steps li {
+      position: relative;
+      min-height: 74px;
+      margin: 0;
+      padding: 22px 0 22px 62px;
+      border-bottom: 1px solid var(--border);
+      counter-increment: step;
+    }
+    .steps li:last-child { border-bottom: 0; }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 20px;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--teal-soft);
+      color: var(--ocean);
+      font-size: .84rem;
+      font-weight: 900;
+    }
+    .steps strong { display: block; margin-bottom: 2px; }
+    .steps span { display: block; color: var(--muted); font-size: .89rem; line-height: 1.6; }
+
+    .logic-banner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: var(--ink-strong);
+      color: #fff;
+      font-size: clamp(1.15rem, 3vw, 1.55rem);
+      font-weight: 850;
+      letter-spacing: .025em;
+      text-align: center;
+    }
+    .logic-banner span:not(:last-child)::after { content: "≠"; margin-left: 10px; color: #69d5d3; }
+
+    .funnel {
+      display: grid;
+      gap: 10px;
+      margin: 30px auto 40px;
+      max-width: 690px;
+    }
+    .funnel-step {
+      width: var(--w);
+      max-width: 100%;
+      margin-inline: auto;
+      padding: 14px 20px;
+      border: 1px solid color-mix(in srgb, var(--teal) 35%, var(--border));
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--surface), var(--surface-2));
+      color: var(--ink-strong);
+      font-weight: 760;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .funnel-arrow { text-align: center; color: var(--teal); line-height: 1; font-size: 1.2rem; }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 26px 0 35px;
+    }
+    .value-card {
+      padding: 21px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    .value-card h3 { margin: 0 0 8px; font-size: 1rem; }
+    .value-card p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+    .limits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 25px 0 35px;
+    }
+    .limit {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .limit .mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--red-soft);
+      color: var(--red);
+      font-weight: 900;
+    }
+    .limit h3 { margin: 0 0 4px; font-size: .98rem; }
+    .limit p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.58; }
+
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 8px;
+      margin: 28px 0 35px;
+    }
+    .stack-item {
+      min-height: 112px;
+      display: grid;
+      place-items: center;
+      padding: 11px 7px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--ink-strong);
+      font-size: .78rem;
+      font-weight: 780;
+      line-height: 1.35;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .stack-item:last-child { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .stack-arrow { display: none; }
+
+    .table-wrap {
+      margin: 24px 0 34px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    table {
+      width: 100%;
+      min-width: 0;
+      table-layout: fixed;
+      border-collapse: collapse;
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+    caption {
+      padding: 16px 18px;
+      color: var(--muted);
+      text-align: left;
+      font-size: .8rem;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      text-align: left;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: var(--navy);
+      color: #edf8fb;
+      font-size: .78rem;
+      letter-spacing: .025em;
+    }
+    tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: var(--surface-2); }
+    th:nth-child(1), td:nth-child(1) {
+      width: 13%;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    th:nth-child(2), td:nth-child(2) { width: 22%; }
+    th:nth-child(3), td:nth-child(3) { width: 22%; }
+    th:nth-child(4), td:nth-child(4) { width: 19%; }
+    th:nth-child(5), td:nth-child(5) { width: 24%; }
+    .class-name {
+      color: var(--ink-strong);
+      font-size: .9rem;
+      font-weight: 860;
+      white-space: normal;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .status {
+      display: inline-block;
+      margin-bottom: 7px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .status.blue { background: var(--blue-soft); color: var(--ocean); }
+    .status.gold { background: var(--amber-soft); color: var(--amber); }
+    .table-mobile-hint {
+      display: none;
+      color: var(--ocean);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin: 28px 0 38px;
+      padding: 0;
+      list-style: none;
+      counter-reset: check;
+    }
+    .checklist li {
+      position: relative;
+      margin: 0;
+      padding: 19px 20px 19px 62px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--surface);
+      counter-increment: check;
+    }
+    .checklist li::before {
+      content: counter(check, decimal-leading-zero);
+      position: absolute;
+      left: 18px;
+      top: 19px;
+      color: var(--teal);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+    }
+    .checklist strong { display: block; }
+    .checklist span { color: var(--muted); font-size: .88rem; }
+
+    .answer-grid {
+      display: grid;
+      gap: 12px;
+      margin: 28px 0 36px;
+    }
+    .answer-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 140px;
+      gap: 20px;
+      align-items: center;
+      padding: 19px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .answer-row strong { line-height: 1.5; }
+    .verdict {
+      justify-self: end;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 900;
+      text-align: center;
+    }
+    .verdict.caution { background: var(--amber-soft); color: var(--amber); }
+    .verdict.no { background: var(--red-soft); color: var(--red); }
+
+    .faq { margin-top: 26px; }
+    details {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    details:first-child { border-radius: var(--radius-md) var(--radius-md) 0 0; }
+    details:last-child { border-bottom: 0; border-radius: 0 0 var(--radius-md) var(--radius-md); }
+    summary {
+      position: relative;
+      padding: 19px 48px 19px 20px;
+      color: var(--ink-strong);
+      font-weight: 780;
+      cursor: pointer;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal);
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+    details[open] summary::after { content: "−"; }
+    details .faq-body { padding: 0 20px 20px; color: var(--muted); font-size: .91rem; }
+    details .faq-body p:last-child { margin-bottom: 0; }
+
+    .references {
+      margin: 30px 0 0;
+      padding: 22px 24px 22px 44px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      font-size: .8rem;
+      line-height: 1.62;
+    }
+    .references li { padding-left: 5px; }
+    .source-type {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: var(--blue-soft);
+      color: var(--ocean);
+      font-size: .66rem;
+      font-weight: 850;
+      vertical-align: .08em;
+    }
+    .source-type.media { background: var(--amber-soft); color: var(--amber); }
+    sup.cite a {
+      padding: 0 2px;
+      color: var(--ocean);
+      font-size: .72em;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .author-card {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 58px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .author-avatar {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 850;
+    }
+    .author-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+    .author-card p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+    .footer {
+      padding: 34px 16px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      text-align: center;
+      font-size: .76rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 54px 0 48px;
+      }
+      .hero-visual { min-height: 300px; }
+      .visual-card { max-width: 350px; }
+      .page-shell {
+        display: block;
+        width: min(var(--max), calc(100% - 24px));
+        padding-top: 32px;
+      }
+      .toc { display: none; }
+      article { width: 100%; margin-inline: auto; }
+      .mobile-toc {
+        display: block;
+        width: min(var(--article), 100%);
+        margin: 0 auto 28px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface);
+      }
+      .mobile-toc summary { padding: 15px 48px 15px 18px; }
+      .mobile-toc nav { padding: 0 20px 16px; }
+      .mobile-toc ol { margin: 0; padding-left: 1.15rem; font-size: .86rem; }
+      .stack { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .table-mobile-hint { display: none; }
+      .table-wrap { overflow-x: hidden; }
+      .table-wrap table {
+        min-width: 0;
+        table-layout: fixed;
+        font-size: .71rem;
+        line-height: 1.42;
+      }
+      .table-wrap caption { padding: 11px 10px; font-size: .7rem; }
+      .table-wrap th,
+      .table-wrap td {
+        padding: 10px 8px;
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+      .table-wrap th { font-size: .68rem; letter-spacing: 0; }
+      .table-wrap th:nth-child(1), .table-wrap td:nth-child(1) {
+        width: 11%;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+      .table-wrap th:nth-child(2), .table-wrap td:nth-child(2) { width: 22%; }
+      .table-wrap th:nth-child(3), .table-wrap td:nth-child(3) { width: 22%; }
+      .table-wrap th:nth-child(4), .table-wrap td:nth-child(4) { width: 20%; }
+      .table-wrap th:nth-child(5), .table-wrap td:nth-child(5) { width: 25%; }
+      .table-wrap .class-name {
+        font-size: .77rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+      .table-wrap .status {
+        max-width: 100%;
+        padding: 3px 5px;
+        font-size: .62rem;
+        line-height: 1.25;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      .hero-inner, .page-shell { width: min(100% - 24px, var(--max)); }
+      .hero-inner { gap: 24px; padding: 44px 0 38px; }
+      .hero h1 { font-size: clamp(2.15rem, 11vw, 3.5rem); }
+      .hero-visual { min-height: 270px; }
+      .visual-card { width: 290px; }
+      .drone-icon { width: 105px; }
+      .takeaway-grid, .compare-grid, .tech-grid, .limits-grid { grid-template-columns: 1fr; }
+      .value-grid { grid-template-columns: 1fr; }
+      .stack { grid-template-columns: 1fr; gap: 24px; }
+      .stack-item { min-height: auto; padding: 15px; position: relative; }
+      .stack-item:not(:last-child)::after {
+        content: "↓";
+        position: absolute;
+        left: 50%;
+        bottom: -22px;
+        transform: translateX(-50%);
+        color: var(--blue);
+        font-size: 1.05rem;
+        font-weight: 900;
+      }
+      .answer-row { grid-template-columns: 1fr; gap: 10px; }
+      .verdict { justify-self: start; }
+      .author-card { grid-template-columns: 1fr; text-align: center; }
+      .author-avatar { margin-inline: auto; }
+      article h2 { margin-top: 54px; }
+      .table-wrap { overflow-x: auto; }
+      .table-wrap table {
+        min-width: 780px;
+        table-layout: auto;
+        font-size: .78rem;
+      }
+      .table-wrap th,
+      .table-wrap td { width: auto !important; padding: 13px 12px; }
+      .table-mobile-hint {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        margin: 12px 14px 8px;
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        box-shadow: var(--shadow-sm);
+      }
+      .table-wrap th:first-child,
+      .table-wrap td:first-child {
+        position: sticky;
+        left: 0;
+        width: 1%;
+        max-width: 4.75rem;
+        padding-left: 10px;
+        padding-right: 8px;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+      .table-wrap th:first-child { z-index: 4; background: var(--navy); }
+      .table-wrap td:first-child {
+        z-index: 1;
+        background: var(--surface);
+        box-shadow: 8px 0 14px rgba(8, 35, 55, .06);
+      }
+      .table-wrap .class-name {
+        display: inline-block;
+        max-width: 4.5rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+
+      .mobile-guide { display: block; }
+      .mobile-guide-toggle {
+        position: fixed;
+        right: auto;
+        bottom: calc(14px + env(safe-area-inset-bottom));
+        left: 14px;
+        z-index: 1002;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        min-height: 48px;
+        padding: 9px 13px 9px 11px;
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 999px;
+        background: var(--navy);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(8, 35, 55, .3);
+        font: inherit;
+        font-size: .82rem;
+        font-weight: 800;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(18px);
+        transition: opacity .22s ease, transform .22s ease, background .2s ease;
+      }
+      .mobile-guide.is-visible .mobile-guide-toggle {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .mobile-guide-toggle:focus-visible,
+      .mobile-guide-close:focus-visible,
+      .mobile-guide-panel a:focus-visible {
+        outline: 3px solid rgba(29, 166, 168, .38);
+        outline-offset: 3px;
+      }
+      .mobile-guide-icon {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.12);
+        font-size: 1rem;
+        line-height: 1;
+      }
+      .mobile-guide-current {
+        padding-left: 8px;
+        border-left: 1px solid rgba(255,255,255,.24);
+        color: #9ce0df;
+        font-size: .7rem;
+        font-weight: 750;
+      }
+      .mobile-guide-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(3, 18, 30, .56);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .24s ease;
+      }
+      .mobile-guide-panel {
+        position: fixed;
+        right: 10px;
+        bottom: calc(10px + env(safe-area-inset-bottom));
+        left: 10px;
+        z-index: 1001;
+        max-height: min(72vh, 590px);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        background: var(--surface);
+        box-shadow: 0 24px 70px rgba(3, 18, 30, .32);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(calc(100% + 32px));
+        transition: opacity .24s ease, transform .28s cubic-bezier(.2,.8,.2,1);
+      }
+      .mobile-guide.is-open .mobile-guide-overlay {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .mobile-guide.is-open .mobile-guide-panel {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .mobile-guide.is-open .mobile-guide-toggle { opacity: 0; pointer-events: none; }
+      .mobile-guide-panel::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 4px;
+        margin: 9px auto 2px;
+        border-radius: 999px;
+        background: var(--border);
+      }
+      .mobile-guide-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 10px 16px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      .mobile-guide-head h2 {
+        margin: 0;
+        font-size: 1rem;
+      }
+      .mobile-guide-head p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: .72rem;
+      }
+      .mobile-guide-close {
+        flex: 0 0 auto;
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--surface-2);
+        color: var(--ink-strong);
+        font: inherit;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .mobile-guide-panel nav {
+        max-height: calc(min(72vh, 590px) - 78px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 8px 10px 16px;
+      }
+      .mobile-guide-panel ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: mobile-guide;
+      }
+      .mobile-guide-panel li { counter-increment: mobile-guide; }
+      .mobile-guide-panel a {
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        gap: 8px;
+        align-items: center;
+        padding: 11px 10px;
+        border-radius: 11px;
+        color: var(--ink);
+        text-decoration: none;
+        font-size: .86rem;
+        line-height: 1.35;
+      }
+      .mobile-guide-panel a::before {
+        content: counter(mobile-guide, decimal-leading-zero);
+        color: var(--teal);
+        font-size: .68rem;
+        font-weight: 850;
+        letter-spacing: .05em;
+      }
+      .mobile-guide-panel a.active {
+        background: var(--blue-soft);
+        color: var(--ocean);
+        font-weight: 800;
+      }
+      body.mobile-guide-open { overflow: hidden; }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --surface: #fff;
+        --surface-2: #f6f6f6;
+        --ink: #111;
+        --ink-strong: #000;
+        --muted: #444;
+        --border: #ccc;
+      }
+      body { font-size: 11pt; line-height: 1.55; }
+      .reading-progress, .toc, .mobile-toc, .mobile-guide, .hero-visual, .note-site-bar, .article-share, .share-band, footer.site-footer { display: none !important; }
+      .hero { background: #fff; color: #111; border-bottom: 2px solid #111; }
+      .hero-inner { display: block; padding: 32px 0; }
+      .hero h1, .hero-subtitle, .hero-meta { color: #111; }
+      .hero-tag { color: #111; border-color: #aaa; }
+      .page-shell { display: block; padding-top: 25px; }
+      article { width: 100%; max-width: none; }
+      a { color: inherit; text-decoration: none; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; overflow-wrap: anywhere; }
+      .takeaway, .compare-card, .tech-card, .scenario, .table-wrap, .author-card { box-shadow: none; break-inside: avoid; }
+      h2, h3 { break-after: avoid; }
+      table { min-width: 0; font-size: 7.5pt; }
+      th { position: static; background: #eee; color: #111; }
+      .footer, footer.site-footer { display: none !important; }
+    }
+
+
+    /* Site chrome: share + footer */
+    .hero .article-share--hero { margin-top: 22px; }
+    .hero .article-share__label {
+      color: rgba(231, 245, 247, .82);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .share-band {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 0;
+    }
+    .share-band .article-share--end {
+      margin: 0;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .share-band .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--muted);
+    }
+    footer.site-footer {
+      padding: 38px 0 46px;
+      color: rgba(255,255,255,.78);
+      background: #041b2d;
+      margin-top: 34px;
+      text-align: left;
+      border-top: 0;
+    }
+    footer.site-footer .site-footer-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+    footer.site-footer strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 6px;
+    }
+    footer.site-footer .small {
+      font-size: 13px;
+      color: rgba(255,255,255,.62);
+    }
+    footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: rgba(255,255,255,.62);
+      max-width: 760px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    footer.site-footer .disclaimer strong {
+      color: rgba(255,255,255,.82);
+      font-weight: 700;
+    }
+    footer.site-footer a { color: #8ff7f1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "無人機能取代船級社驗船師嗎？船東與船舶管理者必懂的 RIT 遠端檢查技術",
+    "alternativeHeadline": "無人機能取代船級社驗船師嗎？船東與操作人員應了解的遠端檢查技術",
+    "description": "從船東、船舶管理者與操作人員的角度，解析遠端檢查技術（RIT）如何改變近觀檢驗、成本、安全、資料追溯與船級社驗船流程。",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-08-10",
+    "dateModified": "2026-08-10",
+    "image": "https://reayhuang.com/assets/images/maritime/can-drones-replace-ship-surveyors/can-drones-replace-ship-surveyors-link-preview.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Reay Huang",
+      "url": "https://reayhuang.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Reay Huang Maritime Notes",
+      "url": "https://reayhuang.com/"
+    },
+    "mainEntityOfPage": "https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.html",
+    "keywords": [
+      "Remote Inspection Techniques",
+      "RIT",
+      "Drone Inspection",
+      "Ship Survey",
+      "Classification Society",
+      "Close-up Survey",
+      "Ultrasonic Thickness Measurement"
+    ],
+    "proficiencyLevel": "Intermediate",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "船東、船舶管理者、機務主管、船長、輪機長與船舶操作人員"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "RIT 與遠端驗船有什麼不同？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "遠端驗船著重驗船師是否實際登輪；RIT 著重驗船師如何取得難以接近位置的檢驗證據。使用 RIT 時，驗船師仍可能在船上見證檢查。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "無人機可以完全取代近觀檢驗嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在符合船級社、船旗國、檢驗範圍、影像品質及服務供應商資格等要求時，RIT 可作為部分近觀檢驗的替代接近方式；如發現裂紋、異常變形、嚴重鏽蝕或證據不足，仍可能需要人工近觀、UT 或其他 NDT。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "船東導入 RIT 最先該做什麼？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "先在檢驗規劃階段向所屬船級社確認適用範圍、船旗國要求、認可服務供應商、檢查計畫、資料追溯方式，以及發現異常後的傳統接近或 NDT 備援方案。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">跳至文章內容</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="can-drones-replace-ship-surveyors.en.html" lang="en" hreflang="en">EN</a>
+      <a href="can-drones-replace-ship-surveyors.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">海事科技 · 船舶檢驗</p>
+        <h1>無人機能取代<br>船級社驗船師嗎？</h1>
+        <p class="article-meta">
+          <span>📅 更新：2026-08-10</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>⏱ 閱讀約 18 分鐘</span>
+          <span class="article-meta__sep" aria-hidden="true">·</span>
+          <span>🏷 RIT / 無人機 / 遠端檢查</span>
+        </p>
+        <p class="hero-subtitle">
+          過去，船上許多難以接近的區域，往往必須投入大量時間、人力與成本搭設鷹架，
+          才能讓驗船師靠近檢查。如今，隨著無人機與遠端檢查技術（RIT）日益成熟，這些傳統接近方式是否可能被重新改寫？
+        </p>
+        <div class="hero-tags" aria-label="文章標籤">
+          <span class="hero-tag">遠端檢查技術（RIT）</span>
+          <span class="hero-tag">無人機／ROV／爬壁機器人</span>
+          <span class="hero-tag">近觀檢驗</span>
+          <span class="hero-tag">船級檢驗</span>
+        </div>
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.html"
+          data-share-title="無人機能取代船級社驗船師嗎？｜Reay's Note"
+          data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;無人機能取代船級社驗船師嗎？｜Reay's Note&#10;https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-hero-label">分享此篇</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-card">
+          <picture>
+            <source
+              srcset="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-human-technology-collaboration-square-v2.webp"
+              type="image/webp"
+            >
+            <img
+              class="hero-image"
+              src="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-human-technology-collaboration-square-v2.jpg"
+              width="1254"
+              height="1254"
+              decoding="async"
+              fetchpriority="high"
+              alt="穿著白色連體工作服的操作工程師，在散裝船貨艙內透過平板監看無人機檢查"
+            >
+          </picture>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <details class="mobile-toc">
+    <summary>開啟本文目錄</summary>
+    <nav aria-label="行動版文章目錄">
+      <ol>
+        <li><a href="#why-now">為什麼現在值得關注？</a></li>
+        <li><a href="#rit-vs-remote">RIT 不等於遠端驗船</a></li>
+        <li><a href="#what-replaced">無人機真正取代什麼？</a></li>
+        <li><a href="#capabilities">RIT 現在能做什麼？</a></li>
+        <li><a href="#crack-scenario">發現疑似裂紋之後</a></li>
+        <li><a href="#inspection-funnel">RIT 是檢查漏斗</a></li>
+        <li><a href="#owner-value">船東真正省在哪裡？</a></li>
+        <li><a href="#limitations">不能忽略的限制</a></li>
+        <li><a href="#data">最大的挑戰是資料</a></li>
+        <li><a href="#class-status">主要船級社做到哪裡？</a></li>
+        <li><a href="#readiness">管理者準備清單</a></li>
+        <li><a href="#conclusion">最後答案</a></li>
+      </ol>
+    </nav>
+  </details>
+
+  <div class="mobile-guide" id="mobileGuide">
+    <button
+      class="mobile-guide-toggle"
+      id="mobileGuideToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobileGuidePanel"
+    >
+      <span class="mobile-guide-icon" aria-hidden="true">☰</span>
+      <span>文章導覽</span>
+      <span class="mobile-guide-current" id="mobileGuideCurrent">第 1 章</span>
+    </button>
+    <div class="mobile-guide-overlay" id="mobileGuideOverlay" aria-hidden="true"></div>
+    <section
+      class="mobile-guide-panel"
+      id="mobileGuidePanel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobileGuideTitle"
+      aria-hidden="true"
+      inert
+    >
+      <div class="mobile-guide-head">
+        <div>
+          <h2 id="mobileGuideTitle">文章章節導覽</h2>
+          <p>預覽章節並快速跳轉</p>
+        </div>
+        <button class="mobile-guide-close" id="mobileGuideClose" type="button" aria-label="關閉文章導覽">×</button>
+      </div>
+      <nav aria-label="浮動文章章節導覽">
+        <ol>
+          <li><a href="#why-now">為什麼現在值得關注？</a></li>
+          <li><a href="#rit-vs-remote">RIT 不等於遠端驗船</a></li>
+          <li><a href="#what-replaced">無人機真正取代什麼？</a></li>
+          <li><a href="#capabilities">RIT 現在能做什麼？</a></li>
+          <li><a href="#crack-scenario">發現疑似裂紋之後</a></li>
+          <li><a href="#inspection-funnel">RIT 是檢查漏斗</a></li>
+          <li><a href="#owner-value">船東真正省在哪裡？</a></li>
+          <li><a href="#limitations">不能忽略的限制</a></li>
+          <li><a href="#data">最大的挑戰是資料</a></li>
+          <li><a href="#class-status">主要船級社做到哪裡？</a></li>
+          <li><a href="#readiness">管理者準備清單</a></li>
+          <li><a href="#conclusion">最後答案</a></li>
+        </ol>
+      </nav>
+    </section>
+  </div>
+
+  <main class="page-shell" id="main-content">
+    <aside class="toc" aria-label="文章目錄">
+      <h2>文章目錄</h2>
+      <ol>
+        <li><a href="#why-now">為什麼現在值得關注？</a></li>
+        <li><a href="#rit-vs-remote">RIT 不等於遠端驗船</a></li>
+        <li><a href="#what-replaced">無人機真正取代什麼？</a></li>
+        <li><a href="#capabilities">RIT 現在能做什麼？</a></li>
+        <li><a href="#crack-scenario">發現疑似裂紋之後</a></li>
+        <li><a href="#inspection-funnel">RIT 是檢查漏斗</a></li>
+        <li><a href="#owner-value">船東真正省在哪裡？</a></li>
+        <li><a href="#limitations">不能忽略的限制</a></li>
+        <li><a href="#data">最大的挑戰是資料</a></li>
+        <li><a href="#class-status">主要船級社做到哪裡？</a></li>
+        <li><a href="#readiness">管理者準備清單</a></li>
+        <li><a href="#conclusion">最後答案</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <p class="lede">
+        一艘散裝船即將進行特別檢驗。依照傳統方式，為了看清貨艙上方的肋骨、肘板與連接處，
+        船東可能需要安排鷹架、高空作業車、繩索作業，或讓人員進入具有高處與封閉空間風險的區域。
+        現在，如果一台無人機可以先把影像送到驗船師面前，檢驗流程會改變多少？
+      </p>
+      <p class="dek">
+        本文不是無人機產品介紹，而是從船舶管理與操作決策出發，回答五個最實際的問題：
+        RIT 能替代什麼、船東能省什麼、發現缺陷後怎麼辦、主要船級社目前做到哪裡，以及下一次檢驗前該如何準備。
+      </p>
+
+      <section class="summary-panel" aria-labelledby="executive-summary">
+        <span class="label">重點摘要</span>
+        <h2 id="executive-summary">結論先行</h2>
+        <p>
+          <strong>無人機不會直接取代驗船師。</strong>它首先取代的是部分實體接近方式，例如為了檢查而搭設的鷹架、漂筏、高空作業車、繩索作業或重複進艙。
+          最終是否接受檢驗證據，仍取決於適用規則、影像與量測品質、位置追溯、認可服務供應商，以及現場驗船師的專業判斷。
+        </p>
+      </section>
+
+      <div class="takeaway-grid" aria-label="四項核心重點">
+        <section class="takeaway">
+          <span class="num">01</span>
+          <h3>真正被改變的是實體接近方式</h3>
+          <p>RIT 改變驗船師取得證據的方法，而不是取消分類、法定要求或專業責任。</p>
+        </section>
+        <section class="takeaway">
+          <span class="num">02</span>
+          <h3>最大價值是目標式檢查</h3>
+          <p>先用 RIT 篩查大範圍，再把人工近觀、UT 與 NDT 集中在真正可疑的位置。</p>
+        </section>
+        <section class="takeaway">
+          <span class="num">03</span>
+          <h3>最大限制是證據品質</h3>
+          <p>看見鏽蝕不等於量到剩餘厚度；拍到異常也不等於完成評估與接受。</p>
+        </section>
+        <section class="takeaway">
+          <span class="num">04</span>
+          <h3>下一個戰場是資料追溯性</h3>
+          <p>未來競爭不只是誰的無人機飛得好，而是誰能產生可定位、可重複、可稽核的資料。</p>
+        </section>
+      </div>
+
+      <section id="why-now">
+        <h2>1. 為什麼現在值得船舶管理者關注？</h2>
+        <p>
+          RIT 並不是 2026 年才出現。IACS 早已透過 Recommendation 42 提供使用遠端檢查技術進行檢驗的業界指引，
+          各大船級社也在 2018–2019 年前後建立規則、服務供應商認可與實際執行程序。<sup class="cite"><a href="#ref-4">[4]</a></sup>
+        </p>
+        <p>
+          真正的重要轉折，是 IMO 海事安全委員會 MSC 111 在 2026 年 5 月採納 2011 ESP Code 修正，
+          為現有散裝船與油輪的近觀檢驗導入 RIT 規定，並核准相關指引；修正預定於 <strong>2028 年 1 月 1 日</strong>生效。<sup class="cite"><a href="#ref-1">[1]</a></sup>
+          這使船級社既有的技術實務，開始得到更清楚且一致的 IMO ESP 法規框架。
+        </p>
+
+        <div class="timeline" aria-label="RIT 法規與執行時間線">
+          <section class="timeline-item">
+            <span class="timeline-year">2016</span>
+            <h3>IACS Recommendation 42 Rev.2</h3>
+            <p>形成 RIT 用於檢驗的重要業界基準，涵蓋可接受性、規劃、設備及結果要求。</p>
+          </section>
+          <section class="timeline-item">
+            <span class="timeline-year">2018–2019</span>
+            <h3>主要船級社制度化</h3>
+            <p>ClassNK 發布無人機驗船指引；LR、DNV 等建立 RIT 服務供應商認可類別與程序。</p>
+          </section>
+          <section class="timeline-item">
+            <span class="timeline-year">2025</span>
+            <h3>MSC 110 核准 ESP Code 修正草案</h3>
+            <p>IMO 明確說明 RIT 可運用無人機、ROV 與爬壁機器人，支援近觀檢驗與 UT。<sup class="cite"><a href="#ref-2">[2]</a></sup></p>
+          </section>
+          <section class="timeline-item">
+            <span class="timeline-year">2026</span>
+            <h3>MSC 111 正式採納</h3>
+            <p>ESP Code 的 RIT 條文與相關指南完成採納／核准，法規生效日訂於 2028 年。</p>
+          </section>
+          <section class="timeline-item">
+            <span class="timeline-year">2028</span>
+            <h3>新框架生效</h3>
+            <p>對適用 ESP Code 的既有散裝船與油輪，RIT 進入更明確的國際制度架構。</p>
+          </section>
+        </div>
+
+        <div class="manager-note">
+          <span class="callout-title">對管理者的意義</span>
+          2026–2028 年不是「等法規生效再說」的空窗期，而是建立供應商、檢驗計畫、艙間圖資、資料管理與備援接近方案的準備期。
+        </div>
+      </section>
+
+      <section id="rit-vs-remote">
+        <h2>2. 先釐清：RIT 不等於遠端驗船</h2>
+        <p>
+          這兩個詞經常被混用，但管理與責任意義不同。ABS 的公開說明將差別講得很清楚：
+          遠端驗船（Remote Survey）關注驗船師是否實際在場；RIT 則關注如何讓驗船師取得難以接近區域的檢驗資訊。<sup class="cite"><a href="#ref-6">[6]</a></sup>
+        </p>
+
+        <div class="compare-grid">
+          <section class="compare-card remote">
+            <h3>遠端驗船（Remote Survey）</h3>
+            <p><strong>核心問題：</strong>驗船師是否實際登輪？</p>
+            <ul>
+              <li>驗船師可能位於岸上</li>
+              <li>透過直播、照片、影片、文件或數位紀錄驗證</li>
+              <li>僅適用特定檢驗項目，通常逐案審查</li>
+            </ul>
+          </section>
+          <section class="compare-card rit">
+            <h3>RIT｜遠端檢查技術</h3>
+            <p><strong>核心問題：</strong>驗船師如何接近檢查位置？</p>
+            <ul>
+              <li>驗船師仍可能在船上見證</li>
+              <li>由無人機、ROV、爬壁機器人或攀爬機器人取得證據</li>
+              <li>重點是替代部分直接物理接近方式</li>
+            </ul>
+          </section>
+        </div>
+
+        <blockquote class="quote">
+          遠端檢查並不一定把驗船師移除；它改變的是驗船師如何取得證據。
+          <small>RIT 的核心不是「遠端看」，而是「證據是否足以滿足原本的檢驗要求」。</small>
+        </blockquote>
+      </section>
+
+      <section id="what-replaced">
+        <h2>3. 所以，無人機真正能取代什麼？</h2>
+        <p>
+          標題問「無人機能不能取代驗船師」，但更精確的問題是：
+          <strong>無人機、ROV 或爬壁機器人能不能取代部分為了取得證據而安排的昂貴與高風險接近方式？</strong>
+        </p>
+        <p>在適合的檢驗範圍內，可能被減少或替代的包括：</p>
+        <ul>
+          <li>僅為視覺檢查而搭設的部分鷹架與作業平台；</li>
+          <li>部分高空作業車、漂筏與繩索作業；</li>
+          <li>不必要的高處作業與重複進入封閉艙間；</li>
+          <li>部分水下檢查中的潛水員暴露；</li>
+          <li>部分高處或難以接近位置的 UT 作業。</li>
+        </ul>
+
+        <div class="warning">
+          <span class="callout-title">不要把「完全不再需要鷹架」當作保證</span>
+          如果後續需要修理、詳細 NDT、確認裂紋、量測變形，或 RIT 證據不足，鷹架與人工接近仍可能不可避免。
+          更準確的說法是：<strong>RIT 可以減少純粹為了檢查而設置的臨時接近設備。</strong>
+        </div>
+      </section>
+
+      <section id="capabilities">
+        <h2>4. RIT 現在實際能做什麼？</h2>
+        <p>
+          RIT 不是單一設備，而是「平台＋感測器＋程序＋人員資格＋驗船師接受」的組合。
+          ABS 公開列出的適用任務包括一般目視檢查、近觀目視檢查與超音波測厚（UT）；
+          DNV、LR、KR 等也建立相應的服務供應商與見證要求。<sup class="cite"><a href="#ref-5">[5]</a></sup><sup class="cite"><a href="#ref-6">[6]</a></sup><sup class="cite"><a href="#ref-7">[7]</a></sup>
+        </p>
+
+        <div class="tech-grid">
+          <section class="tech-card">
+            <div class="tech-icon">UAV</div>
+            <h3>無人機（Drone／UAV）</h3>
+            <p>適合貨艙、壓載艙、高處肋骨、肘板、強肋骨、甲板下方與難以接近角落的視覺與近觀檢查。</p>
+          </section>
+          <section class="tech-card">
+            <div class="tech-icon">ROV</div>
+            <h3>水下遙控載具（ROV）</h3>
+            <p>適合水下船殼、舵、螺槳與海水箱等區域；是否可取代特定潛水或塢內項目，仍依規則與檢驗範圍決定。</p>
+          </section>
+          <section class="tech-card">
+            <div class="tech-icon">CR</div>
+            <h3>爬壁／攀爬機器人</h3>
+            <p>可沿鋼板或結構表面移動，搭載攝影、磁輪或 UT 探頭，支援高處或連續厚度量測。</p>
+          </section>
+          <section class="tech-card">
+            <div class="tech-icon">3D</div>
+            <h3>光達／SLAM／3D 建模</h3>
+            <p>協助定位飛行路徑與異常位置，把影像、UT 讀值和結構模型連結，改善資料追溯與後續比較。</p>
+          </section>
+        </div>
+
+        <div class="note">
+          <span class="callout-title">最重要的技術分界</span>
+          <strong>看到鏽蝕，不等於知道剩餘板厚。</strong>目視證據、UT 量測、NDT 確認與結構評估是不同層級的證據。
+        </div>
+      </section>
+
+      <section id="crack-scenario">
+        <h2>5. 實務情境：如果無人機發現疑似裂紋，接下來呢？</h2>
+        <p>
+          想像一艘散裝船正在進行特別檢驗。無人機飛到第 3 貨艙左舷的上部肘板，
+          畫面中出現一條疑似線性指示。這時候，檢驗並沒有結束，真正的判斷才剛開始。
+        </p>
+
+        <figure class="article-figure">
+          <picture>
+            <source
+              srcset="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-suspected-crack-v3.webp"
+              type="image/webp"
+            >
+            <img
+              src="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-suspected-crack-v3.jpg"
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+              alt="檢查無人機在散裝船貨艙內照亮上部肘板與肋骨連接處的一條疑似線性指示"
+            >
+          </picture>
+          <figcaption>
+            無人機影像可以協助定位疑似異常，但線性指示也可能來自陰影、鏽水痕或塗層裂紋；
+            是否為結構裂紋，仍須改善視覺證據並視需要安排人工近觀與 NDT。示意圖由 AI 生成。
+          </figcaption>
+        </figure>
+
+        <section class="scenario">
+          <div class="scenario-head">
+            <small>實務情境</small>
+            <h3>散裝船 · 特別檢驗 · 肋骨連接處疑似裂紋</h3>
+          </div>
+          <div class="scenario-body">
+            <ol class="steps">
+              <li>
+                <strong>確認精確位置</strong>
+                <span>第 3 貨艙、左舷、肋位編號、上部肘板、前／後側。沒有位置追溯，清楚影像的檢驗價值也會大幅下降。</span>
+              </li>
+              <li>
+                <strong>改善視覺證據</strong>
+                <span>要求更近距離、不同角度、額外照明、重新飛行、連續影片與比例參考。</span>
+              </li>
+              <li>
+                <strong>判斷是否能僅靠視覺定性</strong>
+                <span>排除陰影、鏽水痕、塗層裂紋、污物與真正結構裂紋之間的混淆。</span>
+              </li>
+              <li>
+                <strong>升級檢查</strong>
+                <span>依需要安排人工近觀、UT、MPI／PT、尺寸量測或其他 NDT。</span>
+              </li>
+              <li>
+                <strong>由驗船師作出分類判斷</strong>
+                <span>決定是否接受、要求修理、擴大檢查、追蹤監測，或提供傳統接近方式。</span>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <div class="logic-banner" aria-label="發現、評估、接受之間的差異">
+          <span>發現</span><span>評估</span><span>接受</span>
+        </div>
+
+        <p>
+          KR 2025 年 RIT 指引直接指出：RIT 是協助現場驗船師的工具；若驗船師對結果不滿意，仍可要求傳統方法，
+          而發現缺陷或鏽蝕後，也可能需要其他方式才能決定評估與修理範圍。<sup class="cite"><a href="#ref-13">[13]</a></sup>
+        </p>
+      </section>
+
+      <section id="inspection-funnel">
+        <h2>6. RIT 更適合被理解成「檢查漏斗」</h2>
+        <p>
+          對管理者而言，最有價值的思考方式不是「無人機取代全部人工檢查」，而是把檢驗設計成一個漏斗：
+          先用科技快速覆蓋大範圍，再逐步縮小到真正需要人工近觀與量測的位置。
+        </p>
+
+        <div class="funnel" aria-label="RIT 檢查漏斗">
+          <div class="funnel-step" style="--w:100%">大範圍船體結構</div>
+          <div class="funnel-arrow">↓</div>
+          <div class="funnel-step" style="--w:88%">無人機／ROV／爬壁機器人篩查</div>
+          <div class="funnel-arrow">↓</div>
+          <div class="funnel-step" style="--w:72%">辨識可疑區域</div>
+          <div class="funnel-arrow">↓</div>
+          <div class="funnel-step" style="--w:56%">目標式近觀／UT／NDT</div>
+          <div class="funnel-arrow">↓</div>
+          <div class="funnel-step" style="--w:40%">驗船師評估</div>
+        </div>
+
+        <blockquote class="quote">
+          RIT 最大的價值，未必是消除人工檢查，而是讓人工檢查更有目標。
+        </blockquote>
+      </section>
+
+      <section id="owner-value">
+        <h2>7. 船東真正能省在哪裡？</h2>
+        <p>
+          對船舶管理者或機務主管而言，RIT 的商業價值通常不是「買一台無人機」，
+          而是能否縮短準備、減少接近設備安排、降低人員風險，並減少因等待與反覆進場造成的營運干擾。
+          DNV 公開說明，RIT 可在符合條件下避免漂筏、高空作業車或鷹架，同時要求取得與傳統檢查相當的資料品質。<sup class="cite"><a href="#ref-5">[5]</a></sup>
+        </p>
+
+        <figure class="article-figure">
+          <picture>
+            <source
+              srcset="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-access-cost-drone.webp"
+              type="image/webp"
+            >
+            <img
+              src="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-access-cost-drone.jpg"
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+              alt="散裝船貨艙內保留部分鷹架，同時由檢查無人機沿著結構肋骨與肘板進行視覺檢查"
+            >
+          </picture>
+          <figcaption>
+            RIT 的價值不是保證完全取消鷹架，而是減少純粹為了取得視覺證據而搭設的臨時接近設備，
+            並把人工近觀集中在真正需要確認的位置。示意圖由 AI 生成。
+          </figcaption>
+        </figure>
+
+        <div class="value-grid">
+          <section class="value-card">
+            <h3>A. 接近成本</h3>
+            <p>鷹架、漂筏、高空作業車、繩索作業、臨時接近設備及其搭拆與協調成本。</p>
+          </section>
+          <section class="value-card">
+            <h3>B. 時間與營運干擾</h3>
+            <p>檢驗準備、等待、船廠排程、停航／停租（off-hire）風險及重複檢查所耗費的時間。</p>
+          </section>
+          <section class="value-card">
+            <h3>C. 安全風險暴露</h3>
+            <p>高處作業、封閉艙間、墜落物、濕滑環境、危險氣體與水下作業的人員暴露。</p>
+          </section>
+        </div>
+
+        <blockquote class="quote">
+          最大的節省可能不是來自無人機本身，而是來自那些不再需要為了「讓人靠近」而搭建的所有東西。
+        </blockquote>
+
+        <div class="warning">
+          <span class="callout-title">成本數據應避免過度行銷</span>
+          不同船型、艙間狀況、檢驗範圍、港口與船廠條件差異很大。除非引用特定個案研究，否則不宜直接宣稱「固定節省 40% 或 50%」。
+          管理者應比較的是整體檢驗方案，而不是單看無人機日費率。
+        </div>
+      </section>
+
+      <section id="limitations">
+        <h2>8. 無人機銷售簡報通常不會強調的限制</h2>
+        <p>
+          RIT 的風險不只來自飛行失敗，更來自「看起來有資料，但證據其實不足」。如果管理者只關注飛行速度與畫質，
+          可能忽略下列會直接影響檢驗證據採認的因素。
+        </p>
+
+        <div class="limits-grid">
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>照明與陰影</h3><p>鏽蝕、陰影、油污與疑似裂紋指示可能混淆；高解析度不代表照明與角度合格。</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>視覺死角</h3><p>肘板背面、扶強材連接處、複雜交界與遮蔽物後方可能無法完整覆蓋。</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>表面狀況</h3><p>厚鏽皮、泥、水、油、鹽結晶或未清潔表面，都可能讓影像無法實際評估結構。</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>危險區域</h3><p>電池、馬達與電子設備可能構成點火源；需考慮除氣（gas-free）、防爆（Ex）適用性與船上危險區域要求。</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>定位與覆蓋</h3><p>GPS 與磁羅經在鋼製封閉空間可能受干擾，必須證明飛行路徑與受檢結構沒有遺漏。</p></div>
+          </section>
+          <section class="limit">
+            <span class="mark">!</span>
+            <div><h3>量測落差</h3><p>視覺發現不等於板厚、裂紋深度或變形量測；必要時仍需 UT、NDT 或人工接近。</p></div>
+          </section>
+        </div>
+
+        <div class="manager-note">
+          <span class="callout-title">一個好的 RIT 計畫必須包含備援方案</span>
+          不要假設檢查一定找不到問題。計畫應預先說明：若發現可疑區域，如何提供追加飛行、人工近觀、UT／NDT、鷹架或其他接近方式。
+        </div>
+      </section>
+
+      <section id="data">
+        <h2>9. 最大的挑戰可能不是無人機，而是資料</h2>
+        <p>
+          一次艙間檢查可能產生數千張照片、數小時影片、LiDAR 點雲與大量 UT 讀值。
+          但只要無法回答「這筆資料來自哪一個肋位、哪一面、哪一個高度與哪一次檢驗」，資料量越大，管理難度反而越高。
+        </p>
+
+        <figure class="article-figure">
+          <picture>
+            <source
+              srcset="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-data-traceability.webp"
+              type="image/webp"
+            >
+            <img
+              src="../../assets/images/maritime/can-drones-replace-ship-surveyors/rit-data-traceability.jpg"
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+              alt="無人機檢查影像、貨艙 LiDAR 點雲與三維結構模型連結至同一個缺陷位置"
+            >
+          </picture>
+          <figcaption>
+            有價值的 RIT 資料必須能把原始影像、點雲與 3D 結構模型連回同一個肋位、構件與缺陷位置，
+            才能支援後續比較、稽核與驗船師判斷。示意圖由 AI 生成。
+          </figcaption>
+        </figure>
+
+        <p>未來可重複使用的 RIT 系統，應逐步整合：</p>
+        <div class="stack" aria-label="未來 RIT 資料技術堆疊">
+          <div class="stack-item">無人機／機器人</div>
+          <div class="stack-item">攝影機／UT</div>
+          <div class="stack-item">LiDAR／SLAM</div>
+          <div class="stack-item">3D 結構模型</div>
+          <div class="stack-item">缺陷定位</div>
+          <div class="stack-item">AI 輔助審查</div>
+          <div class="stack-item">驗船師確認</div>
+        </div>
+
+        <p>
+          BV 2025 年發布 NI693 RIT 指引，並在 2026 年公開擴展自有 RIT 中心與受訓驗船師網絡；
+          其公開技術方向也包括 LiDAR、AI 與 3D 檢查資料。<sup class="cite"><a href="#ref-8">[8]</a></sup><sup class="cite"><a href="#ref-9">[9]</a></sup>
+          這顯示下一階段的競爭，將從「飛得進去」走向「資料能否被定位、比較、稽核與轉化成資產完整性資訊」。
+        </p>
+
+        <blockquote class="quote">
+          未來真正重要的，不只是誰有最好的無人機，而是誰能建立最可靠、可追溯、可重複的檢查資料集。
+        </blockquote>
+      </section>
+
+      <section id="class-status">
+        <h2>10. 主要船級社對 RIT 的執行程度到哪裡？</h2>
+        <p>
+          以下不是官方排名，也不代表任何船級社對所有船型、船旗國與檢驗項目都會自動接受 RIT。
+          這是依據截至 2026 年 8 月可公開查證的規則／指引、認可服務供應商、案例與部署資訊，
+          所整理的「公開可見執行成熟度」。實際接受仍須由所屬船級社、船旗國、現場驗船師與適用範圍確認。
+        </p>
+
+        <div class="table-wrap" role="region" aria-label="主要船級社 RIT 執行成熟度比較表" tabindex="0">
+          <div class="table-mobile-hint" aria-hidden="true">↔ 左右滑動查看完整比較</div>
+          <table>
+            <caption>公開資料整理；「成熟度觀察」是作者依公開證據所作的實務判讀，並非船級社官方評級。</caption>
+            <thead>
+              <tr>
+                <th scope="col">船級社</th>
+                <th scope="col">公開制度／規則</th>
+                <th scope="col">公開執行跡象</th>
+                <th scope="col">成熟度觀察</th>
+                <th scope="col">管理者實務解讀</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="class-name">Bureau Veritas</span></td>
+                <td>NI693《Remote Inspection Techniques》於 2025 年發布，並與鋼船規則及服務供應商制度連結。<sup class="cite"><a href="#ref-8">[8]</a></sup></td>
+                <td>2026 年公布約 7 個 RIT 中心、15 名以上合格無人機驗船師，並規劃年底擴至 16 個中心、40 名以上；數據為 BV 自行公布。<sup class="cite"><a href="#ref-9">[9]</a></sup></td>
+                <td><span class="status">公開部署積極</span><br>呈現由第三方工具走向自有驗船師網絡、AI／LiDAR／3D 資料生態系。</td>
+                <td>對大型船隊而言，可詢問是否有鄰近 RIT 中心、適用船型專長、資料交付格式與 AI／3D 延伸服務。</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">DNV</span></td>
+                <td>自 2019 年建立認可服務供應商程序，允許無人機、攀爬機器人與 ROV 等作為近觀檢驗的替代接近方式。<sup class="cite"><a href="#ref-5">[5]</a></sup></td>
+                <td>公開說明現場驗船師可透過即時影像見證，且資料品質須與傳統檢查等效；2025 年指出散裝船的無人機近觀與 UT 應用逐漸增加。<sup class="cite"><a href="#ref-16">[16]</a></sup></td>
+                <td><span class="status">成熟營運</span><br>已進入制度化的替代檢驗流程，不再只是概念驗證。</td>
+                <td>提案時要明確交代供應商認可、即時影像、照明、解析度、檢驗範圍，以及 ESP／船旗國是否接受。</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">ABS</span></td>
+                <td>現行公開框架涵蓋一般目視、近觀目視、UT，以及 UAV、ROV、爬壁機器人等平台；資料須由 ABS 認可服務供應商提供。<sup class="cite"><a href="#ref-6">[6]</a></sup></td>
+                <td>要求船東與供應商提交檢查計畫，並依平台、搭載設備、資產類型與檢驗任務核對證書範圍。</td>
+                <td><span class="status">制度化程度高</span><br>設備、供應商、任務範圍與檢查計畫的品質保證鏈清楚。</td>
+                <td>不要只問供應商「是否獲得 ABS 認可」，還要核對證書是否涵蓋該平台、搭載設備、船型與具體檢驗任務。</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">Lloyd’s Register</span></td>
+                <td>自 2019 年設立 RIT 近觀檢驗服務供應商類別，涵蓋 UAV、無人機、機械臂、ROV、攀爬與爬壁機器人等。<sup class="cite"><a href="#ref-7">[7]</a></sup></td>
+                <td>若同時執行厚度量測，還需要相應的厚度量測服務供應商認可。</td>
+                <td><span class="status blue">成熟、逐案控制</span><br>制度已建立，實際採認強調檢驗範圍、供應商資格與驗船師判斷。</td>
+                <td>提出檢驗申請前，先向 LR 當地辦事處確認近觀檢驗與厚度量測的認可範圍，不要把兩種認可視為同一件事。</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">Korean Register</span></td>
+                <td>《2025 RIT 指引》明確規範認可供應商、檢驗計畫、風險評估、飛行計畫、資料審查、報告與備援方案。<sup class="cite"><a href="#ref-13">[13]</a></sup></td>
+                <td>2020 年已有無人機與爬壁機器人在無鷹架情況下，執行散裝船船體檢查與厚度量測的公開案例。<sup class="cite"><a href="#ref-14">[14]</a></sup></td>
+                <td><span class="status">技術指引完整</span><br>對作業流程、危險區域、影像品質與追加傳統檢查的條件寫得相當具體。</td>
+                <td>適合參照 KR 指引，反向建立船東的 RIT 申請清單與船上準備方案。</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">ClassNK</span></td>
+                <td>2018 年發布《Guidelines for Use of Drones in Class Surveys》，涵蓋適用範圍、安全操作與供應商要求。<sup class="cite"><a href="#ref-11">[11]</a></sup></td>
+                <td>現行認可供應商資料庫仍列有可使用 RIT 執行近觀檢驗，且證書有效的公司。<sup class="cite"><a href="#ref-12">[12]</a></sup></td>
+                <td><span class="status blue">制度成熟</span><br>規則與供應商制度可確認；公開資料較少揭露全船隊部署或 AI／3D 擴張規模。</td>
+                <td>適用日本與亞洲船隊時，可直接由 NK 供應商資料庫查核證書限制，並在檢驗規劃問卷中預先申報。</td>
+              </tr>
+              <tr>
+                <td><span class="class-name">RINA</span></td>
+                <td>已具備無人機遠端檢查與遠端驗船能力，但公開材料有時會同時涵蓋兩種概念，閱讀時需區分。</td>
+                <td>2020 年在 ESP 散裝船完成以無人機執行壓載艙與貨艙近觀檢驗，並搭配遠端法定／船級檢驗的公開案例。<sup class="cite"><a href="#ref-15">[15]</a></sup></td>
+                <td><span class="status gold">有實績，公開規模較有限</span><br>能力與案例可確認，但近期結構 RIT 網絡規模的公開資訊不如 BV 等明確。</td>
+                <td>提案時應先釐清是 RIT、遠端驗船，或兩者組合，並確認船旗國授權與船級符號／適用資格。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <span class="callout-title">整體判斷</span>
+          產業已經不再停留在「無人機能不能用於驗船」的階段。主要船級社普遍已具有規則或指引、認可供應商、檢驗計畫與驗船師接受機制。
+          現在真正競爭的是：<strong>有多少傳統接近流程可以安全地被替代，以及資料能否成為可重複使用的資產完整性紀錄。</strong>
+        </div>
+      </section>
+
+      <section id="readiness">
+        <h2>11. 船東與船舶管理者的 RIT 準備清單</h2>
+        <p>
+          管理者現在最重要的決策並不是「要不要買一台無人機」，而是下一次檢驗是否有適合 RIT 的範圍，
+          並能否在檢驗前把審查、供應商、圖資與備援方案準備好。
+        </p>
+
+        <ol class="checklist">
+          <li><strong>先向船級社確認：這個檢驗項目能否採認 RIT？</strong><span>確認船型、船齡、檢驗類型、近觀／總體／UT 範圍與已知缺陷。</span></li>
+          <li><strong>確認船旗國主管機關要求</strong><span>尤其是 ESP、法定檢驗或過渡期安排，不要假設船級社接受就等於船旗國自動接受。</span></li>
+          <li><strong>核對服務供應商的證書範圍</strong><span>確認平台、搭載設備、船型、UT／NDT 資格與有效期，而不是只看公司宣傳。</span></li>
+          <li><strong>準備可定位的結構圖資</strong><span>總布置圖、艙櫃圖、肋位編號、結構圖、危險區域圖與檢查路徑。</span></li>
+          <li><strong>定義證據標準</strong><span>解析度、照明、距離、角度、即時影像、錄影、比例參考、位置標記及資料交付格式。</span></li>
+          <li><strong>規劃危險區域與 HSE 管制</strong><span>除氣、點火源、電池、墜落物、碰撞、通信失效、起降區與其他同時作業。</span></li>
+          <li><strong>預先定義升級檢查條件</strong><span>看到疑似裂紋指示、嚴重鏽蝕、變形或影像不足時，何時改用近觀、UT、NDT 或鷹架。</span></li>
+          <li><strong>把資料納入長期資產管理</strong><span>要求肋位層級的資料追溯、命名規則、版本管理與下一次檢驗可比較的基準資料。</span></li>
+        </ol>
+
+        <div class="manager-note">
+          <span class="callout-title">最實際的一句話</span>
+          一份成熟的 RIT 提案，不只說「無人機怎麼飛」，還必須清楚回答：<strong>如果它發現問題，接下來要怎麼做？</strong>
+        </div>
+      </section>
+
+      <section id="conclusion">
+        <h2>12. 最後答案：無人機能取代船級社驗船師嗎？</h2>
+
+        <div class="answer-grid">
+          <div class="answer-row">
+            <strong>能否取代部分危險的實體接近方式？</strong>
+            <span class="verdict">可以，而且正在發生</span>
+          </div>
+          <div class="answer-row">
+            <strong>能否減少部分鷹架、漂筏、繩索或潛水作業？</strong>
+            <span class="verdict">適合的檢驗範圍可以</span>
+          </div>
+          <div class="answer-row">
+            <strong>能否執行近觀目視檢查，甚至 UT？</strong>
+            <span class="verdict caution">可以，但有條件</span>
+          </div>
+          <div class="answer-row">
+            <strong>能否取代驗船師的分類判斷與責任？</strong>
+            <span class="verdict no">不能</span>
+          </div>
+        </div>
+
+        <p>
+          RIT 正從「替代性科技」逐漸進入分類檢驗的正常工具箱。它最有可能改變的，不是驗船師是否存在，
+          而是驗船師是否仍需要單純為了取得證據，親自進入每一個危險、昂貴或難以接近的位置。
+        </p>
+
+        <blockquote class="quote">
+          未來的船舶檢驗，未必是一個沒有驗船師的世界；更可能是一個驗船師不再需要為了取得證據，而不必要地把自己置於危險位置的世界。
+        </blockquote>
+
+        <p>
+          因此，未來真正的競爭不會只是 <strong>無人機與人員</strong>，而是：
+          <strong>傳統實體接近式檢驗</strong>與<strong>資料驅動、目標明確、科技輔助的檢驗</strong>之間的競爭。
+          而在可預見的未來，驗船師判斷仍然會站在決策中心。
+        </p>
+      </section>
+
+      <section id="faq">
+        <h2>常見問題</h2>
+        <div class="faq">
+          <details>
+            <summary>船員可以自己拿無人機拍攝，再交給船級社採認嗎？</summary>
+            <div class="faq-body">
+              <p>不能只因為影像清楚就假設可以採認。通常仍需確認船級社是否接受、服務供應商是否獲認可、操作人員資格、檢查計畫、即時見證、位置追溯與資料完整性。不同檢驗項目與船旗國要求也可能不同。</p>
+            </div>
+          </details>
+          <details>
+            <summary>RIT 是否代表完全不用進入壓載艙或貨艙？</summary>
+            <div class="faq-body">
+              <p>不一定。RIT 可以減少人員進入或高處接近，但艙間準備、氣體檢測、起降與設備控制、追加檢查、UT／NDT、修理與確認仍可能需要人員進入。成熟方案強調減少「不必要」的暴露，而不是保證零進艙。</p>
+            </div>
+          </details>
+          <details>
+            <summary>無人機 UT 已經可以完全取代傳統測厚公司嗎？</summary>
+            <div class="faq-body">
+              <p>目前不宜作這種全面結論。無人機或爬壁機器人搭載 UT 已可在特定場景取得量測，但測點範圍、耦合品質、表面處理、校正、認可資格、代表性與規則要求仍需逐案確認；有些船級社還要求 RIT 與厚度量測分別具備對應的供應商認可。</p>
+            </div>
+          </details>
+          <details>
+            <summary>哪一家船級社的 RIT 最成熟？</summary>
+            <div class="faq-body">
+              <p>沒有適合所有情境的單一排名。BV 在 2026 年公開展示較積極的自有網絡與 AI／3D 整合；DNV、ABS、LR、KR、ClassNK 與 RINA 也已有制度或案例。對船東最重要的不是品牌排名，而是該船級社在你的船型、船旗國、檢驗範圍、地點與供應商條件下能否實際採認。</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="sources">
+        <h2>資料來源與延伸閱讀</h2>
+        <p>
+          本文以 IMO、IACS 與船級社官方資料為主，並以主流海事媒體補充公開案例與部署資訊。
+          資料核對日期為 2026 年 8 月 10 日。
+        </p>
+        <ol class="references">
+          <li id="ref-1"><span class="source-type">船級社／IMO 會議摘要</span><a href="https://www.dnv.com/news/2026/imo-mcs-111-new-mass-code-adopted/" target="_blank" rel="noopener noreferrer">DNV — IMO MSC 111: New MASS Code adopted</a>（含 ESP Code RIT 修正採納與 2028 生效資訊）。</li>
+          <li id="ref-2"><span class="source-type">IMO 官方</span><a href="https://www.imo.org/en/mediacentre/meetingsummaries/pages/msc-110th-session.aspx" target="_blank" rel="noopener noreferrer">IMO — Maritime Safety Committee, 110th session</a>（RIT、無人機、ROV、爬壁機器人、近觀檢驗與 UT）。</li>
+          <li id="ref-3"><span class="source-type">IMO 官方</span><a href="https://www.imo.org/en/mediacentre/meetingsummaries/pages/sdc-12.aspx" target="_blank" rel="noopener noreferrer">IMO — SDC 12 Meeting Summary</a>（ESP 檢驗的 RIT 指引）。</li>
+          <li id="ref-4"><span class="source-type">IACS 官方</span><a href="https://iacs.org.uk/resolutions/recommendations/41-60/rec-42-rev2-cln" target="_blank" rel="noopener noreferrer">IACS Recommendation 42 — Guidelines for Use of Remote Inspection Techniques for Surveys</a>。</li>
+          <li id="ref-5"><span class="source-type">DNV 官方</span><a href="https://www.dnv.com/news/2019/survey-by-remote-inspection-techniques-use-of-approved-service-suppliers-144572/" target="_blank" rel="noopener noreferrer">DNV — Survey by RIT: use of approved service suppliers</a>。</li>
+          <li id="ref-6"><span class="source-type">ABS 官方</span><a href="https://ww2.eagle.org/en/innovation-and-technology/technology-advancements/remote-inspection-techniques.html" target="_blank" rel="noopener noreferrer">ABS — Remote Inspection Techniques</a>（RIT 與遠端驗船的差異、一般目視檢查、近觀檢驗、UT、供應商與檢查計畫）。</li>
+          <li id="ref-7"><span class="source-type">LR 官方</span><a href="https://www.lr.org/en/knowledge/class-news/26-18/" target="_blank" rel="noopener noreferrer">Lloyd’s Register — Service Supplier category for close-up surveys using RIT</a>。</li>
+          <li id="ref-8"><span class="source-type">BV 官方</span><a href="https://marine-offshore.bureauveritas.com/ni693-remote-inspection-techniques" target="_blank" rel="noopener noreferrer">Bureau Veritas — NI693 Remote Inspection Techniques</a>。</li>
+          <li id="ref-9"><span class="source-type">BV 官方</span><a href="https://marine-offshore.bureauveritas.com/newsroom/bureau-veritas-showcases-next-generation-remote-inspection-posidonia-launch-athens-survey" target="_blank" rel="noopener noreferrer">Bureau Veritas — Athens RIT center and 2026 network expansion</a>。網絡與人數為 BV 自行公布之資料。</li>
+          <li id="ref-10"><span class="source-type media">業界媒體</span><a href="https://maritime-executive.com/index.php/corporate/bureau-veritas-showcases-next-generation-remote-inspection-at-posidonia" target="_blank" rel="noopener noreferrer">The Maritime Executive — BV next-generation remote inspection at Posidonia</a>（企業消息轉載／補充）。</li>
+          <li id="ref-11"><span class="source-type">ClassNK 官方</span><a href="https://www.classnk.or.jp/hp/en/hp_news.aspx?id=2800&amp;layout=1&amp;type=press_release" target="_blank" rel="noopener noreferrer">ClassNK — Guidelines for Use of Drones in Class Surveys</a>。</li>
+          <li id="ref-12"><span class="source-type">ClassNK 官方</span><a href="https://www.classnk.or.jp/appr_list/service_detail.aspx?id=75810&amp;lang=en" target="_blank" rel="noopener noreferrer">ClassNK — Approved Service Supplier: Close-up survey using RIT</a>（現行資料庫案例）。</li>
+          <li id="ref-13"><span class="source-type">KR 官方</span><a href="https://www.krs.co.kr/KRRules/KRRules2026/data/data_other/ENGLISH/Guidance%20for%20Remote%20Inspection%20Techniques_2025.pdf" target="_blank" rel="noopener noreferrer">Korean Register — Guidance for Remote Inspection Techniques 2025</a>。</li>
+          <li id="ref-14"><span class="source-type media">業界媒體</span><a href="https://www.seatrade-maritime.com/regulations/kr-conducts-first-drone-and-crawler-hull-survey-without-scaffolds" target="_blank" rel="noopener noreferrer">Seatrade Maritime — KR drone and crawler hull survey without scaffolds</a>。</li>
+          <li id="ref-15"><span class="source-type">RINA 官方</span><a href="https://www.rina.org/en/media/press/2020/06/10/first-remote-surveys" target="_blank" rel="noopener noreferrer">RINA — Statutory and class surveys using remote technologies on an ESP bulk carrier</a>。</li>
+          <li id="ref-16"><span class="source-type">DNV 官方</span><a href="https://www.dnv.com/expert-story/maritime-impact/how-new-rules-and-tools-are-reshaping-bulk-carrier-safety-and-efficiency/" target="_blank" rel="noopener noreferrer">DNV — How new rules and tools are reshaping bulk carrier safety and efficiency</a>（2025，無人機近觀與 UT 應用趨勢）。</li>
+        </ol>
+      </section>
+
+      <section class="author-card" aria-label="作者資訊">
+        <div class="author-avatar" aria-hidden="true">RH</div>
+        <div>
+          <h3>Reay Huang</h3>
+          <p>海事工程、船級檢驗與船舶管理實務筆記。文章聚焦法規如何轉化為現場決策，而不只停留在規則摘要。</p>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.html"
+      data-share-title="無人機能取代船級社驗船師嗎？｜Reay's Note"
+      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;無人機能取代船級社驗船師嗎？｜Reay's Note&#10;https://reayhuang.com/notes/maritime/can-drones-replace-ship-surveyors.html"
+      data-share-copy="複製連結"
+      data-share-copied="已複製"
+      data-toast-copied="連結已複製到剪貼簿"
+    >
+      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="source">
+    <div class="site-footer-inner">
+      <strong>無人機能取代船級社驗船師嗎？｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note · 資料整理日期：2026-08-10</span>
+      <p class="disclaimer small">
+        <strong>專業聲明：</strong>本文依公開資料整理，僅供一般技術與管理參考，不構成特定船舶的船級、法定檢驗、船旗國或安全作業核准意見。
+        RIT 的實際適用性應由船東／管理公司與所屬船級社、船旗國、現場驗船師及認可服務供應商，依具體船況與檢驗範圍確認。
+        本文觀點不代表任何雇主、船級社或主管機關。
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const progress = document.getElementById('readingProgress');
+      const updateProgress = function () {
+        const doc = document.documentElement;
+        const scrollable = doc.scrollHeight - doc.clientHeight;
+        const ratio = scrollable > 0 ? doc.scrollTop / scrollable : 0;
+        progress.style.width = Math.min(100, Math.max(0, ratio * 100)) + '%';
+      };
+      document.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      const links = Array.from(document.querySelectorAll('.toc a'));
+      const sections = links
+        .map(function (link) { return document.querySelector(link.getAttribute('href')); })
+        .filter(Boolean);
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          const visible = entries
+            .filter(function (entry) { return entry.isIntersecting; })
+            .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+          if (!visible.length) return;
+          const id = '#' + visible[0].target.id;
+          links.forEach(function (link) {
+            link.classList.toggle('active', link.getAttribute('href') === id);
+          });
+        }, { rootMargin: '-18% 0px -72% 0px', threshold: 0 });
+        sections.forEach(function (section) { observer.observe(section); });
+      }
+
+      const mobileGuide = document.getElementById('mobileGuide');
+      const mobileGuideToggle = document.getElementById('mobileGuideToggle');
+      const mobileGuidePanel = document.getElementById('mobileGuidePanel');
+      const mobileGuideOverlay = document.getElementById('mobileGuideOverlay');
+      const mobileGuideClose = document.getElementById('mobileGuideClose');
+      const mobileGuideCurrent = document.getElementById('mobileGuideCurrent');
+      const mobileGuideLinks = Array.from(document.querySelectorAll('.mobile-guide-panel a'));
+
+      const setGuideOpen = function (isOpen, restoreFocus) {
+        mobileGuide.classList.toggle('is-open', isOpen);
+        document.body.classList.toggle('mobile-guide-open', isOpen);
+        mobileGuideToggle.setAttribute('aria-expanded', String(isOpen));
+        mobileGuidePanel.setAttribute('aria-hidden', String(!isOpen));
+        mobileGuidePanel.inert = !isOpen;
+        if (isOpen) {
+          mobileGuideClose.focus();
+        } else if (restoreFocus) {
+          mobileGuideToggle.focus();
+        }
+      };
+
+      const updateGuideVisibility = function () {
+        const shouldShow = window.innerWidth <= 700 && window.scrollY > 280;
+        mobileGuide.classList.toggle('is-visible', shouldShow);
+        if (!shouldShow && mobileGuide.classList.contains('is-open')) {
+          setGuideOpen(false, false);
+        }
+      };
+
+      const updateGuideCurrent = function () {
+        let currentIndex = 0;
+        const readingLine = window.innerHeight * .28;
+        sections.forEach(function (section, index) {
+          if (section.getBoundingClientRect().top <= readingLine) currentIndex = index;
+        });
+        const currentId = sections[currentIndex] ? '#' + sections[currentIndex].id : '';
+        mobileGuideCurrent.textContent = '第 ' + (currentIndex + 1) + ' 章';
+        mobileGuideLinks.forEach(function (link) {
+          const isActive = link.getAttribute('href') === currentId;
+          link.classList.toggle('active', isActive);
+          if (isActive) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+      };
+
+      mobileGuideToggle.addEventListener('click', function () { setGuideOpen(true, false); });
+      mobileGuideClose.addEventListener('click', function () { setGuideOpen(false, true); });
+      mobileGuideOverlay.addEventListener('click', function () { setGuideOpen(false, true); });
+      mobileGuideLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          const targetId = link.getAttribute('href');
+          const target = document.querySelector(targetId);
+          setGuideOpen(false, false);
+          if (!target) return;
+          window.requestAnimationFrame(function () {
+            history.pushState(null, '', targetId);
+            target.scrollIntoView({
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+              block: 'start'
+            });
+          });
+        });
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && mobileGuide.classList.contains('is-open')) {
+          setGuideOpen(false, true);
+        }
+      });
+      document.addEventListener('scroll', function () {
+        updateGuideVisibility();
+        updateGuideCurrent();
+      }, { passive: true });
+      window.addEventListener('resize', function () {
+        updateGuideVisibility();
+        updateGuideCurrent();
+      });
+      updateGuideVisibility();
+      updateGuideCurrent();
+    }());
+  </script>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+</body>
+</html>
