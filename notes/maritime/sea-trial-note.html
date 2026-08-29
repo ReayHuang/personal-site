@@ -1,0 +1,2386 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light" data-back-to-top-label="回到頂部">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" hreflang="en" href="sea-trial-note.en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="sea-trial-note.html">
+  <link rel="alternate" hreflang="x-default" href="sea-trial-note.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>為什麼新造船需要海上試驗？｜Reay Huang Maritime Notes</title>
+  <meta name="description" content="為什麼新造船交付前需要進行海上試驗？從推進、操縱、舵機、電力、自動控制、故障反應與驗收證據，理解 Sea Trial 如何證明整艘船能夠安全、可靠地工作。">
+  <meta name="author" content="Reay Huang">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#071c2c">
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/sea-trial-note.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:title" content="為什麼新造船需要海上試驗？">
+  <meta property="og:description" content="碼頭測試證明設備能工作；海上試驗則要證明整艘船能工作。">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/sea-trial-note.html">
+  <meta property="article:published_time" content="2026-08-29T00:00:00+09:00">
+  <meta property="article:modified_time" content="2026-08-29T00:00:00+09:00">
+  <meta property="article:author" content="Reay Huang">
+  <meta property="article:section" content="New Construction">
+  <meta property="article:tag" content="Sea Trial">
+  <meta property="article:tag" content="Newbuilding">
+  <meta property="article:tag" content="Ship Survey">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="為什麼新造船需要海上試驗？">
+  <meta name="twitter:description" content="碼頭測試證明設備能工作；海上試驗則要證明整艘船能工作。">
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/sea-trial-note/sea-trial-link-preview.jpg">
+  <meta property="og:image:alt" content="為什麼新造船需要海上試驗？">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/sea-trial-note/sea-trial-link-preview.jpg">
+
+  <style>
+    /*
+      Sea Trial article — self-contained, scoped visual system.
+      All article styles are scoped under .sea-trial-note to minimise conflicts
+      when embedded into an existing website.
+    */
+
+    :root {
+      --st-navy-950: #071c2c;
+      --st-navy-900: #0b263b;
+      --st-navy-800: #123a55;
+      --st-teal-700: #0b6573;
+      --st-teal-600: #0f7f8c;
+      --st-teal-500: #1597a4;
+      --st-cyan-100: #dff4f5;
+      --st-cyan-050: #f2fbfb;
+      --st-gold-600: #b27a16;
+      --st-gold-500: #d49a2a;
+      --st-gold-100: #fff1ce;
+      --st-slate-900: #162532;
+      --st-slate-800: #283946;
+      --st-slate-700: #455866;
+      --st-slate-600: #61727e;
+      --st-slate-500: #7b8a95;
+      --st-slate-300: #cbd5dc;
+      --st-slate-200: #dde5ea;
+      --st-slate-100: #edf2f5;
+      --st-slate-050: #f7f9fa;
+      --st-white: #ffffff;
+      --st-red-700: #a43b36;
+      --st-red-100: #ffe9e6;
+      --st-green-700: #356b51;
+      --st-green-100: #e5f4ec;
+      --st-shadow-sm: 0 6px 18px rgba(7, 28, 44, 0.07);
+      --st-shadow-md: 0 16px 38px rgba(7, 28, 44, 0.10);
+      --st-shadow-lg: 0 28px 70px rgba(7, 28, 44, 0.15);
+      --st-radius-sm: 10px;
+      --st-radius-md: 16px;
+      --st-radius-lg: 24px;
+      --st-radius-xl: 32px;
+      --st-content: 780px;
+      --st-wide: 1180px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.sea-trial-page {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 5%, rgba(21, 151, 164, 0.10), transparent 28rem),
+        linear-gradient(180deg, #f4f8fa 0%, #ffffff 28rem, #ffffff 100%);
+      color: var(--st-slate-900);
+    }
+
+    .sea-trial-note,
+    .sea-trial-note * {
+      box-sizing: border-box;
+    }
+
+    .sea-trial-note {
+      position: relative;
+      width: 100%;
+      color: var(--st-slate-900);
+      font-family: Inter, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.85;
+      letter-spacing: 0.012em;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .sea-trial-note a {
+      color: var(--st-teal-700);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    .sea-trial-note a:hover {
+      color: var(--st-navy-800);
+    }
+
+    .sea-trial-note img,
+    .sea-trial-note svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .sea-trial-note button,
+    .sea-trial-note a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .sea-trial-note :focus-visible {
+      outline: 3px solid rgba(21, 151, 164, 0.42);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .sea-trial-note .st-sr-only {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .sea-trial-note .st-progress {
+      position: fixed;
+      z-index: 1000;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: rgba(11, 38, 59, 0.08);
+      pointer-events: none;
+    }
+
+    .sea-trial-note .st-progress__bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--st-teal-500), var(--st-gold-500));
+      box-shadow: 0 0 10px rgba(21, 151, 164, 0.35);
+    }
+
+    .sea-trial-note .st-hero {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      color: var(--st-white);
+      background:
+        linear-gradient(135deg, rgba(7, 28, 44, 0.98), rgba(11, 101, 115, 0.92)),
+        var(--st-navy-950);
+    }
+
+    .sea-trial-note .st-hero::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      width: 44rem;
+      height: 44rem;
+      right: -14rem;
+      top: -24rem;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 5rem rgba(255, 255, 255, 0.025),
+        0 0 0 11rem rgba(255, 255, 255, 0.018);
+    }
+
+    .sea-trial-note .st-hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: auto 0 0 0;
+      height: 110px;
+      opacity: 0.34;
+      background:
+        radial-gradient(90% 95px at 20% 105%, transparent 62%, rgba(255,255,255,.19) 63%, transparent 65%),
+        radial-gradient(80% 88px at 70% 115%, transparent 61%, rgba(255,255,255,.14) 62%, transparent 64%);
+    }
+
+    .sea-trial-note .st-hero__inner {
+      width: min(var(--st-wide), calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(72px, 10vw, 122px) 0 clamp(66px, 8vw, 100px);
+    }
+
+    .sea-trial-note .st-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #b9edf0;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .sea-trial-note .st-eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--st-gold-500);
+    }
+
+    .sea-trial-note .st-title {
+      max-width: 940px;
+      margin: 0;
+      color: var(--st-white);
+      font-size: clamp(2.35rem, 6vw, 4.95rem);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .sea-trial-note .st-title-en {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255,255,255,.72);
+      font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+
+    .sea-trial-note .st-deck {
+      max-width: 800px;
+      margin: 30px 0 0;
+      color: rgba(255,255,255,.86);
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      line-height: 1.8;
+    }
+
+    .sea-trial-note .st-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-top: 16px;
+      color: rgba(255,255,255,.64);
+      font-size: 0.86rem;
+    }
+
+    .sea-trial-note .st-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .sea-trial-note .st-meta span::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--st-gold-500);
+    }
+
+    .sea-trial-note .st-hero-quote {
+      max-width: 830px;
+      margin: 42px 0 0;
+      padding: 22px 26px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-left: 4px solid var(--st-gold-500);
+      border-radius: 0 var(--st-radius-md) var(--st-radius-md) 0;
+      background: rgba(255,255,255,.075);
+      backdrop-filter: blur(8px);
+    }
+
+    .sea-trial-note .st-hero-quote p {
+      margin: 0;
+      color: var(--st-white);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-weight: 750;
+      line-height: 1.65;
+    }
+
+    .sea-trial-note .st-shell {
+      width: min(var(--st-wide), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .sea-trial-note .st-quickview {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: -34px;
+    }
+
+    .sea-trial-note .st-quick-card {
+      padding: 24px;
+      border: 1px solid rgba(203, 213, 220, 0.75);
+      border-radius: var(--st-radius-md);
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--st-shadow-md);
+    }
+
+    .sea-trial-note .st-quick-card__number {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      color: var(--st-white);
+      background: linear-gradient(135deg, var(--st-navy-800), var(--st-teal-600));
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .sea-trial-note .st-quick-card h2 {
+      margin: 0 0 7px;
+      color: var(--st-navy-900);
+      font-size: 1rem;
+      font-weight: 850;
+      line-height: 1.35;
+    }
+
+    .sea-trial-note .st-quick-card p {
+      margin: 0;
+      color: var(--st-slate-600);
+      font-size: 0.91rem;
+      line-height: 1.65;
+    }
+
+    .sea-trial-note .st-layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: clamp(36px, 6vw, 84px);
+      align-items: start;
+      margin-top: 76px;
+    }
+
+    .sea-trial-note .st-main {
+      order: 2;
+      min-width: 0;
+      max-width: var(--st-content);
+    }
+
+    .sea-trial-note .st-toc {
+      order: 1;
+      position: sticky;
+      top: 30px;
+      padding: 22px 20px;
+      border: 1px solid var(--st-slate-200);
+      border-radius: var(--st-radius-md);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--st-shadow-sm);
+      backdrop-filter: blur(12px);
+    }
+
+    .sea-trial-note .st-toc__label {
+      margin: 0 0 14px;
+      color: var(--st-slate-500);
+      font-size: 0.74rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .sea-trial-note .st-toc ol {
+      display: grid;
+      gap: 2px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: toc;
+    }
+
+    .sea-trial-note .st-toc li {
+      counter-increment: toc;
+    }
+
+    .sea-trial-note .st-toc a {
+      display: grid;
+      grid-template-columns: 24px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      padding: 7px 8px;
+      border-radius: 8px;
+      color: var(--st-slate-600);
+      text-decoration: none;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    .sea-trial-note .st-toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      color: var(--st-slate-400, #9aa8b2);
+      font-size: 0.69rem;
+      font-weight: 850;
+      line-height: 1.7;
+    }
+
+    .sea-trial-note .st-toc a:hover,
+    .sea-trial-note .st-toc a.is-active {
+      color: var(--st-navy-900);
+      background: var(--st-cyan-050);
+      transform: translateX(2px);
+    }
+
+    .sea-trial-note .st-toc a.is-active::before {
+      color: var(--st-teal-600);
+    }
+
+    .sea-trial-note .st-intro {
+      margin-bottom: 78px;
+    }
+
+    .sea-trial-note .st-intro > p:first-child::first-letter {
+      float: left;
+      margin: .12em .14em 0 0;
+      color: var(--st-teal-700);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: .78;
+    }
+
+    .sea-trial-note p {
+      margin: 0 0 1.35em;
+      color: var(--st-slate-800);
+    }
+
+    .sea-trial-note strong {
+      color: var(--st-navy-900);
+      font-weight: 800;
+    }
+
+    .sea-trial-note em {
+      color: var(--st-slate-700);
+    }
+
+    .sea-trial-note .st-section {
+      position: relative;
+      scroll-margin-top: 30px;
+      margin: 0 0 88px;
+    }
+
+    .sea-trial-note .st-section::after {
+      content: "";
+      position: absolute;
+      right: 2%;
+      bottom: -49px;
+      left: 2%;
+      height: 11px;
+      background:
+        radial-gradient(circle, var(--st-gold-500) 0 3px, var(--st-white) 3.5px 5px, transparent 5.5px) center / 11px 11px no-repeat,
+        linear-gradient(90deg, transparent 0%, rgba(15,127,140,.12) 8%, rgba(15,127,140,.52) 42%, rgba(15,127,140,.52) 58%, rgba(15,127,140,.12) 92%, transparent 100%) center / 100% 1px no-repeat;
+      pointer-events: none;
+    }
+
+    .sea-trial-note .st-section-heading {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .sea-trial-note .st-section-number {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border: 1px solid rgba(15, 127, 140, .22);
+      border-radius: 17px;
+      color: var(--st-teal-700);
+      background: linear-gradient(145deg, var(--st-white), var(--st-cyan-050));
+      box-shadow: var(--st-shadow-sm);
+      font-size: .95rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .sea-trial-note .st-section-kicker {
+      margin: 0 0 4px;
+      color: var(--st-teal-700);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .sea-trial-note .st-section h2 {
+      margin: 0;
+      color: var(--st-navy-900);
+      font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+      line-height: 1.28;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
+    }
+
+    .sea-trial-note .st-section h3 {
+      margin: 42px 0 14px;
+      color: var(--st-navy-800);
+      font-size: 1.22rem;
+      line-height: 1.45;
+    }
+
+    .sea-trial-note .st-section h4 {
+      margin: 30px 0 10px;
+      color: var(--st-slate-900);
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .sea-trial-note .st-lead {
+      color: var(--st-slate-700);
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+    .sea-trial-note .st-highlight {
+      padding: 24px 26px;
+      margin: 32px 0;
+      border: 1px solid #cfe9eb;
+      border-left: 5px solid var(--st-teal-600);
+      border-radius: 0 var(--st-radius-md) var(--st-radius-md) 0;
+      background: linear-gradient(110deg, var(--st-cyan-050), var(--st-white));
+      box-shadow: var(--st-shadow-sm);
+    }
+
+    .sea-trial-note .st-highlight p:last-child {
+      margin-bottom: 0;
+    }
+
+    .sea-trial-note .st-highlight__label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--st-teal-700);
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .sea-trial-note .st-highlight--gold {
+      border-color: #f0ddb0;
+      border-left-color: var(--st-gold-500);
+      background: linear-gradient(110deg, #fffaf0, var(--st-white));
+    }
+
+    .sea-trial-note .st-highlight--gold .st-highlight__label {
+      color: var(--st-gold-600);
+    }
+
+    .sea-trial-note .st-highlight--warning {
+      border-color: #efd0cc;
+      border-left-color: var(--st-red-700);
+      background: linear-gradient(110deg, #fff7f5, var(--st-white));
+    }
+
+    .sea-trial-note .st-highlight--warning .st-highlight__label {
+      color: var(--st-red-700);
+    }
+
+    .sea-trial-note .st-pullquote {
+      position: relative;
+      margin: 42px 0;
+      padding: 34px 38px 34px 42px;
+      overflow: hidden;
+      border-radius: var(--st-radius-lg);
+      color: var(--st-white);
+      background: linear-gradient(135deg, var(--st-navy-900), var(--st-navy-800));
+      box-shadow: var(--st-shadow-md);
+    }
+
+    .sea-trial-note .st-pullquote::before {
+      content: "“";
+      position: absolute;
+      right: 22px;
+      top: -34px;
+      color: rgba(255,255,255,.08);
+      font-family: Georgia, serif;
+      font-size: 10rem;
+      line-height: 1;
+    }
+
+    .sea-trial-note .st-pullquote p {
+      position: relative;
+      margin: 0;
+      color: var(--st-white);
+      font-size: clamp(1.15rem, 2.4vw, 1.48rem);
+      font-weight: 780;
+      line-height: 1.7;
+    }
+
+    .sea-trial-note .st-pullquote small {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255,255,255,.65);
+      font-size: .82rem;
+      font-weight: 650;
+    }
+
+    .sea-trial-note .st-compare {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 34px 0;
+    }
+
+    .sea-trial-note .st-compare-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px;
+      border: 1px solid var(--st-slate-200);
+      border-radius: var(--st-radius-md);
+      background: var(--st-white);
+      box-shadow: var(--st-shadow-sm);
+    }
+
+    .sea-trial-note .st-compare-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -55px;
+      bottom: -55px;
+      border-radius: 50%;
+      background: var(--st-slate-100);
+    }
+
+    .sea-trial-note .st-compare-card--sea {
+      border-color: #c7e3e6;
+      background: linear-gradient(145deg, var(--st-white), var(--st-cyan-050));
+    }
+
+    .sea-trial-note .st-compare-card--sea::after {
+      background: rgba(21,151,164,.10);
+    }
+
+    .sea-trial-note .st-compare-label {
+      margin-bottom: 10px;
+      color: var(--st-slate-500);
+      font-size: .73rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .sea-trial-note .st-compare-card--sea .st-compare-label {
+      color: var(--st-teal-700);
+    }
+
+    .sea-trial-note .st-compare-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+    }
+
+    .sea-trial-note .st-compare-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--st-slate-600);
+      font-size: .93rem;
+      line-height: 1.7;
+    }
+
+    .sea-trial-note .st-flow {
+      display: grid;
+      grid-template-columns: repeat(9, minmax(0, auto));
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 32px 0;
+      padding: 26px 20px;
+      overflow-x: auto;
+      border: 1px solid var(--st-slate-200);
+      border-radius: var(--st-radius-md);
+      background: var(--st-slate-050);
+      box-shadow: inset 0 1px 0 var(--st-white);
+    }
+
+    .sea-trial-note .st-flow__node {
+      min-width: 104px;
+      padding: 13px 12px;
+      border: 1px solid #cddce3;
+      border-radius: 12px;
+      color: var(--st-navy-900);
+      background: var(--st-white);
+      box-shadow: 0 5px 12px rgba(7, 28, 44, .06);
+      text-align: center;
+      font-size: .78rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .sea-trial-note .st-flow__node small {
+      display: block;
+      margin-top: 3px;
+      color: var(--st-slate-500);
+      font-size: .68rem;
+      font-weight: 650;
+    }
+
+    .sea-trial-note .st-flow__arrow {
+      color: var(--st-teal-600);
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .sea-trial-note .st-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 30px 0;
+    }
+
+    .sea-trial-note .st-card {
+      padding: 24px;
+      border: 1px solid var(--st-slate-200);
+      border-radius: var(--st-radius-md);
+      background: var(--st-white);
+      box-shadow: var(--st-shadow-sm);
+    }
+
+    .sea-trial-note .st-card__top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 13px;
+    }
+
+    .sea-trial-note .st-card__icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      color: var(--st-teal-700);
+      background: var(--st-cyan-100);
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .sea-trial-note .st-card h3,
+    .sea-trial-note .st-card h4 {
+      margin: 0;
+      color: var(--st-navy-900);
+      font-size: 1.06rem;
+    }
+
+    .sea-trial-note .st-card p {
+      margin: 0;
+      color: var(--st-slate-600);
+      font-size: .91rem;
+      line-height: 1.72;
+    }
+
+    .sea-trial-note .st-card p + p {
+      margin-top: 10px;
+    }
+
+    .sea-trial-note .st-card--featured {
+      border-color: #c8e7e9;
+      background: linear-gradient(150deg, var(--st-white), var(--st-cyan-050));
+    }
+
+    .sea-trial-note .st-card--gold .st-card__icon {
+      color: var(--st-gold-600);
+      background: var(--st-gold-100);
+    }
+
+    .sea-trial-note .st-card--danger .st-card__icon {
+      color: var(--st-red-700);
+      background: var(--st-red-100);
+    }
+
+    .sea-trial-note .st-card--safe .st-card__icon {
+      color: var(--st-green-700);
+      background: var(--st-green-100);
+    }
+
+    .sea-trial-note .st-list {
+      display: grid;
+      gap: 9px;
+      margin: 20px 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sea-trial-note .st-list li {
+      position: relative;
+      padding-left: 29px;
+      color: var(--st-slate-800);
+    }
+
+    .sea-trial-note .st-list li::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: .73em;
+      width: 9px;
+      height: 9px;
+      border: 2px solid var(--st-teal-600);
+      border-radius: 50%;
+      background: var(--st-white);
+    }
+
+    .sea-trial-note .st-list--check li::before {
+      content: "✓";
+      top: .22em;
+      display: grid;
+      place-items: center;
+      width: 18px;
+      height: 18px;
+      border: 0;
+      color: var(--st-white);
+      background: var(--st-teal-600);
+      font-size: .69rem;
+      font-weight: 900;
+    }
+
+    .sea-trial-note .st-table-wrap {
+      margin: 30px 0;
+      overflow-x: auto;
+      border: 1px solid var(--st-slate-200);
+      border-radius: var(--st-radius-md);
+      background: var(--st-white);
+      box-shadow: var(--st-shadow-sm);
+    }
+
+    .sea-trial-note table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    .sea-trial-note caption {
+      padding: 16px 18px;
+      color: var(--st-slate-600);
+      background: var(--st-slate-050);
+      text-align: left;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .sea-trial-note th,
+    .sea-trial-note td {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--st-slate-200);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .sea-trial-note th {
+      color: var(--st-white);
+      background: var(--st-navy-800);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .025em;
+    }
+
+    .sea-trial-note tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .sea-trial-note tbody tr:nth-child(even) td {
+      background: var(--st-slate-050);
+    }
+
+    .sea-trial-note .st-term {
+      color: var(--st-teal-700);
+      font-weight: 800;
+    }
+
+    .sea-trial-note .st-system-chain {
+      display: grid;
+      gap: 18px;
+      margin: 34px 0;
+      padding: 28px;
+      border-radius: var(--st-radius-lg);
+      color: var(--st-white);
+      background:
+        radial-gradient(circle at 92% 12%, rgba(255,255,255,.10), transparent 13rem),
+        linear-gradient(145deg, var(--st-navy-950), var(--st-navy-800));
+      box-shadow: var(--st-shadow-md);
+    }
+
+    .sea-trial-note .st-system-chain__start {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 16px 18px;
+      border: 1px solid rgba(212, 154, 42, .45);
+      border-radius: 14px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .sea-trial-note .st-system-chain__start-badge {
+      display: grid;
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--st-navy-950);
+      background: var(--st-gold-500);
+      font-size: .74rem;
+      font-weight: 900;
+    }
+
+    .sea-trial-note .st-system-chain__start strong {
+      display: block;
+      color: var(--st-white);
+      font-size: 1.02rem;
+      line-height: 1.4;
+    }
+
+    .sea-trial-note .st-system-chain__start p {
+      margin: 3px 0 0;
+      color: #dce9ee;
+      font-size: .82rem;
+      line-height: 1.5;
+    }
+
+    .sea-trial-note .st-system-chain__connector {
+      color: var(--st-gold-500);
+      text-align: center;
+      font-size: 1.35rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .sea-trial-note .st-system-chain__stages {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .sea-trial-note .st-system-stage {
+      position: relative;
+      min-width: 0;
+      padding: 20px 18px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 14px;
+      background: rgba(255,255,255,.10);
+    }
+
+    .sea-trial-note .st-system-stage:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -23px;
+      color: var(--st-gold-500);
+      font-size: 1.1rem;
+      font-weight: 900;
+      transform: translateY(-50%);
+    }
+
+    .sea-trial-note .st-system-stage__number {
+      display: inline-grid;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 12px;
+      place-items: center;
+      border: 1px solid rgba(189, 236, 239, .38);
+      border-radius: 9px;
+      color: #bdecef;
+      background: rgba(15, 127, 140, .18);
+      font-size: .72rem;
+      font-weight: 900;
+    }
+
+    .sea-trial-note .st-system-stage h3 {
+      margin: 0 0 8px;
+      color: var(--st-white);
+      font-size: .96rem;
+      line-height: 1.45;
+    }
+
+    .sea-trial-note .st-system-stage p {
+      margin: 0;
+      color: #e0eaee;
+      font-size: .81rem;
+      line-height: 1.65;
+    }
+
+    .sea-trial-note .st-system-chain__result {
+      padding: 14px 17px;
+      border-left: 3px solid var(--st-gold-500);
+      border-radius: 0 10px 10px 0;
+      color: #edf4f6;
+      background: rgba(255,255,255,.10);
+      font-size: .86rem;
+      line-height: 1.65;
+    }
+
+    .sea-trial-note .st-system-chain__result strong {
+      color: #ffd276;
+    }
+
+    .sea-trial-note .st-equation {
+      display: grid;
+      grid-template-columns: repeat(7, auto);
+      justify-content: center;
+      align-items: center;
+      gap: 11px;
+      margin: 34px 0;
+      padding: 26px 18px;
+      overflow-x: auto;
+      border: 1px solid #cfe5e7;
+      border-radius: var(--st-radius-md);
+      background: var(--st-cyan-050);
+    }
+
+    .sea-trial-note .st-equation__item {
+      min-width: 112px;
+      padding: 13px 14px;
+      border-radius: 12px;
+      color: var(--st-navy-900);
+      background: var(--st-white);
+      box-shadow: var(--st-shadow-sm);
+      text-align: center;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .sea-trial-note .st-equation__sign {
+      color: var(--st-teal-700);
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .sea-trial-note .st-steps {
+      position: relative;
+      display: grid;
+      gap: 16px;
+      margin: 30px 0;
+      padding-left: 62px;
+      counter-reset: trial-step;
+    }
+
+    .sea-trial-note .st-steps::before {
+      display: none;
+    }
+
+    .sea-trial-note .st-step {
+      position: relative;
+      counter-increment: trial-step;
+      padding: 20px 22px;
+      border: 1px solid var(--st-slate-200);
+      border-radius: var(--st-radius-md);
+      background: var(--st-white);
+      box-shadow: var(--st-shadow-sm);
+    }
+
+    .sea-trial-note .st-step::before {
+      content: counter(trial-step, decimal-leading-zero);
+      position: absolute;
+      z-index: 2;
+      left: -62px;
+      top: 16px;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 2px solid var(--st-white);
+      border-radius: 50%;
+      color: var(--st-white);
+      background: linear-gradient(145deg, var(--st-teal-600), var(--st-navy-800));
+      box-shadow: 0 0 0 1px var(--st-teal-600), 0 7px 16px rgba(7, 28, 44, .15);
+      font-size: .68rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: .04em;
+    }
+
+    .sea-trial-note .st-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: -42px;
+      top: 37px;
+      width: 2px;
+      height: calc(100% + 16px);
+      background: linear-gradient(180deg, var(--st-teal-500), var(--st-slate-200));
+    }
+
+    .sea-trial-note .st-step h3 {
+      margin: 0 0 7px;
+      font-size: 1rem;
+    }
+
+    .sea-trial-note .st-step p {
+      margin: 0;
+      color: var(--st-slate-600);
+      font-size: .9rem;
+    }
+
+    .sea-trial-note .st-role-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 30px 0;
+    }
+
+    .sea-trial-note .st-role {
+      padding: 22px;
+      border-top: 4px solid var(--st-teal-600);
+      border-radius: 8px 8px var(--st-radius-md) var(--st-radius-md);
+      background: var(--st-slate-050);
+    }
+
+    .sea-trial-note .st-role:nth-child(2) { border-top-color: var(--st-gold-500); }
+    .sea-trial-note .st-role:nth-child(3) { border-top-color: var(--st-navy-800); }
+    .sea-trial-note .st-role:nth-child(4) { border-top-color: var(--st-green-700); }
+
+    .sea-trial-note .st-role h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .sea-trial-note .st-role p {
+      margin: 0;
+      color: var(--st-slate-600);
+      font-size: .88rem;
+    }
+
+    .sea-trial-note .st-data-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0 30px;
+    }
+
+    .sea-trial-note .st-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid var(--st-slate-200);
+      border-radius: 999px;
+      color: var(--st-slate-700);
+      background: var(--st-white);
+      font-size: .76rem;
+      font-weight: 700;
+      box-shadow: 0 3px 9px rgba(7,28,44,.04);
+    }
+
+    .sea-trial-note .st-conclusion {
+      position: relative;
+      overflow: hidden;
+      margin: 96px 0 34px;
+      padding: clamp(32px, 6vw, 58px);
+      border-radius: var(--st-radius-xl);
+      color: var(--st-white);
+      background:
+        radial-gradient(circle at 92% 15%, rgba(255,255,255,.10), transparent 16rem),
+        linear-gradient(145deg, var(--st-navy-950), var(--st-teal-700));
+      box-shadow: var(--st-shadow-lg);
+    }
+
+    .sea-trial-note .st-conclusion__label {
+      margin: 0 0 12px;
+      color: #bdecef;
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .sea-trial-note .st-conclusion h2 {
+      max-width: 650px;
+      margin: 0 0 22px;
+      color: var(--st-white);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.28;
+      letter-spacing: -.025em;
+    }
+
+    .sea-trial-note .st-conclusion p {
+      max-width: 700px;
+      color: rgba(255,255,255,.82);
+    }
+
+    .sea-trial-note .st-final-contrast {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .sea-trial-note .st-final-box {
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: var(--st-radius-md);
+      background: rgba(255,255,255,.075);
+      backdrop-filter: blur(8px);
+    }
+
+    .sea-trial-note .st-final-box span {
+      display: block;
+      margin-bottom: 7px;
+      color: rgba(255,255,255,.56);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .sea-trial-note .st-final-box strong {
+      color: var(--st-white);
+      font-size: 1.08rem;
+      line-height: 1.5;
+    }
+
+    .sea-trial-note .st-final-box--emphasis {
+      border-color: rgba(212,154,42,.58);
+      background: rgba(212,154,42,.12);
+    }
+
+    .sea-trial-note .st-references {
+      margin: 42px 0 0;
+      padding: 28px;
+      border: 1px solid var(--st-slate-200);
+      border-radius: var(--st-radius-lg);
+      background: var(--st-slate-050);
+    }
+
+    .sea-trial-note .st-references h2 {
+      margin: 0 0 14px;
+      color: var(--st-navy-900);
+      font-size: 1.15rem;
+    }
+
+    .sea-trial-note .st-references ol {
+      margin: 0;
+      padding-left: 1.3rem;
+    }
+
+    .sea-trial-note .st-references li {
+      margin: 8px 0;
+      color: var(--st-slate-600);
+      font-size: .84rem;
+      line-height: 1.65;
+    }
+
+    .sea-trial-note .st-disclaimer {
+      margin: 24px 0 32px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--st-slate-300);
+      color: var(--st-slate-500);
+      background: var(--st-slate-050);
+      font-size: .79rem;
+      line-height: 1.7;
+    }
+
+    .sea-trial-note .st-backtop {
+      position: fixed;
+      z-index: 999;
+      right: 22px;
+      bottom: 22px;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      color: var(--st-white);
+      background: rgba(11, 38, 59, .92);
+      box-shadow: 0 12px 28px rgba(7, 28, 44, .22);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease, background .2s ease, visibility .2s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .sea-trial-note .st-backtop:hover {
+      background: var(--st-teal-700);
+    }
+
+    .sea-trial-note .st-backtop.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    @media (max-width: 980px) {
+      .sea-trial-note .st-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .sea-trial-note .st-main {
+        max-width: none;
+      }
+
+      .sea-trial-note .st-toc {
+        position: static;
+        order: -1;
+      }
+
+      .sea-trial-note .st-toc ol {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .sea-trial-note .st-section,
+      .sea-trial-note .st-conclusion {
+        scroll-margin-top: 88px;
+      }
+
+      .sea-trial-note {
+        font-size: 16px;
+        line-height: 1.82;
+      }
+
+      .sea-trial-note .st-hero__inner,
+      .sea-trial-note .st-shell {
+        width: min(100% - 28px, var(--st-wide));
+      }
+
+      .sea-trial-note .st-quickview,
+      .sea-trial-note .st-grid,
+      .sea-trial-note .st-role-grid,
+      .sea-trial-note .st-compare,
+      .sea-trial-note .st-final-contrast {
+        grid-template-columns: 1fr;
+      }
+
+      .sea-trial-note .st-quickview {
+        margin-top: -20px;
+      }
+
+      .sea-trial-note .st-layout {
+        margin-top: 52px;
+      }
+
+      .sea-trial-note .st-toc {
+        position: sticky;
+        z-index: 900;
+        top: 10px;
+        padding: 9px;
+        border-color: rgba(203, 213, 220, 0.9);
+        border-radius: 14px;
+        background: rgba(255,255,255,.94);
+        box-shadow: 0 10px 28px rgba(7, 28, 44, 0.12);
+        backdrop-filter: blur(16px);
+      }
+
+      .sea-trial-note .st-toc__label {
+        display: none;
+      }
+
+      .sea-trial-note .st-toc ol {
+        display: flex;
+        gap: 5px;
+        overflow-x: auto;
+        grid-template-columns: none;
+        scroll-behavior: smooth;
+        scroll-padding-inline: 9px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .sea-trial-note .st-toc ol::-webkit-scrollbar {
+        display: none;
+      }
+
+      .sea-trial-note .st-toc li {
+        flex: 0 0 auto;
+      }
+
+      .sea-trial-note .st-toc a {
+        display: inline-flex;
+        grid-template-columns: none;
+        gap: 7px;
+        align-items: center;
+        min-height: 40px;
+        padding: 8px 11px;
+        white-space: nowrap;
+        font-size: 0.82rem;
+      }
+
+      .sea-trial-note .st-toc a::before {
+        line-height: 1;
+      }
+
+      .sea-trial-note .st-toc a:hover,
+      .sea-trial-note .st-toc a.is-active {
+        transform: none;
+      }
+
+      .sea-trial-note .st-equation {
+        justify-content: start;
+        scroll-padding-inline: 18px;
+      }
+
+      .sea-trial-note .st-section {
+        margin-bottom: 66px;
+      }
+
+      .sea-trial-note .st-section::after {
+        right: 8%;
+        bottom: -38px;
+        left: 8%;
+      }
+
+      .sea-trial-note .st-section-heading {
+        grid-template-columns: 46px minmax(0, 1fr);
+        gap: 13px;
+      }
+
+      .sea-trial-note .st-section-number {
+        width: 46px;
+        height: 46px;
+        border-radius: 13px;
+        font-size: .8rem;
+      }
+
+      .sea-trial-note .st-flow {
+        grid-template-columns: minmax(0, 1fr);
+        justify-content: stretch;
+        gap: 7px;
+        padding: 22px 18px;
+        overflow-x: visible;
+      }
+
+      .sea-trial-note .st-flow__node {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 16px;
+        font-size: .84rem;
+      }
+
+      .sea-trial-note .st-flow__node small {
+        font-size: .72rem;
+      }
+
+      .sea-trial-note .st-flow__arrow {
+        justify-self: center;
+        height: 18px;
+        line-height: 18px;
+        transform: rotate(90deg);
+      }
+
+      .sea-trial-note .st-steps {
+        gap: 14px;
+        padding-left: 50px;
+      }
+
+      .sea-trial-note .st-step {
+        padding: 18px;
+      }
+
+      .sea-trial-note .st-step::before {
+        left: -50px;
+        width: 36px;
+        height: 36px;
+      }
+
+      .sea-trial-note .st-step:not(:last-child)::after {
+        left: -33px;
+        top: 34px;
+        height: calc(100% + 14px);
+      }
+
+      .sea-trial-note .st-system-chain {
+        padding: 22px 18px;
+      }
+
+      .sea-trial-note .st-system-chain__start {
+        align-items: flex-start;
+        padding: 15px;
+      }
+
+      .sea-trial-note .st-system-chain__stages {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+      }
+
+      .sea-trial-note .st-system-stage:not(:last-child)::after {
+        top: auto;
+        right: auto;
+        bottom: -23px;
+        left: 50%;
+        content: "↓";
+        transform: translateX(-50%);
+      }
+
+      .sea-trial-note .st-pullquote {
+        padding: 28px 24px;
+      }
+
+      .sea-trial-note .st-highlight,
+      .sea-trial-note .st-card,
+      .sea-trial-note .st-quick-card {
+        padding: 21px;
+      }
+
+      .sea-trial-note .st-conclusion {
+        border-radius: var(--st-radius-lg);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sea-trial-note .st-title {
+        font-size: 2.22rem;
+      }
+
+      .sea-trial-note .st-hero__inner {
+        padding-top: 64px;
+      }
+
+      .sea-trial-note .st-meta {
+        display: grid;
+        gap: 6px;
+      }
+
+      .sea-trial-note .st-backtop {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .sea-trial-note *,
+      .sea-trial-note *::before,
+      .sea-trial-note *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    @media print {
+      body.sea-trial-page { background: #fff; }
+      .sea-trial-note .st-progress,
+      .sea-trial-note .st-backtop,
+      .sea-trial-note .st-toc { display: none !important; }
+      .sea-trial-note .st-hero { color: #111; background: #fff; }
+      .sea-trial-note .st-hero::before,
+      .sea-trial-note .st-hero::after { display: none; }
+      .sea-trial-note .st-title,
+      .sea-trial-note .st-hero-quote p { color: #111; }
+      .sea-trial-note .st-title-en,
+      .sea-trial-note .st-deck,
+      .sea-trial-note .st-meta { color: #444; }
+      .sea-trial-note .st-hero-quote { border-color: #aaa; background: #fff; }
+      .sea-trial-note .st-quickview { margin-top: 20px; }
+      .sea-trial-note .st-layout { display: block; margin-top: 40px; }
+      .sea-trial-note .st-main { max-width: none; }
+      .sea-trial-note .st-section,
+      .sea-trial-note .st-card,
+      .sea-trial-note .st-highlight,
+      .sea-trial-note .st-table-wrap { break-inside: avoid; }
+      .sea-trial-note a { color: inherit; text-decoration: none; }
+      .note-site-bar, .article-share, .share-band, footer.site-footer { display: none !important; }
+    }
+
+    /* Site chrome: share + footer */
+    .sea-trial-note .st-hero .article-share--hero { margin-top: 28px; }
+    .sea-trial-note a.share-btn { text-decoration: none; }
+    .sea-trial-note a.share-btn--linkedin,
+    .sea-trial-note a.share-btn--linkedin:hover,
+    .sea-trial-note a.share-btn--facebook,
+    .sea-trial-note a.share-btn--facebook:hover { color: #fff; }
+
+    .share-band {
+      width: min(var(--st-wide, 1180px), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 8px 0 0;
+    }
+    .share-band .article-share--end {
+      margin: 0;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .share-band .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--st-slate-600, #61727e);
+    }
+    footer.site-footer {
+      padding: 38px 0 46px;
+      color: rgba(255,255,255,.78);
+      background: #041b2d;
+      margin-top: 34px;
+      text-align: left;
+      border-top: 0;
+    }
+    footer.site-footer .site-footer-inner {
+      width: min(var(--st-wide, 1180px), calc(100% - 40px));
+      margin: 0 auto;
+    }
+    footer.site-footer strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 6px;
+    }
+    footer.site-footer .small {
+      font-size: 13px;
+      color: rgba(255,255,255,.62);
+    }
+    footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: rgba(255,255,255,.62);
+      max-width: 760px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    footer.site-footer .disclaimer strong {
+      color: rgba(255,255,255,.82);
+      font-weight: 700;
+    }
+    footer.site-footer a { color: #8ff7f1; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "為什麼新造船需要海上試驗？",
+    "description": "為什麼新造船交付前需要進行海上試驗？從推進、操縱、舵機、電力、自動控制、故障反應與驗收證據，理解 Sea Trial 如何證明整艘船能夠安全、可靠地工作。",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-08-29",
+    "dateModified": "2026-08-29",
+    "image": "https://reayhuang.com/assets/images/maritime/sea-trial-note/sea-trial-link-preview.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Reay Huang",
+      "url": "https://reayhuang.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Reay Huang Maritime Notes",
+      "url": "https://reayhuang.com/"
+    },
+    "mainEntityOfPage": "https://reayhuang.com/notes/maritime/sea-trial-note.html",
+    "keywords": [
+      "Sea Trial",
+      "Newbuilding",
+      "Ship Survey",
+      "Manoeuvrability",
+      "Steering Gear",
+      "Harbour Trial"
+    ]
+  }
+  </script>
+</head>
+
+<body class="sea-trial-page">
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="sea-trial-note.en.html" lang="en" hreflang="en">EN</a>
+      <a href="sea-trial-note.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <main>
+  <article class="sea-trial-note" id="top">
+    <div class="st-progress" aria-hidden="true"><div class="st-progress__bar"></div></div>
+
+    <header class="st-hero">
+      <div class="st-hero__inner">
+        <p class="st-eyebrow">海事筆記 · 海上試驗</p>
+        <h1 class="st-title">
+          為什麼新造船需要海上試驗？
+        </h1>
+        <p class="st-meta" aria-label="文章資訊">
+          <span>📅 更新：2026-08-29</span>
+          <span>⏱ 閱讀約 20 分鐘</span>
+          <span>🏷 海上試驗 / 新造船 / 驗船</span>
+        </p>
+        <p class="st-deck">
+          一艘船在碼頭能夠啟動主機、發電與操舵，並不代表它已經能在真正的海上環境中安全航行。海上試驗的核心，是把分別完成測試的設備放回同一艘船上，證明它們能作為一個完整系統共同工作。
+        </p>
+        <div class="st-hero-quote">
+          <p>在碼頭證明每一個設備能夠工作，並不等於證明整艘船能夠正常航行。</p>
+        </div>
+        <div
+          class="article-share article-share--hero"
+          data-article-share
+          data-share-url="https://reayhuang.com/notes/maritime/sea-trial-note.html"
+          data-share-title="為什麼新造船需要海上試驗？｜Reay's Note"
+          data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;為什麼新造船需要海上試驗？｜Reay's Note&#10;https://reayhuang.com/notes/maritime/sea-trial-note.html"
+          data-share-copy="複製連結"
+          data-share-copied="已複製"
+          data-toast-copied="連結已複製到剪貼簿"
+        >
+          <p class="article-share__label" id="share-hero-label">分享此篇</p>
+          <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="st-shell">
+      <section class="st-quickview" aria-label="文章重點速覽">
+        <div class="st-quick-card">
+          <div class="st-quick-card__number">01</div>
+          <h2>核心目的</h2>
+          <p>把個別設備的功能測試，提升為整艘船在實際航行條件下的整合驗證。</p>
+        </div>
+        <div class="st-quick-card">
+          <div class="st-quick-card__number">02</div>
+          <h2>海上才會出現的條件</h2>
+          <p>真實推進負荷、水動力、熱膨脹、振動、電力負載變化與多系統同時運轉。</p>
+        </div>
+        <div class="st-quick-card">
+          <div class="st-quick-card__number">03</div>
+          <h2>驗收依據</h2>
+          <p>法定要求、船級規範與造船合約各自回答不同問題。</p>
+        </div>
+      </section>
+
+      <div class="st-layout">
+        <div class="st-main">
+          <section class="st-intro" aria-labelledby="intro-title">
+            <h2 id="intro-title" class="st-sr-only">文章導言</h2>
+            <p>
+              一艘新船在船廠完成建造後，主機已經可以運轉、發電機可以供電、舵機可以動作，各種泵浦、自動控制系統與航海設備也大多完成了個別測試。從外觀看來，這艘船似乎已經「完成」了。
+            </p>
+            <p>
+              但在真正交付船東以前，通常還有一個非常重要的階段：<strong>海上試驗（Sea Trial），亦稱「海試」</strong>。
+            </p>
+            <p>
+              為什麼一艘已經在船廠做過大量測試的船，還必須真正開到海上再試一次？原因並不是船廠不相信先前的測試，而是許多關鍵條件只有在船舶真正航行時才會出現。
+            </p>
+            <div class="st-pullquote">
+              <p>碼頭測試問：「每個系統能不能工作？」<br>海上試驗問：「整艘船能不能工作？」</p>
+              <small>前者關注個別系統，後者關注整艘船。</small>
+            </div>
+          </section>
+
+          <section class="st-section" id="what-is-sea-trial">
+            <div class="st-section-heading">
+              <div class="st-section-number">01</div>
+              <div>
+                <p class="st-section-kicker">基本定義</p>
+                <h2>什麼是海上試驗？</h2>
+              </div>
+            </div>
+            <p class="st-lead">
+              海上試驗是新造船在交付前，於實際航行環境下進行的一系列性能、操縱、機械、電氣、自動控制與安全功能驗證。
+            </p>
+            <p>
+              它不是單一試驗，也不是把船開出去「跑一圈」。不同船型、推進方式、船級符號、船旗國要求與建造規格，都會影響正式的<span class="st-term">試驗計畫（Trial Programme）</span>。
+            </p>
+
+            <div class="st-grid" aria-label="海上試驗主要能力範圍">
+              <div class="st-card st-card--featured">
+                <div class="st-card__top"><div class="st-card__icon">推</div><h3>推進系統</h3></div>
+                <p>推進系統能否在要求的負荷與轉速下穩定、安全地工作。</p>
+              </div>
+              <div class="st-card">
+                <div class="st-card__top"><div class="st-card__icon">操</div><h3>操縱性能</h3></div>
+                <p>船舶對轉舵、迴轉、航向修正與停船命令的實際反應。</p>
+              </div>
+              <div class="st-card">
+                <div class="st-card__top"><div class="st-card__icon">電</div><h3>電力與電力管理系統（PMS）</h3></div>
+                <p>發電、配電、負載轉移、備用機組與電力管理邏輯是否正確。</p>
+              </div>
+              <div class="st-card st-card--gold">
+                <div class="st-card__top"><div class="st-card__icon">安</div><h3>安全與自動控制</h3></div>
+                <p>警報、降速、停機、聯鎖與故障後恢復是否符合設計。</p>
+              </div>
+            </div>
+
+            <div class="st-highlight">
+              <span class="st-highlight__label">核心理解</span>
+              <p><strong>海上試驗不是固定不變的檢查表；它是一套依船舶設計與驗收基準建立的整合證明程序。</strong></p>
+            </div>
+          </section>
+
+          <section class="st-section" id="why-harbour-tests-are-not-enough">
+            <div class="st-section-heading">
+              <div class="st-section-number">02</div>
+              <div>
+                <p class="st-section-kicker">真實運轉條件</p>
+                <h2>為什麼只在碼頭測試還不夠？</h2>
+              </div>
+            </div>
+            <p>
+              在建造過程中，主機可能已完成<span class="st-term">工廠驗收試驗（FAT）</span>；安裝上船後，也會進行調試、碼頭試驗與各種功能試驗。發電機、泵浦、空壓機、舵機和控制系統同樣如此。
+            </p>
+            <p>
+              但船靠在碼頭時，許多真實的系統邊界條件無法完整重現。最典型的例子，就是完整的推進負荷鏈：
+            </p>
+
+            <div class="st-flow" role="img" aria-label="主機功率經軸系與螺旋槳作用於海水，最後推動船體克服阻力">
+              <div class="st-flow__node">主機<small>產生功率</small></div>
+              <div class="st-flow__arrow">→</div>
+              <div class="st-flow__node">軸系<small>傳遞扭矩</small></div>
+              <div class="st-flow__arrow">→</div>
+              <div class="st-flow__node">螺旋槳<small>產生推力</small></div>
+              <div class="st-flow__arrow">→</div>
+              <div class="st-flow__node">海水<small>水動力作用</small></div>
+              <div class="st-flow__arrow">→</div>
+              <div class="st-flow__node">船體<small>克服阻力</small></div>
+            </div>
+
+            <p>
+              船舶真正航行後，主機、軸承、螺旋槳、冷卻系統、燃油系統、潤滑系統、發電系統與自動控制系統，才第一次長時間處於共同的實際工作狀態。
+            </p>
+
+            <div class="st-compare">
+              <div class="st-compare-card">
+                <div class="st-compare-label">碼頭試驗</div>
+                <h3>設備能不能工作？</h3>
+                <p>確認個別設備的安裝、啟動、停止、基本功能、保護與控制回路。</p>
+              </div>
+              <div class="st-compare-card st-compare-card--sea">
+                <div class="st-compare-label">海上試驗</div>
+                <h3>整艘船能不能工作？</h3>
+                <p>確認設備在真實負荷、船體運動與多系統同時運轉下仍能保持安全與穩定。</p>
+              </div>
+            </div>
+
+            <p>
+              某些問題可能在碼頭完全看不出來，直到高負荷航行後才開始出現，例如軸承溫度持續上升、異常振動、各缸排氣溫度偏差、調速器游車、冷卻能力不足、熱膨脹後洩漏，或電力管理系統（PMS）在負載快速改變時反應不正確。
+            </p>
+
+            <div class="st-highlight st-highlight--gold">
+              <span class="st-highlight__label">給一般讀者的比喻</span>
+              <p>在船廠測試主機，就像汽車在工廠裡發動引擎；海上試驗則是真正把車開上高速公路，確認引擎、變速系統、煞車、轉向與控制系統一起工作時仍然正常。</p>
+            </div>
+          </section>
+
+          <section class="st-section" id="propulsion-performance">
+            <div class="st-section-heading">
+              <div class="st-section-number">03</div>
+              <div>
+                <p class="st-section-kicker">推進性能</p>
+                <h2>船真的能按照設計航行嗎？</h2>
+              </div>
+            </div>
+            <p>
+              海上試驗最容易被理解的一部分，是推進性能。試驗人員會在不同負荷條件下記錄主機轉速、主機負荷、軸功率、排氣溫度、冷卻水、潤滑油、軸承溫度與船速等資料。
+            </p>
+            <p>
+              但海試並不是只看船「能不能跑得快」。真正需要證明的是：在指定負荷條件下，整套<span class="st-term">推進裝置</span>是否可以穩定、持續而安全地工作。
+            </p>
+
+            <div class="st-data-strip" aria-label="推進性能常見觀察參數">
+              <span class="st-chip">主機轉速</span>
+              <span class="st-chip">主機負荷</span>
+              <span class="st-chip">軸功率</span>
+              <span class="st-chip">排氣溫度</span>
+              <span class="st-chip">冷卻狀態</span>
+              <span class="st-chip">潤滑油壓力</span>
+              <span class="st-chip">軸承溫度</span>
+              <span class="st-chip">船速</span>
+            </div>
+
+            <div class="st-highlight st-highlight--warning">
+              <span class="st-highlight__label">不要只看單一結果</span>
+              <p>即使船舶達到設計航速，如果同時出現異常振動、某一缸排氣溫度明顯偏高，或艉軸管軸承溫度持續上升，「速度達標」本身也不能證明推進系統已經正常。</p>
+            </div>
+
+            <p>
+              因此專業判斷特別重視<strong>變化趨勢</strong>：設備從升負荷、達到穩定狀態，到降負荷的整個過程中，各項參數如何變化；數值是否穩定；不同參數之間是否互相合理。
+            </p>
+          </section>
+
+          <section class="st-section" id="manoeuvrability">
+            <div class="st-section-heading">
+              <div class="st-section-number">04</div>
+              <div>
+                <p class="st-section-kicker">操縱性能</p>
+                <h2>船不只要跑得動，還要能夠控制</h2>
+              </div>
+            </div>
+            <p>
+              一艘船即使能達到設計航速，如果無法可靠地轉向、維持航向或停止，它仍然不是一艘安全的船。因此，操縱性能是海上試驗的另一個核心。
+            </p>
+
+            <div class="st-grid">
+              <div class="st-card">
+                <div class="st-card__top"><div class="st-card__icon">↻</div><h3>迴轉圈試驗</h3></div>
+                <p>確認船舶在規定航速與舵角下的迴轉能力，包括縱距、橫距與迴轉直徑等特性。</p>
+              </div>
+              <div class="st-card">
+                <div class="st-card__top"><div class="st-card__icon">⌁</div><h3>Z 字形試驗</h3></div>
+                <p>觀察船舶對反覆舵令的動態反應，評估轉向反應、偏航抑制能力與超越角。</p>
+              </div>
+              <div class="st-card st-card--danger">
+                <div class="st-card__top"><div class="st-card__icon">■</div><h3>停船／緊急停船試驗</h3></div>
+                <p>確認船舶從前進狀態執行減速與反向推進後的停止軌跡、時間與距離。</p>
+              </div>
+              <div class="st-card st-card--safe">
+                <div class="st-card__top"><div class="st-card__icon">⇄</div><h3>前進／倒俥切換</h3></div>
+                <p>驗證推進裝置、換向邏輯與操縱系統能按照命令可靠地由前進轉為倒俥。</p>
+              </div>
+            </div>
+
+            <p>
+              這些試驗所回答的問題都非常實際：船長下達轉舵命令後，船多久開始反應？船舶轉向後會不會出現過大的超越角？前方發生危險時，這艘船需要多遠才能停下來？
+            </p>
+
+            <div class="st-highlight">
+              <span class="st-highlight__label">法規背景</span>
+              <p>
+                IMO 決議 MSC.137(76) 以迴轉能力、初始轉向能力、偏航抑制與航向保持能力，以及停船能力等特性建立船舶操縱性能標準。適用性與正式驗收仍應依船舶種類、建造日期、主管機關要求及核准的試驗計畫判定。<sup><a href="#ref-1" aria-label="前往參考資料一">[1]</a></sup>
+              </p>
+            </div>
+          </section>
+
+          <section class="st-section" id="steering-gear">
+            <div class="st-section-heading">
+              <div class="st-section-number">05</div>
+              <div>
+                <p class="st-section-kicker">實際負荷下的舵機</p>
+                <h2>為什麼舵機要在真實航行條件下驗證？</h2>
+              </div>
+            </div>
+            <p>
+              船停在碼頭時，舵可以由左轉到右；但沒有水流作用在舵板上時，舵機承受的負荷與高速航行完全不同。
+            </p>
+            <p>
+              當船舶前進，大量水流經過舵板，水動力會對舵與舵機產生負荷。此時真正需要證明的，不只是「舵會動」，而是舵機有足夠能力在實際航行負荷下，按要求的速度與角度控制整艘船。
+            </p>
+
+            <div class="st-pullquote">
+              <p>證明「舵能轉動」，與證明「舵機能控制一艘高速航行中的船」，是兩件完全不同的事。</p>
+            </div>
+
+            <p>
+              《SOLAS 公約》第 II-1 章第 29 條對主舵機與輔助舵機的能力提出要求。常見的重要驗證之一，是在適用的海試條件下，確認舵能由一舷 35° 操至另一舷 30°，時間不超過 28 秒；若實際試航吃水未達規定條件，則須依適用條文與統一解釋處理替代試驗與計算證明。<sup><a href="#ref-2" aria-label="前往參考資料二">[2]</a></sup>
+            </p>
+          </section>
+
+          <section class="st-section" id="system-integration">
+            <div class="st-section-heading">
+              <div class="st-section-number">06</div>
+              <div>
+                <p class="st-section-kicker">系統整合</p>
+                <h2>海試真正測的是「系統整合」</h2>
+              </div>
+            </div>
+            <p>
+              現代商船不是由幾千個互不相關的設備組成，而是一個高度整合的工程系統。一次看似簡單的主機加速，背後可能同時牽動流體、機械、電力、自動控制與安全保護。
+            </p>
+
+            <div class="st-system-chain" aria-label="主機加速時，動力、輔助系統、電力與安全控制依序配合的三階段流程">
+              <div class="st-system-chain__start">
+                <span class="st-system-chain__start-badge">起點</span>
+                <div><strong>駕駛台要求船舶加速</strong><p>主機必須產生更多推進功率。</p></div>
+              </div>
+              <div class="st-system-chain__connector" aria-hidden="true">↓</div>
+              <div class="st-system-chain__stages">
+                <div class="st-system-stage">
+                  <span class="st-system-stage__number">01</span>
+                  <h3>主機增加輸出</h3>
+                  <p>燃油供應增加，燃燒、掃氣與排氣條件也跟著改變。</p>
+                </div>
+                <div class="st-system-stage">
+                  <span class="st-system-stage__number">02</span>
+                  <h3>輔助系統一起加重</h3>
+                  <p>冷卻泵、風機與其他輔機需要做更多工作，因此用電量上升。</p>
+                </div>
+                <div class="st-system-stage">
+                  <span class="st-system-stage__number">03</span>
+                  <h3>電力與控制維持安全</h3>
+                  <p>電力管理系統視需要增加發電；自動控制持續監測，異常時發出警報、降速或停機。</p>
+                </div>
+              </div>
+              <div class="st-system-chain__result"><strong>重點：</strong>只要其中一個階段跟不上，主機即使能加速，整艘船仍可能無法安全穩定地運轉。</div>
+            </div>
+
+            <div class="st-highlight st-highlight--gold">
+              <span class="st-highlight__label">整合原則</span>
+              <p><strong>各系統單獨運作正常，不代表整合後的船舶一定能正常運作。</strong></p>
+              <p>單獨測試全部正常，不代表放在一起運轉時就不會發生介面問題。</p>
+            </div>
+          </section>
+
+          <section class="st-section" id="failure-scenarios">
+            <div class="st-section-heading">
+              <div class="st-section-number">07</div>
+              <div>
+                <p class="st-section-kicker">故障反應</p>
+                <h2>如果突然失去電力，船會怎麼反應？</h2>
+              </div>
+            </div>
+            <p>
+              海上試驗不只測試正常狀態，也會依適用要求驗證船舶面對異常狀況時的反應，例如發電機跳脫、全船失電後恢復、備用發電機自動起動、重要機械重新起動、警報、降速、停機與緊急操舵安排。
+            </p>
+
+            <div class="st-steps" aria-label="發電機跳脫後的系統反應示例">
+              <div class="st-step"><h3 aria-label="步驟一：運轉中的發電機跳脫">運轉中的發電機跳脫</h3><p>運轉中的發電機因模擬或真實故障跳脫，系統電壓與頻率消失或下降。</p></div>
+              <div class="st-step"><h3 aria-label="步驟二：保護與警報動作">保護與警報動作</h3><p>保護裝置隔離故障，警報應以正確的原因、優先順序與位置出現。</p></div>
+              <div class="st-step"><h3 aria-label="步驟三：備用電源投入">備用電源投入</h3><p>備用發電機或緊急電源按設計自動起動、建立電壓並接上必要母線。</p></div>
+              <div class="st-step"><h3 aria-label="步驟四：重要負載恢復">重要負載恢復</h3><p>重要泵浦、風機、控制系統與航行所需負載按照順序重新起動邏輯恢復。</p></div>
+              <div class="st-step"><h3 aria-label="步驟五：評估推進與安全功能">評估推進與安全功能</h3><p>確認主機、操舵、監測與安全功能是否保持或恢復到可接受狀態。</p></div>
+            </div>
+
+            <div class="st-highlight st-highlight--warning">
+              <span class="st-highlight__label">真正的安全問題</span>
+              <p>安全驗證的重點，不只是「設備正常時會不會運轉」，而是<strong>一個設備突然失效後，整個系統是否會按照預期安全地反應</strong>。</p>
+            </div>
+          </section>
+
+          <section class="st-section" id="acceptance-basis">
+            <div class="st-section-heading">
+              <div class="st-section-number">08</div>
+              <div>
+                <p class="st-section-kicker">驗收依據</p>
+                <h2>不是每一項海試都有相同的要求來源</h2>
+              </div>
+            </div>
+            <p>
+              「因為 SOLAS 規定，所以新船要做海試」是一種方便理解、但不夠精確的說法。實際的試驗計畫通常同時受到三種不同層面的要求影響。
+            </p>
+
+            <div class="st-grid">
+              <div class="st-card st-card--featured">
+                <div class="st-card__top"><div class="st-card__icon">01</div><h3>法定要求</h3></div>
+                <p>來自 SOLAS、MARPOL、其他適用國際公約與船旗國主管機關。重點是法定安全、防污染與證書相關合規。</p>
+              </div>
+              <div class="st-card">
+                <div class="st-card__top"><div class="st-card__icon">02</div><h3>船級要求</h3></div>
+                <p>船級規範對機械、電氣、自動控制、操舵與推進等系統的檢驗、測試和試驗提出要求。</p>
+              </div>
+              <div class="st-card st-card--gold" style="grid-column: 1 / -1;">
+                <div class="st-card__top"><div class="st-card__icon">03</div><h3>造船合約與技術規格</h3></div>
+                <p>例如保證航速、燃油消耗、振動、噪音與特定容量或性能保證，屬於船東與船廠之間的重要商業驗收依據。</p>
+              </div>
+            </div>
+
+            <div class="st-highlight">
+              <span class="st-highlight__label">三者不可混為一談</span>
+              <p><strong>法定合規、船級合規與合約驗收彼此相關，但不是完全相同的概念。</strong>同一項試驗可能同時被多方見證，卻分別服務於不同的驗收依據。</p>
+            </div>
+          </section>
+
+          <section class="st-section" id="objective-evidence">
+            <div class="st-section-heading">
+              <div class="st-section-number">09</div>
+              <div>
+                <p class="st-section-kicker">客觀證據</p>
+                <h2>海試不是「看起來正常」就算通過</h2>
+              </div>
+            </div>
+            <p>
+              對驗船師或負責驗收的工程師而言，一項成功的試驗必須由客觀證據支持。僅寫下「主機已測試——滿意」，通常不足以讓他人重建當時的試驗條件與判斷基礎。
+            </p>
+
+            <div class="st-equation" role="img" aria-label="可靠海試證據由要求、試驗條件、程序與數據共同構成">
+              <div class="st-equation__item">要求</div>
+              <div class="st-equation__sign">+</div>
+              <div class="st-equation__item">試驗條件</div>
+              <div class="st-equation__sign">+</div>
+              <div class="st-equation__item">程序與數據</div>
+              <div class="st-equation__sign">=</div>
+              <div class="st-equation__item">可採信的證據</div>
+            </div>
+
+            <p>有意義的紀錄通常包括：</p>
+            <ul class="st-list st-list--check">
+              <li>主機轉速、主機負荷、軸功率與試驗持續時間</li>
+              <li>排氣、冷卻水、潤滑油與軸承溫度</li>
+              <li>警報／安全狀態與控制模式</li>
+              <li>船舶吃水、排水量、俯仰差、風況、海況與水深</li>
+              <li>量測儀器的校正狀態與資料取得時間</li>
+            </ul>
+
+            <div class="st-table-wrap">
+              <table>
+                <caption>同一個數值，離開試驗條件後可能失去意義</caption>
+                <thead><tr><th>觀察結果</th><th>還必須知道什麼？</th><th>原因</th></tr></thead>
+                <tbody>
+                  <tr><td>船速</td><td>吃水、排水量、風、浪、流與水深</td><td>環境與裝載條件會直接影響阻力與速度。</td></tr>
+                  <tr><td>軸承溫度</td><td>負荷、運轉時間、進油溫度、冷卻條件與趨勢</td><td>剛升負荷與穩定運轉一小時後的數值不能直接等同。</td></tr>
+                  <tr><td>操舵時間</td><td>船速、吃水、舵角、泵組狀態與試驗方向</td><td>舵機性能必須放在實際水動力負荷下解讀。</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="st-pullquote">
+              <p>問題不只是「數值是多少？」，還要問「這個數值是在什麼條件下取得的？」</p>
+            </div>
+          </section>
+
+          <section class="st-section" id="who-is-involved">
+            <div class="st-section-heading">
+              <div class="st-section-number">10</div>
+              <div>
+                <p class="st-section-kicker">參與角色</p>
+                <h2>海試到底是誰在驗收？</h2>
+              </div>
+            </div>
+            <p>
+              一場新造船海試通常不是由單一單位完成。大家可能同時看著同一組數據，但各自代表的責任與驗收依據並不完全相同。
+            </p>
+
+            <div class="st-role-grid">
+              <div class="st-role"><h3>船廠</h3><p>證明建造、安裝與調試結果符合設計、技術規格及約定的驗收要求。</p></div>
+              <div class="st-role"><h3>船東</h3><p>確認所購買的船舶在航速、油耗、操縱、振動、噪音與系統可靠性方面符合合約。</p></div>
+              <div class="st-role"><h3>船級協會</h3><p>確認船級範圍內的設備、系統、試驗程序與證據符合適用的船級規範。</p></div>
+              <div class="st-role"><h3>船旗國／認可組織</h3><p>對法定認證項目確認適用公約、主管機關要求與證書條件得到滿足。</p></div>
+            </div>
+
+            <p>因此，一份合格的試驗計畫在試驗前應清楚回答四個問題：</p>
+            <ul class="st-list">
+              <li><strong>要測試什麼？</strong>——要驗證哪一項功能、性能或故障反應？</li>
+              <li><strong>在什麼條件下測試？</strong>——吃水、負荷、模式與環境條件為何？</li>
+              <li><strong>依據什麼要求？</strong>——法規、船級或合約依據是什麼？</li>
+              <li><strong>驗收標準是什麼？</strong>——什麼結果才算可接受？</li>
+            </ul>
+          </section>
+
+          <section class="st-section" id="passing-sea-trial">
+            <div class="st-section-heading">
+              <div class="st-section-number">11</div>
+              <div>
+                <p class="st-section-kicker">「通過」的意義</p>
+                <h2>海試通過，是否代表船完全沒有問題？</h2>
+              </div>
+            </div>
+            <p>
+              不一定。一艘大型商船包含數百個系統、數萬個零件與大量介面，不可能透過幾天的海上試驗就證明它未來二十多年永遠不會發生故障。
+            </p>
+
+            <div class="st-highlight st-highlight--gold">
+              <span class="st-highlight__label">比較精確的說法</span>
+              <p>海試通過代表：<strong>在規定的試驗條件與測試範圍內，船舶已完成所要求的功能與性能驗證。</strong></p>
+            </div>
+
+            <p>如果試驗過程發現異常，可能需要：</p>
+            <ul class="st-list st-list--check">
+              <li>調整或故障排除</li>
+              <li>修理、修改或追加檢查</li>
+              <li>重新量測、延長運轉或重新試驗</li>
+              <li>列為待辦／未結項目，並依風險與驗收基準決定交船前處理方式</li>
+            </ul>
+
+            <div class="st-pullquote">
+              <p>海試發現問題，不代表海試沒有價值；相反地，在投入商業營運前發現問題，正是海上試驗存在的價值。</p>
+            </div>
+          </section>
+
+          <section class="st-section" id="surveyor-perspective">
+            <div class="st-section-heading">
+              <div class="st-section-number">12</div>
+              <div>
+                <p class="st-section-kicker">驗船師視角</p>
+                <h2>從驗船師的角度，海試真正在看什麼？</h2>
+              </div>
+            </div>
+            <p>
+              第一次參加海試的人，往往會把注意力放在大量的轉速、壓力、溫度、速度、時間與角度上。但經驗增加後，真正值得注意的通常不是某一個數字是否剛好低於限制值，而是數據之間的關係是否合理。
+            </p>
+
+            <div class="st-grid">
+              <div class="st-card"><div class="st-card__top"><div class="st-card__icon">趨</div><h3>趨勢</h3></div><p>軸承溫度是逐漸穩定，還是仍持續上升？負荷下降後能否合理回復？</p></div>
+              <div class="st-card"><div class="st-card__top"><div class="st-card__icon">一</div><h3>一致性</h3></div><p>各缸排氣溫度的分布是否一致？同類設備的行為是否存在異常偏差？</p></div>
+              <div class="st-card"><div class="st-card__top"><div class="st-card__icon">邏</div><h3>邏輯</h3></div><p>警報出現後，聯鎖、降速、停機與備用機組起動是否按設計順序動作？</p></div>
+              <div class="st-card st-card--featured"><div class="st-card__top"><div class="st-card__icon">整</div><h3>整合</h3></div><p>機械、電力、自動控制與安全系統在負荷變動或故障情境下是否能共同維持安全狀態？</p></div>
+            </div>
+
+            <p>
+              因此，對驗船師而言，海試不只是<span class="st-term">見證試驗</span>，而是觀察整艘船作為一個整合工程系統，在真實航行邊界條件下如何反應。
+            </p>
+          </section>
+
+          <section class="st-conclusion" id="conclusion">
+            <p class="st-conclusion__label">結語</p>
+            <h2>海上試驗：新船第一次真正成為「一艘船」</h2>
+            <p>
+              在船廠建造階段，一艘船可以被看成主機、發電機、泵浦、舵機、航海設備、自動控制與安全系統的集合。它們被分別設計、製造、安裝、檢查與測試。
+            </p>
+            <p>
+              到了海上試驗，這些原本分開的系統第一次一起面對推進負荷、水動力、電力負載變化、振動、溫度、船體運動、故障情境與實際航行條件。
+            </p>
+            <p>
+              這時候所驗證的，已經不再只是某一台設備是否能啟動，而是這些設備組合在一起後，能不能成為一艘安全、可靠，而且符合預期性能的船。
+            </p>
+
+            <div class="st-final-contrast">
+              <div class="st-final-box">
+                <span>碼頭試驗關注</span>
+                <strong>每個系統能不能工作？</strong>
+              </div>
+              <div class="st-final-box st-final-box--emphasis">
+                <span>海上試驗關注</span>
+                <strong>整艘船能不能工作？</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="st-references" aria-labelledby="references-title">
+            <h2 id="references-title">參考資料與來源說明</h2>
+            <ol>
+              <li id="ref-1">國際海事組織（IMO），MSC.137(76) 決議，<em>《船舶操縱性能標準》（Standards for Ship Manoeuvrability）</em>。<a href="https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/MSCResolutions/MSC.137%2876%29.pdf" target="_blank" rel="noopener noreferrer">IMO 官方 PDF</a>。</li>
+              <li id="ref-2">《SOLAS 公約》第 II-1 章第 29 條，以及適用於舵機測試與試驗的統一解釋；視適用情況參見 IMO 決議 A.1140(31)。<a href="https://wwwcdn.imo.org/localresources/en/OurWork/IIIS/Documents/A%2031-RES.1140.pdf" target="_blank" rel="noopener noreferrer">IMO 官方 PDF</a>。</li>
+            </ol>
+          </section>
+
+          <aside class="st-disclaimer">
+            本文為個人海事學習與實務整理，不代表 Lloyd’s Register、IMO、任何船旗國主管機關、船東、船廠或客戶的正式立場。實際設計審查、試驗程序、見證範圍、驗收與交船，應以最新適用的國際公約、船旗國要求、船級規範、核准文件、船級審查意見、造船合約及專案技術規格為準。
+          </aside>
+        </div>
+
+        <nav class="st-toc" aria-label="文章目錄">
+          <p class="st-toc__label">文章目錄</p>
+          <ol>
+            <li><a href="#what-is-sea-trial">什麼是海上試驗？</a></li>
+            <li><a href="#why-harbour-tests-are-not-enough">碼頭測試為何不夠？</a></li>
+            <li><a href="#propulsion-performance">推進性能</a></li>
+            <li><a href="#manoeuvrability">操縱性能</a></li>
+            <li><a href="#steering-gear">舵機實際負荷</a></li>
+            <li><a href="#system-integration">系統整合</a></li>
+            <li><a href="#failure-scenarios">故障反應</a></li>
+            <li><a href="#acceptance-basis">驗收依據</a></li>
+            <li><a href="#objective-evidence">客觀證據</a></li>
+            <li><a href="#who-is-involved">參與角色</a></li>
+            <li><a href="#passing-sea-trial">「通過」的意義</a></li>
+            <li><a href="#surveyor-perspective">驗船師視角</a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <button class="st-backtop" type="button" tabindex="-1" aria-hidden="true" aria-label="回到文章頂端" title="回到頂端">↑</button>
+  </article>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/sea-trial-note.html"
+      data-share-title="為什麼新造船需要海上試驗？｜Reay's Note"
+      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;為什麼新造船需要海上試驗？｜Reay's Note&#10;https://reayhuang.com/notes/maritime/sea-trial-note.html"
+      data-share-copy="複製連結"
+      data-share-copied="已複製"
+      data-toast-copied="連結已複製到剪貼簿"
+    >
+      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="site-footer" id="source">
+    <div class="site-footer-inner">
+      <strong>為什麼新造船需要海上試驗？｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note · 資料整理日期：2026-08-29</span>
+      <p class="disclaimer small">
+        <strong>專業聲明：</strong>本文為個人海事學習與實務整理，僅供一般技術與管理參考，不構成特定船舶的船級、法定檢驗、船旗國或安全作業核准意見。
+        實際設計審查、試驗程序、見證範圍、驗收與交船，應以最新適用的國際公約、船旗國要求、船級規範、核准文件、船級審查意見、造船合約及專案技術規格為準。
+        本文觀點不代表 Lloyd’s Register、IMO、任何船旗國主管機關、船東、船廠或客戶的正式立場。
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const article = document.querySelector('.sea-trial-note');
+      if (!article) return;
+
+      const progressBar = article.querySelector('.st-progress__bar');
+      const backTop = article.querySelector('.st-backtop');
+      const tocLinks = [...article.querySelectorAll('.st-toc a[href^="#"]')];
+      const sections = tocLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+      const updateScrollUI = () => {
+        const rect = article.getBoundingClientRect();
+        const articleTop = window.scrollY + rect.top;
+        const total = Math.max(1, article.offsetHeight - window.innerHeight);
+        const passed = Math.min(total, Math.max(0, window.scrollY - articleTop));
+        const percent = (passed / total) * 100;
+        if (progressBar) progressBar.style.width = `${percent}%`;
+        if (backTop) {
+          const show = window.scrollY > 700;
+          backTop.classList.toggle('is-visible', show);
+          backTop.setAttribute('aria-hidden', String(!show));
+          backTop.tabIndex = show ? 0 : -1;
+        }
+      };
+
+      window.addEventListener('scroll', updateScrollUI, { passive: true });
+      window.addEventListener('resize', updateScrollUI);
+      updateScrollUI();
+
+      if (backTop) {
+        backTop.addEventListener('click', () => {
+          article.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      if ('IntersectionObserver' in window && sections.length) {
+        let activeHref = '';
+        const observer = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+          if (!visible) return;
+          const nextHref = `#${visible.target.id}`;
+          tocLinks.forEach(link => {
+            const active = link.getAttribute('href') === nextHref;
+            link.classList.toggle('is-active', active);
+            if (active) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+          });
+
+          if (nextHref !== activeHref && window.matchMedia('(max-width: 760px)').matches) {
+            activeHref = nextHref;
+            const activeLink = tocLinks.find(link => link.getAttribute('href') === nextHref);
+            const tocList = article.querySelector('.st-toc ol');
+            if (activeLink && tocList) {
+              const targetLeft = activeLink.offsetLeft - (tocList.clientWidth - activeLink.offsetWidth) / 2;
+              tocList.scrollTo({
+                left: Math.max(0, targetLeft),
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+              });
+            }
+          }
+        }, { rootMargin: '-12% 0px -72% 0px', threshold: [0, 0.1, 0.5] });
+        sections.forEach(section => observer.observe(section));
+      }
+    })();
+  </script>
+  <script src="../../assets/js/article-share.js"></script>
+</body>
+</html>

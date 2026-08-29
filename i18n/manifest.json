@@ -29,6 +29,13 @@
       "zh": "research/index.html"
     },
     {
+      "slug": "sea-trial-note",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/sea-trial-note.en.html",
+      "zh": "notes/maritime/sea-trial-note.html"
+    },
+    {
       "slug": "can-drones-replace-ship-surveyors",
       "type": "article",
       "category": "notes",

@@ -34,6 +34,7 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 
 | Slug | English | Traditional Chinese |
 |------|---------|---------------------|
+| Why newbuildings need sea trials | `sea-trial-note.en.html` | `sea-trial-note.html` |
 | Can drones replace ship surveyors (RIT) | `can-drones-replace-ship-surveyors.en.html` | `can-drones-replace-ship-surveyors.html` |
 | Ammonia fuel | `ammonia-fuel-surveyor-notes.en.html` | `ammonia-fuel-surveyor-notes.html` |
 | Future IMO/ILO container ships (2026) | `future-imo-ilo-container-ships-2026.en.html` | `future-imo-ilo-container-ships-2026.html` |
