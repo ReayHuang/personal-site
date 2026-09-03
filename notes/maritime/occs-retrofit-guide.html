@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light" data-back-to-top-label="回到頂部">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" hreflang="en" href="occs-retrofit-guide.en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="occs-retrofit-guide.html">
+  <link rel="alternate" hreflang="x-default" href="occs-retrofit-guide.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。">
+  <meta name="author" content="Reay Huang">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#0d263f">
+  <title>船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay Huang Maritime Notes</title>
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/occs-retrofit-guide.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:title" content="船上碳捕捉與儲存 oCCS｜現有船舶改裝指南">
+  <meta property="og:description" content="深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/occs-retrofit-guide.html">
+  <meta property="article:published_time" content="2026-09-03T00:00:00+09:00">
+  <meta property="article:modified_time" content="2026-09-03T00:00:00+09:00">
+  <meta property="article:author" content="Reay Huang">
+  <meta property="article:section" content="Decarbonisation">
+  <meta property="article:tag" content="oCCS">
+  <meta property="article:tag" content="Carbon Capture">
+  <meta property="article:tag" content="Retrofit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="船上碳捕捉與儲存 oCCS｜現有船舶改裝指南">
+  <meta name="twitter:description" content="深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。">
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.jpg">
+  <meta property="og:image:alt" content="船上碳捕捉與儲存：現有船舶值得改裝嗎？">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.jpg">
+  <script>document.documentElement.classList.add('js')</script>
+  <style>
+    :root {
+      --navy-950: #071827;
+      --navy-900: #0d263f;
+      --navy-800: #173c5b;
+      --navy-700: #225573;
+      --teal-700: #087f79;
+      --teal-600: #0b9991;
+      --teal-500: #14b8ae;
+      --teal-100: #dff6f3;
+      --teal-50: #f0fbfa;
+      --cyan-50: #f2f8fb;
+      --coral-600: #d65345;
+      --coral-100: #fde8e4;
+      --amber-700: #9a5b00;
+      --amber-100: #fff0d4;
+      --green-700: #28724c;
+      --green-100: #e4f4e9;
+      --ink: #20313f;
+      --muted: #60717e;
+      --line: #d8e1e6;
+      --surface: #ffffff;
+      --surface-soft: #f6f9fa;
+      --page: #eef4f6;
+      --shadow-sm: 0 8px 22px rgba(7, 24, 39, .07);
+      --shadow-lg: 0 24px 70px rgba(7, 24, 39, .17);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      height: 4px;
+      transform: scaleX(var(--read-progress, 0));
+      transform-origin: left;
+      background: linear-gradient(90deg, var(--teal-500), #64d8d1, #ffc064);
+    }
+    a { color: inherit; }
+    img, svg { max-width: 100%; }
+    button { font: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--teal-700);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { margin: 0; color: var(--navy-900); line-height: 1.22; letter-spacing: -.02em; }
+    h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 3rem); }
+    h3 { font-size: 1.15rem; }
+    p { margin: 0; }
+    .muted { color: var(--muted); }
+    .mono { font-variant-numeric: tabular-nums; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      padding: 6px 11px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      font-size: .78rem;
+      font-weight: 750;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-500); box-shadow: 0 0 0 5px rgba(20,184,174,.16); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      border-bottom: 1px solid rgba(216,225,230,.86);
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 900; color: var(--navy-900); text-decoration: none; }
+    .brand-mark {
+      width: 34px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: linear-gradient(145deg, var(--teal-500), var(--navy-800));
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav { display: flex; align-items: center; gap: 20px; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 700; }
+    .nav a:hover, .nav a:focus-visible { color: var(--teal-700); }
+    .print-button {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: white;
+      color: var(--navy-900);
+      cursor: pointer;
+      font-weight: 750;
+    }
+    .print-button:hover { border-color: var(--teal-500); color: var(--teal-700); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(7, 24, 39, 0.94) 0%, rgba(7, 24, 39, 0.82) 34%, rgba(7, 24, 39, 0.42) 58%, rgba(7, 24, 39, 0.16) 100%),
+        url("../../assets/images/maritime/occs-retrofit-guide/hero-occs-retrofit.jpg") 78% center / cover no-repeat;
+    }
+    @supports (background-image: image-set(url("dummy.webp") type("image/webp"))) {
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(7, 24, 39, 0.94) 0%, rgba(7, 24, 39, 0.82) 34%, rgba(7, 24, 39, 0.42) 58%, rgba(7, 24, 39, 0.16) 100%),
+          image-set(
+            url("../../assets/images/maritime/occs-retrofit-guide/hero-occs-retrofit.webp") type("image/webp"),
+            url("../../assets/images/maritime/occs-retrofit-guide/hero-occs-retrofit.jpg") type("image/jpeg")
+          ) 78% center / cover no-repeat;
+      }
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(7, 24, 39, 0.10) 0%, transparent 42%, rgba(7, 24, 39, 0.22) 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 160px;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent, rgba(7, 24, 39, 0.55));
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: clamp(28px, 5vw, 72px);
+      align-items: center;
+      min-height: 680px;
+      padding-block: 82px 74px;
+    }
+    .hero h1 {
+      max-width: none;
+      color: white;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.14;
+      letter-spacing: -.035em;
+    }
+    .hero h1 span {
+      display: block;
+      color: #71ded7;
+    }
+    @media (min-width: 981px) {
+      .hero h1 span { white-space: nowrap; }
+    }
+    .hero .article-meta {
+      margin: 18px 0 0;
+      max-width: 720px;
+      color: rgba(216, 231, 238, 0.82);
+    }
+    .hero .article-meta__sep { color: rgba(255,255,255,.32); }
+    .hero .lead { max-width: 720px; margin-top: 24px; color: #d8e7ee; font-size: clamp(1.06rem, 2vw, 1.32rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero .article-share--hero { margin-top: 22px; }
+    .hero .article-share__label {
+      color: rgba(231, 245, 247, .82);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .hero a.share-btn { text-decoration: none; }
+    .hero a.share-btn--linkedin,
+    .hero a.share-btn--linkedin:hover,
+    .hero a.share-btn--facebook,
+    .hero a.share-btn--facebook:hover { color: #fff; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 10px 18px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+    .button-primary { background: var(--teal-500); color: var(--navy-950); }
+    .button-primary:hover { transform: translateY(-2px); background: #54d2ca; }
+    .button-ghost { border-color: rgba(255,255,255,.28); color: white; background: rgba(255,255,255,.06); }
+    .button-ghost:hover { border-color: #71ded7; background: rgba(255,255,255,.11); }
+
+    .ship-visual { display: none; }
+    .ship-caption { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; color: #d7e7ed; font-size: .78rem; }
+
+    .stats-wrap { position: relative; z-index: 2; margin-top: -34px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-lg);
+    }
+    .stat { padding: 24px; }
+    .stat + .stat { border-left: 1px solid var(--line); }
+    .stat strong { display: block; color: var(--navy-900); font-size: clamp(1.6rem, 3vw, 2.45rem); line-height: 1.1; }
+    .stat span { display: block; margin-top: 7px; color: var(--muted); font-size: .84rem; }
+
+    .quick-nav-wrap { padding-top: 30px; }
+    .quick-nav {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+    .quick-nav-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; }
+    .quick-nav h2 { font-size: 1.25rem; }
+    .quick-nav-head p { color: var(--muted); font-size: .82rem; }
+    .quick-links { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; margin-top: 18px; }
+    .quick-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 46px;
+      padding: 10px 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--navy-900);
+      background: var(--surface-soft);
+      text-decoration: none;
+      font-size: .8rem;
+      font-weight: 800;
+      transition: border-color .2s ease, color .2s ease, background .2s ease, transform .2s ease;
+    }
+    .quick-links a::after { content: "↓"; color: var(--teal-700); }
+    .quick-links a:hover, .quick-links a:focus-visible { border-color: var(--teal-500); color: var(--teal-700); background: var(--teal-50); transform: translateY(-1px); }
+    .quick-links a[aria-current="location"] {
+      border-color: var(--teal-600);
+      color: white;
+      background: var(--teal-700);
+      box-shadow: 0 7px 18px rgba(8,127,121,.22);
+    }
+    .quick-links a[aria-current="location"]::after { color: currentColor; }
+
+    .term-card {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 74px;
+      padding: 30px;
+      border: 1px solid rgba(11,153,145,.25);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--teal-50), white);
+      box-shadow: var(--shadow-sm);
+    }
+    .term-card h3 { margin-top: 5px; font-size: clamp(1.25rem, 2.4vw, 1.8rem); }
+    .term-card p { margin-top: 10px; color: var(--muted); font-size: .92rem; }
+    .term-breakdown { display: grid; grid-template-columns: .7fr 1.15fr .85fr; gap: 10px; }
+    .term-piece { min-height: 120px; padding: 18px; border: 1px solid var(--line); border-radius: 15px; background: white; }
+    .term-piece b { display: block; color: var(--teal-700); font-size: 1.5rem; line-height: 1; }
+    .term-piece strong { display: block; margin-top: 11px; color: var(--navy-900); font-size: .88rem; }
+    .term-piece span { display: block; margin-top: 4px; color: var(--muted); font-size: .75rem; }
+
+    main { overflow: clip; }
+    .section[id], #term { scroll-margin-top: 28px; }
+    .section { padding-block: 105px; }
+    .section + .section { border-top: 1px solid rgba(216,225,230,.8); }
+    .section-white { background: var(--surface); }
+    .section-navy { color: #dbeaf0; background: var(--navy-900); }
+    .section-navy h2, .section-navy h3 { color: white; }
+    .section-head { display: grid; grid-template-columns: .78fr 1.22fr; gap: 50px; align-items: end; margin-bottom: 46px; }
+    .section-intro { max-width: 720px; color: var(--muted); font-size: 1.05rem; }
+    .section-navy .section-intro { color: #a9c2cf; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .card {
+      position: relative;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .card h3 { margin-top: 16px; }
+    .card p { margin-top: 10px; color: var(--muted); font-size: .93rem; }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--teal-100);
+      color: var(--teal-700);
+      font-size: 1.35rem;
+      font-weight: 900;
+    }
+    .card-accent::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      border-radius: var(--radius-md) 0 0 var(--radius-md);
+      background: var(--teal-500);
+    }
+    .callout {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-top: 28px;
+      padding: 25px 28px;
+      border: 1px solid #e5b75f;
+      border-radius: var(--radius-md);
+      background: var(--amber-100);
+      color: #68420a;
+    }
+    .callout strong { color: #5d3800; }
+
+    .lever-card { min-height: 260px; }
+    .lever-no { position: absolute; top: 20px; right: 22px; color: #d7e2e7; font-size: 3.6rem; font-weight: 900; line-height: 1; }
+    .lever-card.highlight { border-color: rgba(11,153,145,.4); background: linear-gradient(145deg, #effbf9, white); }
+
+    .owner-need {
+      margin-top: 30px;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      color: white;
+      background: linear-gradient(140deg, var(--navy-950), var(--navy-800));
+      box-shadow: var(--shadow-lg);
+    }
+    .owner-need-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 34px; align-items: end; padding: 30px; }
+    .owner-need h3 { color: white; font-size: clamp(1.35rem, 2.6vw, 2rem); }
+    .owner-need-head p { color: #c9dce5; }
+    .owner-need-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,.12); }
+    .owner-driver { min-height: 205px; padding: 24px; background: rgba(255,255,255,.065); }
+    .owner-driver small { display: block; color: #75e0d9; font-weight: 900; letter-spacing: .08em; }
+    .owner-driver strong { display: block; margin-top: 16px; color: white; font-size: 1rem; }
+    .owner-driver p { margin-top: 7px; color: #b9ced8; font-size: .82rem; }
+    .necessity-note { padding: 21px 30px; border-top: 1px solid rgba(255,255,255,.12); color: #dcebef; background: rgba(20,184,174,.11); font-size: .9rem; }
+    .necessity-note strong { color: #75e0d9; }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      counter-reset: process;
+    }
+    .process-step {
+      position: relative;
+      min-height: 170px;
+      padding: 22px 18px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 18px;
+      background: rgba(255,255,255,.055);
+    }
+    .process-step::before {
+      counter-increment: process;
+      content: "0" counter(process);
+      display: block;
+      margin-bottom: 32px;
+      color: #55d2ca;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+    .process-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -13px;
+      z-index: 2;
+      transform: translateY(-50%);
+      color: #55d2ca;
+      font-weight: 900;
+    }
+    .process-step h3 { font-size: 1rem; }
+    .process-step p { margin-top: 8px; color: #a9c2cf; font-size: .8rem; }
+    .chain-rule { margin-top: 30px; padding: 26px; border-radius: var(--radius-md); background: linear-gradient(90deg, rgba(20,184,174,.17), rgba(20,184,174,.055)); }
+    .chain-rule strong { color: #75e0d9; }
+
+    .trl-explainer {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 28px;
+      border: 1px solid rgba(11,153,145,.24);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--teal-50), white);
+      box-shadow: var(--shadow-sm);
+    }
+    .trl-explainer h3 { font-size: clamp(1.3rem, 2.4vw, 1.8rem); }
+    .trl-explainer p { margin-top: 10px; color: var(--muted); font-size: .9rem; }
+    .trl-explainer .trl-caution { color: var(--navy-800); }
+    .trl-explainer .trl-caution strong { color: var(--teal-700); }
+    .trl-scale { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .trl-band { min-height: 150px; padding: 18px; border: 1px solid var(--line); border-radius: 15px; background: white; }
+    .trl-band span { display: block; color: var(--teal-700); font-size: 1.05rem; font-weight: 900; }
+    .trl-band strong { display: block; margin-top: 10px; color: var(--navy-900); font-size: .9rem; }
+    .trl-band small { display: block; margin-top: 5px; color: var(--muted); font-size: .75rem; line-height: 1.55; }
+    .trl-band-operational { border-color: rgba(11,153,145,.42); background: var(--teal-100); }
+
+    .tech-lead { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 22px; }
+    .maturity-feature {
+      padding: 28px;
+      border-radius: var(--radius-md);
+      color: white;
+      background: linear-gradient(135deg, var(--teal-700), var(--navy-800));
+      box-shadow: var(--shadow-lg);
+    }
+    .maturity-feature h3 { color: white; font-size: 1.4rem; }
+    .maturity-feature p { margin-top: 10px; color: #d6efed; }
+    .feature-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .feature-meta span { padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,.12); font-size: .76rem; font-weight: 750; }
+    .key-warning { display: grid; align-content: center; padding: 28px; border: 1px solid #f0c7c1; border-radius: var(--radius-md); background: var(--coral-100); }
+    .key-warning strong { color: #8d3025; font-size: 1.15rem; }
+    .key-warning p { margin-top: 8px; color: #7a493f; }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-md); background: white; box-shadow: var(--shadow-sm); }
+    table { width: 100%; border-collapse: collapse; min-width: 880px; }
+    th, td { padding: 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: white; background: var(--navy-900); font-size: .82rem; letter-spacing: .02em; }
+    td { font-size: .86rem; }
+    tbody tr:nth-child(even) { background: var(--surface-soft); }
+    tbody tr:last-child td { border-bottom: 0; }
+    .status { display: inline-flex; padding: 4px 9px; border-radius: 999px; font-size: .72rem; font-weight: 850; white-space: nowrap; }
+    .status-ready { color: var(--green-700); background: var(--green-100); }
+    .status-pilot { color: var(--amber-700); background: var(--amber-100); }
+    .status-watch { color: #7c4a43; background: var(--coral-100); }
+
+    .penalty-explainer {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 24px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 28px;
+      border: 1px solid #e5b75f;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--amber-100), white);
+      box-shadow: var(--shadow-sm);
+    }
+    .penalty-explainer h3 { font-size: clamp(1.3rem, 2.4vw, 1.8rem); }
+    .penalty-explainer p { margin-top: 10px; color: #68420a; font-size: .9rem; }
+    .penalty-example { padding: 13px 15px; border-radius: 13px; background: rgba(255,255,255,.7); }
+    .penalty-example strong { color: var(--amber-700); }
+    .penalty-causes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .penalty-cause { min-height: 118px; padding: 17px; border: 1px solid rgba(154,91,0,.2); border-radius: 14px; background: white; }
+    .penalty-cause strong { display: block; color: var(--navy-900); font-size: .88rem; }
+    .penalty-cause span { display: block; margin-top: 6px; color: var(--muted); font-size: .76rem; line-height: 1.55; }
+
+    .net-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 22px; margin-top: 34px; }
+    .formula-card { padding: 28px; border-radius: var(--radius-md); color: white; background: var(--navy-900); }
+    .formula-card .formula { margin: 18px 0; color: #75e0d9; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; line-height: 1.3; }
+    .formula-card p { color: #a9c2cf; }
+    .bars { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius-md); background: white; }
+    .bar-row + .bar-row { margin-top: 18px; }
+    .bar-label { display: flex; justify-content: space-between; gap: 18px; margin-bottom: 7px; font-size: .82rem; font-weight: 750; }
+    .bar-track { height: 13px; overflow: hidden; border-radius: 999px; background: #e8eef1; }
+    .bar-fill { width: var(--value); height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--teal-700), var(--teal-500)); }
+
+    .integration-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .integration-card { min-height: 230px; }
+    .integration-card small { display: block; color: var(--teal-700); font-weight: 850; letter-spacing: .08em; }
+    .integration-card ul { margin: 14px 0 0; padding-left: 1.15rem; color: var(--muted); font-size: .86rem; }
+    .integration-card li + li { margin-top: 6px; }
+
+    .storage-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; overflow: hidden; margin-top: 22px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--line); }
+    .storage-item { padding: 23px; background: white; }
+    .storage-item strong { display: block; color: var(--teal-700); font-size: 1.3rem; }
+    .storage-item span { display: block; margin-top: 5px; color: var(--muted); font-size: .78rem; }
+
+    .reg-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 24px; align-items: start; }
+    .reg-summary { position: sticky; top: 94px; padding: 30px; border-radius: var(--radius-md); color: white; background: linear-gradient(145deg, var(--navy-900), var(--navy-700)); box-shadow: var(--shadow-lg); }
+    .reg-summary h3 { color: white; font-size: 1.45rem; }
+    .reg-summary p { margin-top: 12px; color: #c9dce5; }
+    .reg-summary hr { margin: 24px 0; border: 0; border-top: 1px solid rgba(255,255,255,.16); }
+    .reg-list { display: grid; gap: 12px; }
+    .reg-item { padding: 23px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+    .reg-item-head { display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+    .reg-item p { margin-top: 8px; color: var(--muted); font-size: .88rem; }
+
+    .candidate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .candidate { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); background: white; box-shadow: var(--shadow-sm); }
+    .candidate-head { padding: 18px 22px; font-weight: 900; }
+    .candidate.good .candidate-head { color: var(--green-700); background: var(--green-100); }
+    .candidate.conditional .candidate-head { color: var(--amber-700); background: var(--amber-100); }
+    .candidate.weak .candidate-head { color: #8d3025; background: var(--coral-100); }
+    .candidate ul { margin: 0; padding: 22px 22px 24px 42px; }
+    .candidate li + li { margin-top: 10px; }
+
+    .decision { display: grid; gap: 13px; counter-reset: gate; }
+    .gate {
+      counter-increment: gate;
+      display: grid;
+      grid-template-columns: 66px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 19px 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+    }
+    .gate::before {
+      content: "0" counter(gate);
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      color: var(--teal-700);
+      background: var(--teal-100);
+      font-weight: 900;
+    }
+    .gate h3 { font-size: 1rem; }
+    .gate p { margin-top: 3px; color: var(--muted); font-size: .84rem; }
+    .gate-result { max-width: 255px; color: var(--navy-900); font-size: .8rem; font-weight: 850; text-align: right; }
+
+    .pm-panel {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 42px;
+      align-items: center;
+      padding: 42px;
+      border-radius: var(--radius-lg);
+      color: white;
+      background: linear-gradient(135deg, var(--teal-700), var(--navy-900));
+      box-shadow: var(--shadow-lg);
+    }
+    .pm-panel h2 { color: white; }
+    .pm-panel p { margin-top: 15px; color: #d4e8ea; }
+    .pm-list { display: grid; gap: 10px; }
+    .pm-row { display: grid; grid-template-columns: 35px 1fr; gap: 12px; align-items: start; padding: 13px 15px; border-radius: 13px; background: rgba(255,255,255,.085); }
+    .pm-row b { color: #75e0d9; }
+
+    .source-box { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface-soft); }
+    .source-primary-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 18px 20px;
+      border: 1px solid rgba(0, 128, 128, .24);
+      border-radius: 15px;
+      color: var(--navy-950);
+      background: linear-gradient(135deg, rgba(0, 128, 128, .11), rgba(255, 255, 255, .92));
+      text-decoration: none;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .source-primary-link:hover,
+    .source-primary-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--teal-600);
+      box-shadow: 0 12px 26px rgba(8, 43, 52, .12);
+    }
+    .source-primary-link strong { display: block; color: var(--teal-700); }
+    .source-primary-link span { display: block; margin-top: 4px; color: var(--muted); font-size: .88rem; }
+    .source-primary-link b { flex: 0 0 auto; color: var(--teal-700); font-size: 1.25rem; }
+    .source-box ul { margin: 16px 0 0; padding-left: 1.2rem; }
+    .source-box li + li { margin-top: 7px; }
+    .source-box small { display: block; margin-top: 18px; color: var(--muted); }
+
+    footer { padding: 42px 0; color: #9ab0bc; background: var(--navy-950); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
+    footer strong { color: white; }
+    footer a { color: #75e0d9; text-decoration: none; }
+
+    .reveal { opacity: 1; transform: none; }
+    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.visible { opacity: 1; transform: none; }
+
+    @media (min-width: 1100px) {
+      .quick-nav-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 70;
+        height: 0;
+        padding-top: 30px;
+        pointer-events: none;
+      }
+      .quick-nav {
+        width: 220px;
+        max-width: none;
+        max-height: calc(100vh - 60px);
+        margin-right: 0;
+        margin-left: max(20px, calc((100vw - var(--max)) / 2 - 240px));
+        padding: 18px;
+        overflow-y: auto;
+        pointer-events: auto;
+        scrollbar-width: thin;
+      }
+      .quick-nav-head { display: block; }
+      .quick-nav-head > p { display: none; }
+      .quick-nav .eyebrow { margin-bottom: 4px; font-size: .65rem; }
+      .quick-nav h2 { font-size: 1rem; }
+      .quick-links { grid-template-columns: 1fr; gap: 5px; margin-top: 12px; }
+      .quick-links a { min-height: 36px; padding: 7px 9px; font-size: .74rem; }
+      .quick-links a::after { content: "→"; }
+      .section[id] > .container {
+        width: min(calc(100% - 280px), var(--max));
+        margin-right: auto;
+        margin-left: max(260px, calc((100% - var(--max)) / 2));
+      }
+    }
+
+    @media (max-width: 980px) {
+      .nav a:not(.print-button) { display: none; }
+      .hero { background-position: 80% 40%; }
+      .hero::before {
+        background: linear-gradient(180deg, rgba(7, 24, 39, 0.28) 0%, transparent 50%, rgba(7, 24, 39, 0.32) 100%);
+      }
+      .hero-grid, .section-head, .reg-layout, .pm-panel, .net-grid { grid-template-columns: 1fr; }
+      .hero-grid { min-height: auto; padding-block: 74px 86px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .stat:nth-child(4) { border-top: 1px solid var(--line); }
+      .process { grid-template-columns: repeat(3, 1fr); }
+      .process-step:nth-child(3)::after { display: none; }
+      .grid-3, .integration-grid, .candidate-grid { grid-template-columns: repeat(2, 1fr); }
+      .quick-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .term-card, .owner-need-head, .trl-explainer, .penalty-explainer { grid-template-columns: 1fr; }
+      .owner-need-grid { grid-template-columns: repeat(2, 1fr); }
+      .storage-strip { grid-template-columns: repeat(2, 1fr); }
+      .reg-summary { position: static; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .header-inner { min-height: 60px; }
+      .brand span:last-child { display: none; }
+      .print-button { display: none; }
+      .hero-grid { padding-block: 56px 82px; }
+      .hero .lead { font-size: 1rem; }
+      .hero { background-position: 78% 38%; }
+      .stats-wrap { margin-top: -28px; }
+      .stats { grid-template-columns: 1fr 1fr; border-radius: 16px; }
+      .stat { padding: 18px; }
+      .section { padding-block: 76px; }
+      .section-head { gap: 16px; margin-bottom: 30px; }
+      .grid-3, .grid-2, .integration-grid, .candidate-grid, .tech-lead { grid-template-columns: 1fr; }
+      .quick-nav-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 95;
+        padding-top: 0;
+        border-bottom: 1px solid rgba(216,225,230,.92);
+        background: rgba(255,255,255,.94);
+        box-shadow: 0 8px 24px rgba(7,24,39,.1);
+        backdrop-filter: blur(16px);
+      }
+      .quick-nav {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 8px 14px 10px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+      .quick-nav-head { display: flex; align-items: center; }
+      .quick-nav-head > p, .quick-nav .eyebrow { display: none; }
+      .quick-nav h2 { font-size: .8rem; white-space: nowrap; }
+      .quick-links {
+        display: flex;
+        gap: 7px;
+        margin-top: 7px;
+        padding-bottom: 2px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .quick-links::-webkit-scrollbar { display: none; }
+      .quick-links a {
+        flex: 0 0 auto;
+        min-height: 32px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: .72rem;
+        white-space: nowrap;
+      }
+      .quick-links a::after { content: ""; }
+      .section[id], #term { scroll-margin-top: 86px; }
+      .trl-scale { grid-template-columns: 1fr; }
+      .trl-band { min-height: 0; }
+      .penalty-causes { grid-template-columns: 1fr; }
+      .penalty-cause { min-height: 0; }
+      .term-breakdown, .owner-need-grid { grid-template-columns: 1fr; }
+      .term-card { margin-bottom: 48px; padding: 23px; }
+      .term-piece, .owner-driver { min-height: 0; }
+      .process { grid-template-columns: 1fr; }
+      .process-step { min-height: 0; }
+      .process-step::before { margin-bottom: 16px; }
+      .process-step:not(:last-child)::after { content: "↓"; top: auto; right: 50%; bottom: -19px; transform: translateX(50%); }
+      .process-step:nth-child(3)::after { display: block; }
+      .storage-strip { grid-template-columns: 1fr 1fr; }
+      .gate { grid-template-columns: 54px 1fr; gap: 12px; }
+      .gate-result { grid-column: 2; max-width: none; text-align: left; }
+      .pm-panel { padding: 28px 22px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .button { transition: none; }
+    }
+    @media print {
+      :root { --page: white; }
+      body::before, .site-header, .note-site-bar, .hero-actions, .print-button, .quick-nav-wrap,
+      .article-share, .share-band, footer.site-footer, .top-btn { display: none !important; }
+      .hero { color: var(--ink); background: white !important; }
+      .hero::before, .hero::after { display: none !important; }
+      .hero h1 { color: var(--navy-900); }
+      .hero .lead { color: var(--muted); }
+      .ship-visual {
+        display: block;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--surface-soft);
+        box-shadow: none;
+      }
+      .stats-wrap { margin-top: 0; }
+      .stats, .card, .table-wrap, .candidate, .pm-panel { box-shadow: none; }
+      .section { padding-block: 38px; break-inside: avoid; }
+      .js .reveal { opacity: 1; transform: none; }
+      footer { background: white; color: var(--muted); }
+      footer strong { color: var(--navy-900); }
+    }
+
+    /* Site chrome: share band + branded footer */
+    .share-band {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 0;
+    }
+    .share-band .article-share--end {
+      margin: 0;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .share-band .article-share__label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--muted);
+    }
+    .share-band a.share-btn { text-decoration: none; }
+    .share-band a.share-btn--linkedin,
+    .share-band a.share-btn--linkedin:hover,
+    .share-band a.share-btn--facebook,
+    .share-band a.share-btn--facebook:hover { color: #fff; }
+    footer.site-footer {
+      padding: 38px 0 46px;
+      color: rgba(255,255,255,.78);
+      background: #041b2d;
+      margin-top: 34px;
+      text-align: left;
+      border-top: 0;
+    }
+    footer.site-footer .site-footer-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+    footer.site-footer strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 6px;
+    }
+    footer.site-footer .small {
+      font-size: 13px;
+      color: rgba(255,255,255,.62);
+    }
+    footer.site-footer .disclaimer {
+      margin: 14px 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: rgba(255,255,255,.62);
+      max-width: 760px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    footer.site-footer .disclaimer strong {
+      color: rgba(255,255,255,.82);
+      font-weight: 700;
+    }
+    footer.site-footer a { color: #8ff7f1; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "船上碳捕捉與儲存 oCCS｜現有船舶改裝指南",
+    "description": "深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。",
+    "image": "https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.jpg",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-09-03",
+    "dateModified": "2026-09-03",
+    "author": {
+      "@type": "Person",
+      "name": "Reay Huang",
+      "url": "https://reayhuang.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Reay Huang Maritime Notes",
+      "url": "https://reayhuang.com/"
+    },
+    "mainEntityOfPage": "https://reayhuang.com/notes/maritime/occs-retrofit-guide.html",
+    "keywords": [
+      "oCCS",
+      "Onboard Carbon Capture",
+      "Retrofit",
+      "Decarbonisation",
+      "Ship Survey"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="note-site-bar">
+    <div class="note-site-bar__nav">
+      <a href="../index.html">← 海事筆記</a>
+      <span>|</span>
+      <a href="../../index.zh.html">首頁</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../research/index.html">管理筆記</a>
+    </div>
+    <nav class="note-lang-switch" aria-label="Language">
+      <a href="occs-retrofit-guide.en.html" lang="en" hreflang="en">EN</a>
+      <a href="occs-retrofit-guide.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="hero" aria-label="現有船舶加裝船上碳捕捉與儲存系統的示意背景">
+      <div class="container hero-grid">
+        <div>
+          <div class="pill"><span class="dot"></span> Maritime decarbonisation knowledge guide</div>
+          <h1 style="margin-top:22px">船上碳捕捉與儲存<span>現有船舶值得改裝嗎？</span></h1>
+          <p class="article-meta" aria-label="文章資訊">
+            <span>📅 更新：2026-09-03</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 閱讀約 15 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 oCCS / 碳捕捉 / 現有船改裝</span>
+          </p>
+          <p class="lead">多數現有船在未來十多年仍須使用含碳燃料，而節能措施無法將排放降至零，零／近零排放燃料的供應也尚未普及。因此，船舶安裝 oCCS，是為了在排氣離開煙囪前捕捉 CO2，降低實際排放與碳成本，並維持現有船在日益嚴格的減碳規範下繼續營運；捕捉後的 CO2 還必須安全儲存在船上，並於靠港後卸岸送往永久儲存或合格利用，才能形成真正的減排。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#summary">先看五分鐘重點 <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="#decision">直接進入決策清單</a>
+          </div>
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/occs-retrofit-guide.html"
+            data-share-title="船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note"
+            data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note&#10;https://reayhuang.com/notes/maritime/occs-retrofit-guide.html"
+            data-share-copy="複製連結"
+            data-share-copied="已複製"
+            data-toast-copied="連結已複製到剪貼簿"
+          >
+            <p class="article-share__label" id="share-hero-label">分享此篇</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div>
+        </div>
+
+        <div class="ship-visual" aria-label="船舶排氣經捕捉、處理後進入船上儲槽的示意圖">
+          <svg viewBox="0 0 640 410" role="img" aria-labelledby="ship-title ship-desc">
+            <title id="ship-title">船上碳捕捉示意圖</title>
+            <desc id="ship-desc">排氣從船舶煙囪流向碳捕捉模組，再經壓縮與液化後儲存在甲板儲槽。</desc>
+            <defs>
+              <linearGradient id="sea" x1="0" x2="1">
+                <stop offset="0" stop-color="#1f6684"/>
+                <stop offset="1" stop-color="#18a9a0"/>
+              </linearGradient>
+              <linearGradient id="hull" x1="0" x2="1">
+                <stop offset="0" stop-color="#d8e7ee"/>
+                <stop offset="1" stop-color="#ffffff"/>
+              </linearGradient>
+              <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path d="M0 345 C100 327 177 363 278 344 C399 322 518 360 640 336 L640 410 L0 410Z" fill="url(#sea)" opacity=".8"/>
+            <path d="M58 278 H558 L500 344 H127Z" fill="url(#hull)"/>
+            <path d="M110 274 H507" stroke="#59d4cd" stroke-width="4"/>
+            <path d="M154 187 H357 V278 H132 V225 H154Z" fill="#d7e6ed"/>
+            <rect x="186" y="154" width="62" height="65" rx="8" fill="#173c5b"/>
+            <rect x="198" y="130" width="38" height="38" rx="5" fill="#0b9991"/>
+            <rect x="278" y="200" width="111" height="58" rx="12" fill="#0b9991"/>
+            <text x="333.5" y="224" fill="white" font-size="13" text-anchor="middle" font-family="sans-serif" font-weight="700">CAPTURE</text>
+            <text x="333.5" y="243" fill="#d8f7f4" font-size="10" text-anchor="middle" font-family="sans-serif">吸收與再生</text>
+            <rect x="412" y="198" width="49" height="62" rx="13" fill="#e8f3f6" stroke="#50cfc7" stroke-width="3"/>
+            <rect x="468" y="198" width="49" height="62" rx="13" fill="#e8f3f6" stroke="#50cfc7" stroke-width="3"/>
+            <path d="M235 149 C267 114 315 142 318 178" fill="none" stroke="#72e2db" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 10" filter="url(#glow)"/>
+            <path d="M390 229 H409" stroke="#72e2db" stroke-width="5" stroke-linecap="round"/>
+            <path d="M460 229 H468" stroke="#72e2db" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="228" cy="108" r="10" fill="#66d8d1" opacity=".72"/>
+            <circle cx="252" cy="84" r="15" fill="#66d8d1" opacity=".45"/>
+            <circle cx="219" cy="62" r="8" fill="#66d8d1" opacity=".3"/>
+            <text x="214" y="118" fill="#b9f3ef" font-size="12" text-anchor="middle" font-family="sans-serif" font-weight="700">CO2</text>
+            <text x="217" y="304" fill="#173c5b" font-size="12" font-family="sans-serif" font-weight="700">EXHAUST</text>
+            <text x="426" y="295" fill="#173c5b" font-size="12" font-family="sans-serif" font-weight="700">ONBOARD STORAGE</text>
+          </svg>
+          <div class="ship-caption">
+            <span>排氣預處理 → 捕捉 → 壓縮／液化 → 儲存</span>
+            <span>示意圖，非比例</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats-wrap" id="summary">
+      <div class="container stats reveal">
+        <div class="stat"><strong class="mono">TRL 7–8</strong><span>胺液燃燒後捕捉的海事成熟度</span></div>
+        <div class="stat"><strong class="mono">30–40%</strong><span>目前商業案例常見捕捉率</span></div>
+        <div class="stat"><strong class="mono">15–30%</strong><span>胺液系統常見能源／燃油懲罰區間</span></div>
+        <div class="stat"><strong class="mono">10+ 年</strong><span>較可能支持投資回收的剩餘壽命</span></div>
+      </div>
+    </div>
+
+    <div class="quick-nav-wrap">
+      <nav class="container quick-nav reveal" aria-labelledby="quick-nav-title">
+        <div class="quick-nav-head">
+          <div><p class="eyebrow">Quick links</p><h2 id="quick-nav-title">快速連結目錄</h2></div>
+          <p>選擇主題，直接前往文章重點</p>
+        </div>
+        <div class="quick-links">
+          <a href="#term">oCCS 名詞解釋</a>
+          <a href="#big-picture">船東為何需要</a>
+          <a href="#how">運作方式</a>
+          <a href="#technology">技術成熟度</a>
+          <a href="#integration">改裝整合</a>
+          <a href="#regulation">法規與碳鏈</a>
+          <a href="#candidates">適用船型</a>
+          <a href="#decision">決策清單</a>
+          <a href="#pm">驗船／PM 重點</a>
+          <a href="#sources">資料來源</a>
+        </div>
+      </nav>
+    </div>
+
+    <section class="section section-white" id="big-picture">
+      <div class="container">
+        <div class="term-card reveal" id="term" aria-label="oCCS 專有名詞解釋">
+          <div>
+            <p class="eyebrow">Term explained</p>
+            <h3>oCCS 是什麼意思？</h3>
+            <p><strong>oCCS</strong> 是 <strong>onboard Carbon Capture and Storage</strong> 的縮寫，中文通常稱為「<strong>船上碳捕捉與儲存</strong>」。小寫的 <strong>o</strong> 強調系統設置於船上；它不只負責捕捉 CO2，也包含將 CO2 調質並暫存在船上，直到靠港後交給下游處理。</p>
+          </div>
+          <div class="term-breakdown">
+            <div class="term-piece"><b>o</b><strong>onboard</strong><span>在船上進行</span></div>
+            <div class="term-piece"><b>CC</b><strong>Carbon Capture</strong><span>從排氣或燃料流程捕捉碳</span></div>
+            <div class="term-piece"><b>S</b><strong>Storage</strong><span>調質後暫存，等待卸岸</span></div>
+          </div>
+        </div>
+        <div class="section-head reveal">
+          <div><p class="eyebrow">The big picture</p><h2>船東為什麼必須現在評估 oCCS？</h2></div>
+          <p class="section-intro">船東面對的不只是環保議題，而是船舶在剩餘壽命內能否繼續有競爭力地營運。碳排放已逐漸成為直接營運成本，船舶營運碳強度指標（CII）、區域碳價與租船市場也持續提高減碳壓力；然而替代燃料的供應、價格與港口基礎設施仍不確定，許多現有船也不適合進行全面燃料改裝。oCCS 因而成為船東保護資產價值、降低部分碳曝險並爭取燃料轉型時間的重要選項。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card lever-card reveal">
+            <span class="lever-no">01</span><div class="card-icon">↗</div>
+            <h3>能源效率</h3><p>船體、螺槳、節能裝置、混合動力與航線最佳化，先減少每一海里的能源需求。</p>
+          </article>
+          <article class="card lever-card reveal">
+            <span class="lever-no">02</span><div class="card-icon">H2</div>
+            <h3>更換燃料</h3><p>從燃料端降低生命週期碳強度，但受燃料供應、儲槽、主機、安全與資產剩餘壽命限制。</p>
+          </article>
+          <article class="card lever-card highlight reveal">
+            <span class="lever-no">03</span><div class="card-icon">C</div>
+            <h3>船上碳捕捉</h3><p>不一定更換既有燃料與主機，而是在燃燒後或燃燒前將碳分離、儲存並送入下游碳鏈。</p>
+          </article>
+        </div>
+        <div class="owner-need reveal">
+          <div class="owner-need-head">
+            <div><p class="eyebrow" style="color:#75e0d9">Why owners care</p><h3>對船東而言，必要性來自四種壓力</h3></div>
+            <p>若一艘船還有十年以上壽命，又經常航行於碳定價區域，等待所有替代燃料完全成熟，可能意味著多年持續支付碳成本，甚至提早失去租船與營運競爭力。</p>
+          </div>
+          <div class="owner-need-grid">
+            <article class="owner-driver"><small>01｜COST</small><strong>碳排已成為現金成本</strong><p>歐盟排放交易體系（EU ETS）等制度，讓每一噸排放逐步反映在碳排配額、附加費與航次成本中。符合條件的捕捉量，可能降低部分碳成本曝險。</p></article>
+            <article class="owner-driver"><small>02｜ASSET</small><strong>保護船舶剩餘價值</strong><p>中齡船往往太年輕而不適合報廢，卻又可能太舊而不值得全面改用新燃料。oCCS 可降低提前商業淘汰的風險。</p></article>
+            <article class="owner-driver"><small>03｜TIME</small><strong>爭取燃料轉型時間</strong><p>先保留既有主機與燃料配置，讓船東延後不可逆的燃料選擇，等待綠色燃料供應、價格與加注網路更成熟。</p></article>
+            <article class="owner-driver"><small>04｜MARKET</small><strong>維持租船與融資競爭力</strong><p>貨主、租家與金融機構愈來愈關注實際碳強度。可驗證的減排能力有助於降低船舶被高碳市場排除的風險。</p></article>
+          </div>
+          <div class="necessity-note"><strong>必要評估，不等於每艘船強制安裝。</strong> 對剩餘壽命短、碳價曝險低或沒有 CO2 卸岸路徑的船，現階段可能不具投資合理性；但對剩餘壽命長、歐洲經濟區（EEA）航線曝險高、靠港固定且能建立下游碳鏈的船，oCCS 已是不能忽略的策略選項。</div>
+        </div>
+        <div class="callout reveal"><span aria-hidden="true" style="font-size:1.35rem">!</span><p><strong>最重要的判斷原則：</strong>裝上一套捕捉設備不等於已經減排。只有當 CO2 被可靠量測、安全儲存、卸岸、運輸並進入被法規認可的永久儲存或利用路徑，捕捉量才可能轉化為合規價值與船東收益。</p></div>
+      </div>
+    </section>
+
+    <section class="section section-navy" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow" style="color:#75e0d9">How it works</p><h2>從煙囪到永久儲存</h2></div>
+          <p class="section-intro">完整 oCCS 並不是一部機器，而是一條由船舶、港口、運輸業者與儲存場共同完成的六段鏈條。</p>
+        </div>
+        <div class="process">
+          <article class="process-step reveal"><h3>捕捉</h3><p>從排氣或燃料處理流程分離碳。</p></article>
+          <article class="process-step reveal"><h3>調質</h3><p>淨化、除水、壓縮並符合下游純度。</p></article>
+          <article class="process-step reveal"><h3>船上儲存</h3><p>以液態、溶液、固體碳或礦物形式保存。</p></article>
+          <article class="process-step reveal"><h3>卸岸</h3><p>以船岸、船對船或 ISO 標準槽櫃方式移交。</p></article>
+          <article class="process-step reveal"><h3>陸上運輸</h3><p>以管線、液態二氧化碳（LCO2）運輸船、車輛或鐵路移動。</p></article>
+          <article class="process-step reveal"><h3>最終結果</h3><p>永久地質儲存或被認可的長期利用。</p></article>
+        </div>
+        <div class="chain-rule reveal"><strong>鏈條強度由最弱的一環決定。</strong> 2026 年的主要弱點集中在港口接收、規格相容、跨境法規，以及可稽核的監管鏈（chain of custody，即 CO2 從船上捕捉、移交、運輸到最終儲存的完整流向與責任紀錄），而不是單純的捕捉化學。</div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="technology">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Technology status</p><h2>真正成熟的方案仍很集中</h2></div>
+          <p class="section-intro">目前最成熟、且已有 LR 船級商業案例的是胺液燃燒後捕捉。其他路徑各有潛力，但多數仍處於海事示範、概念驗證或更適合新造船的階段。</p>
+        </div>
+
+        <aside class="trl-explainer reveal" aria-labelledby="trl-explainer-title">
+          <div>
+            <p class="eyebrow">Technology Readiness Level</p>
+            <h3 id="trl-explainer-title">TRL 是什麼？分數代表什麼？</h3>
+            <p><strong>TRL</strong> 是 <strong>Technology Readiness Level（技術成熟度）</strong>的縮寫，以 1–9 級描述一項技術從基礎原理、原型驗證到實際操作證實的成熟程度。數字越高，表示它已在越接近真實營運的環境中完成驗證；這不是效能高低的考試分數。</p>
+            <p class="trl-caution"><strong>閱讀時要分開看：</strong>TRL 高，不代表已自動取得船級、旗國或法規核准，也不代表特定船舶的空間、能源、安全、監測、報告與查證（MRV），以及商業條件一定成立。</p>
+          </div>
+          <div class="trl-scale" aria-label="TRL 1 至 9 分級說明">
+            <div class="trl-band"><span>TRL 1–3</span><strong>研究與概念</strong><small>從基本原理、技術概念到實驗性概念驗證。</small></div>
+            <div class="trl-band"><span>TRL 4–6</span><strong>驗證與示範</strong><small>先在實驗室驗證，再於接近實際條件的相關環境中展示原型。</small></div>
+            <div class="trl-band trl-band-operational"><span>TRL 7–9</span><strong>操作環境與實際應用</strong><small>從操作環境原型示範、完整系統資格確認，到實際系統經營運證實。</small></div>
+          </div>
+        </aside>
+
+        <div class="tech-lead">
+          <article class="maturity-feature reveal">
+            <p class="eyebrow" style="color:#75e0d9">Current front-runner</p>
+            <h3>胺液燃燒後化學吸收</h3>
+            <p>排氣先經洗滌與降溫，再進入吸收塔與貧胺液（lean amine，尚可吸收 CO2 的胺液）接觸；吸收 CO2 後形成的富胺液（rich amine）再於再生塔加熱，釋出高濃度 CO2，最後經壓縮、除水與液化進入船上儲槽。</p>
+            <p><strong>本頁標示 TRL 7–8</strong>，表示此路徑已介於操作環境中的系統原型示範，與完整系統經測試、具備資格之間；實際現有船改裝（retrofit）仍須完成船舶特定整合與核准。</p>
+            <div class="feature-meta"><span>TRL 7–8</span><span>商業安裝</span><span>可用於現有船改裝</span><span>需廢熱整合</span></div>
+          </article>
+          <article class="key-warning reveal">
+            <strong>成熟不代表沒有代價</strong>
+            <p>胺液再生需要大量熱能，且必須處理硫氧化物（SOx）、氮氧化物（NOx）、腐蝕、溶劑老化、胺液逸散、亞硝胺副產物、吸收塔體積，以及約 15–30% 的額外燃油消耗。</p>
+          </article>
+        </div>
+
+        <div class="table-wrap reveal" role="region" aria-label="oCCS 技術比較表" tabindex="0">
+          <table>
+            <thead><tr><th>技術路徑</th><th>海事 TRL</th><th>主要優點</th><th>主要限制</th><th>現階段定位</th></tr></thead>
+            <tbody>
+              <tr><td><strong>胺液化學吸收</strong><br>Post-combustion amine</td><td>7–8</td><td>不需改變主機燃料路徑；已有商業與船級案例</td><td>再生熱、設備體積、溶劑／腐蝕、排氣預處理</td><td><span class="status status-ready">最成熟</span></td></tr>
+              <tr><td><strong>鈣基礦化</strong><br>Calcium looping</td><td>5–6</td><td>形成固態 CaCO3；免 LCO2 低溫儲槽</td><td>每 1 t CO2 約形成 2.27 t CaCO3；固體搬運與岸上再生</td><td><span class="status status-pilot">示範中</span></td></tr>
+              <tr><td><strong>膜分離</strong><br>Membrane</td><td>4–5</td><td>無液態化學品；模組化潛力</td><td>對 SOx、NOx、水分與顆粒敏感；需持續壓差與電力</td><td><span class="status status-pilot">早期</span></td></tr>
+              <tr><td><strong>低溫分離</strong><br>Cryogenic</td><td>3–4</td><td>高純度 CO2；無胺液</td><td>壓縮／冷凍耗電；低溫脆裂、沸騰液體膨脹蒸氣爆炸（BLEVE）與乾冰風險</td><td><span class="status status-watch">特定船型</span></td></tr>
+              <tr><td><strong>燃燒前重整／熱解</strong><br>Pre-combustion</td><td>4–6</td><td>處理高濃度碳流；熱解可產固態碳</td><td>限氣體燃料；氫氣安全、反應器空間與熱管理</td><td><span class="status status-watch">偏新造船</span></td></tr>
+              <tr><td><strong>富氧燃燒</strong><br>Oxy-fuel</td><td>2–3</td><td>理論捕捉率接近 100%</td><td>大型製氧裝置、高耗電、純氧火災與主機修改</td><td><span class="status status-watch">持續觀察</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="penalty-explainer reveal" aria-labelledby="penalty-title">
+          <div>
+            <p class="eyebrow">Energy penalty explained</p>
+            <h3 id="penalty-title">「15–30% 懲罰區間」是什麼？</h3>
+            <p>這裡的「懲罰」是工程上的<strong>能源懲罰（energy penalty）</strong>或<strong>燃油懲罰</strong>，不是法規罰款。它表示船舶為了完成 CO2 捕捉、處理與儲存，相較於未安裝 oCCS、完成相同航程與營運任務時，需要額外投入多少能源或燃油。</p>
+            <p class="penalty-example"><strong>簡化例子：</strong>若原本完成同一航次需要 100 單位燃油，20% 的燃油懲罰代表約需 120 單位。這只是理解比例的例子；實際專案還要確認報告採用的基準、系統邊界與工況。捕捉率與懲罰率不能直接相減，淨減排還必須計入額外燃油所產生的新排放。</p>
+            <p><strong>為什麼是區間？</strong>捕捉率、溶劑性能、主機負荷、排氣 CO2 濃度、廢熱可用量、壓縮與液化條件都會改變能耗。因此 15–30% 是案例常見範圍，不是每艘船的固定值或保證值。</p>
+          </div>
+          <div class="penalty-causes" aria-label="能源懲罰的主要來源">
+            <div class="penalty-cause"><strong>01｜胺液再生熱</strong><span>必須加熱富胺液，讓吸收的 CO2 釋出並使胺液恢復吸收能力；通常是最大的熱能需求。</span></div>
+            <div class="penalty-cause"><strong>02｜排氣與液體循環</strong><span>增壓風機、循環泵、排氣洗滌與額外背壓都會增加主機或輔機負載。</span></div>
+            <div class="penalty-cause"><strong>03｜CO2 調質與儲存</strong><span>除水、壓縮、液化、冷凍及儲槽壓力控制需要持續電力與冷卻能力。</span></div>
+            <div class="penalty-cause"><strong>04｜船舶整合條件</strong><span>低負荷時廢熱不足、設備重量、通風與冷卻需求，會使實際代價高於理想設計點。</span></div>
+          </div>
+        </aside>
+
+        <div class="net-grid reveal">
+          <article class="formula-card">
+            <p class="eyebrow" style="color:#75e0d9">Gross vs. net</p>
+            <h3>捕捉率 ≠ 淨減排率</h3>
+            <div class="formula">淨效益 = 捕捉量 − 額外能源排放</div>
+            <p>若沒有充分利用主機排氣、缸套冷卻水（jacket water）或掃氣冷卻器（scavenge air cooler）的廢熱，捕捉系統新增的燃油消耗會大幅侵蝕減排效果。</p>
+          </article>
+          <article class="bars" aria-label="捕捉率、能源懲罰與淨減排案例">
+            <div class="bar-row"><div class="bar-label"><span>90% 捕捉／20% 懲罰</span><b>約 58% 淨減排</b></div><div class="bar-track"><div class="bar-fill" style="--value:58%"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>90% 捕捉／15% 懲罰</span><b>約 63% 淨減排</b></div><div class="bar-track"><div class="bar-fill" style="--value:63%"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>70% 捕捉／15% 懲罰</span><b>約 44% 淨減排</b></div><div class="bar-track"><div class="bar-fill" style="--value:44%"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>35% 捕捉／10% 懲罰</span><b>約 18% 淨減排</b></div><div class="bar-track"><div class="bar-fill" style="--value:18%"></div></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="integration">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Retrofit integration</p><h2>最大難題往往不是設備本身</h2></div>
+          <p class="section-intro">現有船的總布置圖（General Arrangement，GA）、煙囪、艙櫃、配管與電力系統，本來就不是為 oCCS 預留。能否在詳細設計與施工階段真正落地，比原則性認可（Approval in Principle，AiP）階段的圖面上「放得下」更重要。AiP 代表船級社原則上接受概念方向，並不等於詳細設計已完成或已取得最終核准。</p>
+        </div>
+
+        <div class="integration-grid">
+          <article class="card integration-card reveal"><small>01｜EXHAUST</small><h3>排氣路由與旁通</h3><ul><li>位於清潔、降溫後排氣端</li><li>須具備全流量旁通能力</li><li>高背壓時自動旁通</li><li>上游冗餘背壓量測</li></ul></article>
+          <article class="card integration-card reveal"><small>02｜ENERGY</small><h3>蒸汽、廢熱與電力</h3><ul><li>每捕捉 1 kg CO2，胺液再生約需 3–4 MJ 熱能</li><li>核對輔鍋爐與廢氣節熱器（economiser）餘裕</li><li>壓縮、冷凍、通風與不斷電系統（UPS）負載</li><li>納入低負荷與停港情境</li></ul></article>
+          <article class="card integration-card reveal"><small>03｜STORAGE</small><h3>儲存容量與航程</h3><ul><li>捕捉率、儲量與航程一起定義</li><li>儲槽滿後捕捉即停止</li><li>重量、穩性與縱向強度</li><li>貨載、標準貨櫃箱位（TEU）及載重噸（DWT）的代價</li></ul></article>
+          <article class="card integration-card reveal"><small>04｜SAFETY</small><h3>CO2 與胺液安全</h3><ul><li>低位 CO2 偵測與缺氧監測</li><li>強制通風與積聚分析</li><li>揮發性有機物（VOC）、酸鹼值（pH）與洩漏偵測</li><li>救生設備與集合站（muster station）持續保持可用及可達</li></ul></article>
+          <article class="card integration-card reveal"><small>05｜ESD & MATERIAL</small><h3>緊急停車與材料</h3><ul><li>開旁通、停泵、關隔離閥</li><li>通風與警報納入因果矩陣（cause & effect）</li><li>低溫脆裂與濕 CO2 腐蝕</li><li>溶劑、墊片與彈性體相容性</li></ul></article>
+          <article class="card integration-card reveal"><small>06｜GA & CLASS</small><h3>配管、相鄰與核准</h3><ul><li>管路佈置、支撐與熱膨脹</li><li>滴盤、儲槽相鄰關係與危險區</li><li>類比適用《國際散裝化學品章程》（IBC Code）或《國際氣體船章程》（IGC Code）的相關規定</li><li>提早處理旗國解釋與豁免</li></ul></article>
+        </div>
+
+        <div class="storage-strip reveal" aria-label="LCO2 儲存設計關鍵值">
+          <div class="storage-item"><strong>7–8 bar</strong><span>低壓方案，約 −50 °C</span></div>
+          <div class="storage-item"><strong>15–20 bar</strong><span>中壓方案，約 −26 至 −20 °C</span></div>
+          <div class="storage-item"><strong>5.18 bar</strong><span>CO2 三相點壓力；需避免乾冰</span></div>
+          <div class="storage-item"><strong>60–70 TEU</strong><span>報告示例：1,470 t LCO2 的空間代價</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="regulation">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Regulation & value chain</p><h2>捕捉 CO2 還不夠，捕捉量也必須符合認列條件</h2></div>
+          <p class="section-intro">oCCS 同時跨越船級安全、IMO 環境規範、區域碳價、跨境 CO2 運輸、港口接收與最終儲存。這些制度的成熟速度並不一致。</p>
+        </div>
+
+        <div class="reg-layout">
+          <aside class="reg-summary reveal">
+            <p class="eyebrow" style="color:#75e0d9">Commercial baseline</p>
+            <h3>目前最能建立商業模型的是 EU ETS</h3>
+            <p>若經查證的 CO2 被送往依《EU CCS Directive》許可的儲存場，或永久化學鍵結於合格產品，航運公司可依適用的監測、報告與查證（MRV）要求，從須繳交配額的排放量中扣除該數量。</p>
+            <hr>
+            <p><strong style="color:white">不要預先計入：</strong><br>FuelEU Maritime 尚未認列 oCCS；IMO 全球定價與 oCCS 計算架構也仍在發展。因此，這些潛在收益適合列為額外上行情境（upside），而不是基準情境（base case）。</p>
+          </aside>
+
+          <div class="reg-list">
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>EU ETS</h3><span class="status status-ready">有條件認列</span></div><p>須符合適用的資格、永久性與監測、報告及查證（MRV）要求，並備有完整下游證據；中間損失、岸上再生排放與利用用途仍需清楚歸屬。</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>FuelEU Maritime</h3><span class="status status-watch">目前未認列</span></div><p>尚未將 oCCS 納入溫室氣體強度與罰則計算。實船專案應持續核對第 30 條檢討的最新進展。</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>IMO</h3><span class="status status-pilot">架構發展中</span></div><p>報告所述 oCCS 環境架構工作目標為 2028，安全暫行指南目標為 2029；早期專案仍需依船級與旗國處理。</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>London Protocol</h3><span class="status status-pilot">地理受限</span></div><p>跨境運送 CO2 至海床下進行地質儲存，原則上需相關締約方接受或暫時適用 2009 年《倫敦議定書》第 6 條修正，且相關國家已締結協定或安排；現階段主要集中北海周邊。</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>LR class framework</h3><span class="status status-ready">已有工作路徑</span></div><p>EACCS 船級符號、EACCS READY 描述性註記、原則性認可（AiP）與 ShipRight Risk Based Certification（RBC），可形成涵蓋設計、風險評估、施工、試運轉（commissioning）及在役保證的船舶特定工作路徑。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="candidates">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Best-fit segments</p><h2>不是船型決定一切，而是營運條件</h2></div>
+          <p class="section-intro">真正的候選船由剩餘壽命、碳價曝險、卸岸可用性，以及船舶能否承受設備與貨載代價共同決定。</p>
+        </div>
+        <div class="candidate-grid">
+          <article class="candidate good reveal"><div class="candidate-head">較有利的近期候選</div><ul><li>歐洲經濟區（EEA）固定航線的中型油輪（MR）／化學品船</li><li>液化天然氣（LNG）燃料船與 LNG 運輸船</li><li>固定輪轉的貨櫃船</li><li>頻繁靠港的短程船、支線貨櫃船（feeder）與客貨滾裝船（RoPax）</li></ul></article>
+          <article class="candidate conditional reveal"><div class="candidate-head">有條件成立</div><ul><li>超大型油輪（VLCC）／蘇伊士型油輪（Suezmax）：空間多但航程長</li><li>大型散裝船：減排量大但卸岸頻率低</li><li>全球不定期航運（tramp trade）：現有碳價曝險較弱</li><li>貨櫃船：電力與標準貨櫃箱位（TEU）代價需精算</li></ul></article>
+          <article class="candidate weak reveal"><div class="candidate-head">目前商業案例較弱</div><ul><li>剩餘壽命約五年</li><li>主要航行於未定價區域</li><li>靠港點沒有可信接收鏈</li><li>無法接受結構、能源或貨載代價</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="decision">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Decision gates</p><h2>先確認閉環，再選設備</h2></div>
+          <p class="section-intro">正確起點不是詢問「哪一家的捕捉率最高」，而是把一艘特定船放進一條特定航線，檢查技術、法規與商業鏈是否能同時成立。</p>
+        </div>
+        <div class="decision">
+          <article class="gate reveal"><div><h3>資產壽命</h3><p>是否還有約十年以上可交易壽命？</p></div><div class="gate-result">否 → 多數情況先不改裝</div></article>
+          <article class="gate reveal"><div><h3>法規曝險</h3><p>實際航線是否承擔可量化的碳成本？</p></div><div class="gate-result">只把已確定收益納入基準情境</div></article>
+          <article class="gate reveal"><div><h3>接收鏈</h3><p>哪些靠港點可接收？規格、流量與責任邊界是否確認？</p></div><div class="gate-result">沒有具名且已確認的接收路徑 → 不宜作出最終投資決策（FID）</div></article>
+          <article class="gate reveal"><div><h3>儲存平衡</h3><p>最長航段捕捉量是否裝得下？滿槽後停捕多久？</p></div><div class="gate-result">以逐航次質量平衡驗證</div></article>
+          <article class="gate reveal"><div><h3>整合餘裕</h3><p>蒸汽、電力、廢熱、總布置圖（GA）、穩性與貨載代價可接受嗎？</p></div><div class="gate-result">需要船舶特定概念設計</div></article>
+          <article class="gate reveal"><div><h3>安全與核准</h3><p>如何處理危害辨識（HAZID）、危害與可操作性分析（HAZOP）及緊急停機（ESD）要求？船級、旗國與法規解釋又如何解決？</p></div><div class="gate-result">提早啟動原則性認可（AiP）與 ShipRight Risk Based Certification（RBC）</div></article>
+          <article class="gate reveal"><div><h3>監測、報告與查證（MRV）</h3><p>捕捉量、額外耗能、卸岸損失與最終儲存如何稽核？</p></div><div class="gate-result">建立可驗證的 CO2 監管鏈</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pm">
+      <div class="container">
+        <div class="pm-panel reveal">
+          <div>
+            <p class="eyebrow" style="color:#75e0d9">For surveyors & project managers</p>
+            <h2>驗船與專案管理應把力氣放在哪裡？</h2>
+            <p>最容易造成大幅改圖、旗國往返與現場返工的項目，應在概念設計／原則性認可（AiP）階段就開始收斂。</p>
+          </div>
+          <div class="pm-list">
+            <div class="pm-row"><b>01</b><span><strong>先鎖定航線與卸岸終點：</strong>接收站（terminal）、駁船（barge）或 ISO 標準槽櫃的介面條件，應納入設計基準。</span></div>
+            <div class="pm-row"><b>02</b><span><strong>關閉空間與能源問題：</strong>管路佈置、儲槽位置，以及熱能與電力平衡，不能留到施工圖階段才處理。</span></div>
+            <div class="pm-row"><b>03</b><span><strong>把危害辨識與危害分析連到詳細設計：</strong>風險控制要能追蹤到閥件、緊急停機（ESD）、通風及因果矩陣。</span></div>
+            <div class="pm-row"><b>04</b><span><strong>將監測、報告與查證（MRV）納入檢驗與試驗計畫（ITP）：</strong>校正、資料保存、性能漂移、交接計量與儲存證明都需可驗證。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="sources">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Source map</p><h2>資料來源與閱讀定位</h2></div>
+          <p class="section-intro">本頁依 Lloyd's Register《Applying Onboard Carbon Capture & Storage to existing ships》整理，重點是協助讀者快速建立整體框架。</p>
+        </div>
+        <div class="source-box reveal">
+          <a class="source-primary-link" href="https://www.lr.org/en/knowledge/research-reports/2026/applying-onboard-carbon-capture-and-storage-to-ships/" target="_blank" rel="noopener noreferrer">
+            <span>
+              <strong>前往 Lloyd’s Register（LR，勞氏船級社）官方專案／研究報告頁面</strong>
+              <span>Applying Onboard Carbon Capture and Storage to Ships</span>
+            </span>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <strong>原始文件章節對照</strong>
+          <ul>
+            <li>Executive summary：pp. 4–9</li>
+            <li>Technology status：pp. 17–25</li>
+            <li>System integration：pp. 27–34</li>
+            <li>Regulatory framework：pp. 35–41</li>
+            <li>The business case：pp. 42–46</li>
+            <li>Developing the carbon value chain：pp. 47–53</li>
+            <li>Conclusions and risk register：pp. 54–57</li>
+          </ul>
+          <small>提醒：這是知識介紹與文件摘要，不是特定船舶的設計核准、法規意見或投資建議。oCCS 法規與港口基礎設施仍快速變動，實際專案應以最新 IMO、EU／UK、旗國、船級、設備商與接收端資料重新確認。原報告內部分時間表的摘要與詳細章節亦有差異，引用時宜再次核對最新官方版本。</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="share-band" id="share">
+    <div
+      class="article-share article-share--end"
+      data-article-share
+      data-share-url="https://reayhuang.com/notes/maritime/occs-retrofit-guide.html"
+      data-share-title="船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note"
+      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note&#10;https://reayhuang.com/notes/maritime/occs-retrofit-guide.html"
+      data-share-copy="複製連結"
+      data-share-copied="已複製"
+      data-toast-copied="連結已複製到剪貼簿"
+    >
+      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="source">
+    <div class="site-footer-inner">
+      <strong>船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note</strong>
+      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note · 資料整理日期：2026-09-03</span>
+      <p class="disclaimer small">
+        <strong>專業聲明：</strong>本文為個人海事學習與實務整理，僅供一般技術與管理參考，不構成特定船舶的船級、法定檢驗、船旗國、投資或改裝核准意見。
+        實際設計審查、改裝可行性、捕捉量認列、卸岸路徑與專案決策，應以最新適用的國際公約、區域法規、船旗國要求、船級規範、核准文件及專案技術規格為準。
+        本文觀點不代表 Lloyd’s Register、IMO、任何船旗國主管機關、船東、船廠或客戶的正式立場。
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const updateProgress = () => {
+        const max = root.scrollHeight - window.innerHeight;
+        const value = max > 0 ? window.scrollY / max : 0;
+        root.style.setProperty('--read-progress', Math.min(1, Math.max(0, value)));
+      };
+      updateProgress();
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+
+      const quickNavWrap = document.querySelector('.quick-nav-wrap');
+      const quickLinks = document.querySelector('.quick-links');
+      const spyLinks = [...document.querySelectorAll('.quick-links a[href^="#"]')];
+      const spyEntries = spyLinks.map(link => {
+        const hash = link.getAttribute('href');
+        const target = hash === '#big-picture'
+          ? document.querySelector('#big-picture .section-head')
+          : document.querySelector(hash);
+        return target ? { link, target } : null;
+      }).filter(Boolean);
+      let activeHash = '';
+      let spyFrame = 0;
+
+      const updateActiveChapter = () => {
+        spyFrame = 0;
+        if (!quickNavWrap || !quickLinks || !spyEntries.length) return;
+
+        const mobile = window.matchMedia('(max-width: 680px)').matches;
+        const readingLine = mobile
+          ? quickNavWrap.getBoundingClientRect().bottom + 16
+          : Math.min(220, window.innerHeight * .28);
+        const ordered = spyEntries
+          .map(entry => ({ ...entry, top: entry.target.getBoundingClientRect().top }))
+          .sort((a, b) => a.top - b.top);
+        let current = null;
+        ordered.forEach(entry => {
+          if (entry.top <= readingLine) current = entry;
+        });
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+          current = ordered[ordered.length - 1];
+        }
+
+        const nextHash = current ? current.link.getAttribute('href') : '';
+        if (nextHash === activeHash) return;
+        activeHash = nextHash;
+        spyLinks.forEach(link => link.removeAttribute('aria-current'));
+        if (!current) return;
+
+        current.link.setAttribute('aria-current', 'location');
+        if (mobile) {
+          const targetLeft = current.link.offsetLeft
+            - (quickLinks.clientWidth - current.link.offsetWidth) / 2;
+          quickLinks.scrollTo({
+            left: Math.max(0, targetLeft),
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+          });
+        }
+      };
+      const requestSpyUpdate = () => {
+        if (!spyFrame) spyFrame = window.requestAnimationFrame(updateActiveChapter);
+      };
+      requestSpyUpdate();
+      window.addEventListener('scroll', requestSpyUpdate, { passive: true });
+      window.addEventListener('resize', requestSpyUpdate);
+
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const items = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach(item => item.classList.add('visible'));
+        return;
+      }
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12, rootMargin: '0px 0px -30px' });
+      items.forEach(item => observer.observe(item));
+    })();
+  </script>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+</body>
+</html>

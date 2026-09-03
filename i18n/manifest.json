@@ -29,6 +29,13 @@
       "zh": "research/index.html"
     },
     {
+      "slug": "occs-retrofit-guide",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/occs-retrofit-guide.en.html",
+      "zh": "notes/maritime/occs-retrofit-guide.html"
+    },
+    {
       "slug": "sea-trial-note",
       "type": "article",
       "category": "notes",
