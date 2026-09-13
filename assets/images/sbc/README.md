@@ -1,6 +1,6 @@
 SBC research note images
 
-Place the image files for `research/sbc-demand-classification.html` in this folder.
+Place the image files for `research/sbc-demand-classification.zh.html` in this folder.
 
 Expected filenames:
 

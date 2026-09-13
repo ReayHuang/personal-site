@@ -18,17 +18,17 @@ personal-site/
 ├── index.html              # 英文首頁（預設，全幅 Hero 帶）
 ├── index.zh.html           # 繁中首頁
 ├── index.en.html           # 轉址至 index.html（保留舊連結相容）
-├── about.html              # 關於我（繁中）
+├── about.zh.html           # 關於我（繁中）
 ├── about.en.html           # About（英文）
 ├── assets/
 │   ├── css/style.css       # LR 風格配色
 │   └── js/                 # 全站共用腳本（Analytics、複製來源）
 ├── notes/                  # 專業筆記
-│   ├── index.html          # 海事筆記列表（繁中）
+│   ├── index.zh.html       # 海事筆記列表（繁中）
 │   ├── index.en.html       # Maritime Note listing（英文）
 │   └── maritime/           # 海事法規與檢驗
 └── research/               # 研究資料
-    ├── index.html          # 管理筆記列表（繁中）
+    ├── index.zh.html       # 管理筆記列表（繁中）
     └── index.en.html       # Management Note listing（英文）
 ```
 
@@ -36,14 +36,15 @@ personal-site/
 
 **網站以英文為主、繁中為輔。** 新內容請優先撰寫英文版，再視需要補繁中版。
 
-| 語言 | 首頁 | 關於我 | 列表頁命名 |
-|------|------|--------|------------|
+| 語言 | 首頁 | 關於我 | 列表／文章命名 |
+|------|------|--------|----------------|
 | 英文（預設） | `index.html` | `about.en.html` | `*.en.html` |
-| 繁中 | `index.zh.html` | `about.html` | `*.html` |
+| 繁中 | `index.zh.html` | `about.zh.html` | `*.zh.html` |
 
 - 訪客進入 `/` 或 `index.html` 即為英文首頁
 - 各頁 `hreflang` 的 `x-default` 指向英文版
 - 語言切換連結位於各頁頂部導覽列（EN 在前）
+- 舊的無語系後綴中文網址（例如 `about.html`、`notes/index.html`）由 `_redirects` 以 301 轉到對應的 `*.zh.html`
 
 ## 品牌色（參考 lr.org）
 
@@ -58,7 +59,7 @@ personal-site/
 
 1. 複製同類型的英文範本（例如 `notes/maritime/*.en.html`）— 範本 `<head>` 開頭應已含三支全站 script（`gtag.js`、`gtag-config.js`、`copy-source-attribution.js`）
 2. 修改內容後，在 `notes/index.en.html`（或 `research/index.en.html`）加入卡片連結
-3. 若有繁中版本，再建立對應的 `*.html` 並加入繁中列表頁
+3. 若有繁中版本，再建立對應的 `*.zh.html` 並加入繁中列表頁（`notes/index.zh.html` 或 `research/index.zh.html`）
 
 ### 全站 `<head>` script（新頁面必備）
 

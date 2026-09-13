@@ -1,7 +1,7 @@
 {
   "defaultLocale": "en",
   "locales": ["en", "zh-Hant"],
-  "convention": "English-primary site: English pages use {slug}.en.html or index.html at root; Traditional Chinese uses {slug}.html or index.zh.html for homepage. x-default hreflang points to English.",
+  "convention": "English-primary site: English pages use {slug}.en.html or index.html at root; Traditional Chinese uses {slug}.zh.html. Legacy unmarked Chinese URLs 301 via _redirects. x-default hreflang points to English.",
   "pages": [
     {
       "slug": "home",
@@ -14,243 +14,243 @@
       "slug": "about",
       "type": "site",
       "en": "about.en.html",
-      "zh": "about.html"
+      "zh": "about.zh.html"
     },
     {
       "slug": "notes-index",
       "type": "site",
       "en": "notes/index.en.html",
-      "zh": "notes/index.html"
+      "zh": "notes/index.zh.html"
     },
     {
       "slug": "research-index",
       "type": "site",
       "en": "research/index.en.html",
-      "zh": "research/index.html"
+      "zh": "research/index.zh.html"
     },
     {
       "slug": "occs-retrofit-guide",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/occs-retrofit-guide.en.html",
-      "zh": "notes/maritime/occs-retrofit-guide.html"
+      "zh": "notes/maritime/occs-retrofit-guide.zh.html"
     },
     {
       "slug": "sea-trial-note",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/sea-trial-note.en.html",
-      "zh": "notes/maritime/sea-trial-note.html"
+      "zh": "notes/maritime/sea-trial-note.zh.html"
     },
     {
       "slug": "can-drones-replace-ship-surveyors",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/can-drones-replace-ship-surveyors.en.html",
-      "zh": "notes/maritime/can-drones-replace-ship-surveyors.html"
+      "zh": "notes/maritime/can-drones-replace-ship-surveyors.zh.html"
     },
     {
       "slug": "ammonia-fuel-surveyor-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/ammonia-fuel-surveyor-notes.en.html",
-      "zh": "notes/maritime/ammonia-fuel-surveyor-notes.html"
+      "zh": "notes/maritime/ammonia-fuel-surveyor-notes.zh.html"
     },
     {
       "slug": "future-imo-ilo-container-ships-2026",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/future-imo-ilo-container-ships-2026.en.html",
-      "zh": "notes/maritime/future-imo-ilo-container-ships-2026.html"
+      "zh": "notes/maritime/future-imo-ilo-container-ships-2026.zh.html"
     },
     {
       "slug": "container-ship-wind-shield-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/container-ship-wind-shield-notes.en.html",
-      "zh": "notes/maritime/container-ship-wind-shield-notes.html"
+      "zh": "notes/maritime/container-ship-wind-shield-notes.zh.html"
     },
     {
       "slug": "electronic-certificates-joint-guidelines-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/electronic-certificates-joint-guidelines-notes.en.html",
-      "zh": "notes/maritime/electronic-certificates-joint-guidelines-notes.html"
+      "zh": "notes/maritime/electronic-certificates-joint-guidelines-notes.zh.html"
     },
     {
       "slug": "onboard-certificates",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/onboard-certificates.en.html",
-      "zh": "notes/maritime/onboard-certificates.html"
+      "zh": "notes/maritime/onboard-certificates.zh.html"
     },
     {
       "slug": "engine-fat-shipboard-note",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/engine-fat-shipboard-note.en.html",
-      "zh": "notes/maritime/engine-fat-shipboard-note.html"
+      "zh": "notes/maritime/engine-fat-shipboard-note.zh.html"
     },
     {
       "slug": "lfpf-note",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/lfpf-note.en.html",
-      "zh": "notes/maritime/lfpf-note.html"
+      "zh": "notes/maritime/lfpf-note.zh.html"
     },
     {
       "slug": "tailshaft-survey-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/tailshaft-survey-notes.en.html",
-      "zh": "notes/maritime/tailshaft-survey-notes.html"
+      "zh": "notes/maritime/tailshaft-survey-notes.zh.html"
     },
     {
       "slug": "steering-gear-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/steering-gear-notes.en.html",
-      "zh": "notes/maritime/steering-gear-notes.html"
+      "zh": "notes/maritime/steering-gear-notes.zh.html"
     },
     {
       "slug": "lr-bwts-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/lr-bwts-notes.en.html",
-      "zh": "notes/maritime/lr-bwts-notes.html"
+      "zh": "notes/maritime/lr-bwts-notes.zh.html"
     },
     {
       "slug": "maritime-cyber-resilience-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/maritime-cyber-resilience-notes.en.html",
-      "zh": "notes/maritime/maritime-cyber-resilience-notes.html"
+      "zh": "notes/maritime/maritime-cyber-resilience-notes.zh.html"
     },
     {
       "slug": "lr-advisory-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/lr-advisory-notes.en.html",
-      "zh": "notes/maritime/lr-advisory-notes.html"
+      "zh": "notes/maritime/lr-advisory-notes.zh.html"
     },
     {
       "slug": "marpol-structure-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/marpol-structure-notes.en.html",
-      "zh": "notes/maritime/marpol-structure-notes.html"
+      "zh": "notes/maritime/marpol-structure-notes.zh.html"
     },
     {
       "slug": "solas-structure-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/solas-structure-notes.en.html",
-      "zh": "notes/maritime/solas-structure-notes.html"
+      "zh": "notes/maritime/solas-structure-notes.zh.html"
     },
     {
       "slug": "explosion-protection-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/explosion-protection-notes.en.html",
-      "zh": "notes/maritime/explosion-protection-notes.html"
+      "zh": "notes/maritime/explosion-protection-notes.zh.html"
     },
     {
       "slug": "lpg-fuel-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/lpg-fuel-notes.en.html",
-      "zh": "notes/maritime/lpg-fuel-notes.html"
+      "zh": "notes/maritime/lpg-fuel-notes.zh.html"
     },
     {
       "slug": "new-construction-pm-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/new-construction-pm-notes.en.html",
-      "zh": "notes/maritime/new-construction-pm-notes.html"
+      "zh": "notes/maritime/new-construction-pm-notes.zh.html"
     },
     {
       "slug": "surveyor-6s-lean-management-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/surveyor-6s-lean-management-notes.en.html",
-      "zh": "notes/maritime/surveyor-6s-lean-management-notes.html"
+      "zh": "notes/maritime/surveyor-6s-lean-management-notes.zh.html"
     },
     {
       "slug": "msc-111-visual-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/msc-111-visual-notes.en.html",
-      "zh": "notes/maritime/msc-111-visual-notes.html"
+      "zh": "notes/maritime/msc-111-visual-notes.zh.html"
     },
     {
       "slug": "gmdss-radiocommunications-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/gmdss-radiocommunications-notes.en.html",
-      "zh": "notes/maritime/gmdss-radiocommunications-notes.html"
+      "zh": "notes/maritime/gmdss-radiocommunications-notes.zh.html"
     },
     {
       "slug": "lng-fuel-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/lng-fuel-notes.en.html",
-      "zh": "notes/maritime/lng-fuel-notes.html"
+      "zh": "notes/maritime/lng-fuel-notes.zh.html"
     },
     {
       "slug": "methanol-fuel-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/methanol-fuel-notes.en.html",
-      "zh": "notes/maritime/methanol-fuel-notes.html"
+      "zh": "notes/maritime/methanol-fuel-notes.zh.html"
     },
     {
       "slug": "mepc-83-84-visual-notes",
       "type": "article",
       "category": "notes",
       "en": "notes/maritime/mepc-83-84-visual-notes.en.html",
-      "zh": "notes/maritime/mepc-83-84-visual-notes.html"
+      "zh": "notes/maritime/mepc-83-84-visual-notes.zh.html"
     },
     {
       "slug": "digital-ship-management-report",
       "type": "article",
       "category": "research",
       "en": "research/digital-ship-management-report.en.html",
-      "zh": "research/digital-ship-management-report.html"
+      "zh": "research/digital-ship-management-report.zh.html"
     },
     {
       "slug": "owned-vs-chartered-container-ships",
       "type": "article",
       "category": "research",
       "en": "research/owned-vs-chartered-container-ships.en.html",
-      "zh": "research/owned-vs-chartered-container-ships.html"
+      "zh": "research/owned-vs-chartered-container-ships.zh.html"
     },
     {
       "slug": "fleet-spares-thesis-notes",
       "type": "article",
       "category": "research",
       "en": "research/fleet-spares-thesis-notes.en.html",
-      "zh": "research/fleet-spares-thesis-notes.html"
+      "zh": "research/fleet-spares-thesis-notes.zh.html"
     },
     {
       "slug": "5s-study-notes",
       "type": "article",
       "category": "research",
       "en": "research/5s-study-notes.en.html",
-      "zh": "research/5s-study-notes.html"
+      "zh": "research/5s-study-notes.zh.html"
     },
     {
       "slug": "stats-business-application",
       "type": "article",
       "category": "research",
       "en": "research/stats-business-application.en.html",
-      "zh": "research/stats-business-application.html"
+      "zh": "research/stats-business-application.zh.html"
     },
     {
       "slug": "sbc-demand-classification",
       "type": "article",
       "category": "research",
       "en": "research/sbc-demand-classification.en.html",
-      "zh": "research/sbc-demand-classification.html"
+      "zh": "research/sbc-demand-classification.zh.html"
     }
   ]
 }

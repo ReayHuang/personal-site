@@ -1,0 +1,112 @@
+# Legacy Traditional Chinese URLs (unmarked .html) → .zh.html
+# Preserve published links, bookmarks, and search results.
+
+/notes               /notes/index.zh.html  301
+/notes/              /notes/index.zh.html  301
+/research            /research/index.zh.html  301
+/research/           /research/index.zh.html  301
+
+/about.html  /about.zh.html  301
+/about  /about.zh.html  301
+
+/notes/index.html  /notes/index.zh.html  301
+/notes/index  /notes/index.zh.html  301
+
+/notes/maritime/ammonia-fuel-surveyor-notes.html  /notes/maritime/ammonia-fuel-surveyor-notes.zh.html  301
+/notes/maritime/ammonia-fuel-surveyor-notes  /notes/maritime/ammonia-fuel-surveyor-notes.zh.html  301
+
+/notes/maritime/can-drones-replace-ship-surveyors.html  /notes/maritime/can-drones-replace-ship-surveyors.zh.html  301
+/notes/maritime/can-drones-replace-ship-surveyors  /notes/maritime/can-drones-replace-ship-surveyors.zh.html  301
+
+/notes/maritime/container-ship-wind-shield-notes.html  /notes/maritime/container-ship-wind-shield-notes.zh.html  301
+/notes/maritime/container-ship-wind-shield-notes  /notes/maritime/container-ship-wind-shield-notes.zh.html  301
+
+/notes/maritime/electronic-certificates-joint-guidelines-notes.html  /notes/maritime/electronic-certificates-joint-guidelines-notes.zh.html  301
+/notes/maritime/electronic-certificates-joint-guidelines-notes  /notes/maritime/electronic-certificates-joint-guidelines-notes.zh.html  301
+
+/notes/maritime/engine-fat-shipboard-note.html  /notes/maritime/engine-fat-shipboard-note.zh.html  301
+/notes/maritime/engine-fat-shipboard-note  /notes/maritime/engine-fat-shipboard-note.zh.html  301
+
+/notes/maritime/explosion-protection-notes.html  /notes/maritime/explosion-protection-notes.zh.html  301
+/notes/maritime/explosion-protection-notes  /notes/maritime/explosion-protection-notes.zh.html  301
+
+/notes/maritime/future-imo-ilo-container-ships-2026.html  /notes/maritime/future-imo-ilo-container-ships-2026.zh.html  301
+/notes/maritime/future-imo-ilo-container-ships-2026  /notes/maritime/future-imo-ilo-container-ships-2026.zh.html  301
+
+/notes/maritime/gmdss-radiocommunications-notes.html  /notes/maritime/gmdss-radiocommunications-notes.zh.html  301
+/notes/maritime/gmdss-radiocommunications-notes  /notes/maritime/gmdss-radiocommunications-notes.zh.html  301
+
+/notes/maritime/lfpf-note.html  /notes/maritime/lfpf-note.zh.html  301
+/notes/maritime/lfpf-note  /notes/maritime/lfpf-note.zh.html  301
+
+/notes/maritime/lng-fuel-notes.html  /notes/maritime/lng-fuel-notes.zh.html  301
+/notes/maritime/lng-fuel-notes  /notes/maritime/lng-fuel-notes.zh.html  301
+
+/notes/maritime/lpg-fuel-notes.html  /notes/maritime/lpg-fuel-notes.zh.html  301
+/notes/maritime/lpg-fuel-notes  /notes/maritime/lpg-fuel-notes.zh.html  301
+
+/notes/maritime/lr-advisory-notes.html  /notes/maritime/lr-advisory-notes.zh.html  301
+/notes/maritime/lr-advisory-notes  /notes/maritime/lr-advisory-notes.zh.html  301
+
+/notes/maritime/lr-bwts-notes.html  /notes/maritime/lr-bwts-notes.zh.html  301
+/notes/maritime/lr-bwts-notes  /notes/maritime/lr-bwts-notes.zh.html  301
+
+/notes/maritime/maritime-cyber-resilience-notes.html  /notes/maritime/maritime-cyber-resilience-notes.zh.html  301
+/notes/maritime/maritime-cyber-resilience-notes  /notes/maritime/maritime-cyber-resilience-notes.zh.html  301
+
+/notes/maritime/marpol-structure-notes.html  /notes/maritime/marpol-structure-notes.zh.html  301
+/notes/maritime/marpol-structure-notes  /notes/maritime/marpol-structure-notes.zh.html  301
+
+/notes/maritime/mepc-83-84-visual-notes.html  /notes/maritime/mepc-83-84-visual-notes.zh.html  301
+/notes/maritime/mepc-83-84-visual-notes  /notes/maritime/mepc-83-84-visual-notes.zh.html  301
+
+/notes/maritime/methanol-fuel-notes.html  /notes/maritime/methanol-fuel-notes.zh.html  301
+/notes/maritime/methanol-fuel-notes  /notes/maritime/methanol-fuel-notes.zh.html  301
+
+/notes/maritime/msc-111-visual-notes.html  /notes/maritime/msc-111-visual-notes.zh.html  301
+/notes/maritime/msc-111-visual-notes  /notes/maritime/msc-111-visual-notes.zh.html  301
+
+/notes/maritime/new-construction-pm-notes.html  /notes/maritime/new-construction-pm-notes.zh.html  301
+/notes/maritime/new-construction-pm-notes  /notes/maritime/new-construction-pm-notes.zh.html  301
+
+/notes/maritime/occs-retrofit-guide.html  /notes/maritime/occs-retrofit-guide.zh.html  301
+/notes/maritime/occs-retrofit-guide  /notes/maritime/occs-retrofit-guide.zh.html  301
+
+/notes/maritime/onboard-certificates.html  /notes/maritime/onboard-certificates.zh.html  301
+/notes/maritime/onboard-certificates  /notes/maritime/onboard-certificates.zh.html  301
+
+/notes/maritime/sea-trial-note.html  /notes/maritime/sea-trial-note.zh.html  301
+/notes/maritime/sea-trial-note  /notes/maritime/sea-trial-note.zh.html  301
+
+/notes/maritime/solas-structure-notes.html  /notes/maritime/solas-structure-notes.zh.html  301
+/notes/maritime/solas-structure-notes  /notes/maritime/solas-structure-notes.zh.html  301
+
+/notes/maritime/steering-gear-notes.html  /notes/maritime/steering-gear-notes.zh.html  301
+/notes/maritime/steering-gear-notes  /notes/maritime/steering-gear-notes.zh.html  301
+
+/notes/maritime/surveyor-6s-lean-management-notes.html  /notes/maritime/surveyor-6s-lean-management-notes.zh.html  301
+/notes/maritime/surveyor-6s-lean-management-notes  /notes/maritime/surveyor-6s-lean-management-notes.zh.html  301
+
+/notes/maritime/tailshaft-survey-notes.html  /notes/maritime/tailshaft-survey-notes.zh.html  301
+/notes/maritime/tailshaft-survey-notes  /notes/maritime/tailshaft-survey-notes.zh.html  301
+
+/research/5s-study-notes.html  /research/5s-study-notes.zh.html  301
+/research/5s-study-notes  /research/5s-study-notes.zh.html  301
+
+/research/digital-ship-management-report.html  /research/digital-ship-management-report.zh.html  301
+/research/digital-ship-management-report  /research/digital-ship-management-report.zh.html  301
+
+/research/fleet-spares-thesis-notes.html  /research/fleet-spares-thesis-notes.zh.html  301
+/research/fleet-spares-thesis-notes  /research/fleet-spares-thesis-notes.zh.html  301
+
+/research/index.html  /research/index.zh.html  301
+/research/index  /research/index.zh.html  301
+
+/research/owned-vs-chartered-container-ships.html  /research/owned-vs-chartered-container-ships.zh.html  301
+/research/owned-vs-chartered-container-ships  /research/owned-vs-chartered-container-ships.zh.html  301
+
+/research/sbc-demand-classification.html  /research/sbc-demand-classification.zh.html  301
+/research/sbc-demand-classification  /research/sbc-demand-classification.zh.html  301
+
+/research/stats-business-application.html  /research/stats-business-application.zh.html  301
+/research/stats-business-application  /research/stats-business-application.zh.html  301
