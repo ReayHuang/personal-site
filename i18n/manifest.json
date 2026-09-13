@@ -29,6 +29,13 @@
       "zh": "research/index.zh.html"
     },
     {
+      "slug": "pilot-transfer-arrangements",
+      "type": "article",
+      "category": "notes",
+      "en": "notes/maritime/pilot-transfer-arrangements.en.html",
+      "zh": "notes/maritime/pilot-transfer-arrangements.zh.html"
+    },
+    {
       "slug": "occs-retrofit-guide",
       "type": "article",
       "category": "notes",

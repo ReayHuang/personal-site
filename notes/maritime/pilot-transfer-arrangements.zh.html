@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light" data-back-to-top-label="回到頂部">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
+  <script src="../../assets/js/gtag-config.js"></script>
+  <script src="../../assets/js/copy-source-attribution.js"></script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" hreflang="en" href="pilot-transfer-arrangements.en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="pilot-transfer-arrangements.zh.html">
+  <link rel="alternate" hreflang="x-default" href="pilot-transfer-arrangements.en.html">
+  <link rel="stylesheet" href="../../assets/css/note-standalone.css">
+  <link rel="stylesheet" href="../../assets/css/article-share.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="從 SOLAS V/23 與 MSC.576(110)，理解領港設備的適用時程、船上檢查、36／30 個月汰換上限，以及船東的 PMS、SMS 與採購準備。">
+  <meta name="author" content="Reay Huang">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#102a3b">
+  <title>領港設備新規：船東的全生命週期管理｜Reay Huang Maritime Notes</title>
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/pilot-transfer-arrangements.zh.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Reay Huang Maritime Notes">
+  <meta property="og:title" content="領港設備新規：船東的全生命週期管理">
+  <meta property="og:description" content="從 SOLAS V/23 與 MSC.576(110)，理解領港設備的適用時程、船上檢查、36／30 個月汰換上限，以及船東的 PMS、SMS 與採購準備。">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/pilot-transfer-arrangements.zh.html">
+  <meta property="article:published_time" content="2026-09-13T00:00:00+09:00">
+  <meta property="article:modified_time" content="2026-09-13T00:00:00+09:00">
+  <meta property="article:author" content="Reay Huang">
+  <meta property="article:section" content="SOLAS">
+  <meta property="article:tag" content="SOLAS V/23">
+  <meta property="article:tag" content="Pilot Transfer Arrangements">
+  <meta property="article:tag" content="MSC.576(110)">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="領港設備新規：船東的全生命週期管理">
+  <meta name="twitter:description" content="從 SOLAS V/23 與 MSC.576(110)，理解領港設備的適用時程、船上檢查、36／30 個月汰換上限，以及船東的 PMS、SMS 與採購準備。">
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/pilot-transfer-arrangements/pilot-transfer-arrangements-link-preview.jpg">
+  <meta property="og:image:alt" content="領港設備新規：船東的全生命週期管理">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="536">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/pilot-transfer-arrangements/pilot-transfer-arrangements-link-preview.jpg">
+<style>
+:root{--navy:#102a3b;--deep:#0b1e2c;--teal:#176e69;--mint:#77d6c8;--ink:#203848;--muted:#566b77;--line:#d5e0e2;--paper:#f5f7f6;--white:#fff;--amber:#82560c;--amber-bg:#fcf6e9;--reading:780px;--wide:1160px;--radius:10px}
+*{box-sizing:border-box}html{scroll-behavior:auto;scroll-padding-top:0}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}a{color:var(--teal);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}button{font:inherit;cursor:pointer}button,a,input,summary{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid #d3962d;outline-offset:5px}::selection{background:#c3e8df;color:var(--deep)}h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin-top:0}h1,h2,h3,h4{line-height:1.45;color:var(--navy);text-wrap:pretty}p{margin-bottom:20px}p:last-child{margin-bottom:0}strong{font-weight:700;color:var(--navy)}img,svg{max-width:100%}section[id],main[id]{scroll-margin-top:24px}small{font-size:14px}.wrap{width:min(var(--wide),calc(100% - 80px));margin-inline:auto}.skip{position:fixed;left:20px;top:-100px;z-index:100;padding:10px 20px;background:white}.skip:focus{top:10px}.hero{background:linear-gradient(112deg,#102a3b 0%,#102a3b 60%,#173b49 100%);position:relative;color:#d3e2e6;overflow:hidden}.hero:after{content:"";position:absolute;right:-140px;top:-180px;width:680px;height:680px;border:1px solid #ffffff08;border-radius:50%;box-shadow:0 0 0 80px #ffffff02,0 0 0 160px #ffffff02;pointer-events:none}.hero .wrap{position:relative;z-index:1;padding-top:26px;padding-bottom:62px}.breadcrumb{display:flex;align-items:center;gap:12px;font-size:13px;color:#aac1ca;margin-bottom:40px}.breadcrumb a{color:#c4d8df;text-decoration:none}.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 312px;gap:64px;align-items:center}.eyebrow{display:flex;gap:10px;align-items:center;font-size:13px;font-weight:650;letter-spacing:1.5px;color:var(--mint);margin-bottom:19px}.eyebrow:before{content:"";width:24px;height:2px;background:currentColor}.hero h1{font-size:clamp(34px,3.6vw,50px);line-height:1.35;letter-spacing:-1px;color:#fff;margin:0 0 20px;font-weight:750}.hero h1 span{display:block;color:var(--mint);font-size:.73em;letter-spacing:-.5px;margin-top:10px}.hero .deck{font-size:18px;line-height:1.85;max-width:650px;color:#d7e5e9;margin-bottom:25px}.hero .meta{font-size:13px;display:flex;flex-wrap:wrap;gap:8px 20px;color:#aec6cf}.hero .meta b{color:#e2eef1;font-weight:600}.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:13px;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;gap:16px;border:1px solid transparent;padding:11px 20px;border-radius:5px;font-size:14px;font-weight:700;text-decoration:none;line-height:1.5;min-height:44px;background:var(--navy);color:white}.button:hover{text-decoration:none;background:#20485b}.button.primary{background:var(--mint);color:var(--deep)}.button.primary:hover{background:#a2e8dd}.button.ghost{background:transparent;border-color:#66818c;color:white}.button.ghost:hover{background:#ffffff0d}.hero-brief{border-top:2px solid var(--mint);border-bottom:1px solid #ffffff2b;padding:22px 0 18px}.hero-brief .brief-kicker{font-size:12px;letter-spacing:1.6px;color:#b9d1d9}.hero-brief .big-date{font-size:40px;font-weight:650;color:white;line-height:1.25;margin:7px 0 8px;font-variant-numeric:tabular-nums;letter-spacing:-1.5px}.hero-brief .date-note{font-size:14px;color:#c1d6dc;padding-bottom:20px;margin-bottom:0;border-bottom:1px solid #ffffff24}.brief-row{display:flex;gap:16px;padding-top:20px;align-items:flex-start}.brief-row .num{font-size:13px;color:var(--mint);padding-top:2px}.brief-row b{display:block;color:white;font-size:16px;font-weight:600}.brief-row p{font-size:13px;color:#b6cdd4;line-height:1.65;margin:4px 0 0}.key-strip{background:#e8f0ef;border-bottom:1px solid #cedddb}.key-strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding:25px 0;gap:32px}.key-strip .fact{display:flex;gap:16px;align-items:center}.key-strip .fact+.fact{border-left:1px solid #bed2ce;padding-left:32px}.fact-number{font-size:34px;line-height:1;font-weight:700;color:var(--teal);letter-spacing:-1px;white-space:nowrap}.fact-number span{font-size:16px;letter-spacing:0}.fact p{font-size:14px;line-height:1.65;margin:0}.fact b{display:block;font-size:15px}.page-layout{display:grid;grid-template-columns:212px minmax(0,var(--reading));gap:64px;padding-top:58px;padding-bottom:75px;justify-content:space-between}.toc{align-self:start;position:sticky;top:24px}.toc-title{font-size:12px;letter-spacing:1.8px;font-weight:700;margin-bottom:18px;color:var(--muted)}.toc a{display:flex;align-items:baseline;gap:12px;padding:8px 0 8px 14px;border-left:2px solid var(--line);font-size:14px;color:var(--muted);text-decoration:none;line-height:1.6}.toc a span{font-size:11px;color:#7a8f99;font-variant-numeric:tabular-nums}.toc a[aria-current="location"],.toc a:hover{border-color:var(--teal);color:var(--teal);background:#eaf0ed}.toc .aside-note{margin-top:28px;border-top:1px solid var(--line);padding-top:18px;font-size:13px;line-height:1.75;color:var(--muted)}.aside-note b{display:block;color:var(--ink);margin-bottom:5px}.mobile-toc{display:none}.article{min-width:0}.intro-summary{padding:30px 32px;background:white;border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:0 0 var(--radius) var(--radius);margin-bottom:58px}.section-kicker{font-size:12px;letter-spacing:1.7px;font-weight:700;color:var(--teal);margin-bottom:12px}.intro-summary h2{font-size:25px;margin-bottom:20px;letter-spacing:-.5px}.summary-list{list-style:none;padding:0;margin:0;counter-reset:summary}.summary-list li{counter-increment:summary;display:flex;gap:16px;font-size:16px;line-height:1.8;padding-top:14px;margin-top:14px;border-top:1px solid #e4ebeb}.summary-list li:before{content:"0" counter(summary);font-size:12px;color:var(--teal);font-weight:700;flex:none;line-height:2.4}.summary-list li:first-child{border:0;margin:0;padding:0}.article-section{padding-bottom:52px;margin-bottom:48px;border-bottom:1px solid var(--line)}.section-heading{display:grid;grid-template-columns:46px 1fr;gap:12px;margin-bottom:25px;align-items:start}.section-heading .index{font-size:13px;color:var(--teal);border-top:2px solid var(--teal);padding-top:11px;margin-top:6px;letter-spacing:1px;width:32px}.section-heading h2{font-size:28px;letter-spacing:-.6px;margin:0}.section-heading .subtitle{font-size:12px;letter-spacing:1.3px;color:var(--muted);margin:6px 0 0;text-transform:uppercase}.article h3{font-size:21px;margin:32px 0 16px}.article h4{font-size:17px;margin:0 0 7px}.lead{font-size:18px;line-height:1.95}.citation{font-size:12px;font-weight:650;white-space:nowrap;text-decoration:none;vertical-align:super;padding:0 3px}.citation:focus{outline-offset:2px}.callout{padding:22px 26px;background:#e9f2ef;border-left:3px solid var(--teal);margin:25px 0;border-radius:0 7px 7px 0;font-size:16px;line-height:1.85}.callout .label{display:block;font-size:12px;letter-spacing:1px;font-weight:750;color:var(--teal);margin-bottom:9px}.callout.warning{background:var(--amber-bg);border-color:#b3873a}.callout.warning .label{color:var(--amber)}.pullquote{padding:2px 0 2px 24px;border-left:3px solid var(--teal);margin:30px 0}.pullquote p{font-size:24px;font-weight:650;line-height:1.7;letter-spacing:-.3px}.pullquote cite{font-style:normal;font-size:13px;color:var(--muted)}.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:20px 0}.scope-item{padding:19px 0;border-top:1px solid var(--line)}.scope-item p{font-size:15px;color:var(--muted);line-height:1.8;margin:0}.scope-item b{font-size:16px;display:block;margin-bottom:6px;color:var(--navy)}.caption{font-size:13px;line-height:1.8;color:var(--muted);margin-top:12px;margin-bottom:0}.timeline{padding-left:25px;border-left:1px solid #b7ceca;margin:29px 0 26px 8px}.time-item{position:relative;padding:0 0 26px 11px}.time-item:last-child{padding-bottom:0}.time-item:before{content:"";width:11px;height:11px;border:3px solid var(--paper);border-radius:50%;background:var(--teal);position:absolute;left:-31px;top:10px;box-shadow:0 0 0 1px var(--teal)}.time-item .date{font-size:24px;letter-spacing:-.5px;color:var(--navy);font-weight:700;margin-bottom:7px}.time-item .tag{display:inline-block;margin-left:12px;vertical-align:middle;padding:2px 8px;font-size:11px;letter-spacing:.2px;font-weight:650;background:#dfeee9;color:var(--teal);border-radius:3px}.time-item .tag.advice{background:#e9ecee;color:#536876}.time-item h3{font-size:17px;margin:5px 0 6px}.time-item p{font-size:15px;color:var(--muted);margin:0;line-height:1.85}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:white;margin:23px 0}.table-wrap:focus-visible{outline-offset:3px}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.8;text-align:left}caption{text-align:left;padding:17px 20px;background:white;font-weight:700;color:var(--navy);border-bottom:1px solid var(--line)}thead{background:#e9efee}th,td{padding:16px 19px;vertical-align:top;border-bottom:1px solid var(--line)}th{font-weight:650;color:var(--navy)}tr:last-child td,tr:last-child th{border-bottom:0}tbody th{font-size:14px;font-weight:600;width:26%}td small{display:block;color:var(--muted);font-size:13px;margin-top:3px}.wide-table{min-width:640px}.flow{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #ccded9;background:#fff;border-radius:8px;margin:26px 0 16px;overflow:hidden}.flow li{position:relative;padding:20px 12px;line-height:1.6;border-right:1px solid #dce7e4}.flow li:last-child{border:0}.flow .step{display:block;font-size:11px;color:var(--teal);letter-spacing:1px;margin-bottom:9px}.flow b{display:block;font-size:15px}.flow small{font-size:12px;color:var(--muted);line-height:1.6;display:block;margin-top:5px}.flow li:first-child,.flow li:nth-child(4){background:#eaf4ef}.check-scope{padding-left:22px;font-size:16px}.check-scope li{margin-bottom:10px;padding-left:4px}.pms-job{padding:19px 22px;background:var(--navy);color:white;border-radius:6px;font-size:14px;line-height:1.8;overflow-wrap:anywhere}.pms-job small{display:block;color:#9dccc9;font-size:11px;letter-spacing:1.5px;margin-bottom:5px}.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:23px 0}.plan-grid div{padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:6px}.plan-grid b{display:block;font-size:16px;margin-bottom:5px;color:var(--navy)}.plan-grid p{font-size:14px;color:var(--muted);line-height:1.8;margin:0}.life-rule{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#46606b;border:1px solid #46606b;border-radius:8px;overflow:hidden;margin:26px 0}.life-rule .limit{background:var(--navy);padding:26px 27px;color:#d6e4e9}.limit .months{font-size:49px;line-height:1.1;color:var(--mint);font-weight:650;letter-spacing:-2px;margin:12px 0}.limit .months span{font-size:16px;letter-spacing:0;margin-left:8px}.limit p{font-size:14px;margin:0;line-height:1.8}.limit b{color:white;font-size:17px}.life-rule .override{grid-column:1/-1;padding:16px 26px;background:#eaf2ef;font-size:15px;line-height:1.8}.example{background:white;border:1px solid var(--line);padding:26px 28px;border-radius:8px;margin:24px 0 0}.example .example-top{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;align-items:baseline;margin-bottom:18px}.example h3{margin:0;font-size:20px}.example .sample{font-size:12px;color:var(--muted)}.date-events{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;line-height:1.8;margin-bottom:26px}.date-events b{display:block;font-size:17px;font-weight:600;font-variant-numeric:tabular-nums}.date-bars .bar-row{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;margin-bottom:14px}.bar-row>span{font-size:13px;line-height:1.65;color:var(--muted)}.bar{position:relative;padding:11px 14px;background:#edf1f1;border-radius:0 4px 4px 0;font-size:14px;font-variant-numeric:tabular-nums}.bar.manufacture{width:100%;background:#cce8df;color:#164e4b;font-weight:700;border-left:3px solid var(--teal)}.bar.service{border-left:3px solid #8ca2ab}.example-result{padding-top:18px;margin-top:19px;border-top:1px solid var(--line);font-size:15px}.example-result strong{color:var(--teal)}.two-notes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:27px 0}.two-notes div{border-top:2px solid var(--teal);padding-top:17px}.two-notes p{font-size:15px;color:var(--muted)}.action-list{list-style:none;padding:0;margin:28px 0 0;counter-reset:actions}.action-list li{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:24px 0;border-top:1px solid var(--line);counter-increment:actions}.action-list li:before{content:"0" counter(actions);font-size:22px;color:var(--teal);line-height:1.4;font-weight:500;letter-spacing:-1px}.action-list h3{margin:0 0 8px;font-size:19px}.action-list p{font-size:15px;margin:0;color:var(--muted)}.deliverable{margin-top:10px!important;color:var(--ink)!important;font-size:14px!important}.deliverable:before{content:"建議成果";font-size:11px;display:inline-block;padding:0 6px;border:1px solid #bdcfca;color:var(--teal);border-radius:3px;margin-right:9px}.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:27px 0}.evidence-grid>div{background:white;border-top:3px solid var(--teal);padding:20px 18px;border-radius:0 0 6px 6px}.evidence-grid h3{font-size:17px;margin:0 0 3px}.evidence-grid small{font-size:11px;letter-spacing:.7px;color:var(--muted)}.evidence-grid ul{font-size:14px;line-height:1.85;padding-left:18px;margin:17px 0 0}.evidence-grid li{margin:7px 0}.faq details{border-top:1px solid var(--line);padding:17px 0}.faq details:last-child{border-bottom:1px solid var(--line)}.faq summary{font-size:17px;line-height:1.8;font-weight:650;cursor:pointer;color:var(--navy);list-style:none;display:flex;gap:15px;justify-content:space-between}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";font-size:23px;line-height:1.3;color:var(--teal);font-weight:400}.faq details[open] summary:after{content:"−"}.faq details p{font-size:15px;color:var(--muted);margin:15px 28px 4px 0}.closing{background:var(--navy);color:#dce9ed;padding:32px 34px;border-radius:8px;margin-top:33px}.closing .section-kicker{color:var(--mint)}.closing h3{color:white;margin:0 0 16px;font-size:23px}.closing p{font-size:16px;line-height:1.95}.sources{font-size:14px;line-height:1.85;list-style:none;padding:0;counter-reset:sources}.sources li{position:relative;counter-increment:sources;padding:18px 0 18px 37px;border-top:1px solid var(--line);scroll-margin-top:24px}.sources li:before{content:"[" counter(sources) "]";position:absolute;left:0;color:var(--teal);font-size:12px;font-weight:700}.sources a{font-weight:650;overflow-wrap:anywhere}.sources p{font-size:13px;margin:5px 0 0;color:var(--muted)}.scope-note{font-size:13px;color:var(--muted);padding:20px 24px;border:1px solid var(--line);margin-top:20px;background:#fff}.author{display:flex;gap:21px;margin:0 0 36px;align-items:flex-start}.monogram{font-family:Georgia,serif;font-size:26px;line-height:64px;width:64px;flex:none;background:var(--navy);color:var(--mint);text-align:center;border-radius:50%}.author h3{font-size:20px;margin:0 0 6px}.author p{font-size:14px;line-height:1.85;color:var(--muted);margin:0 0 10px}.author a{font-size:13px}.related{border-top:1px solid var(--line);padding-top:27px}.related h3{font-size:20px;margin:0 0 16px}.related a{display:block;padding:15px 0;text-decoration:none;border-bottom:1px solid var(--line);font-size:16px;font-weight:650}.related a span{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:4px}.footer{background:var(--deep);color:#9cb6c0;padding:34px 0;font-size:12px}.footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer b{color:white;font-size:14px;font-weight:600}.footer a{color:#bdd7df}.preview-note{background:#e6efeb;color:#4c6863;font-size:12px;text-align:center;padding:7px 20px;border-top:1px solid #ccddd7}.back-top{position:fixed;bottom:22px;right:22px;z-index:15;background:white;color:var(--navy);border:1px solid #b8cccb;width:43px;height:43px;border-radius:50%;display:grid;place-items:center;text-decoration:none;box-shadow:0 3px 15px #102a3b0d;font-size:20px}.no-js-only{display:block}.inline-list{padding-left:22px;font-size:16px}.inline-list li{margin-bottom:8px}
+@media(min-width:1450px){.hero-layout{gap:86px}.hero h1{font-size:52px}}
+@media(max-width:1100px){.wrap{width:calc(100% - 56px)}.hero-layout{grid-template-columns:minmax(0,1fr) 280px;gap:35px}.page-layout{grid-template-columns:175px minmax(0,1fr);gap:38px}.fact-number{font-size:30px}.key-strip .wrap{gap:18px}.key-strip .fact+.fact{padding-left:18px}.hero h1{font-size:42px}.section-heading h2{font-size:26px}}
+@media(max-width:860px){.wrap{width:calc(100% - 40px)}.hero-layout{grid-template-columns:minmax(0,1fr) 220px;gap:26px}.hero h1{font-size:36px}.hero .deck{font-size:16px}.hero-brief .big-date{font-size:29px}.hero .wrap{padding-bottom:40px}.breadcrumb{margin-bottom:30px}.brief-row{padding-top:15px}.brief-row b{font-size:14px}.brief-row p{font-size:12px}.page-layout{display:block;max-width:780px;padding-top:35px}.toc{display:none}.mobile-toc{display:block;margin-bottom:28px;background:white;border:1px solid var(--line);border-radius:7px}.mobile-toc summary{cursor:pointer;padding:13px 18px;font-size:14px;color:var(--navy);font-weight:650}.mobile-toc nav{display:grid;grid-template-columns:1fr 1fr;padding:0 18px 16px;gap:4px 14px}.mobile-toc a{font-size:14px;text-decoration:none;padding:7px 0}.key-strip .wrap{gap:18px;padding-block:22px}.key-strip .fact{display:block}.fact-number{font-size:29px;margin-bottom:9px}.fact-number span{font-size:14px}.fact b{font-size:14px}.fact p{font-size:12px}.intro-summary{margin-bottom:45px}.article-section{padding-bottom:40px;margin-bottom:38px}}
+@media(max-width:600px){body{font-size:16px;line-height:1.95}.wrap{width:calc(100% - 36px)}.hero .wrap{padding-top:20px;padding-bottom:34px}.breadcrumb{font-size:12px;margin-bottom:27px;gap:9px}.hero-layout{display:block}.eyebrow{font-size:11px;letter-spacing:.8px;gap:8px;margin-bottom:16px}.hero h1{font-size:35px;letter-spacing:-.8px;line-height:1.38}.hero h1 span{font-size:25px;line-height:1.5;letter-spacing:-.5px;margin-top:9px}.hero .deck{font-size:16px;margin-bottom:20px}.hero .meta{font-size:12px;gap:6px 15px}.hero-actions{gap:10px;margin-top:23px}.hero-actions .button{padding:11px 15px;font-size:13px;gap:10px}.hero-brief{display:none}.key-strip .wrap{gap:10px;padding-block:20px}.key-strip .fact+.fact{padding-left:12px}.fact-number{font-size:27px;letter-spacing:-1px}.fact-number span{font-size:12px}.fact b{font-size:12px;line-height:1.6}.fact p{font-size:11px;line-height:1.6}.page-layout{padding-top:25px;padding-bottom:44px}.intro-summary{padding:24px 22px;margin-bottom:39px}.intro-summary h2{font-size:22px;line-height:1.5}.summary-list li{gap:11px;font-size:15px}.section-heading{grid-template-columns:31px 1fr;gap:10px;margin-bottom:21px}.section-heading .index{font-size:11px;width:23px;padding-top:9px}.section-heading h2{font-size:24px;line-height:1.5}.section-heading .subtitle{font-size:10px;letter-spacing:.7px}.lead{font-size:17px}.callout{padding:20px;font-size:15px}.pullquote{padding-left:19px}.pullquote p{font-size:21px}.scope-grid{grid-template-columns:1fr}.scope-item{padding:16px 0}.time-item .date{font-size:22px}.time-item .tag{font-size:10px;margin-left:8px}.flow{display:block}.flow li{display:grid;grid-template-columns:50px 1fr;gap:0 13px;border:0;border-bottom:1px solid #dce7e4;padding:15px 18px}.flow .step{grid-row:span 2;margin:0;padding-top:3px}.flow small{margin-top:3px}.flow li:last-child{border:0}.plan-grid{grid-template-columns:1fr;gap:10px}.plan-grid div{padding:17px 19px}.life-rule .limit{padding:21px 19px}.limit b{font-size:15px}.limit .months{font-size:43px}.limit p{font-size:12px}.life-rule .override{padding:16px 20px;font-size:14px}.example{padding:23px 19px}.date-events{gap:13px}.date-events b{font-size:14px}.date-events>div{font-size:11px}.date-bars .bar-row{grid-template-columns:72px 1fr;gap:10px}.bar-row>span{font-size:12px}.bar{font-size:12px;padding:10px}.two-notes{grid-template-columns:1fr;gap:20px}.action-list li{grid-template-columns:28px 1fr;gap:12px;padding:21px 0}.action-list li:before{font-size:19px}.action-list h3{font-size:18px}.deliverable:before{display:table;margin-bottom:5px}.evidence-grid{grid-template-columns:1fr;gap:16px}.evidence-grid>div{padding:21px}.evidence-grid ul{font-size:15px;columns:2;gap:25px}.faq summary{font-size:16px}.faq details p{margin-right:5px}.closing{padding:27px 23px}.closing h3{font-size:21px}.closing p{font-size:15px}.author{gap:15px}.monogram{font-size:22px;line-height:52px;width:52px}.footer .wrap{display:block}.footer p{margin-bottom:15px}.footer b{font-size:13px}.back-top{right:12px;bottom:16px;width:38px;height:38px}.preview-note{font-size:11px;padding-inline:28px}th,td{padding:13px 16px}.mobile-toc nav{grid-template-columns:1fr 1fr;gap:3px 10px}.mobile-toc a{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Narrow-screen contents: fixed entry, scrollable modal panel. */
+.floating-toc-trigger{display:none}
+.toc-dialog{position:fixed;inset:auto 0 0;width:min(100%,560px);max-height:78vh;max-height:78dvh;margin:0 auto;padding:0;border:1px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0;background:var(--paper);color:var(--ink);box-shadow:0 -12px 50px #0b1e2c26;overflow:hidden}
+.toc-dialog:not([open]){display:none}.toc-dialog[open]{display:flex;flex-direction:column}.toc-dialog::backdrop{background:#06192380}
+.toc-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px 16px;border-bottom:1px solid var(--line);background:white;flex:none}
+.toc-dialog-header h2{font-size:21px;margin:0 0 4px}.toc-dialog-header p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+.toc-dialog-close{display:grid;place-items:center;flex:none;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:white;color:var(--navy);font-size:25px;line-height:1}
+.toc-dialog nav{overflow-y:auto;overscroll-behavior:contain;padding:10px 18px max(22px,env(safe-area-inset-bottom));min-height:0;scroll-padding:10px}
+.toc-dialog nav a{display:flex;align-items:center;gap:14px;min-height:48px;margin:3px 0;padding:10px 14px;border-left:3px solid transparent;border-radius:3px;color:var(--ink);text-decoration:none;font-size:15px;line-height:1.6}
+.toc-dialog nav a span{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;flex:none}.toc-dialog nav a[aria-current="location"]{background:#deeee8;border-left-color:var(--teal);color:var(--teal);font-weight:700}.toc-dialog nav a[aria-current="location"] span{color:var(--teal)}.toc-dialog nav a:hover{background:#eaf2ef}.toc-dialog :focus-visible{outline-offset:1px}
+body.toc-dialog-open{overflow:hidden}
+@media(max-width:860px){
+  body.toc-enhanced{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+  .toc-enhanced .mobile-toc{display:none}
+  .floating-toc-trigger:not([hidden]){position:fixed;right:74px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:16;display:flex;align-items:center;gap:10px;min-height:46px;padding:10px 17px;border:1px solid #a2c1c0;border-radius:30px;background:var(--navy);color:white;box-shadow:0 4px 20px #0b1e2c24;font-size:14px;font-weight:650;line-height:1.5}
+  .floating-toc-trigger svg{width:18px;height:18px;flex:none}
+  .back-top{right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:46px;height:46px}
+}
+
+.timeline {
+  --timeline-gutter: 28px;
+  --timeline-dot: 12px;
+  --timeline-line: 2px;
+  position: relative;
+  margin: 29px 0 26px;
+  padding-left: var(--timeline-gutter);
+  border-left: 0;
+}
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: calc((var(--timeline-dot) - var(--timeline-line)) / 2);
+  top: 8px;
+  bottom: 8px;
+  width: var(--timeline-line);
+  background: #b7ceca;
+  border-radius: 1px;
+}
+.time-item {
+  padding-left: 0;
+}
+.time-item:before {
+  box-sizing: border-box;
+  left: calc(-1 * var(--timeline-gutter));
+  top: 8px;
+  width: var(--timeline-dot);
+  height: var(--timeline-dot);
+  z-index: 1;
+}
+
+.hero {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 59, 0.93) 0%, rgba(16, 42, 59, 0.80) 36%, rgba(16, 42, 59, 0.52) 64%, rgba(16, 42, 59, 0.38) 100%),
+    url("../../assets/images/maritime/pilot-transfer-arrangements/hero-pilot-transfer.jpg") 82% 42% / cover no-repeat;
+}
+@supports (background-image: image-set(url("dummy.webp") type("image/webp"))) {
+  .hero {
+    background:
+      linear-gradient(90deg, rgba(16, 42, 59, 0.93) 0%, rgba(16, 42, 59, 0.80) 36%, rgba(16, 42, 59, 0.52) 64%, rgba(16, 42, 59, 0.38) 100%),
+      image-set(
+        url("../../assets/images/maritime/pilot-transfer-arrangements/hero-pilot-transfer.webp") type("image/webp"),
+        url("../../assets/images/maritime/pilot-transfer-arrangements/hero-pilot-transfer.jpg") type("image/jpeg")
+      ) 82% 42% / cover no-repeat;
+  }
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(11, 30, 44, 0.16) 0%, transparent 42%, rgba(11, 30, 44, 0.28) 100%);
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  right: 0;
+  top: auto;
+  width: auto;
+  height: 140px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(11, 30, 44, 0.42));
+}
+@media (max-width: 600px) {
+  .hero { background-position: 86% 38%; }
+}
+
+.hero h1 { margin-bottom: 14px; }
+.hero .article-meta {
+  font-size: 13px;
+  gap: 4px 0;
+  margin: 0 0 20px;
+  color: #aec6cf;
+}
+.hero .article-meta__sep { color: rgba(174, 198, 207, .45); }
+.hero .article-share--hero { margin-top: 22px; }
+.hero .article-share__label { color: #c4d8df; }
+.hero a.share-btn { text-decoration: none; }
+.hero a.share-btn--linkedin,
+.hero a.share-btn--linkedin:hover,
+.hero a.share-btn--facebook,
+.hero a.share-btn--facebook:hover { color: #fff; }
+.share-band {
+  width: min(var(--wide), calc(100% - 80px));
+  margin: 0 auto;
+  padding: 8px 0 0;
+}
+.share-band .article-share--end {
+  margin: 0;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.share-band .article-share__label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+.share-band a.share-btn { text-decoration: none; }
+.share-band a.share-btn--linkedin,
+.share-band a.share-btn--linkedin:hover,
+.share-band a.share-btn--facebook,
+.share-band a.share-btn--facebook:hover { color: #fff; }
+footer.site-footer {
+  padding: 38px 0 46px;
+  color: rgba(255,255,255,.78);
+  background: #041b2d;
+  margin-top: 34px;
+  text-align: left;
+  border-top: 0;
+}
+footer.site-footer .site-footer-inner {
+  width: min(var(--wide), calc(100% - 80px));
+  margin: 0 auto;
+}
+footer.site-footer strong {
+  color: #fff;
+  display: block;
+  margin-bottom: 6px;
+}
+footer.site-footer .small {
+  font-size: 13px;
+  color: rgba(255,255,255,.62);
+}
+footer.site-footer .disclaimer {
+  margin: 14px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,.62);
+  max-width: 760px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+footer.site-footer .disclaimer strong {
+  color: rgba(255,255,255,.82);
+  font-weight: 700;
+  display: inline;
+}
+footer.site-footer a { color: #8ff7f1; }
+body.toc-dialog-open .top-btn { visibility: hidden; }
+@media (max-width: 1100px) {
+  .share-band,
+  footer.site-footer .site-footer-inner { width: calc(100% - 56px); }
+}
+@media (max-width: 860px) {
+  .share-band,
+  footer.site-footer .site-footer-inner { width: calc(100% - 40px); }
+  .toc-enhanced .floating-toc-trigger:not([hidden]) {
+    right: 132px;
+    bottom: calc(18px + env(safe-area-inset-bottom));
+  }
+}
+@media (max-width: 600px) {
+  .share-band,
+  footer.site-footer .site-footer-inner { width: calc(100% - 36px); }
+  .hero .article-meta { font-size: 12px; }
+}
+@media print {
+  .note-site-bar, .article-share, .share-band, footer.site-footer,
+  .floating-toc-trigger, .toc-dialog, .top-btn, .hero-actions { display: none !important; }
+}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "領港設備新規：船東的全生命週期管理",
+    "description": "從 SOLAS V/23 與 MSC.576(110)，理解領港設備的適用時程、船上檢查、36／30 個月汰換上限，以及船東的 PMS、SMS 與採購準備。",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-09-13",
+    "dateModified": "2026-09-13",
+    "author": {
+      "@type": "Person",
+      "name": "Reay Huang",
+      "url": "https://reayhuang.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Reay Huang Maritime Notes",
+      "url": "https://reayhuang.com/"
+    },
+    "mainEntityOfPage": "https://reayhuang.com/notes/maritime/pilot-transfer-arrangements.zh.html",
+    "image": "https://reayhuang.com/assets/images/maritime/pilot-transfer-arrangements/pilot-transfer-arrangements-link-preview.jpg",
+    "keywords": [
+      "SOLAS V/23",
+      "Pilot Transfer Arrangements",
+      "MSC.576(110)",
+      "Pilot ladder",
+      "Ship Survey"
+    ]
+  }
+  </script>
+
+</head>
+<body id="top">
+<a class="skip" href="#main">跳到文章內容</a>
+<div class="note-site-bar">
+  <div class="note-site-bar__nav">
+    <a href="../index.zh.html">← 海事筆記</a>
+    <span>|</span>
+    <a href="../../index.zh.html">首頁</a>
+    <a href="../../about.zh.html">關於我</a>
+    <a href="../../research/index.zh.html">管理筆記</a>
+  </div>
+  <nav class="note-lang-switch" aria-label="Language">
+    <a href="pilot-transfer-arrangements.en.html" lang="en" hreflang="en">EN</a>
+    <a href="pilot-transfer-arrangements.zh.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
+  </nav>
+</div>
+<div class="hero"><div class="wrap">
+<nav class="breadcrumb" aria-label="麵包屑"><a href="../index.zh.html">海事筆記</a><span aria-hidden="true">／</span><span>法規與檢驗</span></nav>
+<div class="hero-layout"><div><div class="eyebrow">SOLAS V/23 · MSC.576(110)</div><h1>領港設備新規<span>船東的全生命週期管理</span></h1><p class="article-meta" aria-label="文章資訊">
+            <span>📅 更新：2026-09-13</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>⏱ 閱讀約 16 分鐘</span>
+            <span class="article-meta__sep" aria-hidden="true">·</span>
+            <span>🏷 SOLAS V/23 / 領港設備 / MSC.576(110)</span>
+          </p><p class="deck">從每次登離船的安全，回到船隊的日常管理。以驗船師視角整理 Pilot Transfer Arrangements 新要求，釐清適用時程、檢查責任與設備汰換，讓船東提早準備。</p><div class="hero-actions"><a class="button primary" href="#summary">先看重點 <span aria-hidden="true">↓</span></a><a class="button ghost" href="#actions">船東準備清單 <span aria-hidden="true">↗</span></a></div>
+          <div
+            class="article-share article-share--hero"
+            data-article-share
+            data-share-url="https://reayhuang.com/notes/maritime/pilot-transfer-arrangements.zh.html"
+            data-share-title="領港設備新規：船東的全生命週期管理｜Reay's Note"
+            data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;領港設備新規：船東的全生命週期管理｜Reay's Note&#10;https://reayhuang.com/notes/maritime/pilot-transfer-arrangements.zh.html"
+            data-share-copy="複製連結"
+            data-share-copied="已複製"
+            data-toast-copied="連結已複製到剪貼簿"
+          >
+            <p class="article-share__label" id="share-hero-label">分享此篇</p>
+            <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
+          </div></div>
+<aside class="hero-brief" aria-label="新規閱讀概要"><div class="brief-kicker">預定生效日 · 已採納</div><div class="big-date">2028.01.01</div><p class="date-note">硬體過渡與管理要求，分開判斷。</p><div class="brief-row"><span class="num">01</span><div><b>掌握適用時程</b><p>新安裝與既有裝置的過渡安排</p></div></div><div class="brief-row"><span class="num">02</span><div><b>建立船上維護制度</b><p>每次使用、每三個月與持續追蹤</p></div></div><div class="brief-row"><span class="num">03</span><div><b>把要求轉成證據</b><p>設備、文件、人員與汰換紀錄</p></div></div></aside></div>
+</div></div>
+<div class="key-strip" aria-label="重要頻率與期限"><div class="wrap"><div class="fact"><div class="fact-number">每次</div><p><b>使用前、使用後</b>由船上 Responsible Officer 檢查</p></div><div class="fact"><div class="fact-number">3 <span>個月</span></div><p><b>整套裝置詳細檢查</b>包括備用梯與相關設備</p></div><div class="fact"><div class="fact-number">36 / 30</div><p><b>製造／服役月數上限</b>不符合要求時須提早退出使用</p></div></div></div>
+<div class="wrap page-layout">
+<aside class="toc" aria-label="文章目錄"><div class="toc-title">閱讀導覽 / CONTENTS</div><nav>
+<a href="#summary" aria-current="location"><span>00</span>重點先讀</a><a href="#scope"><span>01</span>管理整套裝置</a><a href="#timeline"><span>02</span>適用時程</a><a href="#inspection"><span>03</span>檢查與作業流程</a><a href="#maintenance"><span>04</span>維護計畫</a><a href="#lifecycle"><span>05</span>壽命與採購</a><a href="#care"><span>06</span>備品、維修與儲存</a><a href="#actions"><span>07</span>船東準備清單</a><a href="#survey"><span>08</span>驗船師查核視角</a><a href="#questions"><span>09</span>常見誤解</a><a href="#sources"><span>10</span>來源與閱讀範圍</a>
+</nav><div class="aside-note"><b>本文閱讀對象</b>船東、船管公司、船長與甲板部門。<br>聚焦管理準備及可查核證據。</div></aside>
+<main id="main" class="article">
+<details class="mobile-toc"><summary>文章目錄 · 依問題跳讀</summary><nav aria-label="手機文章目錄"><a href="#summary">00 重點先讀</a><a href="#scope">01 管理整套裝置</a><a href="#timeline">02 適用時程</a><a href="#inspection">03 檢查流程</a><a href="#maintenance">04 維護計畫</a><a href="#lifecycle">05 壽命與採購</a><a href="#care">06 備品與維修</a><a href="#actions">07 船東準備清單</a><a href="#survey">08 驗船師查核</a><a href="#questions">09 常見誤解</a><a href="#sources">10 來源與範圍</a></nav></details>
+<section id="summary" class="intro-summary" aria-labelledby="summary-title"><div class="section-kicker">THE TAKEAWAY / 重點先讀</div><h2 id="summary-title">把領港設備，納入可追溯的船隊管理。</h2><ol class="summary-list"><li><div><strong>管理範圍涵蓋整套 Pilot Transfer Arrangement。</strong>領港梯、manropes、組合式登乘裝置、固定點、登船通道與相關設備，需要一起盤點。</div></li><li><div><strong>2028 年的管理要求與既有裝置的硬體過渡期限不同。</strong>不能等到 2029 年的相關 survey，才開始落實檢查、維護與 familiarization。</div></li><li><div><strong>每次使用前後檢查，每三個月詳細檢查。</strong>執行者是船上的 Responsible Officer；這個頻率不等於每季要請 Class／RO 驗船師上船。</div></li><li><div><strong>製造 36 個月、投入使用 30 個月，取較早上限。</strong>領港梯與 manropes，包括備品，若提早不符合標準，就須提早退出使用。</div></li></ol><p class="caption">依據：MSC.572(110) 修訂之 SOLAS V/23；MSC.576(110) §§25–30。<a class="citation" href="#source-1" aria-label="來源 1：SOLAS 修訂">[1]</a><a class="citation" href="#source-2" aria-label="來源 2：性能標準">[2]</a></p></section>
+
+<section id="scope" class="article-section"><div class="section-heading"><span class="index">01</span><div><h2>從一條梯子，看到整套裝置</h2><p class="subtitle">The complete arrangement</p></div></div>
+<p class="lead">站在驗船師的立場，我最希望船東理解的是：更換新梯只是其中一個環節。船公司需要把整套領港設備的狀態、檢查、維護與人員熟悉訓練，放進可以持續執行的管理制度。</p>
+<p>IMO 於 2025 年 6 月 26 日採納 MSC.572(110)，修訂 SOLAS V/23；並以 MSC.576(110) 訂定領港設備性能標準。依修正案的接受與生效程序，預定自 <strong>2028 年 1 月 1 日</strong>起實施。<a class="citation" href="#source-1" aria-label="來源 1">[1]</a><a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p>
+<div class="scope-grid" aria-label="整套領港設備管理範圍"><div class="scope-item"><b>登乘設備</b><p>Pilot ladder、manropes，以及適用時的 accommodation ladder、embarkation platform 與 combination arrangement。</p></div><div class="scope-item"><b>承載與固定</b><p>Strong points、securing ropes、shackles、固定裝置，以及 pilot ladder winch reels。</p></div><div class="scope-item"><b>安全通道與配套</b><p>Point of access、stanchions、handholds、照明與防磨耗保護等相關配置。</p></div><div class="scope-item"><b>持續管理</b><p>檢查、儲存、維護、識別、替換及 familiarization；同時管理使用中與備用設備。</p></div></div>
+<div class="callout"><span class="label">現行制度的基礎</span>既有要求已包含設備安全、檢查與部分紀錄。HSSC 2025 的 Safety Equipment Survey 也已涵蓋配置、登船通道、照明、操作，以及領港梯投入使用與維修紀錄。新規把頻率、維護計畫及汰換上限訂得更具體，不能理解為「以前完全不用管理」。<a class="citation" href="#source-3" aria-label="來源 3：HSSC 2025">[3]</a></div>
+<p><strong>實務建議：</strong>將要求納入 PMS（Planned Maintenance System，計畫保養系統）與 SMS（Safety Management System，安全管理系統），並指定船岸各自的維護與追蹤責任。</p>
+</section>
+
+<section id="timeline" class="article-section"><div class="section-heading"><span class="index">02</span><div><h2>先分清兩條適用時程</h2><p class="subtitle">Application &amp; transition</p></div></div>
+<p>判斷時先問兩件事：<strong>裝置何時安裝，以及船舶是否適用 SOLAS Chapter I？</strong>設計與配置的過渡安排，不能直接套用到日常管理要求。<a class="citation" href="#source-1" aria-label="來源 1">[1]</a></p>
+<div class="timeline"><div class="time-item"><div class="date">2026–2027 <span class="tag advice">準備建議</span></div><h3>完成 Fleet Gap Analysis，讓船隊先開始準備。</h3><p>盤點設備、查齊日期與製造商文件，建立 PMS 工作、維護計畫、採購與訓練安排。這是本文的準備建議，並非法規另設的截止日。</p></div><div class="time-item"><div class="date">2028.01.01 <span class="tag">預定生效</span></div><h3>所有裝置開始符合管理要求；新安裝裝置依新標準辦理。</h3><p>無論安裝日期，檢查、儲存、維護、替換及熟悉訓練適用 Introduction、Parts D–E。當日或之後新安裝者，設計、製造、配置與架設等適用 Introduction、Parts A–C，並依 Part F 辦理適用的批准。</p></div><div class="time-item"><div class="date">2029.01.01 起 <span class="tag">既有裝置</span></div><h3>Chapter I 適用船舶：最遲於當日或之後第一次 survey 時達標。</h3><p>針對 2028 年前已安裝的裝置，最遲在這次 survey 符合修訂 V/23.3 的要求。應由船隊與船旗國／RO 提早確認逐船的檢驗與改善安排。</p></div><div class="time-item"><div class="date">2030.01.01 <span class="tag">另一適用分支</span></div><h3>Chapter I 不適用船舶：既有裝置最遲達標日。</h3><p>屬修訂 V/23 範圍、但不適用 Chapter I 的船舶，其 2028 年前已安裝裝置另有此期限；不能一律套用 2029 年首次 survey。</p></div></div>
+<div class="table-wrap" tabindex="0" role="region" aria-label="適用要求對照表，可水平捲動"><table class="wide-table"><caption>把「硬體過渡」與「日常管理」分開追蹤</caption><thead><tr><th scope="col">要求類型</th><th scope="col">2028 年起新安裝</th><th scope="col">2028 年前已安裝</th></tr></thead><tbody><tr><th scope="row">Introduction + Parts A–C</th><td>依新標準設計、製造、配置與架設</td><td>依 Chapter I 適用與否，分別採 2029 年起第一次 survey，或 2030-01-01 的期限</td></tr><tr><th scope="row">Introduction + Parts D–E</th><td colspan="2">自修正案生效起，所有裝置皆適用檢查、儲存、維護、替換與熟悉訓練要求</td></tr><tr><th scope="row">Part F 批准</th><td colspan="2">依裝置適用條款及首次使用、修理、改裝等情況，確認 Administration 的批准與 type approval 要求</td></tr></tbody></table></div>
+<div class="callout warning"><span class="label">日期判斷要點 · SOLAS V/23.7</span>「2028 年 1 月 1 日或之後安裝」有專門定義：以裝置的<strong>契約交付日期</strong>判斷；沒有契約交付日期時，以<strong>實際交付到船日期</strong>判斷。不要直接用船舶建造年份或船員架梯日期代替。<a class="citation" href="#source-1" aria-label="來源 1">[1]</a></div>
+</section>
+
+<section id="inspection" class="article-section"><div class="section-heading"><span class="index">03</span><div><h2>把檢查放進每次作業</h2><p class="subtitle">Inspection &amp; onboard workflow</p></div></div>
+<p>MSC.576(110) §25 明確區分兩種頻率：<strong>每次使用前後檢查</strong>，以及<strong>每三個月詳細檢查</strong>；兩者均由船上的 Responsible Officer 執行。Introduction §3.7 另要求指定負責船副監督 inspection、rigging 與人員登離船。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p>
+<h3>一次完整的登離船流程</h3>
+<ol class="flow"><li><span class="step">STEP 01</span><b>使用前檢查</b><small>Pre-use inspection</small></li><li><span class="step">STEP 02</span><b>正確架設</b><small>Rigging</small></li><li><span class="step">STEP 03</span><b>人員登離船</b><small>Pilot transfer</small></li><li><span class="step">STEP 04</span><b>使用後檢查</b><small>Post-use inspection</small></li><li><span class="step">STEP 05</span><b>妥善收存</b><small>Correct stowage</small></li></ol>
+<p class="caption">流程為依檢查要求整理的作業示意；架設完成後亦須確認整套裝置可安全使用。實際作業順序與檢查範圍，應依適用要求及製造商指示，訂入船上程序。</p>
+<h3>使用前後，檢查哪些地方？</h3><ul class="check-scope"><li><strong>梯與繩：</strong>side ropes、steps、spreaders、manropes 的狀態，以及磨損、損傷與污染。</li><li><strong>固定與承載：</strong>securing arrangements、strong points、shackles 及可能的 chafing。</li><li><strong>通道與操作：</strong>登船處、stanchions／handholds、照明、rigging，以及適用時的 combination arrangement。</li></ul>
+<p>使用後檢查能發現本次作業造成的損傷，也能讓缺陷在下一次登離船前被處理。作業結束後，應接續檢查、必要處置與正確收存。</p>
+<h3>每三個月，把整套裝置詳細檢查一次</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="三個月詳細檢查範圍"><table><caption>MSC.576(110) §26 的檢查範圍</caption><thead><tr><th scope="col">項目</th><th scope="col">管理時要注意</th></tr></thead><tbody><tr><th scope="row">Pilot ladder</th><td>使用中的領港梯與備用梯均納入。</td></tr><tr><th scope="row">Accommodation ladder</th><td>適用於 combination arrangement 使用者；維護檢查另須符合 SOLAS II-1/3-9.3。</td></tr><tr><th scope="row">Winch reels</th><td>有配置者納入整套檢查。</td></tr><tr><th scope="row">Securing arrangements</th><td>固定裝置、strong points、ropes、shackles 等。</td></tr><tr><th scope="row">Point of access</th><td>登船位置與通道狀態。</td></tr><tr><th scope="row">Relevant equipment</th><td>尤其注意 stanchions 及焊接於甲板的 stanchion sockets。</td></tr><tr><th scope="row">Stowage arrangements</th><td>儲存位置、環境與方法。</td></tr></tbody></table></div>
+<p class="caption">Manropes 同樣屬整套裝置的管理範圍；§26 的逐項清單應連同 §§22–25 及製造商指示閱讀。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p>
+<p>在 PMS 建立工作時，名稱就應清楚涵蓋整套裝置。以下是<strong>建議工作名稱</strong>：</p><div class="pms-job"><small>PMS JOB / 建議</small>PILOT TRANSFER ARRANGEMENT — 3-MONTHLY DETAILED INSPECTION</div>
+<div class="callout"><span class="label">責任要分清楚</span>每三個月的 detailed inspection 是船上 Responsible Officer 的工作。Class／RO 驗船師在 statutory survey 中，依適用要求查核設備與制度；<strong>「每三個月檢查」本身並不代表每季要安排驗船師上船。</strong></div>
+</section>
+
+<section id="maintenance" class="article-section"><div class="section-heading"><span class="index">04</span><div><h2>維護計畫，要能拿出來也用得起來</h2><p class="subtitle">Maintenance plan &amp; records</p></div></div>
+<p>MSC.576(110) §27 要求建立 Maintenance Plan，並可供查驗。內容應容易理解，適當時配合圖示，至少包含以下六個部分。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p>
+<div class="plan-grid"><div><b>01 · 檢查表</b><p>涵蓋使用前後與每三個月的檢查工作。</p></div><div><b>02 · 維護、維修與收存指示</b><p>依製造商指示，寫清楚可做與不可做的處置。</p></div><div><b>03 · 定期工作排程</b><p>列出 periodic inspection 與 maintenance 時程。</p></div><div><b>04 · 備品與替換來源</b><p>保留可取得合適 spare parts 或 replacements 的來源。</p></div><div><b>05 · 檢查與維護紀錄</b><p>建立可追溯至各項設備的 inspection／maintenance log。</p></div><div><b>06 · 投入使用與預定汰換日期</b><p>追蹤領港梯與 manropes 的 in-service date，以及依 §30 計算的 anticipated withdrawal date。</p></div></div>
+<h3>每項設備，建立一條可追溯的資料鏈</h3><p><strong>設備 ID／Serial No. → Manufacture Date → In-Service Date → Anticipated Withdrawal Date → 檢查與維護紀錄。</strong></p><p>製造日期應由設備標示及文件確認；船上收貨日期也值得保留，供採購與交付追蹤使用。<strong>Delivered onboard 不等於 Placed into service</strong>，兩個日期應分欄管理。</p>
+<blockquote class="pullquote"><p>「梯子看起來還好」之外，<br>也要能回答：何時製造、何時啟用、何時退出使用？</p><cite>驗船師視角 · 將設備狀態連回可查核的紀錄</cite></blockquote>
+<h3>Familiarization 納入船員上船流程</h3><p>Part E 要求參與 inspection、maintenance、rigging 或 operation 的船員，接受與其職責相符的 familiarization。適用 SOLAS Chapter IX 的船舶，公司須依相關要求確保船員熟悉本船裝置及安全操作；Chapter IX 不適用者，另見 §33。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p>
+<p><strong>建議訓練內容：</strong>正確架設、使用前後檢查、每三個月詳細檢查、缺陷與汰換判斷、備品替換、combination arrangement，以及惡劣天候下的操作考量。可併入 joining familiarization、Deck Officer familiarization 與 SMS training。</p>
+</section>
+
+<section id="lifecycle" class="article-section"><div class="section-heading"><span class="index">05</span><div><h2>36／30 個月，改變採購與庫存邏輯</h2><p class="subtitle">Life-cycle &amp; procurement</p></div></div>
+<p>依 MSC.576(110) §30，領港梯與 manropes，<strong>包括備品</strong>，須在下列情況中最早發生者退出使用，不再用於領港員或其他人員登離船。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p>
+<div class="life-rule"><div class="limit"><b>從製造日起算</b><div class="months">36<span>個月</span></div><p>Manufacture date + 36 months</p></div><div class="limit"><b>從投入使用日起算</b><div class="months">30<span>個月</span></div><p>In-service date + 30 months</p></div><div class="override"><strong>取較早上限；若先不符合性能標準，須先退出使用。</strong><br>日期是時間上限，並非保證可用到該日。</div></div>
+<h3>案例：延後啟用，仍受製造日期限制</h3><p>假設一條領港梯在 2028 年初製造，9 月交付到船，10 月才投入使用。採購與船上登錄時，就需要同時計算兩個日期上限。</p>
+<figure class="example"><div class="example-top"><h3>哪一個日期先到？</h3><span class="sample">假設案例</span></div><div class="date-events"><div>製造日期<b>2028.01.01</b></div><div>交付到船<b>2028.09.01</b></div><div>投入使用<b>2028.10.01</b></div></div><div class="date-bars"><div class="bar-row"><span>製造 +36 月</span><div class="bar manufacture">2031.01.01 · 較早上限</div></div><div class="bar-row"><span>啟用 +30 月</span><div class="bar service">2031.04.01</div></div></div><figcaption class="example-result">日期上限取 <strong>2031 年 1 月 1 日</strong>，應在此上限內退出使用；狀態不合格時更早汰換。</figcaption></figure>
+<div class="callout warning"><span class="label">給採購部門的提醒</span>尚未使用的庫存，仍會消耗製造日起算的 36 個月上限。採購時應關注製造日期、交付前庫存時間及預計啟用時間，避免大量囤貨後，才發現剩餘可用期間不足。</div>
+<p>對尚未投入使用的備品，不應虛填 in-service date。先追蹤製造日期、狀態及儲存條件；正式啟用時再登錄啟用日期，並重新比較兩個時間上限。</p>
+</section>
+
+<section id="care" class="article-section"><div class="section-heading"><span class="index">06</span><div><h2>備品、維修與儲存，同樣要管理</h2><p class="subtitle">Spares, repairs &amp; stowage</p></div></div>
+<h3>備用梯放進庫房後，仍在管理範圍內</h3><p>§29 要求船上至少配備 <strong>1 條符合要求的 spare pilot ladder</strong>，以及 <strong>1 套符合要求的 spare manropes</strong>。備品也要納入識別、檢查、維護、收存及 §30 的汰換控制。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p>
+<div class="two-notes"><div><h4>踏板與 spreader 的修理有明確界線</h4><p>§28 禁止領港梯 steps 或 spreader steps 的修理或更換。損壞到需要更換踏板時，不應在船上換一塊木板、重新綁繩後繼續使用。</p></div><div><h4>其他維修回到製造商指示</h4><p>Rope seizings 或 securing devices 的維修，依 §24 提供的指示及 permitted onboard repairs 清單判斷，不可自行擴張允許範圍。</p></div></div>
+<h3>向製造商索取完整的使用與維護文件</h3><p>除了 Product Certificate，還應取得 inspection、maintenance、repair、stowage 及 discard criteria。§24 包含使用前後檢查、詳細定期檢查、允許的船上維修、固定方法，以及需要退出使用之損壞或狀態的文字與圖片說明。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p>
+<h3>收存環境，也是檢查的一部分</h3><p>§23 要求設備不使用時，依製造商指示收存，防止濕氣、結冰、日照、化學品、油脂及類似污染物造成劣化。長期暴露在日曬雨淋或油污環境，會讓後續檢查需要進一步追溯儲存方式與繩索狀態。</p>
+<p><strong>實務做法：</strong>在 PMS inventory 中把備用梯與備用 manropes 逐項列管，清楚標示位置、ID、日期、最近檢查及下次工作，讓備品真正維持可替換狀態。</p>
+</section>
+
+<section id="actions" class="article-section"><div class="section-heading"><span class="index">07</span><div><h2>船東現在可以開始的七項準備</h2><p class="subtitle">Owner action plan</p></div></div>
+<p>船隊準備工作可以從以下七項展開。<strong>2026–2027 年完成初步盤點是本文建議</strong>，目的在於分散設備改善、文件更新與人員訓練的工作量。</p>
+<ol class="action-list"><li><div><h3>盤點每船裝置，建立設備台帳</h3><p>建立 fleet inventory，涵蓋領港梯、manropes、備品、固定裝置與相關配置；保留 serial／ID、製造、交付、啟用及預定汰換日期。</p><p class="deliverable">逐船 Pilot Transfer Arrangement Register</p></div></li><li><div><h3>審查既有配置，確認改善與批准需求</h3><p>以 Introduction、Parts A–C 檢視差距，配合 Part F 確認送審及批准事項；把船旗國／RO 意見、改造預算與檢驗安排連在一起。</p><p class="deliverable">Fleet Gap Analysis ＋ 改善與 survey 計畫</p></div></li><li><div><h3>建立 PMS 工作與 Maintenance Plan</h3><p>納入使用前後檢查、每三個月詳細檢查、保養、缺陷處置及紀錄，並讓每筆工作能對應正確設備。</p><p class="deliverable">PMS 工作項目 ＋ 船舶維護計畫 ＋ 紀錄格式</p></div></li><li><div><h3>收齊製造商文件，確認維修與報廢判準</h3><p>集中管理證書、識別標示、檢查指示、允許的船上維修、收存方式與 discard criteria。</p><p class="deliverable">可供船岸查找的設備文件包</p></div></li><li><div><h3>調整採購與備品安排</h3><p>確認 compliant spare ladder 與 spare manropes；採購時核對適用的 type approval、製造日期、交期及剩餘可用期間，納入持續替換預算。</p><p class="deliverable">採購規格 ＋ 備品清單 ＋ 汰換排程</p></div></li><li><div><h3>更新 SMS 與船員 familiarization</h3><p>更新 Pilot Boarding Procedure、Responsible Officer 指派與船岸分工；把檢查、架設、缺陷判斷、替換及特殊天候考量納入熟悉訓練。</p><p class="deliverable">作業程序 ＋ 職責分工 ＋ 熟悉訓練紀錄</p></div></li><li><div><h3>在截止日前，把執行情況查核一次</h3><p>用設備、文件及人員三個面向檢視執行情況，追蹤缺口到完成；逐船確認適用日期、檢驗安排與必要改善的完成時間。</p><p class="deliverable">可追蹤的缺口清單與完成證據</p></div></li></ol>
+</section>
+
+<section id="survey" class="article-section"><div class="section-heading"><span class="index">08</span><div><h2>驗船師會如何理解這套制度？</h2><p class="subtitle">Documentation · Equipment · Management</p></div></div>
+<p>從 statutory survey 的角度，以下是依本文要求整理的<strong>查核思路</strong>。它能協助船東準備，但不是已頒布的新制正式 survey checklist。</p>
+<div class="evidence-grid"><div><h3>文件與追溯</h3><small>DOCUMENTATION</small><ul><li>Approval／Type Approval</li><li>Manufacturer's certificate</li><li>ID、製造與啟用日期</li><li>預定汰換日期</li><li>Maintenance Plan</li><li>Maker instructions</li><li>檢查、維護與維修紀錄</li></ul></div><div><h3>設備與配置</h3><small>PHYSICAL CONDITION</small><ul><li>Steps、spreaders、side ropes</li><li>Manropes 與固定裝置</li><li>Strong points</li><li>Stanchions／sockets</li><li>Access、lighting、chafing</li><li>Combination arrangement</li><li>Stowage condition</li></ul></div><div><h3>日常執行</h3><small>MANAGEMENT</small><ul><li>Responsible Officer 指派</li><li>PMS 工作安排</li><li>使用前後檢查</li><li>每三個月詳細檢查</li><li>Crew familiarization</li><li>Spare ladder／manropes</li><li>汰換與缺陷控制</li></ul></div></div>
+<p>必要時，也會確認裝置的 rigging 與 operational readiness。重點是讓設備實況、紀錄及船員的操作理解彼此一致。</p>
+<div class="callout"><span class="label">後續法規追蹤 · 資料核對至 2026.09.13</span>IMO III 12（2026 年 7 月 20–24 日）會議摘要仍提到 pilot transfer arrangements 的 survey requirements 討論。船東應持續注意 IMO、Flag Administration 及 RO／Class 的後續文件；不能把本文查核思路視為最終檢驗表。<a class="citation" href="#source-4" aria-label="來源 4：III 12 會議摘要">[4]</a></div>
+</section>
+
+<section id="questions" class="article-section"><div class="section-heading"><span class="index">09</span><div><h2>四個容易混淆的問題</h2><p class="subtitle">Common questions</p></div></div>
+<div class="faq"><details open><summary>舊船可以等到 2029 年 survey，才開始每三個月檢查嗎？</summary><p>不可以把兩者混為一談。修訂 V/23.6 對所有裝置的檢查、儲存、維護、替換與熟悉訓練，採不分安裝日期的要求；既有裝置的硬體過渡另依 V/23.4 或 V/23.5 判斷。<a class="citation" href="#source-1" aria-label="來源 1">[1]</a></p></details><details><summary>每三個月檢查，代表每季都要由 Class／RO 執行嗎？</summary><p>§25 的 detailed inspection 由船上 Responsible Officer 執行。驗船師的 statutory survey 與船上定期檢查是不同工作；兩者的責任及紀錄應分清楚。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p></details><details><summary>備用梯從未啟用，是否就沒有使用年限？</summary><p>仍受製造日起算的 36 個月上限與設備狀態限制；啟用後另比較 30 個月上限。§30 明確涵蓋 spare pilot ladders 與 spare manropes。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p></details><details><summary>梯子狀態良好，可以超過 36／30 個月再使用嗎？</summary><p>「狀態良好」不能延長 §30 的時間上限；不符合性能標準時，反而可能更早退出使用。時間與狀態是同時需要控制的條件。<a class="citation" href="#source-2" aria-label="來源 2">[2]</a></p></details></div>
+<div class="closing"><div class="section-kicker">REAY'S PERSPECTIVE / 驗船師筆記</div><h3>讓每一次安全登離船，都有管理作為支撐。</h3><p>MSC.576(110) 把批准與配置、日常檢查、維護、船員熟悉訓練及最終替換，串成一套可追溯的要求。對船東而言，準備工作的成果應是：每條梯、每套 manropes 與相關裝置，都有人負責、有紀錄可查，也有清楚的退出使用安排。</p></div>
+</section>
+
+<section id="sources" class="article-section"><div class="section-heading"><span class="index">10</span><div><h2>資料來源與閱讀範圍</h2><p class="subtitle">Sources &amp; editorial notes</p></div></div>
+<p class="caption">以下官方來源於 2026 年 9 月 13 日核對。本文依官方規定整理適用條件與船上管理要求；文中的準備建議與查核思路屬實務整理。</p>
+<ol class="sources"><li id="source-1"><a href="https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/MSCResolutions/MSC.572(110).pdf" target="_blank" rel="noopener noreferrer">IMO · Resolution MSC.572(110) ↗</a><p>2025-06-26 採納。核對決議第 2–3 段，以及 Annex 修訂之 SOLAS V/23.3–9：生效程序、新舊裝置過渡、安裝定義及批准／檢驗。</p></li><li id="source-2"><a href="https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/MSCResolutions/MSC.576(110).pdf" target="_blank" rel="noopener noreferrer">IMO · Performance Standards for Pilot Transfer Arrangements ↗</a><p>2025-06-26 採納。核對 Introduction §§2–3、Parts D–E §§22–33 及 Part F §§34–37；本文重點為船上維護管理。</p></li><li id="source-3"><a href="https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/AssemblyDocuments/A.1207(34).pdf" target="_blank" rel="noopener noreferrer">IMO · Resolution A.1207(34), HSSC Survey Guidelines 2025 ↗</a><p>2025-12-03 採納。參考 (EI) 1.1.1.30、1.1.4.38、1.1.7.12，及 (EA) 1.2.1.24、1.2.2.41，說明現行檢驗與紀錄已有基礎。</p></li><li id="source-4"><a href="https://www.imo.org/en/mediacentre/meetingsummaries/pages/iii-12-meeting-summary.aspx" target="_blank" rel="noopener noreferrer">IMO · III 12 Meeting Summary, 20–24 July 2026 ↗</a><p>參考「Survey and certification matters」。此為會議進度來源，不作為已正式生效的新制 survey checklist。</p></li></ol>
+<div class="scope-note"><strong>本文範圍：</strong>以船東及船上管理準備為主，未逐條展開 Parts A–C 的全部尺寸、強度、架設與設計細節。實際適用應依最新官方文本、船旗國／RO 要求及本船配置判斷。本頁為個人知識分享，不代表雇主官方立場。</div>
+</section>
+<div class="author"><div class="monogram" aria-hidden="true">RH</div><div><h3>Reay Huang</h3><p>從船上實務、船隊管理與驗船工作的視角，整理海事法規與技術筆記，讓知識更容易理解、查找與運用。</p><a href="../../about.zh.html">關於作者 →</a></div></div>
+<div class="related"><div class="section-kicker">CONTINUE READING</div><h3>延伸閱讀</h3><a href="solas-structure-notes.zh.html">SOLAS 法規架構摘要筆記 →<span>先建立公約、章節與強制性要求之間的查找方向。</span></a><a href="future-imo-ilo-container-ships-2026.zh.html">2026–2032 貨櫃船國際法規變動整理 →<span>把這次領港設備更新，放回船隊未來法規的整體時程。</span></a></div>
+</main></div>
+<section class="share-band" id="share">
+  <div
+    class="article-share article-share--end"
+    data-article-share
+    data-share-url="https://reayhuang.com/notes/maritime/pilot-transfer-arrangements.zh.html"
+    data-share-title="領港設備新規：船東的全生命週期管理｜Reay's Note"
+    data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;領港設備新規：船東的全生命週期管理｜Reay's Note&#10;https://reayhuang.com/notes/maritime/pilot-transfer-arrangements.zh.html"
+    data-share-copy="複製連結"
+    data-share-copied="已複製"
+    data-toast-copied="連結已複製到剪貼簿"
+  >
+    <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+    <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
+  </div>
+</section>
+
+<footer class="site-footer" id="source">
+  <div class="site-footer-inner">
+    <strong>領港設備新規：船東的全生命週期管理｜Reay's Note</strong>
+    <span class="small">整理：Reay Huang · Maritime Survey / Learning Note · 資料整理日期：2026-09-13</span>
+    <p class="disclaimer small">
+      <strong>專業聲明：</strong>本文為個人海事學習與實務整理，僅供一般技術與管理參考，不構成特定船舶的船級、法定檢驗、船旗國或營運核准意見。
+      實際適用應依最新官方文本、船旗國／RO 要求及本船配置判斷。
+      本文觀點不代表 Lloyd’s Register、IMO、任何船旗國主管機關、船東、船廠或客戶的正式立場。
+    </p>
+  </div>
+</footer>
+<button class="floating-toc-trigger" id="toc-toggle" type="button" aria-haspopup="dialog" aria-controls="toc-dialog" aria-expanded="false" hidden><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 5h11M7 10h11M7 15h11M2 5h1M2 10h1M2 15h1"/></svg><span>文章目錄</span></button>
+<dialog class="toc-dialog" id="toc-dialog" aria-labelledby="toc-dialog-title" aria-describedby="toc-current-section">
+<div class="toc-dialog-header"><div><h2 id="toc-dialog-title">文章目錄</h2><p id="toc-current-section">選擇段落，繼續閱讀</p></div><button class="toc-dialog-close" type="button" aria-label="關閉文章目錄">×</button></div>
+<nav aria-label="跳轉文章段落"></nav>
+</dialog>
+<script>
+(() => {
+  const links = Array.from(document.querySelectorAll('.toc a'));
+  const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  const trigger = document.getElementById('toc-toggle');
+  const dialog = document.getElementById('toc-dialog');
+  const narrow = window.matchMedia('(max-width:860px)');
+  const canUseDialog = typeof dialog.showModal === 'function';
+  if (canUseDialog) {
+    links.forEach(link => dialog.querySelector('nav').append(link.cloneNode(true)));
+    document.body.classList.add('toc-enhanced');
+  }
+  const navigationLinks = Array.from(document.querySelectorAll('.toc a, .mobile-toc a, .toc-dialog nav a'));
+  let scheduled = false;
+  const update = () => {
+    let current = sections[0];
+    sections.forEach(section => { if (section.getBoundingClientRect().top <= 80) current = section; });
+    navigationLinks.forEach(link => {
+      if (link.getAttribute('href') === '#' + current.id) link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+    const currentLink = links.find(link => link.getAttribute('href') === '#' + current.id);
+    document.getElementById('toc-current-section').textContent = '目前位置 · ' + currentLink.textContent.trim().replace(/^(\d{2})(\S)/, '$1 $2');
+    scheduled = false;
+  };
+  window.addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(update); } }, {passive:true});
+  update();
+  document.querySelectorAll('.mobile-toc a').forEach(link => link.addEventListener('click', () => { document.querySelector('.mobile-toc').open = false; }));
+  if (canUseDialog) {
+    const closeContents = () => {
+      dialog.close();
+      document.body.classList.remove('toc-dialog-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+    const syncViewport = () => {
+      if (!narrow.matches && dialog.open) closeContents();
+      trigger.hidden = !narrow.matches;
+    };
+    trigger.addEventListener('click', () => {
+      update();
+      dialog.showModal();
+      document.body.classList.add('toc-dialog-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      const active = dialog.querySelector('[aria-current="location"]');
+      active.focus({preventScroll:true});
+      active.scrollIntoView({block:'nearest'});
+    });
+    dialog.querySelector('.toc-dialog-close').addEventListener('click', closeContents);
+    dialog.addEventListener('keydown', event => {
+      if (event.key !== 'Tab') return;
+      const controls = Array.from(dialog.querySelectorAll('button, a[href]'));
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first.focus();
+      }
+    });
+    dialog.addEventListener('cancel', event => { event.preventDefault(); closeContents(); });
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const rect = dialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeContents();
+    });
+    dialog.querySelectorAll('nav a').forEach(link => link.addEventListener('click', event => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      closeContents();
+      const target = document.querySelector(link.getAttribute('href'));
+      target.setAttribute('tabindex', '-1');
+      target.focus({preventScroll:true});
+    }));
+    narrow.addEventListener('change', syncViewport);
+    syncViewport();
+  }
+})();
+</script>
+  <script src="../../assets/js/article-share.js"></script>
+  <script src="../../assets/js/back-to-top.js"></script>
+</body>
+</html>
