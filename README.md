@@ -34,7 +34,7 @@ personal-site/
 
 ## 雙語版本
 
-**網站以英文為主、繁中為輔。** 新內容請優先撰寫英文版，再視需要補繁中版。
+**對外預設語言是英文**（`/` 為英文首頁）；**寫作請先從繁中開始**，新中文頁檔名一開始就要用 `*.zh.html`，不要再建立沒有語系後綴的中文檔。
 
 | 語言 | 首頁 | 關於我 | 列表／文章命名 |
 |------|------|--------|----------------|
@@ -57,9 +57,9 @@ personal-site/
 
 ## 新增筆記
 
-1. 複製同類型的英文範本（例如 `notes/maritime/*.en.html`）— 範本 `<head>` 開頭應已含三支全站 script（`gtag.js`、`gtag-config.js`、`copy-source-attribution.js`）
-2. 修改內容後，在 `notes/index.en.html`（或 `research/index.en.html`）加入卡片連結
-3. 若有繁中版本，再建立對應的 `*.zh.html` 並加入繁中列表頁（`notes/index.zh.html` 或 `research/index.zh.html`）
+1. 複製同類型的**繁中**範本（例如 `notes/maritime/*.zh.html`）— 範本 `<head>` 開頭應已含三支全站 script（`gtag.js`、`gtag-config.js`、`copy-source-attribution.js`）
+2. 新檔名必須是 `{slug}.zh.html`，完成後加入繁中列表頁（`notes/index.zh.html` 或 `research/index.zh.html`）
+3. 英文版就緒後，再建立 `{slug}.en.html`，並加入英文列表頁（`notes/index.en.html` 或 `research/index.en.html`）
 
 ### 全站 `<head>` script（新頁面必備）
 
@@ -80,6 +80,10 @@ personal-site/
 `copy-source-attribution.js` 會在使用者複製超過 100 字元的內容時，自動在剪貼簿附上頁面標題與 URL；`input`、`textarea`、程式碼區塊等不受影響。最簡單做法是從**同目錄既有頁面**複製這三行，不要手動改路徑。
 
 檢查是否漏載入：`grep -L "copy-source-attribution" **/*.html`（無輸出代表全部涵蓋）。
+
+## 2026-09-13 階段交接
+
+首頁改版、繁中改為 `.zh.html`、舊網址 301、以及之後「先寫中文」的慣例，見 [`docs/handover-2026-09-13.md`](docs/handover-2026-09-13.md)。
 
 ## 聲明
 

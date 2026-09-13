@@ -1,7 +1,7 @@
 {
   "defaultLocale": "en",
   "locales": ["en", "zh-Hant"],
-  "convention": "English-primary site: English pages use {slug}.en.html or index.html at root; Traditional Chinese uses {slug}.zh.html. Legacy unmarked Chinese URLs 301 via _redirects. x-default hreflang points to English.",
+  "convention": "Visitor default is English (index.html at root; x-default hreflang is English). Authoring starts in Traditional Chinese as {slug}.zh.html; never create unmarked Chinese {slug}.html. Add {slug}.en.html afterwards. Legacy unmarked Chinese URLs 301 via _redirects.",
   "pages": [
     {
       "slug": "home",

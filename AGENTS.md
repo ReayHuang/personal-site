@@ -85,18 +85,16 @@ Link preview images for listing/homepage cards live in `assets/images/research/`
 
 ### Internationalization
 
-**English-primary site** — English is the default language; Traditional Chinese is secondary.
+**Visitor-facing default is English** (`index.html` at site root; `x-default` hreflang points to English). **Authoring starts in Traditional Chinese.**
 
-- **Default language**: English (`index.html` at site root).
-- **Traditional Chinese**: use the `.zh.html` suffix (e.g. `index.zh.html`, `about.zh.html`, `notes/index.zh.html`).
-- **English content pages**: use the `.en.html` suffix (e.g. `about.en.html`, `notes/index.en.html`). Root homepage remains `index.html`.
-- **Korean (optional)**: use the `.ko.html` suffix for standalone article translations; not tracked in `i18n/manifest.json` unless added explicitly.
-- **`x-default` hreflang**: always points to the English version of each page pair.
+- **Traditional Chinese (write first)**: new pages must use the `.zh.html` suffix from the start (e.g. `about.zh.html`, `notes/index.zh.html`, `notes/maritime/{slug}.zh.html`). Never create a Chinese page as unmarked `{slug}.html`.
+- **English (add after)**: `{slug}.en.html` (root homepage remains `index.html`).
+- **Korean (optional)**: `{slug}.ko.html`; not tracked in `i18n/manifest.json` unless added explicitly.
 - **Language switch**: EN link appears before 繁中 in the header on every page.
-- **Adding content**: create the English page first, add it to the `*.en.html` listing, then add Traditional Chinese as `*.zh.html` if needed. Update `i18n/manifest.json` with the new EN/zh pair.
+- **Adding content**: copy an existing `*.zh.html` sibling as the template, add the card to the Chinese listing (`notes/index.zh.html` or `research/index.zh.html`), then add `*.en.html` and the English listing when the English version is ready. Update `i18n/manifest.json` with the EN/zh pair.
 - **Legacy Chinese URLs**: unmarked `.html` paths (pre-`.zh` rename) 301 to `*.zh.html` via `_redirects`.
 
-See `README.md` for file naming and listing conventions. For machine-readable locale pairs, see `i18n/manifest.json`.
+See `README.md` for file naming and listing conventions. For machine-readable locale pairs, see `i18n/manifest.json`. Stage handover (2026-09-13 homepage + `.zh.html` rename): `docs/handover-2026-09-13.md`.
 
 ### Lint / Test / Build
 
@@ -106,7 +104,7 @@ See `README.md` for file naming and listing conventions. For machine-readable lo
 
 ### Adding content
 
-Copy an existing English HTML file as a template, add a card link on the relevant English listing page (`notes/index.en.html` or `research/index.en.html`), then add a Traditional Chinese `*.zh.html` version and listing link if needed. Add the EN/zh paths to `i18n/manifest.json`. See `README.md` for details.
+Copy an existing Traditional Chinese HTML file as a template (`notes/maritime/*.zh.html` or `research/*.zh.html`). The new Chinese page must be named `{slug}.zh.html` from the start. Add a card on the Chinese listing (`notes/index.zh.html` or `research/index.zh.html`), then add `{slug}.en.html` and the English listing when the English version is ready. Add the EN/zh paths to `i18n/manifest.json`. See `README.md` for details.
 
 For recent articles, use `card card--preview` on listing pages and the homepage “Latest content” section, with a `card__preview` `<img>` pointing at the locale-specific LinkedIn preview PNG (see Management notes asset naming above).
 
