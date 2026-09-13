@@ -16,13 +16,13 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#00A99D">
 
-  <meta name="description" content="Reay Huang — Lloyd's Register 驗船師、PMP®。海事筆記、管理筆記與專業知識分享。">
-  <title>Reay Huang｜海事驗船師 · PMP®</title>
-  <meta property="og:title" content="Reay Huang｜海事驗船師 · PMP®" />
-  <meta property="og:description" content="國際驗船、合規實務與海事專業知識分享。Lloyd's Register 驗船師，韓國木浦。" />
+  <meta name="description" content="Reay Huang Maritime Notes — 把海事規範連結現場實務。驗船師 Reay Huang 整理法規、檢驗與船隊管理筆記。">
+  <title>Reay Huang Maritime Notes｜海事知識與實務筆記</title>
+  <meta property="og:title" content="Reay Huang Maritime Notes｜把海事規範連結現場實務" />
+  <meta property="og:description" content="我是 Reay Huang，驗船師，曾任輪機長與機務督導。持有英國 MCA 與新加坡 MPA 無限制級輪機長執照，也是美國專案管理協會授權的專案管理專家（PMP®）證照持有者。" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="zh_TW" />
-  <meta property="og:site_name" content="Reay Huang" />
+  <meta property="og:site_name" content="Reay Huang Maritime Notes" />
   <meta property="og:url" content="https://reayhuang.com/index.zh.html" />
   <link rel="canonical" href="https://reayhuang.com/index.zh.html" />
   <!-- 分享預覽：og:image 必須是可公開存取的 HTTPS 完整網址 -->
@@ -32,15 +32,16 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Reay Huang｜海事驗船師 · PMP®" />
-  <meta name="twitter:description" content="國際驗船、合規實務與海事專業知識分享。" />
+  <meta name="twitter:title" content="Reay Huang Maritime Notes｜把海事規範連結現場實務" />
+  <meta name="twitter:description" content="這裡分享海事法規、檢驗實務與管理筆記，讓專業知識更容易理解與運用。" />
   <meta name="twitter:image" content="https://reayhuang.com/assets/images/homepage-linkedin-preview-reay-huang-1200.jpg" />
   <link rel="alternate" hreflang="en" href="index.html" />
   <link rel="alternate" hreflang="zh-Hant" href="index.zh.html" />
   <link rel="alternate" hreflang="x-default" href="index.html" />
   <link rel="stylesheet" href="assets/css/style.css?v=20260602g">
+  <link rel="stylesheet" href="assets/css/homepage-zh.css?v=20260913c">
 </head>
-<body class="home-with-featured">
+<body class="home-redesign">
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-logo" href="index.zh.html">
@@ -56,9 +57,9 @@
         </nav>
         <nav class="site-nav" aria-label="主要導覽">
           <a href="index.zh.html" aria-current="page">首頁</a>
-          <a href="about.html">關於我</a>
           <a href="notes/index.html">海事筆記</a>
           <a href="research/index.html">管理筆記</a>
+          <a href="about.html">關於我</a>
           <a class="site-nav__linkedin" href="https://www.linkedin.com/in/reay-huang-pmp%C2%AE-a74285a2/" rel="noopener noreferrer"><svg class="site-nav__linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.127 0 2.062 2.062 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
         </nav>
         <button class="nav-toggle" type="button" aria-label="開啟選單" aria-expanded="false">☰</button>
@@ -66,392 +67,274 @@
     </div>
   </header>
 
-  <section class="hero-banner" aria-labelledby="hero-title">
-    <div class="hero-banner__inner">
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="home-hero__media" aria-hidden="true">
       <img
-        class="hero-banner__photo"
-        src="assets/images/reay-huang.png"
-          alt="Reay Huang 形象照"
-        width="788"
-        height="1024"
+        src="assets/images/homepage-hero-container-ship.jpg"
+        alt=""
+        width="1024"
+        height="708"
+        fetchpriority="high"
+        decoding="async"
       >
-      <div>
-        <h1 id="hero-title">海事檢驗與合規的專業知見</h1>
-        <p class="lead">
-          我是 <strong>Reay Huang</strong>，現任 Lloyd's Register Surveyor（韓國木浦），
-          PMP®。曾任長榮海運輪機長與貨櫃船隊機務督導逾 13 年。
-          <span class="lead__follow">此網站整理海事檢驗、法規與管理相關筆記。</span>
-        </p>
-        <ul class="hero__tags">
-          <li><span class="tag">LR Surveyor</span></li>
-          <li><span class="tag">Chief Engineer</span></li>
-          <li><span class="tag">Technical Superintendent</span></li>
-          <li><span class="tag">PMP®</span></li>
-        </ul>
-        <div class="hero-banner__actions">
-          <a class="btn" href="about.html">認識我</a>
-          <a class="btn btn--linkedin" href="https://www.linkedin.com/in/reay-huang-pmp%C2%AE-a74285a2/" rel="noopener noreferrer">
-            <svg class="btn__icon btn__icon--linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.127 0 2.062 2.062 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            在 LinkedIn 上查看完整經歷
+    </div>
+    <div class="home-hero__inner">
+      <p class="home-kicker">海事知識與實務筆記</p>
+      <h1 id="hero-title">把海事規範<br>連結現場實務</h1>
+      <p class="lead">我是 Reay Huang，驗船師，曾任輪機長與機務督導。持有英國 MCA 與新加坡 MPA 無限制級輪機長執照，也是美國專案管理協會授權的專案管理專家（PMP®）證照持有者。</p>
+      <p class="lead">這裡分享海事法規、檢驗實務與管理筆記，從條文與技術背後的原因，到現場值得留意的問題，讓專業知識更容易理解與運用。</p>
+      <div class="home-hero__actions">
+        <a class="btn" href="#featured">開始閱讀 →</a>
+        <a class="btn btn--outline" href="about.html">認識我</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="home-section" id="featured" aria-labelledby="featured-title">
+      <div class="home-wrap">
+        <h2 id="featured-title" class="home-section__title home-section__title--rule">第一次來，從這三篇開始</h2>
+        <p class="home-section__lead">從海上試驗、法規架構到船隊備品研究，看看我如何整理技術問題，並連結現場與管理的思考。</p>
+
+        <div class="home-featured__grid">
+          <a class="home-featured__card home-featured__card--lead" href="notes/maritime/sea-trial-note.html">
+            <div class="home-featured__media">
+              <img
+                src="assets/images/maritime/sea-trial-note/sea-trial-link-preview.jpg"
+                alt="為什麼新造船需要海上試驗？"
+                width="1024"
+                height="537"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="home-featured__body">
+              <p class="home-label">檢驗實務</p>
+              <h3>為什麼新造船需要海上試驗？</h3>
+              <p class="home-featured__excerpt">碼頭完成設備測試後，為什麼還需要出海？從推進、操縱與電力系統，理解海上試驗如何驗證整艘船的協同運作。</p>
+              <span class="home-link">閱讀海試筆記 →</span>
+            </div>
+          </a>
+
+          <a class="home-featured__card home-featured__card--side" href="notes/maritime/solas-structure-notes.html">
+            <div class="home-featured__media">
+              <img
+                src="assets/images/maritime/onboard-certificates/onboard-certificates-hero.jpg"
+                alt="SOLAS 法規架構與證書文件示意"
+                width="1200"
+                height="630"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="home-featured__body">
+              <p class="home-label">法規導讀</p>
+              <h3>SOLAS 法規架構摘要筆記</h3>
+              <p class="home-featured__excerpt">面對龐雜的公約條文，先建立查找方向。整理 SOLAS 的章節架構與主要議題，協助理解要求之間的關係。</p>
+              <span class="home-link">閱讀 SOLAS 筆記 →</span>
+            </div>
+          </a>
+
+          <a class="home-featured__card home-featured__card--side" href="research/fleet-spares-thesis-notes.html">
+            <div class="home-featured__media">
+              <img
+                src="assets/images/research/fleet-spares-hero.png"
+                alt="從經驗採購到資料化船隊備品管理"
+                width="1200"
+                height="630"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <div class="home-featured__body">
+              <p class="home-label">個人研究</p>
+              <h3>從經驗採購到資料化船隊備品管理</h3>
+              <p class="home-featured__excerpt">以碩士研究中的船隊備品案例，說明如何連結保養需求、消耗資料與採購規劃，思考經驗判斷如何與數據互相補充。</p>
+              <span class="home-link">閱讀研究筆記 →</span>
+            </div>
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="value-strip" aria-label="專業定位">
-    <div class="value-strip__grid">
-      <div class="value-strip__item">
-        <h3>檢驗與合規</h3>
-        <p>船舶檢驗實務、船級要求與現場協調經驗的整理與分享。</p>
-      </div>
-      <div class="value-strip__item">
-        <h3>專案與技術並重</h3>
-        <p>結合 PMP® 專案管理與海事工程背景，系統化紀錄學習成果。</p>
-      </div>
-      <div class="value-strip__item">
-        <h3>持續進修</h3>
-        <p>涵蓋海事法規、檢驗訓練與管理筆記，作為長期知識庫。</p>
-      </div>
-    </div>
-  </section>
+    <section class="home-section home-section--mist" id="explore" aria-labelledby="explore-title">
+      <div class="home-wrap">
+        <h2 id="explore-title" class="home-section__title home-section__title--rule">探索我的筆記</h2>
+        <p class="home-section__lead">從海事實務到管理思考，選擇你想深入的方向。</p>
 
-  <main class="site-main">
-    <section class="featured-section" aria-labelledby="featured-title">
-      <h2 id="featured-title" class="section-title">精選文章 <span class="featured-pick-label">編輯精選</span></h2>
-      <p class="section-subtitle">檢驗必讀與近期法規更新 — 優先推薦閱讀</p>
-
-      <div class="featured-grid">
-        <a class="featured-card" href="research/digital-ship-management-report.html">
-          <span class="featured-card__badge">精選</span>
-          <p class="meta">2026-08 · 管理筆記 · 船舶數位化</p>
-          <h3>船舶數位化管理：從營運痛點到數位轉型路線圖</h3>
-          <p>從船東營運痛點、市售 Marine ERP 與 PMS 方案、OneOcean 案例到可執行的數位轉型路線圖。</p>
-          <div class="featured-card__preview">
-            <img
-              src="assets/images/research/digital-ship-management-linkedin-preview-1200.png"
-              alt="船舶數位化管理：從營運痛點到數位轉型路線圖｜Reay's Note"
-              width="1024"
-              height="537"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <span class="featured-card__cta">閱讀文章 →</span>
-        </a>
-        <a class="featured-card" href="notes/maritime/lr-advisory-notes.html">
-          <span class="featured-card__badge">精選</span>
-          <p class="meta">2026-06 · 海事筆記 · LR Advisory</p>
-          <h3>LR Advisory｜海事顧問服務視覺導覽</h3>
-          <p>以視覺化方式整理 LR Advisory 的定位、四大挑戰、服務內容、服務對象與應用情境。</p>
-          <div class="featured-card__preview">
-            <img
-              src="assets/images/maritime/lr-advisory/lr-advisory-link-preview-1200.png?v=20260605"
-              alt="LR Advisory — 專業海事顧問服務視覺導覽"
-              width="1024"
-              height="537"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <span class="featured-card__cta">閱讀文章 →</span>
-        </a>
-        <a class="featured-card" href="notes/maritime/marpol-structure-notes.html">
-          <span class="featured-card__badge">精選</span>
-          <p class="meta">2026-06 · 海事筆記 · MARPOL</p>
-          <h3>MARPOL 法規架構摘要筆記</h3>
-          <p>整理 MARPOL 73/78 公約架構、六大 Annex、證書文件、PSC 查核重點與 Annex VI 更新提醒，作為污染防止合規盤點參考。</p>
-          <div class="featured-card__preview">
-            <img
-              src="assets/images/maritime/marpol-structure-linkedin-preview-1200.png?v=20260604"
-              alt="MARPOL 法規架構 — 船舶污染防止的六大 Annex 導覽"
-              width="1024"
-              height="537"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <span class="featured-card__cta">閱讀文章 →</span>
-        </a>
-        <a class="featured-card" href="notes/maritime/solas-structure-notes.html">
-          <span class="featured-card__badge">精選</span>
-          <p class="meta">2026-06 · 海事筆記 · SOLAS</p>
-          <h3>SOLAS 法規架構摘要筆記</h3>
-          <p>整理 SOLAS 公約架構、章節全景、船舶改裝關聯、強制性章程與送審文件清單，作為檢驗與專案初步盤點參考。</p>
-          <div class="featured-card__preview">
-            <img
-              src="assets/images/maritime/solas-structure-linkedin-preview-1200.jpg?v=20260602"
-              alt="SOLAS 法規架構總覽 — 公約本文、章節、強制性規則、檢驗與證書的實務地圖"
-              width="1200"
-              height="629"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <span class="featured-card__cta">閱讀文章 →</span>
-        </a>
+        <div class="home-explore__grid">
+          <a class="home-explore__card" href="notes/index.html">
+            <div class="home-explore__head">
+              <span class="home-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 16.5 8 8h8l4 8.5H4z"></path>
+                  <path d="M8 8V6h3v2"></path>
+                  <path d="M13 8V5.5h3V8"></path>
+                  <path d="M7 16.5v2h10v-2"></path>
+                </svg>
+              </span>
+              <h3>海事筆記</h3>
+            </div>
+            <p>整理海事法規、船舶檢驗與技術議題，從規範背景到現場應用，釐清重要觀念與實務上值得留意的問題。適合想理解要求、建立知識架構，或尋找延伸閱讀線索的你。</p>
+            <p class="home-explore__topics">法規與證書・檢驗實務・船舶技術</p>
+            <span class="home-link">進入海事筆記總覽 →</span>
+          </a>
+          <a class="home-explore__card" href="research/index.html">
+            <div class="home-explore__head">
+              <span class="home-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3.5" y="4" width="7" height="7" rx="1.2"></rect>
+                  <rect x="13.5" y="13" width="7" height="7" rx="1.2"></rect>
+                  <path d="M10.5 7.5h3.2A2.8 2.8 0 0 1 16.5 10.3V13"></path>
+                  <path d="M7.5 11v2.7A2.8 2.8 0 0 0 10.3 16.5H13.5"></path>
+                </svg>
+              </span>
+              <h3>管理筆記</h3>
+            </div>
+            <p>分享管理方法、供應鏈與數據應用的學習和研究，從船隊管理案例延伸到工作中的規劃與改善，思考如何整理問題、運用資料，並做出更有依據的決策。</p>
+            <p class="home-explore__topics">管理方法・供應鏈・數據應用</p>
+            <span class="home-link">進入管理筆記總覽 →</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <hr class="latest-divider" aria-hidden="true">
+    <section class="home-section" id="recent" aria-labelledby="recent-title">
+      <div class="home-wrap">
+        <h2 id="recent-title" class="home-section__title home-section__title--rule">近期筆記</h2>
+        <p class="home-section__lead">最近整理的議題與閱讀筆記，從海事新知到管理實務，持續累積值得理解與討論的問題。</p>
 
-    <h2 class="section-title latest-section-title">最新內容</h2>
-    <p class="section-subtitle">海事筆記、管理筆記與個人簡介</p>
+        <ul class="home-recent__list">
+          <li class="home-recent__item">
+            <a href="notes/maritime/occs-retrofit-guide.html">
+              <time class="home-recent__date" datetime="2026-09-03">2026.09.03</time>
+              <span class="home-recent__title">船上碳捕捉與儲存：現有船舶值得改裝嗎？</span>
+              <span class="home-recent__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="home-recent__item">
+            <a href="notes/maritime/can-drones-replace-ship-surveyors.html">
+              <time class="home-recent__date" datetime="2026-08-10">2026.08.10</time>
+              <span class="home-recent__title">無人機能取代船級社驗船師嗎？</span>
+              <span class="home-recent__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="home-recent__item">
+            <a href="research/digital-ship-management-report.html">
+              <time class="home-recent__date" datetime="2026-08-05">2026.08.05</time>
+              <span class="home-recent__title">船舶數位化管理：從營運痛點到數位轉型路線圖</span>
+              <span class="home-recent__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="home-recent__item">
+            <a href="research/owned-vs-chartered-container-ships.html">
+              <time class="home-recent__date" datetime="2026-08-03">2026.08.03</time>
+              <span class="home-recent__title">航運公司為什麼有些船自己買、有些船用租的？</span>
+              <span class="home-recent__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="home-recent__item">
+            <a href="notes/maritime/ammonia-fuel-surveyor-notes.html">
+              <time class="home-recent__date" datetime="2026-08-02">2026.08.02</time>
+              <span class="home-recent__title">氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記</span>
+              <span class="home-recent__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="home-recent__item">
+            <a href="notes/maritime/future-imo-ilo-container-ships-2026.html">
+              <time class="home-recent__date" datetime="2026-08-02">2026.08.02</time>
+              <span class="home-recent__title">2026-2032 貨櫃船國際法規變動整理</span>
+              <span class="home-recent__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ul>
 
-    <div class="card-grid">
-      <a class="card card--preview" href="notes/maritime/occs-retrofit-guide.html">
-        <div class="card__preview">
-          <img
-            src="assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.jpg"
-            alt="船上碳捕捉與儲存：現有船舶值得改裝嗎？"
-            width="1024"
-            height="537"
-            loading="lazy"
-            decoding="async"
-          >
+        <div class="home-link-row">
+          <a class="home-link" href="notes/index.html">海事筆記索引 →</a>
+          <a class="home-link" href="research/index.html">管理筆記索引 →</a>
         </div>
-        <p class="meta">2026-09-03 · 15 分鐘 · 海事筆記 · oCCS / 碳捕捉 / 現有船改裝</p>
-        <h3>船上碳捕捉與儲存：現有船舶值得改裝嗎？</h3>
-        <p>深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。</p>
-      </a>
-      <a class="card card--preview" href="notes/maritime/sea-trial-note.html">
-        <div class="card__preview">
-          <img
-            src="assets/images/maritime/sea-trial-note/sea-trial-link-preview.jpg"
-            alt="為什麼新造船需要海上試驗？"
-            width="1024"
-            height="537"
-            loading="lazy"
-            decoding="async"
-          >
+      </div>
+    </section>
+
+    <section class="home-section home-section--panel" id="author" aria-labelledby="author-title">
+      <div class="home-wrap home-author">
+        <div class="home-author__story">
+          <h2 id="author-title" class="home-section__title">船上、岸端與驗船，三個相互連結的視角</h2>
+          <p class="home-author__bio">在長榮海運累積逾 13 年海上與岸端經驗，現於 Lloyd's Register 從事驗船工作。</p>
+          <p class="home-author__motive">我喜歡把工作與閱讀中值得思考的問題，整理成能再次查找、也方便分享的筆記。希望這些內容能幫助你理解一項要求、釐清一個觀念，或為工作中的判斷多提供一個思考角度。</p>
+          <a class="home-link" href="about.html">了解我的經歷 →</a>
         </div>
-        <p class="meta">2026-08-29 · 20 分鐘 · 海事筆記 · 海上試驗 / 新造船 / Sea Trial</p>
-        <h3>為什麼新造船需要海上試驗？</h3>
-        <p>碼頭測試證明設備能工作；海上試驗則要證明整艘船能工作。從推進、操縱、舵機、電力、自動控制、故障反應與驗收證據，理解 Sea Trial 如何證明整艘船能夠安全、可靠地工作。</p>
-      </a>
-      <a class="card card--preview" href="notes/maritime/can-drones-replace-ship-surveyors.html">
-        <div class="card__preview">
-          <img
-            src="assets/images/maritime/can-drones-replace-ship-surveyors/can-drones-replace-ship-surveyors-link-preview.jpg"
-            alt="無人機能取代船級社驗船師嗎？｜Reay's Note"
-            width="1200"
-            height="630"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <p class="meta">2026-08-10 · 18 分鐘 · 海事筆記 · RIT / 無人機 / 遠端檢查</p>
-        <h3>無人機能取代船級社驗船師嗎？船東與船舶管理者必懂的 RIT 遠端檢查技術</h3>
-        <p>從船東、船舶管理者與操作人員的角度，解析遠端檢查技術（RIT）如何運用無人機、ROV、爬壁機器人與 UT，改變近觀檢驗、成本、安全、資料追溯與船級社驗船流程。</p>
-      </a>
-      <a class="card card--preview" href="research/digital-ship-management-report.html">
-        <div class="card__preview">
-          <img
-            src="assets/images/research/digital-ship-management-linkedin-preview-1200.png"
-            alt="船舶數位化管理：從營運痛點到數位轉型路線圖｜Reay's Note"
-            width="1024"
-            height="537"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <p class="meta">2026-08-05 · 31 分鐘 · 管理筆記 · 船舶管理 / 數位化</p>
-        <h3>船舶數位化管理：從營運痛點到數位轉型路線圖</h3>
-        <p>從船東營運痛點、市售 Marine ERP 與 PMS 方案、OneOcean 案例到可執行的數位轉型路線圖。</p>
-      </a>
-      <a class="card card--preview" href="research/owned-vs-chartered-container-ships.html">
-        <div class="card__preview">
-          <img
-            src="assets/images/research/owned-vs-chartered-linkedin-preview-1200.png"
-            alt="航運公司為什麼有些船自己買、有些船用租的？｜Reay's Note"
-            width="1024"
-            height="537"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <p class="meta">2026-08-03 · 20 分鐘 · 管理筆記 · 航運經營 / 船隊策略</p>
-        <h3>航運公司為什麼有些船自己買、有些船用租的？</h3>
-        <p>從第一性原理比較自有船、期租船與光船租賃的控制權、成本、彈性與風險，並觀察長榮、陽明與萬海的公開船隊結構。</p>
-      </a>
-      <a class="card card--preview" href="notes/maritime/ammonia-fuel-surveyor-notes.html">
-        <div class="card__preview">
-          <img
-            src="assets/images/maritime/ammonia-fuel-surveyor-notes/ammonia-fuel-surveyor-notes-link-preview.png"
-            alt="氨燃料船舶：從安全到系統核准的驗船師筆記"
-            width="1024"
-            height="535"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <p class="meta">2026-08-02 · 25 分鐘 · 海事筆記 · Fuel for Thought / 氨燃料 / IGF Code</p>
-        <h3>氨燃料船舶：從安全、法規到技術成熟度的驗船師筆記</h3>
-        <p>以驗船師視角整理 Lloyd's Register《Fuel for Thought: Ammonia》，涵蓋氨的毒性、材料相容性、SCC、加注風險、IGF/IGC Code、FuelEU、生命週期排放、引擎與燃料供應系統。</p>
-      </a>
-      <a class="card card--preview" href="notes/maritime/future-imo-ilo-container-ships-2026.html">
-        <div class="card__preview">
-          <img
-            src="assets/images/maritime/future-imo-ilo-container-ships-2026/future-imo-ilo-container-ships-link-preview-1200.jpg"
-            alt="2026-2032 貨櫃船國際法規變動整理｜Reay's Note"
-            width="1024"
-            height="537"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <p class="meta">2026-08-02 · 30 分鐘 · 海事筆記 · LR Future Legislation / 貨櫃船 / IMO·ILO</p>
-        <h3>2026-2032 貨櫃船國際法規變動整理</h3>
-        <p>以驗船師視角整理 Lloyd's Register《Future IMO and ILO Legislation – Container Ships, Summer 2026》，涵蓋 SOLAS、MARPOL、MLC、IGF、IMDG、BWM、CII 與貨櫃船火災等 2026–2036 年法規變動。</p>
-      </a>
-      <a class="card" href="notes/maritime/container-ship-wind-shield-notes.html">
-        <p class="meta">2026-07-15 · 18 分鐘 · 海事筆記 · Wind Shield / 貨櫃船</p>
-        <h3>船舶防風罩為何做得更大風阻反而更低？</h3>
-        <p>從風阻原理、風洞試驗、實船大數據與造船廠技術報告，解析大型貨櫃船船艏 Wind Shield 的節能效益、設計限制與實務意義。</p>
-      </a>
-      <a class="card" href="notes/maritime/electronic-certificates-joint-guidelines-notes.html">
-        <p class="meta">2026-07-11 · 20 分鐘 · 海事筆記 · FAL-LEG-MEPC-MSC.1/Circ.1 / 電子證書</p>
-        <h3>電子證書聯合指南｜船級、RO 與 PSC 實務影響</h3>
-        <p>深度解析 FAL-LEG-MEPC-MSC.1/Circ.1 電子證書使用聯合指南，串連旗國授權、電子簽章、ISM 文件管制與港口國查驗，整理船級社、RO 與 PSC 實務重點。</p>
-      </a>
-      <a class="card" href="notes/maritime/onboard-certificates.html">
-        <p class="meta">2026-06-30 · 18 分鐘 · 海事筆記 · MSC.1/Circ.1646 / 船上證書</p>
-        <h3>船上應攜帶證書與文件清單 (MSC.1/Circ.1646)</h3>
-        <p>依 IMO 2022 版通函整理可搜尋的證書與文件資料庫，涵蓋英文原名、中文翻譯、目的摘要、適用條件與法規引用，協助接船、PSC 與文件盤點查核。</p>
-      </a>
-      <a class="card" href="notes/maritime/engine-fat-shipboard-note.html">
-        <p class="meta">2026-06-23 · 18 分鐘 · 海事筆記 · LR-RU-001 / FAT / 船上試俥</p>
-        <h3>LR 引擎廠試與船上試俥要求</h3>
-        <p>解析 LR-RU-001 Part 5 Ch 2 Section 11 往復式內燃機 FAT 工廠驗收試驗與 Shipboard trials 船上試俥要求，涵蓋試驗範圍、DF／GF 引擎、電子控制與實務查核重點。</p>
-      </a>
-      <a class="card" href="notes/maritime/lfpf-note.html">
-        <p class="meta">2026-06-19 · 22 分鐘 · 海事筆記 · LR-RU-012 / 低閃點燃料</p>
-        <h3>LR 低閃點燃料船舶入級規則架構</h3>
-        <p>整理 LR-RU-012（July 2025）的文件定位、章節架構、IGF Code 整合邏輯、LFPF 入級符號、燃料別附錄與實務審查重點。</p>
-      </a>
-      <a class="card" href="notes/maritime/tailshaft-survey-notes.html">
-        <p class="meta">2026-06-12 · 海事筆記 · LR SPM / 艉軸檢驗</p>
-        <h3>船舶艉軸檢驗程序要點</h3>
-        <p>整理 LR Survey Procedures Manual 艉軸檢驗項目，涵蓋 Tailshaft / Screwshaft 製造、安裝、定期檢驗、NDE、軸襯、防蝕包覆、修理更換與報告紀錄重點。</p>
-      </a>
-      <a class="card" href="notes/maritime/steering-gear-notes.html">
-        <p class="meta">2026-06-11 · 海事筆記 · LR SPM / 舵機檢驗</p>
-        <h3>船舶舵機檢驗程序要點</h3>
-        <p>整理 LR Survey Procedures Manual（SPM）中舵機檢驗項目，涵蓋 SOLAS II-1/29、LR Rules Pt 5 Ch 19、應急操舵能力、海試與現有船檢查要求。</p>
-      </a>
-      <a class="card" href="notes/maritime/lr-bwts-notes.html">
-        <p class="meta">2026-06-08 · 海事筆記 · LR BWTS / 壓艙水</p>
-        <h3>壓艙水處理系統安全審查導覽</h3>
-        <p>以 LR 規範第 5 篇第 25 章為主軸，整理 BWTS 安裝安全審查邏輯、10 類技術分類、13 節規範重點與驗船師現場清單。</p>
-      </a>
-      <a class="card" href="notes/maritime/maritime-cyber-resilience-notes.html">
-        <p class="meta">2026-06 · 海事筆記 · 海事網路韌性</p>
-        <h3>海事設備網路韌性新規定</h3>
-        <p>15 分鐘讀懂 IMO、IACS UR E26／E27 與 LR 船級規則的海事網路韌性架構、法規時程、查核重點與現場應用。</p>
-      </a>
-      <a class="card" href="notes/maritime/lr-advisory-notes.html">
-        <p class="meta">2026-06 · 海事筆記 · LR Advisory</p>
-        <h3>LR Advisory｜海事顧問服務視覺導覽</h3>
-        <p>以視覺化方式整理 LR Advisory 的定位、四大挑戰、服務內容、服務對象與應用情境。</p>
-      </a>
-      <a class="card" href="notes/maritime/marpol-structure-notes.html">
-        <p class="meta">2026-06 · 海事筆記 · MARPOL</p>
-        <h3>MARPOL 法規架構摘要筆記</h3>
-        <p>整理 MARPOL 73/78 公約架構、六大 Annex、證書文件、PSC 查核重點與 Annex VI 更新提醒，作為污染防止合規盤點參考。</p>
-      </a>
-      <a class="card" href="research/fleet-spares-thesis-notes.html">
-        <p class="meta">2026-06 · 管理筆記 · 船隊備品 / 供應鏈</p>
-        <h3>從經驗採購到資料化船隊備品管理</h3>
-        <p>以 6,944 TEU 貨櫃船船隊燃油閥備品為案例，整理 PDCA、MRP 與 MPDC 如何串接需求預測、採購規劃與持續改善。</p>
-      </a>
-      <a class="card" href="notes/maritime/solas-structure-notes.html">
-        <p class="meta">2026-06 · 海事筆記 · SOLAS</p>
-        <h3>SOLAS 法規架構摘要筆記</h3>
-        <p>整理 SOLAS 公約架構、章節全景、船舶改裝關聯、強制性章程與送審文件清單，作為檢驗與專案初步盤點參考。</p>
-      </a>
-      <a class="card" href="notes/maritime/explosion-protection-notes.html">
-        <p class="meta">2026-06 · 海事筆記 · 危險區域防爆</p>
-        <h3>危險區域防爆設備分類</h3>
-        <p>Ex 防爆標示、保護型式、氣體群組、溫度等級、Zone 分區、責任分工與查證文件視覺化整理。</p>
-      </a>
-      <a class="card" href="notes/maritime/lpg-fuel-notes.html">
-        <p class="meta">2026-05 · 海事筆記 · 船用 LPG 燃料</p>
-        <h3>《Fuel for Thought》LPG 報告摘要</h3>
-        <p>LPG 作為船用燃料的基本特性、安全風險、法規架構、加注作業與未來低碳燃料路徑視覺化筆記。</p>
-      </a>
-      <a class="card" href="notes/maritime/new-construction-pm-notes.html">
-        <p class="meta">2026-05 · 海事筆記 · 新造船專案管理</p>
-        <h3>新造船專案管理六大階段筆記</h3>
-        <p>六大步驟從專案啟動到交付結案，整理 PM 與驗船師的角色分工、文件清單、風險警訊與表單速查。</p>
-      </a>
-      <a class="card" href="notes/maritime/surveyor-6s-lean-management-notes.html">
-        <p class="meta">2026-05 · 海事筆記 · 6S 精實管理</p>
-        <h3>以驗船師角色解釋 6S 精實管理</h3>
-        <p>從驗船師視角整理 6S 在船舶檢驗、機艙巡檢、甲板作業與安全管理中的實務意義，含機艙檢查表與控制層級對照。</p>
-      </a>
-      <a class="card" href="research/5s-study-notes.html">
-        <p class="meta">2026-05 · 工作場所管理</p>
-        <h3>5S 概覽重點筆記</h3>
-        <p>五大支柱、推動角色、主要效益與實務稽核方式視覺化整理。</p>
-      </a>
-      <a class="card" href="research/stats-business-application.html">
-        <p class="meta">2026-05 · 商業統計學</p>
-        <h3>統計學商業應用重點筆記</h3>
-        <p>相關分析、簡單線性迴歸、R-squared、假說檢定與 p 值，含電商廣告預算決策綜合案例。</p>
-      </a>
-      <a class="card" href="notes/maritime/msc-111-visual-notes.html">
-        <p class="meta">海事筆記 · IMO MSC 111</p>
-        <h3>IMO MSC 111 重點筆記</h3>
-        <p>MASS、替代燃料、IGC/IGF、SDC、NCSR、SSE 等會議決議視覺化整理，含生效時程與實務追蹤清單。</p>
-      </a>
-      <a class="card" href="notes/maritime/gmdss-radiocommunications-notes.html">
-        <p class="meta">海事筆記 · GMDSS / SOLAS</p>
-        <h3>海上無線電通信設備與 GMDSS 重點導讀</h3>
-        <p>以檢驗實務視角整理 GMDSS、DSC、EPIRB、SART、AIS 等設備功能、法規邏輯與常見缺失。</p>
-      </a>
-      <a class="card" href="notes/maritime/lng-fuel-notes.html">
-        <p class="meta">海事筆記 · 船用 LNG 燃料</p>
-        <h3>《Fuel for Thought》LNG 報告摘要</h3>
-        <p>LNG 作為船用燃料的技術成熟度、甲烷逸散、法規、供應與脫碳路徑重點整理。</p>
-      </a>
-      <a class="card" href="notes/maritime/methanol-fuel-notes.html">
-        <p class="meta">海事筆記 · 船用甲醇燃料</p>
-        <h3>《Fuel for Thought》甲醇報告摘要</h3>
-        <p>甲醇作為船用燃料的特性、安全、法規、供應與技術成熟度重點整理。</p>
-      </a>
-      <a class="card" href="notes/maritime/mepc-83-84-visual-notes.html">
-        <p class="meta">海事筆記 · MEPC / MARPOL VI</p>
-        <h3>MEPC 83／MEPC 84 視覺化筆記</h3>
-        <p>GFI、CII、Net-Zero Framework 等環保法規重點整理。</p>
-      </a>
-      <a class="card" href="research/sbc-demand-classification.html">
-        <p class="meta">管理筆記 · 備品供應鏈管理</p>
-        <h3>SBC需求型態分類</h3>
-        <p>以 ADI 與 CV² 分類備品需求，整理預測、採購與庫存管理策略。</p>
-      </a>
-      <a class="card" href="about.html">
-        <p class="meta">關於我</p>
-        <h3>工作經歷 · 教育背景 · LinkedIn</h3>
-        <p>LR、長榮海運資歷；陽明交大與成大雙碩士，研究項目涵蓋船體結構強度分析與供應鏈物流管理，並結合實務船上與總部岸端服務與船舶法規檢驗經驗。</p>
-      </a>
-    </div>
+
+        <ul class="home-author__lenses">
+          <li>
+            <span class="home-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 15.5 6.2 9.5h4.1V7.5h3.2v2h4.3L21 15.5H3z"></path>
+                <path d="M6 15.5v2.2h12V15.5"></path>
+                <path d="M9.2 12.2v-2"></path>
+              </svg>
+            </span>
+            <span>
+              <strong>船上輪機</strong>
+              <span>從設備運轉與維護，理解現場需求。</span>
+            </span>
+          </li>
+          <li>
+            <span class="home-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </span>
+            <span>
+              <strong>船隊機務</strong>
+              <span>從資源協調與規劃，思考管理取捨。</span>
+            </span>
+          </li>
+          <li>
+            <span class="home-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </span>
+            <span>
+              <strong>船級檢驗</strong>
+              <span>從規範與檢驗要求，釐清符合性的依據。</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="home-cta" aria-labelledby="cta-title">
+      <div class="home-cta__media" aria-hidden="true">
+        <img
+          src="assets/images/research/hero-owned-vs-chartered-fleet-strategy.jpg"
+          alt=""
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      <div class="home-wrap">
+        <h2 id="cta-title">讓知識，在交流中前進。</h2>
+        <p>如果某篇筆記對你有幫助，歡迎分享給需要的朋友。若你有不同的觀點，或想交流相關實務經驗，也歡迎透過 LinkedIn 與我聯繫。</p>
+        <a class="btn btn--outline" href="https://www.linkedin.com/in/reay-huang-pmp%C2%AE-a74285a2/" rel="noopener noreferrer">
+          <svg class="btn__icon btn__icon--linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.127 0 2.062 2.062 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          在 LinkedIn 與我交流 →
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
       <p class="site-footer__brand">Reay Huang Maritime Notes</p>
-      <p class="site-footer__tagline">海事檢驗、船級與航運技術的實務筆記。</p>
-      <p class="site-footer__copy">© <span id="year"></span> Reay Huang. 個人專業分享網站。</p>
-      <div class="site-footer__meta-row">
-        <p class="site-footer__meta">
-          <a href="https://www.linkedin.com/in/reay-huang-pmp%C2%AE-a74285a2/" rel="noopener noreferrer">LinkedIn</a>
-          · 現任 <a href="https://www.lr.org/en/" rel="noopener noreferrer">Lloyd's Register</a>。
-        </p>
-        <p class="site-footer__disclaimer">本網站所有觀點、筆記與意見均為個人立場，不代表 Lloyd's Register 或任何客戶。</p>
-      </div>
+      <p class="site-footer__url">reayhuang.com</p>
+      <p class="site-footer__note">個人知識分享，不代表雇主官方立場。</p>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
