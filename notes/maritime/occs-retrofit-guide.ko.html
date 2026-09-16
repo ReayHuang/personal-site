@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant" data-theme="light" data-back-to-top-label="回到頂部">
+<html lang="ko" data-theme="light" data-back-to-top-label="맨 위로">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJDKH6WYT1"></script>
@@ -18,22 +18,25 @@
   <link rel="alternate" hreflang="x-default" href="occs-retrofit-guide.en.html">
   <link rel="stylesheet" href="../../assets/css/note-standalone.css">
   <link rel="stylesheet" href="../../assets/css/article-share.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。">
+  <meta name="description" content="기존선 선상 탄소 포집·저장(oCCS)의 기술, 개조 통합, 규제, 상업 조건, 검사 우선순위를 정리한 실무 가이드.">
   <meta name="author" content="Reay Huang">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#0d263f">
-  <title>船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay Huang Maritime Notes</title>
-  <link rel="canonical" href="https://reayhuang.com/notes/maritime/occs-retrofit-guide.zh.html">
+  <title>선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드 | Reay Huang Maritime Notes</title>
+  <link rel="canonical" href="https://reayhuang.com/notes/maritime/occs-retrofit-guide.ko.html">
 
   <meta property="og:type" content="article">
-  <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="Reay Huang Maritime Notes">
-  <meta property="og:title" content="船上碳捕捉與儲存 oCCS｜現有船舶改裝指南">
-  <meta property="og:description" content="深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。">
-  <meta property="og:url" content="https://reayhuang.com/notes/maritime/occs-retrofit-guide.zh.html">
+  <meta property="og:title" content="선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드">
+  <meta property="og:description" content="기존선 선상 탄소 포집·저장(oCCS)의 기술, 개조 통합, 규제, 상업 조건, 검사 우선순위를 정리한 실무 가이드.">
+  <meta property="og:url" content="https://reayhuang.com/notes/maritime/occs-retrofit-guide.ko.html">
   <meta property="article:published_time" content="2026-09-03T00:00:00+09:00">
   <meta property="article:modified_time" content="2026-09-03T00:00:00+09:00">
   <meta property="article:author" content="Reay Huang">
@@ -43,14 +46,14 @@
   <meta property="article:tag" content="Retrofit">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="船上碳捕捉與儲存 oCCS｜現有船舶改裝指南">
-  <meta name="twitter:description" content="深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。">
-  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.jpg">
-  <meta property="og:image:alt" content="船上碳捕捉與儲存：現有船舶值得改裝嗎？">
+  <meta name="twitter:title" content="선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드">
+  <meta name="twitter:description" content="기존선 선상 탄소 포집·저장(oCCS)의 기술, 개조 통합, 규제, 상업 조건, 검사 우선순위를 정리한 실무 가이드.">
+  <meta property="og:image" content="https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.en.jpg">
+  <meta property="og:image:alt" content="선상 탄소 포집·저장: 기존선 개조는 과연 가치가 있는가?">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="537">
-  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.jpg">
+  <meta name="twitter:image" content="https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.en.jpg">
   <script>document.documentElement.classList.add('js')</script>
   <style>
     :root {
@@ -90,10 +93,10 @@
       margin: 0;
       color: var(--ink);
       background: var(--page);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-family: "Noto Sans KR", system-ui, sans-serif;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
     }
     body::before {
       content: "";
@@ -233,6 +236,15 @@
       color: #71ded7;
     }
     @media (min-width: 981px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 760px) 1fr;
+        gap: clamp(24px, 3vw, 40px);
+      }
+      .hero-grid > div { min-width: 0; }
+      .hero h1 {
+        max-width: 760px;
+        font-size: clamp(2.35rem, 3.1vw, 2.75rem);
+      }
       .hero h1 span { white-space: nowrap; }
     }
     .hero .article-meta {
@@ -697,7 +709,7 @@
       .nav a:not(.print-button) { display: none; }
       .hero { background-position: 80% 40%; }
       .hero::before {
-        background: linear-gradient(180deg, rgba(7, 24, 39, 0.28) 0%, transparent 50%, rgba(7, 24, 39, 0.32) 100%);
+        background: linear-gradient(180deg, rgba(7, 24, 39, 0.42) 0%, rgba(7, 24, 39, 0.48) 52%, rgba(7, 24, 39, 0.58) 100%);
       }
       .hero-grid, .section-head, .reg-layout, .pm-panel, .net-grid { grid-template-columns: 1fr; }
       .hero-grid { min-height: auto; padding-block: 74px 86px; }
@@ -884,10 +896,10 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "船上碳捕捉與儲存 oCCS｜現有船舶改裝指南",
-    "description": "深入淺出介紹現有船舶加裝船上碳捕捉與儲存系統（oCCS）的技術、改裝整合、法規、商業條件與驗船重點。",
-    "image": "https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.jpg",
-    "inLanguage": "zh-Hant",
+    "headline": "선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드",
+    "description": "기존선 선상 탄소 포집·저장(oCCS)의 기술, 개조 통합, 규제, 상업 조건, 검사 우선순위를 정리한 실무 가이드.",
+    "image": "https://reayhuang.com/assets/images/maritime/occs-retrofit-guide/occs-retrofit-guide-link-preview.en.jpg",
+    "inLanguage": "ko",
     "datePublished": "2026-09-03",
     "dateModified": "2026-09-03",
     "author": {
@@ -900,13 +912,13 @@
       "name": "Reay Huang Maritime Notes",
       "url": "https://reayhuang.com/"
     },
-    "mainEntityOfPage": "https://reayhuang.com/notes/maritime/occs-retrofit-guide.zh.html",
+    "mainEntityOfPage": "https://reayhuang.com/notes/maritime/occs-retrofit-guide.ko.html",
     "keywords": [
       "oCCS",
-      "Onboard Carbon Capture",
-      "Retrofit",
-      "Decarbonisation",
-      "Ship Survey"
+      "선상 탄소 포집",
+      "개조",
+      "탈탄소화",
+      "선박 검사"
     ]
   }
   </script>
@@ -914,56 +926,56 @@
 <body>
   <div class="note-site-bar">
     <div class="note-site-bar__nav">
-      <a href="../index.zh.html">← 海事筆記</a>
+      <a href="../index.en.html">← 해사 노트</a>
       <span>|</span>
-      <a href="../../index.zh.html">首頁</a>
-      <a href="../../about.zh.html">關於我</a>
-      <a href="../../research/index.zh.html">管理筆記</a>
+      <a href="../../index.html">홈</a>
+      <a href="../../about.en.html">소개</a>
+      <a href="../../research/index.en.html">관리 노트</a>
     </div>
     <nav class="note-lang-switch" aria-label="Language">
       <a href="occs-retrofit-guide.en.html" lang="en" hreflang="en">EN</a>
-      <a href="occs-retrofit-guide.zh.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="true">繁中</a>
-      <a href="occs-retrofit-guide.ko.html" lang="ko" hreflang="ko">한국어</a>
+      <a href="occs-retrofit-guide.zh.html" lang="zh-Hant" hreflang="zh-Hant">繁中</a>
+      <a href="occs-retrofit-guide.ko.html" lang="ko" hreflang="ko" aria-current="true">한국어</a>
     </nav>
   </div>
 
   <main id="top">
-    <section class="hero" aria-label="現有船舶加裝船上碳捕捉與儲存系統的示意背景">
+    <section class="hero" aria-label="기존선에 설치된 선상 탄소 포집·저장 개조를 보여주는 예시 배경">
       <div class="container hero-grid">
         <div>
-          <div class="pill"><span class="dot"></span> Maritime decarbonisation knowledge guide</div>
-          <h1 style="margin-top:22px">船上碳捕捉與儲存<span>現有船舶值得改裝嗎？</span></h1>
-          <p class="article-meta" aria-label="文章資訊">
-            <span>📅 更新：2026-09-03</span>
+          <div class="pill"><span class="dot"></span> 해사 탈탄소화 지식 가이드</div>
+          <h1 style="margin-top:22px">선상 탄소 포집·저장<span>기존선 개조는 과연 가치가 있는가?</span></h1>
+          <p class="article-meta" aria-label="기사 정보">
+            <span>📅 업데이트: 2026-09-03</span>
             <span class="article-meta__sep" aria-hidden="true">·</span>
-            <span>⏱ 閱讀約 15 分鐘</span>
+            <span>⏱ 읽는 시간 약 15분</span>
             <span class="article-meta__sep" aria-hidden="true">·</span>
-            <span>🏷 oCCS / 碳捕捉 / 現有船改裝</span>
+            <span>🏷 oCCS / 탄소 포집 / 기존선 개조</span>
           </p>
-          <p class="lead">多數現有船在未來十多年仍須使用含碳燃料，而節能措施無法將排放降至零，零／近零排放燃料的供應也尚未普及。因此，船舶安裝 oCCS，是為了在排氣離開煙囪前捕捉 CO2，降低實際排放與碳成本，並維持現有船在日益嚴格的減碳規範下繼續營運；捕捉後的 CO2 還必須安全儲存在船上，並於靠港後卸岸送往永久儲存或合格利用，才能形成真正的減排。</p>
+          <p class="lead">대부분의 기존선은 향후 10년 이상 탄소계 연료를 계속 사용해야 할 가능성이 큽니다. 에너지 효율 조치만으로는 배출을 제로로 만들 수 없고, 무탄소·저탄소 연료는 아직 널리 공급되지 않습니다. 따라서 oCCS를 설치하면 배기가스가 연돌을 떠나기 전에 CO2를 포집해 실제 배출과 탄소 비용을 줄이고, 갈수록 강화되는 탈탄소 요건 아래에서도 운항을 이어가는 데 도움이 됩니다. 실질적인 배출 감축을 이루려면 포집한 CO2를 선상에서 안전하게 저장하고, 항만에서 하역한 뒤 영구 저장 또는 인정되는 활용 경로로 보내야 합니다.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#summary">先看五分鐘重點 <span aria-hidden="true">↓</span></a>
-            <a class="button button-ghost" href="#decision">直接進入決策清單</a>
+            <a class="button button-primary" href="#summary">5분 개요 <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="#decision">의사결정 체크리스트로 이동</a>
           </div>
           <div
             class="article-share article-share--hero"
             data-article-share
-            data-share-url="https://reayhuang.com/notes/maritime/occs-retrofit-guide.zh.html"
-            data-share-title="船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note"
-            data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note&#10;https://reayhuang.com/notes/maritime/occs-retrofit-guide.zh.html"
-            data-share-copy="複製連結"
-            data-share-copied="已複製"
-            data-toast-copied="連結已複製到剪貼簿"
+            data-share-url="https://reayhuang.com/notes/maritime/occs-retrofit-guide.ko.html"
+            data-share-title="선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드 | Reay's Note"
+            data-share-email-body="Reay의 해사 노트에서 유용한 글을 발견했습니다:&#10;&#10;선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드 | Reay's Note&#10;https://reayhuang.com/notes/maritime/occs-retrofit-guide.ko.html"
+            data-share-copy="링크 복사"
+            data-share-copied="복사됨"
+            data-toast-copied="링크가 클립보드에 복사되었습니다"
           >
-            <p class="article-share__label" id="share-hero-label">分享此篇</p>
+            <p class="article-share__label" id="share-hero-label">이 글 공유하기</p>
             <div class="article-share__actions" role="group" aria-labelledby="share-hero-label"></div>
           </div>
         </div>
 
-        <div class="ship-visual" aria-label="船舶排氣經捕捉、處理後進入船上儲槽的示意圖">
+        <div class="ship-visual" aria-label="선박 배기가스가 포집·처리되어 선상 저장탱크로 이송되는 다이어그램">
           <svg viewBox="0 0 640 410" role="img" aria-labelledby="ship-title ship-desc">
-            <title id="ship-title">船上碳捕捉示意圖</title>
-            <desc id="ship-desc">排氣從船舶煙囪流向碳捕捉模組，再經壓縮與液化後儲存在甲板儲槽。</desc>
+            <title id="ship-title">선상 탄소 포집 다이어그램</title>
+            <desc id="ship-desc">배기가스가 연돌에서 탄소 포집 모듈로 흐른 뒤 압축·액화되어 갑판 탱크에 저장됩니다.</desc>
             <defs>
               <linearGradient id="sea" x1="0" x2="1">
                 <stop offset="0" stop-color="#1f6684"/>
@@ -983,7 +995,7 @@
             <rect x="198" y="130" width="38" height="38" rx="5" fill="#0b9991"/>
             <rect x="278" y="200" width="111" height="58" rx="12" fill="#0b9991"/>
             <text x="333.5" y="224" fill="white" font-size="13" text-anchor="middle" font-family="sans-serif" font-weight="700">CAPTURE</text>
-            <text x="333.5" y="243" fill="#d8f7f4" font-size="10" text-anchor="middle" font-family="sans-serif">吸收與再生</text>
+            <text x="333.5" y="243" fill="#d8f7f4" font-size="10" text-anchor="middle" font-family="sans-serif">ABSORPTION / REGENERATION</text>
             <rect x="412" y="198" width="49" height="62" rx="13" fill="#e8f3f6" stroke="#50cfc7" stroke-width="3"/>
             <rect x="468" y="198" width="49" height="62" rx="13" fill="#e8f3f6" stroke="#50cfc7" stroke-width="3"/>
             <path d="M235 149 C267 114 315 142 318 178" fill="none" stroke="#72e2db" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 10" filter="url(#glow)"/>
@@ -997,8 +1009,8 @@
             <text x="426" y="295" fill="#173c5b" font-size="12" font-family="sans-serif" font-weight="700">ONBOARD STORAGE</text>
           </svg>
           <div class="ship-caption">
-            <span>排氣預處理 → 捕捉 → 壓縮／液化 → 儲存</span>
-            <span>示意圖，非比例</span>
+            <span>배기 전처리 → 포집 → 압축/액화 → 저장</span>
+            <span>예시 도식 · 축척 아님</span>
           </div>
         </div>
       </div>
@@ -1006,178 +1018,178 @@
 
     <div class="stats-wrap" id="summary">
       <div class="container stats reveal">
-        <div class="stat"><strong class="mono">TRL 7–8</strong><span>胺液燃燒後捕捉的海事成熟度</span></div>
-        <div class="stat"><strong class="mono">30–40%</strong><span>目前商業案例常見捕捉率</span></div>
-        <div class="stat"><strong class="mono">15–30%</strong><span>胺液系統常見能源／燃油懲罰區間</span></div>
-        <div class="stat"><strong class="mono">10+ 年</strong><span>較可能支持投資回收的剩餘壽命</span></div>
+        <div class="stat"><strong class="mono">TRL 7–8</strong><span>아민 연소 후 포집의 해상 기술성숙도</span></div>
+        <div class="stat"><strong class="mono">30–40%</strong><span>현재 상업 사례에서 흔한 포집률</span></div>
+        <div class="stat"><strong class="mono">15–30%</strong><span>아민 시스템의 전형적 에너지/연료 페널티 범위</span></div>
+        <div class="stat"><strong class="mono">10+ years</strong><span>투자회수를 뒷받침하기 쉬운 잔여 수명</span></div>
       </div>
     </div>
 
     <div class="quick-nav-wrap">
       <nav class="container quick-nav reveal" aria-labelledby="quick-nav-title">
         <div class="quick-nav-head">
-          <div><p class="eyebrow">Quick links</p><h2 id="quick-nav-title">快速連結目錄</h2></div>
-          <p>選擇主題，直接前往文章重點</p>
+          <div><p class="eyebrow">빠른 링크</p><h2 id="quick-nav-title">목차</h2></div>
+          <p>주제를 선택하면 핵심 내용으로 바로 이동합니다</p>
         </div>
         <div class="quick-links">
-          <a href="#term">oCCS 名詞解釋</a>
-          <a href="#big-picture">船東為何需要</a>
-          <a href="#how">運作方式</a>
-          <a href="#technology">技術成熟度</a>
-          <a href="#integration">改裝整合</a>
-          <a href="#regulation">法規與碳鏈</a>
-          <a href="#candidates">適用船型</a>
-          <a href="#decision">決策清單</a>
-          <a href="#pm">驗船／PM 重點</a>
-          <a href="#sources">資料來源</a>
+          <a href="#term">oCCS란</a>
+          <a href="#big-picture">왜 평가해야 하는가</a>
+          <a href="#how">작동 원리</a>
+          <a href="#technology">기술 성숙도</a>
+          <a href="#integration">개조 통합</a>
+          <a href="#regulation">규제·탄소 가치사슬</a>
+          <a href="#candidates">적합한 선박 프로필</a>
+          <a href="#decision">의사결정 체크리스트</a>
+          <a href="#pm">검사/PM 우선순위</a>
+          <a href="#sources">참고자료</a>
         </div>
       </nav>
     </div>
 
     <section class="section section-white" id="big-picture">
       <div class="container">
-        <div class="term-card reveal" id="term" aria-label="oCCS 專有名詞解釋">
+        <div class="term-card reveal" id="term" aria-label="oCCS 용어 설명">
           <div>
-            <p class="eyebrow">Term explained</p>
-            <h3>oCCS 是什麼意思？</h3>
-            <p><strong>oCCS</strong> 是 <strong>onboard Carbon Capture and Storage</strong> 的縮寫，中文通常稱為「<strong>船上碳捕捉與儲存</strong>」。小寫的 <strong>o</strong> 強調系統設置於船上；它不只負責捕捉 CO2，也包含將 CO2 調質並暫存在船上，直到靠港後交給下游處理。</p>
+            <p class="eyebrow">용어 해설</p>
+            <h3>oCCS란 무엇인가?</h3>
+            <p><strong>oCCS</strong>는 <strong>onboard carbon capture and storage</strong>(선상 탄소 포집·저장)의 약어입니다. 소문자 <strong>o</strong>는 시스템이 <strong>선상(onboard)</strong>에 설치됨을 강조합니다. CO2를 포집하는 데 그치지 않고, 항만에서 하류 체인으로 인도할 때까지 선상에서 CO2를 처리·임시 저장합니다.</p>
           </div>
           <div class="term-breakdown">
-            <div class="term-piece"><b>o</b><strong>onboard</strong><span>在船上進行</span></div>
-            <div class="term-piece"><b>CC</b><strong>Carbon Capture</strong><span>從排氣或燃料流程捕捉碳</span></div>
-            <div class="term-piece"><b>S</b><strong>Storage</strong><span>調質後暫存，等待卸岸</span></div>
+            <div class="term-piece"><b>o</b><strong>onboard</strong><span>선박 상에서 수행</span></div>
+            <div class="term-piece"><b>CC</b><strong>Carbon Capture</strong><span>배기 또는 연료 처리 스트림에서 탄소 포집</span></div>
+            <div class="term-piece"><b>S</b><strong>Storage</strong><span>하역 전까지 처리·임시 저장</span></div>
           </div>
         </div>
         <div class="section-head reveal">
-          <div><p class="eyebrow">The big picture</p><h2>船東為什麼必須現在評估 oCCS？</h2></div>
-          <p class="section-intro">船東面對的不只是環保議題，而是船舶在剩餘壽命內能否繼續有競爭力地營運。碳排放已逐漸成為直接營運成本，船舶營運碳強度指標（CII）、區域碳價與租船市場也持續提高減碳壓力；然而替代燃料的供應、價格與港口基礎設施仍不確定，許多現有船也不適合進行全面燃料改裝。oCCS 因而成為船東保護資產價值、降低部分碳曝險並爭取燃料轉型時間的重要選項。</p>
+          <div><p class="eyebrow">큰 그림</p><h2>선주는 왜 지금 oCCS를 평가해야 하는가?</h2></div>
+          <p class="section-intro">선주에게 이는 단순한 환경 이슈가 아니라, 잔여 수명 동안 선박이 상업적으로 경쟁력을 유지할 수 있는지에 관한 문제입니다. 탄소 배출은 점점 직접적인 운항비로 자리 잡고 있으며, 탄소집약도지표(CII), 지역 탄소 가격, 용선 시장은 탈탄소 압력을 계속 키우고 있습니다. 그러나 대체연료의 공급·가격·항만 인프라는 여전히 불확실하고, 많은 기존선은 전면적인 연료 전환에 적합하지 않습니다. 따라서 oCCS는 자산 가치를 보호하고, 선박의 탄소 노출 일부를 줄이며, 연료 전환을 위한 시간을 벌 수 있는 중요한 선택지입니다.</p>
         </div>
         <div class="grid-3">
           <article class="card lever-card reveal">
             <span class="lever-no">01</span><div class="card-icon">↗</div>
-            <h3>能源效率</h3><p>船體、螺槳、節能裝置、混合動力與航線最佳化，先減少每一海里的能源需求。</p>
+            <h3>에너지 효율</h3><p>선체·프로펠러 개선, 에너지절감장치, 하이브리드 동력, 항로 최적화로 먼저 해리당 에너지 수요를 줄입니다.</p>
           </article>
           <article class="card lever-card reveal">
             <span class="lever-no">02</span><div class="card-icon">H2</div>
-            <h3>更換燃料</h3><p>從燃料端降低生命週期碳強度，但受燃料供應、儲槽、主機、安全與資產剩餘壽命限制。</p>
+            <h3>연료 전환</h3><p>연료 공급, 탱크, 엔진, 안전, 잔여 자산 수명 제약을 고려하며 연료 원천에서 전주기 탄소집약도를 낮춥니다.</p>
           </article>
           <article class="card lever-card highlight reveal">
             <span class="lever-no">03</span><div class="card-icon">C</div>
-            <h3>船上碳捕捉</h3><p>不一定更換既有燃料與主機，而是在燃燒後或燃燒前將碳分離、儲存並送入下游碳鏈。</p>
+            <h3>선상 탄소 포집</h3><p>연소 후 또는 전에 탄소를 분리·저장하고 하류 탄소 체인으로 이전합니다. 기존 연료나 엔진을 반드시 바꿀 필요는 없습니다.</p>
           </article>
         </div>
         <div class="owner-need reveal">
           <div class="owner-need-head">
-            <div><p class="eyebrow" style="color:#75e0d9">Why owners care</p><h3>對船東而言，必要性來自四種壓力</h3></div>
-            <p>若一艘船還有十年以上壽命，又經常航行於碳定價區域，等待所有替代燃料完全成熟，可能意味著多年持續支付碳成本，甚至提早失去租船與營運競爭力。</p>
+            <div><p class="eyebrow" style="color:#75e0d9">선주가 주목하는 이유</p><h3>평가를 불가피하게 만드는 네 가지 압력</h3></div>
+            <p>잔여 수명이 10년을 넘고 탄소 가격이 적용되는 지역을 자주 운항한다면, 모든 대체연료가 완전히 성숙할 때까지 기다리는 것은 수년간의 지속적인 탄소 비용과 용선·운항 경쟁력의 조기 상실을 의미할 수 있습니다.</p>
           </div>
           <div class="owner-need-grid">
-            <article class="owner-driver"><small>01｜COST</small><strong>碳排已成為現金成本</strong><p>歐盟排放交易體系（EU ETS）等制度，讓每一噸排放逐步反映在碳排配額、附加費與航次成本中。符合條件的捕捉量，可能降低部分碳成本曝險。</p></article>
-            <article class="owner-driver"><small>02｜ASSET</small><strong>保護船舶剩餘價值</strong><p>中齡船往往太年輕而不適合報廢，卻又可能太舊而不值得全面改用新燃料。oCCS 可降低提前商業淘汰的風險。</p></article>
-            <article class="owner-driver"><small>03｜TIME</small><strong>爭取燃料轉型時間</strong><p>先保留既有主機與燃料配置，讓船東延後不可逆的燃料選擇，等待綠色燃料供應、價格與加注網路更成熟。</p></article>
-            <article class="owner-driver"><small>04｜MARKET</small><strong>維持租船與融資競爭力</strong><p>貨主、租家與金融機構愈來愈關注實際碳強度。可驗證的減排能力有助於降低船舶被高碳市場排除的風險。</p></article>
+            <article class="owner-driver"><small>01｜COST</small><strong>탄소 배출은 이제 현금 비용</strong><p>EU 배출권거래제(EU ETS) 등은 배출 1톤을 허여량 제출 의무, 할증료, 항차 비용으로 점점 더 직접 연결합니다. 적격한 포집량은 이러한 탄소비용 노출의 일부를 줄일 수 있습니다.</p></article>
+            <article class="owner-driver"><small>02｜ASSET</small><strong>선박의 잔존가치 보호</strong><p>중년기 선박은 폐선하기엔 너무 젊고, 신규 연료로 전면 개조하기엔 너무 오래된 경우가 많습니다. oCCS는 조기 상업적 진부화 위험을 줄일 수 있습니다.</p></article>
+            <article class="owner-driver"><small>03｜TIME</small><strong>연료 전환을 위한 시간 확보</strong><p>기존 엔진·연료 배치를 유지하면 그린 연료 공급·가격·벙커링 네트워크가 성숙하는 동안 되돌리기 어려운 연료 선택을 미룰 수 있습니다.</p></article>
+            <article class="owner-driver"><small>04｜MARKET</small><strong>용선·금융 경쟁력 유지</strong><p>화주, 용선주, 금융기관은 실제 탄소집약도에 점점 더 주목합니다. 검증 가능한 배출 감축 능력은 탄소 민감 시장에서의 배제 위험을 줄이는 데 도움이 됩니다.</p></article>
           </div>
-          <div class="necessity-note"><strong>必要評估，不等於每艘船強制安裝。</strong> 對剩餘壽命短、碳價曝險低或沒有 CO2 卸岸路徑的船，現階段可能不具投資合理性；但對剩餘壽命長、歐洲經濟區（EEA）航線曝險高、靠港固定且能建立下游碳鏈的船，oCCS 已是不能忽略的策略選項。</div>
+          <div class="necessity-note"><strong>필수 평가가 모든 선박에 대한 의무 설치를 의미하지는 않습니다.</strong> 잔여 수명이 짧거나, 탄소가격 노출이 낮거나, CO2 하역 경로가 없는 선박은 현재 투자가 정당화되지 않을 수 있습니다. 그러나 잔여 수명이 길고, 유럽경제지역(EEA) 항로 노출이 높으며, 정기 기항이 가능하고 하류 탄소 체인을 구축할 수 있는 선박에게 oCCS는 이미 무시할 수 없는 전략적 선택지입니다.</div>
         </div>
-        <div class="callout reveal"><span aria-hidden="true" style="font-size:1.35rem">!</span><p><strong>最重要的判斷原則：</strong>裝上一套捕捉設備不等於已經減排。只有當 CO2 被可靠量測、安全儲存、卸岸、運輸並進入被法規認可的永久儲存或利用路徑，捕捉量才可能轉化為合規價值與船東收益。</p></div>
+        <div class="callout reveal"><span aria-hidden="true" style="font-size:1.35rem">!</span><p><strong>가장 중요한 의사결정 원칙:</strong> 포집 장비를 설치하는 것만으로는 배출 감축이 성립하지 않습니다. 포집량이 규제 준수 가치와 선주 수익으로 이어지려면, CO2가 신뢰성 있게 계측되고 안전하게 저장·하역되며, 적용 규정이 인정하는 영구 저장 또는 활용 경로로 이송되어야 합니다.</p></div>
       </div>
     </section>
 
     <section class="section section-navy" id="how">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="eyebrow" style="color:#75e0d9">How it works</p><h2>從煙囪到永久儲存</h2></div>
-          <p class="section-intro">完整 oCCS 並不是一部機器，而是一條由船舶、港口、運輸業者與儲存場共同完成的六段鏈條。</p>
+          <div><p class="eyebrow" style="color:#75e0d9">작동 원리</p><h2>연돌에서 영구 저장까지</h2></div>
+          <p class="section-intro">완전한 oCCS 솔루션은 단일 장비가 아닙니다. 선박, 항만, 운송사업자, 저장 사이트를 아우르는 6단계 체인입니다.</p>
         </div>
         <div class="process">
-          <article class="process-step reveal"><h3>捕捉</h3><p>從排氣或燃料處理流程分離碳。</p></article>
-          <article class="process-step reveal"><h3>調質</h3><p>淨化、除水、壓縮並符合下游純度。</p></article>
-          <article class="process-step reveal"><h3>船上儲存</h3><p>以液態、溶液、固體碳或礦物形式保存。</p></article>
-          <article class="process-step reveal"><h3>卸岸</h3><p>以船岸、船對船或 ISO 標準槽櫃方式移交。</p></article>
-          <article class="process-step reveal"><h3>陸上運輸</h3><p>以管線、液態二氧化碳（LCO2）運輸船、車輛或鐵路移動。</p></article>
-          <article class="process-step reveal"><h3>最終結果</h3><p>永久地質儲存或被認可的長期利用。</p></article>
+          <article class="process-step reveal"><h3>포집</h3><p>배기 또는 연료 처리 스트림에서 탄소를 분리합니다.</p></article>
+          <article class="process-step reveal"><h3>처리(Conditioning)</h3><p>하류 규격에 맞도록 CO2를 정제·탈수·압축합니다.</p></article>
+          <article class="process-step reveal"><h3>선상 저장</h3><p>액체, 용액, 고체 탄소 또는 광물 형태로 저장합니다.</p></article>
+          <article class="process-step reveal"><h3>하역</h3><p>선박-육상, 선박-선박 또는 ISO 탱크 컨테이너로 이전합니다.</p></article>
+          <article class="process-step reveal"><h3>육상 운송</h3><p>파이프라인, 액화 CO2(LCO2) 운반선, 도로·철도로 이동합니다.</p></article>
+          <article class="process-step reveal"><h3>최종 결과</h3><p>영구 지질 저장 또는 인정되는 장기 활용.</p></article>
         </div>
-        <div class="chain-rule reveal"><strong>鏈條強度由最弱的一環決定。</strong> 2026 年的主要弱點集中在港口接收、規格相容、跨境法規，以及可稽核的監管鏈（chain of custody，即 CO2 從船上捕捉、移交、運輸到最終儲存的完整流向與責任紀錄），而不是單純的捕捉化學。</div>
+        <div class="chain-rule reveal"><strong>체인의 강도는 가장 약한 고리에 의해 결정됩니다.</strong> 2026년 현재 주요 취약점은 포집 화학 자체보다 항만 수용, 규격 호환성, 국경 간 규제, 그리고 감사 가능한 보관 연쇄(chain of custody)—선상 포집에서 이전·운송·최종 저장까지 CO2 흐름과 책임을 기록한 완전한 이력—에 있습니다.</div>
       </div>
     </section>
 
     <section class="section section-white" id="technology">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="eyebrow">Technology status</p><h2>真正成熟的方案仍很集中</h2></div>
-          <p class="section-intro">目前最成熟、且已有 LR 船級商業案例的是胺液燃燒後捕捉。其他路徑各有潛力，但多數仍處於海事示範、概念驗證或更適合新造船的階段。</p>
+          <div><p class="eyebrow">기술 현황</p><h2>성숙한 솔루션은 여전히 제한적</h2></div>
+          <p class="section-intro">아민 연소 후 포집이 현재 가장 성숙한 경로이며, 이미 LR 선급 상업 적용 사례가 있습니다. 다른 경로도 잠재력은 있으나, 대부분 해상 실증 또는 개념 검증 단계에 머무르거나 신조에 더 적합합니다.</p>
         </div>
 
         <aside class="trl-explainer reveal" aria-labelledby="trl-explainer-title">
           <div>
-            <p class="eyebrow">Technology Readiness Level</p>
-            <h3 id="trl-explainer-title">TRL 是什麼？分數代表什麼？</h3>
-            <p><strong>TRL</strong> 是 <strong>Technology Readiness Level（技術成熟度）</strong>的縮寫，以 1–9 級描述一項技術從基礎原理、原型驗證到實際操作證實的成熟程度。數字越高，表示它已在越接近真實營運的環境中完成驗證；這不是效能高低的考試分數。</p>
-            <p class="trl-caution"><strong>閱讀時要分開看：</strong>TRL 高，不代表已自動取得船級、旗國或法規核准，也不代表特定船舶的空間、能源、安全、監測、報告與查證（MRV），以及商業條件一定成立。</p>
+            <p class="eyebrow">기술성숙도(Technology Readiness Level)</p>
+            <h3 id="trl-explainer-title">TRL이란 무엇이며, 등급은 무엇을 의미하는가?</h3>
+            <p><strong>TRL</strong>은 <strong>Technology Readiness Level</strong>(기술성숙도)의 약어입니다. 1–9 척도는 기본 원리와 프로토타입 검증부터 실제 운용에서의 입증까지 기술의 성숙도를 나타냅니다. 숫자가 높을수록 실제 운용에 가까운 환경에서 검증되었음을 의미하며, 성능 점수는 아닙니다.</p>
+            <p class="trl-caution"><strong>구분을 명확히 하십시오:</strong> 높은 TRL이 자동으로 선급, 기국 또는 규제 승인을 부여하지는 않습니다. 또한 특정 선박에 대해 공간, 에너지, 안전, 모니터링·보고·검증(MRV), 상업 조건이 실행 가능하다는 뜻도 아닙니다.</p>
           </div>
-          <div class="trl-scale" aria-label="TRL 1 至 9 分級說明">
-            <div class="trl-band"><span>TRL 1–3</span><strong>研究與概念</strong><small>從基本原理、技術概念到實驗性概念驗證。</small></div>
-            <div class="trl-band"><span>TRL 4–6</span><strong>驗證與示範</strong><small>先在實驗室驗證，再於接近實際條件的相關環境中展示原型。</small></div>
-            <div class="trl-band trl-band-operational"><span>TRL 7–9</span><strong>操作環境與實際應用</strong><small>從操作環境原型示範、完整系統資格確認，到實際系統經營運證實。</small></div>
+          <div class="trl-scale" aria-label="TRL 1–9 등급 설명">
+            <div class="trl-band"><span>TRL 1–3</span><strong>연구·개념</strong><small>기본 원리와 기술 개념에서 실험적 개념 검증까지.</small></div>
+            <div class="trl-band"><span>TRL 4–6</span><strong>검증·실증</strong><small>실험실 검증 후, 실제 조건에 가까운 관련 환경에서의 프로토타입 실증.</small></div>
+            <div class="trl-band trl-band-operational"><span>TRL 7–9</span><strong>운용 환경·실제 적용</strong><small>운용 환경에서의 프로토타입 실증과 완전 시스템 자격 부여부터 실제 운용을 통한 입증까지.</small></div>
           </div>
         </aside>
 
         <div class="tech-lead">
           <article class="maturity-feature reveal">
-            <p class="eyebrow" style="color:#75e0d9">Current front-runner</p>
-            <h3>胺液燃燒後化學吸收</h3>
-            <p>排氣先經洗滌與降溫，再進入吸收塔與貧胺液（lean amine，尚可吸收 CO2 的胺液）接觸；吸收 CO2 後形成的富胺液（rich amine）再於再生塔加熱，釋出高濃度 CO2，最後經壓縮、除水與液化進入船上儲槽。</p>
-            <p><strong>本頁標示 TRL 7–8</strong>，表示此路徑已介於操作環境中的系統原型示範，與完整系統經測試、具備資格之間；實際現有船改裝（retrofit）仍須完成船舶特定整合與核准。</p>
-            <div class="feature-meta"><span>TRL 7–8</span><span>商業安裝</span><span>可用於現有船改裝</span><span>需廢熱整合</span></div>
+            <p class="eyebrow" style="color:#75e0d9">현재 선두 경로</p>
+            <h3>아민 연소 후 화학 흡수</h3>
+            <p>배기가스는 먼저 세정·냉각된 뒤 흡수탑에 들어가 CO2를 흡수할 여력이 있는 린 아민과 접촉합니다. 생성된 CO2-리치 아민은 재생탑에서 가열되어 고농도 CO2 스트림을 방출합니다. 이후 CO2는 압축·탈수·액화되어 선상 저장탱크로 들어갑니다.</p>
+            <p><strong>본 페이지는 TRL 7–8을 부여</strong>하며, 이는 운용 환경에서의 시스템 프로토타입 실증과 시험·자격 부여된 완전 시스템 사이에 위치함을 의미합니다. 기존선에 실제로 개조하려면 선박별 통합과 승인이 여전히 필요합니다.</p>
+            <div class="feature-meta"><span>TRL 7–8</span><span>상업 설치</span><span>기존선 개조에 적용 가능</span><span>폐열 통합 필요</span></div>
           </article>
           <article class="key-warning reveal">
-            <strong>成熟不代表沒有代價</strong>
-            <p>胺液再生需要大量熱能，且必須處理硫氧化物（SOx）、氮氧化物（NOx）、腐蝕、溶劑老化、胺液逸散、亞硝胺副產物、吸收塔體積，以及約 15–30% 的額外燃油消耗。</p>
+            <strong>성숙도가 페널티 없음을 뜻하지는 않음</strong>
+            <p>아민 재생에는 상당량의 열이 필요합니다. 설계는 또한 황산화물(SOx), 질소산화물(NOx), 부식, 용매 열화, 아민 배출 또는 슬립, 니트로사민 부산물, 흡수탑 크기, 약 15–30%의 추가 연료 소비를 다루어야 합니다.</p>
           </article>
         </div>
 
-        <div class="table-wrap reveal" role="region" aria-label="oCCS 技術比較表" tabindex="0">
+        <div class="table-wrap reveal" role="region" aria-label="oCCS 기술 비교" tabindex="0">
           <table>
-            <thead><tr><th>技術路徑</th><th>海事 TRL</th><th>主要優點</th><th>主要限制</th><th>現階段定位</th></tr></thead>
+            <thead><tr><th>기술 경로</th><th>해상 TRL</th><th>주요 장점</th><th>주요 한계</th><th>현재 위치</th></tr></thead>
             <tbody>
-              <tr><td><strong>胺液化學吸收</strong><br>Post-combustion amine</td><td>7–8</td><td>不需改變主機燃料路徑；已有商業與船級案例</td><td>再生熱、設備體積、溶劑／腐蝕、排氣預處理</td><td><span class="status status-ready">最成熟</span></td></tr>
-              <tr><td><strong>鈣基礦化</strong><br>Calcium looping</td><td>5–6</td><td>形成固態 CaCO3；免 LCO2 低溫儲槽</td><td>每 1 t CO2 約形成 2.27 t CaCO3；固體搬運與岸上再生</td><td><span class="status status-pilot">示範中</span></td></tr>
-              <tr><td><strong>膜分離</strong><br>Membrane</td><td>4–5</td><td>無液態化學品；模組化潛力</td><td>對 SOx、NOx、水分與顆粒敏感；需持續壓差與電力</td><td><span class="status status-pilot">早期</span></td></tr>
-              <tr><td><strong>低溫分離</strong><br>Cryogenic</td><td>3–4</td><td>高純度 CO2；無胺液</td><td>壓縮／冷凍耗電；低溫脆裂、沸騰液體膨脹蒸氣爆炸（BLEVE）與乾冰風險</td><td><span class="status status-watch">特定船型</span></td></tr>
-              <tr><td><strong>燃燒前重整／熱解</strong><br>Pre-combustion</td><td>4–6</td><td>處理高濃度碳流；熱解可產固態碳</td><td>限氣體燃料；氫氣安全、反應器空間與熱管理</td><td><span class="status status-watch">偏新造船</span></td></tr>
-              <tr><td><strong>富氧燃燒</strong><br>Oxy-fuel</td><td>2–3</td><td>理論捕捉率接近 100%</td><td>大型製氧裝置、高耗電、純氧火災與主機修改</td><td><span class="status status-watch">持續觀察</span></td></tr>
+              <tr><td><strong>아민 화학 흡수</strong><br>Post-combustion amine</td><td>7–8</td><td>주기관·기존 연료계통 변경 불필요; 선급된 상업 설치 사례 존재</td><td>재생 열, 장비 체적, 용매/부식, 배기 전처리</td><td><span class="status status-ready">가장 성숙</span></td></tr>
+              <tr><td><strong>칼슘계 광물화</strong><br>Calcium looping</td><td>5–6</td><td>고체 CaCO3 생성; 저온 LCO2 탱크 회피</td><td>CO2 1 t당 약 2.27 t CaCO3; 고체 취급·육상 재생</td><td><span class="status status-pilot">실증 중</span></td></tr>
+              <tr><td><strong>막 분리</strong><br>Membrane</td><td>4–5</td><td>액체 화학물질 없음; 모듈화 잠재력</td><td>SOx, NOx, 수분, 미립자에 민감; 지속적 차압·전력 필요</td><td><span class="status status-pilot">초기 단계</span></td></tr>
+              <tr><td><strong>극저온 분리</strong><br>Cryogenic</td><td>3–4</td><td>고순도 CO2; 아민 용매 없음</td><td>압축/냉동 전력; 저온 취성, BLEVE(비등액체 팽창증기폭발), 드라이아이스 위험</td><td><span class="status status-watch">선종별 특성</span></td></tr>
+              <tr><td><strong>연소 전 개질/열분해</strong><br>Pre-combustion</td><td>4–6</td><td>농축 탄소 스트림 처리; 열분해로 고체 탄소 생성 가능</td><td>기체 연료에 한정; 수소 안전, 반응기 공간, 열관리</td><td><span class="status status-watch">신조에 더 적합</span></td></tr>
+              <tr><td><strong>산소연료 연소</strong><br>Oxy-fuel</td><td>2–3</td><td>이론 포집률이 거의 100%</td><td>대형 산소 생산 설비, 높은 전력 수요, 순산소 화재 위험, 엔진 개조</td><td><span class="status status-watch">지속 모니터링</span></td></tr>
             </tbody>
           </table>
         </div>
 
         <aside class="penalty-explainer reveal" aria-labelledby="penalty-title">
           <div>
-            <p class="eyebrow">Energy penalty explained</p>
-            <h3 id="penalty-title">「15–30% 懲罰區間」是什麼？</h3>
-            <p>這裡的「懲罰」是工程上的<strong>能源懲罰（energy penalty）</strong>或<strong>燃油懲罰</strong>，不是法規罰款。它表示船舶為了完成 CO2 捕捉、處理與儲存，相較於未安裝 oCCS、完成相同航程與營運任務時，需要額外投入多少能源或燃油。</p>
-            <p class="penalty-example"><strong>簡化例子：</strong>若原本完成同一航次需要 100 單位燃油，20% 的燃油懲罰代表約需 120 單位。這只是理解比例的例子；實際專案還要確認報告採用的基準、系統邊界與工況。捕捉率與懲罰率不能直接相減，淨減排還必須計入額外燃油所產生的新排放。</p>
-            <p><strong>為什麼是區間？</strong>捕捉率、溶劑性能、主機負荷、排氣 CO2 濃度、廢熱可用量、壓縮與液化條件都會改變能耗。因此 15–30% 是案例常見範圍，不是每艘船的固定值或保證值。</p>
+            <p class="eyebrow">에너지 페널티 해설</p>
+            <h3 id="penalty-title">“15–30% 페널티 범위”는 무엇을 의미하는가?</h3>
+            <p>여기서 “페널티”는 규제상 벌금이 아니라 공학적 <strong>에너지 페널티</strong> 또는 <strong>연료 페널티</strong>를 뜻합니다. oCCS 없이 동일한 항차·운용 임무를 완료할 때와 비교해, CO2를 포집·처리·저장하기 위해 선박이 추가로 필요로 하는 에너지 또는 연료입니다.</p>
+            <p class="penalty-example"><strong>단순 예시:</strong> 동일 항차에 원래 연료 100단위가 필요했다면, 20% 연료 페널티는 약 120단위가 필요함을 의미합니다. 이 예시는 비율만 설명하며, 실제 프로젝트는 보고 기준선, 시스템 경계, 운용 조건을 확인해야 합니다. 포집률과 페널티율을 단순 뺄셈할 수 없습니다. 순 배출 감축은 추가 연료로 새로 발생하는 배출도 반영해야 합니다.</p>
+            <p><strong>왜 범위인가?</strong> 포집률, 용매 성능, 엔진 부하, 배기 CO2 농도, 가용 폐열, 압축·액화 조건이 모두 에너지 수요에 영향을 줍니다. 따라서 15–30%는 사례에서 흔히 보이는 범위이며, 모든 선박에 대한 고정·보장 값이 아닙니다.</p>
           </div>
-          <div class="penalty-causes" aria-label="能源懲罰的主要來源">
-            <div class="penalty-cause"><strong>01｜胺液再生熱</strong><span>必須加熱富胺液，讓吸收的 CO2 釋出並使胺液恢復吸收能力；通常是最大的熱能需求。</span></div>
-            <div class="penalty-cause"><strong>02｜排氣與液體循環</strong><span>增壓風機、循環泵、排氣洗滌與額外背壓都會增加主機或輔機負載。</span></div>
-            <div class="penalty-cause"><strong>03｜CO2 調質與儲存</strong><span>除水、壓縮、液化、冷凍及儲槽壓力控制需要持續電力與冷卻能力。</span></div>
-            <div class="penalty-cause"><strong>04｜船舶整合條件</strong><span>低負荷時廢熱不足、設備重量、通風與冷卻需求，會使實際代價高於理想設計點。</span></div>
+          <div class="penalty-causes" aria-label="에너지 페널티의 주요 원인">
+            <div class="penalty-cause"><strong>01｜아민 재생 열</strong><span>리치 아민을 가열해 흡수된 CO2를 방출하고 용매의 흡수 능력을 회복해야 하며, 통상 가장 큰 열 수요입니다.</span></div>
+            <div class="penalty-cause"><strong>02｜배기·액체 순환</strong><span>부스터 팬, 순환 펌프, 배기 세정, 추가 배압이 주기관·보기 부하를 증가시킵니다.</span></div>
+            <div class="penalty-cause"><strong>03｜CO2 처리·저장</strong><span>탈수, 압축, 액화, 냉동, 탱크 압력 제어에 지속적인 전력과 냉각 용량이 필요합니다.</span></div>
+            <div class="penalty-cause"><strong>04｜선박 통합 조건</strong><span>저부하 시 폐열 부족, 장비 중량, 환기·냉각 수요로 실제 페널티가 이상 설계점보다 커질 수 있습니다.</span></div>
           </div>
         </aside>
 
         <div class="net-grid reveal">
           <article class="formula-card">
-            <p class="eyebrow" style="color:#75e0d9">Gross vs. net</p>
-            <h3>捕捉率 ≠ 淨減排率</h3>
-            <div class="formula">淨效益 = 捕捉量 − 額外能源排放</div>
-            <p>若沒有充分利用主機排氣、缸套冷卻水（jacket water）或掃氣冷卻器（scavenge air cooler）的廢熱，捕捉系統新增的燃油消耗會大幅侵蝕減排效果。</p>
+            <p class="eyebrow" style="color:#75e0d9">총량 vs. 순량</p>
+            <h3>포집률 ≠ 순 배출 감축률</h3>
+            <div class="formula">순편익 = 포집량 − 추가 에너지 배출</div>
+            <p>주기관 배기, 재킷수, 소기공기 냉각기의 폐열을 효과적으로 활용하지 않으면, 포집 시스템의 추가 연료 소비가 배출 감축 편익을 크게 잠식합니다.</p>
           </article>
-          <article class="bars" aria-label="捕捉率、能源懲罰與淨減排案例">
-            <div class="bar-row"><div class="bar-label"><span>90% 捕捉／20% 懲罰</span><b>約 58% 淨減排</b></div><div class="bar-track"><div class="bar-fill" style="--value:58%"></div></div></div>
-            <div class="bar-row"><div class="bar-label"><span>90% 捕捉／15% 懲罰</span><b>約 63% 淨減排</b></div><div class="bar-track"><div class="bar-fill" style="--value:63%"></div></div></div>
-            <div class="bar-row"><div class="bar-label"><span>70% 捕捉／15% 懲罰</span><b>約 44% 淨減排</b></div><div class="bar-track"><div class="bar-fill" style="--value:44%"></div></div></div>
-            <div class="bar-row"><div class="bar-label"><span>35% 捕捉／10% 懲罰</span><b>約 18% 淨減排</b></div><div class="bar-track"><div class="bar-fill" style="--value:18%"></div></div></div>
+          <article class="bars" aria-label="포집률·에너지 페널티·순 배출 감축 예시">
+            <div class="bar-row"><div class="bar-label"><span>90% 포집 / 20% 페널티</span><b>순감축 약 58%</b></div><div class="bar-track"><div class="bar-fill" style="--value:58%"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>90% 포집 / 15% 페널티</span><b>순감축 약 63%</b></div><div class="bar-track"><div class="bar-fill" style="--value:63%"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>70% 포집 / 15% 페널티</span><b>순감축 약 44%</b></div><div class="bar-track"><div class="bar-fill" style="--value:44%"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>35% 포집 / 10% 페널티</span><b>순감축 약 18%</b></div><div class="bar-track"><div class="bar-fill" style="--value:18%"></div></div></div>
           </article>
         </div>
       </div>
@@ -1186,24 +1198,24 @@
     <section class="section" id="integration">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="eyebrow">Retrofit integration</p><h2>最大難題往往不是設備本身</h2></div>
-          <p class="section-intro">現有船的總布置圖（General Arrangement，GA）、煙囪、艙櫃、配管與電力系統，本來就不是為 oCCS 預留。能否在詳細設計與施工階段真正落地，比原則性認可（Approval in Principle，AiP）階段的圖面上「放得下」更重要。AiP 代表船級社原則上接受概念方向，並不等於詳細設計已完成或已取得最終核准。</p>
+          <div><p class="eyebrow">개조 통합</p><h2>가장 큰 과제는 종종 장비 자체가 아닙니다</h2></div>
+          <p class="section-intro">기존선의 일반배치도(GA), 연돌, 탱크, 배관, 전기계통은 oCCS를 염두에 두고 설계되지 않았습니다. 원칙승인(AiP) 단계에서 도면상 “들어가는 것처럼” 보이는지보다, 상세설계·건조를 통해 실제로 인도할 수 있는지가 더 중요합니다. AiP는 선급이 개념을 원칙적으로 수용한다는 뜻이며, 상세설계 완료나 최종 승인을 의미하지 않습니다.</p>
         </div>
 
         <div class="integration-grid">
-          <article class="card integration-card reveal"><small>01｜EXHAUST</small><h3>排氣路由與旁通</h3><ul><li>位於清潔、降溫後排氣端</li><li>須具備全流量旁通能力</li><li>高背壓時自動旁通</li><li>上游冗餘背壓量測</li></ul></article>
-          <article class="card integration-card reveal"><small>02｜ENERGY</small><h3>蒸汽、廢熱與電力</h3><ul><li>每捕捉 1 kg CO2，胺液再生約需 3–4 MJ 熱能</li><li>核對輔鍋爐與廢氣節熱器（economiser）餘裕</li><li>壓縮、冷凍、通風與不斷電系統（UPS）負載</li><li>納入低負荷與停港情境</li></ul></article>
-          <article class="card integration-card reveal"><small>03｜STORAGE</small><h3>儲存容量與航程</h3><ul><li>捕捉率、儲量與航程一起定義</li><li>儲槽滿後捕捉即停止</li><li>重量、穩性與縱向強度</li><li>貨載、標準貨櫃箱位（TEU）及載重噸（DWT）的代價</li></ul></article>
-          <article class="card integration-card reveal"><small>04｜SAFETY</small><h3>CO2 與胺液安全</h3><ul><li>低位 CO2 偵測與缺氧監測</li><li>強制通風與積聚分析</li><li>揮發性有機物（VOC）、酸鹼值（pH）與洩漏偵測</li><li>救生設備與集合站（muster station）持續保持可用及可達</li></ul></article>
-          <article class="card integration-card reveal"><small>05｜ESD & MATERIAL</small><h3>緊急停車與材料</h3><ul><li>開旁通、停泵、關隔離閥</li><li>通風與警報納入因果矩陣（cause & effect）</li><li>低溫脆裂與濕 CO2 腐蝕</li><li>溶劑、墊片與彈性體相容性</li></ul></article>
-          <article class="card integration-card reveal"><small>06｜GA & CLASS</small><h3>配管、相鄰與核准</h3><ul><li>管路佈置、支撐與熱膨脹</li><li>滴盤、儲槽相鄰關係與危險區</li><li>類比適用《國際散裝化學品章程》（IBC Code）或《國際氣體船章程》（IGC Code）的相關規定</li><li>提早處理旗國解釋與豁免</li></ul></article>
+          <article class="card integration-card reveal"><small>01｜EXHAUST</small><h3>배기 경로와 바이패스</h3><ul><li>배기 세정·냉각의 하류에 배치</li><li>전유량 바이패스 능력 확보</li><li>고배압 시 자동 바이패스</li><li>상류 배압 측정의 이중화</li></ul></article>
+          <article class="card integration-card reveal"><small>02｜ENERGY</small><h3>증기, 폐열, 전력</h3><ul><li>아민 시스템: 포집 CO2 1 kg당 재생열 약 3–4 MJ</li><li>보조보일러·배기 이코노마이저 여유용량 확인</li><li>압축, 냉동, 환기, 무정전전원장치(UPS) 부하</li><li>저부하·항만 시나리오 포함</li></ul></article>
+          <article class="card integration-card reveal"><small>03｜STORAGE</small><h3>저장용량과 항차 길이</h3><ul><li>포집률, 저장 체적, 항차 길이를 함께 정의</li><li>탱크가 가득 차면 포집 중단</li><li>중량, 복원성, 종강도</li><li>화물 용량, 20피트 환산단위(TEU) 슬롯, 재화중량톤수(DWT) 페널티</li></ul></article>
+          <article class="card integration-card reveal"><small>04｜SAFETY</small><h3>CO2·아민 안전</h3><ul><li>저농도 CO2 감지 및 산소결핍 모니터링</li><li>강제 환기 및 축적 분석</li><li>휘발성유기화합물(VOC), pH, 누출 감지</li><li>구명설비·집합장소의 지속적인 접근성·가용성</li></ul></article>
+          <article class="card integration-card reveal"><small>05｜ESD & MATERIAL</small><h3>비상정지와 재료</h3><ul><li>바이패스 개방, 펌프 정지, 차단밸브 폐쇄</li><li>원인-결과 매트릭스에 환기·경보 포함</li><li>저온 취성 및 습윤 CO2 부식</li><li>용매, 가스켓, 엘라스토머 호환성</li></ul></article>
+          <article class="card integration-card reveal"><small>06｜GA & CLASS</small><h3>배관, 인접성, 승인</h3><ul><li>배관 경로, 지지, 열팽창</li><li>드립트레이, 탱크 인접성, 위험구역</li><li>국제산적화학물코드(IBC Code) 또는 국제가스운반선코드(IGC Code) 관련 규정의 유추 적용</li><li>기국 해석·면제를 조기에 대응</li></ul></article>
         </div>
 
-        <div class="storage-strip reveal" aria-label="LCO2 儲存設計關鍵值">
-          <div class="storage-item"><strong>7–8 bar</strong><span>低壓方案，約 −50 °C</span></div>
-          <div class="storage-item"><strong>15–20 bar</strong><span>中壓方案，約 −26 至 −20 °C</span></div>
-          <div class="storage-item"><strong>5.18 bar</strong><span>CO2 三相點壓力；需避免乾冰</span></div>
-          <div class="storage-item"><strong>60–70 TEU</strong><span>報告示例：1,470 t LCO2 的空間代價</span></div>
+        <div class="storage-strip reveal" aria-label="LCO2 저장 설계 핵심 수치">
+          <div class="storage-item"><strong>7–8 bar</strong><span>저압 옵션, 약 −50 °C</span></div>
+          <div class="storage-item"><strong>15–20 bar</strong><span>중압 옵션, 약 −26 ~ −20 °C</span></div>
+          <div class="storage-item"><strong>5.18 bar</strong><span>CO2 삼중점 압력; 드라이아이스 회피 필요</span></div>
+          <div class="storage-item"><strong>60–70 TEU</strong><span>보고 예시: LCO2 1,470 t의 공간 페널티</span></div>
         </div>
       </div>
     </section>
@@ -1211,25 +1223,25 @@
     <section class="section section-white" id="regulation">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="eyebrow">Regulation & value chain</p><h2>捕捉 CO2 還不夠，捕捉量也必須符合認列條件</h2></div>
-          <p class="section-intro">oCCS 同時跨越船級安全、IMO 環境規範、區域碳價、跨境 CO2 運輸、港口接收與最終儲存。這些制度的成熟速度並不一致。</p>
+          <div><p class="eyebrow">규제·가치사슬</p><h2>CO2를 포집하는 것만으로는 부족합니다; 규제상 인정되는 수량이어야 합니다</h2></div>
+          <p class="section-intro">oCCS는 선급 안전, IMO 환경 규칙, 지역 탄소 가격, 국경 간 CO2 운송, 항만 수용, 최종 저장을 아우릅니다. 이들 제도는 동일한 속도로 성숙하지 않습니다.</p>
         </div>
 
         <div class="reg-layout">
           <aside class="reg-summary reveal">
-            <p class="eyebrow" style="color:#75e0d9">Commercial baseline</p>
-            <h3>目前最能建立商業模型的是 EU ETS</h3>
-            <p>若經查證的 CO2 被送往依《EU CCS Directive》許可的儲存場，或永久化學鍵結於合格產品，航運公司可依適用的監測、報告與查證（MRV）要求，從須繳交配額的排放量中扣除該數量。</p>
+            <p class="eyebrow" style="color:#75e0d9">상업 기준선</p>
+            <h3>현재 상업 모델의 가장 명확한 근거는 EU ETS입니다</h3>
+            <p>검증된 CO2가 EU CCS 지침에 따라 허가된 사이트에 저장되거나, 적격 제품에 영구적으로 화학 결합되면, 적용되는 MRV 요건을 전제로 해운회사는 허여량 제출 대상 배출량에서 해당 수량을 공제할 수 있습니다.</p>
             <hr>
-            <p><strong style="color:white">不要預先計入：</strong><br>FuelEU Maritime 尚未認列 oCCS；IMO 全球定價與 oCCS 計算架構也仍在發展。因此，這些潛在收益適合列為額外上行情境（upside），而不是基準情境（base case）。</p>
+            <p><strong style="color:white">미리 산입하지 마십시오:</strong><br>FuelEU Maritime은 아직 oCCS를 인정하지 않으며, IMO의 전 세계 가격 및 oCCS 산정 체계는 여전히 개발 중입니다. 따라서 이러한 잠재 편익은 기본 시나리오가 아닌 상방 시나리오로 다루어야 합니다.</p>
           </aside>
 
           <div class="reg-list">
-            <article class="reg-item reveal"><div class="reg-item-head"><h3>EU ETS</h3><span class="status status-ready">有條件認列</span></div><p>須符合適用的資格、永久性與監測、報告及查證（MRV）要求，並備有完整下游證據；中間損失、岸上再生排放與利用用途仍需清楚歸屬。</p></article>
-            <article class="reg-item reveal"><div class="reg-item-head"><h3>FuelEU Maritime</h3><span class="status status-watch">目前未認列</span></div><p>尚未將 oCCS 納入溫室氣體強度與罰則計算。實船專案應持續核對第 30 條檢討的最新進展。</p></article>
-            <article class="reg-item reveal"><div class="reg-item-head"><h3>IMO</h3><span class="status status-pilot">架構發展中</span></div><p>報告所述 oCCS 環境架構工作目標為 2028，安全暫行指南目標為 2029；早期專案仍需依船級與旗國處理。</p></article>
-            <article class="reg-item reveal"><div class="reg-item-head"><h3>London Protocol</h3><span class="status status-pilot">地理受限</span></div><p>跨境運送 CO2 至海床下進行地質儲存，原則上需相關締約方接受或暫時適用 2009 年《倫敦議定書》第 6 條修正，且相關國家已締結協定或安排；現階段主要集中北海周邊。</p></article>
-            <article class="reg-item reveal"><div class="reg-item-head"><h3>LR class framework</h3><span class="status status-ready">已有工作路徑</span></div><p>EACCS 船級符號、EACCS READY 描述性註記、原則性認可（AiP）與 ShipRight Risk Based Certification（RBC），可形成涵蓋設計、風險評估、施工、試運轉（commissioning）及在役保證的船舶特定工作路徑。</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>EU ETS</h3><span class="status status-ready">조건부 인정</span></div><p>적용되는 적격성, 영구성, MRV 요건을 충족하고 완전한 하류 증거가 뒷받침되어야 합니다. 중간 손실, 육상 재생 배출, 의도된 활용 경로는 여전히 명확히 귀속되어야 합니다.</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>FuelEU Maritime</h3><span class="status status-watch">현재 미인정</span></div><p>oCCS는 아직 온실가스 집약도 또는 페널티 산정에 포함되지 않았습니다. 선박별 프로젝트는 제30조 검토의 최신 진전을 계속 확인해야 합니다.</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>IMO</h3><span class="status status-pilot">프레임워크 개발 중</span></div><p>보고서는 oCCS 환경 프레임워크 목표 연도를 2028년, 잠정 안전 지침 목표 연도를 2029년으로 제시합니다. 초기 프로젝트는 여전히 선급과 기국을 통해 진행해야 합니다.</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>London Protocol</h3><span class="status status-pilot">지리적 제약</span></div><p>해저 지질 저장을 위한 CO2의 국경 간 운송은 일반적으로 관련 체약당사국이 London Protocol 제6조의 2009년 개정을 수락 또는 잠정 적용하고, 관련국이 협정·약정을 체결한 경우에 가능합니다. 현재 활동은 북해 주변에 집중되어 있습니다.</p></article>
+            <article class="reg-item reveal"><div class="reg-item-head"><h3>LR 선급 프레임워크</h3><span class="status status-ready">확립된 경로</span></div><p>EACCS 선급 부기호, EACCS READY descriptive note, 원칙승인(AiP), ShipRight Risk Based Certification(RBC)은 설계, 위험평가, 건조, 시운전, 운항 중 보증을 아우르는 선박별 경로를 구성할 수 있습니다.</p></article>
           </div>
         </div>
       </div>
@@ -1238,13 +1250,13 @@
     <section class="section" id="candidates">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="eyebrow">Best-fit segments</p><h2>不是船型決定一切，而是營運條件</h2></div>
-          <p class="section-intro">真正的候選船由剩餘壽命、碳價曝險、卸岸可用性，以及船舶能否承受設備與貨載代價共同決定。</p>
+          <div><p class="eyebrow">최적 적합 부문</p><h2>선종만으로 판단하기보다 운용 조건이 더 중요합니다</h2></div>
+          <p class="section-intro">선박의 실제 적합성은 잔여 수명, 탄소가격 노출, 하역 가용성, 장비·화물용량 페널티를 흡수할 수 있는지에 공동으로 달려 있습니다.</p>
         </div>
         <div class="candidate-grid">
-          <article class="candidate good reveal"><div class="candidate-head">較有利的近期候選</div><ul><li>歐洲經濟區（EEA）固定航線的中型油輪（MR）／化學品船</li><li>液化天然氣（LNG）燃料船與 LNG 運輸船</li><li>固定輪轉的貨櫃船</li><li>頻繁靠港的短程船、支線貨櫃船（feeder）與客貨滾裝船（RoPax）</li></ul></article>
-          <article class="candidate conditional reveal"><div class="candidate-head">有條件成立</div><ul><li>超大型油輪（VLCC）／蘇伊士型油輪（Suezmax）：空間多但航程長</li><li>大型散裝船：減排量大但卸岸頻率低</li><li>全球不定期航運（tramp trade）：現有碳價曝險較弱</li><li>貨櫃船：電力與標準貨櫃箱位（TEU）代價需精算</li></ul></article>
-          <article class="candidate weak reveal"><div class="candidate-head">目前商業案例較弱</div><ul><li>剩餘壽命約五年</li><li>主要航行於未定價區域</li><li>靠港點沒有可信接收鏈</li><li>無法接受結構、能源或貨載代價</li></ul></article>
+          <article class="candidate good reveal"><div class="candidate-head">단기적으로 더 유리한 후보</div><ul><li>유럽경제지역(EEA) 고정 항로의 중거리(MR) 탱커/케미컬 탱커</li><li>액화천연가스(LNG) 연료선 및 LNG 운반선</li><li>고정 로테이션의 컨테이너선</li><li>기항이 잦은 단거리해운, 피더 컨테이너선, RoPax</li></ul></article>
+          <article class="candidate conditional reveal"><div class="candidate-head">조건에 따라 가능</div><ul><li>초대형원유운반선(VLCC)/수에즈막스 탱커: 공간은 충분하나 항차가 김</li><li>대형 벌크선: 감축 잠재력은 크나 하역이 드묾</li><li>전 세계 부정기 운항: 현재 탄소가격 노출이 약함</li><li>컨테이너선: 전력·TEU 슬롯 페널티를 상세 산정해야 함</li></ul></article>
+          <article class="candidate weak reveal"><div class="candidate-head">현재 상업성이 약한 사례</div><ul><li>잔여 수명 약 5년</li><li>주로 탄소가격 미적용 지역 운항</li><li>기항지에 신뢰할 수 있는 수용 체인 없음</li><li>구조·에너지·화물용량 페널티를 수용할 수 없음</li></ul></article>
         </div>
       </div>
     </section>
@@ -1252,17 +1264,17 @@
     <section class="section section-white" id="decision">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="eyebrow">Decision gates</p><h2>先確認閉環，再選設備</h2></div>
-          <p class="section-intro">正確起點不是詢問「哪一家的捕捉率最高」，而是把一艘特定船放進一條特定航線，檢查技術、法規與商業鏈是否能同時成立。</p>
+          <div><p class="eyebrow">의사결정 게이트</p><h2>장비를 고르기 전에 폐루프를 확인하십시오</h2></div>
+          <p class="section-intro">올바른 출발점은 어느 공급업체의 포집률이 가장 높은지가 아닙니다. 특정 선박을 특정 항로에 놓고 기술·규제·상업 체인이 동시에 작동할 수 있는지를 판별하는 것입니다.</p>
         </div>
         <div class="decision">
-          <article class="gate reveal"><div><h3>資產壽命</h3><p>是否還有約十年以上可交易壽命？</p></div><div class="gate-result">否 → 多數情況先不改裝</div></article>
-          <article class="gate reveal"><div><h3>法規曝險</h3><p>實際航線是否承擔可量化的碳成本？</p></div><div class="gate-result">只把已確定收益納入基準情境</div></article>
-          <article class="gate reveal"><div><h3>接收鏈</h3><p>哪些靠港點可接收？規格、流量與責任邊界是否確認？</p></div><div class="gate-result">沒有具名且已確認的接收路徑 → 不宜作出最終投資決策（FID）</div></article>
-          <article class="gate reveal"><div><h3>儲存平衡</h3><p>最長航段捕捉量是否裝得下？滿槽後停捕多久？</p></div><div class="gate-result">以逐航次質量平衡驗證</div></article>
-          <article class="gate reveal"><div><h3>整合餘裕</h3><p>蒸汽、電力、廢熱、總布置圖（GA）、穩性與貨載代價可接受嗎？</p></div><div class="gate-result">需要船舶特定概念設計</div></article>
-          <article class="gate reveal"><div><h3>安全與核准</h3><p>如何處理危害辨識（HAZID）、危害與可操作性分析（HAZOP）及緊急停機（ESD）要求？船級、旗國與法規解釋又如何解決？</p></div><div class="gate-result">提早啟動原則性認可（AiP）與 ShipRight Risk Based Certification（RBC）</div></article>
-          <article class="gate reveal"><div><h3>監測、報告與查證（MRV）</h3><p>捕捉量、額外耗能、卸岸損失與最終儲存如何稽核？</p></div><div class="gate-result">建立可驗證的 CO2 監管鏈</div></article>
+          <article class="gate reveal"><div><h3>자산 수명</h3><p>선박에 상업적으로 운항 가능한 잔여 수명이 약 10년 이상 남아 있는가?</p></div><div class="gate-result">아니오 → 대부분 개조 보류</div></article>
+          <article class="gate reveal"><div><h3>규제 노출</h3><p>실제 항로에서 계량 가능한 탄소 비용이 발생하는가?</p></div><div class="gate-result">기본 시나리오에는 확정된 편익만 포함</div></article>
+          <article class="gate reveal"><div><h3>수용 체인</h3><p>어느 기항지가 CO2를 수용할 수 있는가? 규격, 유량, 책임 경계가 확인되었는가?</p></div><div class="gate-result">지명·확인된 수용 경로 없음 → 최종투자결정(FID)으로 진행하지 않음</div></article>
+          <article class="gate reveal"><div><h3>저장 균형</h3><p>가장 긴 항차에서 포집량을 탱크가 수용할 수 있는가? 만액 후 포집이 얼마나 중단되는가?</p></div><div class="gate-result">항차별 물질수지로 검증</div></article>
+          <article class="gate reveal"><div><h3>통합 여유</h3><p>증기, 전력, 폐열, GA, 복원성, 화물용량 페널티가 수용 가능한가?</p></div><div class="gate-result">선박별 개념설계 필요</div></article>
+          <article class="gate reveal"><div><h3>안전·승인</h3><p>HAZID, HAZOP, ESD 요건을 어떻게 다룰 것이며, 선급·기국·규제 해석을 어떻게 해결할 것인가?</p></div><div class="gate-result">원칙승인(AiP)과 ShipRight RBC를 조기 착수</div></article>
+          <article class="gate reveal"><div><h3>모니터링·보고·검증(MRV)</h3><p>포집량, 추가 에너지 사용, 하역 손실, 최종 저장을 어떻게 감사할 것인가?</p></div><div class="gate-result">검증 가능한 CO2 보관 연쇄 구축</div></article>
         </div>
       </div>
     </section>
@@ -1271,15 +1283,15 @@
       <div class="container">
         <div class="pm-panel reveal">
           <div>
-            <p class="eyebrow" style="color:#75e0d9">For surveyors & project managers</p>
-            <h2>驗船與專案管理應把力氣放在哪裡？</h2>
-            <p>最容易造成大幅改圖、旗國往返與現場返工的項目，應在概念設計／原則性認可（AiP）階段就開始收斂。</p>
+            <p class="eyebrow" style="color:#75e0d9">검사관·프로젝트 매니저를 위해</p>
+            <h2>검사와 프로젝트 관리는 어디에 초점을 두어야 하는가?</h2>
+            <p>대규모 도면 개정, 반복적인 기국 서신, 현장 재작업을 유발하기 쉬운 이슈는 개념설계/원칙승인(AiP) 단계부터 점진적으로 해소해야 합니다.</p>
           </div>
           <div class="pm-list">
-            <div class="pm-row"><b>01</b><span><strong>先鎖定航線與卸岸終點：</strong>接收站（terminal）、駁船（barge）或 ISO 標準槽櫃的介面條件，應納入設計基準。</span></div>
-            <div class="pm-row"><b>02</b><span><strong>關閉空間與能源問題：</strong>管路佈置、儲槽位置，以及熱能與電力平衡，不能留到施工圖階段才處理。</span></div>
-            <div class="pm-row"><b>03</b><span><strong>把危害辨識與危害分析連到詳細設計：</strong>風險控制要能追蹤到閥件、緊急停機（ESD）、通風及因果矩陣。</span></div>
-            <div class="pm-row"><b>04</b><span><strong>將監測、報告與查證（MRV）納入檢驗與試驗計畫（ITP）：</strong>校正、資料保存、性能漂移、交接計量與儲存證明都需可驗證。</span></div>
+            <div class="pm-row"><b>01</b><span><strong>먼저 항로와 하역 목적지를 확정:</strong> 터미널, 바지선 또는 ISO 탱크 컨테이너의 인터페이스 조건이 설계 기준의 일부가 되어야 합니다.</span></div>
+            <div class="pm-row"><b>02</b><span><strong>공간·에너지 이슈를 종결:</strong> 배관 경로, 탱크 위치, 열·전력 수지는 생산도면 단계까지 남겨둘 수 없습니다.</span></div>
+            <div class="pm-row"><b>03</b><span><strong>HAZID·HAZOP을 상세설계에 연결:</strong> 위험 통제는 밸브, ESD, 환기, 원인-결과 매트릭스까지 추적 가능해야 합니다.</span></div>
+            <div class="pm-row"><b>04</b><span><strong>MRV를 검사시험계획(ITP)에 포함:</strong> 교정, 데이터 보존, 성능 드리프트, custody-transfer 계량, 저장 증빙이 모두 검증 가능해야 합니다.</span></div>
           </div>
         </div>
       </div>
@@ -1288,28 +1300,28 @@
     <section class="section section-white" id="sources">
       <div class="container">
         <div class="section-head reveal">
-          <div><p class="eyebrow">Source map</p><h2>資料來源與閱讀定位</h2></div>
-          <p class="section-intro">本頁依 Lloyd's Register《Applying Onboard Carbon Capture & Storage to existing ships》整理，重點是協助讀者快速建立整體框架。</p>
+          <div><p class="eyebrow">자료 지도</p><h2>출처와 읽는 맥락</h2></div>
+          <p class="section-intro">본 페이지는 Lloyd's Register의 “Applying Onboard Carbon Capture & Storage to Existing Ships”를 바탕으로, 독자가 전체 프레임워크를 빠르게 잡도록 돕기 위한 것입니다.</p>
         </div>
         <div class="source-box reveal">
           <a class="source-primary-link" href="https://www.lr.org/en/knowledge/research-reports/2026/applying-onboard-carbon-capture-and-storage-to-ships/" target="_blank" rel="noopener noreferrer">
             <span>
-              <strong>前往 Lloyd’s Register（LR，勞氏船級社）官方專案／研究報告頁面</strong>
+              <strong>Lloyd's Register(LR) 공식 프로젝트/연구 보고서 페이지 방문</strong>
               <span>Applying Onboard Carbon Capture and Storage to Ships</span>
             </span>
             <b aria-hidden="true">↗</b>
           </a>
-          <strong>原始文件章節對照</strong>
+          <strong>원문 섹션 가이드</strong>
           <ul>
-            <li>Executive summary：pp. 4–9</li>
-            <li>Technology status：pp. 17–25</li>
-            <li>System integration：pp. 27–34</li>
-            <li>Regulatory framework：pp. 35–41</li>
-            <li>The business case：pp. 42–46</li>
-            <li>Developing the carbon value chain：pp. 47–53</li>
-            <li>Conclusions and risk register：pp. 54–57</li>
+            <li>Executive summary: pp. 4–9</li>
+            <li>Technology status: pp. 17–25</li>
+            <li>System integration: pp. 27–34</li>
+            <li>Regulatory framework: pp. 35–41</li>
+            <li>The business case: pp. 42–46</li>
+            <li>Developing the carbon value chain: pp. 47–53</li>
+            <li>Conclusions and risk register: pp. 54–57</li>
           </ul>
-          <small>提醒：這是知識介紹與文件摘要，不是特定船舶的設計核准、法規意見或投資建議。oCCS 法規與港口基礎設施仍快速變動，實際專案應以最新 IMO、EU／UK、旗國、船級、設備商與接收端資料重新確認。原報告內部分時間表的摘要與詳細章節亦有差異，引用時宜再次核對最新官方版本。</small>
+          <small>참고: 본 글은 기술 소개와 문서 요약이며, 특정 선박에 대한 설계 승인, 규제 자문 또는 투자 자문이 아닙니다. oCCS 규제와 항만 인프라는 계속 빠르게 변합니다. 실제 프로젝트는 IMO, EU/UK, 기국, 선급, 장비 공급자, 수용 당사자의 최신 정보를 재확인해야 합니다. 일부 일정은 원문 보고서의 요약과 상세 섹션 간에 차이가 있으므로, 인용 전에 최신 공식 버전을 다시 확인하십시오.</small>
         </div>
       </div>
     </section>
@@ -1319,29 +1331,30 @@
     <div
       class="article-share article-share--end"
       data-article-share
-      data-share-url="https://reayhuang.com/notes/maritime/occs-retrofit-guide.zh.html"
-      data-share-title="船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note"
-      data-share-email-body="我在 Reay 的海事筆記看到這篇，覺得可能對你有幫助：&#10;&#10;船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note&#10;https://reayhuang.com/notes/maritime/occs-retrofit-guide.zh.html"
-      data-share-copy="複製連結"
-      data-share-copied="已複製"
-      data-toast-copied="連結已複製到剪貼簿"
+      data-share-url="https://reayhuang.com/notes/maritime/occs-retrofit-guide.ko.html"
+      data-share-title="선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드 | Reay's Note"
+      data-share-email-body="Reay의 해사 노트에서 유용한 글을 발견했습니다:&#10;&#10;선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드 | Reay's Note&#10;https://reayhuang.com/notes/maritime/occs-retrofit-guide.ko.html"
+      data-share-copy="링크 복사"
+      data-share-copied="복사됨"
+      data-toast-copied="링크가 클립보드에 복사되었습니다"
     >
-      <p class="article-share__label" id="share-end-label">覺得有用？分享給同事</p>
+      <p class="article-share__label" id="share-end-label">도움이 되셨나요? 동료와 공유하세요</p>
       <div class="article-share__actions" role="group" aria-labelledby="share-end-label"></div>
     </div>
   </section>
 
   <footer class="site-footer" id="source">
     <div class="site-footer-inner">
-      <strong>船上碳捕捉與儲存 oCCS｜現有船舶改裝指南｜Reay's Note</strong>
-      <span class="small">整理：Reay Huang · Maritime Survey / Learning Note · 資料整理日期：2026-09-03</span>
+      <strong>선상 탄소 포집·저장(oCCS) | 기존선 개조 가이드 | Reay's Note</strong>
+      <span class="small">정리: Reay Huang · 해사 검사 / 학습 노트 · 정리일: 2026-09-03</span>
       <p class="disclaimer small">
-        <strong>專業聲明：</strong>本文為個人海事學習與實務整理，僅供一般技術與管理參考，不構成特定船舶的船級、法定檢驗、船旗國、投資或改裝核准意見。
-        實際設計審查、改裝可行性、捕捉量認列、卸岸路徑與專案決策，應以最新適用的國際公約、區域法規、船旗國要求、船級規範、核准文件及專案技術規格為準。
-        本文觀點不代表 Lloyd’s Register、IMO、任何船旗國主管機關、船東、船廠或客戶的正式立場。
+        <strong>전문 면책:</strong> 본 글은 일반적인 기술·관리 참고를 위한 개인 해사 학습·실무 요약입니다. 특정 선박에 대한 선급, 법정검사, 기국, 투자 또는 개조 승인 자문을 구성하지 않습니다.
+        실제 설계 검토, 개조 타당성, 포집량 인정, 하역 경로, 프로젝트 결정은 최신 적용 국제협약, 지역 규제, 기국 요건, 선급 규칙, 승인 문서, 프로젝트 기술사양을 기준으로 해야 합니다.
+        여기에 표현된 견해는 Lloyd's Register, IMO, 기국 관청, 선주, 조선소 또는 고객의 공식 입장을 대변하지 않습니다.
       </p>
     </div>
   </footer>
+
 
   <script>
     (() => {

@@ -68,6 +68,7 @@ Bilingual pairs and locale mapping are maintained in `i18n/manifest.json` (`defa
 |------|--------|
 | SOLAS framework | `solas-structure-notes.ko.html` |
 | MARPOL framework | `marpol-structure-notes.ko.html` |
+| oCCS retrofit guide | `occs-retrofit-guide.ko.html` |
 
 These pages include `hreflang` links to EN / 繁中 / ko and use `data-back-to-top-label="맨 위로"` on `<html>`.
 
